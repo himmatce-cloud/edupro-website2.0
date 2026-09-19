@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"secondary-fixed-dim":"#b0c6ff","primary-fixed-dim":"#adc7ff","surface-variant":"#d5e3fc","outline-variant":"#c1c6d6","on-primary-fixed":"#001a41","tertiary-fixed-dim":"#70d8c8","primary-container":"#1a73e8","secondary-fixed":"#d9e2ff","secondary-container":"#759efd","on-secondary-fixed":"#001945","background":"#f8f9ff","on-background":"#0d1c2e","on-tertiary":"#ffffff","on-tertiary-container":"#000705","surface-tint":"#005bc0","error-container":"#ffdad6","inverse-primary":"#adc7ff","on-secondary-container":"#00337c","surface":"#f8f9ff","primary":"#005bbf","surface-container-lowest":"#ffffff","surface-bright":"#f8f9ff","secondary":"#2b5bb5","on-error-container":"#93000a","on-primary-container":"#ffffff","on-surface":"#0d1c2e","on-secondary":"#ffffff","surface-dim":"#ccdbf3","tertiary":"#006a5f","outline":"#727785","on-surface-variant":"#414754","surface-container-highest":"#d5e3fc","tertiary-container":"#008678","surface-container":"#e6eeff","error":"#ba1a1a","inverse-on-surface":"#eaf1ff","surface-container-high":"#dce9ff","on-tertiary-fixed-variant":"#005048","on-tertiary-fixed":"#00201c","on-primary":"#ffffff","surface-container-low":"#eff4ff","on-error":"#ffffff","primary-fixed":"#d8e2ff","on-primary-fixed-variant":"#004493","on-secondary-fixed-variant":"#00429c","tertiary-fixed":"#8df5e4","inverse-surface":"#233144"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-sm":"0.5rem","space-md":"1rem","space-xl":"2.5rem","margin":"2rem","margin-mobile":"1rem","gutter-mobile":"0.75rem","space-lg":"1.5rem","space-xs":"0.25rem","gutter":"1.5rem"},"fontFamily":{"headline-md":["Hanken Grotesk"],"headline-sm":["Hanken Grotesk"],"headline-xl":["Hanken Grotesk"],"headline-lg":["Hanken Grotesk"],"headline-lg-mobile":["Hanken Grotesk"],"label-sm":["JetBrains Mono"],"body-sm":["Inter"],"body-md":["Inter"],"body-lg":["Inter"],"headline-xl-mobile":["Hanken Grotesk"],"label-lg":["JetBrains Mono"],"label-md":["JetBrains Mono"]},"fontSize":{"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"0","fontWeight":"600"}],"headline-xl":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.015em","fontWeight":"700"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"700"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"500"}],"body-sm":["14px",{"lineHeight":"20px","letterSpacing":"0","fontWeight":"400"}],"body-md":["16px",{"lineHeight":"24px","letterSpacing":"0","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"28px","letterSpacing":"-0.005em","fontWeight":"400"}],"headline-xl-mobile":["30px",{"lineHeight":"38px","letterSpacing":"-0.015em","fontWeight":"700"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.02em","fontWeight":"500"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.03em","fontWeight":"500"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-gutter flex items-center justify-between"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm text-primary" href="index.html"><span class="material-symbols-outlined text-[28px]">school</span><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Edu<span class="text-primary">Pro</span></span></a><nav class="hidden lg:flex items-center gap-space-xs" data-active-classes="bg-surface-container-high text-primary font-body-sm text-body-sm rounded-lg"><a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors font-body-sm text-body-sm" data-path="home" href="index.html">Home</a><a aria-current="page" class="px-space-sm py-space-xs transition-colors bg-surface-container-high text-primary font-body-sm text-body-sm rounded-lg" data-path="test-series" href="test-series.html">Test Series</a><a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors font-body-sm text-body-sm" data-path="pyq-tricks" href="pyq-tricks.html">20-Yr PYQ &amp; Tricks</a><a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors font-body-sm text-body-sm" data-path="dashboard" href="dashboard.html">Dashboard</a><a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors font-body-sm text-body-sm" data-path="daily-gk" href="gk.html">Daily GK</a><a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors font-body-sm text-body-sm" data-path="help" href="help.html">Help</a></nav></div><div class="flex items-center gap-space-md"><a class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-tertiary-container text-on-tertiary hover:bg-tertiary transition-colors shadow-[0_1px_8px_rgba(0,0,0,0.04)]" data-path="pass-upgrade" href="payment.html"><span class="material-symbols-outlined text-[16px]">workspace_premium</span><span class="font-label-md text-label-md uppercase tracking-wider font-semibold">₹199 / Month Pass</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<section class="w-full px-gutter py-space-lg">
+<div class="max-w-7xl mx-auto flex flex-col gap-space-lg">
+<!-- Breadcrumbs & Status Flag -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<a class="hover:text-primary transition-colors" href="dashboard.html">Dashboard</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="test-series.html">RAS Prelims 2024 Series</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface font-semibold">Diagnostic Report #SEC-802</span>
+</div>
+<div class="flex items-center gap-space-xs px-space-sm py-space-xs bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-tertiary text-[18px]">verified</span>
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider">Official Proctored Outcome</span>
+</div>
+</div>
+<!-- Top Result Banner & Performance Summary -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-lowest p-space-lg lg:p-space-xl shadow-sm">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+<div class="space-y-space-xs max-w-2xl">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-high text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+              RPSC Examination Pattern V-2024
+            </div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">
+              RAS Pre 2024 Full Mock Test 01 - General Studies &amp; Science
+            </h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Evaluated on 24 May 2024 • Time Spent: 114m / 180m • Negative Marking: 1/3 Deduction Standard
+            </p>
+</div>
+<!-- Quick Action Buttons -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<a class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-body-sm text-body-sm font-semibold transition-colors" href="test-series.html">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+              Retake Test
+            </a>
+<a class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-body-sm text-body-sm font-semibold transition-colors" href="print.html">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+              Print Scorecard (A4 PDF)
+            </a>
+<a class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-primary text-on-primary hover:bg-secondary font-body-sm text-body-sm font-semibold transition-colors" href="dashboard.html">
+<span class="material-symbols-outlined text-[18px]">dashboard</span>
+              Back to Dashboard
+            </a>
+</div>
+</div>
+<!-- Metric Cards Bento Grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md mt-space-xl">
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Score Achieved</span>
+<span class="material-symbols-outlined text-primary text-[20px]">military_tech</span>
+</div>
+<div class="mt-space-sm">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-on-surface">142</span>
+<span class="font-label-lg text-label-lg text-on-surface-variant">/ 200</span>
+</div>
+<div class="mt-space-xs flex items-center gap-space-xs text-tertiary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>
+<span>+22.4 vs State Cutoff (119.6)</span>
+</div>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Overall Accuracy</span>
+<span class="material-symbols-outlined text-tertiary text-[20px]">target</span>
+</div>
+<div class="mt-space-sm">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-on-surface">84.5%</span>
+</div>
+<div class="mt-space-xs flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span>71 Correct</span>
+<span class="text-error font-medium">• 13 Incorrect</span>
+<span>• 16 Blank</span>
+</div>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Percentile</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">analytics</span>
+</div>
+<div class="mt-space-sm">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-on-surface">96.8%</span>
+</div>
+<div class="mt-space-xs flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span>Top 3.2% statewide</span>
+</div>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">National Rank</span>
+<span class="material-symbols-outlined text-primary text-[20px]">leaderboard</span>
+</div>
+<div class="mt-space-sm">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-primary">#42</span>
+<span class="font-label-lg text-label-lg text-on-surface-variant">/ 1,280</span>
+</div>
+<div class="mt-space-xs flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span>Category Rank (OBC/GEN): #18</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Upgrade & 1 Month Pass Callout Banner -->
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-r from-primary via-secondary to-primary p-space-md lg:p-space-lg text-on-primary shadow-md">
+<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-start md:items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container-lowest/20 backdrop-blur-md flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px] text-tertiary-fixed">workspace_premium</span>
+</div>
+<div>
+<div class="inline-flex items-center gap-space-xs px-space-sm py-0.5 rounded-full bg-surface-container-lowest/15 text-primary-fixed font-label-sm text-label-sm tracking-wider uppercase mb-1">
+                EduPro Special Academic Plan
+              </div>
+<h2 class="font-headline-sm text-headline-sm text-on-primary">
+                ₹199 / Month All-Access Pass (30 दिन असीमित मॉक टेस्ट, 20-वर्षीय PYQ व AI विस्तृत व्याख्या)
+              </h2>
+<p class="font-body-sm text-body-sm text-surface-variant mt-0.5">
+                Unlock all 50+ Full Lenght Mocks, Subject Chapter-wise PYQ series, memory mnemonics, and state merit percentiles.
+              </p>
+</div>
+</div>
+<div class="w-full md:w-auto shrink-0">
+<a class="w-full md:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-space-sm rounded-lg bg-surface-container-lowest text-primary font-headline-sm text-headline-sm hover:bg-surface-container-high transition-transform active:scale-95 shadow-md" href="payment.html">
+<span>Activate ₹199 Pass</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Main Analytical Split View (Subject Performance + Weak Topic Radar) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Left 7 Columns: Subject-wise Performance Matrix -->
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-sm">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Subject-wise Performance Matrix</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Comparative score breakdown and subject sectional margins</p>
+</div>
+<span class="font-label-md text-label-md text-tertiary font-semibold px-space-sm py-space-xs bg-surface-container rounded">
+                4/4 Cutoffs Cleared
+              </span>
+</div>
+<div class="space-y-space-md mt-space-md">
+<!-- Subject 1: Rajasthan GK -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Rajasthan GK &amp; Heritage</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm text-tertiary px-space-xs rounded bg-surface-container">Accuracy: 88.4%</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">42 <span class="font-body-sm text-body-sm text-on-surface-variant">/ 50</span></span>
+</div>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full transition-all duration-700" style="width: 84%"></div>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant font-label-sm text-label-sm pt-space-xs">
+<span>21 Correct • 3 Wrong • 1 Skipped</span>
+<span>Sectional Rank: #19</span>
+</div>
+</div>
+<!-- Subject 2: General Science -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">General Science &amp; Technology</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm text-tertiary px-space-xs rounded bg-surface-container">Accuracy: 89.2%</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">34 <span class="font-body-sm text-body-sm text-on-surface-variant">/ 40</span></span>
+</div>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full rounded-full transition-all duration-700" style="width: 85%"></div>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant font-label-sm text-label-sm pt-space-xs">
+<span>17 Correct • 2 Wrong • 1 Skipped</span>
+<span>Sectional Rank: #31</span>
+</div>
+</div>
+<!-- Subject 3: Indian History & Polity -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Indian History &amp; Polity</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm text-primary px-space-xs rounded bg-surface-container">Accuracy: 78.0%</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">36 <span class="font-body-sm text-body-sm text-on-surface-variant">/ 50</span></span>
+</div>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full transition-all duration-700" style="width: 72%"></div>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant font-label-sm text-label-sm pt-space-xs">
+<span>19 Correct • 5 Wrong • 1 Skipped</span>
+<span>Sectional Rank: #68</span>
+</div>
+</div>
+<!-- Subject 4: Reasoning & Quantitative -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-error"></span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Reasoning &amp; Quantitative Aptitude</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm text-error px-space-xs rounded bg-error-container">Low Time/Score Yield</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">30 <span class="font-body-sm text-body-sm text-on-surface-variant">/ 60</span></span>
+</div>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-error h-full rounded-full transition-all duration-700" style="width: 50%"></div>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant font-label-sm text-label-sm pt-space-xs">
+<span>14 Correct • 3 Wrong • 13 Skipped</span>
+<span>Sectional Rank: #144 (Needs Improvement)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right 5 Columns: Strengths & Weak Topic Radar / High-Yield Focus -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm h-full flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-sm">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Topic Diagnostics &amp; High-Yield Focus</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Desi tricks &amp; targeted revision priority</p>
+</div>
+</div>
+<!-- Inline Radar / Performance Gauge Visual -->
+<div class="p-space-md rounded-xl bg-surface-container-low my-space-md flex items-center justify-center">
+<div class="relative w-48 h-48 flex items-center justify-center">
+<!-- Circular Gauge SVG -->
+<svg class="w-full h-full -rotate-90" viewbox="0 0 120 120">
+<circle class="text-surface-container-highest" cx="60" cy="60" fill="none" r="50" stroke="currentColor" stroke-width="10"></circle>
+<circle class="text-primary" cx="60" cy="60" fill="none" r="50" stroke="currentColor" stroke-dasharray="314" stroke-dashoffset="65" stroke-linecap="round" stroke-width="10"></circle>
+<circle class="text-tertiary" cx="60" cy="60" fill="none" r="36" stroke="currentColor" stroke-dasharray="226" stroke-dashoffset="35" stroke-linecap="round" stroke-width="6"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-headline-lg text-headline-lg text-on-surface">84.5%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Accuracy Index</span>
+</div>
+</div>
+</div>
+<!-- High-Yield Recommendations -->
+<div class="space-y-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-tertiary text-[20px] shrink-0 mt-0.5">trending_up</span>
+<div>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Power Domain:</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Rajasthan Prajamandal &amp; Art-Architecture (100% Correct, 32s average time).</p>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-error-container/30 flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">priority_high</span>
+<div>
+<span class="font-body-sm text-body-sm font-semibold text-error">Critical Weakness:</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Analytical Syllogism &amp; Probability. 13 questions skipped due to pacing bottlenecks.</p>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">lightbulb</span>
+<div>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Tactical Desi Tip:</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Polity Articles 152 to 237 (State Executive) carry 8-10 marks directly. Use the 'G-C-A' framework.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-space-md">
+<a class="w-full flex items-center justify-center gap-space-xs py-space-xs rounded-lg bg-surface-container-high text-primary hover:bg-surface-variant transition-colors font-body-sm text-body-sm font-semibold" href="pyq-tricks.html">
+<span class="material-symbols-outlined text-[18px]">psychology</span>
+                Explore 20-Year PYQ Memory Tricks
+              </a>
+</div>
+</div>
+</div>
+</div>
+<!-- Question-by-Question Detailed Solution Review -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm">
+<div class="flex flex-col md:flex-row md:items-center justify-between pb-space-md gap-space-sm">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Detailed Question Review &amp; Pedagogical Solutions</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Verified RPSC Model Keys with Desi Memory Tricks and cognitive explanations</p>
+</div>
+<!-- Question Filters -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 md:pb-0">
+<button class="px-space-sm py-space-xs rounded bg-primary text-on-primary font-label-md text-label-md font-semibold">All (100)</button>
+<button class="px-space-sm py-space-xs rounded bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md">Correct (71)</button>
+<button class="px-space-sm py-space-xs rounded bg-surface-container text-error hover:bg-error-container font-label-md text-label-md">Incorrect (13)</button>
+<button class="px-space-sm py-space-xs rounded bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-label-md text-label-md">Unattempted (16)</button>
+</div>
+</div>
+<!-- Question Item 1: Correctly Answered with Desi Trick -->
+<div class="rounded-xl bg-surface-container-low p-space-lg space-y-space-md mb-space-md">
+<div class="flex flex-wrap items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center font-label-lg text-label-lg font-bold text-on-surface">Q.1</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Subject: Rajasthan History &amp; Freedom Movement</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-tertiary-container text-on-tertiary font-label-sm text-label-sm font-semibold">Correct (+2.00)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Time: 24s</span>
+</div>
+</div>
+<div class="font-body-lg text-body-lg text-on-surface">
+            निम्नलिखित में से किस वर्ष 'मारवाड़ सेवा संघ' की स्थापना जय नारायण व्यास और साथियों द्वारा की गई थी?
+            <br/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">In which year was the 'Marwar Seva Sangh' established by Jai Narayan Vyas and associates?</span>
+</div>
+<!-- Options Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm font-body-sm text-body-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-highest/60 flex items-center justify-between">
+<span>(A) 1918</span>
+<span class="font-label-xs text-on-surface-variant">Option A</span>
+</div>
+<div class="p-space-sm rounded-lg bg-tertiary-fixed/30 text-on-tertiary-container flex items-center justify-between font-semibold">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-tertiary text-[18px]">check_circle</span>
+<span>(B) 1920 [Your Answer &amp; Correct Key]</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-bold">100% Official</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-highest/60 flex items-center justify-between">
+<span>(C) 1924</span>
+<span class="font-label-xs text-on-surface-variant">Option C</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-highest/60 flex items-center justify-between">
+<span>(D) 1929</span>
+<span class="font-label-xs text-on-surface-variant">Option D</span>
+</div>
+</div>
+<!-- Desi Memory Trick & Pedagogical Solution Box -->
+<div class="rounded-lg bg-surface-container-lowest p-space-md space-y-space-xs shadow-sm">
+<div class="flex items-center gap-space-xs text-primary font-headline-sm text-headline-sm">
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+<span>Desi Memory Trick (देसी ट्रिक): 'मारवाड़ में बीस (20) बार सेवा'</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">
+<strong class="font-semibold text-primary">Trick Logic:</strong> 1920 = <strong>असहयोग आंदोलन का वर्ष</strong> + <strong>मारवाड़ सेवा (20 की सेवा)</strong>। जय नारायण व्यास, शिवकरण जोशी और आनंदराज सुराणा ने मिलकर 1920 में जोधपुर में मारवाड़ सेवा संघ बनाया था। आगे चलकर 1924 में इसी की जगह 'मारवाड़ हितकारिणी सभा' पुनर्जीवित हुई।
+            </p>
+<div class="pt-space-xs font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-sm">
+<span>Reference: R.P. Vyas Modern Rajasthan Chapter 7, Page 142</span>
+<span>•</span>
+<span class="text-tertiary">91% Aspirants marked this correctly</span>
+</div>
+</div>
+</div>
+<!-- Question Item 2: Incorrectly Answered with Elimination Logic -->
+<div class="rounded-xl bg-surface-container-low p-space-lg space-y-space-md mb-space-md">
+<div class="flex flex-wrap items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center font-label-lg text-label-lg font-bold text-on-surface">Q.2</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Subject: Indian Polity &amp; Governance</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">Incorrect (-0.66)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Time: 1m 45s</span>
+</div>
+</div>
+<div class="font-body-lg text-body-lg text-on-surface">
+            संविधान के किस अनुच्छेद के तहत राज्यपाल को राज्य मंत्रिमंडल के परामर्श से अध्यादेश (Ordinance) जारी करने की शक्ति प्राप्त है?
+            <br/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Under which Article of the Constitution does the Governor possess the power to promulgate ordinances?</span>
+</div>
+<!-- Options Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm font-body-sm text-body-sm">
+<div class="p-space-sm rounded-lg bg-error-container/40 text-on-error-container flex items-center justify-between font-medium">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-error text-[18px]">cancel</span>
+<span>(A) अनुच्छेद 123 [Your Selected Answer]</span>
+</div>
+<span class="font-label-sm text-label-sm text-error font-bold">Wrong</span>
+</div>
+<div class="p-space-sm rounded-lg bg-tertiary-fixed/30 text-on-tertiary-container flex items-center justify-between font-semibold">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-tertiary text-[18px]">check_circle</span>
+<span>(B) अनुच्छेद 213 [Correct Answer]</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-bold">Correct Key</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-highest/60 flex items-center justify-between">
+<span>(C) अनुच्छेद 214</span>
+<span class="font-label-xs text-on-surface-variant">Option C</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-highest/60 flex items-center justify-between">
+<span>(D) अनुच्छेद 163</span>
+<span class="font-label-xs text-on-surface-variant">Option D</span>
+</div>
+</div>
+<!-- Desi Memory Trick & Pedagogical Solution Box -->
+<div class="rounded-lg bg-surface-container-lowest p-space-md space-y-space-xs shadow-sm">
+<div class="flex items-center gap-space-xs text-primary font-headline-sm text-headline-sm">
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+<span>Desi Swap Trick: 123 (President) ↔ 213 (Governor)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">
+<strong class="font-semibold text-primary">Confusion Trap:</strong> आपने राष्ट्रपति वाला अनुच्छेद 123 चुन लिया! 
+              <br/>
+<strong>याद रखने की ट्रिक:</strong> राष्ट्रपति केंद्र में नंबर 1 पर है, इसलिए <strong>1-2-3</strong>। जब राज्य (राज्यपाल) में जाते हैं, तो पहले दो अंकों को आपस में बदल दें: <strong>1-2-3 बन जाता है 2-1-3</strong>। अध्यादेश सदन के फिर से बैठने के 6 सप्ताह के भीतर दोनों सदनों द्वारा अनुमोदित होना आवश्यक है।
+            </p>
+<div class="pt-space-xs font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-sm">
+<span>Syllabus: RPSC Executive &amp; Legislative Powers</span>
+<span>•</span>
+<span class="text-error">Mistake type: Hasty reading / Concept slip</span>
+</div>
+</div>
+</div>
+<!-- Question Item 3: General Science Solved -->
+<div class="rounded-xl bg-surface-container-low p-space-lg space-y-space-md">
+<div class="flex flex-wrap items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center font-label-lg text-label-lg font-bold text-on-surface">Q.3</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Subject: General Science - Human Anatomy</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-tertiary-container text-on-tertiary font-label-sm text-label-sm font-semibold">Correct (+2.00)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Time: 18s</span>
+</div>
+</div>
+<div class="font-body-lg text-body-lg text-on-surface">
+            मानव शरीर में रक्त का थक्का (Blood Clotting) बनने के लिए कौन सा विटामिन अनिवार्य है?
+            <br/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Which vitamin is essential for the normal clotting of blood in the human body?</span>
+</div>
+<!-- Options Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm font-body-sm text-body-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-highest/60 flex items-center justify-between">
+<span>(A) विटामिन A (Retinol)</span>
+<span class="font-label-xs text-on-surface-variant">Option A</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-highest/60 flex items-center justify-between">
+<span>(B) विटामिन C (Ascorbic Acid)</span>
+<span class="font-label-xs text-on-surface-variant">Option B</span>
+</div>
+<div class="p-space-sm rounded-lg bg-tertiary-fixed/30 text-on-tertiary-container flex items-center justify-between font-semibold">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-tertiary text-[18px]">check_circle</span>
+<span>(C) विटामिन K (Phylloquinone) [Your Answer &amp; Correct]</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-bold">100% Verified</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-highest/60 flex items-center justify-between">
+<span>(D) विटामिन D (Calciferol)</span>
+<span class="font-label-xs text-on-surface-variant">Option D</span>
+</div>
+</div>
+<!-- Desi Memory Trick & Pedagogical Solution Box -->
+<div class="rounded-lg bg-surface-container-lowest p-space-md space-y-space-xs shadow-sm">
+<div class="flex items-center gap-space-xs text-primary font-headline-sm text-headline-sm">
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+<span>Desi Memory Trick: 'K = Katna और Clot (खून रोके)'</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">
+<strong class="font-semibold text-primary">Explanation:</strong> हाथ 'K'ट जाए तो खून का थक्का 'K' ही जमाता है (प्रोथ्रोम्बिन निर्माण यकृत में)। यह वसा में घुलनशील विटामिन (Fat Soluble: K-E-D-A) समूह का हिस्सा है।
+            </p>
+</div>
+</div>
+</div>
+<!-- Action Floating Banner / Sticky Bottom Controls -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">shield</span>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface">Need revision on weak domains?</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Instant video explanations and PYQ test drills available in your active plan.</div>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm w-full md:w-auto">
+<a class="flex-1 md:flex-none inline-flex items-center justify-center gap-space-xs px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-body-sm text-body-sm font-semibold transition-colors" href="test-series.html">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+            Retake Test
+          </a>
+<a class="flex-1 md:flex-none inline-flex items-center justify-center gap-space-xs px-space-md py-space-xs rounded-lg bg-tertiary-container text-on-tertiary hover:bg-tertiary font-body-sm text-body-sm font-semibold transition-colors shadow-sm" href="payment.html">
+<span class="material-symbols-outlined text-[18px]">workspace_premium</span>
+            Upgrade to ₹199 / Month Pass
+          </a>
+<a class="flex-1 md:flex-none inline-flex items-center justify-center gap-space-xs px-space-md py-space-xs rounded-lg bg-primary text-on-primary hover:bg-secondary font-body-sm text-body-sm font-semibold transition-colors" href="dashboard.html">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+            Back to Dashboard
+          </a>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Educational Anti-tampering & Security guardrail for Mock Results
+  (function() {
+    document.addEventListener('contextmenu', function(e) {
+      // Allow seamless interaction on form elements, protect question stem copying
+      if (!e.target.closest('input, textarea')) {
+        e.preventDefault();
+      }
+    });
+
+    // Keyboard shortcuts: Ctrl+P / Cmd+P automatically directs to dedicated print template
+    window.addEventListener('keydown', function(e) {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+        e.preventDefault();
+        window.location.href = 'print.html';
+      }
+    });
+  })();
+</script></main><footer class="w-full bg-surface-container-low py-space-lg"><div class="w-full px-gutter flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant font-body-sm text-body-sm"><div>© 2025 EduPro Academic Analytics. All institutional rights reserved.</div><div class="flex items-center gap-space-md"><a class="hover:text-on-surface" href="help.html">Diagnostic Code: SEC-802</a><a class="hover:text-on-surface" href="help.html">Accuracy Standards</a><a class="hover:text-on-surface" href="help.html">System Status</a></div></div></footer></body></html>

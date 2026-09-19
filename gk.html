@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="hi" class="h-full bg-slate-50">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduPro - राज्यवार सामान्य ज्ञान (State GK) व दैनिक करेंट अफेयर्स (1 Month Pass)</title>
+  
+  <!-- Tailwind CSS CDN & Google Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f5ff',
+              100: '#e0ecff',
+              200: '#c7dcfe',
+              500: '#2563eb',
+              600: '#1d4ed8',
+              700: '#1e40af',
+              800: '#1e3a8a',
+              900: '#0f2b5c'
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'Noto Sans Devanagari', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Devanagari', 'sans-serif';
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+
+<body class="min-h-full flex flex-col justify-between text-slate-800 antialiased selection:bg-none">
+
+  <!-- शीर्ष आपातकालीन व हेल्पलाइन पट्टी -->
+  <header class="bg-brand-900 text-white text-xs py-2 px-4 shadow-sm relative z-50">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center space-x-3">
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500 text-white animate-pulse">
+          दैनिक अपडेट लाइव
+        </span>
+        <span class="text-slate-200">संस्थापक हेल्पलाइन: <strong class="text-white">+91 9166603971 (हिम्मत राम)</strong></span>
+      </div>
+      <div class="flex items-center space-x-4 text-slate-300">
+        <span class="hidden sm:inline text-sky-200 font-semibold"><i class="fa-solid fa-newspaper mr-1 text-amber-300"></i> आज के शीर्ष 25 करेंट अफेयर्स प्रश्न संकलित</span>
+        <a href="https://wa.me/919166603971?text=नमस्ते%20हिम्मत%20राम%20जी,%20मुझे%20EduPro%20दैनिक%20GK%20के%20बारे%20में%20जानकारी%20चाहिए।" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-bold flex items-center gap-1">
+          <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp सहायता
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- मुख्य नेविगेशन बार (Header) -->
+  <nav class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16 sm:h-20">
+        
+        <!-- लोगो व ब्रांड -->
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-tr from-brand-900 via-brand-700 to-brand-500 text-white flex items-center justify-center font-black text-xl sm:text-2xl shadow-md group-hover:scale-105 transition">
+            EP
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="text-xl sm:text-2xl font-black tracking-tight text-brand-900">Edu<span class="text-brand-500">Pro</span></span>
+              <span class="text-[10px] bg-emerald-50 text-emerald-800 font-black px-2 py-0.5 rounded border border-emerald-200">DAILY GK</span>
+            </div>
+            <span class="block text-[10px] sm:text-[11px] font-bold tracking-widest text-slate-500 uppercase">राज्यवार GK व दैनिक समसामयिकी</span>
+          </div>
+        </a>
+
+        <!-- मुख्य मेन्यू लिंक्स (डेस्कटॉप) -->
+        <div class="hidden lg:flex items-center space-x-6 text-sm font-bold text-slate-600">
+          <a href="index.html" class="hover:text-brand-600 transition">होम</a>
+          <a href="dashboard.html" class="hover:text-brand-600 transition">डैशबोर्ड</a>
+          <a href="test-series.html" class="hover:text-brand-600 transition">टेस्ट सीरीज़</a>
+          <a href="pyq-tricks.html" class="hover:text-brand-600 transition flex items-center gap-1">
+            <span>20-Year PYQ</span>
+            <span class="bg-amber-100 text-amber-800 text-[10px] px-1.5 py-0.5 rounded font-extrabold">हॉट</span>
+          </a>
+          <a href="gk.html" class="text-brand-600 border-b-2 border-brand-600 pb-1">दैनिक GK</a>
+          <a href="print.html" class="hover:text-brand-600 transition">A4 PDF प्रिंट</a>
+          <a href="help.html" class="hover:text-brand-600 transition">सहायता</a>
+        </div>
+
+        <!-- दायां बटन एक्शन -->
+        <div class="flex items-center space-x-2 sm:space-x-3">
+          <a href="print.html" class="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs sm:text-sm font-bold transition flex items-center gap-1.5">
+            <i class="fa-solid fa-print text-xs"></i>
+            <span class="hidden sm:inline">GK प्रिंट</span>
+          </a>
+          <a href="payment.html" class="px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-900 text-xs sm:text-sm font-extrabold shadow-md transition flex items-center gap-1.5">
+            <i class="fa-solid fa-crown text-amber-800"></i>
+            <span>₹199 / Month</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- मुख्य बैनर: राज्यवार GK व दैनिक समसामयिकी -->
+  <section class="bg-gradient-to-r from-brand-900 via-brand-800 to-indigo-950 text-white py-10 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
+      <div class="space-y-3 max-w-2xl text-center md:text-left">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-extrabold bg-emerald-400 text-slate-900">
+          <i class="fa-solid fa-calendar-day"></i> प्रतिदिन प्रातः 6:00 बजे नया संकलन
+        </span>
+        <h1 class="text-2xl sm:text-4xl font-black leading-tight">
+          राज्यवार सामान्य ज्ञान (State GK) <br>
+          <span class="text-sky-300">एवं राष्ट्रीय दैनिक करेंट अफेयर्स बुलेटिन</span>
+        </h1>
+        <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+          राजस्थान, उत्तर प्रदेश, बिहार, मध्य प्रदेश, हरियाणा एवं केंद्र सरकार की सभी प्रतियोगी परीक्षाओं के लिए सबसे सटीक व तथ्यपरक अध्ययन सामग्री।
+        </p>
+      </div>
+
+      <!-- आज का विशेष अलर्ट बॉक्स -->
+      <div class="bg-white/10 backdrop-blur-md border border-white/15 p-5 rounded-3xl max-w-sm w-full space-y-2 text-center md:text-left">
+        <span class="text-[10px] font-extrabold px-2.5 py-0.5 rounded bg-amber-400 text-slate-900 uppercase">
+          परीक्षा फ़्लैश न्यूज़
+        </span>
+        <h3 class="text-sm font-bold text-white">आगामी परीक्षाओं के लिए विशेष GK Capsule</h3>
+        <p class="text-xs text-slate-300">
+          महीने के अंत में पूरे 30 दिनों का कंपाइल किया हुआ A4 PDF 1-क्लिक में डाउनलोड के लिए उपलब्ध रहता है।
+        </p>
+        <a href="print.html" class="inline-block text-xs font-bold text-sky-300 hover:text-white pt-1 transition">
+          GK PDF प्रिंट सेंटर खोलें →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1-क्लिक राज्य चयनकर्ता पट्टी (State Switcher Bar) -->
+  <section class="bg-white border-b border-slate-200 sticky top-16 sm:top-20 z-30 shadow-sm py-3 px-4">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+      
+      <div class="flex items-center gap-2 text-xs font-bold text-slate-700 w-full md:w-auto">
+        <i class="fa-solid fa-map-location-dot text-brand-600 text-sm"></i>
+        <span>राज्य चुनें:</span>
+      </div>
+
+      <!-- राज्यवार टैब्स -->
+      <div class="flex items-center space-x-2 overflow-x-auto w-full md:w-auto pb-1 md:pb-0 custom-scroll text-xs font-bold">
+        <button onclick="setStateFilter('all')" class="state-tab px-3.5 py-1.5 rounded-xl bg-brand-600 text-white transition whitespace-nowrap">
+          सभी (All India)
+        </button>
+        <button onclick="setStateFilter('rajasthan')" class="state-tab px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition whitespace-nowrap">
+          राजस्थान GK
+        </button>
+        <button onclick="setStateFilter('up')" class="state-tab px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition whitespace-nowrap">
+          उत्तर प्रदेश GK
+        </button>
+        <button onclick="setStateFilter('mp')" class="state-tab px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition whitespace-nowrap">
+          मध्य प्रदेश GK
+        </button>
+        <button onclick="setStateFilter('bihar')" class="state-tab px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition whitespace-nowrap">
+          बिहार GK
+        </button>
+        <button onclick="setStateFilter('haryana')" class="state-tab px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition whitespace-nowrap">
+          हरियाणा GK
+        </button>
+      </div>
+
+      <!-- सर्च बॉक्स -->
+      <div class="relative w-full md:w-64">
+        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400 text-xs">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <input type="text" id="gkSearchQuery" oninput="filterGkCards()" placeholder="घटना या टॉपिक खोजें..." 
+          class="w-full pl-9 pr-3 py-1.5 rounded-xl border border-slate-300 focus:border-brand-600 text-xs font-semibold outline-none">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- मुख्य बॉडी: GK कार्ड्स व राइट साइडबार (सोशल शेयर + रिवीज़न) -->
+  <main class="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+
+      <!-- बायां भाग: दैनिक GK व समसामयिकी कार्ड्स (8 कॉलम) -->
+      <div class="lg:col-span-8 space-y-4">
+        
+        <div class="flex items-center justify-between pb-1">
+          <h2 id="sectionHeading" class="text-base sm:text-lg font-black text-slate-900 flex items-center gap-2">
+            <i class="fa-solid fa-bolt text-amber-500"></i> आज के प्रमुख परीक्षा उपयोगी तथ्य व प्रश्न
+          </h2>
+          <span class="text-xs font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-full">
+            दैनिक अपडेट: 16 सितम्बर 2026
+          </span>
+        </div>
+
+        <!-- GK कार्ड 1: राजस्थान GK -->
+        <div class="gk-card bg-white p-5 sm:p-6 rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-md transition space-y-3" data-state="rajasthan">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-0.5 rounded-md text-[10px] font-extrabold bg-amber-100 text-amber-900 uppercase">
+              राजस्थान GK • भूगोल व पर्यावरण
+            </span>
+            <span class="text-[11px] font-semibold text-slate-400">CET / RAS / Police स्पेशल</span>
+          </div>
+
+          <h3 class="text-sm sm:text-base font-bold text-slate-900 leading-snug">
+            राजस्थान में 'मरु त्रिकोण' (Desert Triangle) के अंतर्गत आने वाले प्रमुख जिले कौन-से हैं?
+          </h3>
+
+          <div class="p-3.5 bg-slate-50 rounded-2xl border border-slate-100 text-xs sm:text-sm text-slate-700 leading-relaxed">
+            <p><strong>उत्तर व तथ्य:</strong> मरु त्रिकोण में <strong>जोधपुर, जैसलमेर और बीकानेर</strong> शामिल हैं। हाल ही में पर्यटन विकास की दृष्टि से <strong>बाड़मेर</strong> को भी इसमें चौथे केंद्र के रूप में समाहित किया गया है।</p>
+            <p class="text-[11px] text-brand-700 font-bold pt-1.5 flex items-center gap-1">
+              <i class="fa-solid fa-lightbulb text-amber-500"></i> देसी मेमोरी ट्रिक: 'JJB' (जैसलमेर, जोधपुर, बीकानेर)
+            </p>
+          </div>
+
+          <div class="pt-2 flex items-center justify-between text-xs">
+            <button onclick="bookmarkItem(this)" class="text-slate-500 hover:text-brand-600 font-bold flex items-center gap-1 transition">
+              <i class="fa-regular fa-bookmark"></i> <span>रिवीज़न में सेव करें</span>
+            </button>
+            <a href="https://api.whatsapp.com/send?text=राजस्थान%20GK%20महत्वपूर्ण%20प्रश्न:%20मरु%20त्रिकोण%20में%20जोधपुर,%20जैसलमेर,%20बीकानेर%20शामिल%20हैं।%20EduPro%20पर%20पढ़ें:%20https://edupro.in/gk.html" target="_blank" class="text-emerald-600 hover:text-emerald-700 font-bold flex items-center gap-1 transition">
+              <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp शेयर
+            </a>
+          </div>
+        </div>
+
+        <!-- GK कार्ड 2: अखिल भारतीय समसामयिकी -->
+        <div class="gk-card bg-white p-5 sm:p-6 rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-md transition space-y-3" data-state="all">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-0.5 rounded-md text-[10px] font-extrabold bg-blue-100 text-brand-700 uppercase">
+              राष्ट्रीय • खेलकूद व सम्मान
+            </span>
+            <span class="text-[11px] font-semibold text-slate-400">UPSC / SSC / Railway</span>
+          </div>
+
+          <h3 class="text-sm sm:text-base font-bold text-slate-900 leading-snug">
+            मेजर ध्यानचंद खेल रत्न पुरस्कार 2026 एवं बैडमिंटन में भारत की ऐतिहासिक उपलब्धि
+          </h3>
+
+          <div class="p-3.5 bg-slate-50 rounded-2xl border border-slate-100 text-xs sm:text-sm text-slate-700 leading-relaxed">
+            <p><strong>उत्तर व तथ्य:</strong> खेल रत्न पुरस्कार भारत का सर्वोच्च खेल सम्मान है जिसमें ₹25 लाख का नकद पुरस्कार, पदक और प्रशस्ति पत्र प्रदान किया जाता है। पहले इसका नाम 'राजीव गांधी खेल रत्न पुरस्कार' था जिसे 2021 में बदलकर मेजर ध्यानचंद जी के नाम पर किया गया।</p>
+          </div>
+
+          <div class="pt-2 flex items-center justify-between text-xs">
+            <button onclick="bookmarkItem(this)" class="text-slate-500 hover:text-brand-600 font-bold flex items-center gap-1 transition">
+              <i class="fa-regular fa-bookmark"></i> <span>रिवीज़न में सेव करें</span>
+            </button>
+            <a href="https://api.whatsapp.com/send?text=मेजर%20ध्यानचंद%20खेल%20रत्न%20पुरस्कार%20में%20₹25%20लाख%20की%20राशि%20दी%20जाती%20है।%20EduPro%20दैनिक%20GK:%20https://edupro.in/gk.html" target="_blank" class="text-emerald-600 hover:text-emerald-700 font-bold flex items-center gap-1 transition">
+              <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp शेयर
+            </a>
+          </div>
+        </div>
+
+        <!-- GK कार्ड 3: उत्तर प्रदेश GK -->
+        <div class="gk-card bg-white p-5 sm:p-6 rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-md transition space-y-3" data-state="up">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-0.5 rounded-md text-[10px] font-extrabold bg-indigo-100 text-indigo-700 uppercase">
+              उत्तर प्रदेश GK • इतिहास व संस्कृति
+            </span>
+            <span class="text-[11px] font-semibold text-slate-400">UPPSC / UP Police Special</span>
+          </div>
+
+          <h3 class="text-sm sm:text-base font-bold text-slate-900 leading-snug">
+            उत्तर प्रदेश का एकमात्र राष्ट्रीय उद्यान (National Park) कौन-सा है और यह किस जिले में स्थित है?
+          </h3>
+
+          <div class="p-3.5 bg-slate-50 rounded-2xl border border-slate-100 text-xs sm:text-sm text-slate-700 leading-relaxed">
+            <p><strong>उत्तर व तथ्य:</strong> उत्तर प्रदेश का एकमात्र राष्ट्रीय उद्यान <strong>दुधवा राष्ट्रीय उद्यान (Dudhwa National Park)</strong> है, जो <strong>लखीमपुर खीरी</strong> जिले में स्थित है। यह बाघों और बारहसिंगा (Swamp Deer) के लिए विश्व प्रसिद्ध है।</p>
+          </div>
+
+          <div class="pt-2 flex items-center justify-between text-xs">
+            <button onclick="bookmarkItem(this)" class="text-slate-500 hover:text-brand-600 font-bold flex items-center gap-1 transition">
+              <i class="fa-regular fa-bookmark"></i> <span>रिवीज़न में सेव करें</span>
+            </button>
+            <a href="https://api.whatsapp.com/send?text=UP%20का%20एकमात्र%20राष्ट्रीय%20उद्यान%20दुधवा%20(लखीमपुर%20खीरी)%20है।%20EduPro%20दैनिक%20GK:%20https://edupro.in/gk.html" target="_blank" class="text-emerald-600 hover:text-emerald-700 font-bold flex items-center gap-1 transition">
+              <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp शेयर
+            </a>
+          </div>
+        </div>
+
+        <!-- GK कार्ड 4: बिहार व मध्य प्रदेश संयुक्त GK -->
+        <div class="gk-card bg-white p-5 sm:p-6 rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-md transition space-y-3" data-state="bihar">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-0.5 rounded-md text-[10px] font-extrabold bg-emerald-100 text-emerald-800 uppercase">
+              बिहार GK • प्राचीन इतिहास
+            </span>
+            <span class="text-[11px] font-semibold text-slate-400">BPSC / बिहार दरोगा</span>
+          </div>
+
+          <h3 class="text-sm sm:text-base font-bold text-slate-900 leading-snug">
+            प्रथम बौद्ध संगीति (First Buddhist Council) का आयोजन किसके शासनकाल और किस स्थान पर हुआ था?
+          </h3>
+
+          <div class="p-3.5 bg-slate-50 rounded-2xl border border-slate-100 text-xs sm:text-sm text-slate-700 leading-relaxed">
+            <p><strong>उत्तर व तथ्य:</strong> प्रथम बौद्ध संगीति 483 ईसा पूर्व में <strong>अजातशत्रु</strong> के शासनकाल में <strong>राजगृह (सप्तपर्णी गुफा)</strong> में महाकस्सप की अध्यक्षता में आयोजित हुई थी।</p>
+            <p class="text-[11px] text-brand-700 font-bold pt-1.5 flex items-center gap-1">
+              <i class="fa-solid fa-lightbulb text-amber-500"></i> देसी मेमोरी ट्रिक: 'राजा ने वैशाली को पटाया कुंडल वन में' (राजगृह, वैशाली, पाटलिपुत्र, कुंडलवन)
+            </p>
+          </div>
+
+          <div class="pt-2 flex items-center justify-between text-xs">
+            <button onclick="bookmarkItem(this)" class="text-slate-500 hover:text-brand-600 font-bold flex items-center gap-1 transition">
+              <i class="fa-regular fa-bookmark"></i> <span>रिवीज़न में सेव करें</span>
+            </button>
+            <a href="https://api.whatsapp.com/send?text=प्रथम%20बौद्ध%20संगीति%20अजातशत्रु%20के%20काल%20में%20राजगृह%20में%20हुई।%20EduPro%20GK:%20https://edupro.in/gk.html" target="_blank" class="text-emerald-600 hover:text-emerald-700 font-bold flex items-center gap-1 transition">
+              <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp शेयर
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- दायां भाग: सोशल शेयरिंग हब, डेली क्विज़ व ₹199 बैनर (4 कॉलम) -->
+      <div class="lg:col-span-4 space-y-5">
+        
+        <!-- सोशल शेयरिंग कार्ड (WhatsApp, Telegram, YouTube, FB) -->
+        <div class="bg-gradient-to-br from-brand-900 to-indigo-900 text-white p-6 rounded-3xl shadow-sm space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] font-extrabold px-2 py-0.5 rounded bg-sky-400 text-slate-900 uppercase">
+              1-Click Share Hub
+            </span>
+            <span class="text-xs text-sky-200 font-bold">वायरल तैयारी</span>
+          </div>
+
+          <h3 class="text-base font-black leading-snug">
+            अपने स्टडी ग्रुप्स में आज का दैनिक GK बुलेटिन शेयर करें
+          </h3>
+
+          <p class="text-xs text-slate-300 leading-relaxed">
+            हर रोज़ हज़ारो छात्र EduPro के प्रमाणित GK नोट्स से पढ़ाई करते हैं। 1-क्लिक में अपने दोस्तों को भेजें:
+          </p>
+
+          <div class="grid grid-cols-2 gap-2.5 pt-1">
+            <a href="https://api.whatsapp.com/send?text=आज%20का%20दैनिक%20GK%20व%20परीक्षा%20समसामयिकी%20नोट्स%20देखें:%20https://edupro.in/gk.html" target="_blank" class="p-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition">
+              <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp
+            </a>
+            <a href="https://t.me/share/url?url=https://edupro.in/gk.html&text=दैनिक%20GK%20एवं%20करेंट%20अफेयर्स%20बुलेटिन" target="_blank" class="p-2.5 rounded-xl bg-sky-500 hover:bg-sky-600 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition">
+              <i class="fa-brands fa-telegram text-sm"></i> Telegram
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://edupro.in/gk.html" target="_blank" class="p-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition">
+              <i class="fa-brands fa-facebook text-sm"></i> Facebook
+            </a>
+            <a href="https://wa.me/919166603971?text=नमस्ते%20हिम्मत%20राम%20जी,%20मुझे%20डेली%20GK%20ग्रुप%20में%20जोड़ें।" target="_blank" class="p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-300 text-xs font-bold flex items-center justify-center gap-1.5 transition">
+              <i class="fa-solid fa-headset text-xs"></i> ग्रुप में जुड़ें
+            </a>
+          </div>
+        </div>
+
+        <!-- डेली टेस्ट सीरीज़ लिंक कार्ड -->
+        <div class="bg-white p-5 rounded-3xl border border-slate-200/90 shadow-sm space-y-3">
+          <span class="text-[10px] font-extrabold px-2 py-0.5 rounded bg-amber-100 text-amber-800 uppercase">
+            आज का 10-प्रश्न मिनी क्विज
+          </span>
+          <h4 class="text-sm font-bold text-slate-900">
+            आज के करेंट अफेयर्स पर आधारित लाइव टेस्ट दें
+          </h4>
+          <p class="text-xs text-slate-500">
+            जो तथ्य आपने ऊपर पढ़े, उन पर आधारित 10 प्रश्नों का तुरंत टेस्ट देकर अपना स्कोरकार्ड देखें।
+          </p>
+          <a href="test-series.html" class="w-full py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition shadow">
+            <span>मिनी टेस्ट शुरू करें</span>
+            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </a>
+        </div>
+
+        <!-- ₹199 / Month ऑल-एक्सेस पास कार्ड -->
+        <div class="bg-gradient-to-br from-amber-50 to-amber-100/60 p-5 rounded-3xl border border-amber-200/80 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] font-black text-amber-900 bg-amber-200 px-2 py-0.5 rounded uppercase">
+              1 Month Pass
+            </span>
+            <span class="text-xs font-black text-amber-800">मात्र ₹199 / Month</span>
+          </div>
+          <h4 class="text-sm font-extrabold text-slate-900">
+            1 माह (30 दिन) का राज्यवार GK व A4 PDF प्रिंट
+          </h4>
+          <p class="text-[11px] text-slate-600 leading-relaxed">
+            ₹199 / Month पास धारक छात्र सभी राज्यों के मासिक GK डाइजेस्ट बिना किसी विज्ञापन या सीमा के 30 दिनों तक पढ़ और प्रिंट कर सकते हैं।
+          </p>
+          <a href="payment.html" class="w-full py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-900 text-xs font-black flex items-center justify-center gap-1.5 transition shadow">
+            <i class="fa-solid fa-crown text-xs"></i>
+            <span>₹199 / Month पास एक्टिव करें</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- पादलेख (Footer) व वैधानिक अस्वीकरण -->
+  <footer class="bg-slate-900 text-slate-400 text-xs py-8 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 text-center sm:text-left">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-2 text-[11px]">
+        <p>© 2026 EduPro Education Platform. सर्वाधिकार सुरक्षित: संस्थापक हिम्मत राम (+91 9166603971)</p>
+        <div class="flex items-center space-x-4 text-slate-400">
+          <a href="index.html" class="hover:text-white transition">होम</a>
+          <a href="dashboard.html" class="hover:text-white transition">डैशबोर्ड</a>
+          <a href="test-series.html" class="hover:text-white transition">टेस्ट सीरीज़</a>
+          <a href="pyq-tricks.html" class="hover:text-white transition">PYQ आर्काइव</a>
+          <a href="print.html" class="hover:text-white transition">प्रिंट सेंटर</a>
+          <a href="help.html" class="hover:text-white transition">सहायता</a>
+        </div>
+      </div>
+
+      <!-- वैधानिक अस्वीकरण संक्षिप्त पट्टी -->
+      <div class="text-[10px] text-slate-500 leading-relaxed border-t border-slate-800/80 pt-3 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <p>
+          <strong>वैधानिक अस्वीकरण:</strong> EduPro एक स्वतंत्र निजी ऑनलाइन शिक्षण व परीक्षा अभ्यास मंच है। यह किसी भी केंद्र/राज्य सरकार, UPSC, SSC, NTA या किसी सरकारी आयोग से संबद्ध नहीं है। दैनिक समाचार व समसामयिकी तथ्य केवल छात्रों के शैक्षणिक ज्ञानवर्धन हेतु संकलित किए जाते हैं। सामग्री भारतीय कॉपीराइट अधिनियम, 1957 (धारा 13 व 63) के अंतर्गत सुरक्षित है।
+        </p>
+        <span class="font-mono text-[9px] text-slate-600">SSL 256-Bit Encrypted</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- जावास्क्रिप्ट: राज्यवार फ़िल्टर, सर्च, बुकमार्क व सुरक्षा शील्ड -->
+  <script>
+    let activeState = 'all';
+
+    // 1. राज्यवार फ़िल्टर बदलना
+    function setStateFilter(state) {
+      activeState = state;
+      document.querySelectorAll('.state-tab').forEach(btn => {
+        btn.className = "state-tab px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition whitespace-nowrap";
+      });
+      event.target.className = "state-tab px-3.5 py-1.5 rounded-xl bg-brand-600 text-white transition whitespace-nowrap";
+      filterGkCards();
+    }
+
+    // 2. सर्च व राज्य फ़िल्टर लॉजिक
+    function filterGkCards() {
+      const query = document.getElementById('gkSearchQuery').value.toLowerCase();
+      const cards = document.querySelectorAll('.gk-card');
+
+      cards.forEach(card => {
+        const state = card.getAttribute('data-state');
+        const text = card.innerText.toLowerCase();
+
+        const matchesState = (activeState === 'all' || state === activeState || state === 'all');
+        const matchesSearch = text.includes(query);
+
+        if (matchesState && matchesSearch) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // 3. बुकमार्क / रिवीज़न में सेव करना
+    function bookmarkItem(btn) {
+      const icon = btn.querySelector('i');
+      const label = btn.querySelector('span');
+      if (icon.classList.contains('fa-regular')) {
+        icon.classList.remove('fa-regular');
+        icon.classList.add('fa-solid', 'text-amber-500');
+        label.innerText = 'सेव किया गया ✓';
+      } else {
+        icon.classList.remove('fa-solid', 'text-amber-500');
+        icon.classList.add('fa-regular');
+        label.innerText = 'रिवीज़न में सेव करें';
+      }
+    }
+
+    // 4. 360° एंटी-कॉपी व साइबर सुरक्षा शील्ड
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('keydown', e => {
+      if (e.keyCode === 123 || 
+         (e.ctrlKey && ['c', 'u', 's', 'a'].includes(e.key.toLowerCase())) ||
+         (e.ctrlKey && e.shiftKey && ['i', 'j', 'c'].includes(e.key.toLowerCase()))) {
+        e.preventDefault();
+        return false;
+      }
+    });
+  </script>
+
+</body>
+</html>

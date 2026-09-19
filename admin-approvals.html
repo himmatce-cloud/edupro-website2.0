@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Student Receipt Approval - EduPro Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#ffffff",
+                      "primary-fixed-dim": "#adc7ff",
+                      "surface-variant": "#dfe3e8",
+                      "on-primary-container": "#ffffff",
+                      "inverse-surface": "#2d3135",
+                      "surface": "#f7f9ff",
+                      "primary-container": "#1a73e8",
+                      "on-primary-fixed": "#001a41",
+                      "on-tertiary-fixed-variant": "#5c4300",
+                      "on-secondary-container": "#00722f",
+                      "surface-tint": "#005bc0",
+                      "inverse-on-surface": "#eef1f7",
+                      "surface-container-low": "#f1f4fa",
+                      "on-background": "#181c20",
+                      "surface-container-high": "#e5e8ee",
+                      "surface-dim": "#d7dae0",
+                      "tertiary": "#795900",
+                      "tertiary-container": "#987000",
+                      "primary": "#005bbf",
+                      "on-error-container": "#93000a",
+                      "on-secondary-fixed": "#002108",
+                      "on-surface-variant": "#414754",
+                      "tertiary-fixed-dim": "#fbbc06",
+                      "on-surface": "#181c20",
+                      "on-tertiary": "#ffffff",
+                      "secondary-fixed": "#89fa9b",
+                      "surface-container-highest": "#dfe3e8",
+                      "background": "#f7f9ff",
+                      "secondary-fixed-dim": "#6ddd81",
+                      "on-error": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-fixed": "#261a00",
+                      "surface-container": "#ebeef4",
+                      "secondary": "#006e2c",
+                      "surface-bright": "#f7f9ff",
+                      "primary-fixed": "#d8e2ff",
+                      "on-tertiary-container": "#ffffff",
+                      "tertiary-fixed": "#ffdea0",
+                      "inverse-primary": "#adc7ff",
+                      "on-secondary-fixed-variant": "#005320",
+                      "on-primary": "#ffffff",
+                      "outline-variant": "#c1c6d6",
+                      "on-primary-fixed-variant": "#004493",
+                      "on-secondary": "#ffffff",
+                      "outline": "#727785",
+                      "error": "#ba1a1a",
+                      "secondary-container": "#86f898"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "xs": "4px",
+                      "xl": "64px",
+                      "gutter": "24px",
+                      "margin-desktop": "32px",
+                      "lg": "40px",
+                      "md": "24px",
+                      "margin-mobile": "16px",
+                      "sm": "12px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ],
+                      "caption": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "title-md": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "title-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md h-full flex overflow-hidden">
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex flex-col h-full py-md px-base fixed left-0 top-0 w-[280px] bg-surface-container-low border-r border-outline-variant z-40">
+<div class="mb-lg px-base">
+<h1 class="font-title-md text-title-md font-bold text-primary">EduPro Admin</h1>
+<p class="font-caption text-caption text-on-surface-variant mt-xs">Institutional Portal</p>
+</div>
+<button class="bg-primary text-on-primary font-label-md text-label-md py-sm px-md rounded-full w-full mb-lg flex items-center justify-center gap-sm shadow-sm hover:opacity-90 transition-opacity"><span class="material-symbols-outlined text-[18px]">receipt_long</span>
+<span>Pending Approvals Queue (14)</span></button>
+<ul class="flex-1 space-y-xs w-full font-label-md text-label-md text-on-surface-variant">
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-full hover:bg-surface-container-highest transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+<span>Overview</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-full hover:bg-surface-container-highest transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="group">group</span>
+<span>Student Management</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-full bg-secondary-container text-on-secondary-container active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="pending_actions" style="font-variation-settings: 'FILL' 1;">pending_actions</span>
+<span>Pending Approvals</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-full hover:bg-surface-container-highest transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="inventory_2">inventory_2</span>
+<span>Question Bank</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-full hover:bg-surface-container-highest transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="psychology">psychology</span>
+<span>AI Generator</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-full hover:bg-surface-container-highest transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</li>
+</ul>
+<div class="mt-auto pt-md border-t border-outline-variant w-full">
+<ul class="space-y-xs w-full font-label-md text-label-md text-on-surface-variant">
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-full hover:bg-surface-container-highest transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="help">help</span>
+<span>Help</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-full hover:bg-surface-container-highest transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="logout">logout</span>
+<span>Logout</span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-[280px] h-full overflow-y-auto flex flex-col bg-background relative">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center px-margin-desktop w-full z-30 bg-surface fixed top-0 md:left-[280px] md:w-[calc(100%-280px)] h-16 border-b border-outline-variant">
+<div class="flex items-center gap-md md:hidden">
+<button class="p-2 -ml-2 text-on-surface-variant">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">EduPro</span>
+</div>
+<!-- Navigation Links (Desktop TopBar) - Usually hidden on admin if using sidebar, but preserving structure based on JSON -->
+<nav class="hidden md:flex gap-lg h-full items-center">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors h-full flex items-center px-sm" href="#">Dashboard</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors h-full flex items-center px-sm" href="#">Analytics</a>
+<a class="font-body-md text-body-md text-primary border-b-2 border-primary pb-1 h-full flex items-center px-sm mt-1" href="#">Management</a>
+</nav>
+<div class="flex items-center gap-sm">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors active:opacity-80">
+<span class="material-symbols-outlined" data-icon="translate">translate</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors active:opacity-80 relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors active:opacity-80">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Page Content -->
+<div class="p-margin-mobile md:p-margin-desktop pt-[80px] md:pt-[88px] max-w-7xl mx-auto w-full flex-1 flex flex-col">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-lg gap-md">
+<div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background">Review Payment Receipt</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Verify student details and approve the ₹199 / Month (1 Month Pass) premium access payment.</p>
+</div>
+<button class="flex items-center gap-sm px-md py-sm bg-surface-container-high hover:bg-surface-variant text-on-surface rounded-full font-label-md text-label-md transition-colors">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                    Back to Pending List
+                </button>
+</div><div class="mb-lg space-y-md">
+<!-- Revenue & Admin KPI Cards -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-sm md:gap-md">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col shadow-sm">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-caption text-caption uppercase tracking-wider font-semibold">Today's Revenue</span>
+<span class="material-symbols-outlined text-[20px] text-secondary">payments</span>
+</div>
+<span class="font-title-md text-title-md font-bold text-on-surface mt-xs">₹4,776</span>
+<span class="text-[11px] text-secondary font-medium mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +24% vs yesterday
+      </span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col shadow-sm">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-caption text-caption uppercase tracking-wider font-semibold">Pending Approvals</span>
+<span class="material-symbols-outlined text-[20px] text-tertiary">pending_actions</span>
+</div>
+<span class="font-title-md text-title-md font-bold text-tertiary mt-xs">14 <span class="text-[13px] font-normal text-on-surface-variant">receipts</span></span>
+<span class="text-[11px] text-on-surface-variant font-medium mt-1">Avg review: 8m</span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col shadow-sm">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-caption text-caption uppercase tracking-wider font-semibold">Approved Today</span>
+<span class="material-symbols-outlined text-[20px] text-primary">verified</span>
+</div>
+<span class="font-title-md text-title-md font-bold text-on-surface mt-xs">24</span>
+<span class="text-[11px] text-secondary font-medium mt-1">100% verified UTR</span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col shadow-sm">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-caption text-caption uppercase tracking-wider font-semibold">Active Students</span>
+<span class="material-symbols-outlined text-[20px] text-primary">groups</span>
+</div>
+<span class="font-title-md text-title-md font-bold text-on-surface mt-xs">1,289</span>
+<span class="text-[11px] text-on-surface-variant font-medium mt-1">All batches active</span>
+</div>
+</div>
+<!-- Fast Filter Navigation Tabs & Security Status -->
+<div class="flex flex-wrap items-center justify-between gap-sm bg-surface-container-low p-2 rounded-xl border border-outline-variant">
+<div class="flex items-center gap-1 sm:gap-2">
+<button class="px-md py-1.5 rounded-lg bg-surface text-primary font-label-md text-label-md font-semibold shadow-sm flex items-center gap-1.5">
+<span>Pending (14)</span>
+</button>
+<button class="px-md py-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant font-label-md text-label-md transition-colors">
+<span>Approved (24)</span>
+</button>
+<button class="px-md py-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant font-label-md text-label-md transition-colors">
+<span>Rejected (2)</span>
+</button>
+<button class="px-md py-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant font-label-md text-label-md transition-colors">
+<span>All (40)</span>
+</button>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 bg-surface-container rounded-lg text-on-surface-variant text-caption font-caption">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
+<span>Bank Match Shield Active</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter flex-1 items-start pb-20 md:pb-0">
+<!-- Left Column: Student Details -->
+<div class="lg:col-span-5 flex flex-col gap-md">
+<!-- Profile Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col gap-md"><div class="flex items-center justify-between flex-wrap gap-sm">
+<div class="flex items-center gap-md">
+<div class="w-14 h-14 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-title-md text-title-md font-bold shadow-sm">
+      AP
+    </div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">Arjun Patel</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Class 12 • Science Stream</p>
+</div>
+</div>
+<!-- 1-Click WhatsApp Quick Contact -->
+<a class="flex items-center gap-1.5 px-3 py-1.5 bg-[#25D366]/15 hover:bg-[#25D366]/25 text-[#006e2c] rounded-full text-label-md font-medium transition-all" href="https://wa.me/919876543210?text=Hi%20Arjun,%20your%20EduPro%20subscription%20payment%20is%20verified%20and%20active!" target="_blank">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span>WhatsApp Student</span>
+</a>
+</div>
+<div class="grid grid-cols-2 gap-sm mt-xs pt-sm border-t border-outline-variant">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider">Mobile Number</span>
+<div class="flex items-center gap-1">
+<span class="font-body-md text-body-md text-on-surface font-medium">+91 98765 43210</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider">Student ID</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">EDU-2023-8472</span>
+</div>
+</div></div>
+<!-- Status & Request Info -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col gap-md"><div class="flex items-center justify-between border-b border-outline-variant pb-xs">
+<h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider font-semibold">Access Status</h4>
+<span class="text-[11px] px-2 py-0.5 rounded bg-error-container text-on-error-container font-semibold">Expired 2 days ago</span>
+</div>
+<div class="flex items-center justify-between p-sm bg-error-container/40 border border-error/20 rounded-lg">
+<div class="flex items-center gap-sm text-on-error-container">
+<span class="material-symbols-outlined text-[20px] text-error" style="font-variation-settings: 'FILL' 1;">warning</span>
+<span class="font-label-md text-label-md font-semibold text-error">Trial Expired • Immediate Access Locked</span>
+</div>
+</div>
+<h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider border-b border-outline-variant pb-xs mt-sm font-semibold">Payment Verification Request</h4>
+<div class="space-y-sm">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Selected Plan</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">1 Month Pass</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Amount Verified</span>
+<span class="font-title-md text-title-md text-primary font-bold">₹199.00</span>
+</div>
+<!-- 1-Click Copy 12-digit UTR section for Himmat Ram bank app checking -->
+<div class="flex justify-between items-center p-2.5 bg-surface-container-low rounded-lg border border-outline-variant">
+<div>
+<span class="font-caption text-caption text-on-surface-variant uppercase block font-semibold">12-Digit UPI UTR No.</span>
+<span class="font-title-md text-body-md font-bold font-mono text-on-surface tracking-wider" id="utr-number">329815487562</span>
+</div>
+<button class="flex items-center gap-1 px-3 py-1.5 bg-primary-container text-on-primary-container rounded font-label-md text-label-md font-medium hover:opacity-90 transition-opacity active:scale-95 duration-150" onclick="navigator.clipboard.writeText('329815487562'); const t=this; t.innerHTML='&lt;span class=\'material-symbols-outlined text-[16px]\'&gt;done&lt;/span&gt; Copied!'; setTimeout(()=&gt;t.innerHTML='&lt;span class=\'material-symbols-outlined text-[16px]\'&gt;content_copy&lt;/span&gt; Copy UTR', 2000);">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span>Copy UTR</span>
+</button>
+</div>
+<div class="flex justify-between items-center text-caption pt-1">
+<span class="font-body-md text-body-md text-on-surface-variant">Date &amp; Time</span>
+<span class="font-body-md text-body-md text-on-surface">Oct 24, 2023 • 10:30 AM</span>
+</div>
+<div class="flex justify-between items-center text-caption">
+<span class="font-body-md text-body-md text-on-surface-variant">Payment Method</span>
+<span class="font-body-md text-body-md text-on-surface flex items-center gap-1 font-medium">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> PhonePe / UPI (ICICI Bank)
+    </span>
+</div>
+</div>
+<!-- Quick Bank Cross-check reminder note -->
+<div class="mt-xs p-2 bg-surface-container-high/60 rounded text-[12px] text-on-surface-variant flex items-start gap-2 border border-outline-variant">
+<span class="material-symbols-outlined text-[16px] text-primary shrink-0 mt-0.5">info</span>
+<span>Verify the credit of ₹199 in your ICICI Current Account before approving. Once approved, course unlocks immediately.</span>
+</div></div>
+<!-- Admin Notes -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col gap-sm">
+<label class="font-label-md text-label-md text-on-surface-variant" for="admin-notes">Admin Notes (Optional)</label>
+<textarea class="w-full bg-surface border border-outline-variant rounded-lg p-sm font-body-md text-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none" id="admin-notes" placeholder="Add note regarding this approval/rejection..." rows="3"></textarea>
+</div>
+</div>
+<!-- Right Column: Receipt Preview & Actions -->
+<div class="lg:col-span-7 flex flex-col gap-md h-full min-h-[500px]">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col h-full">
+<div class="flex justify-between items-center mb-sm">
+<h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Receipt Preview</h4>
+<div class="flex gap-xs">
+<button class="p-1 rounded hover:bg-surface-variant text-on-surface-variant transition-colors" title="Zoom In">
+<span class="material-symbols-outlined text-[20px]">zoom_in</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-variant text-on-surface-variant transition-colors" title="Download">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+</div>
+</div>
+<!-- Receipt Image Area -->
+<div class="flex-1 bg-surface-container rounded-lg overflow-hidden flex items-center justify-center relative min-h-[400px]">
+<!-- Instruction mentions not modifying image tags, but we need a placeholder. Using standard img tag with generic placeholder to simulate the receipt -->
+<img class="object-contain w-full h-full max-h-[600px]" data-alt="A high-resolution mobile screenshot of a successful UPI payment receipt for ₹199 to EduPro Academy. The screenshot shows clear transaction details, date, time, and a green success checkmark, indicative of modern digital wallet interfaces in light mode." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc1p-n5QQ4l2ZVPvCixD4uxe0rApWiH4LVd3yd3MPUjKFKTHMn8sl8WwblRWZeGf4VYS9pD_641gMQ3uIIxWJ14bbyNzTbnR8kOYRa5VBRWm_b7mU7Wj6gm5NDSrfoL6JASBaifJzX0M2JYP5c0S2fMV6AmdU_zNtmq1tVVZmMMeQLbTG4E7goSuBZZ1rSaNOwK01X97JDvt47ygGbAmLhNt7KbBP5GWLivyryaOUcXxqjDCgwQVw4Zg"/>
+<!-- Placeholder overlay for realism if image fails to load -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-50">
+<span class="material-symbols-outlined text-[64px] text-outline-variant">receipt_long</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col sm:flex-row gap-md mt-lg justify-end border-t border-outline-variant pt-md"><button class="px-lg py-sm border border-error text-error hover:bg-error-container hover:text-on-error-container rounded-full font-label-md text-label-md transition-colors flex items-center justify-center gap-sm w-full sm:w-auto font-medium" onclick="alert('Receipt rejected. Student notified via SMS &amp; WhatsApp to re-upload clear proof.');">
+<span class="material-symbols-outlined text-[18px]">close</span>
+<span>Reject &amp; Request Re-upload</span>
+</button>
+<button class="px-lg py-sm bg-primary text-on-primary hover:bg-surface-tint rounded-full font-label-md text-label-md transition-colors flex items-center justify-center gap-sm shadow-sm w-full sm:w-auto font-semibold" onclick="alert('Success! ₹199 Verified. Access granted to Arjun Patel for 1 Month.');">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>Approve Access</span>
+</button></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<div class="fixed bottom-[56px] left-0 w-full p-sm bg-surface-container-lowest/95 backdrop-blur-md border-t border-outline-variant md:hidden z-40 flex items-center gap-sm shadow-lg">
+<button class="flex-1 py-2.5 px-sm border border-error text-error font-label-md text-label-md rounded-full font-medium flex items-center justify-center gap-1 active:scale-95 duration-150" onclick="alert('Receipt rejected. Student notified to re-upload clear proof.');">
+<span class="material-symbols-outlined text-[18px]">close</span>
+<span>Reject</span>
+</button>
+<button class="flex-1 py-2.5 px-sm bg-primary text-on-primary font-label-md text-label-md rounded-full font-semibold flex items-center justify-center gap-1 shadow-sm active:scale-95 duration-150" onclick="alert('Success! ₹199 Verified. Access granted to Arjun Patel for 1 Month.');">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>Approve Access</span>
+</button>
+</div><nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-2 md:hidden z-50 bg-surface border-t border-outline-variant shadow-sm">
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="home">home</span>
+<span class="font-label-md text-label-md mt-1 text-[10px]">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="assignment">assignment</span>
+<span class="font-label-md text-label-md mt-1 text-[10px]">Tests</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="leaderboard" style="font-variation-settings: 'FILL' 1;">leaderboard</span>
+<span class="font-label-md text-label-md mt-1 text-[10px]">Management</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="person">person</span>
+<span class="font-label-md text-label-md mt-1 text-[10px]">Profile</span>
+</a>
+</nav>
+</body></html>
