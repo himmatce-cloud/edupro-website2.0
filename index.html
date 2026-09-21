@@ -1,928 +1,736 @@
 <!DOCTYPE html>
+<html lang="hi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduPro - भारत का #1 पारदर्शी शैक्षणिक पोर्टल | 20-वर्षीय सॉल्व्ड PYQ व लाइव टेस्ट</title>
+  
+  <!-- SEO & Social Sharing Meta Tags -->
+  <meta name="description" content="10th, 12th बोर्ड (RBSE/CBSE), NEET, JEE, UPSC, SSC, RS-CIT व कॉलेज डिग्री के 20-वर्षीय सॉल्व्ड प्रश्न पत्र, लाइव मॉक टेस्ट और देसी ट्रिक्स मात्र ₹199 में।">
+  <meta property="og:title" content="EduPro - भारत का #1 पारदर्शी डिजिटल शिक्षण संस्थान">
+  <meta property="og:description" content="पारंपरिक कोचिंग से 90% कम खर्च में सबसे सटीक तैयारी। 30-फ्री प्रश्न हल करें व 5 रेफरल पर पाएँ +30 दिन फ्री एक्सटेंशन!">
+  <meta property="og:type" content="website">
 
-<html class="scroll-smooth" lang="hi"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>EduPro - भारत का #1 पारदर्शी डिजिटल शैक्षणिक संस्थान | 20-वर्षीय सॉल्व्ड PYQ व टेस्ट सीरीज़</title>
-<!-- SEO & Social Meta Tags -->
-<meta content="EduPro - भारत का सबसे प्रामाणिक 20-वर्षीय सॉल्व्ड PYQ, 10th/12th बोर्ड, NEET, JEE, UPSC टेस्ट सीरीज़ व देसी ट्रिक्स पोर्टल। ₹199 में 1 महीना असीमित अध्ययन व A4 PDF प्रिंट नोट्स।" name="description"/>
-<meta content="EduPro, PYQ, Solved Papers, 10th Board, 12th Board, RBSE, CBSE, NEET UG, JEE Main, UPSC, SSC, Railway, State GK, Digital Study Portal" name="keywords"/>
-<meta content="EduPro - भारत का सबसे प्रामाणिक 20-वर्षीय सॉल्व्ड PYQ, बोर्ड व प्रतियोगी परीक्षा पोर्टल" property="og:title"/>
-<meta content="EduPro - 20-वर्षीय सॉल्व्ड PYQ, 10th/12th बोर्ड, NEET, JEE, UPSC टेस्ट सीरीज़ व देसी ट्रिक्स पोर्टल।" property="og:description"/>
-<meta content="website" property="og:type"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="EduPro - National Academic Portal" name="twitter:title"/>
-<meta content="20-वर्षीय सॉल्व्ड पेपर्स, लाइब्रेरी माहौल, 10th/12th बोर्ड व प्रतियोगी परीक्षा तैयारी।" name="twitter:description"/>
-<!-- Tailwind CSS CDN with Plugins -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              50: '#eff6ff',
-              100: '#dbeafe',
-              500: '#3b82f6',
-              600: '#2563eb',
-              700: '#1d4ed8',
-              800: '#1e40af',
-              900: '#1e3a8a',
-              navy: '#0b192c',
-              gold: '#f59e0b',
-              amber: '#d97706'
-            }
-          },
-          fontFamily: {
-            sans: ['Segoe UI', 'Inter', 'Noto Sans Devanagari', 'system-ui', 'sans-serif']
-          }
-        }
-      }
-    }
-  </script>
-<!-- Lucide Icons Library -->
-<script src="https://unpkg.com/lucide@latest"></script>
-<!-- BEGIN: Custom Styling -->
-<style data-purpose="custom-scrollbars">
-    ::-webkit-scrollbar {
-      width: 8px;
-      height: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #0f172a;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #334155;
-      border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #475569;
+  <!-- Tailwind CSS & Google Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Noto Sans Devanagari', 'Plus Jakarta Sans', sans-serif;
+      user-select: none;
+      -webkit-user-select: none;
     }
   </style>
-<style data-purpose="banner-animation">
-    @keyframes marquee {
-      0% { transform: translateX(0%); }
-      100% { transform: translateX(-50%); }
-    }
-    .animate-ticker {
-      display: inline-flex;
-      white-space: nowrap;
-      animation: marquee 35s linear infinite;
-    }
-    .animate-ticker:hover {
-      animation-play-state: paused;
-    }
-  </style>
-<!-- END: Custom Styling -->
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-brand-500 selection:text-white">
-<!-- BEGIN: TopNotificationBar -->
-<div class="bg-gradient-to-r from-brand-900 via-indigo-950 to-brand-900 border-b border-brand-700/40 text-xs sm:text-sm py-2 px-4 shadow-sm" data-purpose="top-announcement">
-<div class="w-full max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
-<!-- Session & Feature Pill -->
-<div class="flex items-center gap-2 text-slate-200 text-center md:text-left">
-<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-<i class="w-3 h-3 mr-1 inline" data-lucide="check-circle-2"></i> वेरीफाइड
-        </span>
-<span class="">🎓 शैक्षणिक सत्र 2026-27 | भारत का #1 पारदर्शी डिजिटल शिक्षण संस्थान | <strong>30-फ्री प्रश्न ट्रायल एक्टिव</strong></span>
-</div>
-<!-- Quick Action Desk & Support -->
-<div class="flex items-center gap-4 text-xs font-medium">
-<a class="text-amber-400 hover:text-amber-300 flex items-center gap-1 transition" href="#referral-section">
-<i class="w-3.5 h-3.5" data-lucide="gift"></i>
-<span class="">5-रेफरल = +30 दिन फ्री</span>
-</a>
-<span class="text-slate-600">|</span>
-<button class="text-emerald-400 hover:text-emerald-300 flex items-center gap-1.5 transition font-medium cursor-pointer bg-transparent border-0 p-0 text-xs" onclick="document.getElementById('institutional-helpdesk-modal').classList.remove('hidden')">
-<i class="w-3.5 h-3.5" data-lucide="headset"></i>
-<span class="">EduPro संस्थागत हेल्पडेस्क व सहायता टिकट</span>
-</button>
-</div>
-</div>
-</div>
-<!-- END: TopNotificationBar -->
-<!-- BEGIN: MainHeader -->
-<header class="sticky top-0 z-40 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 shadow-md">
-<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-<!-- Brand Logo -->
-<a class="flex items-center gap-3 group" href="#">
-<div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-brand-700 to-blue-500 p-0.5 shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform duration-200">
-<div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
-<i class="w-7 h-7 text-brand-500" data-lucide="graduation-cap"></i>
-</div>
-</div>
-<div>
-<span class="text-2xl font-black tracking-tight text-white flex items-center gap-1">
-            Edu<span class="text-brand-500">Pro</span>
-</span>
-<span class="text-[10px] block font-bold uppercase tracking-wider text-slate-400">National Academic Portal</span>
-</div>
-</a>
-<!-- Desktop Navigation Menu -->
-<nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-300">
-<a class="text-white hover:text-brand-400 transition" href="#">होम</a>
-<a class="hover:text-brand-400 transition" href="#test-series">टेस्ट सीरीज़</a>
-<a class="hover:text-brand-400 transition flex items-center gap-1.5" href="#pyq-archive">
-          20-Year PYQ
-          <span class="bg-amber-500/20 text-amber-300 text-[10px] px-1.5 py-0.5 rounded font-bold border border-amber-500/30">अपडेटेड</span>
-</a>
-<a class="hover:text-brand-400 transition" href="#board-section">10th &amp; 12th बोर्ड</a>
-<a class="hover:text-brand-400 transition" href="#state-bulletin">दैनिक GK बुलेटिन</a>
-<a class="hover:text-brand-400 transition" href="#study-schedule">स्टडी शेड्यूल</a>
-<button class="hover:text-brand-400 transition text-slate-300 font-medium bg-transparent border-0 cursor-pointer p-0 flex items-center gap-1 text-sm" onclick="document.getElementById('institutional-helpdesk-modal').classList.remove('hidden')">
-          हेल्पडेस्क
+<body class="bg-slate-950 text-slate-100 overflow-x-hidden antialiased selection:bg-amber-500 selection:text-black">
+
+  <!-- TOP INSTITUTIONAL STRIP (100% CONFIDENTIAL - NO PHONE NUMBER) -->
+  <header class="bg-slate-900 border-b border-slate-800 text-xs py-2 px-4 sm:px-6">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">● शैक्षणिक सत्र 2026-27</span>
+        <span class="text-slate-300">भारत का #1 पारदर्शी डिजिटल शिक्षण संस्थान | <strong class="text-amber-400 font-semibold">30-फ्री प्रश्न ट्रायल एक्टिव</strong></span>
+      </div>
+      <div class="flex items-center gap-4 text-slate-400">
+        <span class="hidden md:inline text-amber-300 font-medium">🎁 5-रेफरल = +30 दिन फ्री</span>
+        <button onclick="openHelpdeskModal()" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1 font-medium cursor-pointer">
+          💬 EduPro संस्थागत हेल्पडेस्क व सहायता केंद्र
         </button>
-</nav>
-<!-- Auth & Pass CTAs -->
-<div class="flex items-center gap-3">
-<!-- Secure OTP Student Login -->
-<a class="text-slate-300 hover:text-white px-3.5 py-2 text-sm font-semibold rounded-lg hover:bg-slate-800 transition" href="#login-modal">
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN NAVIGATION BAR (WITH DUAL-TRIGGER TO TEST-SERIES.HTML) -->
+  <nav class="bg-slate-950/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-black text-xl text-white shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform">
+          EP
+        </div>
+        <div>
+          <span class="text-xl font-bold tracking-tight text-white flex items-center gap-1">
+            Edu<span class="text-blue-400">Pro</span>
+          </span>
+          <span class="text-[10px] block font-semibold text-slate-400 tracking-wider uppercase">National Academic Portal</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links (All Linked) -->
+      <div class="hidden lg:flex items-center gap-1 text-sm font-medium text-slate-300">
+        <a href="index.html" class="px-3 py-1.5 rounded-lg bg-blue-600/20 text-blue-400 border border-blue-500/30">होम</a>
+        <a href="test-series.html" onclick="window.location.href='test-series.html'" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-800/60 transition-colors cursor-pointer">टेस्ट सीरीज़</a>
+        <a href="pyq-tricks.html" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-800/60 transition-colors flex items-center gap-1">
+          20-Year PYQ <span class="bg-amber-500 text-slate-950 text-[10px] font-bold px-1.5 py-0.2 rounded">शॉर्टकट</span>
+        </a>
+        <a href="test-series.html" onclick="window.location.href='test-series.html'" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-800/60 transition-colors cursor-pointer">10th व 12th बोर्ड</a>
+        <a href="gk.html" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-800/60 transition-colors">दैनिक GK बुलेटिन</a>
+        <a href="dashboard.html" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-800/60 transition-colors">स्टडी शेड्यूल</a>
+        <a href="help.html" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-800/60 transition-colors">सहायता</a>
+      </div>
+
+      <!-- Action CTAs -->
+      <div class="flex items-center gap-3">
+        <a href="login.html" class="text-sm font-semibold text-slate-300 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800 transition-colors">
           लॉगिन
         </a>
-<!-- Primary 1-Month Pass CTA -->
-<a class="relative group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 via-amber-600 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-slate-950 font-bold px-4 sm:px-5 py-2.5 rounded-xl shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40 transition duration-200 text-sm" href="#pricing-section">
-<i class="w-4 h-4 fill-slate-950" data-lucide="zap"></i>
-<span class="">₹199 (1 Month Pass)</span>
-</a>
-</div>
-</div>
-</header>
-<!-- END: MainHeader -->
-<!-- BEGIN: LiveBulletinTicker -->
-<section class="bg-slate-900 border-b border-slate-800/80 py-2.5 overflow-hidden" data-purpose="live-ticker-strip">
-<div class="w-full max-w-7xl mx-auto px-4 flex items-center gap-3">
-<!-- Badge Tag -->
-<div class="flex items-center gap-1.5 bg-red-600 text-white text-[11px] font-extrabold uppercase px-2.5 py-1 rounded shadow shrink-0">
-<span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
-<span class="">ब्रेकिंग न्यूज़ बुलेटिन</span>
-</div>
-<!-- Marquee Flowing Text -->
-<div class="overflow-hidden relative w-full text-xs sm:text-sm text-slate-300 flex">
-<div class="animate-ticker flex items-center gap-8">
-<span class="flex items-center gap-2">
-<strong class="text-brand-400">🔥 RBSE &amp; CBSE 10th-12th बोर्ड:</strong> 2026 मुख्य परीक्षा हेतु NCERT मॉडल पेपर व 20-वर्षीय हल प्रश्न-पत्र अपलोड कर दिए गए हैं।
+        <a href="payment.html" class="relative inline-flex items-center justify-center px-4 py-2 text-sm font-bold text-slate-950 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 rounded-xl shadow-lg shadow-amber-500/20 transition-all hover:scale-102">
+          ⚡ ₹199 (1 Month Pass)
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- LIVE BREAKING EXAM BULLETIN TICKER (CLICKABLE TO TEST-SERIES.HTML) -->
+  <div class="bg-gradient-to-r from-blue-900/40 via-indigo-900/40 to-slate-900 border-b border-blue-800/30 px-4 py-2.5">
+    <div class="max-w-7xl mx-auto flex items-center gap-3 text-xs overflow-hidden">
+      <span class="shrink-0 bg-red-600 text-white font-bold px-2 py-0.5 rounded text-[11px] uppercase tracking-wide flex items-center gap-1 animate-pulse">
+        ● ब्रेकिंग न्यूज़ बुलेटिन
+      </span>
+      <div class="truncate text-slate-300 flex items-center gap-6">
+        <a href="test-series.html" onclick="window.location.href='test-series.html'" class="hover:text-amber-300 transition-colors cursor-pointer">
+          📢 <strong class="text-amber-400">RBSE & CBSE 10th-12th बोर्ड:</strong> 2026 मुख्य परीक्षा हेतु NCERT मॉडल पेपर व 20-वर्षीय हल प्रश्न-पत्र अपलोड कर दिए गए हैं।
+        </a>
+        <span class="hidden md:inline">⚡ <strong class="text-emerald-400">NEET UG 2026:</strong> बायो, केमिस्ट्री और फिजिक्स के 100% शॉर्टकट ट्रिक्स लाइव।</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="relative pt-8 pb-16 px-4 sm:px-6 lg:px-8 border-b border-slate-800/60 overflow-hidden">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      
+      <!-- Left Hero Column -->
+      <div class="lg:col-span-7 space-y-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-400">
+          🛡️ भारत का #1 पारदर्शी व प्रामाणिक डिजिटल शैक्षणिक संस्थान
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
+          20-वर्षीय सॉल्व्ड पेपर्स,<br>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-amber-400">
+            गहन अध्ययन माहौल व टेस्ट सीरीज़
           </span>
-<span class="text-slate-600">✦</span>
-<span class="flex items-center gap-2">
-<strong class="text-emerald-400">⚡ NEET UG 2026:</strong> बायो, केमिस्ट्री और फिजिक्स के 10,000+ NCERT लाइन-टू-लाइन PYQs लाइव।
-          </span>
-<span class="text-slate-600">✦</span>
-<span class="flex items-center gap-2">
-<strong class="text-amber-400">📝 UPSC CGL &amp; Railway:</strong> 28 राज्यों का दैनिक स्टेट GK बुलेटिन एवं A4 1-क्लिक प्रिंटेबल शीट्स उपलब्ध।
-          </span>
-<span class="text-slate-600">✦</span>
-<span class="flex items-center gap-2">
-<strong class="text-cyan-400">💻 RS-CIT व Tally Prime:</strong> 100% प्रैक्टिकल शॉर्टकट्स, GST वाउचर प्रविष्टियां और एमसीक्यू बैंक एक्टिवेट।
-          </span>
-</div>
-</div>
-</div>
-</section>
-<!-- END: LiveBulletinTicker -->
-<!-- BEGIN: HeroSection -->
-<section class="relative pt-10 pb-16 lg:pt-16 lg:pb-24 overflow-hidden" data-purpose="hero-container">
-<!-- Ambient Background Glows -->
-<div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-brand-600/15 blur-[120px] rounded-full pointer-events-none"></div>
-<div class="absolute top-1/3 right-10 w-[300px] h-[300px] bg-amber-500/10 blur-[100px] rounded-full pointer-events-none"></div>
-<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-<!-- Left Hero Copy Column -->
-<div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-<!-- Institute Credential Tag -->
-<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-300 text-xs sm:text-sm font-semibold">
-<i class="w-4 h-4 text-brand-400" data-lucide="shield-check"></i>
-<span class="">भारत का #1 पारदर्शी व प्रामाणिक डिजिटल शैक्षणिक संस्थान</span>
-</div>
-<!-- Hero Main Title -->
-<h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight lg:leading-[1.15]">
-            20-वर्षीय सॉल्व्ड पेपर्स, <br class="hidden sm:inline"/>
-<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-amber-300">गहन अध्ययन माहौल व टेस्ट सीरीज़</span>
-</h1>
-<!-- Detailed Subtitle -->
-<p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
-            पारंपरिक कोचिंग से 90% कम खर्च में सबसे सटीक तैयारी। <strong>10th व 12th बोर्ड (RBSE/CBSE)</strong>, कॉलेज डिग्री (BA, B.Sc, B.Com, B.Tech, BCA), प्रतियोगी परीक्षाएं (NEET, JEE, UPSC, SSC, Railway) व RS-CIT कंप्यूटर व Tally Prime का संपूर्ण प्रामाणिक अध्ययन केंद्र।
+        </h1>
+
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          पारंपरिक कोचिंग से 90% कम खर्च में सबसे सटीक तैयारी। <strong class="text-white">10th व 12th बोर्ड (RBSE/CBSE)</strong>, कॉलेज डिग्री (BA, B.Sc, B.Com, B.Tech, BCA), प्रतियोगी परीक्षाएं (NEET, JEE, UPSC, SSC, Railway) व RS-CIT कंप्यूटर व Tally Prime का संपूर्ण प्रामाणिक अध्ययन केंद्र।
+        </p>
+
+        <!-- CTA Buttons with 100% Test-Series Linking -->
+        <div class="flex flex-wrap items-center gap-4 pt-2">
+          <a href="test-series.html" onclick="window.location.href='test-series.html'" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-bold text-sm sm:text-base shadow-xl shadow-amber-500/25 transition-transform hover:scale-102 flex items-center gap-2 cursor-pointer">
+            👉 निःशुल्क 30 प्रश्न हल करें
+          </a>
+          <a href="payment.html" class="px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 font-bold text-sm sm:text-base transition-colors flex items-center gap-2">
+            🔒 ₹199 (1 Month Pass)
+          </a>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="flex flex-wrap gap-4 pt-4 text-xs font-medium text-slate-400">
+          <div class="flex items-center gap-1.5">
+            <span class="text-emerald-400 font-bold">✓</span> 100% प्रामाणिक सिलेबस
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="text-emerald-400 font-bold">✓</span> 1-क्लिक A4 डिजिटल शीट्स
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="text-emerald-400 font-bold">✓</span> सामूहिक डिजिटल अध्ययन कक्ष
+          </div>
+        </div>
+
+        <!-- Key Metrics Numbers -->
+        <div class="grid grid-cols-3 gap-4 pt-4 border-t border-slate-800/80">
+          <div>
+            <div class="text-2xl sm:text-3xl font-black text-white">14,820+</div>
+            <div class="text-xs text-slate-400 mt-1">सॉल्व्ड प्रश्न व PYQ</div>
+          </div>
+          <div>
+            <div class="text-2xl sm:text-3xl font-black text-amber-400">520+</div>
+            <div class="text-xs text-slate-400 mt-1">देसी मेमोरी ट्रिक्स</div>
+          </div>
+          <div>
+            <div class="text-2xl sm:text-3xl font-black text-emerald-400">100%</div>
+            <div class="text-xs text-slate-400 mt-1">सत्यापित व प्रामाणिक</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Quick Test Drive Box (All Linked Directly to test-series.html) -->
+      <div class="lg:col-span-5">
+        <div class="bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 rounded-2xl p-6 shadow-2xl relative">
+          <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+            <div>
+              <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">🎯 क्विक टेस्ट ड्राइव</span>
+              <h2 class="text-lg font-bold text-white mt-0.5">अपनी परीक्षा चुनें</h2>
+            </div>
+            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">● लाइव एक्टिव</span>
+          </div>
+
+          <div class="space-y-3 mt-4">
+            <!-- 10th & 12th Board -->
+            <a href="test-series.html" onclick="window.location.href='test-series.html'" class="p-3.5 rounded-xl bg-slate-900/80 hover:bg-blue-900/20 border border-slate-800 hover:border-blue-500/40 flex items-center justify-between transition-all group cursor-pointer">
+              <div>
+                <div class="text-sm font-bold text-white group-hover:text-blue-400">10th व 12th बोर्ड (RBSE / CBSE)</div>
+                <div class="text-xs text-slate-400 mt-0.5">साइंस, कॉमर्स, आर्ट्स • NCERT मॉडल पेपर्स</div>
+              </div>
+              <span class="text-slate-500 group-hover:text-blue-400 transition-colors">→</span>
+            </a>
+
+            <!-- UPSC, SSC -->
+            <a href="test-series.html" onclick="window.location.href='test-series.html'" class="p-3.5 rounded-xl bg-slate-900/80 hover:bg-blue-900/20 border border-slate-800 hover:border-blue-500/40 flex items-center justify-between transition-all group cursor-pointer">
+              <div>
+                <div class="text-sm font-bold text-white group-hover:text-blue-400">UPSC, SSC, Railway व पुलिस</div>
+                <div class="text-xs text-slate-400 mt-0.5">जनरल स्टडीज, रीजनिंग, गणित, स्टेट GK</div>
+              </div>
+              <span class="text-slate-500 group-hover:text-blue-400 transition-colors">→</span>
+            </a>
+
+            <!-- NEET & JEE -->
+            <a href="test-series.html" onclick="window.location.href='test-series.html'" class="p-3.5 rounded-xl bg-slate-900/80 hover:bg-blue-900/20 border border-slate-800 hover:border-blue-500/40 flex items-center justify-between transition-all group cursor-pointer">
+              <div>
+                <div class="text-sm font-bold text-white group-hover:text-blue-400">NEET & JEE (IIT) स्पेशल</div>
+                <div class="text-xs text-slate-400 mt-0.5">भौतिकी, रसायन, जीवविज्ञान, गणित PYQs</div>
+              </div>
+              <span class="text-slate-500 group-hover:text-blue-400 transition-colors">→</span>
+            </a>
+
+            <!-- RS-CIT & Computer -->
+            <a href="test-series.html" onclick="window.location.href='test-series.html'" class="p-3.5 rounded-xl bg-slate-900/80 hover:bg-blue-900/20 border border-slate-800 hover:border-blue-500/40 flex items-center justify-between transition-all group cursor-pointer">
+              <div>
+                <div class="text-sm font-bold text-white group-hover:text-blue-400">RS-CIT, B.Tech CSE & Tally</div>
+                <div class="text-xs text-slate-400 mt-0.5">कंप्यूटर बेसिक्स, कोडिंग, एकाउंटिंग वाउचर</div>
+              </div>
+              <span class="text-slate-500 group-hover:text-blue-400 transition-colors">→</span>
+            </a>
+
+            <!-- College Degree -->
+            <a href="test-series.html" onclick="window.location.href='test-series.html'" class="p-3.5 rounded-xl bg-slate-900/80 hover:bg-blue-900/20 border border-slate-800 hover:border-blue-500/40 flex items-center justify-between transition-all group cursor-pointer">
+              <div>
+                <div class="text-sm font-bold text-white group-hover:text-blue-400">कॉलेज डिग्री (BA, B.Sc, B.Com, MA)</div>
+                <div class="text-xs text-slate-400 mt-0.5">विगत 20 वर्षों के हल प्रश्न-पत्र व यूनिट नोट्स</div>
+              </div>
+              <span class="text-slate-500 group-hover:text-blue-400 transition-colors">→</span>
+            </a>
+          </div>
+
+          <div class="mt-5 pt-4 border-t border-slate-800 text-center">
+            <a href="test-series.html" onclick="window.location.href='test-series.html'" class="w-full py-2.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-lg shadow-blue-600/20 cursor-pointer">
+              सभी विषय देखें और टेस्ट शुरू करें →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3-WAY VERIFIED 5-PAID REFERRAL GOLDEN BANNER -->
+  <section class="py-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-amber-950/40 via-slate-900 to-amber-950/40 border-b border-amber-500/20">
+    <div class="max-w-7xl mx-auto bg-gradient-to-b from-amber-500/10 to-transparent border border-amber-500/30 rounded-2xl p-6 sm:p-8 relative overflow-hidden">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+        
+        <div class="lg:col-span-8 space-y-3">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/20 text-amber-300 text-xs font-bold border border-amber-400/30">
+            🎁 महा-रिवॉर्ड योजना (100% मुफ़्त विस्तार)
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-black text-white">
+            5-सफल भुगतान रेफरल पर <span class="text-amber-400">+30 दिन (1 महीना) All-Access Pass 100% मुफ़्त!</span>
+          </h2>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            अपने साथी छात्रों को जोड़ें और EduPro का सम्पूर्ण कंटेंट हर महीने मुफ़्त में पढ़ते रहें। कोई गुप्त नियम नहीं, पारदर्शी व तुरंत सक्रियता:
           </p>
-<!-- Dual CTA Buttons -->
-<div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-<!-- Free 30 Questions CTA -->
-<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-extrabold px-7 py-3.5 rounded-xl shadow-xl shadow-amber-500/20 hover:scale-[1.02] transition" href="#test-series">
-<i class="w-5 h-5" data-lucide="play-circle"></i>
-<span class="">निःशुल्क 30 प्रश्न हल करें</span>
-<i class="w-4 h-4" data-lucide="arrow-right"></i>
-</a>
-<!-- 1 Month Pass CTA -->
-<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-slate-900 border border-brand-500/40 hover:border-brand-400 hover:bg-slate-800 text-white font-bold px-7 py-3.5 rounded-xl shadow-lg transition" href="#pricing-section">
-<i class="w-5 h-5 text-amber-400" data-lucide="lock-keyhole-open"></i>
-<span class="">₹199 (1 Month Pass)</span>
-</a>
-</div>
-<!-- Trust Badges Strip -->
-<div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-3 text-xs text-slate-400">
-<span class="inline-flex items-center gap-1.5 bg-slate-900/80 px-3 py-1.5 rounded-lg border border-slate-800">
-<i class="w-3.5 h-3.5 text-emerald-400" data-lucide="check"></i> 100% प्रामाणिक सिलेबस
-            </span>
-<span class="inline-flex items-center gap-1.5 bg-slate-900/80 px-3 py-1.5 rounded-lg border border-slate-800">
-<i class="w-3.5 h-3.5 text-blue-400" data-lucide="printer"></i> 1-क्लिक A4 प्रिंटेबल शीट्स
-            </span>
-<span class="inline-flex items-center gap-1.5 bg-slate-900/80 px-3 py-1.5 rounded-lg border border-slate-800">
-<i class="w-3.5 h-3.5 text-purple-400" data-lucide="users"></i> सामूहिक डिजिटल अध्ययन कक्ष
-            </span>
-</div>
-<!-- Real Metric Counters -->
-<div class="pt-4 border-t border-slate-800/80 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0">
-<div>
-<p class="text-2xl sm:text-3xl font-extrabold text-white">14,820+</p>
-<p class="text-xs text-slate-400">सॉल्व्ड प्रश्न व PYQ</p>
-</div>
-<div>
-<p class="text-2xl sm:text-3xl font-extrabold text-amber-400">520+</p>
-<p class="text-xs text-slate-400">देसी मेमोरी ट्रिक्स</p>
-</div>
-<div>
-<p class="text-2xl sm:text-3xl font-extrabold text-emerald-400">100%</p>
-<p class="text-xs text-slate-400">सत्यापित व प्रामाणिक</p>
-</div>
-</div>
-</div>
-<!-- Right Quick Interactive Test Drive Card -->
-<div class="lg:col-span-5" data-purpose="quick-exam-selector">
-<div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 sm:p-6 shadow-2xl relative overflow-hidden backdrop-blur-sm">
-<div class="absolute top-0 right-0 w-32 h-32 bg-brand-500/10 rounded-full blur-2xl pointer-events-none"></div>
-<div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-4">
-<div>
-<span class="text-xs font-semibold text-brand-400 flex items-center gap-1">
-<i class="w-3.5 h-3.5" data-lucide="sparkles"></i> क्विक टेस्ट ड्राइव
-                </span>
-<h3 class="text-lg font-bold text-white mt-0.5">अपनी परीक्षा चुनें</h3>
-</div>
-<span class="text-[11px] bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded-full font-medium flex items-center gap-1">
-<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> लाइव एक्टिव
-              </span>
-</div>
-<!-- Exam Options List -->
-<div class="space-y-2.5">
-<!-- RBSE / CBSE 10th & 12th Board -->
-<a class="group flex items-center justify-between p-3 rounded-xl bg-slate-950/70 border border-slate-800/90 hover:border-brand-500/60 hover:bg-slate-800/50 transition" href="#test-series">
-<div class="flex items-center gap-3">
-<div class="w-9 h-9 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 flex items-center justify-center">
-<i class="w-5 h-5" data-lucide="book-marked"></i>
-</div>
-<div>
-<h4 class="text-sm font-bold text-white group-hover:text-brand-400 transition">10th व 12th बोर्ड (RBSE / CBSE)</h4>
-<p class="text-[11px] text-slate-400">साइंस, कॉमर्स, आर्ट्स • NCERT मॉडल पेपर्स</p>
-</div>
-</div>
-<i class="w-4 h-4 text-slate-500 group-hover:text-brand-400 group-hover:translate-x-1 transition" data-lucide="chevron-right"></i>
-</a>
-<!-- UPSC, SSC, Railway -->
-<a class="group flex items-center justify-between p-3 rounded-xl bg-slate-950/70 border border-slate-800/90 hover:border-brand-500/60 hover:bg-slate-800/50 transition" href="#test-series">
-<div class="flex items-center gap-3">
-<div class="w-9 h-9 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center">
-<i class="w-5 h-5" data-lucide="award"></i>
-</div>
-<div>
-<h4 class="text-sm font-bold text-white group-hover:text-brand-400 transition">UPSC, SSC, Railway व पुलिस</h4>
-<p class="text-[11px] text-slate-400">जनरल स्टडीज, रीजनिंग, गणित, स्टेट GK</p>
-</div>
-</div>
-<i class="w-4 h-4 text-slate-500 group-hover:text-brand-400 group-hover:translate-x-1 transition" data-lucide="chevron-right"></i>
-</a>
-<!-- NEET & JEE (Main/Adv) -->
-<a class="group flex items-center justify-between p-3 rounded-xl bg-slate-950/70 border border-slate-800/90 hover:border-brand-500/60 hover:bg-slate-800/50 transition" href="#test-series">
-<div class="flex items-center gap-3">
-<div class="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center">
-<i class="w-5 h-5" data-lucide="atom"></i>
-</div>
-<div>
-<h4 class="text-sm font-bold text-white group-hover:text-brand-400 transition">NEET &amp; JEE (IIT) स्पेशल</h4>
-<p class="text-[11px] text-slate-400">भौतिकी, रसायन, जीवविज्ञान, गणित PYQs</p>
-</div>
-</div>
-<i class="w-4 h-4 text-slate-500 group-hover:text-brand-400 group-hover:translate-x-1 transition" data-lucide="chevron-right"></i>
-</a>
-<!-- RS-CIT & Tally Prime -->
-<a class="group flex items-center justify-between p-3 rounded-xl bg-slate-950/70 border border-slate-800/90 hover:border-brand-500/60 hover:bg-slate-800/50 transition" href="#test-series">
-<div class="flex items-center gap-3">
-<div class="w-9 h-9 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center">
-<i class="w-5 h-5" data-lucide="cpu"></i>
-</div>
-<div>
-<h4 class="text-sm font-bold text-white group-hover:text-brand-400 transition">RS-CIT, B.Tech CSE &amp; Tally</h4>
-<p class="text-[11px] text-slate-400">कंप्यूटर बेसिक, कोडिंग, अकाउंटिंग वाउचर</p>
-</div>
-</div>
-<i class="w-4 h-4 text-slate-500 group-hover:text-brand-400 group-hover:translate-x-1 transition" data-lucide="chevron-right"></i>
-</a>
-<!-- College Degrees -->
-<a class="group flex items-center justify-between p-3 rounded-xl bg-slate-950/70 border border-slate-800/90 hover:border-brand-500/60 hover:bg-slate-800/50 transition" href="#test-series">
-<div class="flex items-center gap-3">
-<div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center">
-<i class="w-5 h-5" data-lucide="graduation-cap"></i>
-</div>
-<div>
-<h4 class="text-sm font-bold text-white group-hover:text-brand-400 transition">कॉलेज डिग्री (BA, B.Sc, B.Com, MA)</h4>
-<p class="text-[11px] text-slate-400">विगत 20 वर्षों के हल प्रश्न-पत्र व यूनिट नोट्स</p>
-</div>
-</div>
-<i class="w-4 h-4 text-slate-500 group-hover:text-brand-400 group-hover:translate-x-1 transition" data-lucide="chevron-right"></i>
-</a>
-</div>
-<!-- Direct All Subjects Button -->
-<div class="mt-4 pt-3 border-t border-slate-800">
-<a class="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-sm transition" href="#test-series">
-<span class="">सभी विषय देखें और टेस्ट शुरू करें</span>
-<i class="w-4 h-4" data-lucide="arrow-right"></i>
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- END: HeroSection -->
-<!-- BEGIN: ViralReferralSection -->
-<section class="py-8 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 relative" data-purpose="viral-referral-banner" id="referral-section">
-<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<!-- Golden Highlight Card -->
-<div class="rounded-3xl bg-gradient-to-br from-amber-500/15 via-slate-900 to-amber-950/30 border-2 border-amber-500/40 p-6 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden">
-<div class="absolute -right-16 -top-16 w-60 h-60 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
-<div class="flex flex-col lg:flex-row items-center justify-between gap-8">
-<!-- Left Text & 3-Way Strict Rules -->
-<div class="space-y-4 max-w-3xl">
-<div class="inline-flex items-center gap-2 bg-amber-500 text-slate-950 font-black text-xs uppercase px-3 py-1 rounded-full shadow-sm">
-<i class="w-3.5 h-3.5" data-lucide="gift"></i>
-<span class="">महा-रिवॉर्ड प्रोग्राम (100% मुफ़्त विस्तार)</span>
-</div>
-<h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white leading-tight">
-              5-सफल भुगतान रेफरल पर <br class="hidden sm:inline"/>
-<span class="text-amber-400 underline decoration-amber-500/50 underline-offset-4">+30 दिन (1 महीना) All-Access Pass 100% मुफ़्त!</span>
-</h2>
-<p class="text-slate-300 text-sm sm:text-base">
-              अपने साथी छात्रों को जोड़ें और EduPro का सम्पूर्ण कंटेंट हर महीने मुफ़्त में पढ़ते रहें। कोई गुप्त नियम नहीं, पारदर्शी व तुरंत सक्रियता:
-            </p>
-<!-- 3 Strict Golden Conditions -->
-<div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
-<div class="bg-slate-950/80 border border-amber-500/30 rounded-xl p-3.5">
-<div class="flex items-center gap-2 mb-1.5">
-<span class="w-6 h-6 rounded-full bg-amber-500 text-slate-950 font-black text-xs flex items-center justify-center">1</span>
-<span class="text-xs font-bold text-amber-300">नियम 1</span>
-</div>
-<p class="text-xs text-slate-300">आपका स्वयं का <strong class="text-white">₹199 (1 Month Pass)</strong> एक्टिव होना अनिवार्य है।</p>
-</div>
-<div class="bg-slate-950/80 border border-amber-500/30 rounded-xl p-3.5">
-<div class="flex items-center gap-2 mb-1.5">
-<span class="w-6 h-6 rounded-full bg-amber-500 text-slate-950 font-black text-xs flex items-center justify-center">2</span>
-<span class="text-xs font-bold text-amber-300">नियम 2</span>
-</div>
-<p class="text-xs text-slate-300">अपने विशिष्ट रेफरल लिंक से <strong class="text-white">5 नए छात्रों</strong> को आमंत्रित करें।</p>
-</div>
-<div class="bg-slate-950/80 border border-amber-500/30 rounded-xl p-3.5">
-<div class="flex items-center gap-2 mb-1.5">
-<span class="w-6 h-6 rounded-full bg-amber-500 text-slate-950 font-black text-xs flex items-center justify-center">3</span>
-<span class="text-xs font-bold text-amber-300">नियम 3</span>
-</div>
-<p class="text-xs text-slate-300">पाँचों छात्रों द्वारा ₹199 पास एक्टिव करने पर आपकी वैधता में <strong class="text-emerald-400">+30 दिन स्वतः</strong> जुड़ेंगे।</p>
-</div>
-</div>
-</div>
-<!-- Right Share Action Card -->
-<div class="w-full lg:w-80 bg-slate-950/95 border border-slate-800 rounded-2xl p-5 shrink-0 shadow-lg text-center space-y-4">
-<div class="w-14 h-14 mx-auto bg-amber-500/20 text-amber-400 rounded-2xl flex items-center justify-center border border-amber-500/30">
-<i class="w-7 h-7" data-lucide="share-2"></i>
-</div>
-<div>
-<h3 class="font-bold text-white text-base">दोस्तों के साथ शेयर करें</h3>
-<p class="text-xs text-slate-400 mt-1">1-क्लिक में सोशल स्टडी ग्रुप्स पर शेयर करें</p>
-</div>
-<!-- WhatsApp Share Button -->
-<a class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition shadow-lg shadow-emerald-600/20" href="https://api.whatsapp.com/send?text=नमस्ते!%20मैं%20EduPro%20पोर्टल%20से%2020-वर्षीय%20PYQ%20और%20टेस्ट%20सीरीज़%20तैयारी%20कर%20रहा%20हूँ।%20तुम%20भी%2030-फ्री%20प्रश्नों%20का%20ट्रायल%20लो:%20https://edupro.in" rel="noopener noreferrer" target="_blank">
-<i class="w-4 h-4" data-lucide="message-circle"></i>
-<span class="">WhatsApp पर शेयर करें</span>
-</a>
-<!-- Telegram Share Button -->
-<a class="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-semibold text-xs transition" href="https://t.me/share/url?url=https://edupro.in&amp;text=EduPro%20-%2020-Year%20Solved%20Papers%20and%20Test%20Series" rel="noopener noreferrer" target="_blank">
-<i class="w-3.5 h-3.5" data-lucide="send"></i>
-<span class="">Telegram पर भेजें</span>
-</a>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- END: ViralReferralSection -->
-<!-- BEGIN: DigitalLibraryEnvironment -->
-<section class="py-16 bg-slate-900/60 border-y border-slate-800/80" data-purpose="smart-classroom-atmosphere">
-<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<!-- Section Header -->
-<div class="text-center max-w-3xl mx-auto mb-12">
-<span class="inline-flex items-center gap-1.5 bg-brand-500/10 border border-brand-500/30 text-brand-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-<i class="w-3.5 h-3.5" data-lucide="library"></i>
-<span class="">वास्तविक अध्ययन वातावरण</span>
-</span>
-<h2 class="text-2xl sm:text-4xl font-black text-white mt-3">स्मार्ट डिजिटल क्लासरूम व अध्ययन माहौल</h2>
-<p class="text-slate-400 text-sm sm:text-base mt-2">
+
+          <!-- 3 Strict Conditions -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+            <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+              <span class="text-xs font-bold text-amber-400 block mb-1">1. नियम 1</span>
+              <p class="text-xs text-slate-300">आपका स्वयं का <strong class="text-white">₹199 (1 Month Pass)</strong> एक्टिव होना अनिवार्य है।</p>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+              <span class="text-xs font-bold text-amber-400 block mb-1">2. नियम 2</span>
+              <p class="text-xs text-slate-300">अपने विशिष्ट रेफरल लिंक से <strong class="text-white">5 नए छात्रों</strong> को आमंत्रित करें।</p>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+              <span class="text-xs font-bold text-amber-400 block mb-1">3. नियम 3</span>
+              <p class="text-xs text-slate-300">पाँचों छात्रों द्वारा ₹199 पास एक्टिवेट करने पर आपकी वैधता में <strong class="text-emerald-400">+30 दिन स्वतः</strong> जुड़ेंगे।</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-4 flex flex-col items-center justify-center p-6 bg-slate-900/90 border border-slate-800 rounded-2xl text-center">
+          <div class="w-12 h-12 rounded-full bg-amber-400/20 text-amber-400 flex items-center justify-center text-2xl mb-3">
+            🔗
+          </div>
+          <div class="text-sm font-bold text-white mb-1">दोस्तों के साथ शेयर करें</div>
+          <div class="text-xs text-slate-400 mb-4">1-क्लिक में सोशल शेयरिंग करें</div>
+          <div class="w-full flex flex-col gap-2">
+            <button onclick="shareOnSocial('whatsapp')" class="w-full py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-colors cursor-pointer">
+              💬 WhatsApp पर शेयर करें
+            </button>
+            <button onclick="shareOnSocial('telegram')" class="w-full py-2.5 px-4 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs transition-colors cursor-pointer">
+              ✈️ Telegram पर भेजें
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SMART DIGITAL CLASSROOM & STUDY ENVIRONMENT -->
+  <section class="py-16 px-4 sm:px-6 lg:px-8 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto space-y-3 mb-12">
+        <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold border border-blue-500/20">
+          🏛️ वास्तविक अध्ययन वातावरण
+        </span>
+        <h2 class="text-3xl font-black text-white">स्मार्ट डिजिटल क्लासरूम व अध्ययन माहौल</h2>
+        <p class="text-slate-400 text-sm">
           अनुशासित, संगठित और प्रेरणादायी माहौल जहाँ देश भर के हजारों गंभीर छात्र अपनी परीक्षाओं के लिए 20-वर्षीय PYQs और टेस्ट हल करते हैं।
         </p>
-</div>
-<!-- Two Visual Concept Blocks -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-<!-- Environment Card 1: Virtual Study Hall -->
-<div class="bg-slate-950 border border-slate-800 rounded-2xl p-6 sm:p-8 hover:border-brand-500/40 transition">
-<div class="flex items-center justify-between mb-4">
-<span class="text-xs font-extrabold uppercase px-2.5 py-1 rounded bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 flex items-center gap-1">
-<i class="w-3.5 h-3.5" data-lucide="users-round"></i> Vidya डिजिटल स्टडी हॉल
-            </span>
-<span class="text-xs text-slate-400 flex items-center gap-1">
-<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> 1,420+ छात्र सक्रिय
-            </span>
-</div>
-<h3 class="text-xl font-bold text-white">सामूहिक अध्ययन, लाइब्रेरी शांति व केंद्रित तैयारी</h3>
-<p class="text-slate-400 text-sm mt-2 leading-relaxed">
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Card 1 -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-blue-400">📖 VIDYA डिजिटल स्टडी हॉल</span>
+            <span class="text-xs text-emerald-400 font-medium">● 1,420+ छात्र सक्रिय</span>
+          </div>
+          <h3 class="text-xl font-bold text-white">सामूहिक अध्ययन, लाइब्रेरी शांति व केंद्रित तैयारी</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
             बिना किसी भटकाव और फिजूल विज्ञापनों के छात्रों को मिलता है वास्तविक क्लासरूम और प्रतिष्ठित लाइब्रेरी जैसा शुद्ध शैक्षणिक परिवेश। साथी छात्रों के साथ मॉक टेस्ट हल करें और अपनी रैंक तुरंत देखें।
           </p>
-<div class="mt-6 pt-4 border-t border-slate-900 grid grid-cols-2 gap-3 text-xs">
-<div class="flex items-center gap-2 text-slate-300">
-<i class="w-4 h-4 text-emerald-400 shrink-0" data-lucide="check"></i>
-<span class="">द्विभाषी (हिंदी + English)</span>
-</div>
-<div class="flex items-center gap-2 text-slate-300">
-<i class="w-4 h-4 text-emerald-400 shrink-0" data-lucide="check"></i>
-<span class="">वास्तविक परीक्षा टाइमर</span>
-</div>
-<div class="flex items-center gap-2 text-slate-300">
-<i class="w-4 h-4 text-emerald-400 shrink-0" data-lucide="check"></i>
-<span class="">विषयवार रैंकिंग कांग्रेस</span>
-</div>
-<div class="flex items-center gap-2 text-slate-300">
-<i class="w-4 h-4 text-emerald-400 shrink-0" data-lucide="check"></i>
-<span class="">हैड-ग्रिन टेस्ट ट्रैकिंग</span>
-</div>
-</div>
-</div>
-<!-- Environment Card 2: Systematic Solutions Desk -->
-<div class="bg-slate-950 border border-slate-800 rounded-2xl p-6 sm:p-8 hover:border-amber-500/40 transition">
-<div class="flex items-center justify-between mb-4">
-<span class="text-xs font-extrabold uppercase px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 flex items-center gap-1">
-<i class="w-3.5 h-3.5" data-lucide="file-spreadsheet"></i> फ़ॉर्मूला + पेपर्स टेस्ट सॉल्व्हर
-            </span>
-<span class="text-xs text-amber-400 font-bold">
-              1-ऑन-1 फोकस
-            </span>
-</div>
-<h3 class="text-xl font-bold text-white">संगठित डेस्क, फ़ॉर्मूला शीट व चरणबद्ध समाधान</h3>
-<p class="text-slate-400 text-sm mt-2 leading-relaxed">
-            प्रत्येक प्रश्न के पीछे की संकल्पना (Concept), फ़ॉर्मूला शीट्स, और स्टेप-बाय-स्टेप गणना। जटिल से जटिल गणितीय और वैज्ञानिक प्रश्नों को सरलता से समझाने के लिए विशेष संरचित प्रारूप।
+          <div class="grid grid-cols-2 gap-2 pt-2 text-xs text-slate-400">
+            <div>✓ द्विभाषी (हिंदी + English)</div>
+            <div>✓ वास्तविक परीक्षा टाइमर</div>
+            <div>✓ विषयवार टॉपिक कवरेज</div>
+            <div>✓ हैंड-रिटन देसी ट्रिक्स</div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-amber-400">✍️ संगठित डेस्क व चरणबद्ध समाधान</span>
+            <span class="text-xs text-blue-400 font-medium">1-ऑन-1 फोकस</span>
+          </div>
+          <h3 class="text-xl font-bold text-white">संगठित डेस्क, फॉर्मूला शीट व चरणबद्ध समाधान</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            प्रत्येक प्रश्न के पीछे की संकल्पना (Concept), फॉर्मूला शीट्स, और स्टेप-बाय-स्टेप गणना। जटिल से जटिल गणितीय और वैज्ञानिक प्रश्नों को सरलता से समझने के लिए विशेष संरचित प्रारूप।
           </p>
-<div class="mt-6 pt-4 border-t border-slate-900 grid grid-cols-2 gap-3 text-xs">
-<div class="flex items-center gap-2 text-slate-300">
-<i class="w-4 h-4 text-amber-400 shrink-0" data-lucide="check"></i>
-<span class="">A4 साइज प्रिंटेबल शीट्स</span>
-</div>
-<div class="flex items-center gap-2 text-slate-300">
-<i class="w-4 h-4 text-amber-400 shrink-0" data-lucide="check"></i>
-<span class="">100-प्रश्न पेनेंट विश्लेषण</span>
-</div>
-<div class="flex items-center gap-2 text-slate-300">
-<i class="w-4 h-4 text-amber-400 shrink-0" data-lucide="check"></i>
-<span class="">नेगेटिव मार्किंग ट्रैकर</span>
-</div>
-<div class="flex items-center gap-2 text-slate-300">
-<i class="w-4 h-4 text-amber-400 shrink-0" data-lucide="check"></i>
-<span class="">व्यक्तिगत प्रगति रिपोर्ट</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- END: DigitalLibraryEnvironment -->
-<!-- BEGIN: DailyRecommendedStudySchedule -->
-<section class="py-16 bg-slate-950" data-purpose="4-stage-routine" id="study-schedule">
-<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="bg-gradient-to-br from-slate-900 via-brand-950/40 to-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-xl">
-<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
-<div>
-<span class="text-xs font-bold text-brand-400 uppercase tracking-widest flex items-center gap-1.5">
-<i class="w-4 h-4" data-lucide="calendar"></i> दैनिक अध्ययन दिनचर्या (Recommended Schedule)
-            </span>
-<h2 class="text-2xl sm:text-3xl font-black text-white mt-1">सफल टॉपर्स की अनुशंसित 4-स्टेज दैनिक पढ़ाई योजना</h2>
-</div>
-<div class="flex items-center gap-3">
-<span class="text-xs bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300">
-              ⏱ कुल अध्ययन: 6-8 घंटे
-            </span>
-<span class="text-xs bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-3 py-1.5 rounded-lg font-bold">
-              100% परिणामोन्मुखी
-            </span>
-</div>
-</div>
-<!-- 4 Stages Grid -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-<!-- Stage 1 -->
-<div class="bg-slate-950/80 border border-slate-800 rounded-2xl p-5 hover:border-brand-500/50 transition">
-<div class="flex items-center justify-between text-xs text-brand-400 font-bold mb-3">
-<span class="">प्रातः 06:00 - 08:30</span>
-<span class="bg-brand-500/20 text-brand-300 px-2 py-0.5 rounded text-[10px]">सत्र 1</span>
-</div>
-<h3 class="text-base font-bold text-white">दैनिक GK, करंट अफेयर्स व स्टेट बुलेटिन</h3>
-<p class="text-xs text-slate-400 mt-2 leading-relaxed">
+          <div class="grid grid-cols-2 gap-2 pt-2 text-xs text-slate-400">
+            <div>✓ A4 साइज डिजिटल शीट्स</div>
+            <div>✓ 100-प्रश्न पैलेट सिस्टम</div>
+            <div>✓ नेगेटिव मार्किंग ट्रैकर</div>
+            <div>✓ व्यक्तिगत प्रगति रिपोर्ट</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECOMMENDED 4-STAGE TOPPER STUDY ROUTINE -->
+  <section class="py-16 px-4 sm:px-6 lg:px-8 border-b border-slate-800 bg-slate-950">
+    <div class="max-w-7xl mx-auto">
+      <div class="bg-gradient-to-r from-slate-900 to-slate-900/60 border border-slate-800 rounded-2xl p-6 sm:p-8">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+          <div>
+            <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">📅 दैनिक अध्ययन दिनचर्या (RECOMMENDED SCHEDULE)</span>
+            <h2 class="text-2xl font-black text-white mt-1">सफल टॉपर्स की अनुशंसित 4-स्टेज दैनिक पढ़ाई योजना</h2>
+          </div>
+          <div class="flex items-center gap-3 text-xs font-semibold">
+            <span class="px-3 py-1 rounded-full bg-slate-800 text-slate-300">कुल अध्ययन: 6-8 घंटे</span>
+            <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">100% परिणामोन्मुखी</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-6">
+          <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+            <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+              <span>प्रातः 06:00 - 08:30</span>
+              <span class="px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-400 font-bold">सत्र 1</span>
+            </div>
+            <h3 class="font-bold text-white text-sm">दैनिक GK, करंट अफेयर्स व स्टेट बुलेटिन</h3>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
               राजस्थान, UP, बिहार, MP राष्ट्रीय व अंतर्राष्ट्रीय करंट अफेयर्स और दैनिक 20 मॉक प्रश्न।
             </p>
-</div>
-<!-- Stage 2 -->
-<div class="bg-slate-950/80 border border-slate-800 rounded-2xl p-5 hover:border-amber-500/50 transition">
-<div class="flex items-center justify-between text-xs text-amber-400 font-bold mb-3">
-<span class="">पूर्वाह्न 10:00 - 01:00</span>
-<span class="bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded text-[10px]">सत्र 2</span>
-</div>
-<h3 class="text-base font-bold text-white">20-Year PYQ गहन विश्लेषण</h3>
-<p class="text-xs text-slate-400 mt-2 leading-relaxed">
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+            <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+              <span>पूर्वाह्न 10:00 - 01:00</span>
+              <span class="px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-400 font-bold">सत्र 2</span>
+            </div>
+            <h3 class="font-bold text-white text-sm">20-Year PYQ गहन विश्लेषण</h3>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
               10th/12th बोर्ड, कॉलेज डिग्री व प्रतियोगी परीक्षाओं के विगत वर्षों के हल प्रश्न पत्र।
             </p>
-</div>
-<!-- Stage 3 -->
-<div class="bg-slate-950/80 border border-slate-800 rounded-2xl p-5 hover:border-purple-500/50 transition">
-<div class="flex items-center justify-between text-xs text-purple-400 font-bold mb-3">
-<span class="">अपराह्न 03:00 - 05:00</span>
-<span class="bg-purple-500/20 text-purple-300 px-2 py-0.5 rounded text-[10px]">सत्र 3</span>
-</div>
-<h3 class="text-base font-bold text-white">देसी ट्रिक्स, फ़ॉर्मूले व थ्योरी रीकैप</h3>
-<p class="text-xs text-slate-400 mt-2 leading-relaxed">
-              BAAJSA मुगल कालक्रम, NEET टैक्सोनॉमी, RS-CIT शॉर्टकट और Tally Prime के नियम।
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+            <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+              <span>अपराह्न 03:00 - 05:00</span>
+              <span class="px-1.5 py-0.5 rounded bg-indigo-500/20 text-indigo-400 font-bold">सत्र 3</span>
+            </div>
+            <h3 class="font-bold text-white text-sm">देसी ट्रिक्स, फॉर्मूले व थ्योरी रीकैप</h3>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+              BAAJSA मुग़ल कालक्रम, NEET टैक्सोनॉमी, RS-CIT शॉर्टकट और Tally Prime के नियम।
             </p>
-</div>
-<!-- Stage 4 -->
-<div class="bg-slate-950/80 border border-slate-800 rounded-2xl p-5 hover:border-emerald-500/50 transition">
-<div class="flex items-center justify-between text-xs text-emerald-400 font-bold mb-3">
-<span class="">सायं 07:30 - 09:30</span>
-<span class="bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded text-[10px]">सत्र 4</span>
-</div>
-<h3 class="text-base font-bold text-white">फुल लेंथ लाइव टेस्ट व टाइमर अभ्यास</h3>
-<p class="text-xs text-slate-400 mt-2 leading-relaxed">
-              60-मिनट लाइव काउंटडाउन, 100-प्रश्न पेलेट और तुरंत विस्तृत स्कोरकार्ड समीक्षा।
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800">
+            <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+              <span>सायं 07:30 - 09:30</span>
+              <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold">सत्र 4</span>
+            </div>
+            <h3 class="font-bold text-white text-sm">फुल लेंथ लाइव टेस्ट व टाइमर अभ्यास</h3>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+              60-मिनट लाइव काउंटडाउन, 100-प्रश्न पैलेट और तुरंत विस्तृत स्कोरकार्ड समीक्षा।
             </p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- END: DailyRecommendedStudySchedule -->
-<!-- BEGIN: ComprehensiveCourseSection -->
-<section class="py-16 bg-slate-900/40 border-b border-slate-800/80" data-purpose="course-faculties" id="board-section">
-<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center max-w-3xl mx-auto mb-12">
-<span class="text-xs font-extrabold uppercase px-3 py-1 rounded bg-brand-500/20 text-brand-300 border border-brand-500/30">
-          प्रमाणित शैक्षणिक संकाय एवं परीक्षा वर्ग
-        </span>
-<h2 class="text-2xl sm:text-4xl font-black text-white mt-3">प्रत्येक संकाय में विगत 20 वर्षों के प्रश्न-पत्र, मॉडल टेस्ट और प्रामाणिक व्याख्या</h2>
-</div>
-<!-- Categories Grid -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-<!-- Board 10th & 12th Card -->
-<div class="bg-slate-950 border border-slate-800 hover:border-red-500/50 rounded-2xl p-6 transition duration-200">
-<div class="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 flex items-center justify-center mb-4">
-<i class="w-6 h-6" data-lucide="book-open-check"></i>
-</div>
-<h3 class="text-lg font-bold text-white">10th व 12th बोर्ड (RBSE / CBSE)</h3>
-<p class="text-xs text-slate-400 mt-2 leading-relaxed">
-            साइंस (PCM/PCB), कॉमर्स एवं आर्ट्स वर्ग के NCERT आधारित महत्वपूर्ण प्रश्न, ब्लूप्रिंट और 20-वर्षीय हल प्रश्न पत्र।
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALL STREAMS & COURSES EXPANDED GRID -->
+  <section class="py-16 px-4 sm:px-6 lg:px-8 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto space-y-2 mb-12">
+        <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">प्रमाणित शैक्षणिक संकाय एवं परीक्षा वर्ग</span>
+        <h2 class="text-3xl font-black text-white">प्रत्येक संकाय में विगत 20 वर्षों के प्रश्न-पत्र, मॉडल टेस्ट और प्रामाणिक व्याख्या</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- 10th & 12th Board -->
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-blue-500/40 transition-colors">
+          <div class="w-10 h-10 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center text-xl mb-4">🎒</div>
+          <h3 class="text-lg font-bold text-white">10th व 12th बोर्ड (RBSE / CBSE)</h3>
+          <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+            साइंस (PCM/PCB), कॉमर्स एवं आर्ट्स वर्ग के NCERT आधारित महत्वपूर्ण प्रश्न, ब्लूप्रिंट और 20-वर्षीय हल प्रश्न-पत्र।
           </p>
-<div class="mt-4 pt-3 border-t border-slate-900 flex items-center justify-between text-xs font-semibold text-red-400">
-<span class="">NCERT ब्लूप्रिंट + मॉडल पेपर्स</span>
-<i class="w-4 h-4" data-lucide="arrow-right"></i>
-</div>
-</div>
-<!-- UPSC & State PSC Card -->
-<div class="bg-slate-950 border border-slate-800 hover:border-blue-500/50 rounded-2xl p-6 transition duration-200">
-<div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center mb-4">
-<i class="w-6 h-6" data-lucide="shield"></i>
-</div>
-<h3 class="text-lg font-bold text-white">UPSC, SSC &amp; State PSC</h3>
-<p class="text-xs text-slate-400 mt-2 leading-relaxed">
-            GS Paper I &amp; II, CSAT, आधुनिक भारत, भूगोल, राजव्यवस्था और समसामयिकी के 2004 से 2025 तक के विश्लेषित पेपर्स।
+          <a href="test-series.html" onclick="window.location.href='test-series.html'" class="inline-flex items-center gap-1 text-xs font-semibold text-rose-400 hover:text-rose-300 mt-4 cursor-pointer">
+            NCERT ब्लूप्रिंट + मॉडल पेपर्स →
+          </a>
+        </div>
+
+        <!-- UPSC & PSC -->
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-blue-500/40 transition-colors">
+          <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-xl mb-4">🛡️</div>
+          <h3 class="text-lg font-bold text-white">UPSC, SSC & State PSC</h3>
+          <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+            GS Paper I & II, CSAT, आधुनिक भारत, भूगोल, राजव्यवस्था और समसामयिकी के 2004 से 2025 तक के विश्लेषित पेपर्स।
           </p>
-<div class="mt-4 pt-3 border-t border-slate-900 flex items-center justify-between text-xs font-semibold text-blue-400">
-<span class="">GS, CSAT व 20-Yr PYQ</span>
-<i class="w-4 h-4" data-lucide="arrow-right"></i>
-</div>
-</div>
-<!-- NEET (Medical) Card -->
-<div class="bg-slate-950 border border-slate-800 hover:border-emerald-500/50 rounded-2xl p-6 transition duration-200">
-<div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mb-4">
-<i class="w-6 h-6" data-lucide="dna"></i>
-</div>
-<h3 class="text-lg font-bold text-white">NEET (UG Medical)</h3>
-<p class="text-xs text-slate-400 mt-2 leading-relaxed">
+          <a href="test-series.html" onclick="window.location.href='test-series.html'" class="inline-flex items-center gap-1 text-xs font-semibold text-blue-400 hover:text-blue-300 mt-4 cursor-pointer">
+            GS, CSAT व 20-Yr PYQ →
+          </a>
+        </div>
+
+        <!-- NEET -->
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-blue-500/40 transition-colors">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl mb-4">🩺</div>
+          <h3 class="text-lg font-bold text-white">NEET (UG Medical)</h3>
+          <p class="text-xs text-slate-400 mt-2 leading-relaxed">
             NCERT बायोलॉजी लाइन-टू-लाइन, बॉटनी, जूलॉजी, ऑर्गेनिक केमिस्ट्री रिएक्शन मैकेनिज्म और फिजिक्स न्यूमेरिकल्स।
           </p>
-<div class="mt-4 pt-3 border-t border-slate-900 flex items-center justify-between text-xs font-semibold text-emerald-400">
-<span class="">PCB फॉर्मूले व ट्रिक्स</span>
-<i class="w-4 h-4" data-lucide="arrow-right"></i>
-</div>
-</div>
-<!-- JEE (Main & Advanced) -->
-<div class="bg-slate-950 border border-slate-800 hover:border-indigo-500/50 rounded-2xl p-6 transition duration-200">
-<div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center mb-4">
-<i class="w-6 h-6" data-lucide="calculator"></i>
-</div>
-<h3 class="text-lg font-bold text-white">JEE (IIT - Main / Advanced)</h3>
-<p class="text-xs text-slate-400 mt-2 leading-relaxed">
-            कैलकुलस, मैकेनिक्स, कोऑर्डिनेट ज्योमेट्री, फिजिकल केमिस्ट्री और स्टेप-बाय-स्टेप गणना शीट्स।
+          <a href="test-series.html" onclick="window.location.href='test-series.html'" class="inline-flex items-center gap-1 text-xs font-semibold text-emerald-400 hover:text-emerald-300 mt-4 cursor-pointer">
+            PCB फॉर्मूले व ट्रिक्स →
+          </a>
+        </div>
+
+        <!-- JEE -->
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-blue-500/40 transition-colors">
+          <div class="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xl mb-4">📐</div>
+          <h3 class="text-lg font-bold text-white">JEE (IIT - Main / Advanced)</h3>
+          <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+            कैलकुलस, मैकेनिक्स, कोऑर्डिनेट ज्योमेट्री, फिजिकल केमिस्ट्री और स्टेप-बाय-स्टेप गणना चार्ट्स।
           </p>
-<div class="mt-4 pt-3 border-t border-slate-900 flex items-center justify-between text-xs font-semibold text-indigo-400">
-<span class="">PCM स्टेप-वाइज हल</span>
-<i class="w-4 h-4" data-lucide="arrow-right"></i>
-</div>
-</div>
-<!-- Computer & Professional: RS-CIT & Tally -->
-<div class="bg-slate-950 border border-slate-800 hover:border-purple-500/50 rounded-2xl p-6 transition duration-200">
-<div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center mb-4">
-<i class="w-6 h-6" data-lucide="monitor"></i>
-</div>
-<h3 class="text-lg font-bold text-white">RS-CIT कंप्यूटर व Tally Prime</h3>
-<p class="text-xs text-slate-400 mt-2 leading-relaxed">
-            MS Office, Windows 11 शॉर्टकट्स, इंटरनेट सुरक्षा, Tally GST चालान, लेजर और बैलेंस शीट क्रिएशन।
+          <a href="test-series.html" onclick="window.location.href='test-series.html'" class="inline-flex items-center gap-1 text-xs font-semibold text-indigo-400 hover:text-indigo-300 mt-4 cursor-pointer">
+            PCM स्टेप-वाइज़ हल →
+          </a>
+        </div>
+
+        <!-- RS-CIT & Tally -->
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-blue-500/40 transition-colors">
+          <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl mb-4">💻</div>
+          <h3 class="text-lg font-bold text-white">RS-CIT कंप्यूटर व Tally Prime</h3>
+          <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+            MS Office, Windows 11 शॉर्टकट, इंटरनेट सुरक्षा, Tally GST वाउचर, लेजर और बैलेंस शीट नियम।
           </p>
-<div class="mt-4 pt-3 border-t border-slate-900 flex items-center justify-between text-xs font-semibold text-purple-400">
-<span class="">शॉर्टकट कीज + GST वाउचर</span>
-<i class="w-4 h-4" data-lucide="arrow-right"></i>
-</div>
-</div>
-<!-- College Degrees: BA, BSc, BCom, BTech, MCA -->
-<div class="bg-slate-950 border border-slate-800 hover:border-amber-500/50 rounded-2xl p-6 transition duration-200">
-<div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-4">
-<i class="w-6 h-6" data-lucide="scroll"></i>
-</div>
-<h3 class="text-lg font-bold text-white">कॉलेज डिग्री (BA, B.Sc, B.Com, B.Tech)</h3>
-<p class="text-xs text-slate-400 mt-2 leading-relaxed">
+          <a href="test-series.html" onclick="window.location.href='test-series.html'" class="inline-flex items-center gap-1 text-xs font-semibold text-purple-400 hover:text-purple-300 mt-4 cursor-pointer">
+            शॉर्टकट शीट्स + GST वाउचर →
+          </a>
+        </div>
+
+        <!-- College Degrees -->
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-blue-500/40 transition-colors">
+          <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl mb-4">🎓</div>
+          <h3 class="text-lg font-bold text-white">कॉलेज डिग्री (BA, B.Sc, B.Com, MA)</h3>
+          <p class="text-xs text-slate-400 mt-2 leading-relaxed">
             28+ विश्वविद्यालयों के वार्षिक व सेमेस्टर पेपर्स, वन-वीक सीरीज सारांश, कंप्यूटर साइंस DSA और कोडिंग बेसिक्स।
           </p>
-<div class="mt-4 pt-3 border-t border-slate-900 flex items-center justify-between text-xs font-semibold text-amber-400">
-<span class="">विगत 20 वर्षों के हल पेपर्स</span>
-<i class="w-4 h-4" data-lucide="arrow-right"></i>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- END: ComprehensiveCourseSection -->
-<!-- BEGIN: ValuePropositionFeatures -->
-<section class="py-16 bg-slate-950" data-purpose="core-features-grid">
-<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center max-w-3xl mx-auto mb-14">
-<span class="text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/30">
-          मुख्य विशेषताएं व शैक्षणिक आधार
-        </span>
-<h2 class="text-3xl sm:text-4xl font-black text-white mt-3">हर छात्र की पहली पसंद क्यों है EduPro?</h2>
-<p class="text-slate-400 text-sm mt-2">महंगी फीस और भटकाव से मुक्ति। छात्र को वही मिले जो परीक्षा में सीधे अंक दिलाए।</p>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-<!-- Feature 1 -->
-<div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition">
-<div class="w-10 h-10 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center mb-4">
-<i class="w-5 h-5" data-lucide="history"></i>
-</div>
-<h3 class="text-base font-bold text-white">20-वर्षीय सॉल्व्ड PYQ आर्काइव</h3>
-<p class="text-xs text-slate-400 mt-2 leading-relaxed">
-            2004 से 2025 तक सभी यूनिवर्सिटी डिग्री (B.A, B.Sc, B.Tech, M.A) और प्रतियोगी परीक्षाओं के विस्तृत द्विभाषी हल।
+          <a href="test-series.html" onclick="window.location.href='test-series.html'" class="inline-flex items-center gap-1 text-xs font-semibold text-amber-400 hover:text-amber-300 mt-4 cursor-pointer">
+            विगत 20 वर्षों के हल पेपर्स →
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 MASTER PILLARS OF EDUPRO -->
+  <section class="py-16 px-4 sm:px-6 lg:px-8 border-b border-slate-800 bg-slate-950">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto space-y-2 mb-12">
+        <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">मुख्य विशेषताएं व शैक्षणिक आधार</span>
+        <h2 class="text-3xl font-black text-white">हर छात्र की पहली पसंद क्यों है EduPro?</h2>
+        <p class="text-xs sm:text-sm text-slate-400">महंगी फीस और भटकाव से मुक्ति। छात्र को वही मिले जो परीक्षा में सीधे अंक दिलाए।</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800">
+          <div class="text-2xl mb-3">📁</div>
+          <h3 class="font-bold text-white mb-2">20-वर्षीय सॉल्व्ड PYQ आर्काइव</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">2004 से 2025 तक सभी यूनिवर्सिटी डिग्री (B.A, B.Sc, B.Tech, M.A) और प्रतियोगी परीक्षाओं के विस्तृत द्विभाषी हल।</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800">
+          <div class="text-2xl mb-3">💡</div>
+          <h3 class="font-bold text-white mb-2">देसी मेमोरी ट्रिक्स वॉल्ट</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">रटने का झंझट खत्म! BAAJSA मुग़ल कालक्रम, P-R-O-M-H रिट्स, NEET टैक्सोनॉमी और Tally के 100% शॉर्टकट।</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800">
+          <div class="text-2xl mb-3">⏱️</div>
+          <h3 class="font-bold text-white mb-2">लाइव परीक्षा इंजन व टाइमर</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">60-मिनट लाइव काउंटडाउन, MCQ व थ्योरी विस्तृत उत्तर टॉगल, 100-प्रश्न पैलेट और तुरंत स्कोरकार्ड विश्लेषण।</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800">
+          <div class="text-2xl mb-3">🗺️</div>
+          <h3 class="font-bold text-white mb-2">राज्यवार सामान्य ज्ञान (State GK)</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">राजस्थान, UP, बिहार, MP सहित 28 राज्यों का विशेष इतिहास, भूगोल, कला-संस्कृति और दैनिक करंट अफेयर्स बुलेटिन।</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800">
+          <div class="text-2xl mb-3">🖨️</div>
+          <h3 class="font-bold text-white mb-2">1-क्लिक A4 PDF प्रिंट इंजन</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">₹199 पास धारकों के लिए साफ़-सुथरे डिजिटल नोट्स। डायनामिक सुरक्षा वॉटरमार्क के साथ सुरक्षित अध्ययन सामग्री।</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800">
+          <div class="text-2xl mb-3">🛡️</div>
+          <h3 class="font-bold text-white mb-2">₹0 SMS लागत व सुरक्षित लॉगिन</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">छात्र का पासवर्ड और 4-अंक सीक्रेट पिन मॉडल। बिना किसी बार-बार के SMS खर्च के तुरंत खाता व पासवर्ड रीसेट।</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ₹199 1-MONTH ALL-ACCESS PRICING CARD -->
+  <section class="py-16 px-4 sm:px-6 lg:px-8 border-b border-slate-800 bg-gradient-to-b from-slate-950 to-blue-950/20">
+    <div class="max-w-3xl mx-auto text-center space-y-6 bg-gradient-to-b from-slate-900 to-slate-950 border border-blue-500/30 rounded-3xl p-8 sm:p-12 shadow-2xl relative">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-bold border border-blue-500/30">
+        ⚡ 1 MONTH (30 DAYS) ALL-ACCESS PASS
+      </div>
+
+      <h2 class="text-3xl sm:text-4xl font-black text-white leading-tight">
+        मात्र ₹199 में सम्पूर्ण प्लेटफ़ॉर्म अनलॉक<br>
+        <span class="text-blue-400 text-2xl sm:text-3xl">(1 Month Pass)</span>
+      </h2>
+
+      <p class="text-sm text-slate-300 max-w-xl mx-auto leading-relaxed">
+        असीमित टेस्ट सीरीज़, 20-वर्षीय सॉल्व्ड PYQ, स्टेट GK, और 1-क्लिक A4 PDF प्रिंट। यदि आप अपने रेफरल कोड से 5 छात्रों का सफल ₹199 पास एक्टिवेट करवाते हैं, तो आपकी सदस्यता में 30 अतिरिक्त दिन बिना किसी अतिरिक्त शुल्क के स्वतः जुड़ जाते हैं।
+      </p>
+
+      <div class="py-4">
+        <span class="text-xs uppercase tracking-widest text-slate-400 block mb-1">एक महीने (1 Month) की पूर्ण सदस्यता</span>
+        <div class="text-5xl sm:text-6xl font-black text-amber-400">
+          ₹199 <span class="text-base text-slate-400 font-semibold">/ 30 दिन</span>
+        </div>
+        <div class="text-xs text-emerald-400 font-semibold mt-2">शून्य छिपा शुल्क • कोई ऑटो-डेबिट नहीं</div>
+      </div>
+
+      <div class="pt-2">
+        <a href="payment.html" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black text-base shadow-xl shadow-amber-500/20 transition-all hover:scale-102">
+          अभी पास लें →
+        </a>
+      </div>
+      <div class="text-[11px] text-slate-500">🔒 सीधे PhonePe / BharatQR द्वारा त्वरित सक्रियण</div>
+    </div>
+  </section>
+
+  <!-- COMPREHENSIVE FOOTER WITH STATUTORY DISCLAIMER & DIGITAL NO-REFUND POLICY -->
+  <footer class="bg-slate-950 text-slate-400 text-xs pt-12 pb-8 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      
+      <!-- Upper Footer Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-slate-800">
+        
+        <!-- Brand Info -->
+        <div class="space-y-3 md:col-span-1">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center font-bold text-white text-base">EP</div>
+            <span class="text-lg font-bold text-white">Edu<span class="text-blue-400">Pro</span></span>
+          </div>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            भारत का निष्पक्ष व छात्र-हितैषी शिक्षा पोर्टल। गुणवत्तापूर्ण शिक्षा हर गांव और शहर के छात्र तक न्यूनतम लागत में पहुँचाना हमारा संकल्प है।
           </p>
-</div>
-<!-- Feature 2 -->
-<div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition">
-<div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center mb-4">
-<i class="w-5 h-5" data-lucide="lightbulb"></i>
-</div>
-<h3 class="text-base font-bold text-white">देसी मेमोरी ट्रिक्स वॉल्ट</h3>
-<p class="text-xs text-slate-400 mt-2 leading-relaxed">
-            रटने का झंझट खत्म! BAAJSA मुग़ल कालक्रम, P-R-O-M-H ट्रिक्स, NEET टैक्सोनॉमी और Tally के गोल्डन रूल्स के 100% शॉर्टकट।
-          </p>
-</div>
-<!-- Feature 3 -->
-<div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition">
-<div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-4">
-<i class="w-5 h-5" data-lucide="timer"></i>
-</div>
-<h3 class="text-base font-bold text-white">लाइव परीक्षा इंजन व टाइमर</h3>
-<p class="text-xs text-slate-400 mt-2 leading-relaxed">
-            60-मिनट लाइव काउंटडाउन, MCQ व थ्योरी विस्तृत उत्तर टॉगल, 100-प्रश्न पैलेट और तुरंत स्कोरकार्ड विश्लेषण।
-          </p>
-</div>
-<!-- Feature 4 -->
-<div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition">
-<div class="w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-4">
-<i class="w-5 h-5" data-lucide="map-pin"></i>
-</div>
-<h3 class="text-base font-bold text-white">राज्यवार सामान्य ज्ञान (State GK)</h3>
-<p class="text-xs text-slate-400 mt-2 leading-relaxed">
-            राजस्थान, UP, बिहार, MP सहित 28 राज्यों का विशेष इतिहास, भूगोल, कला-संस्कृति और दैनिक करंट अफेयर्स बुलेटिन।
-          </p>
-</div>
-<!-- Feature 5 -->
-<div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition">
-<div class="w-10 h-10 rounded-lg bg-rose-500/10 text-rose-400 flex items-center justify-center mb-4">
-<i class="w-5 h-5" data-lucide="printer"></i>
-</div>
-<h3 class="text-base font-bold text-white">1-क्लिक A4 PDF प्रिंट इंजन</h3>
-<p class="text-xs text-slate-400 mt-2 leading-relaxed">
-            ₹199 पास धारकों के लिए साफ़-सुथरे प्रिंटेबल नोट्स। डायनामिक सुरक्षा वॉटरमार्क के साथ सुरक्षित अध्ययन सामग्री।
-          </p>
-</div>
-<!-- Feature 6 -->
-<div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition">
-<div class="w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-4">
-<i class="w-5 h-5" data-lucide="shield-check"></i>
-</div>
-<h3 class="text-base font-bold text-white">₹0 SMS लागत व सुरक्षित लॉगिन</h3>
-<p class="text-xs text-slate-400 mt-2 leading-relaxed">
-            छात्र का पासवर्ड और 4-अंक सीक्रेट पिन मॉडल। बिना किसी बार-बार के SMS खर्च के तुरंत खाता व पासवर्ड रीसेट।
-          </p>
-</div>
-</div>
-</div>
-</section>
-<!-- END: ValuePropositionFeatures -->
-<!-- BEGIN: MasterPricingSection -->
-<section class="py-16 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 relative" data-purpose="pricing-card" id="pricing-section">
-<div class="w-full max-w-4xl mx-auto px-4 sm:px-6">
-<div class="bg-gradient-to-br from-brand-950 via-slate-900 to-slate-950 border-2 border-brand-500/50 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden text-center">
-<!-- Floating Corner Ribbon -->
-<div class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-amber-500 text-slate-950 font-black text-xs uppercase mb-6 shadow-md">
-<i class="w-4 h-4" data-lucide="crown"></i>
-<span class="">1 MONTH (30 DAYS) ALL-ACCESS PASS</span>
-</div>
-<h2 class="text-3xl sm:text-5xl font-black text-white leading-tight">
-          मात्र ₹199 में सम्पूर्ण प्लेटफ़ॉर्म अनलॉक <br class="hidden sm:inline"/>
-<span class="text-brand-400">(1 Month Pass)</span>
-</h2>
-<p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mt-4">
-          असीमित टेस्ट सीरीज़, 20-वर्षीय सॉल्व्ड PYQ, स्टेट GK, और 1-क्लिक A4 PDF प्रिंट। यदि आप अपने रेफरल कोड से 5 छात्रों का सफल ₹199 पास एक्टिवेट करवाते हैं, तो आपकी सदस्यता में 30 अतिरिक्त दिन बिना किसी अतिरिक्त शुल्क के स्वतः जुड़ जाते हैं।
-        </p>
-<!-- Pricing Badge Display -->
-<div class="my-8 py-5 border-y border-slate-800/80 flex flex-col items-center justify-center">
-<span class="text-xs font-bold text-slate-400 uppercase tracking-widest">एक महीने (1 Month) की पूर्ण सदस्यता</span>
-<div class="text-5xl sm:text-6xl font-black text-amber-400 mt-2 flex items-center justify-center gap-1">
-<span class="">₹199</span>
-<span class="text-xs text-slate-400 font-normal">/ 30 दिन</span>
-</div>
-<p class="text-xs text-emerald-400 mt-1">शून्य छिपे शुल्क • कोई ऑटो-डेबिट नहीं</p>
-</div>
-<!-- Checkout Action Button -->
-<div class="max-w-md mx-auto space-y-3">
-<a class="w-full flex items-center justify-center gap-2 py-4 px-8 rounded-2xl bg-gradient-to-r from-amber-500 via-amber-600 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-slate-950 font-black text-lg shadow-xl shadow-amber-500/25 hover:scale-[1.02] transition" href="#payment-gateway">
-<span class="">अभी पास लें</span>
-<i class="w-5 h-5" data-lucide="arrow-right"></i>
-</a>
-<p class="text-[11px] text-slate-400 flex items-center justify-center gap-2">
-<i class="w-3.5 h-3.5 text-slate-500" data-lucide="lock"></i>
-<span class="">सीधे PhonePe / BharatQR द्वारा त्वरित सक्रियण</span>
-</p>
-</div>
-</div>
-</div>
-</section>
-<!-- END: MasterPricingSection -->
-<!-- BEGIN: MainFooter -->
-<footer class="bg-slate-950 border-t border-slate-800 text-slate-400 text-xs pt-14 pb-8" data-purpose="site-footer">
-<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-<!-- Top Columns -->
-<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-<!-- Column 1: Brand Info -->
-<div class="space-y-3 md:col-span-1">
-<div class="flex items-center gap-2 text-white font-black text-xl">
-<i class="w-6 h-6 text-brand-500" data-lucide="graduation-cap"></i>
-<span class="">Edu<span class="text-brand-500">Pro</span></span>
-</div>
-<p class="text-xs leading-relaxed text-slate-400">
-            भारत का निष्पक्ष व छात्र-हितैषी शिक्षा पोर्टल। गुणवत्तापूर्ण शिक्षा हर गांव और शहर के छात्र तक न्यूनतम लागत में पहुंचाना हमारा संकल्प है।
-          </p>
-<div class="pt-2">
-<span class="inline-flex items-center gap-1.5 text-emerald-400 text-[11px] font-semibold">
-<i class="w-4 h-4" data-lucide="shield-check"></i> 256-Bit SSL एन्क्रिप्टेड सुरक्षित पोर्टल
-            </span>
-</div>
-</div>
-<!-- Column 2: Quick Links -->
-<div>
-<h3 class="text-sm font-bold text-white mb-3 uppercase tracking-wider">त्वरित नेविगेशन</h3>
-<ul class="space-y-2 text-xs">
-<li class=""><a class="hover:text-white transition" href="#">होमपेज</a></li>
-<li class=""><a class="hover:text-white transition" href="#test-series">टेस्ट सीरीज़</a></li>
-<li class=""><a class="hover:text-white transition" href="#pyq-archive">20-Year PYQ आर्काइव</a></li>
-<li class=""><a class="hover:text-white transition" href="#board-section">10th व 12th बोर्ड पेपर्स</a></li>
-<li class=""><a class="hover:text-white transition" href="#state-bulletin">राज्यवार सामान्य ज्ञान</a></li>
-<li class=""><a class="hover:text-white transition" href="#study-schedule">दैनिक अध्ययन शेड्यूल</a></li>
-</ul>
-</div>
-<!-- Column 3: Help Desk -->
-<div>
-<h3 class="text-sm font-bold text-white mb-3 uppercase tracking-wider">सहायता व सेवाएं</h3>
-<ul class="space-y-2 text-xs">
-<li class=""><a class="hover:text-white transition" href="#login-modal">छात्र लॉगिन</a></li>
-<li class=""><a class="hover:text-white transition" href="#pricing-section">₹199 पास एक्टिवेशन</a></li>
-<li class=""><a class="hover:text-white transition" href="#referral-section">5-रेफरल फ्री विस्तार नियम</a></li>
-<li class="">
-<button class="text-emerald-400 hover:text-emerald-300 flex items-center gap-1.5 transition cursor-pointer bg-transparent border-0 p-0 text-xs" onclick="document.getElementById('institutional-helpdesk-modal').classList.remove('hidden')">
-<i class="w-3.5 h-3.5" data-lucide="life-buoy"></i>
-<span class="">EduPro संस्थागत हेल्पडेस्क टिकट (24×7 सहायता)</span>
-</button>
-</li>
-<li class=""><span class="text-slate-400">आधिकारिक ईमेल: support@edupro.in</span></li>
-</ul>
-</div>
-<!-- Column 4: Legal & Copyright Acts -->
-<div>
-<h3 class="text-sm font-bold text-white mb-3 uppercase tracking-wider">वैधानिक व सुरक्षा</h3>
-<p class="text-[11px] text-slate-400 leading-relaxed mb-3">
+          <div class="text-emerald-400 font-medium text-xs flex items-center gap-1.5">
+            🔒 256-Bit SSL एन्क्रिप्टेड सुरक्षित पोर्टल
+          </div>
+        </div>
+
+        <!-- Quick Navigation -->
+        <div>
+          <h4 class="text-white font-bold mb-3 text-sm">त्वरित नेविगेशन</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="hover:text-white transition-colors">होमपेज</a></li>
+            <li><a href="test-series.html" onclick="window.location.href='test-series.html'" class="hover:text-white transition-colors cursor-pointer">टेस्ट सीरीज़</a></li>
+            <li><a href="pyq-tricks.html" class="hover:text-white transition-colors">20-Year PYQ आर्काइव</a></li>
+            <li><a href="test-series.html" onclick="window.location.href='test-series.html'" class="hover:text-white transition-colors cursor-pointer">10th व 12th बोर्ड पेपर्स</a></li>
+            <li><a href="gk.html" class="hover:text-white transition-colors">राज्यवार सामान्य ज्ञान</a></li>
+            <li><a href="dashboard.html" class="hover:text-white transition-colors">दैनिक अध्ययन शेड्यूल</a></li>
+          </ul>
+        </div>
+
+        <!-- Student Help & Services -->
+        <div>
+          <h4 class="text-white font-bold mb-3 text-sm">सहायता व सेवाएं</h4>
+          <ul class="space-y-2">
+            <li><a href="login.html" class="hover:text-white transition-colors">छात्र लॉगिन</a></li>
+            <li><a href="payment.html" class="hover:text-white transition-colors">₹199 पास एक्टिवेशन</a></li>
+            <li><a href="payment.html#referral" class="hover:text-white transition-colors">5-रेफरल फ्री विस्तार नियम</a></li>
+            <li>
+              <button onclick="openHelpdeskModal()" class="hover:text-emerald-400 transition-colors flex items-center gap-1 cursor-pointer text-left">
+                💬 EduPro संस्थागत हेल्पडेस्क टिकट (24×7 सहायता)
+              </button>
+            </li>
+            <li>आधिकारिक ईमेल: support@edupro.in</li>
+          </ul>
+        </div>
+
+        <!-- Legal & Copyright -->
+        <div>
+          <h4 class="text-white font-bold mb-3 text-sm">वैधानिक व सुरक्षा</h4>
+          <p class="text-xs text-slate-400 leading-relaxed mb-3">
             भारतीय कॉपीराइट अधिनियम, 1957 (धारा 13 व 63) के अंतर्गत संपूर्ण सामग्री सुरक्षित है। अनधिकृत प्रतिरूपण दंडनीय है।
           </p>
-<div class="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-[10px] text-slate-400">
-            🔒 सुरक्षित संस्थागत सर्वर एवं डेटा गोपनीयता सुरक्षा प्रोटोकॉल द्वारा संचालित।
+          <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-[11px] text-amber-300/90">
+            🔒 सुरक्षित गेटवे एवं डाटा निजता सुरक्षा प्रोटोकॉल द्वारा संचालित।
           </div>
-</div>
-</div>
-<!-- Strict Digital No-Refund Policy Box -->
-<div class="bg-slate-900/90 border border-amber-500/30 rounded-xl p-4 text-[11px] leading-relaxed text-slate-300">
-<strong class="text-amber-400 block mb-1">डिजिटल सेवा नीति (Strict Digital No-Refund Policy):</strong>
-        EduPro पोर्टल पर ₹199 (1 Month Pass) के सफल भुगतान के उपरांत छात्र को तुरंत 30 दिनों का असीमित अध्ययन व टेस्ट एक्सेस प्रदान किया जाता है। डिजिटल सामग्री व बौद्धिक संपदा सुरक्षा के तहत शुल्क वापसी (No Refund) किसी भी स्थिति में अनुमन्य नहीं होगी। कृपया सदस्यता लेने से पूर्व उपलब्ध 30-फ्री प्रश्नों का ट्रायल अवश्य लें।
+        </div>
       </div>
-<!-- Statutory Disclaimer Box -->
-<div class="border-t border-slate-900 pt-6">
-<div class="flex items-start gap-3 text-slate-500 text-[11px] leading-relaxed">
-<i class="w-5 h-5 text-slate-500 shrink-0 mt-0.5" data-lucide="alert-circle"></i>
-<div class="">
-<strong class="text-slate-400">वैधानिक अस्वीकरण (Statutory Legal Disclaimer):</strong>
-            EduPro एक स्वतंत्र निजी ऑनलाइन शिक्षण व परीक्षा तैयारी मंच है। यह किसी भी केंद्र सरकार, राज्य सरकार, संघ लोक सेवा आयोग (UPSC), राज्य लोक सेवा आयोगों (RPSC, BPSC, UPPSC आदि), SSC, NTA, रेलवे भर्ती बोर्ड (RRB) या किसी सरकारी विभाग अथवा संस्थान से प्रत्यक्ष या अप्रत्यक्ष रूप से संबद्ध नहीं है। प्लेटफ़ॉर्म पर उपलब्ध सभी मॉक टेस्ट, मॉडल प्रश्न-उत्तर और विगत 20-वर्षीय PYQs केवल छात्रों के निजी अध्ययन, अभ्यास और शैक्षणिक मार्गदर्शन हेतु संकलित हैं। छात्र आधिकारिक परीक्षा तिथियों, पाठ्यक्रम व विज्ञापनों हेतु संबंधित सरकारी आयोगों की आधिकारिक वेबसाइट का ही अवलोकन करें।
-          </div>
-</div>
-</div>
-<!-- Bottom Copyright & Stealth Line -->
-<div class="border-t border-slate-900 pt-6 text-center text-xs text-slate-500">
-<p class="">© 2026-2027 EduPro Education Platform. सर्वाधिकार सुरक्षित। All Rights Reserved.</p>
-</div>
-</div>
-</footer>
-<!-- END: MainFooter -->
-<!-- BEGIN: InstitutionalHelpdeskModal -->
-<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-sm" id="institutional-helpdesk-modal">
-<div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-lg p-6 shadow-2xl relative">
-<div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-4">
-<div class="flex items-center gap-2.5">
-<div class="w-10 h-10 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center border border-brand-500/30">
-<i class="w-5 h-5" data-lucide="headphones"></i>
-</div>
-<div>
-<h3 class="text-base font-bold text-white">EduPro संस्थागत हेल्पडेस्क व सपोर्ट टिकट</h3>
-<p class="text-xs text-slate-400">सुरक्षित व गोपनीय छात्र सहायता प्रणाली</p>
-</div>
-</div>
-<button class="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-800 transition" onclick="document.getElementById('institutional-helpdesk-modal').classList.add('hidden')">
-<i class="w-5 h-5" data-lucide="x"></i>
-</button>
-</div>
-<form class="space-y-4" onsubmit="event.preventDefault(); alert('आपका संस्थागत सहायता टिकट सफलतापूर्वक दर्ज कर लिया गया है। सहायता दल टोकन के माध्यम से यथाशीघ्र संपर्क करेगा।'); document.getElementById('institutional-helpdesk-modal').classList.add('hidden');">
-<div class="space-y-1">
-<label class="text-xs font-semibold text-slate-300">छात्र का नाम व रोल / पंजीकरण संख्या</label>
-<input class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none focus:border-brand-500" placeholder="उदा. राहुल शर्मा (EduPro ID / रोल नं.)" required="" type="text"/>
-</div>
-<div class="space-y-1">
-<label class="text-xs font-semibold text-slate-300">पंजीकृत ईमेल या संपर्क पहचान (गोपनीय)</label>
-<input class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none focus:border-brand-500" placeholder="उदा. student@example.com" required="" type="text"/>
-</div>
-<div class="space-y-1">
-<label class="text-xs font-semibold text-slate-300">परीक्षा संकाय / विषय वर्ग</label>
-<select class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2 text-sm text-slate-200 focus:outline-none focus:border-brand-500">
-<option>10th व 12th बोर्ड (RBSE / CBSE)</option>
-<option>UPSC, SSC, Railway व पुलिस</option>
-<option>NEET &amp; JEE (IIT) स्पेशल</option>
-<option>RS-CIT, B.Tech CSE व Tally Prime</option>
-<option>कॉलेज डिग्री (BA, B.Sc, B.Com, MA)</option>
-<option>₹199 पास एक्टिवेशन / तकनीकी समस्या</option>
-</select>
-</div>
-<div class="space-y-1">
-<label class="text-xs font-semibold text-slate-300">अपनी समस्या या प्रश्न का विवरण लिखें</label>
-<textarea class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none focus:border-brand-500 resize-none" placeholder="अपनी समस्या या प्रश्न यहाँ स्पष्ट रूप से लिखें..." required="" rows="3"></textarea>
-</div>
-<div class="p-3 rounded-xl bg-slate-950/70 border border-slate-800/80 text-[11px] text-slate-400 flex items-center gap-2">
-<i class="w-4 h-4 text-emerald-400 shrink-0" data-lucide="shield-check"></i>
-<span>100% गोपनीय डिजिटल टिकट: संस्थागत टीम द्वारा सुरक्षित समाधान, कोई व्यक्तिगत नंबर साझा नहीं किया जाता।</span>
-</div>
-<div class="flex items-center justify-end gap-3 pt-2">
-<button class="px-4 py-2 rounded-xl text-xs font-semibold text-slate-400 hover:text-white hover:bg-slate-800 transition" onclick="document.getElementById('institutional-helpdesk-modal').classList.add('hidden')" type="button">रद्द करें</button>
-<button class="px-5 py-2.5 rounded-xl text-xs font-bold bg-brand-600 hover:bg-brand-500 text-white flex items-center gap-1.5 transition shadow-lg shadow-brand-600/20" type="submit">
-<i class="w-3.5 h-3.5" data-lucide="send"></i>
-<span>सपोर्ट टिकट दर्ज करें</span>
-</button>
-</div>
-</form>
-</div>
-</div>
-<!-- END: InstitutionalHelpdeskModal -->
-<!-- BEGIN: LucideIconActivationScript -->
-<script data-purpose="icon-renderer">
-    document.addEventListener("DOMContentLoaded", function () {
-      lucide.createIcons();
+
+      <!-- STRICT DIGITAL NO-REFUND POLICY BOX -->
+      <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 text-xs text-slate-300 space-y-1">
+        <div class="font-bold text-amber-400 flex items-center gap-1.5">
+          ⚠️ डिजिटल सेवा नीति (Strict Digital No-Refund Policy):
+        </div>
+        <p class="leading-relaxed">
+          EduPro पोर्टल पर ₹199 (1 Month Pass) के सफल भुगतान के उपरांत छात्र को तुरंत 30 दिनों का असीमित अध्ययन व टेस्ट एक्सेस प्रदान किया जाता है। डिजिटल सामग्री व बौद्धिक संपदा सुरक्षा के तहत शुल्क वापसी (No Refund) किसी भी स्थिति में अनुमन्य नहीं होगी। कृपया सदस्यता लेने से पूर्व उपलब्ध 30-फ्री प्रश्नों का ट्रायल अवश्य लें।
+        </p>
+      </div>
+
+      <!-- STATUTORY LEGAL DISCLAIMER -->
+      <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 text-[11px] text-slate-400 leading-relaxed space-y-1">
+        <div class="font-semibold text-slate-300 flex items-center gap-1">
+          ⚖️ वैधानिक अस्वीकरण (Statutory Legal Disclaimer):
+        </div>
+        <p>
+          EduPro एक स्वतंत्र निजी ऑनलाइन शिक्षण व परीक्षा अभ्यास मंच है। यह किसी भी केंद्र सरकार, राज्य सरकार, संघ लोक सेवा आयोग (UPSC), राज्य लोक सेवा आयोगों (RPSC, BPSC, UPPSC आदि), SSC, NTA, रेलवे भर्ती बोर्ड (RRB) या किसी सरकारी विभाग अथवा संस्थान से संबद्ध नहीं है। प्लेटफ़ॉर्म पर उपलब्ध सभी मॉक टेस्ट, मॉडल प्रश्न-उत्तर और विगत 20-वर्षीय PYQs केवल छात्रों के निजी अध्ययन, अभ्यास और शैक्षणिक मार्गदर्शन हेतु संकलित हैं। छात्र आधिकारिक परीक्षा तिथियों, पाठ्यक्रम व विज्ञापनों हेतु संबंधित सरकारी वेबसाइट्स का ही अवलोकन करें।
+        </p>
+      </div>
+
+      <!-- Copyright Bottom Bar -->
+      <div class="text-center text-[11px] text-slate-500 pt-4">
+        © 2026-2027 EduPro Education Platform. सर्वाधिकार सुरक्षित। All Rights Reserved.
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- 100% SECURE & CONFIDENTIAL HELPDESK TICKET MODAL -->
+  <div id="helpdesk-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md p-6 relative shadow-2xl space-y-4">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center font-bold text-white text-sm">EP</div>
+          <h3 class="text-base font-bold text-white">संस्थागत सहायता केंद्र (Help Desk)</h3>
+        </div>
+        <button onclick="closeHelpdeskModal()" class="text-slate-400 hover:text-white text-xl p-1 leading-none">&times;</button>
+      </div>
+      <p class="text-xs text-slate-400 leading-relaxed">
+        अपने प्रश्न अथवा सहायता अनुरोध हेतु नीचे विवरण दर्ज करें। हमारी शैक्षणिक टीम 15-30 मिनट में आपसे संपर्क करेगी।
+      </p>
+      <form onsubmit="submitSupportTicket(event)" class="space-y-3 text-xs">
+        <div>
+          <label class="block text-slate-300 font-semibold mb-1">छात्र का नाम (Full Name)</label>
+          <input type="text" id="ticket-name" required placeholder="उदा. राहुल शर्मा" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-white outline-none focus:border-blue-500">
+        </div>
+        <div>
+          <label class="block text-slate-300 font-semibold mb-1">परीक्षा संकाय / कोर्स</label>
+          <select id="ticket-course" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-white outline-none focus:border-blue-500">
+            <option value="10th/12th Board">10th व 12th बोर्ड (RBSE / CBSE)</option>
+            <option value="NEET/JEE">NEET / JEE स्पेशल</option>
+            <option value="UPSC/SSC">UPSC, SSC व State PSC</option>
+            <option value="College Degree">कॉलेज डिग्री (BA, B.Sc, B.Com, B.Tech)</option>
+            <option value="RS-CIT/Tally">RS-CIT कंप्यूटर व Tally Prime</option>
+            <option value="199 Payment">₹199 पास एक्टिवेशन / UTR सहायता</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-slate-300 font-semibold mb-1">अपनी समस्या या संदेश लिखें</label>
+          <textarea id="ticket-message" required rows="3" placeholder="उदा. मुझे 20-Year PYQ या टेस्ट सीरीज संबंधी जानकारी चाहिए..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-white outline-none focus:border-blue-500"></textarea>
+        </div>
+        <button type="submit" class="w-full py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs transition-colors cursor-pointer shadow-lg shadow-blue-500/20">
+          सहायता टिकट सबमिट करें →
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Interactive Scripts -->
+  <script>
+    function openHelpdeskModal() {
+      document.getElementById('helpdesk-modal').classList.remove('hidden');
+    }
+    function closeHelpdeskModal() {
+      document.getElementById('helpdesk-modal').classList.add('hidden');
+    }
+    function submitSupportTicket(e) {
+      e.preventDefault();
+      const name = document.getElementById('ticket-name').value;
+      alert(`धन्यवाद ${name}! आपका सहायता टिकट (#EDU-${Math.floor(1000 + Math.random() * 9000)}) दर्ज कर लिया गया है। सहायता टीम जल्द आपसे संपर्क करेगी।`);
+      closeHelpdeskModal();
+    }
+    function shareOnSocial(platform) {
+      const url = encodeURIComponent(window.location.origin || 'https://edupro-website2-0.vercel.app');
+      const text = encodeURIComponent('EduPro - भारत के सबसे सटीक 20-वर्षीय सॉल्व्ड PYQ, 10th-12th बोर्ड पेपर्स व लाइव टेस्ट सीरीज़ प्लेटफ़ॉर्म: ');
+      if (platform === 'whatsapp') {
+        window.open(`https://api.whatsapp.com/send?text=${text}${url}`, '_blank');
+      } else if (platform === 'telegram') {
+        window.open(`https://t.me/share/url?url=${url}&text=${text}`, '_blank');
+      }
+    }
+
+    // Anti-Copy & Source Shield
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('keydown', e => {
+      if (e.keyCode === 123 || 
+         (e.ctrlKey && ['c', 'u', 's', 'a'].includes(e.key.toLowerCase())) ||
+         (e.ctrlKey && e.shiftKey && ['i', 'j', 'c'].includes(e.key.toLowerCase()))) {
+        e.preventDefault();
+        return false;
+      }
     });
   </script>
-<!-- END: LucideIconActivationScript -->
-</body></html>
+</body>
+</html>
