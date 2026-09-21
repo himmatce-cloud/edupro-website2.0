@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
-<html class="scroll-smooth" lang="hi">
-<head>
+<html class="scroll-smooth" lang="hi"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>EduPro - भारत का #1 पारदर्शी शैक्षणिक पोर्टल | 20-वर्षीय सॉल्व्ड PYQ व लाइव टेस्ट</title>
@@ -11,7 +10,7 @@
 <meta content="पारंपरिक कोचिंग से 90% कम खर्च में सबसे सटीक तैयारी। 30-फ्री प्रश्न हल करें व 5 रेफरल पर पाएँ +30 दिन फ्री एक्सटेंशन!" property="og:description"/>
 <meta content="website" property="og:type"/>
 <!-- Tailwind CSS & Google Fonts -->
-<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Noto+Sans+Devanagari:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
@@ -20,6 +19,22 @@
       font-family: 'Noto Sans Devanagari', 'Plus Jakarta Sans', sans-serif;
       user-select: none;
       -webkit-user-select: none;
+    }
+    @keyframes ticker-scroll {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+    .ticker-content {
+      display: flex;
+      width: max-content;
+      animation: ticker-scroll 32s linear infinite;
+    }
+    .ticker-container:hover .ticker-content {
+      animation-play-state: paused;
     }
   </style>
 </head>
@@ -77,8 +92,87 @@
 </div>
 </div>
 </nav>
-<!-- LIVE BREAKING EXAM BULLETIN TICKER (CLICKABLE TO TEST-SERIES.HTML) -->
-<div class="bg-gradient-to-r from-blue-900/40 via-indigo-900/40 to-slate-900 border-b border-blue-800/30 px-4 py-2 relative z-40 overflow-hidden"><div class="max-w-7xl mx-auto flex items-center justify-between gap-3 text-xs"><div class="shrink-0 flex items-center gap-2"><span class="bg-red-600 text-white font-bold px-2.5 py-0.5 rounded text-[11px] uppercase tracking-wide flex items-center gap-1.5 shadow-sm shadow-red-600/30 animate-pulse"><span>●</span> <span>ब्रेकिंग न्यूज़</span></span></div><div class="flex-1 overflow-hidden relative"><div class="animate-marquee whitespace-nowrap text-slate-300 text-xs flex items-center gap-8 py-0.5"><div class="inline-flex items-center gap-8"><a class="hover:text-amber-300 transition-colors inline-flex items-center gap-1" href="test-series.html">📢 <strong class="text-amber-400">10th व 12th बोर्ड (RBSE / CBSE):</strong> 2026 बोर्ड परीक्षा हेतु NCERT मॉडल पेपर्स व 20-वर्षीय हल प्रश्न-पत्र पोर्टल पर लाइव</a><span class="text-slate-600">|</span><a class="hover:text-emerald-300 transition-colors inline-flex items-center gap-1" href="test-series.html">⚡ <strong class="text-emerald-400">NEET (UG Medical):</strong> NCERT लाइन-टू-लाइन, PCB शॉर्टकट ट्रिक्स व 100-प्रश्न टाइमर मॉक टेस्ट अपलोड</a><span class="text-slate-600">|</span><a class="hover:text-amber-300 transition-colors inline-flex items-center gap-1" href="payment.html#referral">🎁 <strong class="text-amber-300">5-सफल भुगतान रेफरल योजना:</strong> अपने 5 मित्रों को ₹199 पास एक्टिवेट कराएं और पाएं +30 दिन (1 माह) 100% मुफ़्त विस्तार</a><span class="text-slate-600">|</span><a class="hover:text-blue-300 transition-colors inline-flex items-center gap-1" href="test-series.html">🛡️ <strong class="text-blue-400">UPSC, SSC व State PSC:</strong> 2004-2025 विगत वर्षों के प्रामाणिक द्विभाषी सॉल्व्ड पेपर्स उपलब्ध</a><span class="text-slate-600">|</span><a class="hover:text-purple-300 transition-colors inline-flex items-center gap-1" href="test-series.html">💻 <strong class="text-purple-400">RS-CIT, B.Tech CSE व Tally Prime:</strong> 1-क्लिक A4 PDF डिजिटल शीट्स व GST वाउचर नोट्स सक्रिय</a></div><div aria-hidden="true" class="inline-flex items-center gap-8"><a class="hover:text-amber-300 transition-colors inline-flex items-center gap-1" href="test-series.html">📢 <strong class="text-amber-400">10th व 12th बोर्ड (RBSE / CBSE):</strong> 2026 बोर्ड परीक्षा हेतु NCERT मॉडल पेपर्स व 20-वर्षीय हल प्रश्न-पत्र पोर्टल पर लाइव</a><span class="text-slate-600">|</span><a class="hover:text-emerald-300 transition-colors inline-flex items-center gap-1" href="test-series.html">⚡ <strong class="text-emerald-400">NEET (UG Medical):</strong> NCERT लाइन-टू-लाइन, PCB शॉर्टकट ट्रिक्स व 100-प्रश्न टाइमर मॉक टेस्ट अपलोड</a><span class="text-slate-600">|</span><a class="hover:text-amber-300 transition-colors inline-flex items-center gap-1" href="payment.html#referral">🎁 <strong class="text-amber-300">5-सफल भुगतान रेफरल योजना:</strong> अपने 5 मित्रों को ₹199 पास एक्टिवेट कराएं और पाएं +30 दिन (1 माह) 100% मुफ़्त विस्तार</a><span class="text-slate-600">|</span><a class="hover:text-blue-300 transition-colors inline-flex items-center gap-1" href="test-series.html">🛡️ <strong class="text-blue-400">UPSC, SSC व State PSC:</strong> 2004-2025 विगत वर्षों के प्रामाणिक द्विभाषी सॉल्व्ड पेपर्स उपलब्ध</a><span class="text-slate-600">|</span><a class="hover:text-purple-300 transition-colors inline-flex items-center gap-1" href="test-series.html">💻 <strong class="text-purple-400">RS-CIT, B.Tech CSE व Tally Prime:</strong> 1-क्लिक A4 PDF डिजिटल शीट्स व GST वाउचर नोट्स सक्रिय</a></div></div></div><div class="shrink-0 hidden sm:flex items-center gap-1"><a class="text-[11px] font-semibold text-blue-400 hover:text-amber-300 transition-colors inline-flex items-center gap-1 px-2 py-0.5 rounded bg-blue-500/10 border border-blue-500/20" href="gk.html"><span>दैनिक GK बुलेटिन</span> <span>→</span></a></div></div></div>
+<!-- ULTRA-SMOOTH CONTINUOUS NEWS MARQUEE TICKER WITH HOVER-PAUSE -->
+<div class="bg-gradient-to-r from-blue-950 via-slate-900 to-blue-950 border-b border-blue-800/40 px-3 sm:px-4 py-2 relative z-40 overflow-hidden shadow-inner">
+<div class="max-w-7xl mx-auto flex items-center justify-between gap-3">
+<!-- Fixed Left Red Badge with Pulsing Dot -->
+<div class="shrink-0 flex items-center z-10">
+<span class="bg-red-600 text-white font-bold px-2.5 py-1 rounded-md text-[11px] uppercase tracking-wide flex items-center gap-1.5 shadow-md shadow-red-600/30 whitespace-nowrap">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+</span>
+<span>🔴 ब्रेकिंग न्यूज़</span>
+</span>
+</div>
+<!-- Smooth Continuous Marquee (Right-to-Left Scroll with Hover Pause) -->
+<div class="flex-1 overflow-hidden relative ticker-container select-none cursor-pointer py-0.5">
+<div class="ticker-content items-center text-xs text-slate-200">
+<!-- Segment 1 -->
+<div class="inline-flex items-center gap-8 pr-8">
+<a class="hover:text-amber-300 transition-colors inline-flex items-center gap-1.5" href="test-series.html">
+<span>📢</span>
+<span><strong class="text-amber-400 font-semibold">10th व 12th बोर्ड (RBSE / CBSE):</strong> 2026 बोर्ड परीक्षा हेतु NCERT मॉडल पेपर्स व 20-वर्षीय हल प्रश्न-पत्र पोर्टल पर लाइव</span>
+</a>
+<span class="text-slate-600 select-none">•</span>
+<a class="hover:text-emerald-300 transition-colors inline-flex items-center gap-1.5" href="test-series.html">
+<span>⚡</span>
+<span><strong class="text-emerald-400 font-semibold">NEET (UG Medical):</strong> NCERT लाइन-टू-लाइन, PCB शॉर्टकट ट्रिक्स व 100-प्रश्न टाइमर मॉक टेस्ट अपलोड</span>
+</a>
+<span class="text-slate-600 select-none">•</span>
+<a class="hover:text-amber-300 transition-colors inline-flex items-center gap-1.5" href="payment.html#referral">
+<span>🎁</span>
+<span><strong class="text-amber-300 font-semibold">5-सफल भुगतान रेफरल योजना:</strong> अपने 5 मित्रों को ₹199 पास एक्टिवेट कराएं और पाएं +30 दिन (1 माह) 100% मुफ़्त विस्तार</span>
+</a>
+<span class="text-slate-600 select-none">•</span>
+<a class="hover:text-purple-300 transition-colors inline-flex items-center gap-1.5" href="test-series.html">
+<span>💻</span>
+<span><strong class="text-purple-400 font-semibold">RS-CIT &amp; Tally Prime:</strong> 1-क्लिक A4 PDF डिजिटल शीट्स व GST वाउचर नोट्स सक्रिय</span>
+</a>
+<span class="text-slate-600 select-none">•</span>
+<a class="hover:text-blue-300 transition-colors inline-flex items-center gap-1.5" href="test-series.html">
+<span>🛡️</span>
+<span><strong class="text-blue-400 font-semibold">UPSC, SSC व State PSC:</strong> 2004-2025 विगत वर्षों के प्रामाणिक द्विभाषी सॉल्व्ड पेपर्स उपलब्ध</span>
+</a>
+</div>
+<!-- Segment 2 (Identical Duplicate for Seamless Infinite Scrolling Loop) -->
+<div aria-hidden="true" class="inline-flex items-center gap-8 pr-8">
+<a class="hover:text-amber-300 transition-colors inline-flex items-center gap-1.5" href="test-series.html">
+<span>📢</span>
+<span><strong class="text-amber-400 font-semibold">10th व 12th बोर्ड (RBSE / CBSE):</strong> 2026 बोर्ड परीक्षा हेतु NCERT मॉडल पेपर्स व 20-वर्षीय हल प्रश्न-पत्र पोर्टल पर लाइव</span>
+</a>
+<span class="text-slate-600 select-none">•</span>
+<a class="hover:text-emerald-300 transition-colors inline-flex items-center gap-1.5" href="test-series.html">
+<span>⚡</span>
+<span><strong class="text-emerald-400 font-semibold">NEET (UG Medical):</strong> NCERT लाइन-टू-लाइन, PCB शॉर्टकट ट्रिक्स व 100-प्रश्न टाइमर मॉक टेस्ट अपलोड</span>
+</a>
+<span class="text-slate-600 select-none">•</span>
+<a class="hover:text-amber-300 transition-colors inline-flex items-center gap-1.5" href="payment.html#referral">
+<span>🎁</span>
+<span><strong class="text-amber-300 font-semibold">5-सफल भुगतान रेफरल योजना:</strong> अपने 5 मित्रों को ₹199 पास एक्टिवेट कराएं और पाएं +30 दिन (1 माह) 100% मुफ़्त विस्तार</span>
+</a>
+<span class="text-slate-600 select-none">•</span>
+<a class="hover:text-purple-300 transition-colors inline-flex items-center gap-1.5" href="test-series.html">
+<span>💻</span>
+<span><strong class="text-purple-400 font-semibold">RS-CIT &amp; Tally Prime:</strong> 1-क्लिक A4 PDF डिजिटल शीट्स व GST वाउचर नोट्स सक्रिय</span>
+</a>
+<span class="text-slate-600 select-none">•</span>
+<a class="hover:text-blue-300 transition-colors inline-flex items-center gap-1.5" href="test-series.html">
+<span>🛡️</span>
+<span><strong class="text-blue-400 font-semibold">UPSC, SSC व State PSC:</strong> 2004-2025 विगत वर्षों के प्रामाणिक द्विभाषी सॉल्व्ड पेपर्स उपलब्ध</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Right-Aligned Link to gk.html -->
+<div class="shrink-0 flex items-center z-10 pl-2">
+<a class="text-[11px] font-semibold text-blue-300 hover:text-amber-300 bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/30 px-2.5 py-1 rounded transition-colors inline-flex items-center gap-1 whitespace-nowrap shadow-sm" href="gk.html">
+<span>दैनिक GK बुलेटिन</span>
+<span class="text-xs">→</span>
+</a>
+</div>
+</div>
+</div>
 <!-- HERO SECTION -->
 <section class="relative pt-8 pb-16 px-4 sm:px-6 lg:px-8 border-b border-slate-800/60 overflow-hidden">
 <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
@@ -652,5 +746,4 @@
       }
     });
   </script>
-</body>
-</html>
+</body></html>
