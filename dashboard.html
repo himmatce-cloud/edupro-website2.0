@@ -1,540 +1,748 @@
 <!DOCTYPE html>
+
 <html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-variant": "#e0e3e5", "on-secondary-container": "#fefcff", "outline": "#757684", "on-tertiary-container": "#b4bbd5", "primary-fixed-dim": "#b8c4ff", "background": "#f7f9fb", "surface-tint": "#3755c3", "on-surface": "#191c1e", "primary": "#00288e", "inverse-surface": "#2d3133", "on-surface-variant": "#444653", "on-primary-fixed-variant": "#173bab", "outline-variant": "#c4c5d5", "on-secondary-fixed-variant": "#003ea8", "on-secondary": "#ffffff", "surface-container-lowest": "#ffffff", "surface-container-low": "#f2f4f6", "secondary-fixed": "#dbe1ff", "on-tertiary-fixed": "#131b2e", "tertiary-fixed": "#dae2fd", "inverse-primary": "#b8c4ff", "surface-container-highest": "#e0e3e5", "on-primary-fixed": "#001453", "tertiary-fixed-dim": "#bec6e0", "on-primary-container": "#a8b8ff", "on-error": "#ffffff", "secondary-container": "#316bf3", "surface": "#f7f9fb", "on-tertiary": "#ffffff", "on-error-container": "#93000a", "tertiary-container": "#434b60", "on-primary": "#ffffff", "surface-container-high": "#e6e8ea", "error": "#ba1a1a", "surface-bright": "#f7f9fb", "on-tertiary-fixed-variant": "#3f465c", "surface-dim": "#d8dadc", "tertiary": "#2d3449", "surface-container": "#eceef0", "inverse-on-surface": "#eff1f3", "on-background": "#191c1e", "error-container": "#ffdad6", "secondary-fixed-dim": "#b4c5ff", "primary-fixed": "#dde1ff", "secondary": "#0051d5", "on-secondary-fixed": "#00174b", "primary-container": "#1e40af" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-mobile": "1rem", "space-3xl": "4rem", "space-2xl": "3rem", "space-md": "1rem", "space-lg": "1.5rem", "space-xs": "0.5rem", "gutter-desktop": "1.5rem", "space-sm": "0.75rem", "space-2xs": "0.25rem", "space-xl": "2rem", "gutter-mobile": "1rem", "margin-desktop": "2rem" }, "fontFamily": { "display-hero": ["Inter"], "display-hero-mobile": ["Inter"], "body-md": ["Inter"], "headline-lg": ["Inter"], "label-md": ["Inter"], "title-lg": ["Inter"], "body-sm": ["Inter"], "headline-lg-mobile": ["Inter"], "code-tabular": ["Inter"], "headline-md": ["Inter"], "title-md": ["Inter"], "label-sm": ["Inter"], "headline-sm": ["Inter"], "body-lg": ["Inter"] }, "fontSize": { "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.025em", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }], "title-lg": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0.005em", "fontWeight": "400" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "code-tabular": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "400" }] } } } }</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 flex items-center px-space-lg gap-space-xs"><div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-on-primary font-title-md text-title-md">EP</div><div><span class="font-title-lg text-title-lg font-bold tracking-tight text-primary">EduPro</span><span class="font-label-sm text-label-sm block text-on-surface-variant leading-none">Academic Nexus</span></div></div><div class="px-space-md py-space-sm"><div class="bg-surface-container rounded-lg p-space-xs"><label class="block font-label-sm text-label-sm text-on-surface-variant mb-space-2xs px-space-2xs">ACTIVE STREAM / GOAL</label><div class="flex items-center justify-between bg-surface-container-lowest px-space-sm py-space-xs rounded-lg shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] cursor-pointer hover:bg-surface-container-high transition-colors"><div class="flex flex-col"><span class="font-title-md text-title-md text-on-surface font-semibold">UPSC &amp; Civil Services</span><span class="font-label-sm text-label-sm text-on-surface-variant">Target 2025 • Hindi/Eng</span></div><span class="material-symbols-outlined text-on-surface-variant text-base">unfold_more</span></div></div></div><nav class="flex flex-col gap-space-2xs px-space-md mt-space-xs" data-active-classes="bg-primary-container text-on-primary font-semibold shadow-[0_1px_3px_0_rgba(15,23,42,0.04)]"><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-xl">dashboard</span><span class="font-label-md text-label-md">Learning Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="stream-selector" href="#"><span class="material-symbols-outlined text-xl">school</span><span class="font-label-md text-label-md">Change Goal / Stream</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="offline-downloads" href="#"><span class="material-symbols-outlined text-xl">download_for_offline</span><span class="font-label-md text-label-md">Offline PDF Repository</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg transition-colors bg-primary-container text-on-primary font-semibold shadow-[0_1px_3px_0_rgba(15,23,42,0.04)]" data-path="verification-tracker" href="#"><span class="material-symbols-outlined text-xl">verified_user</span><span class="font-label-md text-label-md">Verification Tracker</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="admin-panel" href="#"><span class="material-symbols-outlined text-xl">admin_panel_settings</span><span class="font-label-md text-label-md">Admin Master Console</span></a></nav></div><div class="p-space-md bg-surface-container-lowest mx-space-md mb-space-md rounded-xl shadow-[0_1px_3px_0_rgba(15,23,42,0.04)]"><div class="flex items-center justify-between mb-space-2xs"><span class="font-label-sm text-label-sm uppercase text-secondary font-bold">1 Month Pass</span><span class="bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm px-space-2xs py-0.5 rounded-full font-semibold">₹199 / mo</span></div><p class="font-body-sm text-body-sm text-on-surface-variant mb-space-xs">Full test access across NEET, UPSC, B.Tech &amp; Tally (30 Days).</p><a class="block text-center bg-secondary-container hover:bg-secondary text-on-secondary font-label-md text-label-md py-space-xs rounded-lg transition-colors font-semibold" data-path="pricing-plan" href="#">Upgrade Now (₹199 / Month)</a></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-lg flex-1 max-w-xl"><div class="relative w-full"><span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">search</span><input class="w-full bg-surface-container-low pl-10 pr-space-md py-space-xs rounded-lg text-on-surface font-body-sm text-body-sm outline-none placeholder:text-on-surface-variant focus:bg-surface-container-lowest" placeholder="Search syllabus, PYQs, Mock Tests, Video Lectures (e.g. UPSC Prelims, NEET Physics)..." type="text"/></div></div><div class="flex items-center gap-space-lg"><nav class="hidden xl:flex items-center gap-space-lg" data-active-classes="text-primary font-semibold"><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="courses-and-streams" href="#">Courses &amp; Streams</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="test-series-and-pyqs" href="#">Test Series &amp; PYQs</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="daily-gk" href="#">Daily GK &amp; Current Affairs</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="pricing-plan" href="#">₹199 (1 Month Pass)</a></nav><div class="flex items-center bg-surface-container-low p-1 rounded-lg"><button class="font-label-sm text-label-sm px-space-xs py-1 rounded bg-surface-container-lowest text-on-surface shadow-[0_1px_2px_rgba(0,0,0,0.04)] font-medium" type="button">EN</button><button class="font-label-sm text-label-sm px-space-xs py-1 rounded text-on-surface-variant hover:text-on-surface font-medium" type="button">हिंदी</button></div><div class="flex items-center gap-space-xs cursor-pointer pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1UL9I8G-ITDkVnLC-gWJzMaruSJwTD9HYIL0ER2FSeTRGmail08zRwP1fj5ZRr4FPEHZHbv_BBAvH6c0OeoOu9wI-QOKYuKTKLoDmigd-XLqxqY3V9GWrDcR02QmN_KfBHo6pdUzdTG9P5mcovM6428iNAQWRBnJAoeQbNeq2Pt0XTBP5O9YUwTE_-f6naFCy1rQ2nd2CmxUscDwUYQmFLBvO3uGD7JrowdsLKxZ5GsCk1camZc2QlRBLH85QxqF8RBiqJ6c6ztqNQ"/><div class="hidden md:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface leading-tight font-semibold">Dr. Rajesh Kumar</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-none">Scholar #9841</span></div></div></div></header><main class="w-full pt-16 bg-background px-space-xl py-space-lg min-h-screen"><div class="flex flex-col w-full gap-space-lg max-w-[1440px] mx-auto pb-space-xl">
-<!-- Top Profile Banner & Target Status Engine -->
-<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col xl:flex-row xl:items-center xl:justify-between gap-space-lg">
-<div class="flex items-start md:items-center gap-space-md min-w-0">
-<div class="relative flex-shrink-0">
-<img class="w-16 h-16 md:w-20 md:h-20 rounded-xl object-cover shadow-sm" data-alt="Official high resolution studio portrait of an Indian civil service aspirant with formal attire, natural balanced rim lighting, clean scholarly slate backdrop, confident calm demeanor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBusRu_dFfbJK84BvbceU3RhUogPxgviiZZUXlM6EllhyodUJBLcUNdl2YNMBf7VjhjxmuCcgCEbCS809dYeDkP_Nfr5AnBDJ58wTCMbKx3GeBlDUESrb-4P7gBKhHpccVsUDdpyi6PUR-XwJR7HcDtrhYbrMZNEX3T_nBUijFAlPA_ABJpt168UD9fH2VAZsFRru7Cj9cPO0yFXyDqC8r3-o8X8tg4C2dOgixqwunyoOISfarYf2jtbw"/>
-<span class="absolute -bottom-1 -right-1 bg-secondary text-on-secondary rounded-full p-0.5 flex items-center justify-center shadow">
-<span class="material-symbols-outlined text-sm font-bold" style="font-variation-settings: 'FILL' 1;">verified</span>
-</span>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "primary-fixed-dim": "#afc6ff",
+          "surface-container": "#eaedff",
+          "on-error": "#ffffff",
+          "background": "#faf8ff",
+          "on-surface-variant": "#44464f",
+          "on-surface": "#131b2e",
+          "on-background": "#131b2e",
+          "tertiary-fixed-dim": "#ffb95f",
+          "outline-variant": "#c4c6d0",
+          "on-primary": "#ffffff",
+          "on-secondary": "#ffffff",
+          "surface-dim": "#d2d9f4",
+          "secondary": "#1d4ed8",
+          "surface-variant": "#dae2fd",
+          "primary-container": "#0f2b5c",
+          "on-tertiary": "#ffffff",
+          "on-tertiary-fixed": "#2a1700",
+          "inverse-surface": "#283044",
+          "on-secondary-container": "#fffbff",
+          "secondary-fixed": "#dce1ff",
+          "inverse-primary": "#afc6ff",
+          "on-primary-fixed-variant": "#2d4678",
+          "on-primary-container": "#7c94cb",
+          "on-secondary-fixed": "#001551",
+          "on-primary-fixed": "#001944",
+          "on-secondary-fixed-variant": "#0039b5",
+          "primary-fixed": "#d9e2ff",
+          "on-tertiary-fixed-variant": "#653e00",
+          "surface-tint": "#465d91",
+          "inverse-on-surface": "#eef0ff",
+          "tertiary-fixed": "#ffddb8",
+          "on-tertiary-container": "#cf8400",
+          "surface-container-high": "#e2e7ff",
+          "outline": "#747780",
+          "error-container": "#ffdad6",
+          "surface-bright": "#faf8ff",
+          "primary": "#00163d",
+          "secondary-fixed-dim": "#b7c4ff",
+          "surface-container-lowest": "#ffffff",
+          "surface-container-low": "#f2f3ff",
+          "secondary-container": "#4069f2",
+          "on-error-container": "#93000a",
+          "tertiary-container": "#422700",
+          "surface": "#faf8ff",
+          "tertiary": "#261400",
+          "surface-container-highest": "#dae2fd",
+          "error": "#ba1a1a"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "margin-lg": "3rem",
+          "space-xs": "0.25rem",
+          "space-md": "1rem",
+          "space-xl": "2.5rem",
+          "margin-sm": "1rem",
+          "space-sm": "0.5rem",
+          "gutter": "1.5rem",
+          "margin": "2rem",
+          "gutter-sm": "1rem",
+          "space-lg": "1.5rem",
+          "gutter-lg": "2rem"
+        },
+        "fontFamily": {
+          "body-md": [
+            "Inter"
+          ],
+          "headline-lg-mobile": [
+            "Plus Jakarta Sans"
+          ],
+          "body-sm": [
+            "Inter"
+          ],
+          "label-sm": [
+            "Inter"
+          ],
+          "numeric-table": [
+            "Inter"
+          ],
+          "title-lg": [
+            "Inter"
+          ],
+          "body-lg": [
+            "Inter"
+          ],
+          "title-md": [
+            "Inter"
+          ],
+          "display-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "headline-md": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-sm": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "display-lg-mobile": [
+            "Plus Jakarta Sans"
+          ]
+        },
+        "fontSize": {
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "22px",
+              "letterSpacing": "0em",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-lg-mobile": [
+            "24px",
+            {
+              "lineHeight": "32px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "700"
+            }
+          ],
+          "body-sm": [
+            "12px",
+            {
+              "lineHeight": "18px",
+              "letterSpacing": "0.005em",
+              "fontWeight": "400"
+            }
+          ],
+          "label-sm": [
+            "11px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "0.04em",
+              "fontWeight": "600"
+            }
+          ],
+          "numeric-table": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "letterSpacing": "0em",
+              "fontWeight": "500"
+            }
+          ],
+          "title-lg": [
+            "18px",
+            {
+              "lineHeight": "26px",
+              "letterSpacing": "0em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "26px",
+              "letterSpacing": "0em",
+              "fontWeight": "400"
+            }
+          ],
+          "title-md": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "letterSpacing": "0em",
+              "fontWeight": "600"
+            }
+          ],
+          "display-lg": [
+            "48px",
+            {
+              "lineHeight": "56px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "label-md": [
+            "13px",
+            {
+              "lineHeight": "18px",
+              "letterSpacing": "0.01em",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-md": [
+            "24px",
+            {
+              "lineHeight": "32px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-sm": [
+            "20px",
+            {
+              "lineHeight": "28px",
+              "letterSpacing": "-0.005em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg": [
+            "32px",
+            {
+              "lineHeight": "40px",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "700"
+            }
+          ],
+          "display-lg-mobile": [
+            "32px",
+            {
+              "lineHeight": "40px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "700"
+            }
+          ]
+        }
+      },
+    },
+  }
+</script><meta content="web_dashboard" name="shell-type"/></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 flex items-center px-space-lg gap-space-xs"><div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-on-primary font-title-md text-title-md">EP</div><div><span class="font-title-lg text-title-lg font-bold tracking-tight text-primary">EduPro</span><span class="font-label-sm text-label-sm block text-on-surface-variant leading-none">Academic Nexus</span></div></div><div class="px-space-md py-space-sm"><div class="bg-surface-container rounded-lg p-space-xs"><label class="block font-label-sm text-label-sm text-on-surface-variant mb-space-xs px-space-xs">ACTIVE STREAM / GOAL</label><div class="flex items-center justify-between bg-surface-container-lowest px-space-sm py-space-xs rounded-lg shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] cursor-pointer hover:bg-surface-container-high transition-colors"><div class="flex flex-col"><span class="font-title-md text-title-md text-on-surface font-semibold">UPSC &amp; Civil Services</span><span class="font-label-sm text-label-sm text-on-surface-variant">Target 2025 • Hindi/Eng</span></div><span class="material-symbols-outlined text-on-surface-variant text-base">unfold_more</span></div></div></div><nav class="flex flex-col gap-1 px-space-md mt-space-xs" data-active-classes="bg-primary-container text-on-primary font-semibold shadow-[0_1px_3px_0_rgba(15,23,42,0.04)]"><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-xl">dashboard</span><span class="font-label-md text-label-md">Learning Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="stream-selector" href="#"><span class="material-symbols-outlined text-xl">school</span><span class="font-label-md text-label-md">Change Goal / Stream</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="offline-downloads" href="#"><span class="material-symbols-outlined text-xl">download_for_offline</span><span class="font-label-md text-label-md">Offline PDF Repository</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="verification-tracker" href="#"><span class="material-symbols-outlined text-xl">verified_user</span><span class="font-label-md text-label-md">Verification Tracker</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="admin-panel" href="#"><span class="material-symbols-outlined text-xl">admin_panel_settings</span><span class="font-label-md text-label-md">Admin Master Console</span></a></nav></div><div class="p-space-md bg-surface-container-lowest mx-space-md mb-space-md rounded-xl shadow-[0_1px_3px_0_rgba(15,23,42,0.04)]"><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm text-label-sm uppercase text-secondary font-bold">माह पास (30 दिन)</span><span class="bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm px-space-xs py-0.5 rounded-full font-semibold">₹199 / माह</span></div><p class="font-body-sm text-body-sm text-on-surface-variant mb-space-xs">₹199 / माह (30 दिन ऑल-एक्सेस पास) across NEET, UPSC, Board &amp; Computer courses.</p><a class="block text-center bg-secondary-container hover:bg-secondary text-on-secondary font-label-md text-label-md py-space-xs rounded-lg transition-colors font-semibold" data-path="pricing-plan" href="pricing-plan.html">Upgrade Now</a></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-lg flex-1 max-w-xl"><div class="relative w-full"><span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">search</span><input class="w-full bg-surface-container-low pl-10 pr-space-md py-space-xs rounded-lg text-on-surface font-body-sm text-body-sm outline-none placeholder:text-on-surface-variant focus:bg-surface-container-lowest" placeholder="Search syllabus, PYQs, Mock Tests, Video Lectures (e.g. UPSC Prelims, NEET Physics)..." type="text"/></div></div><div class="flex items-center gap-space-lg"><nav class="hidden xl:flex items-center gap-space-lg" data-active-classes="text-primary font-semibold"><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="courses-and-streams" href="#">Courses &amp; Streams</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="test-series-and-pyqs" href="test-series.html">Test Series &amp; PYQs</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="daily-gk" href="#">Daily GK &amp; Current Affairs</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="pricing-plan" href="pricing-plan.html">₹199 Plan</a></nav><div class="flex items-center bg-surface-container-low p-1 rounded-lg"><button class="font-label-sm text-label-sm px-space-xs py-1 rounded bg-surface-container-lowest text-on-surface shadow-[0_1px_2px_rgba(0,0,0,0.04)] font-medium" type="button">EN</button><button class="font-label-sm text-label-sm px-space-xs py-1 rounded text-on-surface-variant hover:text-on-surface font-medium" type="button">हिंदी</button></div><div class="flex items-center gap-space-xs cursor-pointer pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1UL9I8G-ITDkVnLC-gWJzMaruSJwTD9HYIL0ER2FSeTRGmail08zRwP1fj5ZRr4FPEHZHbv_BBAvH6c0OeoOu9wI-QOKYuKTKLoDmigd-XLqxqY3V9GWrDcR02QmN_KfBHo6pdUzdTG9P5mcovM6428iNAQWRBnJAoeQbNeq2Pt0XTBP5O9YUwTE_-f6naFCy1rQ2nd2CmxUscDwUYQmFLBvO3uGD7JrowdsLKxZ5GsCk1camZc2QlRBLH85QxqF8RBiqJ6c6ztqNQ"/><div class="hidden md:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface leading-tight font-semibold">Dr. Rajesh Kumar</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-none">Scholar #9841</span></div></div></div></header><main class="w-full pt-16 bg-background px-space-xl py-space-lg min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Student Status Banner & Meta Header -->
+<section class="relative w-full rounded-xl bg-surface-container-lowest p-space-lg shadow-sm mb-space-lg overflow-hidden">
+<div class="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md relative z-10">
+<!-- Profile Context & Badges -->
+<div class="flex flex-col sm:flex-row sm:items-center gap-space-md">
+<div class="relative">
+<img class="w-16 h-16 rounded-xl object-cover shadow-sm bg-surface-container-high" data-alt="Official scholastic portrait badge of an Indian civil service aspirant with clean lighting, dark navy scholarly uniform accent, sharp focus, professional institutional photograph" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOalGEdxLyHi2w-nz2StqKVxFRgImqhpIneZ-zSb1L69jZKTMRz-6bI3qzoAewGwTVn9kiSVoPQ3_ptjD0fLFoTPQRc7CDRFFAKq8xTJcYj5ofg_84ZcfRmEqYfpDVz-9ppVmTx9WXqmwOx6Hj48MULM6pI3snwDBAJoaIyBX4W0qnoSvQnZXNT_lJ3IS3sSbnggujwo8b9sFujHIP0SuDlvKo1dpHgslN4JBwuxa4"/>
+<div class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-xs">verified</span>
 </div>
-<div class="flex flex-col min-w-0">
-<div class="flex flex-wrap items-center gap-space-xs">
-<span class="font-headline-sm text-headline-sm text-on-surface truncate">Dr. Rajesh Kumar</span>
-<span class="bg-surface-container text-on-surface-variant font-label-sm text-label-sm px-space-xs py-0.5 rounded-full uppercase tracking-wider">UID: #EP-9841-DL</span>
-<span class="bg-primary text-on-primary font-label-sm text-label-sm px-space-xs py-0.5 rounded-full flex items-center gap-1">
-<span class="w-1.5 h-1.5 rounded-full bg-surface-bright animate-pulse"></span>
-            Live Academic Session
-          </span>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
-          Focus: <strong class="text-on-surface font-title-md text-title-md">UPSC &amp; Civil Services (IAS/IPS 2025)</strong> • Medium: Bilingual (English / हिंदी)
-        </p>
-<div class="flex flex-wrap items-center gap-space-sm mt-space-xs">
-<span class="inline-flex items-center gap-1.5 bg-surface-container-low px-space-xs py-1 rounded-lg text-secondary font-label-md text-label-md font-semibold">
-<span class="material-symbols-outlined text-base">workspace_premium</span>
-            1-Month (30 Days) All-Access Pass Active
-          </span>
-<span class="text-on-surface-variant font-body-sm text-body-sm">• Valid till: <strong>28 Oct 2025 (18 Days Left)</strong></span>
-</div>
-</div>
-</div>
-<!-- Active Quota & Stream Dropdown Context -->
-<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-md xl:self-center">
-<!-- 30-Free Daily Question Quota Widget -->
-<div class="bg-surface-container-low p-space-sm rounded-xl flex items-center gap-space-md min-w-[240px]">
-<div class="relative w-12 h-12 flex-shrink-0 flex items-center justify-center">
-<svg class="w-12 h-12 -rotate-90" viewbox="0 0 36 36">
-<path class="text-surface-variant" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
-<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="60, 100" stroke-linecap="round" stroke-width="3.5"></path>
-</svg>
-<span class="absolute font-numeric-table text-numeric-table font-bold text-on-surface">18</span>
 </div>
 <div class="flex flex-col">
-<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Free PYQ Quota</span>
-<span class="font-title-md text-title-md text-on-surface font-bold">18 / 30 Left</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Resets midnight (IST)</span>
+<div class="flex items-center flex-wrap gap-space-xs">
+<h1 class="font-headline-sm text-headline-sm text-on-surface">राजेश कुमार</h1>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">विद्यार्थी आईडी: #EDU-8921</span>
+<span class="px-space-xs py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm font-semibold">UPSC &amp; SSC CGL Candidate</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">अखिल भारतीय सिविल सेवा अभ्यास प्रकोष्ठ • राजस्थान एवं राष्ट्रीय संवर्ग</p>
 </div>
 </div>
-<!-- Quick Switch Goal Stream Selector -->
-<div class="flex flex-col justify-center">
-<label class="font-label-sm text-label-sm text-on-surface-variant mb-1 font-semibold uppercase tracking-wider" for="stream-switcher">Switch Goal Stream</label>
-<div class="relative">
-<select class="appearance-none bg-surface-container-highest text-on-surface font-title-md text-title-md px-space-md py-2 pr-10 rounded-lg cursor-pointer outline-none focus:bg-surface-container-low transition-colors w-full sm:w-56" id="stream-switcher">
-<option selected="" value="upsc">UPSC Civil Services</option>
-<option value="neet">NEET UG Medical</option>
-<option value="jee">JEE Advanced Engineering</option>
-<option value="btech">B.Tech Engineering (All Branches)</option>
-<option value="degrees">College Degrees (BA, BSc, B.Com)</option>
-<option value="rscit">RS-CIT &amp; Tally Prime</option>
-</select>
-<span class="material-symbols-outlined absolute right-space-xs top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant text-lg">expand_more</span>
+<!-- Quick Subscription Pill & Stream Switcher Dropdown -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Active Subscription Box -->
+<div class="flex items-center gap-space-xs bg-surface-container px-space-md py-space-xs rounded-lg">
+<div class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold flex items-center gap-1">
+              ₹199 / माह <span class="text-secondary font-bold">(30 दिन ऑल-एक्सेस पास)</span>
+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">24 दिन शेष • असीमित PYQ एक्सेस</span>
+</div>
+</div>
+<!-- Stream Switcher Dropdown Interaction -->
+<div class="relative" id="streamDropdownContainer">
+<button class="flex items-center gap-space-xs bg-primary text-on-primary px-space-md py-space-xs rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all shadow-sm" id="streamSwitchBtn">
+<span class="material-symbols-outlined text-sm">swap_horiz</span>
+<span class="" id="currentStreamLabel">UPSC Civil Services &amp; SSC</span>
+<span class="material-symbols-outlined text-sm transition-transform duration-200" id="dropdownArrow">expand_more</span>
+</button>
+<!-- Dropdown Palette -->
+<div class="hidden absolute right-0 mt-2 w-72 rounded-xl bg-surface-container-lowest p-space-xs shadow-xl z-50" id="streamMenu"><span class="block px-space-sm py-1 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">शैक्षणिक संवर्ग चुनें</span><button class="w-full text-left px-space-sm py-2 rounded-lg text-on-surface hover:bg-surface-container-low font-body-sm text-body-sm flex items-center justify-between" onclick="window.location.href='test-series.html?stream=board'"><span class="">🎒 10th व 12th बोर्ड (RBSE / CBSE)</span><span class="material-symbols-outlined text-xs text-on-surface-variant">arrow_forward</span></button><button class="w-full text-left px-space-sm py-2 rounded-lg text-on-surface hover:bg-surface-container-low font-body-sm text-body-sm flex items-center justify-between" onclick="window.location.href='test-series.html?stream=neet'"><span class="">🩺 NEET (UG Medical Entrance)</span><span class="material-symbols-outlined text-xs text-on-surface-variant">arrow_forward</span></button><button class="w-full text-left px-space-sm py-2 rounded-lg bg-surface-container text-secondary font-semibold font-body-sm text-body-sm flex items-center justify-between" onclick="window.location.href='test-series.html?stream=upsc'"><span class="">🛡️ UPSC Civil Services &amp; SSC CGL</span><span class="material-symbols-outlined text-xs text-secondary">check_circle</span></button><button class="w-full text-left px-space-sm py-2 rounded-lg text-on-surface hover:bg-surface-container-low font-body-sm text-body-sm flex items-center justify-between" onclick="window.location.href='test-series.html?stream=rscit'"><span class="">💻 RS-CIT कंप्यूटर व Tally Prime</span><span class="material-symbols-outlined text-xs text-on-surface-variant">arrow_forward</span></button><button class="w-full text-left px-space-sm py-2 rounded-lg text-on-surface hover:bg-surface-container-low font-body-sm text-body-sm flex items-center justify-between" onclick="window.location.href='test-series.html?stream=college'"><span class="">🎓 कॉलेज डिग्री (BA, B.Sc, B.Com)</span><span class="material-symbols-outlined text-xs text-on-surface-variant">arrow_forward</span></button></div>
 </div>
 </div>
 </div>
 </section>
-<!-- Habit Gamification: 7-Day Streak & Daily Focus Track -->
-<section class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-space-md">
+<!-- Metric Analytics Grid & Daily Streak Hub -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-lg">
 <!-- Streak Card -->
-<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col justify-between">
 <div class="flex items-center justify-between">
-<div class="flex items-center gap-space-xs">
-<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
-<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant font-semibold">नियमित अभ्यास स्ट्रीक</span>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface">Day 5/7</span>
 </div>
-<div>
-<span class="font-label-sm text-label-sm uppercase text-on-surface-variant block leading-none">Habit Velocity</span>
-<span class="font-headline-sm text-headline-sm text-on-surface font-bold">7-Day Streak</span>
+<div class="my-space-sm flex items-baseline gap-space-xs">
+<span class="font-display-lg text-display-lg font-bold text-on-surface tracking-tight">5</span>
+<span class="font-title-md text-title-md text-on-surface-variant">दिन लगातार</span>
 </div>
+<!-- Mini Visual Streak Dots -->
+<div class="flex items-center gap-1.5 pt-1">
+<div class="flex-1 h-2 rounded bg-primary" title="Monday"></div>
+<div class="flex-1 h-2 rounded bg-primary" title="Tuesday"></div>
+<div class="flex-1 h-2 rounded bg-primary" title="Wednesday"></div>
+<div class="flex-1 h-2 rounded bg-primary" title="Thursday"></div>
+<div class="flex-1 h-2 rounded bg-primary" title="Friday"></div>
+<div class="flex-1 h-2 rounded bg-surface-container-high" title="Saturday"></div>
+<div class="flex-1 h-2 rounded bg-surface-container-high" title="Sunday"></div>
 </div>
-<span class="bg-surface-container-low text-secondary font-label-sm text-label-sm px-space-xs py-0.5 rounded-full font-bold">+250 XP</span>
+<span class="font-label-sm text-label-sm text-secondary mt-space-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">local_fire_department</span> +25 XP बोनस सक्रिय
+      </span>
 </div>
-<div class="flex items-center justify-between mt-space-md gap-1">
-<div class="flex flex-col items-center flex-1">
-<span class="font-label-sm text-label-sm text-on-surface-variant mb-1">M</span>
-<div class="w-full h-2 rounded bg-secondary"></div>
-</div>
-<div class="flex flex-col items-center flex-1">
-<span class="font-label-sm text-label-sm text-on-surface-variant mb-1">T</span>
-<div class="w-full h-2 rounded bg-secondary"></div>
-</div>
-<div class="flex flex-col items-center flex-1">
-<span class="font-label-sm text-label-sm text-on-surface-variant mb-1">W</span>
-<div class="w-full h-2 rounded bg-secondary"></div>
-</div>
-<div class="flex flex-col items-center flex-1">
-<span class="font-label-sm text-label-sm text-on-surface-variant mb-1">T</span>
-<div class="w-full h-2 rounded bg-secondary"></div>
-</div>
-<div class="flex flex-col items-center flex-1">
-<span class="font-label-sm text-label-sm text-on-surface-variant mb-1">F</span>
-<div class="w-full h-2 rounded bg-secondary"></div>
-</div>
-<div class="flex flex-col items-center flex-1">
-<span class="font-label-sm text-label-sm text-on-surface-variant mb-1">S</span>
-<div class="w-full h-2 rounded bg-secondary"></div>
-</div>
-<div class="flex flex-col items-center flex-1">
-<span class="font-label-sm text-label-sm text-secondary font-bold mb-1">Sun</span>
-<div class="w-full h-2 rounded bg-secondary animate-pulse"></div>
-</div>
-</div>
-</div>
-<!-- Daily Study Hours Logged -->
-<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<!-- Daily Study Goal Time Progress -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
 <div class="flex items-center justify-between">
-<div class="flex items-center gap-space-xs">
-<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary">
-<span class="material-symbols-outlined text-xl">timer</span>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant font-semibold">दैनिक अध्ययन लक्ष्य</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">75% पूर्ण</span>
 </div>
-<div>
-<span class="font-label-sm text-label-sm uppercase text-on-surface-variant block leading-none">Time On Task</span>
-<span class="font-headline-sm text-headline-sm text-on-surface font-bold">4.8 / 6.0 Hrs</span>
+<div class="my-space-sm flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface">45</span>
+<span class="font-body-md text-body-md text-on-surface-variant">/ 60 मिनट</span>
 </div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-secondary h-2 rounded-full" style="width: 75%"></div>
 </div>
-<span class="font-numeric-table text-numeric-table font-bold text-secondary">80%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-space-xs">
+        शेष: 15 मिनट (आज का NCERT अभ्यास)
+      </span>
 </div>
-<div class="w-full bg-surface-container rounded-full h-2 mt-space-md overflow-hidden">
-<div class="bg-primary h-2 rounded-full" style="width: 80%"></div>
-</div>
-<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">1.2 hrs remaining to complete daily syllabus cycle</span>
-</div>
-<!-- GS Paper Mock Target -->
-<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<!-- 20-Year PYQ Counter -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
 <div class="flex items-center justify-between">
-<div class="flex items-center gap-space-xs">
-<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-secondary-container">
-<span class="material-symbols-outlined text-xl">assignment_turned_in</span>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant font-semibold">20-Year PYQs हल किए</span>
+<span class="material-symbols-outlined text-on-surface-variant text-base">history_edu</span>
 </div>
-<div>
-<span class="font-label-sm text-label-sm uppercase text-on-surface-variant block leading-none">Mock Accuracy</span>
-<span class="font-headline-sm text-headline-sm text-on-surface font-bold">78.4%</span>
+<div class="my-space-sm flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface">1,482</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">/ 8,500</span>
 </div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-primary-container h-2 rounded-full" style="width: 22%"></div>
 </div>
-<span class="bg-surface-container text-on-surface font-label-sm text-label-sm px-space-xs py-0.5 rounded-full font-semibold">AIR #312</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-space-xs">
+        UPSC GS Paper-I (2004-2024 समाहित)
+      </span>
 </div>
-<div class="flex items-center gap-space-sm mt-space-md">
-<div class="flex-1 bg-surface-container-low p-2 rounded-lg text-center">
-<span class="font-label-sm text-label-sm text-on-surface-variant block">Correct</span>
-<span class="font-numeric-table text-numeric-table font-bold text-on-surface">142 Qs</span>
-</div>
-<div class="flex-1 bg-surface-container-low p-2 rounded-lg text-center">
-<span class="font-label-sm text-label-sm text-on-surface-variant block">Negative Marks</span>
-<span class="font-numeric-table text-numeric-table font-bold text-error">-14.6</span>
-</div>
-</div>
-</div>
-<!-- Active Revision Index -->
-<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<!-- Mock Accuracy with Sparkline Graphic -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
 <div class="flex items-center justify-between">
-<div class="flex items-center gap-space-xs">
-<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-tertiary-container">
-<span class="material-symbols-outlined text-xl">psychology</span>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant font-semibold">मॉक टेस्ट शुद्धता दर</span>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">शीर्ष 5%</span>
 </div>
+<div class="my-space-xs flex items-center justify-between">
 <div>
-<span class="font-label-sm text-label-sm uppercase text-on-surface-variant block leading-none">Memory Retention</span>
-<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Tier-1 Elite</span>
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface">84.6%</span>
+<span class="block font-label-sm text-label-sm text-secondary font-medium">गत 10 टेस्ट का औसत</span>
 </div>
+<!-- Inline Vector Chart Under 2KB -->
+<svg class="w-20 h-10 text-secondary" fill="none" viewbox="0 0 100 40">
+<path d="M0 35 L18 28 L36 30 L54 18 L72 22 L90 8 L100 12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+<circle cx="90" cy="8" fill="currentColor" r="3"></circle>
+</svg>
 </div>
-<span class="material-symbols-outlined text-secondary text-xl">trending_up</span>
-</div>
-<div class="mt-space-md">
-<p class="font-body-sm text-body-sm text-on-surface">Polity Articles 1-51A &amp; Indian Economy Key Indices mastered.</p>
-<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm mt-1">
-<span>Spaced Interval: D+14</span>
-<span class="font-bold text-primary">Next: Tomorrow</span>
-</div>
-</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-space-xs">
+        नकारात्मक अंकन नियंत्रण: 92% सुरक्षित
+      </span>
 </div>
 </section>
-<!-- STRICT 5-PAID REFERRAL AUTO-EXTENSION HUB -->
-<section class="bg-gradient-to-br from-primary-container via-primary to-primary-container text-on-primary rounded-xl p-space-lg shadow-md relative overflow-hidden">
-<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-lg relative z-10">
-<!-- Left Explanation -->
-<div class="max-w-2xl">
-<div class="inline-flex items-center gap-2 bg-surface-bright/10 backdrop-blur-md px-space-sm py-1 rounded-full text-surface-variant font-label-sm text-label-sm font-semibold mb-space-xs">
-<span class="material-symbols-outlined text-sm">cloud_download</span>
-          PERPETUAL ACCESS FORMULA: ZERO CASH OUTFLOW
-        </div>
-<h2 class="font-headline-lg text-headline-lg font-bold tracking-tight text-on-primary">
-          5 Paid ₹199 Referrals = +30 Days Instant Free Extension
-        </h2>
-<p class="font-body-md text-body-md text-surface-variant mt-space-xs">
-          Empower 5 fellow scholars to activate their ₹199 (1 Month) Pass. Once each payment is reviewed and verified by EduPro Founder <strong class="text-on-primary">Himmat Ram (+91 9166603971)</strong>, our automated entitlement engine activates a <strong>30-day all-access extension</strong> directly into your account dashboard.
-        </p>
-<!-- Referral Progress Indicator -->
-<div class="mt-space-md bg-surface-bright/10 p-space-md rounded-xl backdrop-blur-sm max-w-xl">
-<div class="flex items-center justify-between mb-2">
-<span class="font-title-md text-title-md font-semibold text-on-primary flex items-center gap-1.5">
-<span class="material-symbols-outlined text-secondary-fixed">group_add</span>
-              Status: 3 / 5 Paid Referrals Verified
-            </span>
-<span class="font-numeric-table text-numeric-table font-bold text-secondary-fixed bg-surface-bright/20 px-2 py-0.5 rounded">60% Completed</span>
-</div>
-<!-- Progress Segments -->
-<div class="grid grid-cols-5 gap-2">
-<div class="h-3 rounded bg-secondary flex items-center justify-center text-[9px] font-bold text-on-primary shadow-sm" title="Friend 1: Amit S. - Paid ₹199 Verified">✓</div>
-<div class="h-3 rounded bg-secondary flex items-center justify-center text-[9px] font-bold text-on-primary shadow-sm" title="Friend 2: Priya V. - Paid ₹199 Verified">✓</div>
-<div class="h-3 rounded bg-secondary flex items-center justify-center text-[9px] font-bold text-on-primary shadow-sm" title="Friend 3: Naveen J. - Paid ₹199 Verified">✓</div>
-<div class="h-3 rounded bg-surface-bright/20 flex items-center justify-center text-[9px] text-surface-variant" title="Slot 4 Open">4</div>
-<div class="h-3 rounded bg-surface-bright/20 flex items-center justify-center text-[9px] text-surface-variant" title="Slot 5 Open - Unlocks +30 Days">5</div>
-</div>
-<div class="flex items-center justify-between text-surface-variant font-body-sm text-body-sm mt-space-xs">
-<span>2 more paid activations needed for <strong>+30 Days</strong> bonus.</span>
-<span class="text-secondary-fixed font-semibold">Himmat Ram Desk Direct Sync</span>
-</div>
-</div>
-</div>
-<!-- Right Action Card: Unique Code & 1-Click Share -->
-<div class="bg-surface-container-lowest text-on-surface rounded-xl p-space-md flex flex-col justify-between shadow-lg lg:w-96 flex-shrink-0">
+<!-- Bento Section: Referral Hub (+30 Days) & Instant A4 PDF Print Module -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-lg">
+<!-- 1. Strict 5-Paid Referral Hub (8 Columns) -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
 <div>
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant font-bold block mb-1">Your Authoritative Invite Code</span>
-<div class="bg-surface-container p-space-sm rounded-lg flex items-center justify-between">
-<code class="font-numeric-table text-numeric-table font-bold text-primary text-base select-all tracking-wider" id="refCode">EDUPRO-HIMMAT-78</code>
-<button class="p-1.5 hover:bg-surface-container-high rounded transition-colors text-on-surface-variant" onclick="navigator.clipboard.writeText('EDUPRO-HIMMAT-78'); alert('Referral code copied!');" title="Copy Referral Code" type="button">
-<span class="material-symbols-outlined text-lg">content_copy</span>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs pb-space-sm mb-space-md">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-xl">workspace_premium</span>
+<span class="font-title-lg text-title-lg font-bold text-on-surface">सख्त 5-सफल भुगतान रेफरल रिवॉर्ड</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">अपने 5 सहपाठियों को जोड़ें और स्वचालित +30 दिन की वैधता निःशुल्क प्राप्त करें</p>
+</div>
+<span class="self-start sm:self-auto px-space-sm py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold tracking-wide">
+            +30 DAYS FREE EXTENSION
+          </span>
+</div>
+<!-- Visual Step Tracker (0 of 5 Paid Active) -->
+<div class="bg-surface-container-low rounded-xl p-space-md mb-space-md">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-md text-label-md font-semibold text-on-surface">रेफरल प्रगति स्थिति</span>
+<span class="font-numeric-table text-numeric-table font-bold text-secondary">0 / 5 सशुल्क सक्रिय (Paid Active)</span>
+</div>
+<!-- Segmented Progress Bar (0% active) -->
+<div class="grid grid-cols-5 gap-2 my-space-xs"><div class="h-3 rounded-full bg-surface-container-highest flex items-center justify-center" title="Student 1: Pending"></div><div class="h-3 rounded-full bg-surface-container-highest flex items-center justify-center" title="Student 2: Pending"></div><div class="h-3 rounded-full bg-surface-container-highest flex items-center justify-center" title="Student 3: Pending"></div><div class="h-3 rounded-full bg-surface-container-highest flex items-center justify-center" title="Student 4: Pending"></div><div class="h-3 rounded-full bg-surface-container-highest flex items-center justify-center" title="Student 5: Pending"></div></div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mt-1"><span class="">अभी कोई सशुल्क रेफरल नहीं • लक्ष्य: 5 छात्र अनिवार्य (प्रत्येक ₹199 भुगतान पर)</span><span class="font-semibold text-secondary">0% पूर्ण</span></div>
+</div>
+<!-- Clear 3-Step Verification Rule Breakdown -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm mb-space-md">
+<div class="bg-surface-container p-space-sm rounded-lg">
+<span class="font-label-sm text-label-sm text-secondary font-bold block mb-1">चरण 1</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface block">आपका ₹199 पास एक्टिव</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">केवल सक्रिय खाताधारक ही रेफरल हेतु मान्य हैं।</span>
+</div>
+<div class="bg-surface-container p-space-sm rounded-lg">
+<span class="font-label-sm text-label-sm text-secondary font-bold block mb-1">चरण 2</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface block">5 सहपाठियों को आमंत्रित करें</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">अपने निजी कोड से मित्रों का पंजीकरण कराएं।</span>
+</div>
+<div class="bg-surface-container p-space-sm rounded-lg">
+<span class="font-label-sm text-label-sm text-secondary font-bold block mb-1">चरण 3</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface block">ऑटोमैटिक +30 दिन विस्तार</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">पाँचवें छात्र के ₹199 भुगतान पर सिस्टम स्वतः लागू करेगा।</span>
+</div>
+</div>
+</div>
+<!-- Share Mechanism & Copy Code Action -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-space-sm pt-space-sm bg-surface-container rounded-lg p-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">आपका रेफरल कोड:</span>
+<span class="font-numeric-table text-numeric-table font-bold text-primary bg-surface-container-lowest px-space-xs py-1 rounded select-all" id="referralCodeText">EDUPRO-HR91</span>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface" onclick="navigator.clipboard.writeText('EDUPRO-HR91'); alert('रेफरल कोड कॉपी हो गया!');" title="कॉपी करें">
+<span class="material-symbols-outlined text-sm">content_copy</span>
 </button>
 </div>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
-            Share this link directly. Friends receive full access to 14,820+ PYQs, Test Engine, and Memory Tricks.
-          </p>
-</div>
-<div class="flex flex-col gap-2 mt-space-md">
-<a class="w-full bg-primary hover:bg-secondary text-on-primary py-2.5 px-space-md rounded-lg font-label-md text-label-md font-semibold flex items-center justify-center gap-2 transition-colors shadow-sm" href="https://api.whatsapp.com/send?text=Join%20EduPro%20using%20my%20code%20EDUPRO-HIMMAT-78%20for%2014,820%2B%20PYQs,%20Mock%20Tests%20and%20Desi%20Memory%20Tricks!%20Founder%20Helpline:%209166603971" rel="noopener noreferrer" target="_blank">
-<span class="material-symbols-outlined text-base">chat</span>
-            1-Click Share on WhatsApp
-          </a>
-<a class="w-full bg-surface-container-low hover:bg-surface-container text-on-surface py-2 px-space-md rounded-lg font-label-md text-label-md font-semibold flex items-center justify-center gap-2 transition-colors" href="https://t.me/share/url?url=https://edupro.org&amp;text=Master%20UPSC,%20NEET,%20Degrees%20with%20EduPro.%20Use%20Referral%20EDUPRO-HIMMAT-78" rel="noopener noreferrer" target="_blank">
-<span class="material-symbols-outlined text-base">send</span>
-            Share via Telegram Channels
-          </a>
-</div>
-</div>
-</div>
-</section>
-<!-- Quick Action Learning Grid (The Academic Engine Hub) -->
-<section class="flex flex-col gap-space-sm">
-<div class="flex items-center justify-between">
-<div>
-<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Core Academic Toolsets</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Instant access to verified archives, examination simulators, and accelerated learning artifacts</p>
-</div>
-<span class="font-label-sm text-label-sm text-on-surface-variant hidden md:block">Updated 2004-2024 Archival Standard</span>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-space-md">
-<!-- Card 1: 20-Year Solved PYQ Archive -->
-<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
-<div>
-<div class="flex items-center justify-between mb-space-xs">
-<span class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
-<span class="material-symbols-outlined text-2xl">menu_book</span>
-</span>
-<span class="bg-surface-container text-on-surface-variant font-label-sm text-label-sm px-space-xs py-0.5 rounded-full font-semibold">14,820+ Papers</span>
-</div>
-<h4 class="font-title-lg text-title-lg font-bold text-on-surface">20-Year Solved PYQ Archive</h4>
-<p class="font-body-md text-body-md text-on-surface-variant mt-1">
-            Complete institutional archive from 2004 to 2024. Includes step-by-step model explanations, official answer keys, and Hindi/English bilingual papers.
-          </p>
-<div class="flex flex-wrap gap-1 mt-space-sm">
-<span class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm px-2 py-0.5 rounded">UPSC (GS + CSAT)</span>
-<span class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm px-2 py-0.5 rounded">NEET Biology</span>
-<span class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm px-2 py-0.5 rounded">B.Tech Semesters</span>
-</div>
-</div>
-<div class="mt-space-md pt-space-sm border-t border-surface-container flex items-center justify-between">
-<span class="font-body-sm text-body-sm text-secondary font-semibold flex items-center gap-1">
-<span class="material-symbols-outlined text-sm">download_done</span> 100% Verified Keys
-          </span>
-<a class="bg-primary hover:bg-secondary text-on-primary px-space-md py-1.5 rounded-lg font-label-md text-label-md font-semibold transition-colors inline-flex items-center gap-1" data-path="test-series-and-pyqs" href="#">
-            Open Archive <span class="material-symbols-outlined text-sm">arrow_forward</span>
-</a>
-</div>
-</div>
-<!-- Card 2: Live Test Engine (60-Min Timer & 100-Question Palette) -->
-<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
-<div>
-<div class="flex items-center justify-between mb-space-xs">
-<span class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
-<span class="material-symbols-outlined text-2xl">hourglass_top</span>
-</span>
-<span class="bg-surface-container text-secondary font-label-sm text-label-sm px-space-xs py-0.5 rounded-full font-bold">NTA &amp; UPSC Standard</span>
-</div>
-<h4 class="font-title-lg text-title-lg font-bold text-on-surface">Live Exam Simulator Engine</h4>
-<p class="font-body-md text-body-md text-on-surface-variant mt-1">
-            Authentic timed examination simulator with strict 60-minute countdown, 100-question matrix palette, negative marking (-0.66), and sectional time limits.
-          </p>
-<!-- Question Palette Miniature Graphic -->
-<div class="grid grid-cols-8 gap-1.5 mt-space-sm max-w-xs">
-<span class="h-6 rounded bg-primary text-on-primary text-[10px] font-bold flex items-center justify-center">1</span>
-<span class="h-6 rounded bg-primary text-on-primary text-[10px] font-bold flex items-center justify-center">2</span>
-<span class="h-6 rounded bg-secondary text-on-secondary text-[10px] font-bold flex items-center justify-center">3</span>
-<span class="h-6 rounded bg-surface-variant text-on-surface text-[10px] font-bold flex items-center justify-center">4</span>
-<span class="h-6 rounded bg-primary text-on-primary text-[10px] font-bold flex items-center justify-center">5</span>
-<span class="h-6 rounded bg-surface-container-high text-on-surface-variant text-[10px] flex items-center justify-center">6</span>
-<span class="h-6 rounded bg-surface-container-high text-on-surface-variant text-[10px] flex items-center justify-center">7</span>
-<span class="h-6 rounded bg-surface-container-high text-on-surface-variant text-[10px] flex items-center justify-center">..</span>
-</div>
-</div>
-<div class="mt-space-md pt-space-sm border-t border-surface-container flex items-center justify-between">
-<span class="font-body-sm text-body-sm text-on-surface-variant">Active Mock: <strong>GS Paper 1 (Full)</strong></span>
-<a class="bg-secondary-container hover:bg-secondary text-on-secondary px-space-md py-1.5 rounded-lg font-label-md text-label-md font-semibold transition-colors inline-flex items-center gap-1" data-path="test-series-and-pyqs" href="#">
-            Launch Test <span class="material-symbols-outlined text-sm">play_arrow</span>
-</a>
-</div>
-</div>
-<!-- Card 3: Desi Subject Memory Tricks Vault -->
-<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
-<div>
-<div class="flex items-center justify-between mb-space-xs">
-<span class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-tertiary-container">
-<span class="material-symbols-outlined text-2xl">tips_and_updates</span>
-</span>
-<span class="bg-surface-container text-on-surface font-label-sm text-label-sm px-space-xs py-0.5 rounded-full font-semibold">High Retention</span>
-</div>
-<h4 class="font-title-lg text-title-lg font-bold text-on-surface">Desi Memory Tricks Vault</h4>
-<p class="font-body-md text-body-md text-on-surface-variant mt-1">
-            Proven mnemonic devices and formula shortcuts: BAAJSA (Mughal rulers), PROM-H (Indian River systems), and Tally Prime 3-Golden Accounting Rules.
-          </p>
-<div class="bg-surface-container-low p-2 rounded-lg mt-space-sm">
-<span class="font-label-sm text-label-sm text-on-surface-variant font-bold block">SAMPLE FORMULA:</span>
-<p class="font-body-sm text-body-sm text-on-surface font-medium">
-<strong>BAAJSA</strong>: Babur, Humayun, Akbar, Jahangir, Shah Jahan, Aurangzeb
-            </p>
-</div>
-</div>
-<div class="mt-space-md pt-space-sm border-t border-surface-container flex items-center justify-between">
-<span class="font-body-sm text-body-sm text-on-surface-variant">420+ Mnemonics Ready</span>
-<a class="bg-primary hover:bg-secondary text-on-primary px-space-md py-1.5 rounded-lg font-label-md text-label-md font-semibold transition-colors inline-flex items-center gap-1" data-path="courses-and-streams" href="#">
-            Browse Vault <span class="material-symbols-outlined text-sm">lock_open</span>
-</a>
-</div>
-</div>
-<!-- Card 4: State-wise Daily GK & Current Affairs Feed -->
-<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
-<div>
-<div class="flex items-center justify-between mb-space-xs">
-<span class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
-<span class="material-symbols-outlined text-2xl">newspaper</span>
-</span>
-<span class="bg-surface-container-high text-on-surface font-label-sm text-label-sm px-space-xs py-0.5 rounded-full font-semibold">Daily Editorial Digest</span>
-</div>
-<h4 class="font-title-lg text-title-lg font-bold text-on-surface">State-wise Daily GK Digest</h4>
-<p class="font-body-md text-body-md text-on-surface-variant mt-1">
-            Curated daily current affairs filtered by central notifications and key state PSC requirements (Rajasthan, UP, MP, Bihar, Delhi).
-          </p>
-<div class="space-y-1 mt-space-sm">
-<div class="flex items-center gap-2 text-on-surface font-body-sm text-body-sm">
-<span class="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0"></span>
-<span class="truncate">ISRO Mission Gaganyaan Stage-2 Testing Protocol Updates</span>
-</div>
-<div class="flex items-center gap-2 text-on-surface font-body-sm text-body-sm">
-<span class="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0"></span>
-<span class="truncate">RBI Monetary Policy Committee Repo Rate Decision &amp; Inflation Matrix</span>
-</div>
-</div>
-</div>
-<div class="mt-space-md pt-space-sm border-t border-surface-container flex items-center justify-between">
-<span class="font-body-sm text-body-sm text-on-surface-variant">Date: <strong>Today (IST)</strong></span>
-<a class="bg-primary hover:bg-secondary text-on-primary px-space-md py-1.5 rounded-lg font-label-md text-label-md font-semibold transition-colors inline-flex items-center gap-1" data-path="daily-gk" href="#">
-            Read GK Capsule <span class="material-symbols-outlined text-sm">arrow_forward</span>
-</a>
-</div>
-</div>
-<!-- Card 5: 1-Click A4 PDF Printable Notes Center -->
-<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
-<div>
-<div class="flex items-center justify-between mb-space-xs">
-<span class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
-<span class="material-symbols-outlined text-2xl">picture_as_pdf</span>
-</span>
-<span class="bg-surface-container text-secondary font-label-sm text-label-sm px-space-xs py-0.5 rounded-full font-bold">A4 Print Ready</span>
-</div>
-<h4 class="font-title-lg text-title-lg font-bold text-on-surface">Printable Notes Repository</h4>
-<p class="font-body-md text-body-md text-on-surface-variant mt-1">
-            Formatted specifically for ink-saver black/white A4 dual-column printing. Includes anti-copy candidate watermarking and indexed margin summaries.
-          </p>
-<div class="flex items-center gap-2 mt-space-sm text-on-surface-variant font-body-sm text-body-sm">
-<span class="material-symbols-outlined text-base text-secondary">verified_user</span>
-<span>Digital Watermark: Protected with your ID #9841</span>
-</div>
-</div>
-<div class="mt-space-md pt-space-sm border-t border-surface-container flex items-center justify-between">
-<span class="font-body-sm text-body-sm text-on-surface-variant">Format: <strong>Vector PDF</strong></span>
-<a class="bg-primary hover:bg-secondary text-on-primary px-space-md py-1.5 rounded-lg font-label-md text-label-md font-semibold transition-colors inline-flex items-center gap-1" data-path="offline-downloads" href="#">
-            Generate PDF <span class="material-symbols-outlined text-sm">download</span>
-</a>
-</div>
-</div>
-<!-- Card 6: Direct Founder Help & Live Support Desk -->
-<div class="bg-surface-container-low p-space-md rounded-xl shadow-sm flex flex-col justify-between">
-<div>
-<div class="flex items-center justify-between mb-space-xs">
-<span class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary">
-<span class="material-symbols-outlined text-2xl">headset_mic</span>
-</span>
-<span class="bg-surface-container text-on-surface font-label-sm text-label-sm px-space-xs py-0.5 rounded-full font-bold">24x7 Direct Hotline</span>
-</div>
-<h4 class="font-title-lg text-title-lg font-bold text-on-surface">Founder Academic Desk</h4>
-<p class="font-body-md text-body-md text-on-surface-variant mt-1">
-            Immediate guidance on syllabus bottlenecks, payment activation verification, and examination prep strategy directly with EduPro Founder <strong>Himmat Ram</strong>.
-          </p>
-<div class="bg-surface-container-lowest p-space-xs rounded-lg mt-space-sm flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-lg">call</span>
-<span class="font-numeric-table text-numeric-table font-bold text-on-surface">+91 9166603971</span>
-<span class="text-on-surface-variant font-label-sm text-label-sm">(Official Founder Line)</span>
-</div>
-</div>
-<div class="mt-space-md pt-space-sm flex items-center justify-between gap-space-xs">
-<a class="flex-1 bg-primary hover:bg-secondary text-on-primary py-1.5 px-space-xs rounded-lg font-label-md text-label-md font-semibold transition-colors text-center inline-flex items-center justify-center gap-1" href="https://api.whatsapp.com/send?phone=919166603971&amp;text=Hello%20Founder%20Himmat%20Ram%20Ji,%20I%20am%20student%20Rajesh%20Kumar%20(ID:%209841)%20needing%20guidance." rel="noopener noreferrer" target="_blank">
-<span class="material-symbols-outlined text-sm">chat</span> WhatsApp Founder
-          </a>
-<a class="bg-surface-container-lowest hover:bg-surface-container text-on-surface py-1.5 px-3 rounded-lg font-label-md text-label-md font-semibold transition-colors flex items-center justify-center" href="tel:+919166603971" title="Call Himmat Ram">
-<span class="material-symbols-outlined text-sm">call</span>
-</a>
-</div>
-</div>
-</div>
-</section>
-<!-- High-Density Syllabus Progress Matrix -->
-<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
-<div class="flex flex-col md:flex-row md:items-center justify-between pb-space-sm border-b border-surface-container gap-space-xs">
-<div>
-<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">UPSC Prelims &amp; Mains Syllabus Track</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Systematic coverage across official commission standards</p>
-</div>
 <div class="flex items-center gap-space-xs">
-<span class="font-body-sm text-body-sm text-on-surface-variant">Overall Target Completion:</span>
-<span class="font-numeric-table text-numeric-table font-bold text-secondary text-base">64.2%</span>
+<a class="flex-1 sm:flex-initial flex items-center justify-center gap-1 bg-surface-container-lowest hover:bg-surface-container-high text-on-surface px-space-sm py-space-xs rounded font-label-md text-label-md transition-colors shadow-sm" href="https://api.whatsapp.com/send?text=EduPro%20%E0%A4%AA%E0%A4%B0%20%E0%A4%AE%E0%A5%87%E0%A4%B0%E0%A5%87%20%E0%A4%B8%E0%A4%BE%E0%A4%A5%2020-Year%20PYQ%20%E0%A4%B5%20Mock%20Tests%20%E0%A4%85%E0%A4%AD%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%B8%20%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82%E0%A5%A4%20%E0%A4%95%E0%A5%8B%E0%A4%A1%20EDUPRO-HR91%20%E0%A4%B8%E0%A5%87%20%E0%A4%9C%E0%A5%81%E0%A4%A1%E0%A4%BC%E0%A5%87%E0%A4%82:" target="_blank">
+<span class="material-symbols-outlined text-base text-secondary">share</span>
+            WhatsApp पर शेयर
+          </a>
+<a class="flex-1 sm:flex-initial flex items-center justify-center gap-1 bg-surface-container-lowest hover:bg-surface-container-high text-on-surface px-space-sm py-space-xs rounded font-label-md text-label-md transition-colors shadow-sm" href="https://t.me/share/url?url=https://edupro.internal/register&amp;text=EduPro%20National%20Exam%20Prep%20%7C%20Code:%20EDUPRO-HR91" target="_blank">
+<span class="material-symbols-outlined text-base text-secondary">send</span>
+            Telegram
+          </a>
 </div>
 </div>
-<!-- Tabular Progress Matrix -->
-<div class="overflow-x-auto mt-space-md">
-<table class="w-full text-left border-collapse">
-<thead>
-<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
-<th class="py-2.5 px-space-sm rounded-l-lg">Module &amp; Subject Area</th>
-<th class="py-2.5 px-space-sm">Solved PYQ Units</th>
-<th class="py-2.5 px-space-sm">Revision Phase</th>
-<th class="py-2.5 px-space-sm">Mock Test Score</th>
-<th class="py-2.5 px-space-sm text-right rounded-r-lg">Direct Resource</th>
-</tr>
-</thead>
-<tbody class="divide-y divide-surface-container font-body-md text-body-md text-on-surface">
-<tr class="hover:bg-surface-container-low/50 transition-colors">
-<td class="py-3 px-space-sm font-semibold flex items-center gap-2">
-<span class="material-symbols-outlined text-secondary text-lg">account_balance</span>
-              Indian Polity &amp; Governance (M. Laxmikanth)
-            </td>
-<td class="py-3 px-space-sm font-numeric-table text-numeric-table">480 / 520 Qs</td>
-<td class="py-3 px-space-sm">
-<span class="bg-surface-container-low text-secondary font-label-sm text-label-sm px-2 py-0.5 rounded-full font-bold">Mastered (Phase 3)</span>
-</td>
-<td class="py-3 px-space-sm font-numeric-table text-numeric-table text-primary font-bold">92.4%</td>
-<td class="py-3 px-space-sm text-right">
-<a class="text-secondary hover:underline font-label-md text-label-md font-semibold" data-path="test-series-and-pyqs" href="#">Test Series →</a>
-</td>
-</tr>
-<tr class="hover:bg-surface-container-low/50 transition-colors">
-<td class="py-3 px-space-sm font-semibold flex items-center gap-2">
-<span class="material-symbols-outlined text-secondary text-lg">history_edu</span>
-              Modern Indian History &amp; National Movement
-            </td>
-<td class="py-3 px-space-sm font-numeric-table text-numeric-table">310 / 450 Qs</td>
-<td class="py-3 px-space-sm">
-<span class="bg-surface-container text-on-surface-variant font-label-sm text-label-sm px-2 py-0.5 rounded-full font-semibold">Active Review (Phase 2)</span>
-</td>
-<td class="py-3 px-space-sm font-numeric-table text-numeric-table text-primary font-bold">76.0%</td>
-<td class="py-3 px-space-sm text-right">
-<a class="text-secondary hover:underline font-label-md text-label-md font-semibold" data-path="courses-and-streams" href="#">Mnemonics →</a>
-</td>
-</tr>
-<tr class="hover:bg-surface-container-low/50 transition-colors">
-<td class="py-3 px-space-sm font-semibold flex items-center gap-2">
-<span class="material-symbols-outlined text-secondary text-lg">public</span>
-              Geography &amp; Environmental Ecology
-            </td>
-<td class="py-3 px-space-sm font-numeric-table text-numeric-table">190 / 380 Qs</td>
-<td class="py-3 px-space-sm">
-<span class="bg-surface-container text-on-surface-variant font-label-sm text-label-sm px-2 py-0.5 rounded-full font-semibold">Initiated (Phase 1)</span>
-</td>
-<td class="py-3 px-space-sm font-numeric-table text-numeric-table text-on-surface-variant font-bold">64.5%</td>
-<td class="py-3 px-space-sm text-right">
-<a class="text-secondary hover:underline font-label-md text-label-md font-semibold" data-path="offline-downloads" href="#">Maps PDF →</a>
-</td>
-</tr>
-<tr class="hover:bg-surface-container-low/50 transition-colors">
-<td class="py-3 px-space-sm font-semibold flex items-center gap-2">
-<span class="material-symbols-outlined text-secondary text-lg">currency_rupee</span>
-              Indian Economy &amp; Budget/Survey 2024-25
-            </td>
-<td class="py-3 px-space-sm font-numeric-table text-numeric-table">225 / 340 Qs</td>
-<td class="py-3 px-space-sm">
-<span class="bg-surface-container-low text-secondary font-label-sm text-label-sm px-2 py-0.5 rounded-full font-bold">Mastered (Phase 2)</span>
-</td>
-<td class="py-3 px-space-sm font-numeric-table text-numeric-table text-primary font-bold">84.1%</td>
-<td class="py-3 px-space-sm text-right">
-<a class="text-secondary hover:underline font-label-md text-label-md font-semibold" data-path="daily-gk" href="#">Daily GK →</a>
-</td>
-</tr>
-</tbody>
-</table>
+</div>
+<!-- 2. Instant 1-Click A4 PDF Print & PYQ Center (4 Columns) -->
+<div class="lg:col-span-4 bg-primary text-on-primary rounded-xl p-space-lg shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute right-0 bottom-0 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[160px] -mb-10 -mr-10">print</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold">1-CLICK A4 REPOSITORY</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-primary">ऑफलाइन प्रिंट व PYQ केंद्र</h3>
+<p class="font-body-sm text-body-sm text-on-primary-container mt-space-xs leading-relaxed">
+          घर या साइबर कैफे से सीधे 2-पेज कॉम्पैक्ट प्रिंट हेतु ओएमआर शीट व विगत 20 वर्षों के हल प्रश्न पत्र।
+        </p>
+<!-- Dynamic Watermark Security Notice -->
+<div class="mt-space-md p-space-sm rounded-lg bg-primary-container/80 text-on-primary font-label-sm text-label-sm flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-sm mt-0.5 text-secondary-fixed">security</span>
+<span class="">प्रत्येक A4 PDF पर विद्यार्थी आईडी (#EDU-8921) व समय की डिजिटल वॉटरमार्क सुरक्षा सक्रिय रहती है।</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs mt-space-lg">
+<a class="flex items-center justify-center gap-space-xs w-full bg-on-primary text-primary hover:bg-surface-container-lowest font-label-md text-label-md py-space-xs rounded font-semibold transition-colors shadow-sm" href="print.html">
+<span class="material-symbols-outlined text-base">print</span>
+          A4 रेडी प्रश्न पत्र खोलें (Print.html)
+        </a>
+<a class="flex items-center justify-center gap-space-xs w-full bg-primary-container hover:bg-surface-tint text-on-primary font-label-md text-label-md py-space-xs rounded transition-colors" href="pyq-tricks.html">
+<span class="material-symbols-outlined text-base">psychology</span>
+          20-Year ट्रिक्स व समाधान (pyq-tricks.html)
+        </a>
+</div>
 </div>
 </section>
-<!-- Statutory Legal Disclaimer & Anti-Copy Protection Footer -->
-<footer class="bg-surface-container-low rounded-xl p-space-md flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md text-on-surface-variant">
-<div class="flex items-center gap-space-sm">
-<span class="material-symbols-outlined text-secondary text-2xl flex-shrink-0">shield</span>
-<div class="flex flex-col">
-<span class="font-label-sm text-label-sm uppercase tracking-wider font-bold text-on-surface">Legal Compliance &amp; Anti-Piracy Watermark</span>
-<p class="font-body-sm text-body-sm">
-          EduPro content is encrypted and watermarked with Scholar UID #EP-9841-DL. Unauthorized copying, distribution, or re-selling of mock papers is strictly prohibited under the Indian Copyright Act, 1957.
-        </p>
+<!-- Active Courses & Test Series Quick Launcher Cards Grid -->
+<section class="mb-space-lg">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<h2 class="font-title-lg text-title-lg font-bold text-on-surface">सक्रिय विषय एवं टेस्ट सीरीज क्विक लॉन्चर</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">अपने नामांकित पाठ्यक्रमों के 2004-2025 हल प्रश्न एवं मॉक अभ्यास तुरंत प्रारंभ करें</p>
+</div>
+<a class="text-secondary font-label-md text-label-md font-semibold hover:underline flex items-center gap-1" href="test-series.html">
+        संपूर्ण टेस्ट कैटलॉग <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
+<!-- Course 1: UPSC GS & SSC -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+<div>
+<div class="flex items-start justify-between">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-xl">🛡️</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">2004-2025 Solved</span>
+</div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface mt-space-sm group-hover:text-secondary transition-colors">
+            UPSC Civil Services &amp; SSC CGL
+          </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            General Studies Paper I &amp; II (CSAT), समसामयिकी 2024-25, एवं विगत 20 वर्षों के आधिकारिक प्रश्न संग्रह।
+          </p>
+<div class="mt-space-sm flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs">analytics</span> 120+ टेस्ट उपलब्ध • द्विभाषी
+          </div>
+</div>
+<div class="mt-space-md pt-space-xs">
+<a class="block text-center w-full bg-primary hover:bg-secondary text-on-primary font-label-md text-label-md py-space-xs rounded transition-colors font-medium" href="test-series.html?stream=upsc">
+            मॉक टेस्ट आरंभ करें
+          </a>
 </div>
 </div>
-<div class="flex flex-col items-start md:items-end flex-shrink-0">
-<span class="font-label-sm text-label-sm font-semibold text-on-surface">Academic Support Desk</span>
-<span class="font-body-sm text-body-sm">Founder: Himmat Ram • +91 9166603971</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">© 2024-2025 EduPro Platform. All rights reserved.</span>
+<!-- Course 2: NEET Medical -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+<div>
+<div class="flex items-start justify-between">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-xl">🩺</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">NCERT Line-to-Line</span>
+</div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface mt-space-sm group-hover:text-secondary transition-colors">
+            NEET (UG Medical Entrance)
+          </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            Biology NCERT लाइन-दर-लाइन मॉक, Physics संख्यात्मक हल, एवं Chemistry Formula Bank (NTA पैटर्न)।
+          </p>
+<div class="mt-space-sm flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs">quiz</span> 85+ चैप्टर टेस्ट • OMR अनुकूलित
+          </div>
+</div>
+<div class="mt-space-md pt-space-xs">
+<a class="block text-center w-full bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md py-space-xs rounded transition-colors font-medium" href="test-series.html?stream=neet">
+            अभ्यास टेस्ट खोलें
+          </a>
+</div>
+</div>
+<!-- Course 3: 10th/12th Boards -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+<div>
+<div class="flex items-start justify-between">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-xl">🎒</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">RBSE / CBSE 2025</span>
+</div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface mt-space-sm group-hover:text-secondary transition-colors">
+            10th व 12th बोर्ड (RBSE / CBSE)
+          </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            Physics, Chemistry, Maths, Hindi व English 20-Year बोर्ड मॉडल पेपर्स एवं टॉपर्स की कॉपी विश्लेषण।
+          </p>
+<div class="mt-space-sm flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs">description</span> 200+ ब्लूप्रिंट प्रश्न पत्र
+          </div>
+</div>
+<div class="mt-space-md pt-space-xs">
+<a class="block text-center w-full bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md py-space-xs rounded transition-colors font-medium" href="test-series.html?stream=board">
+            बोर्ड PYQs हल करें
+          </a>
+</div>
+</div>
+<!-- Course 4: RS-CIT & Tally Prime -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+<div>
+<div class="flex items-start justify-between">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-xl">💻</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">प्रमाणन टेस्ट</span>
+</div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface mt-space-sm group-hover:text-secondary transition-colors">
+            RS-CIT कंप्यूटर व Tally Prime
+          </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            MS Office 365, Internet, Cyber Security, GST वाउचर एंट्री व अकाउंटिंग प्रैक्टिकल टेस्ट।
+          </p>
+<div class="mt-space-sm flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs">computer</span> 35 परीक्षा-आधारित मॉड्यूल
+          </div>
+</div>
+<div class="mt-space-md pt-space-xs">
+<a class="block text-center w-full bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md py-space-xs rounded transition-colors font-medium" href="test-series.html?stream=rscit">
+            कंप्यूटर टेस्ट शुरू करें
+          </a>
+</div>
+</div>
+<!-- Course 5: College Degree (BA, BSc, BCom) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+<div>
+<div class="flex items-start justify-between">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-xl">🎓</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">यूनिवर्सिटी बैंक</span>
+</div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface mt-space-sm group-hover:text-secondary transition-colors">
+            कॉलेज डिग्री (BA, B.Sc, B.Com)
+          </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            RU, MDSU, MLSU एवं समस्त राजस्थान/केंद्रीय विश्वविद्यालयों के 20 वर्षीय अनसॉल्वड व सॉल्वड प्रश्न पत्र।
+          </p>
+<div class="mt-space-sm flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs">library_books</span> सेमेस्टर व वार्षिक प्रश्नोत्तरी
+          </div>
+</div>
+<div class="mt-space-md pt-space-xs">
+<a class="block text-center w-full bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md py-space-xs rounded transition-colors font-medium" href="test-series.html?stream=college">
+            यूनिवर्सिटी पेपर्स देखें
+          </a>
+</div>
+</div>
+<!-- Quick Trial Conversion Promo Card -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-space-xs text-secondary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-sm">lock_open</span> 30-फ्री प्रश्न ट्रायल स्टेटस
+          </div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface mt-space-xs">
+            14 / 30 प्रश्न हल किए गए
+          </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">ट्रायल समाप्त होने के बाद भी ₹199 / माह (30 दिन ऑल-एक्सेस पास) पर संपूर्ण पोर्टल खुला रहेगा।</p>
+</div>
+<div class="mt-space-md">
+<a class="flex items-center justify-center gap-2 w-full bg-secondary hover:bg-primary-container text-on-secondary font-label-md text-label-md py-space-xs rounded transition-colors font-semibold shadow-sm" href="pricing-plan.html">
+            असीमित अनलॉक ₹199
+          </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Confidential Support & Institutional Helpdesk Module -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm mb-space-lg">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-2xl">support_agent</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface">गोपनीय संस्थागत सहायता एवं टिकट प्रणाली</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            EduPro आधिकारिक प्रणाली पर कोई निजी मोबाइल नंबर प्रसारित नहीं किया जाता। तकनीकी या शैक्षणिक प्रश्नों के समाधान हेतु सीधे हेल्पडेस्क टिकट दर्ज करें।
+          </p>
+<div class="flex items-center gap-space-md mt-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-secondary"></span> औसत समाधान समय: &lt; 2 घंटे</span>
+<span class="">• एनक्रिप्शन: AES-256 बिट</span>
+</div>
+</div>
+</div>
+<button class="shrink-0 px-space-md py-space-xs bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface rounded-lg font-label-md text-label-md font-semibold transition-colors flex items-center gap-2" onclick="document.getElementById('ticketModal').classList.remove('hidden')">
+<span class="material-symbols-outlined text-base">confirmation_number</span>
+        EduPro आधिकारिक हेल्पडेस्क टिकट
+      </button>
+</div>
+</section>
+<!-- Statutory Legal Notice & Anti-Piracy Warning -->
+<footer class="mt-space-md pt-space-lg pb-space-xl bg-surface-container-low rounded-xl px-space-lg text-center">
+<div class="max-w-4xl mx-auto flex flex-col items-center">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider mb-2 font-semibold">
+<span class="material-symbols-outlined text-sm text-secondary">gavel</span>
+        वैधानिक सूचना एवं एंटी-पायरेसी चेतावनी (Statutory Legal Notice)
+      </div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+        EduPro मंच पर उपलब्ध समस्त 20-Year PYQ, टेस्ट सामग्री एवं विश्लेषणात्मक हल भारतीय कॉपीराइट अधिनियम (1957) के तहत सुरक्षित हैं। 
+        सामग्री का किसी भी टेलीग्राम चैनल, व्हाट्सऐप ग्रुप या अनधिकृत पोर्टल पर पुनर्विक्रय, स्क्रीन-स्क्रैपिंग अथवा अनधिकृत वितरण सख्त गैरकानूनी है। 
+        उल्लंघनकर्ता की विद्यार्थी आईडी (#EDU-8921) तत्काल प्रभाव से स्थायी रूप से निरस्त कर विधिक कार्रवाई प्रारंभ की जाएगी।
+      </p>
+<div class="mt-space-md flex flex-wrap justify-center gap-space-md text-on-surface-variant font-label-sm text-label-sm">
+<span class="">© 2025 EduPro Academic Nexus</span>
+<span class="">•</span>
+<span class="">सभी अधिकार सुरक्षित</span>
+<span class="">•</span>
+<span class="">सर्वर स्थान: जयपुर, राजस्थान (IN)</span>
+</div>
 </div>
 </footer>
+<!-- Confidential Helpdesk Ticket Modal -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-space-md bg-primary-container/40 backdrop-blur-sm" id="ticketModal">
+<div class="bg-surface-container-lowest w-full max-w-lg rounded-xl shadow-2xl overflow-hidden">
+<div class="p-space-md bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">confirmation_number</span>
+<span class="font-title-md text-title-md font-bold text-on-surface">नया आधिकारिक सहायता टिकट</span>
 </div>
+<button class="text-on-surface-variant hover:text-on-surface p-1" onclick="document.getElementById('ticketModal').classList.add('hidden')">
+<span class="material-symbols-outlined text-base">close</span>
+</button>
+</div>
+<form class="p-space-lg flex flex-col gap-space-md" onsubmit="handleTicketSubmit(event)">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface font-semibold mb-1">विद्यार्थी पहचान (स्वतः प्रमाणित)</label>
+<input class="w-full bg-surface-container-low px-space-sm py-space-xs rounded text-on-surface-variant font-body-sm text-body-sm outline-none cursor-not-allowed" disabled="" type="text" value="#EDU-8921 - राजेश कुमार (UPSC Cell)"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface font-semibold mb-1">समस्या का संवर्ग</label>
+<select class="w-full border-0 bg-surface-container-low px-space-sm py-space-xs rounded text-on-surface font-body-sm text-body-sm outline-none">
+<option>PYQ उत्तर समाधान में शंका</option>
+<option>₹199 पास एक्टिवेशन / रसीद समस्या</option>
+<option>A4 PDF प्रिंट डाउनलोड त्रुटि</option>
+<option>रेफरल 5-छात्र रिवॉर्ड ट्रैकिंग</option>
+<option>अन्य शैक्षणिक प्रश्न</option>
+</select>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface font-semibold mb-1">विस्तृत विवरण</label>
+<textarea class="w-full bg-surface-container-low p-space-sm rounded text-on-surface font-body-sm text-body-sm outline-none placeholder:text-on-surface-variant focus:bg-surface-container-lowest" placeholder="कृपया अपनी समस्या का संक्षिप्त व स्पष्ट विवरण दें..." required="" rows="4"></textarea>
+</div>
+<div class="flex items-center justify-end gap-space-xs pt-space-xs">
+<button class="px-space-md py-space-xs rounded text-on-surface-variant hover:text-on-surface font-label-md text-label-md" onclick="document.getElementById('ticketModal').classList.add('hidden')" type="button">
+            रद्द करें
+          </button>
+<button class="px-space-md py-space-xs rounded bg-primary hover:bg-secondary text-on-primary font-label-md text-label-md font-semibold transition-colors shadow-sm" type="submit">
+            टिकट दर्ज करें (Submit)
+          </button>
+</div>
+</form>
+</div>
+</div>
+<!-- Inline Micro-interactions Script -->
 <script>
-  // Simple micro-interaction for stream changer notification
-  document.getElementById('stream-switcher')?.addEventListener('change', function(e) {
-    const streamName = e.target.options[e.target.selectedIndex].text;
-    console.log('Stream switched to:', streamName);
-  });
-</script></main></div></body></html>
+    // Stream Switcher Interactive Toggling
+    const streamBtn = document.getElementById('streamSwitchBtn');
+    const streamMenu = document.getElementById('streamMenu');
+    const dropdownArrow = document.getElementById('dropdownArrow');
+    const currentStreamLabel = document.getElementById('currentStreamLabel');
+
+    if (streamBtn && streamMenu) {
+      streamBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isHidden = streamMenu.classList.contains('hidden');
+        if (isHidden) {
+          streamMenu.classList.remove('hidden');
+          dropdownArrow.classList.add('rotate-180');
+        } else {
+          streamMenu.classList.add('hidden');
+          dropdownArrow.classList.remove('rotate-180');
+        }
+      });
+
+      document.addEventListener('click', () => {
+        if (!streamMenu.classList.contains('hidden')) {
+          streamMenu.classList.add('hidden');
+          dropdownArrow.classList.remove('rotate-180');
+        }
+      });
+    }
+
+    function setStream(streamName) {
+      if (currentStreamLabel) {
+        currentStreamLabel.textContent = streamName;
+      }
+      if (streamMenu) {
+        streamMenu.classList.add('hidden');
+      }
+      if (dropdownArrow) {
+        dropdownArrow.classList.remove('rotate-180');
+      }
+    }
+
+    function handleTicketSubmit(e) {
+      e.preventDefault();
+      alert('टिकट संख्या #TKT-9941 सफलतापूर्वक दर्ज हो गया है। 2 घंटे में समाधान प्राप्त होगा।');
+      document.getElementById('ticketModal').classList.add('hidden');
+    }
+  </script>
+</div></main></div></body></html>
