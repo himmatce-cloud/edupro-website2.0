@@ -9,9 +9,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com"></script>
 <meta content="web_standard" name="shell-type"/></head>
-<body class="bg-slate-50 font-sans text-slate-800 antialiased select-none min-h-screen flex flex-col justify-between" oncontextmenu="return false;">
+<body class="bg-slate-100/70 font-sans text-slate-800 antialiased select-none min-h-screen flex flex-col justify-between" oncontextmenu="return false;">
 <!-- Header -->
-<header class="bg-white border-b border-slate-200 sticky top-0 z-40 px-4 lg:px-8 py-3 flex items-center justify-between shadow-sm">
+<header class="bg-white/95 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-40 px-4 lg:px-8 py-3 flex items-center justify-between shadow-sm">
 <div class="flex items-center gap-3">
 <div class="w-10 h-10 rounded-xl bg-blue-700 text-white flex items-center justify-center font-black text-xl shadow-md">EP</div>
 <div>
@@ -62,7 +62,7 @@
 </div>
 </div>
 <!-- Feature Illustration & Contextual Card Area -->
-<div class="relative rounded-xl overflow-hidden bg-surface-container-low shadow-sm border border-slate-200">
+<div class="relative rounded-2xl overflow-hidden bg-white/80 shadow-sm border border-slate-200/90">
 <div class="grid grid-cols-1 md:grid-cols-12 items-center">
 <div class="md:col-span-7 p-5 space-y-3.5">
 <div class="flex items-center gap-2">
@@ -149,7 +149,7 @@
 </div></div>
 <!-- Right Column: Interactive Clean Auth Card -->
 <div class="lg:col-span-5 flex flex-col justify-center">
-<div class="bg-surface-container-lowest rounded-2xl p-6 sm:p-8 shadow-md relative">
+<div class="bg-white rounded-2xl p-6 sm:p-8 shadow-md border border-slate-200/80 relative">
 <!-- Top Institutional Seal & Heading -->
 <div class="flex items-center justify-between mb-6">
 <div>
@@ -179,7 +179,7 @@
 <span class="absolute left-3 font-label-md text-label-md text-on-surface-variant font-bold select-none">
                 +91
               </span>
-<input class="w-full pl-12 pr-4 py-2.5 bg-surface-container-low rounded-xl font-label-md text-label-md text-primary placeholder:text-outline outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary/20 transition-all" id="loginMobile" maxlength="10" oninput="checkAdminTrigger(this.value)" placeholder="9876543210" required="" type="tel"/>
+<input class="w-full pl-12 pr-4 py-2.5 bg-slate-50/70 border border-slate-200 rounded-xl font-label-md text-label-md text-slate-800 placeholder:text-slate-400 outline-none focus:bg-white focus:border-blue-600 focus:ring-2 focus:ring-secondary/20 transition-all" id="loginMobile" maxlength="10" oninput="checkAdminTrigger(this.value)" placeholder="9876543210" required="" type="tel"/>
 </div>
 </div>
 <!-- Password Input with Toggle Eye Icon -->
@@ -193,7 +193,7 @@
               </button>
 </div>
 <div class="relative flex items-center">
-<input class="w-full pl-4 pr-11 py-2.5 bg-surface-container-low rounded-xl font-label-md text-label-md text-primary placeholder:text-outline outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary/20 transition-all" id="loginPass" placeholder="••••••••" required="" type="password"/>
+<input class="w-full pl-4 pr-11 py-2.5 bg-slate-50/70 border border-slate-200 rounded-xl font-label-md text-label-md text-slate-800 placeholder:text-slate-400 outline-none focus:bg-white focus:border-blue-600 focus:ring-2 focus:ring-secondary/20 transition-all" id="loginPass" placeholder="••••••••" required="" type="password"/>
 <button class="absolute right-3 text-on-surface-variant hover:text-primary cursor-pointer" onclick="togglePasswordVisibility('loginPass', 'eyeIconLogin')" title="Toggle Visibility" type="button">
 <span class="material-symbols-outlined text-lg" id="eyeIconLogin">visibility</span>
 </button>
@@ -207,7 +207,7 @@
             </p>
 </div>
 <!-- Primary Submit Button -->
-<button class="w-full py-3.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-title-md text-title-md font-extrabold transition-all shadow-xl hover:shadow-2xl flex items-center justify-center gap-2.5 cursor-pointer mt-2 tracking-wide" type="submit"><span class="material-symbols-outlined text-xl">lock</span><span>सुरक्षित लॉगिन करें / Secure Login</span><span class="material-symbols-outlined text-xl transition-transform">arrow_forward</span></button>
+<button class="w-full py-3.5 bg-blue-700 hover:bg-blue-800 text-white rounded-xl font-title-md text-title-md font-bold transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2.5 cursor-pointer mt-2 tracking-wide" type="submit"><span class="material-symbols-outlined text-xl">lock</span><span>सुरक्षित लॉगिन करें / Secure Login</span><span class="material-symbols-outlined text-xl transition-transform">arrow_forward</span></button>
 <!-- Quick Help / Guidelines -->
 <div class="pt-2 text-center">
 <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary inline-flex items-center gap-1" href="help.html">
@@ -365,7 +365,7 @@
 </div>
 </div>
 <!-- Legal Notice -->
-<footer class="bg-white border-t border-slate-200 py-4 text-center text-xs text-slate-400">
+<footer class="bg-white/90 border-t border-slate-200/80 py-4 text-center text-xs text-slate-500">
 <p class="">© 2026 EduPro Academic Nexus. भारतीय कॉपीराइट अधिनियम 1957 (धारा 13 व 63) द्वारा संरक्षित।</p>
 </footer>
 <script>
