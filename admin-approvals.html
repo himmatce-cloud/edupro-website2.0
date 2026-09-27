@@ -1,489 +1,706 @@
 <!DOCTYPE html>
 
-<html class="h-full" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Student Receipt Approval - EduPro Admin</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<html lang="hi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>EduPro National Academic Portal</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "surface-container-lowest": "#ffffff",
-                      "primary-fixed-dim": "#adc7ff",
-                      "surface-variant": "#dfe3e8",
-                      "on-primary-container": "#ffffff",
-                      "inverse-surface": "#2d3135",
-                      "surface": "#f7f9ff",
-                      "primary-container": "#1a73e8",
-                      "on-primary-fixed": "#001a41",
-                      "on-tertiary-fixed-variant": "#5c4300",
-                      "on-secondary-container": "#00722f",
-                      "surface-tint": "#005bc0",
-                      "inverse-on-surface": "#eef1f7",
-                      "surface-container-low": "#f1f4fa",
-                      "on-background": "#181c20",
-                      "surface-container-high": "#e5e8ee",
-                      "surface-dim": "#d7dae0",
-                      "tertiary": "#795900",
-                      "tertiary-container": "#987000",
-                      "primary": "#005bbf",
-                      "on-error-container": "#93000a",
-                      "on-secondary-fixed": "#002108",
-                      "on-surface-variant": "#414754",
-                      "tertiary-fixed-dim": "#fbbc06",
-                      "on-surface": "#181c20",
-                      "on-tertiary": "#ffffff",
-                      "secondary-fixed": "#89fa9b",
-                      "surface-container-highest": "#dfe3e8",
-                      "background": "#f7f9ff",
-                      "secondary-fixed-dim": "#6ddd81",
-                      "on-error": "#ffffff",
-                      "error-container": "#ffdad6",
-                      "on-tertiary-fixed": "#261a00",
-                      "surface-container": "#ebeef4",
-                      "secondary": "#006e2c",
-                      "surface-bright": "#f7f9ff",
-                      "primary-fixed": "#d8e2ff",
-                      "on-tertiary-container": "#ffffff",
-                      "tertiary-fixed": "#ffdea0",
-                      "inverse-primary": "#adc7ff",
-                      "on-secondary-fixed-variant": "#005320",
-                      "on-primary": "#ffffff",
-                      "outline-variant": "#c1c6d6",
-                      "on-primary-fixed-variant": "#004493",
-                      "on-secondary": "#ffffff",
-                      "outline": "#727785",
-                      "error": "#ba1a1a",
-                      "secondary-container": "#86f898"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.125rem",
-                      "lg": "0.25rem",
-                      "xl": "0.5rem",
-                      "full": "0.75rem"
-              },
-              "spacing": {
-                      "base": "8px",
-                      "xs": "4px",
-                      "xl": "64px",
-                      "gutter": "24px",
-                      "margin-desktop": "32px",
-                      "lg": "40px",
-                      "md": "24px",
-                      "margin-mobile": "16px",
-                      "sm": "12px"
-              },
-              "fontFamily": {
-                      "headline-lg-mobile": [
-                              "Inter"
-                      ],
-                      "caption": [
-                              "Inter"
-                      ],
-                      "label-md": [
-                              "Inter"
-                      ],
-                      "title-md": [
-                              "Inter"
-                      ],
-                      "display-lg": [
-                              "Inter"
-                      ],
-                      "body-md": [
-                              "Inter"
-                      ],
-                      "headline-lg": [
-                              "Inter"
-                      ],
-                      "body-lg": [
-                              "Inter"
-                      ]
-              },
-              "fontSize": {
-                      "headline-lg-mobile": [
-                              "24px",
-                              {
-                                      "lineHeight": "32px",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "caption": [
-                              "12px",
-                              {
-                                      "lineHeight": "16px",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "label-md": [
-                              "14px",
-                              {
-                                      "lineHeight": "20px",
-                                      "letterSpacing": "0.01em",
-                                      "fontWeight": "500"
-                              }
-                      ],
-                      "title-md": [
-                              "20px",
-                              {
-                                      "lineHeight": "28px",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "display-lg": [
-                              "48px",
-                              {
-                                      "lineHeight": "56px",
-                                      "letterSpacing": "-0.02em",
-                                      "fontWeight": "700"
-                              }
-                      ],
-                      "body-md": [
-                              "16px",
-                              {
-                                      "lineHeight": "24px",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "headline-lg": [
-                              "32px",
-                              {
-                                      "lineHeight": "40px",
-                                      "letterSpacing": "-0.01em",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "body-lg": [
-                              "18px",
-                              {
-                                      "lineHeight": "28px",
-                                      "fontWeight": "400"
-                              }
-                      ]
-              }
-      },
-          },
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "error": "#ba1a1a", "outline-variant": "#c4c6d0", "on-secondary": "#ffffff", "on-primary": "#ffffff", "secondary-fixed": "#dce1ff", "background": "#faf8ff", "on-secondary-fixed-variant": "#0039b5", "surface-container-lowest": "#ffffff", "surface-container-highest": "#dae2fd", "on-tertiary-fixed-variant": "#653e00", "on-tertiary-container": "#cf8400", "outline": "#747780", "inverse-primary": "#afc6ff", "surface-bright": "#faf8ff", "tertiary": "#261400", "on-surface-variant": "#44464f", "secondary": "#1d4ed8", "surface-dim": "#d2d9f4", "surface-container": "#eaedff", "primary": "#00163d", "on-error-container": "#93000a", "surface-variant": "#dae2fd", "on-background": "#131b2e", "surface-container-high": "#e2e7ff", "tertiary-fixed-dim": "#ffb95f", "primary-fixed": "#d9e2ff", "on-error": "#ffffff", "on-tertiary": "#ffffff", "on-surface": "#131b2e", "error-container": "#ffdad6", "primary-fixed-dim": "#afc6ff", "tertiary-fixed": "#ffddb8", "on-secondary-fixed": "#001551", "on-primary-container": "#7c94cb", "secondary-fixed-dim": "#b7c4ff", "inverse-on-surface": "#eef0ff", "surface-container-low": "#f2f3ff", "inverse-surface": "#283044", "on-primary-fixed-variant": "#2d4678", "on-secondary-container": "#fffbff", "primary-container": "#0f2b5c", "on-tertiary-fixed": "#2a1700", "surface": "#faf8ff", "secondary-container": "#4069f2", "surface-tint": "#465d91", "on-primary-fixed": "#001944", "tertiary-container": "#422700" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-xl": "2.5rem", "gutter-lg": "2rem", "gutter": "1.5rem", "space-md": "1rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "margin-sm": "1rem", "space-xs": "0.25rem", "gutter-sm": "1rem", "margin": "2rem", "margin-lg": "3rem" }, "fontFamily": { "title-md": ["Inter"], "body-lg": ["Inter"], "title-lg": ["Inter"], "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "label-md": ["Inter"], "display-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-md": ["Inter"], "label-sm": ["Inter"], "numeric-table": ["Inter"], "body-sm": ["Inter"] }, "fontSize": { "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }], "title-lg": ["18px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }], "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "numeric-table": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "500" }], "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md border-b border-surface-container shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-[1440px] mx-auto px-margin-sm lg:px-margin-lg flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm group focus:outline-none" data-path="home" href="#"><div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center shadow-sm"><span class="font-headline-sm text-headline-sm text-on-primary font-bold tracking-tight">EP</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm leading-tight font-bold text-primary tracking-tight">EduPro</span><span class="font-label-sm text-label-sm uppercase text-outline tracking-wider">National Academic Portal</span></div></a></div><nav class="hidden xl:flex items-center gap-space-lg h-full" data-active-classes="text-secondary font-semibold border-b-2 border-secondary"><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-sm" data-path="home" href="#">होम</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-sm" data-path="test-series" href="#">टेस्ट सीरीज़</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-sm" data-path="pyq-and-tricks" href="#">20-Year PYQ व ट्रिक्स</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-sm" data-path="daily-gk-bulletin" href="#">दैनिक GK बुलेटिन</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-sm" data-path="dashboard" href="#">डैशबोर्ड</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-sm" data-path="help" href="#">सहायता</a></nav><div class="flex items-center gap-space-md"><a class="hidden sm:inline-flex items-center justify-center px-space-md py-space-xs rounded-lg border border-outline-variant bg-surface-container-lowest text-primary font-label-md text-label-md hover:bg-surface-container hover:text-on-surface transition-all shadow-[0_1px_3px_0_rgba(15,43,92,0.04)]" data-path="pdf-print-center" href="#">A4 PDF प्रिंट सेंटर</a><a class="inline-flex items-center justify-center px-space-md py-space-xs rounded-lg bg-secondary text-on-secondary font-label-md text-label-md shadow-sm hover:bg-primary transition-all" data-path="all-access-pass" href="#">₹199 All-Access (1 Month)</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background flex-1"><div class="flex flex-col w-full">
+<!-- Confidential Executive Banner -->
+<section class="w-full bg-primary text-on-primary py-space-sm px-margin-sm lg:px-margin-lg shadow-sm">
+<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-secondary text-on-secondary">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+</span>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary-fixed font-bold">कॉन्फिडेंशियल प्रशासनिक कंसोल</span>
+<span class="hidden sm:inline text-outline-variant font-numeric-table text-numeric-table">|</span>
+<span class="font-body-sm text-body-sm text-surface-container-highest">रूट कस्टोडियन आईडी: <strong class="font-numeric-table text-on-primary font-semibold">EDUPRO-SYSADM-0091</strong></span>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-primary-container text-primary-fixed font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+<span>लाइव NPCI / BharatQR नोड कनेक्टेड</span>
+</div>
+<span class="font-numeric-table text-numeric-table text-surface-dim hidden lg:inline">विलंबता: 14ms (सिक्योर बैंक एंडपॉइंट)</span>
+</div>
+</div>
+</section>
+<!-- Executive Header Area -->
+<section class="w-full bg-surface-container-lowest shadow-sm py-space-lg px-margin-sm lg:px-margin-lg">
+<div class="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight font-extrabold">EduPro Executive Admin &amp; Revenue Command</h1>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-secondary font-label-sm text-label-sm font-bold">V4.9R-PROD</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+          अखिल भारतीय ₹199 ऑल-एक्सेस पास सदस्यता प्रबंधन, 12-अंकीय बैंक यूटीआर त्वरित वैधीकरण, एवं कड़ा 5-रेफरल स्वचालित अवधि विस्तार इंजन।
+        </p>
+</div>
+<!-- Navigation Segment Controller -->
+<div class="flex flex-wrap items-center gap-1 bg-surface-container-low p-1.5 rounded-xl shadow-inner">
+<button class="px-space-md py-space-xs rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold shadow-sm transition-all flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">rule</span>
+          लाइव अनुमोदन कतार
+        </button>
+<button class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-all font-label-md text-label-md font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+          राजस्व एवं UTR ऑडिट
+        </button>
+<button class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-all font-label-md text-label-md font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">groups</span>
+          छात्र निर्देशिका
+        </button>
+<button class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-all font-label-md text-label-md font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">military_tech</span>
+          सख्त 5-रेफरल ट्रैकर
+        </button>
+<button class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-all font-label-md text-label-md font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">settings_suggest</span>
+          पोर्टल सेटिंग्स
+        </button>
+</div>
+</div>
+</section>
+<!-- Main Administrative Canvas -->
+<div class="max-w-[1440px] mx-auto w-full px-margin-sm lg:px-margin-lg py-space-xl flex flex-col gap-space-xl">
+<!-- Executive KPI Summary Matrix (4 Cards) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- KPI Card 1: Gross Revenue -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+<div class="w-full h-1 bg-secondary absolute top-0 left-0"></div>
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md uppercase tracking-wider text-outline font-semibold">कुल संचित राजस्व (Gross)</span>
+<span class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">currency_rupee</span>
+</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-primary font-bold tracking-tight">₹4,76,210</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">₹199 All-Access Pass × <span class="font-numeric-table text-numeric-table font-semibold text-primary">2,393</span> छात्र</p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between bg-surface-container-low px-2 py-1 rounded">
+<span class="font-label-sm text-label-sm text-secondary font-bold">दैनिक वृद्धि: +₹14,328</span>
+<span class="font-numeric-table text-numeric-table text-outline font-medium">आज 72 नए</span>
+</div>
+</div>
+<!-- KPI Card 2: Pending Approvals -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+<div class="w-full h-1 bg-amber-500 absolute top-0 left-0"></div>
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md uppercase tracking-wider text-outline font-semibold">लंबित UTR सत्यापन कतार</span>
+<span class="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center text-amber-800">
+<span class="material-symbols-outlined text-[20px]">pending_actions</span>
+</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-amber-900 font-bold tracking-tight flex items-baseline gap-2">
+            14
+            <span class="font-title-md text-title-md text-amber-700 font-semibold">छात्र शेष</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">औसत निर्णय समय: <span class="font-numeric-table text-numeric-table font-semibold text-primary">2.4 मिनट</span></p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between bg-amber-50 px-2 py-1 rounded">
+<span class="font-label-sm text-label-sm text-amber-800 font-bold">तत्काल समीक्षा आवश्यक</span>
+<span class="w-2 h-2 rounded-full bg-amber-500 animate-ping"></span>
+</div>
+</div>
+<!-- KPI Card 3: Active Verified Members -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+<div class="w-full h-1 bg-emerald-600 absolute top-0 left-0"></div>
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md uppercase tracking-wider text-outline font-semibold">सत्यापित सक्रिय सदस्य</span>
+<span class="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-800">
+<span class="material-symbols-outlined text-[20px]">how_to_reg</span>
+</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-primary font-bold tracking-tight">2,379</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">30-दिवसीय सक्रिय वैधता (100% अधिकृत)</p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between bg-emerald-50 px-2 py-1 rounded">
+<span class="font-label-sm text-label-sm text-emerald-800 font-bold">सत्यापन दर: 99.41%</span>
+<span class="font-numeric-table text-numeric-table text-emerald-700 font-semibold">शून्य विवाद</span>
+</div>
+</div>
+<!-- KPI Card 4: Strict 5-Referrals -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+<div class="w-full h-1 bg-primary absolute top-0 left-0"></div>
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md uppercase tracking-wider text-outline font-semibold">5-सफल रेफरल ऑटो-विस्तार</span>
+<span class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">stars</span>
+</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-primary font-bold tracking-tight">382</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">+30 दिन मुफ़्त विस्तारित (0 मैन्युअल हस्तक्षेप)</p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between bg-surface-container-low px-2 py-1 rounded">
+<span class="font-label-sm text-label-sm text-primary font-bold">सख्त ऑटो-DB अनलॉक</span>
+<span class="font-numeric-table text-numeric-table text-outline font-medium">1,910 सशुल्क साथी</span>
+</div>
+</div>
+</div>
+<!-- Quick Manual Reconciliation Bar -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex-1 w-full flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-xs rounded-lg">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="bg-transparent border-0 outline-none w-full text-on-surface font-body-md text-body-md placeholder:text-outline" id="utrSearchInput" onkeyup="filterApprovalsTable()" placeholder="तत्काल UTR खोजें (उदा. 409823145678) या मास्क्ड मोबाइल नंबर दर्ज करें..." type="text"/>
+<span class="px-2 py-0.5 bg-surface-container-high rounded text-outline font-numeric-table text-xs">Ctrl + K</span>
+</div>
+<div class="flex items-center gap-space-sm w-full md:w-auto justify-end">
+<div class="inline-flex items-center gap-2 px-space-md py-space-xs rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">filter_alt</span>
+          फिल्टर: <strong class="text-primary">सभी लंबित (14)</strong>
+</div>
+<button class="inline-flex items-center gap-1.5 px-space-md py-space-xs rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm" onclick="refreshQueue()">
+<span class="material-symbols-outlined text-[18px]" id="refreshIcon">sync</span>
+          कतार रिफ्रेश करें
+        </button>
+</div>
+</div>
+<!-- Interactive Pending Approvals Queue -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Section Header -->
+<div class="p-space-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm bg-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-on-primary shadow-sm">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+</div>
+<div>
+<h2 class="font-title-lg text-title-lg text-primary font-bold">लाइव अनुमोदन कतार (1-क्लिक त्वरित UTR समीक्षा)</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">प्रत्येक अनुमोदन से उम्मीदवार का 30-दिवसीय ऑल-एक्सेस पास तत्काल प्रभाव से एक्टिवेट हो जाता है।</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-space-sm py-1 rounded bg-amber-100 text-amber-900 font-label-md text-label-md font-bold" id="pendingCountBadge">5 लंबित प्रदर्शित</span>
+<span class="text-outline font-label-sm text-label-sm">अंतिम सिंक: अभी</span>
+</div>
+</div>
+<!-- Tabular Queue -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left" id="approvalsTable">
+<thead>
+<tr class="bg-surface-container font-label-sm text-label-sm text-outline uppercase tracking-wider">
+<th class="py-space-md px-space-lg">छात्र नाम व संकाय</th>
+<th class="py-space-md px-space-md">मास्क्ड मोबाइल नंबर</th>
+<th class="py-space-md px-space-md">12-अंक BharatQR UTR</th>
+<th class="py-space-md px-space-md">भुगतान समय</th>
+<th class="py-space-md px-space-md">शुल्क राशि</th>
+<th class="py-space-md px-space-lg text-right">त्वरित निर्णय (1-Click Action)</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface font-body-md text-body-md">
+<!-- Student 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group" id="row-1">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-bold text-xs">
+                    RK
+                  </div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md font-bold text-primary">राहुल कुमावत</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">UPSC CSAT प्रभाग</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md font-numeric-table text-numeric-table font-semibold text-on-surface-variant">
+                98765*****
+              </td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-1.5 px-space-xs py-1 rounded bg-surface-container font-numeric-table text-numeric-table font-bold text-primary">
+<span class="material-symbols-outlined text-outline text-[16px]">pin</span>
+<span class="utr-code">409823145678</span>
+<button class="text-outline hover:text-secondary" onclick="navigator.clipboard.writeText('409823145678')" title="कॉपी करें">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-space-md px-space-md text-on-surface-variant font-numeric-table text-numeric-table">
+                8 मिनट पूर्व
+              </td>
+<td class="py-space-md px-space-md font-numeric-table text-numeric-table font-bold text-primary">
+                ₹199.00
+              </td>
+<td class="py-space-md px-space-lg text-right">
+<div class="inline-flex items-center gap-space-xs justify-end">
+<button class="inline-flex items-center gap-1 px-space-md py-1 rounded bg-emerald-600 hover:bg-emerald-700 text-on-primary font-label-md text-label-md font-semibold shadow-sm transition-all" onclick="approveRecord('row-1', 'राहुल कुमावत', '409823145678')">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                    मंज़ूर करें (Approve)
+                  </button>
+<button class="inline-flex items-center gap-1 px-space-sm py-1 rounded bg-surface-container-high hover:bg-error hover:text-on-error text-error font-label-md text-label-md font-semibold transition-all" onclick="rejectRecord('row-1', 'राहुल कुमावत')">
+<span class="material-symbols-outlined text-[16px]">cancel</span>
+                    अस्वीकृत
+                  </button>
+</div>
+</td>
+</tr>
+<!-- Student 2 -->
+<tr class="hover:bg-surface-container-low transition-colors group bg-surface-container-lowest" id="row-2">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold text-xs">
+                    PC
+                  </div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md font-bold text-primary">प्रियंका चौधरी</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">12वीं साइंस (PCM बोर्ड)</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md font-numeric-table text-numeric-table font-semibold text-on-surface-variant">
+                94142*****
+              </td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-1.5 px-space-xs py-1 rounded bg-surface-container font-numeric-table text-numeric-table font-bold text-primary">
+<span class="material-symbols-outlined text-outline text-[16px]">pin</span>
+<span class="utr-code">409821876543</span>
+<button class="text-outline hover:text-secondary" onclick="navigator.clipboard.writeText('409821876543')" title="कॉपी करें">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-space-md px-space-md text-on-surface-variant font-numeric-table text-numeric-table">
+                14 मिनट पूर्व
+              </td>
+<td class="py-space-md px-space-md font-numeric-table text-numeric-table font-bold text-primary">
+                ₹199.00
+              </td>
+<td class="py-space-md px-space-lg text-right">
+<div class="inline-flex items-center gap-space-xs justify-end">
+<button class="inline-flex items-center gap-1 px-space-md py-1 rounded bg-emerald-600 hover:bg-emerald-700 text-on-primary font-label-md text-label-md font-semibold shadow-sm transition-all" onclick="approveRecord('row-2', 'प्रियंका चौधरी', '409821876543')">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                    मंज़ूर करें (Approve)
+                  </button>
+<button class="inline-flex items-center gap-1 px-space-sm py-1 rounded bg-surface-container-high hover:bg-error hover:text-on-error text-error font-label-md text-label-md font-semibold transition-all" onclick="rejectRecord('row-2', 'प्रियंका चौधरी')">
+<span class="material-symbols-outlined text-[16px]">cancel</span>
+                    अस्वीकृत
+                  </button>
+</div>
+</td>
+</tr>
+<!-- Student 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group" id="row-3">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-bold text-xs">
+                    VS
+                  </div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md font-bold text-primary">विकास शर्मा</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">NEET UG Medical</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md font-numeric-table text-numeric-table font-semibold text-on-surface-variant">
+                87654*****
+              </td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-1.5 px-space-xs py-1 rounded bg-surface-container font-numeric-table text-numeric-table font-bold text-primary">
+<span class="material-symbols-outlined text-outline text-[16px]">pin</span>
+<span class="utr-code">409819876512</span>
+<button class="text-outline hover:text-secondary" onclick="navigator.clipboard.writeText('409819876512')" title="कॉपी करें">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-space-md px-space-md text-on-surface-variant font-numeric-table text-numeric-table">
+                22 मिनट पूर्व
+              </td>
+<td class="py-space-md px-space-md font-numeric-table text-numeric-table font-bold text-primary">
+                ₹199.00
+              </td>
+<td class="py-space-md px-space-lg text-right">
+<div class="inline-flex items-center gap-space-xs justify-end">
+<button class="inline-flex items-center gap-1 px-space-md py-1 rounded bg-emerald-600 hover:bg-emerald-700 text-on-primary font-label-md text-label-md font-semibold shadow-sm transition-all" onclick="approveRecord('row-3', 'विकास शर्मा', '409819876512')">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                    मंज़ूर करें (Approve)
+                  </button>
+<button class="inline-flex items-center gap-1 px-space-sm py-1 rounded bg-surface-container-high hover:bg-error hover:text-on-error text-error font-label-md text-label-md font-semibold transition-all" onclick="rejectRecord('row-3', 'विकास शर्मा')">
+<span class="material-symbols-outlined text-[16px]">cancel</span>
+                    अस्वीकृत
+                  </button>
+</div>
+</td>
+</tr>
+<!-- Student 4 -->
+<tr class="hover:bg-surface-container-low transition-colors group bg-surface-container-lowest" id="row-4">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold text-xs">
+                    AB
+                  </div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md font-bold text-primary">अंकित बिश्नोई</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">RS-CIT &amp; B.Tech CSE</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md font-numeric-table text-numeric-table font-semibold text-on-surface-variant">
+                91666*****
+              </td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-1.5 px-space-xs py-1 rounded bg-surface-container font-numeric-table text-numeric-table font-bold text-primary">
+<span class="material-symbols-outlined text-outline text-[16px]">pin</span>
+<span class="utr-code">409817654321</span>
+<button class="text-outline hover:text-secondary" onclick="navigator.clipboard.writeText('409817654321')" title="कॉपी करें">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-space-md px-space-md text-on-surface-variant font-numeric-table text-numeric-table">
+                29 मिनट पूर्व
+              </td>
+<td class="py-space-md px-space-md font-numeric-table text-numeric-table font-bold text-primary">
+                ₹199.00
+              </td>
+<td class="py-space-md px-space-lg text-right">
+<div class="inline-flex items-center gap-space-xs justify-end">
+<button class="inline-flex items-center gap-1 px-space-md py-1 rounded bg-emerald-600 hover:bg-emerald-700 text-on-primary font-label-md text-label-md font-semibold shadow-sm transition-all" onclick="approveRecord('row-4', 'अंकित बिश्नोई', '409817654321')">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                    मंज़ूर करें (Approve)
+                  </button>
+<button class="inline-flex items-center gap-1 px-space-sm py-1 rounded bg-surface-container-high hover:bg-error hover:text-on-error text-error font-label-md text-label-md font-semibold transition-all" onclick="rejectRecord('row-4', 'अंकित बिश्नोई')">
+<span class="material-symbols-outlined text-[16px]">cancel</span>
+                    अस्वीकृत
+                  </button>
+</div>
+</td>
+</tr>
+<!-- Student 5 -->
+<tr class="hover:bg-surface-container-low transition-colors group" id="row-5">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-bold text-xs">
+                    SJ
+                  </div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md font-bold text-primary">सुरेश जाट</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">B.A. कॉलेज डिग्री (Arts)</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md font-numeric-table text-numeric-table font-semibold text-on-surface-variant">
+                96361*****
+              </td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-1.5 px-space-xs py-1 rounded bg-surface-container font-numeric-table text-numeric-table font-bold text-primary">
+<span class="material-symbols-outlined text-outline text-[16px]">pin</span>
+<span class="utr-code">409815432198</span>
+<button class="text-outline hover:text-secondary" onclick="navigator.clipboard.writeText('409815432198')" title="कॉपी करें">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-space-md px-space-md text-on-surface-variant font-numeric-table text-numeric-table">
+                35 मिनट पूर्व
+              </td>
+<td class="py-space-md px-space-md font-numeric-table text-numeric-table font-bold text-primary">
+                ₹199.00
+              </td>
+<td class="py-space-md px-space-lg text-right">
+<div class="inline-flex items-center gap-space-xs justify-end">
+<button class="inline-flex items-center gap-1 px-space-md py-1 rounded bg-emerald-600 hover:bg-emerald-700 text-on-primary font-label-md text-label-md font-semibold shadow-sm transition-all" onclick="approveRecord('row-5', 'सुरेश जाट', '409815432198')">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                    मंज़ूर करें (Approve)
+                  </button>
+<button class="inline-flex items-center gap-1 px-space-sm py-1 rounded bg-surface-container-high hover:bg-error hover:text-on-error text-error font-label-md text-label-md font-semibold transition-all" onclick="rejectRecord('row-5', 'सुरेश जाट')">
+<span class="material-symbols-outlined text-[16px]">cancel</span>
+                    अस्वीकृत
+                  </button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Action Toast Bar (Appears on click) -->
+<div class="hidden p-space-md bg-primary text-on-primary flex items-center justify-between transition-all" id="statusToast">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-400">check_circle</span>
+<span class="font-body-md text-body-md" id="toastMessage">कार्रवाई सफलतापूर्वक निष्पादित की गई।</span>
+</div>
+<button class="text-on-primary hover:text-surface-container-high" onclick="document.getElementById('statusToast').classList.add('hidden')">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Table Footer Summary -->
+<div class="p-space-md bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+          सुरक्षा नीति: त्रुटिवश अस्वीकृत किए गए UTR को पुनः 'ऑडिट लॉग' से रिकवर किया जा सकता है।
+        </span>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm text-outline">पृष्ठ 1 / 3</span>
+<button class="px-space-sm py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm disabled:opacity-50" disabled="">पिछला</button>
+<button class="px-space-sm py-1 rounded bg-primary text-on-primary font-label-sm text-label-sm hover:bg-primary-container">अगला</button>
+</div>
+</div>
+</div>
+<!-- Asymmetric Split Section: Strict 5-Referral Hub & Manual Audit Override -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Strict 5-Referral Audit Hub (7 Columns) -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col gap-space-md">
+<div class="flex items-start justify-between gap-space-sm">
+<div>
+<div class="inline-flex items-center gap-1.5 px-space-xs py-0.5 rounded bg-surface-container-high text-secondary font-label-sm text-label-sm font-bold uppercase mb-1">
+              जीरो-कैशबैक • 100% सिस्टम ऑटोमेशन
+            </div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">सख्त 5-सफल सशुल्क रेफरल ऑडिट हब</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+              जैसे ही किसी छात्र के रेफरल कोड से 5 छात्र ₹199 का पास सक्रिय करते हैं, सिस्टम डेटाबेस में स्वतः +30 दिन वैधता बढ़ा देता है। शून्य मानवीय हस्तक्षेप।
+            </p>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+</div>
+<!-- Strict Rules Callout -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+<span class="font-label-md text-label-md font-bold text-primary">सिस्टम नीति: गैर-नकदी केवल शैक्षणिक विस्तार</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            कोई UPI कैशबैक या बैंक ट्रांसफर नहीं दिया जाता। यह विशुद्ध शैक्षणिक सहभागिता पुरस्कार है। प्रत्येक सफल सशुल्क रेफरल का ऑडिट ट्रेल भारतीय अनुबंध अधिनियम के अनुरूप संधारित है।
+          </p>
+</div>
+<!-- Live Referrer Performance Matrix -->
+<div class="flex flex-col gap-space-sm mt-space-xs">
+<!-- Referrer 1 (Goal Reached) -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-xs">
+                MR
+              </div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md font-bold text-primary">मनीष राठौड़ (रेफरल: <span class="font-numeric-table text-numeric-table text-secondary">EDUPRO-MR91</span>)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">सक्रिय सशुल्क रेफरल: <strong class="text-emerald-700 font-numeric-table text-numeric-table">5 / 5 पूर्ण</strong></span>
+</div>
+</div>
+<div class="flex items-center gap-2 w-full sm:w-auto justify-between sm:justify-end">
+<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded bg-emerald-600 text-on-primary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">lock_open</span>
+                +30 दिन स्वतः सक्रिय
+              </span>
+</div>
+</div>
+<!-- Referrer 2 (Goal Reached) -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-xs">
+                DK
+              </div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md font-bold text-primary">दिव्या कुंतल (रेफरल: <span class="font-numeric-table text-numeric-table text-secondary">EDUPRO-DK44</span>)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">सक्रिय सशुल्क रेफरल: <strong class="text-emerald-700 font-numeric-table text-numeric-table">5 / 5 पूर्ण</strong></span>
+</div>
+</div>
+<div class="flex items-center gap-2 w-full sm:w-auto justify-between sm:justify-end">
+<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded bg-emerald-600 text-on-primary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">lock_open</span>
+                +30 दिन स्वतः सक्रिय
+              </span>
+</div>
+</div>
+<!-- Referrer 3 (In Progress: 3/5) -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-surface-container-highest text-primary flex items-center justify-center font-bold text-xs">
+                AJ
+              </div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md font-bold text-primary">अमित जांगिड़ (रेफरल: <span class="font-numeric-table text-numeric-table text-secondary">EDUPRO-AJ02</span>)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">सक्रिय सशुल्क रेफरल: <strong class="text-amber-800 font-numeric-table text-numeric-table">3 / 5 (2 शेष)</strong></span>
+</div>
+</div>
+<div class="flex items-center gap-2 w-full sm:w-auto justify-between sm:justify-end">
+<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">hourglass_top</span>
+                प्रगति पर (लॉक्ड)
+              </span>
+</div>
+</div>
+<!-- Referrer 4 (In Progress: 4/5) -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-surface-container-highest text-primary flex items-center justify-center font-bold text-xs">
+                NP
+              </div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md font-bold text-primary">नेहा पुरोहित (रेफरल: <span class="font-numeric-table text-numeric-table text-secondary">EDUPRO-NP77</span>)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">सक्रिय सशुल्क रेफरल: <strong class="text-amber-800 font-numeric-table text-numeric-table">4 / 5 (1 शेष)</strong></span>
+</div>
+</div>
+<div class="flex items-center gap-2 w-full sm:w-auto justify-between sm:justify-end">
+<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">hourglass_top</span>
+                प्रगति पर (लॉक्ड)
+              </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Manual Override & Bank Reconciliation (5 Columns) -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<!-- Manual Reconciliation Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-primary-container text-primary-fixed flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px]">manage_search</span>
+</div>
+<div>
+<h2 class="font-title-lg text-title-lg text-primary font-bold">मैन्युअल UTR समाधान (Emergency Override)</h2>
+<span class="font-label-sm text-label-sm text-outline">ऑडिट लॉग के साथ दर्ज होगा</span>
+</div>
+</div>
+<form class="flex flex-col gap-space-sm" onsubmit="handleManualOverride(event)">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">12-अंकीय बैंक UTR नंबर दर्ज करें</label>
+<input class="px-space-md py-space-xs rounded bg-surface-container-low text-on-surface font-numeric-table text-numeric-table outline-none focus:bg-surface-container-highest transition-colors" id="manualUtr" maxlength="12" placeholder="उदा. 4098XXXXXXXX" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">छात्र पंजीकृत मोबाइल नंबर</label>
+<input class="px-space-md py-space-xs rounded bg-surface-container-low text-on-surface font-numeric-table text-numeric-table outline-none focus:bg-surface-container-highest transition-colors" id="manualPhone" maxlength="10" placeholder="10-अंकीय मोबाइल नंबर" required="" type="tel"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">मैन्युअल अनुमति का कारण</label>
+<select class="px-space-md py-space-xs rounded bg-surface-container-low text-on-surface font-body-md text-body-md outline-none" id="manualReason">
+<option value="bank_sms_verified">बैंक SMS स्टेटमेन्ट से सत्यापित</option>
+<option value="screenshot_verified">BharatQR स्लिप प्रत्यक्ष मिलान</option>
+<option value="executive_custodian_permit">संस्थापक / कस्टोडियन विशेष आदेश</option>
+</select>
+</div>
+<button class="mt-space-xs w-full py-space-xs px-space-md rounded bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-bold shadow-sm transition-all flex items-center justify-center gap-1.5" type="submit">
+<span class="material-symbols-outlined text-[18px]">gavel</span>
+              मैन्युअल 30-दिवसीय पास सक्रिय करें
+            </button>
+</form>
+</div>
+<!-- Node & Security Status Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md font-bold text-primary">गेटवे व नोड हेल्थ</span>
+<span class="font-numeric-table text-numeric-table text-emerald-700 font-bold">100% अपटाइम</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between font-body-sm text-body-sm py-1 bg-surface-container-low px-2 rounded">
+<span class="text-on-surface-variant">NPCI BharatQR सर्वर:</span>
+<span class="text-emerald-700 font-bold font-numeric-table text-numeric-table">सक्रिय (0.01s लेटेंसी)</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm py-1 bg-surface-container-low px-2 rounded">
+<span class="text-on-surface-variant">डेटाबेस प्रतिकृति (Replica):</span>
+<span class="text-emerald-700 font-bold font-numeric-table text-numeric-table">सिंक्रोनाइज़्ड</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm py-1 bg-surface-container-low px-2 rounded">
+<span class="text-on-surface-variant">ऑटो रेफरल क्रॉन-जॉब:</span>
+<span class="text-secondary font-bold font-numeric-table text-numeric-table">प्रत्येक 60 सेकंड</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Security & Legal Act Warning Box -->
+<div class="bg-surface-container rounded-xl p-space-lg shadow-sm flex flex-col md:flex-row items-start gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-error-container text-error flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">gavel</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-title-md text-title-md text-primary font-bold">गोपनीयता, आईपीआर एवं कानूनी चेतावनी (Strict Administrative Compliance)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          यह एडमिनिस्ट्रेटिव डैशबोर्ड भारतीय प्रतिलिप्यधिकार अधिनियम, 1957 (Indian Copyright Act, 1957) एवं सूचना प्रौद्योगिकी अधिनियम, 2000 (IT Act, 2000) के तहत पूर्णतः सुरक्षित है। किसी भी अनधिकृत यूटीआर अनुमोदन, फेक ट्रांजेक्शन इंसर्शन, अथवा छात्र डेटाबेस की नकल करना संज्ञेय और गैर-जमानती अपराध है। सभी कस्टोडियन क्रियाएं आईपी पते व समय-मोहर के साथ ऑडिट वाल्ट में सुरक्षित की जा रही हैं।
+        </p>
+</div>
+</div>
+</div>
+<!-- Dynamic Inline Interaction Script -->
+<script>
+    function approveRecord(rowId, studentName, utr) {
+      const row = document.getElementById(rowId);
+      if (row) {
+        row.classList.add('bg-emerald-50', 'transition-all');
+        setTimeout(() => {
+          row.remove();
+          updatePendingCount();
+          showToast(`सफल: ${studentName} (UTR: ${utr}) का 30-दिवसीय ऑल-एक्सेस पास सक्रिय कर दिया गया है।`);
+        }, 300);
+      }
+    }
+
+    function rejectRecord(rowId, studentName) {
+      if (confirm(`क्या आप निश्चित रूप से ${studentName} के UTR को अस्वीकृत करना चाहते हैं?`)) {
+        const row = document.getElementById(rowId);
+        if (row) {
+          row.classList.add('bg-error-container', 'transition-all');
+          setTimeout(() => {
+            row.remove();
+            updatePendingCount();
+            showToast(`सूचना: ${studentName} का भुगतान अस्वीकृत कर दिया गया है।`);
+          }, 300);
         }
-      </script>
-</head>
-<body class="bg-surface text-on-surface font-body-md h-full flex overflow-hidden">
-<!-- SideNavBar (Desktop) -->
-<nav class="hidden md:flex flex-col h-full py-md px-base fixed left-0 top-0 w-[280px] bg-surface-container-low border-r border-outline-variant z-40">
-<div class="mb-lg px-base">
-<h1 class="font-title-md text-title-md font-bold text-primary">EduPro Admin</h1>
-<p class="font-caption text-caption text-on-surface-variant mt-xs">Institutional Portal</p>
-</div>
-<button class="bg-primary text-on-primary font-label-md text-label-md py-sm px-md rounded-full w-full mb-lg flex items-center justify-center gap-sm shadow-sm hover:opacity-90 transition-opacity"><span class="material-symbols-outlined text-[18px]">receipt_long</span>
-<span>Pending Approvals Queue (14)</span></button>
-<ul class="flex-1 space-y-xs w-full font-label-md text-label-md text-on-surface-variant">
-<li>
-<a class="flex items-center gap-md px-md py-sm rounded-full hover:bg-surface-container-highest transition-all" href="#">
-<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
-<span>Overview</span>
-</a>
-</li>
-<li>
-<a class="flex items-center gap-md px-md py-sm rounded-full hover:bg-surface-container-highest transition-all" href="#">
-<span class="material-symbols-outlined text-[20px]" data-icon="group">group</span>
-<span>Student Management</span>
-</a>
-</li>
-<li>
-<a class="flex items-center gap-md px-md py-sm rounded-full bg-secondary-container text-on-secondary-container active:scale-95 duration-200" href="#">
-<span class="material-symbols-outlined text-[20px]" data-icon="pending_actions" style="font-variation-settings: 'FILL' 1;">pending_actions</span>
-<span>Pending Approvals</span>
-</a>
-</li>
-<li>
-<a class="flex items-center gap-md px-md py-sm rounded-full hover:bg-surface-container-highest transition-all" href="#">
-<span class="material-symbols-outlined text-[20px]" data-icon="inventory_2">inventory_2</span>
-<span>Question Bank</span>
-</a>
-</li>
-<li>
-<a class="flex items-center gap-md px-md py-sm rounded-full hover:bg-surface-container-highest transition-all" href="#">
-<span class="material-symbols-outlined text-[20px]" data-icon="psychology">psychology</span>
-<span>AI Generator</span>
-</a>
-</li>
-<li>
-<a class="flex items-center gap-md px-md py-sm rounded-full hover:bg-surface-container-highest transition-all" href="#">
-<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
-<span>Settings</span>
-</a>
-</li>
-</ul>
-<div class="mt-auto pt-md border-t border-outline-variant w-full">
-<ul class="space-y-xs w-full font-label-md text-label-md text-on-surface-variant">
-<li>
-<a class="flex items-center gap-md px-md py-sm rounded-full hover:bg-surface-container-highest transition-all" href="#">
-<span class="material-symbols-outlined text-[20px]" data-icon="help">help</span>
-<span>Help</span>
-</a>
-</li>
-<li>
-<a class="flex items-center gap-md px-md py-sm rounded-full hover:bg-surface-container-highest transition-all" href="#">
-<span class="material-symbols-outlined text-[20px]" data-icon="logout">logout</span>
-<span>Logout</span>
-</a>
-</li>
-</ul>
-</div>
-</nav>
-<!-- Main Content Area -->
-<main class="flex-1 md:ml-[280px] h-full overflow-y-auto flex flex-col bg-background relative">
-<!-- TopNavBar -->
-<header class="flex justify-between items-center px-margin-desktop w-full z-30 bg-surface fixed top-0 md:left-[280px] md:w-[calc(100%-280px)] h-16 border-b border-outline-variant">
-<div class="flex items-center gap-md md:hidden">
-<button class="p-2 -ml-2 text-on-surface-variant">
-<span class="material-symbols-outlined">menu</span>
-</button>
-<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">EduPro</span>
-</div>
-<!-- Navigation Links (Desktop TopBar) - Usually hidden on admin if using sidebar, but preserving structure based on JSON -->
-<nav class="hidden md:flex gap-lg h-full items-center">
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors h-full flex items-center px-sm" href="#">Dashboard</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors h-full flex items-center px-sm" href="#">Analytics</a>
-<a class="font-body-md text-body-md text-primary border-b-2 border-primary pb-1 h-full flex items-center px-sm mt-1" href="#">Management</a>
-</nav>
-<div class="flex items-center gap-sm">
-<button class="p-2 text-on-surface-variant hover:text-primary transition-colors active:opacity-80">
-<span class="material-symbols-outlined" data-icon="translate">translate</span>
-</button>
-<button class="p-2 text-on-surface-variant hover:text-primary transition-colors active:opacity-80 relative">
-<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
-<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
-</button>
-<button class="p-2 text-on-surface-variant hover:text-primary transition-colors active:opacity-80">
-<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
-</button>
-</div>
-</header>
-<!-- Page Content -->
-<div class="p-margin-mobile md:p-margin-desktop pt-[80px] md:pt-[88px] max-w-7xl mx-auto w-full flex-1 flex flex-col">
-<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-lg gap-md">
-<div>
-<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background">Review Payment Receipt</h2>
-<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Verify student details and approve the ₹199 / Month (1 Month Pass) premium access payment.</p>
-</div>
-<button class="flex items-center gap-sm px-md py-sm bg-surface-container-high hover:bg-surface-variant text-on-surface rounded-full font-label-md text-label-md transition-colors">
-<span class="material-symbols-outlined text-[18px]">arrow_back</span>
-                    Back to Pending List
-                </button>
-</div><div class="mb-lg space-y-md">
-<!-- Revenue & Admin KPI Cards -->
-<div class="grid grid-cols-2 sm:grid-cols-4 gap-sm md:gap-md">
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col shadow-sm">
-<div class="flex items-center justify-between text-on-surface-variant">
-<span class="font-caption text-caption uppercase tracking-wider font-semibold">Today's Revenue</span>
-<span class="material-symbols-outlined text-[20px] text-secondary">payments</span>
-</div>
-<span class="font-title-md text-title-md font-bold text-on-surface mt-xs">₹4,776</span>
-<span class="text-[11px] text-secondary font-medium mt-1 flex items-center gap-1">
-<span class="material-symbols-outlined text-[14px]">trending_up</span> +24% vs yesterday
-      </span>
-</div>
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col shadow-sm">
-<div class="flex items-center justify-between text-on-surface-variant">
-<span class="font-caption text-caption uppercase tracking-wider font-semibold">Pending Approvals</span>
-<span class="material-symbols-outlined text-[20px] text-tertiary">pending_actions</span>
-</div>
-<span class="font-title-md text-title-md font-bold text-tertiary mt-xs">14 <span class="text-[13px] font-normal text-on-surface-variant">receipts</span></span>
-<span class="text-[11px] text-on-surface-variant font-medium mt-1">Avg review: 8m</span>
-</div>
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col shadow-sm">
-<div class="flex items-center justify-between text-on-surface-variant">
-<span class="font-caption text-caption uppercase tracking-wider font-semibold">Approved Today</span>
-<span class="material-symbols-outlined text-[20px] text-primary">verified</span>
-</div>
-<span class="font-title-md text-title-md font-bold text-on-surface mt-xs">24</span>
-<span class="text-[11px] text-secondary font-medium mt-1">100% verified UTR</span>
-</div>
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col shadow-sm">
-<div class="flex items-center justify-between text-on-surface-variant">
-<span class="font-caption text-caption uppercase tracking-wider font-semibold">Active Students</span>
-<span class="material-symbols-outlined text-[20px] text-primary">groups</span>
-</div>
-<span class="font-title-md text-title-md font-bold text-on-surface mt-xs">1,289</span>
-<span class="text-[11px] text-on-surface-variant font-medium mt-1">All batches active</span>
-</div>
-</div>
-<!-- Fast Filter Navigation Tabs & Security Status -->
-<div class="flex flex-wrap items-center justify-between gap-sm bg-surface-container-low p-2 rounded-xl border border-outline-variant">
-<div class="flex items-center gap-1 sm:gap-2">
-<button class="px-md py-1.5 rounded-lg bg-surface text-primary font-label-md text-label-md font-semibold shadow-sm flex items-center gap-1.5">
-<span>Pending (14)</span>
-</button>
-<button class="px-md py-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant font-label-md text-label-md transition-colors">
-<span>Approved (24)</span>
-</button>
-<button class="px-md py-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant font-label-md text-label-md transition-colors">
-<span>Rejected (2)</span>
-</button>
-<button class="px-md py-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant font-label-md text-label-md transition-colors">
-<span>All (40)</span>
-</button>
-</div>
-<div class="flex items-center gap-2 px-3 py-1 bg-surface-container rounded-lg text-on-surface-variant text-caption font-caption">
-<span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
-<span>Bank Match Shield Active</span>
-</div>
-</div>
-</div>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter flex-1 items-start pb-20 md:pb-0">
-<!-- Left Column: Student Details -->
-<div class="lg:col-span-5 flex flex-col gap-md">
-<!-- Profile Card -->
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col gap-md"><div class="flex items-center justify-between flex-wrap gap-sm">
-<div class="flex items-center gap-md">
-<div class="w-14 h-14 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-title-md text-title-md font-bold shadow-sm">
-      AP
-    </div>
-<div>
-<h3 class="font-title-md text-title-md text-on-surface font-semibold">Arjun Patel</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Class 12 • Science Stream</p>
-</div>
-</div>
-<!-- 1-Click WhatsApp Quick Contact -->
-<a class="flex items-center gap-1.5 px-3 py-1.5 bg-[#25D366]/15 hover:bg-[#25D366]/25 text-[#006e2c] rounded-full text-label-md font-medium transition-all" href="https://wa.me/919876543210?text=Hi%20Arjun,%20your%20EduPro%20subscription%20payment%20is%20verified%20and%20active!" target="_blank">
-<span class="material-symbols-outlined text-[18px]">chat</span>
-<span>WhatsApp Student</span>
-</a>
-</div>
-<div class="grid grid-cols-2 gap-sm mt-xs pt-sm border-t border-outline-variant">
-<div class="flex flex-col">
-<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider">Mobile Number</span>
-<div class="flex items-center gap-1">
-<span class="font-body-md text-body-md text-on-surface font-medium">+91 98765 43210</span>
-</div>
-</div>
-<div class="flex flex-col">
-<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider">Student ID</span>
-<span class="font-body-md text-body-md text-on-surface font-medium">EDU-2023-8472</span>
-</div>
-</div></div>
-<!-- Status & Request Info -->
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col gap-md"><div class="flex items-center justify-between border-b border-outline-variant pb-xs">
-<h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider font-semibold">Access Status</h4>
-<span class="text-[11px] px-2 py-0.5 rounded bg-error-container text-on-error-container font-semibold">Expired 2 days ago</span>
-</div>
-<div class="flex items-center justify-between p-sm bg-error-container/40 border border-error/20 rounded-lg">
-<div class="flex items-center gap-sm text-on-error-container">
-<span class="material-symbols-outlined text-[20px] text-error" style="font-variation-settings: 'FILL' 1;">warning</span>
-<span class="font-label-md text-label-md font-semibold text-error">Trial Expired • Immediate Access Locked</span>
-</div>
-</div>
-<h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider border-b border-outline-variant pb-xs mt-sm font-semibold">Payment Verification Request</h4>
-<div class="space-y-sm">
-<div class="flex justify-between items-center">
-<span class="font-body-md text-body-md text-on-surface-variant">Selected Plan</span>
-<span class="font-body-md text-body-md text-on-surface font-medium">1 Month Pass</span>
-</div>
-<div class="flex justify-between items-center">
-<span class="font-body-md text-body-md text-on-surface-variant">Amount Verified</span>
-<span class="font-title-md text-title-md text-primary font-bold">₹199.00</span>
-</div>
-<!-- 1-Click Copy 12-digit UTR section for Himmat Ram bank app checking -->
-<div class="flex justify-between items-center p-2.5 bg-surface-container-low rounded-lg border border-outline-variant">
-<div>
-<span class="font-caption text-caption text-on-surface-variant uppercase block font-semibold">12-Digit UPI UTR No.</span>
-<span class="font-title-md text-body-md font-bold font-mono text-on-surface tracking-wider" id="utr-number">329815487562</span>
-</div>
-<button class="flex items-center gap-1 px-3 py-1.5 bg-primary-container text-on-primary-container rounded font-label-md text-label-md font-medium hover:opacity-90 transition-opacity active:scale-95 duration-150" onclick="navigator.clipboard.writeText('329815487562'); const t=this; t.innerHTML='&lt;span class=\'material-symbols-outlined text-[16px]\'&gt;done&lt;/span&gt; Copied!'; setTimeout(()=&gt;t.innerHTML='&lt;span class=\'material-symbols-outlined text-[16px]\'&gt;content_copy&lt;/span&gt; Copy UTR', 2000);">
-<span class="material-symbols-outlined text-[16px]">content_copy</span>
-<span>Copy UTR</span>
-</button>
-</div>
-<div class="flex justify-between items-center text-caption pt-1">
-<span class="font-body-md text-body-md text-on-surface-variant">Date &amp; Time</span>
-<span class="font-body-md text-body-md text-on-surface">Oct 24, 2023 • 10:30 AM</span>
-</div>
-<div class="flex justify-between items-center text-caption">
-<span class="font-body-md text-body-md text-on-surface-variant">Payment Method</span>
-<span class="font-body-md text-body-md text-on-surface flex items-center gap-1 font-medium">
-<span class="w-2 h-2 rounded-full bg-secondary"></span> PhonePe / UPI (ICICI Bank)
-    </span>
-</div>
-</div>
-<!-- Quick Bank Cross-check reminder note -->
-<div class="mt-xs p-2 bg-surface-container-high/60 rounded text-[12px] text-on-surface-variant flex items-start gap-2 border border-outline-variant">
-<span class="material-symbols-outlined text-[16px] text-primary shrink-0 mt-0.5">info</span>
-<span>Verify the credit of ₹199 in your ICICI Current Account before approving. Once approved, course unlocks immediately.</span>
-</div></div>
-<!-- Admin Notes -->
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col gap-sm">
-<label class="font-label-md text-label-md text-on-surface-variant" for="admin-notes">Admin Notes (Optional)</label>
-<textarea class="w-full bg-surface border border-outline-variant rounded-lg p-sm font-body-md text-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none" id="admin-notes" placeholder="Add note regarding this approval/rejection..." rows="3"></textarea>
-</div>
-</div>
-<!-- Right Column: Receipt Preview & Actions -->
-<div class="lg:col-span-7 flex flex-col gap-md h-full min-h-[500px]">
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col h-full">
-<div class="flex justify-between items-center mb-sm">
-<h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Receipt Preview</h4>
-<div class="flex gap-xs">
-<button class="p-1 rounded hover:bg-surface-variant text-on-surface-variant transition-colors" title="Zoom In">
-<span class="material-symbols-outlined text-[20px]">zoom_in</span>
-</button>
-<button class="p-1 rounded hover:bg-surface-variant text-on-surface-variant transition-colors" title="Download">
-<span class="material-symbols-outlined text-[20px]">download</span>
-</button>
-</div>
-</div>
-<!-- Receipt Image Area -->
-<div class="flex-1 bg-surface-container rounded-lg overflow-hidden flex items-center justify-center relative min-h-[400px]">
-<!-- Instruction mentions not modifying image tags, but we need a placeholder. Using standard img tag with generic placeholder to simulate the receipt -->
-<img class="object-contain w-full h-full max-h-[600px]" data-alt="A high-resolution mobile screenshot of a successful UPI payment receipt for ₹199 to EduPro Academy. The screenshot shows clear transaction details, date, time, and a green success checkmark, indicative of modern digital wallet interfaces in light mode." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc1p-n5QQ4l2ZVPvCixD4uxe0rApWiH4LVd3yd3MPUjKFKTHMn8sl8WwblRWZeGf4VYS9pD_641gMQ3uIIxWJ14bbyNzTbnR8kOYRa5VBRWm_b7mU7Wj6gm5NDSrfoL6JASBaifJzX0M2JYP5c0S2fMV6AmdU_zNtmq1tVVZmMMeQLbTG4E7goSuBZZ1rSaNOwK01X97JDvt47ygGbAmLhNt7KbBP5GWLivyryaOUcXxqjDCgwQVw4Zg"/>
-<!-- Placeholder overlay for realism if image fails to load -->
-<div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-50">
-<span class="material-symbols-outlined text-[64px] text-outline-variant">receipt_long</span>
-</div>
-</div>
-<!-- Action Buttons -->
-<div class="flex flex-col sm:flex-row gap-md mt-lg justify-end border-t border-outline-variant pt-md"><button class="px-lg py-sm border border-error text-error hover:bg-error-container hover:text-on-error-container rounded-full font-label-md text-label-md transition-colors flex items-center justify-center gap-sm w-full sm:w-auto font-medium" onclick="alert('Receipt rejected. Student notified via SMS &amp; WhatsApp to re-upload clear proof.');">
-<span class="material-symbols-outlined text-[18px]">close</span>
-<span>Reject &amp; Request Re-upload</span>
-</button>
-<button class="px-lg py-sm bg-primary text-on-primary hover:bg-surface-tint rounded-full font-label-md text-label-md transition-colors flex items-center justify-center gap-sm shadow-sm w-full sm:w-auto font-semibold" onclick="alert('Success! ₹199 Verified. Access granted to Arjun Patel for 1 Month.');">
-<span class="material-symbols-outlined text-[18px]">check_circle</span>
-<span>Approve Access</span>
-</button></div>
-</div>
-</div>
-</div>
-</div>
-</main>
-<!-- BottomNavBar (Mobile) -->
-<div class="fixed bottom-[56px] left-0 w-full p-sm bg-surface-container-lowest/95 backdrop-blur-md border-t border-outline-variant md:hidden z-40 flex items-center gap-sm shadow-lg">
-<button class="flex-1 py-2.5 px-sm border border-error text-error font-label-md text-label-md rounded-full font-medium flex items-center justify-center gap-1 active:scale-95 duration-150" onclick="alert('Receipt rejected. Student notified to re-upload clear proof.');">
-<span class="material-symbols-outlined text-[18px]">close</span>
-<span>Reject</span>
-</button>
-<button class="flex-1 py-2.5 px-sm bg-primary text-on-primary font-label-md text-label-md rounded-full font-semibold flex items-center justify-center gap-1 shadow-sm active:scale-95 duration-150" onclick="alert('Success! ₹199 Verified. Access granted to Arjun Patel for 1 Month.');">
-<span class="material-symbols-outlined text-[18px]">check_circle</span>
-<span>Approve Access</span>
-</button>
-</div><nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-2 md:hidden z-50 bg-surface border-t border-outline-variant shadow-sm">
-<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
-<span class="material-symbols-outlined text-[24px]" data-icon="home">home</span>
-<span class="font-label-md text-label-md mt-1 text-[10px]">Dashboard</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
-<span class="material-symbols-outlined text-[24px]" data-icon="assignment">assignment</span>
-<span class="font-label-md text-label-md mt-1 text-[10px]">Tests</span>
-</a>
-<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 active:scale-90 duration-150" href="#">
-<span class="material-symbols-outlined text-[24px]" data-icon="leaderboard" style="font-variation-settings: 'FILL' 1;">leaderboard</span>
-<span class="font-label-md text-label-md mt-1 text-[10px]">Management</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
-<span class="material-symbols-outlined text-[24px]" data-icon="person">person</span>
-<span class="font-label-md text-label-md mt-1 text-[10px]">Profile</span>
-</a>
-</nav>
-</body></html>
+      }
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('statusToast');
+      const toastMsg = document.getElementById('toastMessage');
+      if (toast && toastMsg) {
+        toastMsg.innerText = msg;
+        toast.classList.remove('hidden');
+        setTimeout(() => {
+          toast.classList.add('hidden');
+        }, 5000);
+      }
+    }
+
+    function updatePendingCount() {
+      const rows = document.querySelectorAll('#approvalsTable tbody tr');
+      const countBadge = document.getElementById('pendingCountBadge');
+      if (countBadge) {
+        countBadge.innerText = `${rows.length} लंबित प्रदर्शित`;
+      }
+    }
+
+    function filterApprovalsTable() {
+      const input = document.getElementById('utrSearchInput');
+      const filter = input.value.toUpperCase();
+      const table = document.getElementById('approvalsTable');
+      const tr = table.getElementsByTagName('tr');
+
+      for (let i = 1; i < tr.length; i++) {
+        let textContent = tr[i].textContent || tr[i].innerText;
+        if (textContent.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+
+    function refreshQueue() {
+      const icon = document.getElementById('refreshIcon');
+      if (icon) {
+        icon.classList.add('animate-spin');
+        setTimeout(() => {
+          icon.classList.remove('animate-spin');
+          showToast('कतार सफलतापूर्वक रीफ्रेश हो गई है। सभी नए UTR सिंक हो चुके हैं।');
+        }, 800);
+      }
+    }
+
+    function handleManualOverride(e) {
+      e.preventDefault();
+      const utr = document.getElementById('manualUtr').value;
+      const phone = document.getElementById('manualPhone').value;
+      const reason = document.getElementById('manualReason').value;
+
+      if (utr.length === 12 && phone.length === 10) {
+        showToast(`मैन्युअल समाधान सफल: मोबाइल ${phone} के लिए UTR ${utr} सत्यापित हुआ।`);
+        e.target.reset();
+      } else {
+        alert('कृपया सही 12-अंकीय UTR और 10-अंकीय मोबाइल नंबर दर्ज करें।');
+      }
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest border-t border-surface-container-high py-space-xl mt-auto"><div class="max-w-[1440px] mx-auto px-margin-sm lg:px-margin-lg"><div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-space-xl"><div class="md:col-span-2 flex flex-col gap-space-sm"><div class="flex items-center gap-space-xs"><div class="w-7 h-7 rounded bg-primary flex items-center justify-center"><span class="font-headline-sm text-sm text-on-primary font-bold">EP</span></div><span class="font-title-md text-title-md text-primary font-bold">EduPro Academic Directorate</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-xl">India's authoritative examination intelligence and standardized preparation repository. Certified curriculum standards complying with national public service test specifications.</p></div><div class="flex flex-col gap-space-xs"><span class="font-label-md text-label-md uppercase text-outline tracking-wider font-semibold">वैधानिक एवं संस्थागत प्रभाग</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="editorial-board" href="#">संपादकीय बोर्ड व विशेषज्ञ</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="examination-protocols" href="#">परीक्षा मानक प्रोटोकॉल</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="verification" href="#">प्रामाणिकता सत्यापन</a></div><div class="flex flex-col gap-space-xs"><span class="font-label-md text-label-md uppercase text-outline tracking-wider font-semibold">सहायता व अनुपालन</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="legal-compliance" href="#">कानूनी अनुपालन प्रपत्र</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="terms-of-service" href="#">नियम एवं गोपनीयता</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="institutional-access" href="#">संस्थान प्रवेश पोर्टल</a></div></div><div class="pt-space-lg border-t border-surface-container flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex flex-col gap-space-xs text-left"><p class="font-body-sm text-body-sm text-on-surface-variant font-medium">© 2025 EduPro National Academic Council. All Rights Reserved. Protected under the Indian Copyright Act, 1957 (Act No. 14 of 1957).</p><p class="font-label-sm text-label-sm text-outline">Strict Legal Notice: Unauthorized duplication, computerized scraping, automated replication, or uncertified commercial distribution of State-wise GK briefs, mock tests, and analytical solutions constitutes a punishable offense under Sections 51, 63, and 64 of the Indian Copyright Act, 1957, actionable in competent jurisdictions.</p></div><div class="flex items-center gap-space-md shrink-0"><span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded border border-surface-container-highest bg-surface-container-low font-label-sm text-label-sm text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-secondary"></span>Verified Portal</span><span class="font-numeric-table text-numeric-table text-outline font-semibold">ISO 9001:2015</span></div></div></div></footer></body></html>
