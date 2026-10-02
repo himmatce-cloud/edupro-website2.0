@@ -1,860 +1,754 @@
 <!DOCTYPE html>
+<html class="h-full bg-slate-50" lang="hi">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>EduPro - 20-Year Solved PYQ Archive &amp; Desi Memory Tricks Vault (pyq-tricks.html)</title>
+  
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50: '#f0f5ff', 100: '#e0ebff', 500: '#2563eb', 600: '#1d4ed8', 700: '#1e40af', 800: '#0f2b5c', 900: '#00163d' }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+            mono: ['Inter', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { user-select: none; -webkit-user-select: none; }
+    .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    .pill-active { background-color: #00163d !important; color: #ffffff !important; border-color: #00163d !important; shadow: 0 4px 12px rgba(0, 22, 61, 0.15); }
+  </style>
+</head>
+<body class="min-h-full flex flex-col font-sans bg-slate-50 text-slate-800 antialiased overflow-x-hidden" oncontextmenu="return false;">
 
-<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-variant": "#e0e3e5", "on-secondary-container": "#fefcff", "outline": "#757684", "on-tertiary-container": "#b4bbd5", "primary-fixed-dim": "#b8c4ff", "background": "#f7f9fb", "surface-tint": "#3755c3", "on-surface": "#191c1e", "primary": "#00288e", "inverse-surface": "#2d3133", "on-surface-variant": "#444653", "on-primary-fixed-variant": "#173bab", "outline-variant": "#c4c5d5", "on-secondary-fixed-variant": "#003ea8", "on-secondary": "#ffffff", "surface-container-lowest": "#ffffff", "surface-container-low": "#f2f4f6", "secondary-fixed": "#dbe1ff", "on-tertiary-fixed": "#131b2e", "tertiary-fixed": "#dae2fd", "inverse-primary": "#b8c4ff", "surface-container-highest": "#e0e3e5", "on-primary-fixed": "#001453", "tertiary-fixed-dim": "#bec6e0", "on-primary-container": "#a8b8ff", "on-error": "#ffffff", "secondary-container": "#316bf3", "surface": "#f7f9fb", "on-tertiary": "#ffffff", "on-error-container": "#93000a", "tertiary-container": "#434b60", "on-primary": "#ffffff", "surface-container-high": "#e6e8ea", "error": "#ba1a1a", "surface-bright": "#f7f9fb", "on-tertiary-fixed-variant": "#3f465c", "surface-dim": "#d8dadc", "tertiary": "#2d3449", "surface-container": "#eceef0", "inverse-on-surface": "#eff1f3", "on-background": "#191c1e", "error-container": "#ffdad6", "secondary-fixed-dim": "#b4c5ff", "primary-fixed": "#dde1ff", "secondary": "#0051d5", "on-secondary-fixed": "#00174b", "primary-container": "#1e40af" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-mobile": "1rem", "space-3xl": "4rem", "space-2xl": "3rem", "space-md": "1rem", "space-lg": "1.5rem", "space-xs": "0.5rem", "gutter-desktop": "1.5rem", "space-sm": "0.75rem", "space-2xs": "0.25rem", "space-xl": "2rem", "gutter-mobile": "1rem", "margin-desktop": "2rem" }, "fontFamily": { "display-hero": ["Inter"], "display-hero-mobile": ["Inter"], "body-md": ["Inter"], "headline-lg": ["Inter"], "label-md": ["Inter"], "title-lg": ["Inter"], "body-sm": ["Inter"], "headline-lg-mobile": ["Inter"], "code-tabular": ["Inter"], "headline-md": ["Inter"], "title-md": ["Inter"], "label-sm": ["Inter"], "headline-sm": ["Inter"], "body-lg": ["Inter"] }, "fontSize": { "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.025em", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }], "title-lg": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0.005em", "fontWeight": "400" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "code-tabular": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "400" }] } } } }</script><meta content="web_dashboard" name="shell-type"/></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 flex items-center px-space-lg gap-space-xs"><div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-on-primary font-title-md text-title-md">EP</div><div><span class="font-title-lg text-title-lg font-bold tracking-tight text-primary">EduPro</span><span class="font-label-sm text-label-sm block text-on-surface-variant leading-none">Academic Nexus</span></div></div><div class="px-space-md py-space-sm"><div class="bg-surface-container rounded-lg p-space-xs"><label class="block font-label-sm text-label-sm text-on-surface-variant mb-space-2xs px-space-2xs"><span class="font-label-sm text-label-sm uppercase text-secondary font-bold">1 Month Pass</span><span class="bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm px-space-2xs py-0.5 rounded-full font-semibold">₹199 / 30 दिन</span></label><div class="flex items-center justify-between bg-surface-container-lowest px-space-sm py-space-xs rounded-lg shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] cursor-pointer hover:bg-surface-container-high transition-colors"><div class="flex flex-col"><span class="font-title-md text-title-md text-on-surface font-semibold">UPSC &amp; Civil Services</span><span class="font-label-sm text-label-sm text-on-surface-variant">Target 2025 • Hindi/Eng</span></div><span class="material-symbols-outlined text-on-surface-variant text-base">unfold_more</span></div></div></div><nav class="flex flex-col gap-space-2xs px-space-md mt-space-xs" data-active-classes="bg-primary-container text-on-primary font-semibold shadow-[0_1px_3px_0_rgba(15,23,42,0.04)]"><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-xl">dashboard</span><span class="font-label-md text-label-md">Learning Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="stream-selector" href="#"><span class="material-symbols-outlined text-xl">school</span><span class="font-label-md text-label-md">Change Goal / Stream</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="offline-downloads" href="#"><span class="material-symbols-outlined text-xl">download_for_offline</span><span class="font-label-md text-label-md">Offline PDF Repository</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="verification-tracker" href="#"><span class="material-symbols-outlined text-xl">verified_user</span><span class="font-label-md text-label-md">Verification Tracker</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="admin-panel" href="#"><span class="material-symbols-outlined text-xl">admin_panel_settings</span><span class="font-label-md text-label-md">Admin Master Console</span></a></nav></div><div class="p-space-md bg-surface-container-lowest mx-space-md mb-space-md rounded-xl shadow-[0_1px_3px_0_rgba(15,23,42,0.04)]"><div class="flex items-center justify-between mb-space-2xs"><span class="font-label-sm text-label-sm uppercase text-secondary font-bold">1 Month Pass</span><span class="bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm px-space-2xs py-0.5 rounded-full font-semibold">₹199 / 30 दिन</span></div><p class="font-body-sm text-body-sm text-on-surface-variant mb-space-xs">Full test access across NEET, UPSC, B.Tech &amp; Tally.</p><a class="block text-center bg-secondary-container hover:bg-secondary text-on-secondary font-label-md text-label-md py-space-xs rounded-lg transition-colors font-semibold" data-path="pricing-plan" href="#">Upgrade Now</a></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-lg flex-1 max-w-xl"><div class="relative w-full"><span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">search</span><input class="w-full bg-surface-container-low pl-10 pr-space-md py-space-xs rounded-lg text-on-surface font-body-sm text-body-sm outline-none placeholder:text-on-surface-variant focus:bg-surface-container-lowest" placeholder="Search syllabus, PYQs, Mock Tests, Video Lectures (e.g. UPSC Prelims, NEET Physics)..." type="text"/></div></div><div class="flex items-center gap-space-lg"><nav class="hidden xl:flex items-center gap-space-lg" data-active-classes="text-primary font-semibold"><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="courses-and-streams" href="#">Courses &amp; Streams</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="test-series-and-pyqs" href="#">Test Series &amp; PYQs</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="daily-gk" href="#">Daily GK &amp; Current Affairs</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="pricing-plan" href="#">₹199 Plan</a></nav><div class="flex items-center bg-surface-container-low p-1 rounded-lg"><button class="font-label-sm text-label-sm px-space-xs py-1 rounded bg-surface-container-lowest text-on-surface shadow-[0_1px_2px_rgba(0,0,0,0.04)] font-medium" type="button">EN</button><button class="font-label-sm text-label-sm px-space-xs py-1 rounded text-on-surface-variant hover:text-on-surface font-medium" type="button">हिंदी</button></div><div class="flex items-center gap-space-xs cursor-pointer pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1UL9I8G-ITDkVnLC-gWJzMaruSJwTD9HYIL0ER2FSeTRGmail08zRwP1fj5ZRr4FPEHZHbv_BBAvH6c0OeoOu9wI-QOKYuKTKLoDmigd-XLqxqY3V9GWrDcR02QmN_KfBHo6pdUzdTG9P5mcovM6428iNAQWRBnJAoeQbNeq2Pt0XTBP5O9YUwTE_-f6naFCy1rQ2nd2CmxUscDwUYQmFLBvO3uGD7JrowdsLKxZ5GsCk1camZc2QlRBLH85QxqF8RBiqJ6c6ztqNQ"/><div class="hidden md:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface leading-tight font-semibold">Dr. Rajesh Kumar</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-none">Scholar #9841</span></div></div></div></header><main class="w-full pt-16 bg-background px-space-xl py-space-lg min-h-screen"><div class="flex flex-col w-full">
-<!-- Top Academic Credentials Bar & Banner -->
-<div class="relative w-full rounded-xl bg-gradient-to-r from-primary-container via-primary to-primary-container p-space-lg text-on-primary shadow-md overflow-hidden mb-space-lg">
-<div class="absolute -right-12 -top-12 w-64 h-64 bg-secondary/20 rounded-full blur-3xl pointer-events-none"></div>
-<div class="absolute right-1/3 bottom-0 w-48 h-48 bg-tertiary-fixed-dim/10 rounded-full blur-2xl pointer-events-none"></div>
-<div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
-<div class="space-y-space-xs max-w-3xl">
-<div class="inline-flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-lowest/15 backdrop-blur-md rounded-full text-on-primary">
-<span class="material-symbols-outlined text-tertiary-fixed-dim text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
-<span class="font-label-sm text-label-sm tracking-wider uppercase font-semibold text-tertiary-fixed">EduPro National Academic Portal • स्वायत्त राष्ट्रीय अभिलेखागार</span>
-</div>
-<h1 class="font-headline-lg text-headline-lg tracking-tight text-on-primary">
-          20-Year Solved PYQ Archive &amp; Desi Memory Tricks Vault
-        </h1>
-<p class="font-body-md text-body-md text-surface-container-highest max-w-2xl">
-          वर्ष 2004 से 2025 तक के 14,820+ प्रामाणिक प्रश्न पत्र हल सहित, NCERT पंक्ति-दर-पंक्ति संदर्भ और प्रतियोगी परीक्षाओं के लिए 520+ अचूक याददाश्त सूत्र (Mnemonics)।
-        </p>
-</div>
-<!-- Plan & Referral Matrix Badge -->
-<div class="flex flex-col sm:flex-row lg:flex-col items-start lg:items-end gap-space-sm bg-surface-container-lowest/10 backdrop-blur-md p-space-md rounded-lg">
-<div class="text-left lg:text-right">
-<span class="inline-block px-space-xs py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold uppercase tracking-wider">
-            1 Month Pass • ₹199 / 30 दिन
-          </span>
-<p class="font-title-md text-title-md font-semibold text-on-primary mt-1">सर्वसमावेशी परीक्षा एक्सेस</p>
-</div>
-<div class="flex items-center gap-space-xs bg-secondary-container/80 text-on-secondary px-space-sm py-1.5 rounded-lg text-left">
-<span class="material-symbols-outlined text-lg">card_giftcard</span>
-<div class="text-left">
-<span class="font-label-sm text-label-sm font-semibold block leading-tight">5-सफल भुगतान रेफरल = +30 दिन (1 माह) 100% मुफ़्त विस्तार</span>
-<span class="font-body-sm text-body-sm text-surface-container-high opacity-90">कोड: EDUPRO-SCHOLAR-2025</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Quick Stats Grid Sub-Bar -->
-<div class="mt-space-md pt-space-sm grid grid-cols-2 md:grid-cols-4 gap-space-md text-on-primary bg-surface-container-lowest/5 rounded-lg p-space-sm">
-<div class="flex items-center gap-space-sm">
-<div class="w-10 h-10 rounded-lg bg-surface-container-lowest/10 flex items-center justify-center text-tertiary-fixed-dim">
-<span class="material-symbols-outlined text-xl">history_edu</span>
-</div>
-<div>
-<div class="font-title-lg text-title-lg font-bold">2004 – 2025</div>
-<div class="font-label-sm text-label-sm text-surface-variant">20-वर्षीय अभिलेखागार</div>
-</div>
-</div>
-<div class="flex items-center gap-space-sm">
-<div class="w-10 h-10 rounded-lg bg-surface-container-lowest/10 flex items-center justify-center text-tertiary-fixed-dim">
-<span class="material-symbols-outlined text-xl">psychology</span>
-</div>
-<div>
-<div class="font-title-lg text-title-lg font-bold">520+ Tricks</div>
-<div class="font-label-sm text-label-sm text-surface-variant">देसी स्मरण फॉर्मूले</div>
-</div>
-</div>
-<div class="flex items-center gap-space-sm">
-<div class="w-10 h-10 rounded-lg bg-surface-container-lowest/10 flex items-center justify-center text-tertiary-fixed-dim">
-<span class="material-symbols-outlined text-xl">auto_stories</span>
-</div>
-<div>
-<div class="font-title-lg text-title-lg font-bold">14,820+ हल</div>
-<div class="font-label-sm text-label-sm text-surface-variant">सत्यापित प्रश्न बैंक</div>
-</div>
-</div>
-<div class="flex items-center gap-space-sm">
-<div class="w-10 h-10 rounded-lg bg-surface-container-lowest/10 flex items-center justify-center text-tertiary-fixed-dim">
-<span class="material-symbols-outlined text-xl">print</span>
-</div>
-<div>
-<div class="font-title-lg text-title-lg font-bold">A4 मुद्रण योग्य</div>
-<div class="font-label-sm text-label-sm text-surface-variant">1-क्लिक लेआउट</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Search, Filter & Quick Nav Control Strip -->
-<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm mb-space-lg flex flex-col gap-space-md">
-<div class="flex flex-col lg:flex-row gap-space-md items-stretch lg:items-center justify-between">
-<!-- Search Input -->
-<div class="relative flex-1">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg">search</span>
-<input class="w-full pl-10 pr-4 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none transition-colors" id="archiveSearchInput" oninput="handleArchiveSearch(this.value)" placeholder="खोजें: विषय, वर्ष, Mnemonic ट्रिक, NCERT सूत्र (उदा: BAAJSA, Writs, NEET 2023, RBSE 12th, Tally GST)..." type="text"/>
-</div>
-<!-- Quick Action Navigation Links -->
-<div class="flex flex-wrap items-center gap-space-xs">
-<a class="inline-flex items-center gap-1.5 px-space-sm py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors" href="dashboard.html">
-<span class="material-symbols-outlined text-base">dashboard</span>
-          डैशबोर्ड
+  <!-- ================= TOP MAIN NAVIGATION HEADER ================= -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8 h-16 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-6">
+        <a class="flex items-center gap-2 group" href="index.html">
+          <div class="w-9 h-9 rounded-xl bg-brand-900 text-white flex items-center justify-center font-black text-lg shadow-sm">EP</div>
+          <div>
+            <span class="font-black text-lg tracking-tight text-brand-900 block leading-tight">EduPro</span>
+            <span class="text-[9px] uppercase tracking-wider text-slate-400 block font-bold">National Assessment Platform</span>
+          </div>
         </a>
-<a class="inline-flex items-center gap-1.5 px-space-sm py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors" href="test-series.html">
-<span class="material-symbols-outlined text-base">quiz</span>
-          ऑनलाइन टेस्ट सीरीज़
+
+        <nav class="hidden lg:flex items-center gap-1 text-xs font-bold text-slate-600">
+          <a class="px-3 py-1.5 rounded-lg hover:bg-slate-100 hover:text-brand-900 transition" href="index.html">होमपेज</a>
+          <a class="px-3 py-1.5 rounded-lg hover:bg-slate-100 hover:text-brand-900 transition" href="test-series.html">टेस्ट सीरीज़</a>
+          <a class="px-3 py-1.5 rounded-lg bg-brand-50 text-brand-900 font-extrabold border border-brand-200 transition" href="pyq-tricks.html">20-Year PYQ</a>
+          <a class="px-3 py-1.5 rounded-lg hover:bg-slate-100 hover:text-brand-900 transition" href="dashboard.html">छात्र डैशबोर्ड</a>
+          <a class="px-3 py-1.5 rounded-lg hover:bg-slate-100 hover:text-brand-900 transition" href="gk.html">दैनिक GK</a>
+          <a class="px-3 py-1.5 rounded-lg hover:bg-slate-100 hover:text-brand-900 transition" href="help.html">सहायता</a>
+        </nav>
+      </div>
+
+      <!-- Right Actions: Subscription Badge, A4 Print & Student Profile -->
+      <div class="flex items-center gap-3">
+        <a class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-brand-50 border border-brand-200 text-brand-900 text-xs font-bold shadow-2xs hover:bg-brand-100 transition" href="payment.html">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>₹199 / माह All-Access सक्रिय</span>
         </a>
-<button class="inline-flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm" onclick="triggerPrintModal('समग्र PYQ संग्रह 2004-2025')">
-<span class="material-symbols-outlined text-base">print</span>
-          A4 PDF प्रिंट करें
-        </button>
-</div>
-</div>
-<!-- Category Tabs -->
-<div class="flex items-center gap-space-xs overflow-x-auto pb-1 scrollbar-none" id="streamFilterTabs">
-<button class="cat-pill px-space-md py-1.5 rounded-full font-label-md text-label-md font-semibold bg-primary text-on-primary transition-all" data-cat="all" onclick="filterCategory('all')">
-        सभी वर्ग (14,820)
-      </button>
-<button class="cat-pill px-space-md py-1.5 rounded-full font-label-md text-label-md font-semibold bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all" data-cat="board" onclick="filterCategory('board')">
-        10th व 12th बोर्ड (RBSE/CBSE)
-      </button>
-<button class="cat-pill px-space-md py-1.5 rounded-full font-label-md text-label-md font-semibold bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all" data-cat="med-eng" onclick="filterCategory('med-eng')">
-        NEET &amp; JEE (2004-2025)
-      </button>
-<button class="cat-pill px-space-md py-1.5 rounded-full font-label-md text-label-md font-semibold bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all" data-cat="civil" onclick="filterCategory('civil')">
-        UPSC &amp; State PSC (GS I/II)
-      </button>
-<button class="cat-pill px-space-md py-1.5 rounded-full font-label-md text-label-md font-semibold bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all" data-cat="tech" onclick="filterCategory('tech')">
-        RS-CIT &amp; B.Tech CSE
-      </button>
-<button class="cat-pill px-space-md py-1.5 rounded-full font-label-md text-label-md font-semibold bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all" data-cat="commerce" onclick="filterCategory('commerce')">
-        Tally Prime &amp; GST
-      </button>
-<button class="cat-pill px-space-md py-1.5 rounded-full font-label-md text-label-md font-semibold bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all" data-cat="college" onclick="filterCategory('college')">
-        कॉलेज डिग्री (BA, BSc, BCom)
-      </button>
-<button class="cat-pill px-space-md py-1.5 rounded-full font-label-md text-label-md font-semibold bg-tertiary-fixed text-on-tertiary-fixed hover:bg-tertiary-fixed-dim transition-all" data-cat="tricks" onclick="filterCategory('tricks')">
-        ⭐ देसी ट्रिक्स वॉल्ट (520+)
-      </button>
-</div>
-</div>
-<!-- Primary Showcase Grid: Desi Memory Tricks Vault (Interactive Expandable Cards) -->
-<div class="mb-space-xl" id="tricksSection">
-<div class="flex items-center justify-between mb-space-md">
-<div class="flex items-center gap-space-sm">
-<span class="w-2.5 h-6 bg-tertiary-container rounded-full"></span>
-<h2 class="font-headline-md text-headline-md text-on-surface font-bold">
-          देसी मेमोरी ट्रिक्स वॉल्ट (Desi Memory Tricks Vault)
-        </h2>
-<span class="bg-secondary-fixed text-on-secondary-fixed px-space-xs py-0.5 rounded text-label-sm font-label-sm font-semibold">अति-महत्वपूर्ण</span>
-</div>
-<span class="text-on-surface-variant font-label-md text-label-md hidden sm:inline">क्लिक करके 1-सेकंड समाधान एवं व्याख्या खोलें</span>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-space-md" id="tricksCardsContainer">
-<!-- Trick 1: History BAAJSA -->
-<div class="trick-card bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between" data-search="history mughal baajsa babur humayun akbar jahangir shah jahan aurangzeb">
-<div>
-<div class="flex items-center justify-between mb-space-xs">
-<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-label-sm text-label-sm font-bold">इतिहास • UPSC &amp; State PSC</span>
-<span class="material-symbols-outlined text-outline text-lg">psychology</span>
-</div>
-<h3 class="font-title-md text-title-md font-bold text-on-surface mb-1">
-            मुगल बादशाहों का कालानुक्रम (1526 – 1707)
-          </h3>
-<div class="bg-surface-container-low p-space-sm rounded-lg mb-space-sm">
-<span class="text-secondary font-bold font-title-lg text-title-lg tracking-widest block">सूत्र: B - A - A - J - S - A</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">(जैसे 'भाजपा' वैसे 'भाजसा' याद रखें)</span>
-</div>
-</div>
-<div class="space-y-space-xs">
-<button class="w-full flex items-center justify-between py-1.5 px-space-xs text-secondary font-label-md text-label-md font-semibold hover:bg-surface-container-low rounded transition-colors" onclick="toggleCardDetail('trick-1')">
-<span>विस्तारित डीकोड व PYQ संदर्भ</span>
-<span class="material-symbols-outlined text-base transition-transform" id="icon-trick-1">expand_more</span>
-</button>
-<div class="hidden pt-space-xs space-y-2 text-on-surface-variant font-body-sm text-body-sm bg-surface-container-low/50 p-space-sm rounded-lg" id="detail-trick-1">
-<ul class="space-y-1 font-numeric-table">
-<li><strong>B</strong> = बाबर (1526-1530) • पानीपत का प्रथम युद्ध</li>
-<li><strong>H</strong> = हुमायूँ (1530-1556) • चौसा व कन्नौज युद्ध</li>
-<li><strong>A</strong> = अकबर (1556-1605) • दीन-ए-इलाही, मनसबदारी</li>
-<li><strong>J</strong> = जहाँगीर (1605-1627) • न्याय की ज़ंजीर</li>
-<li><strong>S</strong> = शाहजहाँ (1627-1658) • स्थापत्य कला का स्वर्ण युग</li>
-<li><strong>A</strong> = औरंगज़ेब (1658-1707) • आलमगीर, ज़िंदा पीर</li>
-</ul>
-<div class="bg-surface-container-lowest p-2 rounded text-label-sm text-on-surface font-semibold">
-              🎯 UPSC Prelims 2011, 2017 व RPSC RAS 2021 में पूछा गया सीधा क्रम।
-            </div>
-</div>
-</div>
-</div>
-<!-- Trick 2: Polity P-R-O-M-H -->
-<div class="trick-card bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between" data-search="polity constitutional writs article 32 article 226 promh habeas corpus mandamus certiorari">
-<div>
-<div class="flex items-center justify-between mb-space-xs">
-<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-label-sm text-label-sm font-bold">राजव्यवस्था • अनुच्छेद 32 व 226</span>
-<span class="material-symbols-outlined text-outline text-lg">gavel</span>
-</div>
-<h3 class="font-title-md text-title-md font-bold text-on-surface mb-1">
-            सर्वोच्च व उच्च न्यायालय की 5 रिटें (Writs)
-          </h3>
-<div class="bg-surface-container-low p-space-sm rounded-lg mb-space-sm">
-<span class="text-secondary font-bold font-title-lg text-title-lg tracking-widest block">सूत्र: P - R - O - M - H</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">(Promote Rule Of Mandatory Human-rights)</span>
-</div>
-</div>
-<div class="space-y-space-xs">
-<button class="w-full flex items-center justify-between py-1.5 px-space-xs text-secondary font-label-md text-label-md font-semibold hover:bg-surface-container-low rounded transition-colors" onclick="toggleCardDetail('trick-2')">
-<span>विस्तारित डीकोड व PYQ संदर्भ</span>
-<span class="material-symbols-outlined text-base transition-transform" id="icon-trick-2">expand_more</span>
-</button>
-<div class="hidden pt-space-xs space-y-2 text-on-surface-variant font-body-sm text-body-sm bg-surface-container-low/50 p-space-sm rounded-lg" id="detail-trick-2">
-<ul class="space-y-1 font-numeric-table">
-<li><strong>P</strong> = Prohibition (प्रतिषेध - अधीनस्थ कोर्ट को रोकना)</li>
-<li><strong>Q</strong> = Quo-Warranto (अधिकार पृच्छा - पद की वैधता)</li>
-<li><strong>C</strong> = Certiorari (उत्प्रेषण - रिकॉर्ड मंगाना)</li>
-<li><strong>M</strong> = Mandamus (परमादेश - कर्तव्य पालन आदेश)</li>
-<li><strong>H</strong> = Habeas Corpus (बंदी प्रत्यक्षीकरण - सशरीर पेशी)</li>
-</ul>
-<div class="bg-surface-container-lowest p-2 rounded text-label-sm text-on-surface font-semibold">
-              🎯 SSC CGL 2022, UPSC Prelims 2019 में संवैधानिक उपचारों पर सीधे 4 प्रश्न।
-            </div>
-</div>
-</div>
-</div>
-<!-- Trick 3: Biology DKPCOFGS -->
-<div class="trick-card bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between" data-search="biology taxonomy dkpco fgs domain kingdom phylum class order family genus species neet">
-<div>
-<div class="flex items-center justify-between mb-space-xs">
-<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-label-sm text-label-sm font-bold">जीव विज्ञान • NEET UG 2025</span>
-<span class="material-symbols-outlined text-outline text-lg">biotech</span>
-</div>
-<h3 class="font-title-md text-title-md font-bold text-on-surface mb-1">
-            वर्गिकी पदानुक्रम (Taxonomic Hierarchy)
-          </h3>
-<div class="bg-surface-container-low p-space-sm rounded-lg mb-space-sm">
-<span class="text-secondary font-bold font-title-lg text-title-lg tracking-widest block">सूत्र: D-K-P-C-O-F-G-S</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">"Dear King Philip Came Over For Good Soup"</span>
-</div>
-</div>
-<div class="space-y-space-xs">
-<button class="w-full flex items-center justify-between py-1.5 px-space-xs text-secondary font-label-md text-label-md font-semibold hover:bg-surface-container-low rounded transition-colors" onclick="toggleCardDetail('trick-3')">
-<span>विस्तारित डीकोड व PYQ संदर्भ</span>
-<span class="material-symbols-outlined text-base transition-transform" id="icon-trick-3">expand_more</span>
-</button>
-<div class="hidden pt-space-xs space-y-2 text-on-surface-variant font-body-sm text-body-sm bg-surface-container-low/50 p-space-sm rounded-lg" id="detail-trick-3">
-<div class="grid grid-cols-2 gap-1 font-numeric-table">
-<span><strong>D</strong>: Domain</span>
-<span><strong>K</strong>: Kingdom</span>
-<span><strong>P</strong>: Phylum (Division)</span>
-<span><strong>C</strong>: Class</span>
-<span><strong>O</strong>: Order</span>
-<span><strong>F</strong>: Family</span>
-<span><strong>G</strong>: Genus</span>
-<span><strong>S</strong>: Species</span>
-</div>
-<div class="bg-surface-container-lowest p-2 rounded text-label-sm text-on-surface font-semibold">
-              🎯 NEET 2018, 2021, 2023: NCERT Class 11th Ch-1 Living World से अनिवार्य प्रश्न।
-            </div>
-</div>
-</div>
-</div>
-<!-- Trick 4: Accounting Golden Rules -->
-<div class="trick-card bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between" data-search="accounting golden rules debit credit personal real nominal tally prime gst">
-<div>
-<div class="flex items-center justify-between mb-space-xs">
-<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-label-sm text-label-sm font-bold">लेखांकन • Tally Prime &amp; B.Com</span>
-<span class="material-symbols-outlined text-outline text-lg">receipt_long</span>
-</div>
-<h3 class="font-title-md text-title-md font-bold text-on-surface mb-1">
-            गोल्डन रूल्स ऑफ़ एकाउंटिंग (3 स्वर्णिम नियम)
-          </h3>
-<div class="bg-surface-container-low p-space-sm rounded-lg mb-space-sm">
-<span class="text-secondary font-bold font-title-lg text-title-lg tracking-widest block">सूत्र: पाने वाले को Dr, जाने वाले को Cr</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">1-सेकंड लेज़र वाउचर वाचन ट्रिक</span>
-</div>
-</div>
-<div class="space-y-space-xs">
-<button class="w-full flex items-center justify-between py-1.5 px-space-xs text-secondary font-label-md text-label-md font-semibold hover:bg-surface-container-low rounded transition-colors" onclick="toggleCardDetail('trick-4')">
-<span>विस्तारित डीकोड व PYQ संदर्भ</span>
-<span class="material-symbols-outlined text-base transition-transform" id="icon-trick-4">expand_more</span>
-</button>
-<div class="hidden pt-space-xs space-y-2 text-on-surface-variant font-body-sm text-body-sm bg-surface-container-low/50 p-space-sm rounded-lg" id="detail-trick-4">
-<ul class="space-y-1 font-numeric-table">
-<li><strong>1. Personal:</strong> Debit the Receiver, Credit the Giver.</li>
-<li><strong>2. Real:</strong> Debit what comes in, Credit what goes out.</li>
-<li><strong>3. Nominal:</strong> Debit all Expenses/Losses, Credit all Incomes/Gains.</li>
-</ul>
-<div class="bg-surface-container-lowest p-2 rounded text-label-sm text-on-surface font-semibold">
-              🎯 12th Commerce Board &amp; Tally Certification Voucher Entry F5/F6/F7 में 100% प्रयुक्त।
-            </div>
-</div>
-</div>
-</div>
-<!-- Trick 5: Computer RS-CIT Shortcut Keys Matrix -->
-<div class="trick-card bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between" data-search="computer shortcuts rscit btech cse ctrl k f5 f7 win l dsa dbms">
-<div>
-<div class="flex items-center justify-between mb-space-xs">
-<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-label-sm text-label-sm font-bold">कंप्यूटर • RS-CIT &amp; B.Tech CSE</span>
-<span class="material-symbols-outlined text-outline text-lg">terminal</span>
-</div>
-<h3 class="font-title-md text-title-md font-bold text-on-surface mb-1">
-            RS-CIT सुपर-फास्ट शॉर्टकट की मैट्रिक्स
-          </h3>
-<div class="bg-surface-container-low p-space-sm rounded-lg mb-space-sm">
-<span class="text-secondary font-bold font-title-lg text-title-lg tracking-widest block">K - 5 - 7 - L (की मैट्रिक्स)</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Link, Refresh, Spelling, Lock</span>
-</div>
-</div>
-<div class="space-y-space-xs">
-<button class="w-full flex items-center justify-between py-1.5 px-space-xs text-secondary font-label-md text-label-md font-semibold hover:bg-surface-container-low rounded transition-colors" onclick="toggleCardDetail('trick-5')">
-<span>विस्तारित डीकोड व PYQ संदर्भ</span>
-<span class="material-symbols-outlined text-base transition-transform" id="icon-trick-5">expand_more</span>
-</button>
-<div class="hidden pt-space-xs space-y-2 text-on-surface-variant font-body-sm text-body-sm bg-surface-container-low/50 p-space-sm rounded-lg" id="detail-trick-5">
-<div class="grid grid-cols-2 gap-1 font-numeric-table">
-<span><strong>Ctrl + K</strong>: हाइपरलिंक जोड़ना</span>
-<span><strong>F5</strong>: स्लाइडशो / रिफ्रेश</span>
-<span><strong>F7</strong>: स्पेलिंग व ग्रामर जांच</span>
-<span><strong>Win + L</strong>: स्क्रीन त्वरित लॉक</span>
-<span><strong>Ctrl + H</strong>: फाइंड एंड रिप्लेस</span>
-<span><strong>Alt + Tab</strong>: एक्टिव ऐप स्विच</span>
-</div>
-<div class="bg-surface-container-lowest p-2 rounded text-label-sm text-on-surface font-semibold">
-              🎯 RS-CIT परीक्षा 2018-2024 में 12 बार रिपीटेड प्रश्न।
-            </div>
-</div>
-</div>
-</div>
-<!-- Trick 6: Trigonometry & Calculus (JEE Main) -->
-<div class="trick-card bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between" data-search="maths trigonometry calculus jee main jee advanced step by step mechanics">
-<div>
-<div class="flex items-center justify-between mb-space-xs">
-<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-label-sm text-label-sm font-bold">गणित • JEE Main &amp; 12th Board</span>
-<span class="material-symbols-outlined text-outline text-lg">functions</span>
-</div>
-<h3 class="font-title-md text-title-md font-bold text-on-surface mb-1">
-            त्रिकोणमितीय चतुर्थांश (All Sin Tan Cos)
-          </h3>
-<div class="bg-surface-container-low p-space-sm rounded-lg mb-space-sm">
-<span class="text-secondary font-bold font-title-lg text-title-lg tracking-widest block">सूत्र: "Add Sugar To Coffee"</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">I(+All), II(+Sin), III(+Tan), IV(+Cos)</span>
-</div>
-</div>
-<div class="space-y-space-xs">
-<button class="w-full flex items-center justify-between py-1.5 px-space-xs text-secondary font-label-md text-label-md font-semibold hover:bg-surface-container-low rounded transition-colors" onclick="toggleCardDetail('trick-6')">
-<span>विस्तारित डीकोड व PYQ संदर्भ</span>
-<span class="material-symbols-outlined text-base transition-transform" id="icon-trick-6">expand_more</span>
-</button>
-<div class="hidden pt-space-xs space-y-2 text-on-surface-variant font-body-sm text-body-sm bg-surface-container-low/50 p-space-sm rounded-lg" id="detail-trick-6">
-<ul class="space-y-1 font-numeric-table">
-<li><strong>A (I)</strong>: 0°–90° सभी त्रिकोणमितीय मान धनात्मक</li>
-<li><strong>S (II)</strong>: 90°–180° केवल Sin व Cosec धनात्मक</li>
-<li><strong>T (III)</strong>: 180°–270° केवल Tan व Cot धनात्मक</li>
-<li><strong>C (IV)</strong>: 270°–360° केवल Cos व Sec धनात्मक</li>
-</ul>
-<div class="bg-surface-container-lowest p-2 rounded text-label-sm text-on-surface font-semibold">
-              🎯 JEE Main Integration &amp; Definite Integrals प्रतिस्थापन में निर्णायक।
-            </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Main 20-Year Solved PYQ Repository (Categorized Cards with 2004-2025 Archive) -->
-<div class="mb-space-xl">
-<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm mb-space-md">
-<div class="flex items-center gap-space-sm">
-<span class="w-2.5 h-6 bg-primary rounded-full"></span>
-<h2 class="font-headline-md text-headline-md text-on-surface font-bold">
-          20-वर्षीय प्रामाणिक हल प्रश्न-पत्र (2004 – 2025 Archive)
-        </h2>
-</div>
-<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
-<span class="material-symbols-outlined text-secondary text-base">check_circle</span>
-<span>NCERT 100% सत्यापित एवं विषय विशेषज्ञों द्वारा हस्तलिखित समाधान</span>
-</div>
-</div>
-<!-- Paper Stream Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg" id="pyqStreamsContainer">
-<!-- Stream 1: 10th & 12th Board (RBSE & CBSE) -->
-<div class="stream-item bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between" data-category="board" data-search="10th 12th rbse cbse board science commerce arts ncert solved papers">
-<div>
-<div class="flex items-start justify-between gap-space-sm mb-space-sm">
-<div>
-<span class="px-space-xs py-0.5 rounded bg-surface-container text-primary font-label-sm text-label-sm font-semibold">RBSE / CBSE Board Papers</span>
-<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1">
-                10वीं व 12वीं बोर्ड (विज्ञान, वाणिज्य, कला)
-              </h3>
-</div>
-<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
-<span class="material-symbols-outlined">menu_book</span>
-</div>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
-            2004 से 2024 तक के 20 वर्षों के मूल बोर्ड पेपर्स, टॉपर्स की हस्तलिखित उत्तर-पुस्तिकाएं (Model Copies) तथा 2025 नवीन ब्लूप्रिंट आधारित मॉडल सॉल्वड सेट्स।
-          </p>
-<!-- Coverage Badges -->
-<div class="flex flex-wrap gap-1.5 mb-space-md">
-<span class="px-2 py-1 rounded bg-surface-container-low text-on-surface font-numeric-table text-body-sm">भौतिकी (Physics)</span>
-<span class="px-2 py-1 rounded bg-surface-container-low text-on-surface font-numeric-table text-body-sm">रसायन (Chemistry)</span>
-<span class="px-2 py-1 rounded bg-surface-container-low text-on-surface font-numeric-table text-body-sm">गणित व जीव विज्ञान</span>
-<span class="px-2 py-1 rounded bg-surface-container-low text-on-surface font-numeric-table text-body-sm">लेखाशास्त्र व अर्थशास्त्र</span>
-<span class="px-2 py-1 rounded bg-surface-container-low text-on-surface font-numeric-table text-body-sm">इतिहास व भूगोल</span>
-</div>
-<div class="p-space-sm bg-surface-container-low rounded-lg mb-space-md flex items-center justify-between">
-<div class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-base">verified</span>
-<span class="font-label-md text-label-md text-on-surface font-medium">2,480+ दीर्घ व लघु उत्तरीय प्रश्न</span>
-</div>
-<span class="font-label-sm text-label-sm text-secondary font-bold">100% NCERT संरेखित</span>
-</div>
-</div>
-<div class="flex items-center gap-space-sm pt-space-xs">
-<button class="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container transition-colors" onclick="triggerPrintModal('10th व 12th बोर्ड 20-Year Solved Archive')">
-<span class="material-symbols-outlined text-base">file_download</span>
-            A4 सॉल्वड पेपर PDF
-          </button>
-<a class="px-space-md py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md font-medium transition-colors" href="test-series.html?stream=board">
-            अभ्यास टेस्ट
-          </a>
-</div>
-</div>
-<!-- Stream 2: NEET UG Medical -->
-<div class="stream-item bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between" data-category="med-eng" data-search="neet ug medical biology chemistry physics ncert line-to-line 2004 2025 aipmt">
-<div>
-<div class="flex items-start justify-between gap-space-sm mb-space-sm">
-<div>
-<span class="px-space-xs py-0.5 rounded bg-surface-container text-secondary font-label-sm text-label-sm font-semibold">NTA / AIPMT / NEET UG</span>
-<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1">
-                NEET UG (Medical Entrance) 2004 – 2025
-              </h3>
-</div>
-<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary">
-<span class="material-symbols-outlined">medical_services</span>
-</div>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
-            NCERT पंक्ति-दर-पंक्ति संदर्भ (Page &amp; Line Reference) सहित संपूर्ण जीव विज्ञान (वनस्पति + प्राणि विज्ञान), कार्बनिक व अकार्बनिक रसायन तथा संख्यात्मक भौतिकी का विस्तृत हल।
-          </p>
-<div class="flex flex-wrap gap-1.5 mb-space-md">
-<span class="px-2 py-1 rounded bg-surface-container-low text-on-surface font-numeric-table text-body-sm">NCERT Page References</span>
-<span class="px-2 py-1 rounded bg-surface-container-low text-on-surface font-numeric-table text-body-sm">Genetics &amp; Ecology High-Yield</span>
-<span class="px-2 py-1 rounded bg-surface-container-low text-on-surface font-numeric-table text-body-sm">3,850+ MCQs हल सहित</span>
-</div>
-<div class="p-space-sm bg-surface-container-low rounded-lg mb-space-md flex items-center justify-between">
-<div class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-base">analytics</span>
-<span class="font-label-md text-label-md text-on-surface font-medium">Assertion-Reason &amp; Match Columns</span>
-</div>
-<span class="font-label-sm text-label-sm text-tertiary-container font-bold">2004-2024 पूर्ण संग्रह</span>
-</div>
-</div>
-<div class="flex items-center gap-space-sm pt-space-xs">
-<button class="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container transition-colors" onclick="triggerPrintModal('NEET UG 20-Year Solved NCERT References')">
-<span class="material-symbols-outlined text-base">print</span>
-            A4 प्रिंट (Line-by-Line)
-          </button>
-<a class="px-space-md py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md font-medium transition-colors" href="test-series.html?stream=neet">
-            मॉक टेस्ट
-          </a>
-</div>
-</div>
-<!-- Stream 3: JEE Main / Advanced Engineering -->
-<div class="stream-item bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between" data-category="med-eng" data-search="jee main jee advanced engineering mathematics calculus mechanics step-by-step 2004 2025 iit">
-<div>
-<div class="flex items-start justify-between gap-space-sm mb-space-sm">
-<div>
-<span class="px-space-xs py-0.5 rounded bg-surface-container text-secondary font-label-sm text-label-sm font-semibold">IIT JEE Main &amp; Advanced</span>
-<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1">
-                JEE Main &amp; Advanced (इंजीनियरिंग)
-              </h3>
-</div>
-<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary">
-<span class="material-symbols-outlined">calculate</span>
-</div>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
-            कैलकुलस, मेकैनिक्स, इलेक्ट्रोडायनामिक्स व फिजिकल केमिस्ट्री के जटिल प्रश्नों का चरण-दर-चरण (Step-by-Step) विश्लेषणात्मक समाधान और शॉर्टकट विधियां।
-          </p>
-<div class="flex flex-wrap gap-1.5 mb-space-md">
-<span class="px-2 py-1 rounded bg-surface-container-low text-on-surface font-numeric-table text-body-sm">Calculus &amp; Coordinate Geometry</span>
-<span class="px-2 py-1 rounded bg-surface-container-low text-on-surface font-numeric-table text-body-sm">Modern Physics &amp; Thermodynamics</span>
-<span class="px-2 py-1 rounded bg-surface-container-low text-on-surface font-numeric-table text-body-sm">3,120+ न्यूमेरिकल हल</span>
-</div>
-<div class="p-space-sm bg-surface-container-low rounded-lg mb-space-md flex items-center justify-between">
-<div class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-base">speed</span>
-<span class="font-label-md text-label-md text-on-surface font-medium">30-Sec एलिमिनेशन तकनीक</span>
-</div>
-<span class="font-label-sm text-label-sm text-secondary font-bold">2004-2025 Shift-Wise</span>
-</div>
-</div>
-<div class="flex items-center gap-space-sm pt-space-xs">
-<button class="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container transition-colors" onclick="triggerPrintModal('JEE Main &amp; Advanced 20-Year Solved')">
-<span class="material-symbols-outlined text-base">print</span>
-            A4 PDF संकलन
-          </button>
-<a class="px-space-md py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md font-medium transition-colors" href="test-series.html?stream=jee">
-            CBT परीक्षा
-          </a>
-</div>
-</div>
-<!-- Stream 4: UPSC Civil Services & State PSC -->
-<div class="stream-item bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between" data-category="civil" data-search="upsc civil services state psc rpsc bpsc uppcs gs paper 1 paper 2 csat modern history 2004 2025">
-<div>
-<div class="flex items-start justify-between gap-space-sm mb-space-sm">
-<div>
-<span class="px-space-xs py-0.5 rounded bg-surface-container text-primary font-label-sm text-label-sm font-semibold">UPSC &amp; State PSC (RAS, UPPSC, BPSC)</span>
-<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1">
-                सिविल सेवा प्रारम्भिक व मुख्य परीक्षा (GS I &amp; II)
-              </h3>
-</div>
-<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
-<span class="material-symbols-outlined">account_balance</span>
-</div>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
-            2004 से 2024 तक GS Paper-I (इतिहास, राजव्यवस्था, भूगोल, अर्थव्यवस्था, पर्यावरण) और GS Paper-II (CSAT रीजनिंग व बोधगम्यता) का आधिकारिक उत्तर कुंजी सहित हल।
-          </p>
-<div class="flex flex-wrap gap-1.5 mb-space-md">
-<span class="px-2 py-1 rounded bg-surface-container-low text-on-surface font-numeric-table text-body-sm">आधुनिक भारत का इतिहास (1757-1947)</span>
-<span class="px-2 py-1 rounded bg-surface-container-low text-on-surface font-numeric-table text-body-sm">भारतीय संविधान व राजव्यवस्था</span>
-<span class="px-2 py-1 rounded bg-surface-container-low text-on-surface font-numeric-table text-body-sm">CSAT विश्लेषणात्मक तर्कशक्ति</span>
-</div>
-<div class="p-space-sm bg-surface-container-low rounded-lg mb-space-md flex items-center justify-between">
-<div class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-base">verified_user</span>
-<span class="font-label-md text-label-md text-on-surface font-medium">UPSC ऑफिशियल की अनुप्रमाणित</span>
-</div>
-<span class="font-label-sm text-label-sm text-secondary font-bold">20 वर्ष • 4,000+ हल</span>
-</div>
-</div>
-<div class="flex items-center gap-space-sm pt-space-xs">
-<button class="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container transition-colors" onclick="triggerPrintModal('UPSC Civil Services 20-Year Solved Archive')">
-<span class="material-symbols-outlined text-base">print</span>
-            A4 प्रिंट (द्विभाषी)
-          </button>
-<a class="px-space-md py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md font-medium transition-colors" href="test-series.html?stream=upsc">
-            प्रीलिम्स टेस्ट
-          </a>
-</div>
-</div>
-<!-- Stream 5: RS-CIT Computer & B.Tech CSE -->
-<div class="stream-item bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between" data-category="tech" data-search="rs-cit rscit computer basics b.tech btech cse dsa dbms os coding shortcuts algorithms">
-<div>
-<div class="flex items-start justify-between gap-space-sm mb-space-sm">
-<div>
-<span class="px-space-xs py-0.5 rounded bg-surface-container text-primary font-label-sm text-label-sm font-semibold">Technical &amp; Professional Stream</span>
-<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1">
-                RS-CIT कंप्यूटर एवं B.Tech CSE (कंप्यूटर साइंस)
-              </h3>
-</div>
-<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
-<span class="material-symbols-outlined">developer_board</span>
-</div>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
-            RS-CIT के पिछले 20 वर्षों के 100+ ओरिजिनल ओएमआर पेपर्स तथा B.Tech CSE के मुख्य विषय (DSA, DBMS, ऑपरेटिंग सिस्टम, कंप्यूटर नेटवर्क्स) के यूनिवर्सिटी सॉल्वड पेपर्स।
-          </p>
-<div class="flex flex-wrap gap-1.5 mb-space-md">
-<span class="px-2 py-1 rounded bg-surface-container-low text-on-surface font-numeric-table text-body-sm">Data Structures &amp; Algo (DSA)</span>
-<span class="px-2 py-1 rounded bg-surface-container-low text-on-surface font-numeric-table text-body-sm">Database Management (SQL/NoSQL)</span>
-<span class="px-2 py-1 rounded bg-surface-container-low text-on-surface font-numeric-table text-body-sm">MS Office, Internet &amp; Cyber Security</span>
-</div>
-<div class="p-space-sm bg-surface-container-low rounded-lg mb-space-md flex items-center justify-between">
-<div class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-base">code</span>
-<span class="font-label-md text-label-md text-on-surface font-medium">कोडिंग शॉर्टकट्स व टाइम कॉम्प्लेक्सिटी</span>
-</div>
-<span class="font-label-sm text-label-sm text-secondary font-bold">1,840+ प्रश्न</span>
-</div>
-</div>
-<div class="flex items-center gap-space-sm pt-space-xs">
-<button class="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container transition-colors" onclick="triggerPrintModal('RS-CIT &amp; B.Tech CSE Solved Archive')">
-<span class="material-symbols-outlined text-base">print</span>
-            A4 PDF प्रिंट
-          </button>
-<a class="px-space-md py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md font-medium transition-colors" href="test-series.html?stream=tech">
-            कोडिंग टेस्ट
-          </a>
-</div>
-</div>
-<!-- Stream 6: Tally Prime & GST Accounting -->
-<div class="stream-item bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between" data-category="commerce" data-search="tally prime gst accounting golden rules ledger vouchers balance sheet trial balance">
-<div>
-<div class="flex items-start justify-between gap-space-sm mb-space-sm">
-<div>
-<span class="px-space-xs py-0.5 rounded bg-surface-container text-primary font-label-sm text-label-sm font-semibold">व्यापार व व्यावसायिक लेखांकन</span>
-<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1">
-                Tally Prime &amp; GST एकाउंटिंग मास्टर पेपर्स
-              </h3>
-</div>
-<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
-<span class="material-symbols-outlined">point_of_sale</span>
-</div>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
-            लेजर क्रिएशन, वाउचर एंट्रीज (F4 Contra, F5 Payment, F6 Receipt, F8 Sales), GST पोर्टल रिटर्न फाइलिंग (GSTR-1, GSTR-3B) और बैंक समाधान के 20 वर्षीय प्रेक्टिस केस-स्टडीज।
-          </p>
-<div class="flex flex-wrap gap-1.5 mb-space-md">
-<span class="px-2 py-1 rounded bg-surface-container-low text-on-surface font-numeric-table text-body-sm">CGST, SGST, IGST कैलकुलेशन</span>
-<span class="px-2 py-1 rounded bg-surface-container-low text-on-surface font-numeric-table text-body-sm">ट्रेडिंग व P&amp;L एकाउंट</span>
-<span class="px-2 py-1 rounded bg-surface-container-low text-on-surface font-numeric-table text-body-sm">इन्वेंटरी मैनेजमेंट व ई-वे बिल</span>
-</div>
-<div class="p-space-sm bg-surface-container-low rounded-lg mb-space-md flex items-center justify-between">
-<div class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-base">rule</span>
-<span class="font-label-md text-label-md text-on-surface font-medium">गोल्डन रूल्स 100% केस स्टडीज</span>
-</div>
-<span class="font-label-sm text-label-sm text-secondary font-bold">उद्योग-प्रमाणित</span>
-</div>
-</div>
-<div class="flex items-center gap-space-sm pt-space-xs">
-<button class="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container transition-colors" onclick="triggerPrintModal('Tally Prime &amp; GST Case Studies Solved')">
-<span class="material-symbols-outlined text-base">print</span>
-            A4 वाउचर शीट PDF
-          </button>
-<a class="px-space-md py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md font-medium transition-colors" href="test-series.html?stream=tally">
-            प्रैक्टिकल टेस्ट
-          </a>
-</div>
-</div>
-<!-- Stream 7: College Degrees (BA, B.Sc, B.Com, MA) -->
-<div class="stream-item bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between md:col-span-2" data-category="college" data-search="college degrees ba b.sc bsc b.com bcom ma msc mcom 20-year university solved papers rajasthan du mu">
-<div>
-<div class="flex items-start justify-between gap-space-sm mb-space-sm">
-<div>
-<span class="px-space-xs py-0.5 rounded bg-surface-container text-primary font-label-sm text-label-sm font-semibold">विश्वविद्यालय स्नातक व स्नातकोत्तर</span>
-<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1">
-                कॉलेज डिग्रीज 20-वर्षीय यूनिवर्सिटी साल्व्ड पेपर्स (BA, B.Sc, B.Com, MA)
-              </h3>
-</div>
-<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
-<span class="material-symbols-outlined">school</span>
-</div>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
-            राजस्थान विश्वविद्यालय (UOR), महर्षि दयानंद सरस्वती विश्वविद्यालय (MDSU), दिल्ली विश्वविद्यालय (DU) एवं अन्य प्रमुख राज्य विश्वविद्यालयों के वर्ष 2004 से 2024 तक के इकाई-वार (Unit-Wise) हल।
-          </p>
-<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm mb-space-md">
-<div class="bg-surface-container-low p-space-sm rounded-lg text-center">
-<span class="font-title-md text-title-md font-bold text-on-surface block">B.A. (Arts)</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">इतिहास, राजनीति, भूगोल, हिंदी साहित्य</span>
-</div>
-<div class="bg-surface-container-low p-space-sm rounded-lg text-center">
-<span class="font-title-md text-title-md font-bold text-on-surface block">B.Sc. (Science)</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">Physics, Chem, Botany, Zoology, Maths</span>
-</div>
-<div class="bg-surface-container-low p-space-sm rounded-lg text-center">
-<span class="font-title-md text-title-md font-bold text-on-surface block">B.Com. (Commerce)</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">ABST, BADM, EAFM, Costing, Tax</span>
-</div>
-<div class="bg-surface-container-low p-space-sm rounded-lg text-center">
-<span class="font-title-md text-title-md font-bold text-on-surface block">M.A. / M.Sc.</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">विशिष्ट पीजी शोध व विगत प्रश्न</span>
-</div>
-</div>
-</div>
-<div class="flex flex-col sm:flex-row items-center justify-between gap-space-sm pt-space-xs">
-<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
-<span class="material-symbols-outlined text-secondary text-base">menu_book</span>
-<span>इकाई 1 से 5 तक के सभी 20-मार्क्स निबंधात्मक उत्तरों का बिंदुवार संकलन</span>
-</div>
-<div class="flex items-center gap-space-sm w-full sm:w-auto">
-<button class="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-space-lg py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container transition-colors" onclick="triggerPrintModal('यूनिवर्सिटी कॉलेज डिग्री 20-Year Solved')">
-<span class="material-symbols-outlined text-base">print</span>
-              A4 यूनिवर्सिटी सॉल्वड PDF
-            </button>
-<a class="px-space-md py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md font-medium transition-colors" href="test-series.html?stream=college">
-              विषय सूची
-            </a>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Subscription Gate & A4 Print Confirmation Modal (Interactive) -->
-<div class="fixed inset-0 z-50 bg-primary-container/60 backdrop-blur-sm hidden flex items-center justify-center p-space-md" id="printGateModal">
-<div class="bg-surface-container-lowest max-w-lg w-full rounded-xl shadow-xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
-<!-- Modal Header -->
-<div class="bg-primary p-space-lg text-on-primary flex items-center justify-between">
-<div class="flex items-center gap-space-sm">
-<div class="w-9 h-9 rounded-lg bg-surface-container-lowest/15 flex items-center justify-center text-tertiary-fixed-dim">
-<span class="material-symbols-outlined text-xl">verified_user</span>
-</div>
-<div>
-<h4 class="font-title-lg text-title-lg font-bold">EduPro National Academic Portal</h4>
-<p class="font-label-sm text-label-sm text-surface-variant">A4 लेआउट प्रिंट सत्यापन व अभिगम नियंत्रण</p>
-</div>
-</div>
-<button class="text-on-primary hover:text-surface-variant p-1 rounded-lg" onclick="closePrintModal()">
-<span class="material-symbols-outlined">close</span>
-</button>
-</div>
-<!-- Modal Body -->
-<div class="p-space-lg space-y-space-md">
-<div>
-<span class="font-label-sm text-label-sm uppercase font-semibold text-secondary block mb-1">चयनित अध्ययन सामग्री:</span>
-<p class="font-title-md text-title-md font-bold text-on-surface" id="modalDocumentTitle">20-Year Solved Master Archive</p>
-</div>
-<div class="bg-surface-container-low p-space-md rounded-lg space-y-space-xs">
-<div class="flex items-center justify-between">
-<span class="font-body-md text-body-md text-on-surface font-medium">एक्टिव पास:</span>
-<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold">
-              1 Month Pass • ₹199 / 30 दिन
+        <a class="px-3 py-1.5 rounded-xl border border-slate-200 hover:border-slate-300 text-slate-700 text-xs font-bold transition flex items-center gap-1.5" href="print.html" title="1-क्लिक A4 प्रिंट केंद्र">
+          <span class="material-symbols-outlined text-sm text-brand-700">print</span>
+          <span class="hidden md:inline">A4 प्रिंट केंद्र</span>
+        </a>
+        <a class="flex items-center gap-2 pl-2 border-l border-slate-200 group" href="dashboard.html">
+          <div class="w-8 h-8 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-xs">RK</div>
+          <div class="hidden xl:block text-left">
+            <span class="text-xs font-bold text-slate-800 block leading-tight">राजेश कुमार</span>
+            <span class="text-[10px] text-slate-400 block leading-tight">#EDU-8921</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Sub-Ribbon Strip -->
+    <div class="bg-brand-50 border-t border-brand-100 px-4 lg:px-8 py-2 text-xs text-brand-900 font-semibold flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-sm text-brand-700">verified</span>
+        <span>20-वर्षीय विगत हल प्रश्न-पत्र (2004-2025) एवं विषयवार देसी स्मृति सूत्र (Desi Memory Tricks) संग्रह | 15 राष्ट्रीय संकाय सक्रिय</span>
+      </div>
+      <a class="text-[11px] font-bold text-white bg-brand-900 hover:bg-black px-3 py-1 rounded-lg transition flex items-center gap-1" href="print.html">
+        <span class="material-symbols-outlined text-xs">picture_as_pdf</span>
+        <span>1-Click A4 Print</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ================= MAIN CONTENT WORKSPACE ================= -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 lg:px-8 py-6 space-y-6">
+
+    <!-- Top Banner & Search Control Card -->
+    <div class="bg-white rounded-3xl p-5 lg:p-7 border border-slate-200 shadow-xs space-y-5">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-xs font-bold bg-brand-50 text-brand-800 px-2.5 py-0.5 rounded-full border border-brand-200 flex items-center gap-1">
+              <span class="material-symbols-outlined text-xs">inventory_2</span>
+              अभिलेखीकीय संकाय (Archival Vault 2004-2025)
             </span>
-</div>
-<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
-<span>प्रिंट अनुकूलन:</span>
-<span>A4 Portrait, वॉटरमार्क व इंडेक्स सहित</span>
-</div>
-<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
-<span>सत्यापन स्थिति:</span>
-<span class="text-tertiary font-medium">सक्रिय सदस्यता आवश्यक</span>
-</div>
-</div>
-<!-- Referral Benefit Banner inside Modal -->
-<div class="p-space-sm bg-surface-container rounded-lg flex items-center gap-space-sm">
-<span class="material-symbols-outlined text-secondary text-xl">stars</span>
-<p class="font-body-sm text-body-sm text-on-surface">
-<strong>विशेष छात्र विस्तार:</strong> 5-सफल भुगतान रेफरल पूर्ण करने पर आपके खाते में +30 दिन (1 माह) 100% मुफ़्त जोड़ दिया जाता है।
+          </div>
+          <h1 class="text-xl lg:text-2xl font-black text-slate-900 tracking-tight">
+            20-वर्षीय विगत हल प्रश्न-पत्र एवं देसी स्मृति सूत्र
+          </h1>
+          <p class="text-xs text-slate-500 mt-1">
+            अखिल भारतीय तकनीकी, चिकित्सा, प्रशासनिक एवं बोर्ड परीक्षाओं के 20 वर्षों का वास्तविक प्रश्न-बैंक, आधिकारिक उत्तर-कुंजियां तथा भारत के शीर्ष विषय विशेषज्ञों द्वारा निर्मित संस्मरण देसी ट्रिक्स (Mnemonics)।
           </p>
-</div>
-<!-- Action Buttons -->
-<div class="flex flex-col sm:flex-row gap-space-sm pt-space-xs">
-<a class="flex-1 inline-flex items-center justify-center gap-1.5 py-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container transition-colors shadow-sm" href="print.html">
-<span class="material-symbols-outlined text-lg">print</span>
-            हाँ, A4 प्रिंट खोलें (print.html)
+        </div>
+        <div class="flex flex-col sm:flex-row gap-2 shrink-0">
+          <a class="px-4 py-2.5 rounded-xl bg-brand-900 hover:bg-black text-white font-extrabold text-xs shadow-xs transition flex items-center justify-center gap-1.5" href="print.html">
+            <span class="material-symbols-outlined text-sm">print</span>
+            <span>1-Click A4 PDF प्रिंट हब</span>
           </a>
-<a class="inline-flex items-center justify-center gap-1.5 px-space-md py-3 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-semibold hover:bg-secondary-container transition-colors" href="payment.html">
-            ₹199 पास खरीदें
-          </a>
-</div>
-</div>
-<div class="bg-surface-container-low px-space-lg py-2.5 text-center">
-<span class="font-label-sm text-label-sm text-on-surface-variant">अभिगम में समस्या? सहायता अनुभाग: पोर्टल एडमिनिस्ट्रेटर कंसोल</span>
-</div>
-</div>
-</div>
-<!-- Copyright, Fair Use & Institutional Disclaimer Footer Strip -->
-<div class="mt-space-lg p-space-lg rounded-xl bg-surface-container-lowest text-on-surface-variant shadow-sm space-y-space-sm">
-<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
-<div class="flex items-center gap-space-xs font-label-md text-label-md font-semibold text-on-surface">
-<span class="material-symbols-outlined text-base text-secondary">shield</span>
-<span>कॉपीराइट एवं वैधानिक सूचना • The Copyright Act, 1957 (भारत सरकार)</span>
-</div>
-<span class="font-numeric-table text-label-sm text-label-sm text-outline">EDUPRO-PUB-AUTH-2025</span>
-</div>
-<p class="font-body-sm text-body-sm leading-relaxed">
-<strong>वैधानिक चेतावनी:</strong> 'EduPro National Academic Portal' पर उपलब्ध समस्त 20-वर्षीय हल प्रश्न पत्र, शॉर्टकट संकलन, NCERT संदर्भ एवं देसी मेमोरी ट्रिक्स केवल पंजीकृत छात्रों के व्यक्तिगत अध्ययन एवं गैर-व्यावसायिक शैक्षणिक उपयोग हेतु अधिकृत हैं। इन सामग्रियों का अनधिकृत पुनरुत्पादन, टेलीग्राम/व्हाट्सएप पर सार्वजनिक वितरण अथवा डिजिटल पायरेसी भारतीय कॉपीराइट अधिनियम, 1957 की धारा 51 एवं 63 के तहत संज्ञेय कानूनी अपराध है। सभी बौद्धिक संपत्तियां एवं हल संकलन पोर्टल नीति के अधीन सुरक्षित हैं।
-    </p>
-<div class="pt-space-xs flex flex-wrap items-center justify-between gap-space-sm font-label-sm text-label-sm text-outline">
-<span>© 2004–2025 EduPro National Academic Portal. सर्वाधिकार सुरक्षित।</span>
-<div class="flex items-center gap-space-md">
-<a class="hover:text-primary transition-colors" href="dashboard.html">मुख्य पोर्टल</a>
-<a class="hover:text-primary transition-colors" href="payment.html">₹199 सदस्यता</a>
-<a class="hover:text-primary transition-colors" href="test-series.html">राष्ट्रीय टेस्ट सीरीज़</a>
-</div>
-</div>
-</div>
-</div>
-<!-- Vanilla Interactive Logic for Filter, Expandable Cards, Search & Modal -->
-<script>
-  // Filter Categories Functionality
-  function filterCategory(cat) {
-    const tabs = document.querySelectorAll('#streamFilterTabs .cat-pill');
-    tabs.forEach(tab => {
-      if (tab.getAttribute('data-cat') === cat) {
-        tab.className = 'cat-pill px-space-md py-1.5 rounded-full font-label-md text-label-md font-semibold bg-primary text-on-primary transition-all';
+        </div>
+      </div>
+
+      <!-- Stat Badges Ribbon -->
+      <div class="flex flex-wrap items-center gap-3 pt-2 border-t border-slate-100 text-xs font-bold">
+        <div class="flex items-center gap-1.5 text-brand-800 bg-brand-50/60 px-3 py-1.5 rounded-xl border border-brand-100">
+          <span class="material-symbols-outlined text-sm text-brand-600">history_edu</span>
+          <span>14,820+ प्रामाणिक सॉल्व्ड पेपर्स (2004-2025)</span>
+        </div>
+        <div class="flex items-center gap-1.5 text-amber-800 bg-amber-50/60 px-3 py-1.5 rounded-xl border border-amber-200">
+          <span class="material-symbols-outlined text-sm text-amber-600">lightbulb</span>
+          <span>520+ हस्तलिखित देसी स्मृति सूत्र</span>
+        </div>
+        <div class="flex items-center gap-1.5 text-emerald-800 bg-emerald-50/60 px-3 py-1.5 rounded-xl border border-emerald-200">
+          <span class="material-symbols-outlined text-sm text-emerald-600">check_circle</span>
+          <span>100% NCERT व आयोग कुंजी प्रमाणित</span>
+        </div>
+      </div>
+
+      <!-- Search & Stream Filter Input Bar -->
+      <div class="flex flex-col sm:flex-row gap-2.5 pt-1">
+        <div class="relative flex-1">
+          <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+          <input class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-xs font-semibold placeholder:text-slate-400 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500" id="liveSearchInput" oninput="filterCards()" placeholder="प्रकरण, सूत्र, विषय (जैसे Civil, NEET, Polity, Excel) या आयोग खोजें..." type="text"/>
+        </div>
+        <select class="py-2.5 px-3.5 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 bg-white focus:outline-none focus:border-brand-500 cursor-pointer" id="streamSelectDropdown" onchange="filterByDropdown(this.value)">
+          <option value="all">सभी संकाय एवं परीक्षाएं (All 15 Streams)</option>
+          <option value="engineering">इंजीनियरिंग (Civil, CSE, Mech, EE)</option>
+          <option value="medical">मेडिकल व फार्मेसी (NEET, D.Pharma, B.Pharma)</option>
+          <option value="competitive">प्रतियोगी परीक्षाएं (UPSC, SSC, State PSC)</option>
+          <option value="commerce">कॉमर्स व टैली (Tally Prime GST, B.Com)</option>
+          <option value="computer">कंप्यूटर विज्ञान (RS-CIT, B.Tech CSE)</option>
+        </select>
+        <button class="px-4 py-2.5 rounded-xl border border-slate-200 hover:bg-slate-50 text-xs font-bold text-slate-600 transition flex items-center justify-center gap-1" onclick="resetFilters()" type="button">
+          <span class="material-symbols-outlined text-sm">restart_alt</span>
+          <span>रीसेट</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Segmented Navigation Filter Pills (15 Streams Modular) -->
+    <div class="flex items-center gap-2 overflow-x-auto custom-scrollbar pb-2" id="filterPillContainer">
+      <button class="filter-pill pill-active px-4 py-2 rounded-xl text-xs font-bold border border-brand-900 bg-brand-900 text-white whitespace-nowrap transition cursor-pointer" onclick="filterByPill('all', this)" type="button">
+        समस्त संकाय (All 15 Streams)
+      </button>
+      <button class="filter-pill px-4 py-2 rounded-xl text-xs font-bold border border-slate-200 text-slate-700 bg-white hover:bg-slate-50 whitespace-nowrap transition cursor-pointer" onclick="filterByPill('engineering', this)" type="button">
+        इंजीनियरिंग (Civil/CSE/Mech/EE Sem 1-8)
+      </button>
+      <button class="filter-pill px-4 py-2 rounded-xl text-xs font-bold border border-slate-200 text-slate-700 bg-white hover:bg-slate-50 whitespace-nowrap transition cursor-pointer" onclick="filterByPill('medical', this)" type="button">
+        मेडिकल व फार्मेसी (NEET UG, D.Pharma, B.Pharma)
+      </button>
+      <button class="filter-pill px-4 py-2 rounded-xl text-xs font-bold border border-slate-200 text-slate-700 bg-white hover:bg-slate-50 whitespace-nowrap transition cursor-pointer" onclick="filterByPill('competitive', this)" type="button">
+        प्रतियोगी परीक्षाएं (UPSC CSE, State PSC, SSC)
+      </button>
+      <button class="filter-pill px-4 py-2 rounded-xl text-xs font-bold border border-slate-200 text-slate-700 bg-white hover:bg-slate-50 whitespace-nowrap transition cursor-pointer" onclick="filterByPill('commerce', this)" type="button">
+        कॉमर्स व कॉर्पोरेट (Tally Prime GST)
+      </button>
+      <button class="filter-pill px-4 py-2 rounded-xl text-xs font-bold border border-slate-200 text-slate-700 bg-white hover:bg-slate-50 whitespace-nowrap transition cursor-pointer" onclick="filterByPill('computer', this)" type="button">
+        कंप्यूटर दक्षता (RS-CIT व B.Tech IT)
+      </button>
+    </div>
+
+    <!-- ================= PYQ & DESI TRICKS CARD COLLECTION ================= -->
+    <div class="space-y-4" id="cardsContainer">
+
+      <!-- CARD 1: B.TECH CIVIL ENGINEERING (IS 4031 & SOUNDNESS) -->
+      <div class="pyq-card bg-white rounded-3xl p-5 lg:p-6 border border-slate-200 shadow-xs space-y-4 transition hover:border-brand-300" data-cat="engineering" data-tags="civil cement le-chatelier soundness is4031 btech engg">
+        <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-slate-100">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-[10px] font-black uppercase tracking-wider bg-brand-900 text-white px-2.5 py-0.5 rounded-lg">B.Tech Civil / JE / AE</span>
+            <span class="text-xs font-bold text-slate-700">कंक्रीट तकनीक एवं निर्माण सामग्री (IS 4031 Part 3 &amp; 4)</span>
+          </div>
+          <div class="flex items-center gap-1.5 text-[11px] font-bold text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-200">
+            <span class="material-symbols-outlined text-xs">sync</span>
+            <span>विगत 20 वर्षों में 11 बार दोहराया गया (SSC JE 2018, 2021, ESE 2016, State AE)</span>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <div class="flex items-start gap-2.5">
+            <span class="w-6 h-6 rounded-lg bg-brand-100 text-brand-900 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">Q.01</span>
+            <div>
+              <h2 class="text-sm font-bold text-slate-900 leading-snug">
+                सीमेंट में 'अस्थिरता' (Unsoundness) का परीक्षण करने हेतु ली-चैटेलियर (Le-Chatelier) उपकरण केवल किसकी उपस्थिति के कारण होने वाले प्रसार को मापता है?
+              </h2>
+              <p class="text-xs text-slate-500 italic mt-0.5">
+                [English: In cement testing, Le-Chatelier apparatus is exclusively utilized to detect unsoundness caused by which of the following compounds?]
+              </p>
+            </div>
+          </div>
+
+          <!-- Options Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-2 pt-1 pl-8">
+            <div class="p-2.5 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700">
+              <span class="font-bold text-slate-900">A.</span> अतिरिक्त एल्युमिना (Excess Alumina)
+            </div>
+            <div class="p-2.5 rounded-xl border-2 border-brand-900 bg-brand-900 text-white text-xs font-bold flex items-center justify-between">
+              <span><span class="font-bold text-amber-300">B.</span> केवल मुक्त चूना (Free Lime Only)</span>
+              <span class="material-symbols-outlined text-xs text-emerald-400">check_circle</span>
+            </div>
+            <div class="p-2.5 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700">
+              <span class="font-bold text-slate-900">C.</span> मुक्त मैग्नीशिया व चूना दोनों
+            </div>
+            <div class="p-2.5 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700">
+              <span class="font-bold text-slate-900">D.</span> कैल्शियम सल्फेट / जिप्सम
+            </div>
+          </div>
+        </div>
+
+        <!-- Desi Memory Trick Vault Box -->
+        <div class="bg-amber-50/70 border border-amber-200 rounded-2xl p-3.5 pl-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div class="flex items-start gap-2.5">
+            <div class="w-7 h-7 rounded-lg bg-amber-400 text-slate-950 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
+              <span class="material-symbols-outlined text-base">lightbulb</span>
+            </div>
+            <div>
+              <span class="text-[10px] font-black uppercase tracking-wider text-amber-900 block">हस्तलिखित देसी स्मृति सूत्र (Desi Shortcut Trick)</span>
+              <p class="text-xs font-black text-slate-900 mt-0.5">
+                "चूना चाटे ली-चैटेलियर, ऑटो में घूमे मैग्नीशिया!"
+              </p>
+              <p class="text-[11px] text-slate-600 mt-0.5">
+                (सूत्र व्याख्या: <strong>Lime</strong> = Le-Chatelier विधि द्वारा [अधिकतम 10mm प्रसार]; <strong>Magnesia + Lime</strong> दोनों के लिए = Autoclave Test [अधिकतम 0.8% प्रसार])
+              </p>
+            </div>
+          </div>
+          <button class="px-3 py-1.5 rounded-xl bg-white border border-amber-300 text-amber-900 text-xs font-bold hover:bg-amber-100 transition shrink-0 flex items-center justify-center gap-1 cursor-pointer" onclick="copyTrickText('चूना चाटे ली-चैटेलियर, ऑटो में घूमे मैग्नीशिया! (Lime = Le-Chatelier, Magnesia+Lime = Autoclave)')" type="button">
+            <span class="material-symbols-outlined text-xs">content_copy</span>
+            <span>ट्रिक कॉपी करें</span>
+          </button>
+        </div>
+
+        <!-- Expandable Official Pedagogical Proof Details -->
+        <details class="group pt-1">
+          <summary class="text-xs font-bold text-slate-600 hover:text-brand-900 cursor-pointer flex items-center justify-between">
+            <span class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-sm text-brand-700">menu_book</span>
+              प्रामाणिक मानक संहिता एवं NCERT/IS संदर्भ देखें (IS 4031 Analysis)
+            </span>
+            <span class="material-symbols-outlined text-sm group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <div class="mt-3 p-3.5 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-600 space-y-1.5 leading-relaxed">
+            <p><strong>आधिकारिक IS कोड संदर्भ:</strong> Bureau of Indian Standards (BIS) IS: 4031 (Part 3) के अनुसार साधारण पोर्टलैंड सीमेंट (OPC 33, 43, 53) में अनसाउंडनेस टेस्ट के दौरान ली-चैटेलियर उपकरण के संकेतक बिंदुओं के बीच की दूरी 10 mm से अधिक नहीं होनी चाहिए। यह उपकरण केवल फ्री लाइम (Unburnt Free CaO) के हाइड्रेशन से होने वाले वॉल्यूमेट्रिक विस्तार को भांपता है।</p>
+            <p class="text-emerald-700 font-bold">✓ परीक्षक का कन्फ्यूजन ट्रैप: यदि परीक्षा में केवल मैग्नीशिया (MgO) या दोनों पूछा जाए, तो उत्तर सदैव 'ऑटोक्लेव टेस्ट' (Autoclave Test) होगा।</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- CARD 2: NEET-UG MEDICAL BIOLOGY (PHOTOSYNTHESIS & DARK REACTION) -->
+      <div class="pyq-card bg-white rounded-3xl p-5 lg:p-6 border border-slate-200 shadow-xs space-y-4 transition hover:border-brand-300" data-cat="medical" data-tags="neet medical biology botany photosynthesis stroma rubisco calvin">
+        <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-slate-100">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-[10px] font-black uppercase tracking-wider bg-slate-900 text-white px-2.5 py-0.5 rounded-lg">NEET-UG Medical / Botany</span>
+            <span class="text-xs font-bold text-slate-700">पादपों में प्रकाश संश्लेषण (Photosynthesis in Higher Plants - C3/C4 Pathway)</span>
+          </div>
+          <div class="flex items-center gap-1.5 text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+            <span class="material-symbols-outlined text-xs">sync</span>
+            <span>NTA NEET 2017, 2019, 2022, 2024 Repeat Matrix</span>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <div class="flex items-start gap-2.5">
+            <span class="w-6 h-6 rounded-lg bg-emerald-100 text-emerald-900 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">Q.02</span>
+            <div>
+              <h2 class="text-sm font-bold text-slate-900 leading-snug">
+                क्लोरोप्लास्ट (हरितलवक) में अप्रकाशीय अभिक्रिया (Dark Reaction / Calvin Cycle) एवं प्राथमिक CO2 ग्राही एंजाइम RuBisCO का स्थान कहां होता है?
+              </h2>
+              <p class="text-xs text-slate-500 italic mt-0.5">
+                [English: In chloroplasts of higher plants, what is the exact site for the dark reaction enzymatic synthesis of sugars and RuBisCO activity?]
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-2 pt-1 pl-8">
+            <div class="p-2.5 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700">
+              <span class="font-bold text-slate-900">A.</span> थायलाकोइड झिल्ली (Thylakoid Membrane Lumen)
+            </div>
+            <div class="p-2.5 rounded-xl border-2 border-brand-900 bg-brand-900 text-white text-xs font-bold flex items-center justify-between">
+              <span><span class="font-bold text-amber-300">B.</span> स्ट्रोमा / पीठिका मैट्रिक्स (Stroma Matrix)</span>
+              <span class="material-symbols-outlined text-xs text-emerald-400">check_circle</span>
+            </div>
+            <div class="p-2.5 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700">
+              <span class="font-bold text-slate-900">C.</span> ग्रेना पटलिका (Grana Lamellae)
+            </div>
+            <div class="p-2.5 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700">
+              <span class="font-bold text-slate-900">D.</span> आंतरिक झिल्ली पेरी-स्पेस (Periplastidial Space)
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-amber-50/70 border border-amber-200 rounded-2xl p-3.5 pl-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div class="flex items-start gap-2.5">
+            <div class="w-7 h-7 rounded-lg bg-amber-400 text-slate-950 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
+              <span class="material-symbols-outlined text-base">lightbulb</span>
+            </div>
+            <div>
+              <span class="text-[10px] font-black uppercase tracking-wider text-amber-900 block">हस्तलिखित देसी स्मृति सूत्र (Desi Shortcut Trick)</span>
+              <p class="text-xs font-black text-slate-900 mt-0.5">
+                "प्रकाश चमके ग्रेना में, डार्क चाय पियो स्ट्रोमा में!"
+              </p>
+              <p class="text-[11px] text-slate-600 mt-0.5">
+                (सूत्र व्याख्या: Light Reaction = Grana / Thylakoid [ATP/NADPH निर्माण]; Dark Reaction = Stroma [एंजाइमेटिक शर्करा संश्लेषण])
+              </p>
+            </div>
+          </div>
+          <button class="px-3 py-1.5 rounded-xl bg-white border border-amber-300 text-amber-900 text-xs font-bold hover:bg-amber-100 transition shrink-0 flex items-center justify-center gap-1 cursor-pointer" onclick="copyTrickText('प्रकाश चमके ग्रेना में, डार्क चाय पियो स्ट्रोमा में! (Light = Grana, Dark = Stroma RuBisCO)')" type="button">
+            <span class="material-symbols-outlined text-xs">content_copy</span>
+            <span>ट्रिक कॉपी करें</span>
+          </button>
+        </div>
+
+        <details class="group pt-1">
+          <summary class="text-xs font-bold text-slate-600 hover:text-brand-900 cursor-pointer flex items-center justify-between">
+            <span class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-sm text-brand-700">menu_book</span>
+              NCERT Class 11th Biology (अध्याय 13) प्रामाणिक उद्धरण देखें
+            </span>
+            <span class="material-symbols-outlined text-sm group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <div class="mt-3 p-3.5 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-600 space-y-1.5 leading-relaxed">
+            <p><strong>NCERT पाठ्यपुस्तक संदर्भ:</strong> प्रकाश संश्लेषण की प्रकाश-अनाश्रित जैव-संश्लेषण प्रावस्था (Dark Reaction) सीधे प्रकाश द्वारा संचालित नहीं होती, बल्कि यह प्रकाश अभिक्रिया के उत्पादों (ATP एवं NADPH) पर निर्भर होती है। यह जलीय मैट्रिक्स <em>स्ट्रोमा (Stroma)</em> में संपन्न होती है जहाँ RuBisCO (Ribulose-1,5-bisphosphate carboxylase-oxygenase) एंजाइम कार्बन स्थिरीकरण को उत्प्रेरित करता है।</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- CARD 3: UPSC CSE & STATE PSC (POLITY & CONSTITUTION WRITS) -->
+      <div class="pyq-card bg-white rounded-3xl p-5 lg:p-6 border border-slate-200 shadow-xs space-y-4 transition hover:border-brand-300" data-cat="competitive" data-tags="upsc polity constitution writs article32 article226 ras bpsc uppsc">
+        <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-slate-100">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-[10px] font-black uppercase tracking-wider bg-slate-900 text-white px-2.5 py-0.5 rounded-lg">UPSC CSE / State PSC / RAS / BPSC</span>
+            <span class="text-xs font-bold text-slate-700">भारतीय राजव्यवस्था व संविधान (अनुच्छेद 32, 226 एवं रिट क्षेत्राधिकार)</span>
+          </div>
+          <div class="flex items-center gap-1.5 text-[11px] font-bold text-blue-700 bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-200">
+            <span class="material-symbols-outlined text-xs">sync</span>
+            <span>UPSC 2008, 2015, RAS Prelims 2018, 2021 दोहराव</span>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <div class="flex items-start gap-2.5">
+            <span class="w-6 h-6 rounded-lg bg-blue-100 text-blue-900 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">Q.03</span>
+            <div>
+              <h2 class="text-sm font-bold text-slate-900 leading-snug">
+                निम्नलिखित में से कौन-सी न्यायिक रिट (Writ) किसी अवैध रूप से सार्वजनिक पद पर आसीन व्यक्ति के विरुद्ध जारी की जाती है?
+              </h2>
+              <p class="text-xs text-slate-500 italic mt-0.5">
+                [English: Which prerogative writ is issued by the High Court or Supreme Court to restrain a person from acting in a public office to which he is not legally entitled?]
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-2 pt-1 pl-8">
+            <div class="p-2.5 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700">
+              <span class="font-bold text-slate-900">A.</span> बंदी प्रत्यक्षीकरण (Habeas Corpus)
+            </div>
+            <div class="p-2.5 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700">
+              <span class="font-bold text-slate-900">B.</span> परमादेश (Mandamus)
+            </div>
+            <div class="p-2.5 rounded-xl border-2 border-brand-900 bg-brand-900 text-white text-xs font-bold flex items-center justify-between">
+              <span><span class="font-bold text-amber-300">C.</span> अधिकार-पृच्छा (Quo-Warranto)</span>
+              <span class="material-symbols-outlined text-xs text-emerald-400">check_circle</span>
+            </div>
+            <div class="p-2.5 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700">
+              <span class="font-bold text-slate-900">D.</span> उत्प्रेषण (Certiorari)
+            </div>
+          </div>
+        </div>
+
+        <!-- 2-Desi Tricks Stack for UPSC -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5">
+          <div class="bg-blue-50/70 border border-blue-200 rounded-2xl p-3 flex items-center justify-between gap-2">
+            <div>
+              <span class="text-[10px] font-black uppercase tracking-wider text-blue-900 flex items-center gap-1">
+                <span class="material-symbols-outlined text-xs text-blue-700">account_balance</span>
+                5 रिट क्रम सूत्र (Order of 5 Writs)
+              </span>
+              <p class="text-xs font-black text-slate-900 mt-0.5">"P - R - O - M - H"</p>
+              <p class="text-[10px] text-slate-600">Prohibition, Quo-Warranto, Mandamus, Certiorari, Habeas Corpus.</p>
+            </div>
+            <button class="px-2 py-1 bg-white border border-blue-300 rounded text-[10px] font-bold text-blue-900 hover:bg-blue-100 transition" onclick="copyTrickText('PROMH: Prohibition, Quo-Warranto, Mandamus, Certiorari, Habeas Corpus')">कॉपी</button>
+          </div>
+
+          <div class="bg-amber-50/70 border border-amber-200 rounded-2xl p-3 flex items-center justify-between gap-2">
+            <div>
+              <span class="text-[10px] font-black uppercase tracking-wider text-amber-900 flex items-center gap-1">
+                <span class="material-symbols-outlined text-xs text-amber-700">swap_horiz</span>
+                1-सेकंड अध्यादेश स्वैप रूल (Ordinance Rule)
+              </span>
+              <p class="text-xs font-black text-slate-900 mt-0.5">राष्ट्रपति (123) ⟷ राज्यपाल (213)</p>
+              <p class="text-[10px] text-slate-600">अंक '1' और '2' को आपस में बदलें: 123 (केंद्र) ➔ 213 (राज्य)।</p>
+            </div>
+            <button class="px-2 py-1 bg-white border border-amber-300 rounded text-[10px] font-bold text-amber-900 hover:bg-amber-100 transition" onclick="copyTrickText('राष्ट्रपति अध्यादेश = 123 ⟷ राज्यपाल अध्यादेश = 213')">कॉपी</button>
+          </div>
+        </div>
+
+        <details class="group pt-1">
+          <summary class="text-xs font-bold text-slate-600 hover:text-brand-900 cursor-pointer flex items-center justify-between">
+            <span class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-sm text-brand-700">menu_book</span>
+              संवैधानिक प्रावधान एवं सर्वोच्च न्यायालय के निर्णय उद्धरण
+            </span>
+            <span class="material-symbols-outlined text-sm group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <div class="mt-3 p-3.5 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-600 space-y-1.5 leading-relaxed">
+            <p><strong>अधिकार-पृच्छा (Quo-Warranto):</strong> इसका शाब्दिक अर्थ है 'आपका क्या प्राधिकार है?' यह रिट किसी व्यक्ति द्वारा सार्वजनिक कार्यालय के अवैध अनाधिकार ग्रहण को रोकती है। यह किसी भी इच्छुक नागरिक द्वारा मांगी जा सकती है, भले ही वह सीधे तौर पर पीड़ित न हो।</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- CARD 4: TALLY PRIME & CORPORATE GST (RCM RULES) -->
+      <div class="pyq-card bg-white rounded-3xl p-5 lg:p-6 border border-slate-200 shadow-xs space-y-4 transition hover:border-brand-300" data-cat="commerce" data-tags="tally gst rcm accounting bcom commerce vouchers audit">
+        <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-slate-100">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-[10px] font-black uppercase tracking-wider bg-slate-900 text-white px-2.5 py-0.5 rounded-lg">Tally Prime GST / Commerce &amp; Audit</span>
+            <span class="text-xs font-bold text-slate-700">वस्तु एवं सेवा कर अधिनियम (CGST Sec 9(3) / 9(4) Reverse Charge Mechanism)</span>
+          </div>
+          <div class="flex items-center gap-1.5 text-[11px] font-bold text-teal-700 bg-teal-50 px-2.5 py-0.5 rounded-full border border-teal-200">
+            <span class="material-symbols-outlined text-xs">sync</span>
+            <span>Tally Certified Professional &amp; Corporate Audit 2020-2025</span>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <div class="flex items-start gap-2.5">
+            <span class="w-6 h-6 rounded-lg bg-teal-100 text-teal-900 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">Q.04</span>
+            <div>
+              <h2 class="text-sm font-bold text-slate-900 leading-snug">
+                जीएसटी के अंतर्गत 'रिवर्स चार्ज मैकेनिज्म' (RCM) लागू होने पर कर भुगतान का वैधानिक दायित्व किस पर होता है?
+              </h2>
+              <p class="text-xs text-slate-500 italic mt-0.5">
+                [English: Under Section 9(3) of CGST Act, who is legally obligated to deposit GST directly to the Government under Reverse Charge Mechanism?]
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-2 pt-1 pl-8">
+            <div class="p-2.5 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700">
+              <span class="font-bold text-slate-900">A.</span> आपूर्तिकर्ता (Supplier of Goods / Service)
+            </div>
+            <div class="p-2.5 rounded-xl border-2 border-brand-900 bg-brand-900 text-white text-xs font-bold flex items-center justify-between">
+              <span><span class="font-bold text-amber-300">B.</span> माल या सेवा का प्राप्तकर्ता (Recipient of Goods/Services)</span>
+              <span class="material-symbols-outlined text-xs text-emerald-400">check_circle</span>
+            </div>
+            <div class="p-2.5 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700">
+              <span class="font-bold text-slate-900">C.</span> ई-कॉमर्स ऑपरेटर (ECO Portal)
+            </div>
+            <div class="p-2.5 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700">
+              <span class="font-bold text-slate-900">D.</span> माल ढुलाई एजेंसी (Transporter)
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-amber-50/70 border border-amber-200 rounded-2xl p-3.5 pl-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div class="flex items-start gap-2.5">
+            <div class="w-7 h-7 rounded-lg bg-amber-400 text-slate-950 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
+              <span class="material-symbols-outlined text-base">lightbulb</span>
+            </div>
+            <div>
+              <span class="text-[10px] font-black uppercase tracking-wider text-amber-900 block">हस्तलिखित देसी स्मृति सूत्र (Desi Shortcut Trick)</span>
+              <p class="text-xs font-black text-slate-900 mt-0.5">
+                "RCM = रिसीवर चुकाए टैक्स (Supplier मुक्त, Recipient सख्त)!"
+              </p>
+              <p class="text-[11px] text-slate-600 mt-0.5">
+                (सामान्यतः टैक्स सप्लायर भरता है, परन्तु RCM में पासा उल्टा होकर Recipient खुद सरकार को GST चालान जमा कराता है और उसी माह ITC क्लेम करता है)
+              </p>
+            </div>
+          </div>
+          <button class="px-3 py-1.5 rounded-xl bg-white border border-amber-300 text-amber-900 text-xs font-bold hover:bg-amber-100 transition shrink-0 flex items-center justify-center gap-1 cursor-pointer" onclick="copyTrickText('RCM = रिसीवर चुकाए टैक्स (Supplier मुक्त, Recipient सख्त)!')" type="button">
+            <span class="material-symbols-outlined text-xs">content_copy</span>
+            <span>ट्रिक कॉपी करें</span>
+          </button>
+        </div>
+
+        <details class="group pt-1">
+          <summary class="text-xs font-bold text-slate-600 hover:text-brand-900 cursor-pointer flex items-center justify-between">
+            <span class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-sm text-brand-700">menu_book</span>
+              Tally Prime F11 Statutory सेटअप एवं CGST धारा 9(3) विश्लेषण
+            </span>
+            <span class="material-symbols-outlined text-sm group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <div class="mt-3 p-3.5 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-600 space-y-1.5 leading-relaxed">
+            <p><strong>Tally Prime वाउचर व्यवहार:</strong> जब F11 कंपनी फीचर्स में GST इनेबल किया जाता है और 'Enable Tax Liability on Reverse Charge (Purchase from unregistered dealer)' को सक्रिय करते हैं, तो Tally स्वतः टैक्स लायबिलिटी उत्पन्न करती है। RCM का भुगतान नकद लेजर (Cash/Bank) से चालान द्वारा किया जाना अनिवार्य है; इसे ITC क्रेडिट से समायोजित नहीं किया जा सकता।</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- CARD 5: RS-CIT COMPUTER / IT LITERACY (=COUNT vs =COUNTA) -->
+      <div class="pyq-card bg-white rounded-3xl p-5 lg:p-6 border border-slate-200 shadow-xs space-y-4 transition hover:border-brand-300" data-cat="computer" data-tags="rscit computer excel count counta office365 formulas ms word">
+        <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-slate-100">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-[10px] font-black uppercase tracking-wider bg-slate-900 text-white px-2.5 py-0.5 rounded-lg">RS-CIT / सूचना प्रौद्योगिकी / B.Tech CSE</span>
+            <span class="text-xs font-bold text-slate-700">MS-Excel स्प्रेडशीट फंक्शन्स (=COUNT vs =COUNTA)</span>
+          </div>
+          <div class="flex items-center gap-1.5 text-[11px] font-bold text-purple-700 bg-purple-50 px-2.5 py-0.5 rounded-full border border-purple-200">
+            <span class="material-symbols-outlined text-xs">sync</span>
+            <span>VMOU RS-CIT 2016-2025 Repeat Bank</span>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <div class="flex items-start gap-2.5">
+            <span class="w-6 h-6 rounded-lg bg-purple-100 text-purple-900 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">Q.05</span>
+            <div>
+              <h2 class="text-sm font-bold text-slate-900 leading-snug">
+                माइक्रोसॉफ्ट एक्सेल (MS-Excel) में यदि किसी सेल में नाम (टेक्स्ट) और संख्याएं दोनों दर्ज हैं, तो उन सभी भरे हुए सेलों की गणना हेतु कौन-सा फॉर्मूला प्रयुक्त होगा?
+              </h2>
+              <p class="text-xs text-slate-500 italic mt-0.5">
+                [English: In MS Excel, which statistical function counts cells containing both numerical values and alphanumeric text characters?]
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-2 pt-1 pl-8">
+            <div class="p-2.5 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700">
+              <span class="font-bold text-slate-900">A.</span> =COUNT(A1:A10)
+            </div>
+            <div class="p-2.5 rounded-xl border-2 border-brand-900 bg-brand-900 text-white text-xs font-bold flex items-center justify-between">
+              <span><span class="font-bold text-amber-300">B.</span> =COUNTA(A1:A10)</span>
+              <span class="material-symbols-outlined text-xs text-emerald-400">check_circle</span>
+            </div>
+            <div class="p-2.5 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700">
+              <span class="font-bold text-slate-900">C.</span> =COUNTBLANK(A1:A10)
+            </div>
+            <div class="p-2.5 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700">
+              <span class="font-bold text-slate-900">D.</span> =SUMIF(A1:A10)
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-amber-50/70 border border-amber-200 rounded-2xl p-3.5 pl-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div class="flex items-start gap-2.5">
+            <div class="w-7 h-7 rounded-lg bg-amber-400 text-slate-950 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
+              <span class="material-symbols-outlined text-base">lightbulb</span>
+            </div>
+            <div>
+              <span class="text-[10px] font-black uppercase tracking-wider text-amber-900 block">हस्तलिखित देसी स्मृति सूत्र (Desi Shortcut Trick)</span>
+              <p class="text-xs font-black text-slate-900 mt-0.5">
+                "COUNT = केवल अंक (Digits Only), COUNTA = All (अंक + टेक्स्ट सब गिन डाले)!"
+              </p>
+              <p class="text-[11px] text-slate-600 mt-0.5">
+                (सूत्र व्याख्या: COUNT केवल Numeric सेल्स गिनता है, जबकि COUNTA में 'A' का अर्थ है 'All Non-Empty Cells')
+              </p>
+            </div>
+          </div>
+          <button class="px-3 py-1.5 rounded-xl bg-white border border-amber-300 text-amber-900 text-xs font-bold hover:bg-amber-100 transition shrink-0 flex items-center justify-center gap-1 cursor-pointer" onclick="copyTrickText('COUNT = केवल अंक (Digits Only), COUNTA = All (अंक + टेक्स्ट सब गिन डाले)!')" type="button">
+            <span class="material-symbols-outlined text-xs">content_copy</span>
+            <span>ट्रिक कॉपी करें</span>
+          </button>
+        </div>
+
+        <details class="group pt-1">
+          <summary class="text-xs font-bold text-slate-600 hover:text-brand-900 cursor-pointer flex items-center justify-between">
+            <span class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-sm text-brand-700">menu_book</span>
+              RS-CIT अधिकृत पाठ्यक्रम एवं VMOU परीक्षा कुंजी टिप्पणी
+            </span>
+            <span class="material-symbols-outlined text-sm group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <div class="mt-3 p-3.5 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-600 space-y-1.5 leading-relaxed">
+            <p><strong>एक्सेल फॉर्मूला भेद:</strong> <code>=COUNT()</code> केवल उन कक्षों की गणना करता है जिनमें संख्याएं हैं। <code>=COUNTA()</code> किसी भी सेल को गिनता है जो रिक्त नहीं है (अर्थात पाठ, संख्याएं, तार्किक मान TRUE/FALSE या त्रुटियां)। यदि केवल रिक्त सेल गिनने हों तो <code>=COUNTBLANK()</code> का प्रयोग किया जाता है।</p>
+          </div>
+        </details>
+      </div>
+
+    </div>
+
+    <!-- Bottom Print Center Action Banner -->
+    <div class="bg-brand-900 text-white rounded-3xl p-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-md">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-amber-300 shrink-0">
+          <span class="material-symbols-outlined text-3xl">local_library</span>
+        </div>
+        <div>
+          <h3 class="text-base font-black">ऑफलाइन अध्ययन हेतु A4 प्रिंट संग्रह (Institutional Print Ready)</h3>
+          <p class="text-xs text-slate-300 mt-0.5">समस्त 520+ हस्तलिखित देसी स्मृति सूत्रों व विगत 20 वर्षों के हल प्रश्न-पत्रों को 1-क्लिक में डबल-साइडेड A4 बुकलेट फॉर्मेट में डाउनलोड या प्रिंट करें।</p>
+        </div>
+      </div>
+      <a class="px-5 py-3 rounded-xl bg-white text-brand-900 hover:bg-slate-100 font-extrabold text-xs shadow-sm transition flex items-center gap-1.5 shrink-0" href="print.html">
+        <span class="material-symbols-outlined text-sm text-brand-700">print</span>
+        <span>A4 प्रिंट मॉड्यूल खोलें</span>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- ================= INSTITUTIONAL FOOTER ================= -->
+  <footer class="bg-brand-900 text-white border-t border-brand-800 mt-auto pt-10 pb-8 text-xs">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8 space-y-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="space-y-3">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-lg bg-white/10 text-white flex items-center justify-center font-black">EP</div>
+            <span class="font-black text-base tracking-tight">EduPro Nexus</span>
+          </div>
+          <p class="text-[11px] text-slate-300 leading-relaxed">
+            Elite National Digital Examination Repository &amp; Pedagogical Memory Enhancement Systems for Competitive Aspirants.
+          </p>
+          <div class="flex items-center gap-2 text-[10px] text-emerald-400 font-mono">
+            <span class="material-symbols-outlined text-xs">lock</span>
+            <span>256-Bit SSL Encrypted Verification</span>
+          </div>
+        </div>
+
+        <div>
+          <span class="text-xs font-black uppercase tracking-wider text-slate-200 block mb-3">सत्वर नेविगेशन (Quick Links)</span>
+          <ul class="space-y-2 text-[11px] text-slate-300">
+            <li><a class="hover:text-white transition" href="index.html">होमपेज (Index)</a></li>
+            <li><a class="hover:text-white transition" href="test-series.html">अखिल भारतीय टेस्ट सीरीज़</a></li>
+            <li><a class="hover:text-white transition" href="pyq-tricks.html">20-Year विगत प्रश्न हल</a></li>
+            <li><a class="hover:text-white transition" href="dashboard.html">छात्र विश्लेषिकी डैशबोर्ड</a></li>
+            <li><a class="hover:text-white transition" href="gk.html">दैनिक राष्ट्रीय घटनाक्रम</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <span class="text-xs font-black uppercase tracking-wider text-slate-200 block mb-3">संस्थान समर्थन (Institutional Support)</span>
+          <ul class="space-y-2 text-[11px] text-slate-300">
+            <li class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-xs text-amber-400">mail</span>
+              <span>support@edupro.in</span>
+            </li>
+            <li class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-xs text-emerald-400">verified_user</span>
+              <span>प्रमाणित परीक्षा परिषद प्रणाली</span>
+            </li>
+            <li class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-xs text-cyan-400">help</span>
+              <span>24x7 Academic Query Matrix</span>
+            </li>
+            <li class="pt-1">
+              <a class="text-amber-300 hover:underline font-bold text-xs" href="help.html">सहायता केंद्र पोर्टल →</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <span class="text-xs font-black uppercase tracking-wider text-slate-200 block mb-3">वैधानिक सूचना (Statutory Notice)</span>
+          <p class="text-[11px] text-slate-300 leading-relaxed">
+            Protected strictly under the Indian Copyright Act 1957 (Sections 13 &amp; 63). Unlawful duplication, public digital distribution, or extraction of pedagogical tricks is subject to non-bailable civil and criminal penalties.
+          </p>
+        </div>
+      </div>
+
+      <div class="pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3 text-[10px] text-slate-400">
+        <div>
+          © 2004-2025 EduPro Academic Systems. सर्वाधिकार सुरक्षित (All Rights Reserved). Indian Copyright Act, 1957 (Sec. 13 &amp; 63).
+        </div>
+        <div class="flex items-center gap-4">
+          <span>ISO 9001:2015 Educational Standard</span>
+          <span>•</span>
+          <span>National Curriculum Matrix Compliant</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    // Copy Desi Trick text with instant alert
+    function copyTrickText(text) {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(() => {
+          alert('✓ देसी स्मृति सूत्र सफलतापूर्वक कॉपी किया गया:\n\n' + text);
+        }).catch(() => {
+          prompt('कृपया इस सूत्र को कॉपी करें:', text);
+        });
       } else {
-        tab.className = 'cat-pill px-space-md py-1.5 rounded-full font-label-md text-label-md font-semibold bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all';
+        prompt('कृपया इस सूत्र को कॉपी करें:', text);
       }
-    });
+    }
 
-    const streamItems = document.querySelectorAll('.stream-item');
-    const tricksSection = document.getElementById('tricksSection');
+    // Filter cards by category pill
+    function filterByPill(cat, btn) {
+      document.querySelectorAll('.filter-pill').forEach(b => {
+        b.className = "filter-pill px-4 py-2 rounded-xl text-xs font-bold border border-slate-200 text-slate-700 bg-white hover:bg-slate-50 whitespace-nowrap transition cursor-pointer";
+      });
+      btn.className = "filter-pill pill-active px-4 py-2 rounded-xl text-xs font-bold border border-brand-900 bg-brand-900 text-white whitespace-nowrap transition cursor-pointer";
 
-    if (cat === 'all') {
-      streamItems.forEach(item => item.style.display = 'flex');
-      if (tricksSection) tricksSection.style.display = 'block';
-    } else if (cat === 'tricks') {
-      streamItems.forEach(item => item.style.display = 'none');
-      if (tricksSection) {
-        tricksSection.style.display = 'block';
-        tricksSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    } else {
-      if (tricksSection) tricksSection.style.display = 'none';
-      streamItems.forEach(item => {
-        const itemCat = item.getAttribute('data-category');
-        if (itemCat === cat) {
-          item.style.display = 'flex';
+      const select = document.getElementById('streamSelectDropdown');
+      select.value = cat;
+
+      const cards = document.querySelectorAll('.pyq-card');
+      cards.forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+          card.classList.remove('hidden');
         } else {
-          item.style.display = 'none';
+          card.classList.add('hidden');
         }
       });
     }
-  }
 
-  // Live Archive Search (both in tricks and streams)
-  function handleArchiveSearch(query) {
-    const q = query.trim().toLowerCase();
-    const trickCards = document.querySelectorAll('.trick-card');
-    const streamItems = document.querySelectorAll('.stream-item');
+    // Filter cards by dropdown
+    function filterByDropdown(val) {
+      const pills = document.querySelectorAll('.filter-pill');
+      pills.forEach(p => {
+        p.className = "filter-pill px-4 py-2 rounded-xl text-xs font-bold border border-slate-200 text-slate-700 bg-white hover:bg-slate-50 whitespace-nowrap transition cursor-pointer";
+      });
 
-    trickCards.forEach(card => {
-      const searchData = card.getAttribute('data-search') || '';
-      const textContent = card.innerText.toLowerCase();
-      if (!q || searchData.toLowerCase().includes(q) || textContent.includes(q)) {
-        card.style.display = 'flex';
-      } else {
-        card.style.display = 'none';
+      const cards = document.querySelectorAll('.pyq-card');
+      cards.forEach(card => {
+        if (val === 'all' || card.getAttribute('data-cat') === val) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    // Search bar filtering
+    function filterCards() {
+      const query = document.getElementById('liveSearchInput').value.toLowerCase().trim();
+      const cards = document.querySelectorAll('.pyq-card');
+
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        const tags = (card.getAttribute('data-tags') || '').toLowerCase();
+        if (text.includes(query) || tags.includes(query)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    // Reset filters
+    function resetFilters() {
+      document.getElementById('liveSearchInput').value = '';
+      document.getElementById('streamSelectDropdown').value = 'all';
+      const pills = document.querySelectorAll('.filter-pill');
+      if (pills.length > 0) {
+        filterByPill('all', pills[0]);
       }
-    });
-
-    streamItems.forEach(item => {
-      const searchData = item.getAttribute('data-search') || '';
-      const textContent = item.innerText.toLowerCase();
-      if (!q || searchData.toLowerCase().includes(q) || textContent.includes(q)) {
-        item.style.display = 'flex';
-      } else {
-        item.style.display = 'none';
-      }
-    });
-  }
-
-  // Toggle Trick Detail Expand/Collapse
-  function toggleCardDetail(id) {
-    const detailEl = document.getElementById('detail-' + id);
-    const iconEl = document.getElementById('icon-' + id);
-    if (!detailEl) return;
-
-    if (detailEl.classList.contains('hidden')) {
-      detailEl.classList.remove('hidden');
-      if (iconEl) iconEl.style.transform = 'rotate(180deg)';
-    } else {
-      detailEl.classList.add('hidden');
-      if (iconEl) iconEl.style.transform = 'rotate(0deg)';
     }
-  }
-
-  // Trigger Print Confirmation Modal with specific paper title
-  function triggerPrintModal(docTitle) {
-    const modal = document.getElementById('printGateModal');
-    const titleEl = document.getElementById('modalDocumentTitle');
-    if (titleEl && docTitle) {
-      titleEl.innerText = docTitle;
-    }
-    if (modal) {
-      modal.classList.remove('hidden');
-    }
-  }
-
-  // Close Print Modal
-  function closePrintModal() {
-    const modal = document.getElementById('printGateModal');
-    if (modal) {
-      modal.classList.add('hidden');
-    }
-  }
-
-  // Close modal when clicking outside background backdrop
-  window.addEventListener('click', function(e) {
-    const modal = document.getElementById('printGateModal');
-    if (e.target === modal) {
-      closePrintModal();
-    }
-  });
-</script></main></div>
-</body></html>
+  </script>
+</body>
+</html>
