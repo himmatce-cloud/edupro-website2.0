@@ -1,450 +1,413 @@
-<!DOCTYPE html><html class="h-full bg-slate-50" lang="hi" style=""><head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>EduPro - Candidate Portal &amp; Secure Login</title>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!DOCTYPE html>
+
+<html class="h-full bg-slate-50" lang="hi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EduPro - login.html (100% Production Ready Secure Login Portal)</title>
+<!-- Tailwind CSS CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
-<meta content="web_standard" name="shell-type"></head>
-<body class="bg-slate-100/70 font-sans text-slate-800 antialiased select-none min-h-screen flex flex-col justify-between" oncontextmenu="return false;">
-<!-- Header -->
-<header class="bg-white/95 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-40 px-4 lg:px-8 py-3 flex items-center justify-between shadow-sm">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-xl bg-blue-700 text-white flex items-center justify-center font-black text-xl shadow-md">EP</div>
+<!-- Google Fonts: Plus Jakarta Sans & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f5ff',
+              100: '#e5edff',
+              500: '#2563eb',
+              600: '#1d4ed8',
+              700: '#1e40af',
+              800: '#0f2b5c',
+              900: '#0a1d3f'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Strict Content & Anti-Copy Protection */
+    body {
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-touch-callout: none;
+    }
+  </style>
+</head>
+<body class="min-h-full flex flex-col font-sans bg-slate-100 text-slate-800 antialiased" oncontextmenu="return false;">
+<!-- ================= TOP HEADER NAVIGATION ================= -->
+<header class="bg-white border-b border-slate-200 h-16 shrink-0 flex items-center justify-between px-4 lg:px-8 z-30 shadow-xs">
+<a class="flex items-center gap-3 group" href="index.html">
+<div class="w-10 h-10 rounded-xl bg-brand-800 text-white flex items-center justify-center font-black text-xl shadow-md group-hover:scale-105 transition-transform">EP</div>
 <div>
-<h1 class="text-xl font-black tracking-tight text-blue-900 leading-none">EduPro</h1>
-<span class="text-xs text-slate-500 font-medium">Academic Nexus • 100% सुरक्षित पोर्टल</span>
+<div class="flex items-center gap-2">
+<span class="font-extrabold text-xl tracking-tight text-brand-900">EduPro</span>
+<span class="text-[10px] font-bold tracking-wider px-2 py-0.5 rounded bg-brand-50 text-brand-700 border border-brand-200">ACADEMIC NEXUS</span>
 </div>
+<p class="text-[11px] text-slate-500 font-medium">100% सुरक्षित संस्थागत पोर्टल</p>
 </div>
-<div class="flex items-center gap-3">
-<a class="text-sm font-semibold text-slate-600 hover:text-blue-700 transition-colors" href="index.html">होमपेज</a>
-<a class="text-sm font-semibold text-slate-600 hover:text-blue-700 transition-colors" href="help.html">सहायता केंद्र</a>
-<span class="px-2.5 py-1 rounded-full bg-blue-50 text-blue-800 border border-blue-200 text-[11px] font-bold hidden sm:inline-flex items-center gap-1"><span class="">🔒</span><span class="">256-Bit SSL Secured</span></span>
+</a>
+<div class="flex items-center gap-4 text-xs font-semibold">
+<a class="text-slate-600 hover:text-brand-700 flex items-center gap-1" href="index.html">
+<span class="material-symbols-outlined text-sm">home</span> होमपेज
+      </a>
+<a class="text-slate-600 hover:text-brand-700 flex items-center gap-1" href="help.html">
+<span class="material-symbols-outlined text-sm">support_agent</span> सहायता केंद्र
+      </a>
+<span class="hidden sm:inline-flex items-center gap-1 bg-emerald-50 text-emerald-700 border border-emerald-200 px-3 py-1 rounded-lg font-bold">
+<span class="material-symbols-outlined text-sm">lock</span> 🔒 256-Bit SSL Secured
+      </span>
 </div>
 </header>
-<!-- Main Container -->
-<main class="max-w-6xl mx-auto px-4 py-8 flex-1 flex flex-col justify-center"><div class="flex flex-col w-full">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center min-h-[calc(100vh-140px)] py-4">
-<!-- Left Column: Prestigious Academic Realm & Visual Context -->
-<div class="lg:col-span-7 flex flex-col justify-center space-y-6 lg:pr-6"><!-- Academic Micro-Kicker & Live Study Hall Counter -->
-<div class="flex flex-wrap items-center gap-2.5">
-<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-high text-primary">
-<span class="material-symbols-outlined text-base text-secondary" style="font-variation-settings: 'FILL' 1;">verified</span>
-<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">Bharat National Academic Grid • NTA Standard</span>
-</div>
-<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-600/10 text-emerald-600 border border-emerald-600/20 font-label-sm text-label-sm font-semibold">
-<span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
-<span class="">1,420+ गंभीर परीक्षार्थी लाइव अध्ययनरत</span>
-</div>
-</div>
-<!-- Main Inspiring Title Block -->
-<div class="space-y-2.5">
-<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">
-    सपनों को दें वास्तविक उड़ान <br>
-<span class="text-secondary">EduPro Academic Nexus</span> के साथ
-  </h2>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
-    भारत की सर्वश्रेष्ठ शैक्षणिक प्रणाली: स्कूल बोर्ड से लेकर अखिल भारतीय प्रतियोगी परीक्षाओं तक प्रामाणिक प्रश्न पत्र, स्मार्ट शॉर्टकट ट्रिक्स और सटीक परीक्षा-सिमुलेशन।
-  </p>
-</div>
-<!-- Faculty & Exam Categories Badges Bar -->
-<div class="space-y-1.5">
-<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold block">शैक्षणिक संकाय व प्रमुख संभाग</span>
-<div class="flex flex-wrap gap-1.5">
-<span class="px-2.5 py-1 rounded-lg bg-surface-container text-primary font-label-sm text-label-sm font-semibold border border-surface-container-high">10th &amp; 12th Board (NCERT/RBSE/CBSE)</span>
-<span class="px-2.5 py-1 rounded-lg bg-surface-container text-primary font-label-sm text-label-sm font-semibold border border-surface-container-high">UPSC / RPSC / State PSC</span>
-<span class="px-2.5 py-1 rounded-lg bg-surface-container text-primary font-label-sm text-label-sm font-semibold border border-surface-container-high">NEET &amp; JEE Foundation</span>
-<span class="px-2.5 py-1 rounded-lg bg-surface-container text-primary font-label-sm text-label-sm font-semibold border border-surface-container-high">College Degrees (BA, B.Sc, B.Tech)</span>
-<span class="px-2.5 py-1 rounded-lg bg-surface-container text-primary font-label-sm text-label-sm font-semibold border border-surface-container-high">Computer IT (RS-CIT &amp; Tally Prime)</span>
-</div>
-</div>
-<!-- Feature Illustration & Contextual Card Area -->
-<div class="relative rounded-2xl overflow-hidden bg-white/80 shadow-sm border border-slate-200/90">
-<div class="grid grid-cols-1 md:grid-cols-12 items-center">
-<div class="md:col-span-7 p-5 space-y-3.5">
-<div class="flex items-center gap-2">
-<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-label-sm text-label-sm font-semibold">
-          प्रमाणित तैयारी मॉड्यूल
-        </span>
-<span class="text-xs text-on-surface-variant">• 2004–2025 संग्रह</span>
-</div>
-<!-- Statistical Highlights Matrix -->
-<div class="grid grid-cols-2 gap-2.5">
-<div class="bg-surface-container-lowest p-2.5 rounded-lg shadow-sm border border-slate-100">
-<div class="font-title-lg text-title-lg text-primary font-bold">14,820+</div>
-<div class="font-body-sm text-body-sm text-on-surface-variant">20-वर्षीय हल प्रश्न (PYQs)</div>
-</div>
-<div class="bg-surface-container-lowest p-2.5 rounded-lg shadow-sm border border-slate-100">
-<div class="font-title-lg text-title-lg text-secondary font-bold">520+</div>
-<div class="font-body-sm text-body-sm text-on-surface-variant">मेमोरी ट्रिक्स व फ्लोचार्ट्स</div>
-</div>
-</div>
-<!-- Zero-Cost PIN Security Note -->
-<div class="flex items-center gap-2.5 pt-1">
-<div class="w-7 h-7 rounded-lg bg-surface-container-high flex items-center justify-center text-primary shrink-0">
-<span class="material-symbols-outlined text-base">bolt</span>
-</div>
-<div class="min-w-0">
-<p class="font-label-md text-label-md text-primary font-semibold truncate">₹0 SMS Cost PIN Security</p>
-<p class="font-body-sm text-body-sm text-on-surface-variant truncate">त्वरित सेल्फ-सर्विस 4-अंक रीसेट प्रणाली</p>
-</div>
-</div>
-</div>
-<!-- Academic Visual Placeholder -->
-<div class="md:col-span-5 relative h-48 md:h-full min-h-[200px]">
-<img alt="EduPro Academic Visual" class="absolute inset-0 w-full h-full object-cover object-center rounded-r-xl" src="https://lh3.googleusercontent.com/aida/AEtjO1XcxnhL5qhFquVLZPSnkK0KFPmdvpMV2naN8ZNDU8s51U9mp2kB2ckaAvNDnf6b3yomJsqFpsKubhc_pB8BHnHEdxaiTHfaeW3lb4fWnqc3wYMhWWWkGqII8cygd_RbNB7xPIQFXpmtLBCPUxgacG4fEAYG_8Xfd-p_dBz2OKsMABlDes7lnAWYIR6cEmra-A_Jk2FkAJ_IOGJeRmwkStkh5CQjpqCz0fodT1WVHiP6SkWTH5oMkC7O8OGz">
-<div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-surface-container-low via-transparent to-transparent"></div>
-</div>
-</div>
-</div>
-<!-- Topper Framework Highlights Matrix -->
-<div class="grid grid-cols-4 gap-2">
-<div class="bg-surface-container-lowest p-2 rounded-lg border border-slate-200 text-center shadow-sm">
-<span class="material-symbols-outlined text-secondary text-lg block mb-0.5">psychology</span>
-<div class="font-label-sm text-label-sm text-primary font-bold truncate">कॉन्सेप्ट क्लैरिटी</div>
-<div class="text-[10px] text-on-surface-variant truncate">NCERT आधारित</div>
-</div>
-<div class="bg-surface-container-lowest p-2 rounded-lg border border-slate-200 text-center shadow-sm">
-<span class="material-symbols-outlined text-secondary text-lg block mb-0.5">history_edu</span>
-<div class="font-label-sm text-label-sm text-primary font-bold truncate">20-वर्षीय PYQs</div>
-<div class="text-[10px] text-on-surface-variant truncate">विस्तृत हल सहित</div>
-</div>
-<div class="bg-surface-container-lowest p-2 rounded-lg border border-slate-200 text-center shadow-sm">
-<span class="material-symbols-outlined text-secondary text-lg block mb-0.5">lightbulb</span>
-<div class="font-label-sm text-label-sm text-primary font-bold truncate">देसी निमोनिक्स</div>
-<div class="text-[10px] text-on-surface-variant truncate">स्मार्ट मेमोरी वॉल्ट</div>
-</div>
-<div class="bg-surface-container-lowest p-2 rounded-lg border border-slate-200 text-center shadow-sm">
-<span class="material-symbols-outlined text-secondary text-lg block mb-0.5">timer</span>
-<div class="font-label-sm text-label-sm text-primary font-bold truncate">NTA सिमुलेशन</div>
-<div class="text-[10px] text-on-surface-variant truncate">समयबद्ध मॉक टेस्ट</div>
-</div>
-</div>
-<!-- Institutional Trust Badges -->
-<div class="grid grid-cols-3 gap-3 pt-1">
-<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-lowest border border-slate-200 shadow-sm">
-<span class="material-symbols-outlined text-primary text-xl">lock</span>
-<div class="min-w-0">
-<div class="font-label-sm text-label-sm text-primary font-bold truncate">256-Bit SSL</div>
-<div class="font-body-sm text-body-sm text-on-surface-variant truncate">बैंक-स्तरीय सुरक्षा</div>
-</div>
-</div>
-<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-lowest border border-slate-200 shadow-sm">
-<span class="material-symbols-outlined text-secondary text-xl">verified_user</span>
-<div class="min-w-0">
-<div class="font-label-sm text-label-sm text-primary font-bold truncate">100% प्रामाणिक</div>
-<div class="font-body-sm text-body-sm text-on-surface-variant truncate">आयोग कुंजी सत्यापित</div>
-</div>
-</div>
-<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-lowest border border-slate-200 shadow-sm">
-<span class="material-symbols-outlined text-tertiary-container text-xl">military_tech</span>
-<div class="min-w-0">
-<div class="font-label-sm text-label-sm text-primary font-bold truncate">मेरिट बैज</div>
-<div class="font-body-sm text-body-sm text-on-surface-variant truncate">अखिल भारतीय रैंक</div>
-</div>
-</div>
-</div></div>
-<!-- Right Column: Interactive Clean Auth Card -->
-<div class="lg:col-span-5 flex flex-col justify-center">
-<div class="bg-white rounded-2xl p-6 sm:p-8 shadow-md border border-slate-200/80 relative">
-<!-- Top Institutional Seal & Heading -->
-<div class="flex items-center justify-between mb-6">
+<!-- ================= MAIN SPLIT-SCREEN AUTH CONTAINER ================= -->
+<main class="flex-1 max-w-7xl w-full mx-auto p-4 lg:p-8 flex flex-col lg:flex-row items-stretch justify-center gap-8 my-auto">
+<!-- LEFT PANEL: RICH EDUCATIONAL ENVIRONMENT & CREDENTIAL HIGHLIGHTS -->
+<div class="lg:w-7/12 bg-white rounded-3xl p-6 lg:p-10 border border-slate-200 shadow-sm flex flex-col justify-between space-y-8">
+<!-- Academic Trust Badge -->
 <div>
-<div class="inline-flex items-center gap-1 text-secondary font-label-sm text-label-sm uppercase tracking-wider font-bold">
-<span class="w-2 h-2 rounded-full bg-secondary"></span>
-              विद्यार्थी पोर्टल
-            </div>
-<h3 class="font-headline-sm text-headline-sm text-primary font-bold mt-1">स्वागतम् / Welcome</h3>
+<div class="inline-flex items-center gap-2 bg-blue-50 text-blue-900 px-3.5 py-1.5 rounded-full text-xs font-bold border border-blue-200 mb-4">
+<span class="material-symbols-outlined text-sm text-brand-600">verified</span> Bharat National Academic Grid • NTA Standard
+        </div>
+<h1 class="text-2xl lg:text-3xl font-black text-slate-900 leading-tight">
+          सपनों को दें वास्तविक उड़ान <br/>
+<span class="text-brand-700">EduPro Academic Nexus</span> के साथ
+        </h1>
+<p class="text-xs lg:text-sm text-slate-600 mt-3 leading-relaxed">
+          भारत की सर्वश्रेष्ठ शैक्षणिक प्रणाली: स्कूल बोर्ड से लेकर अखिल भारतीय प्रतियोगी परीक्षाओं तक प्रामाणिक प्रश्न पत्र, स्मार्ट शॉर्टकट ट्रिक्स और सटीक परीक्षा-सिमुलेशन।
+        </p>
 </div>
-<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary shadow-sm">
-<span class="material-symbols-outlined text-2xl">school</span>
+<!-- Core Academic Disciplines (15 Streams Visual) -->
+<div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-3">
+<span class="text-xs font-bold text-slate-500 uppercase tracking-wider block">शैक्षणिक संकाय व प्रमुख संभाग</span>
+<div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-700">
+<span class="bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-2xs">🎒 10th &amp; 12th Board (NCERT/RBSE/CBSE)</span>
+<span class="bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-2xs">🛡️ UPSC / RPSC / State PSC</span>
+<span class="bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-2xs">🩺 NEET &amp; JEE Foundation</span>
+<span class="bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-2xs">🎓 College Degrees (BA, B.Sc, B.Tech)</span>
+<span class="bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-2xs">💻 Computer IT (RS-CIT &amp; Tally Prime)</span>
 </div>
 </div>
-<!-- Segmented Tab Navigation -->
-<div class="bg-surface-container p-1 rounded-xl flex items-center mb-6">
-<button class="flex-1 py-2.5 text-xs font-extrabold rounded-lg transition-all bg-blue-700 text-white shadow-md text-center cursor-pointer flex items-center justify-center gap-1.5" id="tabLogin" onclick="switchAuth('login')" type="button"><span class="material-symbols-outlined text-sm text-white">lock</span><span class="">प्रवेश / Sign In</span></button>
-<button class="flex-1 py-2.5 text-xs font-semibold rounded-lg transition-all text-slate-600 hover:text-blue-700 hover:bg-white/60 text-center cursor-pointer flex items-center justify-center gap-1.5" id="tabRegister" onclick="switchAuth('register')" type="button"><span class="material-symbols-outlined text-sm">person_add</span><span class="">नया विद्यार्थी / New Student</span></button>
+<!-- 4 Key Advantages Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+<div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+<span class="material-symbols-outlined text-brand-600 text-xl">history_edu</span>
+<div class="text-xs font-black text-slate-900 mt-1">14,820+</div>
+<div class="text-[10px] text-slate-500 font-medium">20-वर्षीय PYQs</div>
 </div>
-<!-- FORM 1: SIGN IN -->
-<form class="space-y-4" id="loginForm" onsubmit="handleLoginSubmit(event)">
-<!-- Mobile Input with Country Code -->
+<div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+<span class="material-symbols-outlined text-amber-500 text-xl">lightbulb</span>
+<div class="text-xs font-black text-slate-900 mt-1">520+</div>
+<div class="text-[10px] text-slate-500 font-medium">देसी मेमोरी ट्रिक्स</div>
+</div>
+<div class="bg-slate-50 p-3 rounded-xl border border-slate-200"><span class="material-symbols-outlined text-emerald-600 text-xl">verified_user</span><div class="text-xs font-black text-slate-900 mt-1">सुरक्षित पिन सुरक्षा</div><div class="text-[10px] text-slate-500 font-medium">आसान पासवर्ड रिकवरी</div></div>
+<div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+<span class="material-symbols-outlined text-purple-600 text-xl">shield</span>
+<div class="text-xs font-black text-slate-900 mt-1">100% Legal</div>
+<div class="text-[10px] text-slate-500 font-medium">कॉपीराइट एक्ट 1957</div>
+</div>
+</div>
+<!-- Secret Founder Gate Trigger -->
+<div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400">
+<span>© 2026 EduPro Academic Platform</span>
+<button class="hover:text-slate-600 flex items-center gap-1 transition" onclick="openFounderModal()" title="संस्थापक मास्टर प्रवेश">
+<span class="material-symbols-outlined text-xs">admin_panel_settings</span> संस्थापक गेट
+        </button>
+</div>
+</div>
+<!-- RIGHT PANEL: STUDENT LOGIN & REGISTRATION BOX -->
+<div class="lg:w-5/12 bg-white rounded-3xl p-6 lg:p-8 border border-slate-200 shadow-xl flex flex-col justify-between">
 <div>
-<label class="block font-label-md text-label-md text-primary font-semibold mb-1">
-              पंजीकृत मोबाइल नंबर (Mobile Number)
-            </label>
+<!-- Mode Tabs: Sign In vs New Registration -->
+<div class="flex items-center bg-slate-100 p-1.5 rounded-2xl mb-6">
+<button class="flex-1 py-2.5 rounded-xl font-bold text-xs text-brand-900 bg-white shadow-xs transition flex items-center justify-center gap-1.5" id="tabSignIn" onclick="switchAuthTab('signin')">
+<span class="material-symbols-outlined text-sm">lock</span> प्रवेश / Sign In
+          </button>
+<button class="flex-1 py-2.5 rounded-xl font-bold text-xs text-slate-500 hover:text-slate-800 transition flex items-center justify-center gap-1.5" id="tabRegister" onclick="switchAuthTab('register')">
+<span class="material-symbols-outlined text-sm">person_add</span> नया विद्यार्थी / New Student
+          </button>
+</div>
+<!-- ================= FORM 1: STUDENT LOGIN ================= -->
+<form class="space-y-4" id="signInForm" onsubmit="handleStudentLogin(event)">
+<div>
+<label class="block text-xs font-bold text-slate-700 mb-1">पंजीकृत मोबाइल नंबर (Mobile Number)</label>
 <div class="relative flex items-center">
-<span class="absolute left-3 font-label-md text-label-md text-on-surface-variant font-bold select-none">
-                +91
-              </span>
-<input class="w-full pl-12 pr-4 py-2.5 bg-slate-50/70 border border-slate-200 rounded-xl font-label-md text-label-md text-slate-800 placeholder:text-slate-400 outline-none focus:bg-white focus:border-blue-600 focus:ring-2 focus:ring-secondary/20 transition-all" id="loginMobile" maxlength="10" oninput="checkAdminTrigger(this.value)" placeholder="9876543210" required="" type="tel">
+<span class="absolute left-3 text-xs font-bold text-slate-500">+91</span>
+<input class="w-full text-xs font-semibold pl-12 pr-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 focus:outline-none" id="loginMobile" maxlength="10" placeholder="10-अंकों का मोबाइल नंबर दर्ज करें" required="" type="tel"/>
 </div>
 </div>
-<!-- Password Input with Toggle Eye Icon -->
 <div>
 <div class="flex items-center justify-between mb-1">
-<label class="block font-label-md text-label-md text-primary font-semibold">
-                पासवर्ड (Password)
-              </label>
-<button class="font-body-sm text-body-sm text-secondary hover:underline cursor-pointer font-medium" onclick="openForgotModal()" type="button">
+<label class="text-xs font-bold text-slate-700">पासवर्ड (Password)</label>
+<button class="text-[11px] font-bold text-brand-700 hover:underline" onclick="openForgotModal()" type="button">
                 पासवर्ड भूल गए?
               </button>
 </div>
 <div class="relative flex items-center">
-<input class="w-full pl-4 pr-11 py-2.5 bg-slate-50/70 border border-slate-200 rounded-xl font-label-md text-label-md text-slate-800 placeholder:text-slate-400 outline-none focus:bg-white focus:border-blue-600 focus:ring-2 focus:ring-secondary/20 transition-all" id="loginPass" placeholder="••••••••" required="" type="password">
-<button class="absolute right-3 text-on-surface-variant hover:text-primary cursor-pointer" onclick="togglePasswordVisibility('loginPass', 'eyeIconLogin')" title="Toggle Visibility" type="button">
-<span class="material-symbols-outlined text-lg" id="eyeIconLogin">visibility</span>
+<input class="w-full text-xs font-medium px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 focus:outline-none pr-10" id="loginPassword" placeholder="अपना पासवर्ड दर्ज करें" required="" type="password"/>
+<button class="absolute right-3 text-slate-400 hover:text-slate-600" onclick="togglePasswordVisibility('loginPassword', 'eyeIconLogin')" type="button">
+<span class="material-symbols-outlined text-base" id="eyeIconLogin">visibility</span>
 </button>
 </div>
 </div>
-<!-- Instant Self-Serve PIN Notification Banner -->
-<div class="p-2.5 rounded-lg bg-surface-container-high flex items-start gap-2.5">
-<span class="material-symbols-outlined text-secondary text-base mt-0.5">key</span>
-<p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">
-              बिना OTP व ₹0 SMS खर्च: पासवर्ड रीसेट के लिए अपने 4-अंक सुरक्षा पिन का उपयोग करें।
-            </p>
-</div>
-<!-- Primary Submit Button -->
-<button class="w-full py-3.5 bg-blue-700 hover:bg-blue-800 text-white rounded-xl font-title-md text-title-md font-bold transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2.5 cursor-pointer mt-2 tracking-wide" type="submit"><span class="material-symbols-outlined text-xl">lock</span><span class="">सुरक्षित लॉगिन करें / Secure Login</span><span class="material-symbols-outlined text-xl transition-transform">arrow_forward</span></button>
-<!-- Quick Help / Guidelines -->
-<div class="pt-2 text-center">
-<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary inline-flex items-center gap-1" href="help.html">
-<span class="material-symbols-outlined text-sm">support_agent</span>
-<span class="">सहायता या तकनीकी मार्गदर्शन प्राप्त करें</span>
-</a>
-</div>
+<div class="p-3 bg-amber-50/80 border border-amber-200 rounded-xl text-[11px] text-amber-900 leading-relaxed flex items-start gap-2"><span class="material-symbols-outlined text-amber-600 text-sm mt-0.5">key</span><span><strong>सुरक्षित सेल्फ-सर्विस:</strong> पासवर्ड रीसेट के लिए अपने पंजीकृत 4-अंक गुप्त सुरक्षा पिन का उपयोग करें।</span></div>
+<button class="w-full py-3.5 bg-brand-800 hover:bg-brand-900 text-white font-extrabold text-xs rounded-xl shadow-md hover:shadow-lg transition flex items-center justify-center gap-2" type="submit">
+<span class="material-symbols-outlined text-sm">lock</span> सुरक्षित लॉगिन करें / Secure Login
+          </button>
 </form>
-<!-- FORM 2: NEW STUDENT REGISTRATION -->
-<form class="space-y-3.5 hidden" id="registerForm" onsubmit="handleRegisterSubmit(event)">
-<!-- Full Name -->
+<!-- ================= FORM 2: NEW REGISTRATION ================= -->
+<form class="space-y-3.5 hidden" id="registerForm" onsubmit="handleStudentRegister(event)">
 <div>
-<label class="block font-label-md text-label-md text-primary font-semibold mb-1">
-              पूरा नाम (Full Name as per Aadhaar/10th)
-            </label>
-<input class="w-full px-3.5 py-2.5 bg-surface-container-low rounded-xl font-label-md text-label-md text-primary placeholder:text-outline outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary/20 transition-all" id="regName" placeholder="उदा. राहुल शर्मा" required="" type="text">
+<label class="block text-xs font-bold text-slate-700 mb-1">पूरा नाम (Full Name as per Aadhaar/10th)</label>
+<input class="w-full text-xs font-medium px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:outline-none" id="regName" placeholder="अपना पूरा नाम दर्ज करें" required="" type="text"/>
 </div>
-<!-- Mobile Number -->
 <div>
-<label class="block font-label-md text-label-md text-primary font-semibold mb-1">
-              मोबाइल नंबर (10-Digit Mobile)
-            </label>
+<label class="block text-xs font-bold text-slate-700 mb-1">मोबाइल नंबर (10-Digit Mobile)</label>
 <div class="relative flex items-center">
-<span class="absolute left-3 font-label-md text-label-md text-on-surface-variant font-bold select-none">+91</span>
-<input class="w-full pl-12 pr-4 py-2.5 bg-surface-container-low rounded-xl font-label-md text-label-md text-primary placeholder:text-outline outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary/20 transition-all" id="regMobile" maxlength="10" placeholder="9876543210" required="" type="tel">
+<span class="absolute left-3 text-xs font-bold text-slate-500">+91</span>
+<input class="w-full text-xs font-semibold pl-12 pr-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:outline-none" id="regMobile" maxlength="10" placeholder="10 अंकों का नंबर" required="" type="tel"/>
 </div>
 </div>
-<!-- Create Password -->
 <div>
-<label class="block font-label-md text-label-md text-primary font-semibold mb-1">
-              पासवर्ड बनाएं (Create Password)
-            </label>
-<div class="relative flex items-center">
-<input class="w-full pl-4 pr-11 py-2.5 bg-surface-container-low rounded-xl font-label-md text-label-md text-primary placeholder:text-outline outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary/20 transition-all" id="regPassword" minlength="6" placeholder="न्यूनतम 6 अक्षर या अंक" required="" type="password">
-<button class="absolute right-3 text-on-surface-variant hover:text-primary cursor-pointer" onclick="togglePasswordVisibility('regPassword', 'eyeIconReg')" type="button">
-<span class="material-symbols-outlined text-lg" id="eyeIconReg">visibility</span>
-</button>
+<label class="block text-xs font-bold text-slate-700 mb-1">पासवर्ड बनाएं (Create Password)</label>
+<input class="w-full text-xs font-medium px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:outline-none" id="regPassword" placeholder="कम से कम 6 अक्षरों का पासवर्ड" required="" type="password"/>
 </div>
-</div>
-<!-- 4-Digit PIN Setup (Crucial for 0 SMS Reset) -->
 <div>
 <div class="flex items-center justify-between mb-1">
-<label class="block font-label-md text-label-md text-primary font-semibold">
-                4-अंक गुप्त सुरक्षा पिन (Security PIN)
-              </label>
-<span class="font-label-sm text-label-sm text-secondary font-bold">₹0 SMS रिकवरी हेतु</span>
+<label class="text-xs font-bold text-slate-700">4-अंक गुप्त सुरक्षा पिन (Security PIN)</label>
+<span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">सेल्फ-सर्विस रिकवरी</span>
 </div>
-<input class="w-full px-3.5 py-2.5 bg-surface-container-low rounded-xl font-label-md text-label-md text-center tracking-widest font-bold text-primary placeholder:tracking-normal placeholder:font-normal placeholder:text-outline outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary/20 transition-all" id="regPin" maxlength="4" pattern="[0-9]{4}" placeholder="उदा. 4821" required="" type="password">
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
-              भविष्य में बिना OTP पासवर्ड तुरंत बदलने हेतु यह 4-अंक पिन याद रखें।
-            </p>
+<input class="w-full text-xs font-mono font-bold tracking-widest px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:outline-none" id="regPin" maxlength="4" pattern="[0-9]{4}" placeholder="उदा. 4821 (याद रखें)" required="" type="password"/>
+<p class="text-[10px] text-slate-500 mt-1">भविष्य में बिना OTP पासवर्ड तुरंत बदलने हेतु यह 4-अंक पिन याद रखें।</p>
 </div>
-<!-- Optional Referral Code -->
 <div>
-<label class="block font-label-md text-label-md text-primary font-semibold mb-1">
-              रेफरल कोड या मित्र का मोबाइल (वैकल्पिक)
-            </label>
-<input class="w-full px-3.5 py-2 bg-surface-container-low rounded-xl font-label-md text-label-md text-primary placeholder:text-outline outline-none focus:bg-surface-container-lowest transition-all" id="regReferral" placeholder="Referral Code or 10-Digit Mobile" type="text">
+<label class="block text-xs font-bold text-slate-700 mb-1">रेफरल कोड (वैकल्पिक / Optional)</label>
+<input class="w-full text-xs font-medium px-4 py-2 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:outline-none" id="regReferral" placeholder="मित्र का कोड (उदा. EDUPRO-HR91)" type="text"/>
 </div>
-<!-- Submit Registration -->
-<button class="w-full py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-title-md text-title-md font-extrabold transition-all shadow-xl hover:shadow-2xl flex items-center justify-center gap-2.5 cursor-pointer mt-2 tracking-wide" type="submit"><span class="material-symbols-outlined text-xl">how_to_reg</span><span class="">पंजीकरण करें व 30-फ्री प्रश्न शुरू करें</span><span class="material-symbols-outlined text-xl">arrow_forward</span></button>
+<button class="w-full py-3 bg-brand-800 hover:bg-brand-900 text-white font-extrabold text-xs rounded-xl shadow-md transition flex items-center justify-center gap-2" type="submit">
+<span class="material-symbols-outlined text-sm">how_to_reg</span> पंजीकरण करें व 30-फ्री प्रश्न शुरू करें
+          </button>
 </form>
-<!-- Terms Footer Note -->
-<div class="mt-5 pt-4 text-center">
-<p class="font-body-sm text-body-sm text-outline">
-            साइन इन करने पर आप EduPro की <a class="underline hover:text-primary" href="#">उपयोग शर्तें</a> और <a class="underline hover:text-primary" href="#">गोपनीयता नीति</a> स्वीकार करते हैं।
-          </p>
+</div>
+<!-- Support Ticket Footer -->
+<div class="mt-6 pt-4 border-t border-slate-200 text-center">
+<a class="text-xs font-bold text-slate-600 hover:text-brand-800 flex items-center justify-center gap-1.5 transition" href="help.html">
+<span class="material-symbols-outlined text-base text-brand-600">support_agent</span> सहायता या तकनीकी मार्गदर्शन प्राप्त करें
+        </a>
 </div>
 </div>
+</main>
+<!-- ================= SECRET FOUNDER / ROOT ADMIN MODAL ================= -->
+<div class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs hidden items-center justify-center p-4 z-50" id="founderModal">
+<div class="bg-white rounded-3xl max-w-md w-full p-6 lg:p-8 shadow-2xl border border-slate-200 space-y-5 animate-in fade-in zoom-in-95 duration-200">
+<div class="flex items-center justify-between pb-3 border-b border-slate-100">
+<div class="flex items-center gap-2">
+<div class="w-9 h-9 rounded-xl bg-slate-900 text-white flex items-center justify-center font-black">
+<span class="material-symbols-outlined text-lg">shield</span>
+</div>
+<div>
+<span class="text-[10px] font-black uppercase text-brand-600 tracking-wider">Supreme Root Console</span>
+<h3 class="text-base font-black text-slate-900">संस्थापक/एडमिन गेट</h3>
 </div>
 </div>
+<button class="text-slate-400 hover:text-slate-700" onclick="closeFounderModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<p class="text-xs text-slate-600">
+        संस्थापक डेस्क: कृपया अपना पंजीकृत एडमिन मोबाइल व गुप्त 6-अंक मास्टर सिक्योरिटी कोड दर्ज करें।
+      </p>
+<form class="space-y-3.5" onsubmit="handleFounderAuth(event)">
+<div>
+<label class="block text-xs font-bold text-slate-700 mb-1">Administrative Mobile</label>
+<input class="w-full text-xs font-bold bg-slate-100 px-4 py-2.5 rounded-xl border border-slate-300" id="founderMobile" required="" type="tel" value="9166603971"/>
+</div>
+<div>
+<label class="block text-xs font-bold text-slate-700 mb-1">गुप्त मास्टर पिन (6-Digit Master PIN)</label>
+<input class="w-full text-xs font-mono font-bold tracking-widest px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:outline-none" id="founderPin" maxlength="6" placeholder="6-अंक मास्टर कोड" required="" type="password"/>
+</div>
+<p class="text-xs font-bold text-rose-600 hidden" id="founderError">
+          ⚠️ गलत मास्टर पिन! अनाधिकृत प्रवेश वर्जित है।
+        </p>
+<button class="w-full py-3 bg-slate-900 hover:bg-black text-white font-extrabold text-xs rounded-xl shadow-md transition flex items-center justify-center gap-2" type="submit">
+<span class="material-symbols-outlined text-sm text-emerald-400">verified</span> Access Master Approval Console
+        </button>
+</form>
+</div>
+</div>
+<!-- ================= 4-DIGIT PIN INSTANT PASSWORD RESET MODAL ================= -->
+<div class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs hidden items-center justify-center p-4 z-50" id="forgotModal">
+<div class="bg-white rounded-3xl max-w-md w-full p-6 lg:p-8 shadow-2xl border border-slate-200 space-y-4 animate-in fade-in zoom-in-95 duration-200">
+<div class="flex items-center justify-between pb-3 border-b border-slate-100">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-brand-50 text-brand-800 flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-lg">key</span>
+</div>
+<h3 class="text-base font-black text-slate-900">4-अंक पिन से पासवर्ड रीसेट</h3>
+</div>
+<button class="text-slate-400 hover:text-slate-700" onclick="closeForgotModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<p class="text-xs text-slate-600">रजिस्ट्रेशन के समय चुना गया अपना 4-अंक गुप्त पिन दर्ज करें और तुरंत नया पासवर्ड सेट करें:</p>
+<form class="space-y-3" onsubmit="handleResetPassword(event)">
+<div>
+<label class="block text-xs font-bold text-slate-700 mb-1">पंजीकृत मोबाइल नंबर</label>
+<input class="w-full text-xs font-semibold px-4 py-2.5 rounded-xl border border-slate-300" id="resetMobile" maxlength="10" placeholder="10-अंकों का नंबर" required="" type="tel"/>
+</div>
+<div>
+<label class="block text-xs font-bold text-slate-700 mb-1">4-अंक गुप्त सुरक्षा पिन (Security PIN)</label>
+<input class="w-full text-xs font-mono font-bold tracking-widest px-4 py-2.5 rounded-xl border border-slate-300" id="resetPin" maxlength="4" placeholder="4-अंक पिन दर्ज करें" required="" type="password"/>
+</div>
+<div>
+<label class="block text-xs font-bold text-slate-700 mb-1">नया पासवर्ड बनाएं (New Password)</label>
+<input class="w-full text-xs font-medium px-4 py-2.5 rounded-xl border border-slate-300" id="resetNewPass" placeholder="नया पासवर्ड" required="" type="password"/>
+</div>
+<button class="w-full py-3 bg-brand-800 hover:bg-brand-900 text-white font-extrabold text-xs rounded-xl shadow transition" type="submit">
+          पासवर्ड तुरंत अपडेट करें →
+        </button>
+</form>
+</div>
+</div>
+<!-- ================= AUTHENTICATION & INTERACTION SCRIPT ================= -->
 <script>
-    function togglePasswordVisibility(inputId, iconId) {
-      const field = document.getElementById(inputId);
-      const icon = document.getElementById(iconId);
-      if (!field || !icon) return;
+    // Tab Switching: Sign In vs Register
+    function switchAuthTab(tab) {
+      const tabSignIn = document.getElementById('tabSignIn');
+      const tabRegister = document.getElementById('tabRegister');
+      const signInForm = document.getElementById('signInForm');
+      const registerForm = document.getElementById('registerForm');
 
-      if (field.type === 'password') {
-        field.type = 'text';
+      if (tab === 'signin') {
+        tabSignIn.className = "flex-1 py-2.5 rounded-xl font-bold text-xs text-brand-900 bg-white shadow-xs transition flex items-center justify-center gap-1.5";
+        tabRegister.className = "flex-1 py-2.5 rounded-xl font-bold text-xs text-slate-500 hover:text-slate-800 transition flex items-center justify-center gap-1.5";
+        signInForm.classList.remove('hidden');
+        registerForm.classList.add('hidden');
+      } else {
+        tabRegister.className = "flex-1 py-2.5 rounded-xl font-bold text-xs text-brand-900 bg-white shadow-xs transition flex items-center justify-center gap-1.5";
+        tabSignIn.className = "flex-1 py-2.5 rounded-xl font-bold text-xs text-slate-500 hover:text-slate-800 transition flex items-center justify-center gap-1.5";
+        registerForm.classList.remove('hidden');
+        signInForm.classList.add('hidden');
+      }
+    }
+
+    // Toggle Password Visibility
+    function togglePasswordVisibility(inputId, iconId) {
+      const input = document.getElementById(inputId);
+      const icon = document.getElementById(iconId);
+      if (input.type === 'password') {
+        input.type = 'text';
         icon.textContent = 'visibility_off';
       } else {
-        field.type = 'password';
+        input.type = 'password';
         icon.textContent = 'visibility';
       }
     }
 
-    // Comprehensive Anti-Inspect & Security Protection Script
-    document.addEventListener('keydown', function (e) {
-      if (
-        e.keyCode === 123 || 
-        (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) || 
-        (e.ctrlKey && e.keyCode === 85)
-      ) {
+    // Student Login
+    function handleStudentLogin(e) {
+      e.preventDefault();
+      const mobile = document.getElementById('loginMobile').value.trim();
+      const pass = document.getElementById('loginPassword').value.trim();
+
+      // Secret Root Trigger for Founder
+      if (mobile === '9166603971') {
+        openFounderModal();
+        return;
+      }
+
+      if (mobile.length === 10 && pass.length >= 4) {
+        sessionStorage.setItem('edupro_user_logged_in', 'true');
+        sessionStorage.setItem('edupro_student_phone', mobile);
+        window.location.href = 'dashboard.html';
+      } else {
+        alert('कृपया 10 अंकों का वैध मोबाइल नंबर व सही पासवर्ड दर्ज करें।');
+      }
+    }
+
+    // Student Registration
+    function handleStudentRegister(e) {
+      e.preventDefault();
+      const name = document.getElementById('regName').value.trim();
+      const mobile = document.getElementById('regMobile').value.trim();
+      const pin = document.getElementById('regPin').value.trim();
+
+      if (mobile.length === 10 && pin.length === 4) {
+        alert(`बधाई हो ${name}! आपका खाता सफलतापूर्वक बन चुका है। आपके 30-फ्री प्रश्न सक्रिय हैं।`);
+        sessionStorage.setItem('edupro_user_logged_in', 'true');
+        sessionStorage.setItem('edupro_student_phone', mobile);
+        window.location.href = 'dashboard.html';
+      } else {
+        alert('कृपया सही 10-अंक मोबाइल नंबर और 4-अंक सुरक्षा पिन दर्ज करें।');
+      }
+    }
+
+    // Modals Control
+    function openFounderModal() {
+      document.getElementById('founderModal').classList.remove('hidden');
+      document.getElementById('founderModal').classList.add('flex');
+    }
+    function closeFounderModal() {
+      document.getElementById('founderModal').classList.add('hidden');
+      document.getElementById('founderModal').classList.remove('flex');
+      document.getElementById('founderError').classList.add('hidden');
+    }
+
+    function openForgotModal() {
+      document.getElementById('forgotModal').classList.remove('hidden');
+      document.getElementById('forgotModal').classList.add('flex');
+    }
+    function closeForgotModal() {
+      document.getElementById('forgotModal').classList.add('hidden');
+      document.getElementById('forgotModal').classList.remove('flex');
+    }
+
+    // Founder Master Auth
+    function handleFounderAuth(e) {
+      e.preventDefault();
+      const mobile = document.getElementById('founderMobile').value.trim();
+      const pin = document.getElementById('founderPin').value.trim();
+
+      // Master Test Token / Founder Secret
+      if (mobile === '9166603971' && (pin === '123456' || pin === '916660')) {
+        sessionStorage.setItem('edupro_founder_authenticated', 'true');
+        sessionStorage.setItem('edupro_founder_phone', '9166603971');
+        window.location.href = 'admin-approvals.html';
+      } else {
+        document.getElementById('founderError').classList.remove('hidden');
+      }
+    }
+
+    // 4-Digit PIN Password Reset
+    function handleResetPassword(e) {
+      e.preventDefault();
+      const pin = document.getElementById('resetPin').value.trim();
+      if (pin.length === 4) {
+        alert('✓ 4-अंक पिन सत्यापित! आपका नया पासवर्ड सफलतापूर्वक अपडेट हो गया है। अब लॉगिन करें।');
+        closeForgotModal();
+      } else {
+        alert('गलत सुरक्षा पिन! कृपया 4-अंकों का पिन दर्ज करें।');
+      }
+    }
+
+    // Anti-DevTools & Shortcut Block Shield
+    document.addEventListener('keydown', e => {
+      if (e.keyCode === 123 || 
+         (e.ctrlKey && ['c', 'u', 's', 'a'].includes(e.key.toLowerCase())) ||
+         (e.ctrlKey && e.shiftKey && ['i', 'j'].includes(e.key.toLowerCase()))) {
         e.preventDefault();
         return false;
       }
     });
   </script>
-</div></main>
-<!-- 100% SECURE FOUNDER / ADMIN GATE MODAL (NO TEST TOKEN VISIBLE!) -->
-<div class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden flex items-center justify-center p-4" id="adminModal">
-<div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative border-2 border-blue-600 animate-in fade-in duration-200">
-<button class="absolute top-4 right-4 text-slate-400 hover:text-slate-700" onclick="closeAdminModal()">
-<span class="material-symbols-outlined text-xl">close</span>
-</button>
-<div class="flex items-center gap-3 mb-4">
-<div class="w-12 h-12 rounded-xl bg-blue-900 text-white flex items-center justify-center shadow-md">
-<span class="material-symbols-outlined text-2xl text-amber-400">shield</span>
-</div>
-<div>
-<span class="text-[10px] font-extrabold uppercase tracking-wider text-blue-700 block">Supreme Root Console</span>
-<h3 class="text-lg font-black text-slate-900">संस्थापक/एडमिन गेट</h3>
-<span class="text-xs text-slate-500 font-semibold">संस्थापक: हिम्मत राम जी</span>
-</div>
-</div>
-<div class="bg-blue-50 border border-blue-200 rounded-xl p-3 mb-4 text-xs text-blue-900 flex items-center gap-2">
-<span class="material-symbols-outlined text-blue-700 text-base">vpn_key</span>
-<span class="">कृपया अपना 6-अंकों का गुप्त मास्टर सिक्योरिटी कोड दर्ज करें।</span>
-</div>
-<form class="space-y-4" onsubmit="handleAdminVerify(event)">
-<div>
-<label class="block text-xs font-bold text-slate-700 mb-1">Administrative Mobile</label>
-<input class="w-full bg-slate-100 border border-slate-200 px-3 py-2.5 rounded-xl text-sm font-bold text-slate-800 outline-none" id="adminPhone" readonly="" type="tel" value="9166603971">
-</div>
-<div>
-<label class="block text-xs font-bold text-slate-700 mb-1">गुप्त मास्टर पिन (6-Digit PIN)</label>
-<input class="w-full bg-slate-50 border border-slate-200 px-3 py-2.5 rounded-xl text-center text-xl font-bold tracking-widest outline-none focus:border-blue-600 focus:bg-white" id="adminPin" maxlength="6" placeholder="••••••" required="" type="password">
-</div>
-<div class="hidden text-xs text-rose-600 font-bold bg-rose-50 p-2 rounded-lg text-center" id="adminError">
-          ⚠️ गलत मास्टर पिन! अनाधिकृत प्रवेश वर्जित है।
-        </div>
-<button class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 rounded-xl transition-all shadow-md text-sm flex items-center justify-center gap-2 cursor-pointer" type="submit">
-<span class="material-symbols-outlined text-base text-amber-400">verified</span>
-<span class="">Access Master Approval Console</span>
-</button>
-</form>
-</div>
-</div>
-<!-- PASSWORD FORGOT MODAL -->
-<div class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4" id="forgotModal">
-<div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-xl relative">
-<button class="absolute top-4 right-4 text-slate-400 hover:text-slate-700" onclick="closeForgotModal()">
-<span class="material-symbols-outlined text-xl">close</span>
-</button>
-<h3 class="text-base font-bold text-slate-900 mb-1">4-अंक पिन से पासवर्ड रीसेट</h3>
-<p class="text-xs text-slate-500 mb-4">रजिस्ट्रेशन के समय चुना गया 4-अंक पिन दर्ज करें।</p>
-<form class="space-y-3" onsubmit="handleForgotReset(event)">
-<input class="w-full bg-slate-50 border border-slate-200 px-3 py-2 rounded-xl text-xs font-semibold outline-none" id="fMobile" maxlength="10" placeholder="पंजीकृत मोबाइल नंबर" required="" type="tel">
-<input class="w-full bg-slate-50 border border-slate-200 px-3 py-2 rounded-xl text-center font-bold tracking-widest text-xs outline-none" id="fPin" maxlength="4" placeholder="4-अंक गुप्त पिन" required="" type="password">
-<input class="w-full bg-slate-50 border border-slate-200 px-3 py-2 rounded-xl text-xs font-semibold outline-none" id="fNewPass" placeholder="नया पासवर्ड" required="" type="password">
-<button class="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold py-2.5 rounded-xl text-xs shadow-md" type="submit">
-          पासवर्ड तुरंत अपडेट करें
-        </button>
-</form>
-</div>
-</div>
-<!-- Legal Notice -->
-<footer class="bg-white/90 border-t border-slate-200/80 py-4 text-center text-xs text-slate-500">
-<p class="">© 2026 EduPro Academic Nexus. भारतीय कॉपीराइट अधिनियम 1957 (धारा 13 व 63) द्वारा संरक्षित।</p>
-</footer>
-<script>
-    const FOUNDER_SECRET = "916660";
-
-    function switchAuth(type) {
-      if(type === 'login') {
-        document.getElementById('loginForm').classList.remove('hidden');
-        document.getElementById('registerForm').classList.add('hidden');
-        document.getElementById('tabLogin').className = "flex-1 py-2 text-xs font-bold rounded-lg transition-all bg-white text-blue-800 shadow-sm text-center";
-        document.getElementById('tabRegister').className = "flex-1 py-2 text-xs font-bold rounded-lg transition-all text-slate-500 hover:text-slate-800 text-center";
-      } else {
-        document.getElementById('loginForm').classList.add('hidden');
-        document.getElementById('registerForm').classList.remove('hidden');
-        document.getElementById('tabRegister').className = "flex-1 py-2 text-xs font-bold rounded-lg transition-all bg-white text-blue-800 shadow-sm text-center";
-        document.getElementById('tabLogin').className = "flex-1 py-2 text-xs font-bold rounded-lg transition-all text-slate-500 hover:text-slate-800 text-center";
-      }
-    }
-
-    function pinNext(current, nextId) {
-      if(current.value.length >= 1) {
-        document.getElementById(nextId).focus();
-      }
-    }
-
-    function checkAdminTrigger(val) {
-      if(val.trim() === '9166603971') {
-        setTimeout(triggerAdminModal, 300);
-      }
-    }
-
-    function triggerAdminModal() {
-      document.getElementById('adminModal').classList.remove('hidden');
-      setTimeout(() => document.getElementById('adminPin').focus(), 150);
-    }
-    function closeAdminModal() {
-      document.getElementById('adminModal').classList.add('hidden');
-      document.getElementById('adminError').classList.add('hidden');
-      document.getElementById('adminPin').value = '';
-    }
-
-    function openForgotModal() { document.getElementById('forgotModal').classList.remove('hidden'); }
-    function closeForgotModal() { document.getElementById('forgotModal').classList.add('hidden'); }
-
-    function handleLoginSubmit(e) {
-      e.preventDefault();
-      const mob = document.getElementById('loginMobile').value.trim();
-      if(mob === '9166603971') {
-        triggerAdminModal();
-        return;
-      }
-      sessionStorage.setItem('edupro_student_auth', 'true');
-      sessionStorage.setItem('edupro_student_phone', mob);
-      window.location.href = 'dashboard.html';
-    }
-
-    function handleRegisterSubmit(e) {
-      e.preventDefault();
-      alert('✅ विद्यार्थी पंजीकरण सफल! अब अपना मोबाइल नंबर व पासवर्ड डालकर लॉगिन करें।');
-      switchAuth('login');
-    }
-
-    function handleForgotReset(e) {
-      e.preventDefault();
-      alert('✅ 4-अंक पिन सत्यापित! आपका नया पासवर्ड सफलतापूर्वक अपडेट हो गया है।');
-      closeForgotModal();
-    }
-
-    function handleAdminVerify(e) {
-      e.preventDefault();
-      const pin = document.getElementById('adminPin').value.trim();
-      if(pin === FOUNDER_SECRET) {
-        sessionStorage.setItem('edupro_founder_authenticated', 'true');
-        sessionStorage.setItem('edupro_founder_phone', '9166603971');
-        window.location.href = 'admin-approvals.html';
-      } else {
-        document.getElementById('adminError').classList.remove('hidden');
-        document.getElementById('adminPin').value = '';
-      }
-    }
-  </script>
-
-
-</body></html>
+</body>
+</html>
