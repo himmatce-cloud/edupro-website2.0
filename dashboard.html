@@ -1,727 +1,464 @@
 <!DOCTYPE html>
+<html lang="hi" class="h-full bg-slate-50">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>EduPro - Student Dashboard (dashboard.html)</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Material Symbols Outlined -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
-<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        "colors": {
-          "primary-fixed-dim": "#afc6ff",
-          "surface-container": "#eaedff",
-          "on-error": "#ffffff",
-          "background": "#faf8ff",
-          "on-surface-variant": "#44464f",
-          "on-surface": "#131b2e",
-          "on-background": "#131b2e",
-          "tertiary-fixed-dim": "#ffb95f",
-          "outline-variant": "#c4c6d0",
-          "on-primary": "#ffffff",
-          "on-secondary": "#ffffff",
-          "surface-dim": "#d2d9f4",
-          "secondary": "#1d4ed8",
-          "surface-variant": "#dae2fd",
-          "primary-container": "#0f2b5c",
-          "on-tertiary": "#ffffff",
-          "on-tertiary-fixed": "#2a1700",
-          "inverse-surface": "#283044",
-          "on-secondary-container": "#fffbff",
-          "secondary-fixed": "#dce1ff",
-          "inverse-primary": "#afc6ff",
-          "on-primary-fixed-variant": "#2d4678",
-          "on-primary-container": "#7c94cb",
-          "on-secondary-fixed": "#001551",
-          "on-primary-fixed": "#001944",
-          "on-secondary-fixed-variant": "#0039b5",
-          "primary-fixed": "#d9e2ff",
-          "on-tertiary-fixed-variant": "#653e00",
-          "surface-tint": "#465d91",
-          "inverse-on-surface": "#eef0ff",
-          "tertiary-fixed": "#ffddb8",
-          "on-tertiary-container": "#cf8400",
-          "surface-container-high": "#e2e7ff",
-          "outline": "#747780",
-          "error-container": "#ffdad6",
-          "surface-bright": "#faf8ff",
-          "primary": "#00163d",
-          "secondary-fixed-dim": "#b7c4ff",
-          "surface-container-lowest": "#ffffff",
-          "surface-container-low": "#f2f3ff",
-          "secondary-container": "#4069f2",
-          "on-error-container": "#93000a",
-          "tertiary-container": "#422700",
-          "surface": "#faf8ff",
-          "tertiary": "#261400",
-          "surface-container-highest": "#dae2fd",
-          "error": "#ba1a1a"
-        },
-        "borderRadius": {
-          "DEFAULT": "0.125rem",
-          "lg": "0.25rem",
-          "xl": "0.5rem",
-          "full": "0.75rem"
-        },
-        "spacing": {
-          "margin-lg": "3rem",
-          "space-xs": "0.25rem",
-          "space-md": "1rem",
-          "space-xl": "2.5rem",
-          "margin-sm": "1rem",
-          "space-sm": "0.5rem",
-          "gutter": "1.5rem",
-          "margin": "2rem",
-          "gutter-sm": "1rem",
-          "space-lg": "1.5rem",
-          "gutter-lg": "2rem"
-        },
-        "fontFamily": {
-          "body-md": [
-            "Inter"
-          ],
-          "headline-lg-mobile": [
-            "Plus Jakarta Sans"
-          ],
-          "body-sm": [
-            "Inter"
-          ],
-          "label-sm": [
-            "Inter"
-          ],
-          "numeric-table": [
-            "Inter"
-          ],
-          "title-lg": [
-            "Inter"
-          ],
-          "body-lg": [
-            "Inter"
-          ],
-          "title-md": [
-            "Inter"
-          ],
-          "display-lg": [
-            "Plus Jakarta Sans"
-          ],
-          "label-md": [
-            "Inter"
-          ],
-          "headline-md": [
-            "Plus Jakarta Sans"
-          ],
-          "headline-sm": [
-            "Plus Jakarta Sans"
-          ],
-          "headline-lg": [
-            "Plus Jakarta Sans"
-          ],
-          "display-lg-mobile": [
-            "Plus Jakarta Sans"
-          ]
-        },
-        "fontSize": {
-          "body-md": [
-            "14px",
-            {
-              "lineHeight": "22px",
-              "letterSpacing": "0em",
-              "fontWeight": "400"
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f5ff',
+              100: '#e5edff',
+              500: '#2563eb',
+              600: '#1d4ed8',
+              700: '#1e40af',
+              800: '#0f2b5c',
+              900: '#0a1d3f'
             }
-          ],
-          "headline-lg-mobile": [
-            "24px",
-            {
-              "lineHeight": "32px",
-              "letterSpacing": "-0.01em",
-              "fontWeight": "700"
-            }
-          ],
-          "body-sm": [
-            "12px",
-            {
-              "lineHeight": "18px",
-              "letterSpacing": "0.005em",
-              "fontWeight": "400"
-            }
-          ],
-          "label-sm": [
-            "11px",
-            {
-              "lineHeight": "14px",
-              "letterSpacing": "0.04em",
-              "fontWeight": "600"
-            }
-          ],
-          "numeric-table": [
-            "14px",
-            {
-              "lineHeight": "20px",
-              "letterSpacing": "0em",
-              "fontWeight": "500"
-            }
-          ],
-          "title-lg": [
-            "18px",
-            {
-              "lineHeight": "26px",
-              "letterSpacing": "0em",
-              "fontWeight": "600"
-            }
-          ],
-          "body-lg": [
-            "16px",
-            {
-              "lineHeight": "26px",
-              "letterSpacing": "0em",
-              "fontWeight": "400"
-            }
-          ],
-          "title-md": [
-            "16px",
-            {
-              "lineHeight": "24px",
-              "letterSpacing": "0em",
-              "fontWeight": "600"
-            }
-          ],
-          "display-lg": [
-            "48px",
-            {
-              "lineHeight": "56px",
-              "letterSpacing": "-0.02em",
-              "fontWeight": "700"
-            }
-          ],
-          "label-md": [
-            "13px",
-            {
-              "lineHeight": "18px",
-              "letterSpacing": "0.01em",
-              "fontWeight": "500"
-            }
-          ],
-          "headline-md": [
-            "24px",
-            {
-              "lineHeight": "32px",
-              "letterSpacing": "-0.01em",
-              "fontWeight": "600"
-            }
-          ],
-          "headline-sm": [
-            "20px",
-            {
-              "lineHeight": "28px",
-              "letterSpacing": "-0.005em",
-              "fontWeight": "600"
-            }
-          ],
-          "headline-lg": [
-            "32px",
-            {
-              "lineHeight": "40px",
-              "letterSpacing": "-0.015em",
-              "fontWeight": "700"
-            }
-          ],
-          "display-lg-mobile": [
-            "32px",
-            {
-              "lineHeight": "40px",
-              "letterSpacing": "-0.01em",
-              "fontWeight": "700"
-            }
-          ]
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif']
+          }
         }
-      },
-    },
-  }
-</script><meta content="web_dashboard" name="shell-type"/></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 flex items-center px-space-lg gap-space-xs"><div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-on-primary font-title-md text-title-md">EP</div><div><span class="font-title-lg text-title-lg font-bold tracking-tight text-primary">EduPro</span><span class="font-label-sm text-label-sm block text-on-surface-variant leading-none">Academic Nexus</span></div></div><div class="px-space-md py-space-sm"><div class="bg-surface-container rounded-lg p-space-xs"><label class="block font-label-sm text-label-sm text-on-surface-variant mb-space-xs px-space-xs">ACTIVE STREAM / GOAL</label><div class="flex items-center justify-between bg-surface-container-lowest px-space-sm py-space-xs rounded-lg shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] cursor-pointer hover:bg-surface-container-high transition-colors"><div class="flex flex-col"><span class="font-title-md text-title-md text-on-surface font-semibold">UPSC &amp; Civil Services</span><span class="font-label-sm text-label-sm text-on-surface-variant">Target 2025 • Hindi/Eng</span></div><span class="material-symbols-outlined text-on-surface-variant text-base">unfold_more</span></div></div></div><nav class="flex flex-col gap-1 px-space-md mt-space-xs" data-active-classes="bg-primary-container text-on-primary font-semibold shadow-[0_1px_3px_0_rgba(15,23,42,0.04)]"><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-xl">dashboard</span><span class="font-label-md text-label-md">Learning Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="stream-selector" href="#"><span class="material-symbols-outlined text-xl">school</span><span class="font-label-md text-label-md">Change Goal / Stream</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="offline-downloads" href="#"><span class="material-symbols-outlined text-xl">download_for_offline</span><span class="font-label-md text-label-md">Offline PDF Repository</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="verification-tracker" href="#"><span class="material-symbols-outlined text-xl">verified_user</span><span class="font-label-md text-label-md">Verification Tracker</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="admin-panel" href="#"><span class="material-symbols-outlined text-xl">admin_panel_settings</span><span class="font-label-md text-label-md">Admin Master Console</span></a></nav></div><div class="p-space-md bg-surface-container-lowest mx-space-md mb-space-md rounded-xl shadow-[0_1px_3px_0_rgba(15,23,42,0.04)]"><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm text-label-sm uppercase text-secondary font-bold">माह पास (30 दिन)</span><span class="bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm px-space-xs py-0.5 rounded-full font-semibold">₹199 / माह</span></div><p class="font-body-sm text-body-sm text-on-surface-variant mb-space-xs">₹199 / माह (30 दिन ऑल-एक्सेस पास) across NEET, UPSC, Board &amp; Computer courses.</p><a class="block text-center bg-secondary-container hover:bg-secondary text-on-secondary font-label-md text-label-md py-space-xs rounded-lg transition-colors font-semibold" data-path="pricing-plan" href="pricing-plan.html">Upgrade Now</a></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-lg flex-1 max-w-xl"><div class="relative w-full"><span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">search</span><input class="w-full bg-surface-container-low pl-10 pr-space-md py-space-xs rounded-lg text-on-surface font-body-sm text-body-sm outline-none placeholder:text-on-surface-variant focus:bg-surface-container-lowest" placeholder="Search syllabus, PYQs, Mock Tests, Video Lectures (e.g. UPSC Prelims, NEET Physics)..." type="text"/></div></div><div class="flex items-center gap-space-lg"><nav class="hidden xl:flex items-center gap-space-lg" data-active-classes="text-primary font-semibold"><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" href="index.html">होमपेज</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" href="test-series.html">टेस्ट सीरीज़</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" href="pyq-tricks.html">20-Year PYQ</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" href="gk.html">दैनिक GK</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" href="print.html">1-क्लिक प्रिंट</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" href="help.html">सहायता</a><span class="px-space-xs py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold">₹199 All-Access (1 Month Pass)</span><a class="flex items-center gap-1 text-error hover:underline font-label-md text-label-md font-medium" href="login.html" title="लॉगआउट"><span class="material-symbols-outlined text-base">logout</span>लॉगआउट</a></nav><div class="flex items-center bg-surface-container-low p-1 rounded-lg"><button class="font-label-sm text-label-sm px-space-xs py-1 rounded bg-surface-container-lowest text-on-surface shadow-[0_1px_2px_rgba(0,0,0,0.04)] font-medium" type="button">EN</button><button class="font-label-sm text-label-sm px-space-xs py-1 rounded text-on-surface-variant hover:text-on-surface font-medium" type="button">हिंदी</button></div><div class="flex items-center gap-space-xs cursor-pointer pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1UL9I8G-ITDkVnLC-gWJzMaruSJwTD9HYIL0ER2FSeTRGmail08zRwP1fj5ZRr4FPEHZHbv_BBAvH6c0OeoOu9wI-QOKYuKTKLoDmigd-XLqxqY3V9GWrDcR02QmN_KfBHo6pdUzdTG9P5mcovM6428iNAQWRBnJAoeQbNeq2Pt0XTBP5O9YUwTE_-f6naFCy1rQ2nd2CmxUscDwUYQmFLBvO3uGD7JrowdsLKxZ5GsCk1camZc2QlRBLH85QxqF8RBiqJ6c6ztqNQ"/><div class="hidden md:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface leading-tight font-semibold">Dr. Rajesh Kumar</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-none">Scholar #9841</span></div></div></div></header><main class="w-full pt-16 bg-background px-space-xl py-space-lg min-h-screen"><div class="flex flex-col w-full">
-<!-- Top Student Status Banner & Meta Header -->
-<section class="relative w-full rounded-xl bg-surface-container-lowest p-space-lg shadow-sm mb-space-lg overflow-hidden">
-<div class="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
-<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md relative z-10">
-<!-- Profile Context & Badges -->
-<div class="flex flex-col sm:flex-row sm:items-center gap-space-md">
-<div class="relative">
-<img class="w-16 h-16 rounded-xl object-cover shadow-sm bg-surface-container-high" data-alt="Official scholastic portrait badge of an Indian civil service aspirant with clean lighting, dark navy scholarly uniform accent, sharp focus, professional institutional photograph" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOalGEdxLyHi2w-nz2StqKVxFRgImqhpIneZ-zSb1L69jZKTMRz-6bI3qzoAewGwTVn9kiSVoPQ3_ptjD0fLFoTPQRc7CDRFFAKq8xTJcYj5ofg_84ZcfRmEqYfpDVz-9ppVmTx9WXqmwOx6Hj48MULM6pI3snwDBAJoaIyBX4W0qnoSvQnZXNT_lJ3IS3sSbnggujwo8b9sFujHIP0SuDlvKo1dpHgslN4JBwuxa4"/>
-<div class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-primary flex items-center justify-center text-on-primary">
-<span class="material-symbols-outlined text-xs">verified</span>
-</div>
-</div>
-<div class="flex flex-col">
-<div class="flex items-center flex-wrap gap-space-xs">
-<h1 class="font-headline-sm text-headline-sm text-on-surface">राजेश कुमार</h1>
-<span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">विद्यार्थी आईडी: #EDU-8921</span>
-<span class="px-space-xs py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm font-semibold">UPSC &amp; SSC CGL Candidate</span>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">अखिल भारतीय सिविल सेवा अभ्यास प्रकोष्ठ • राजस्थान एवं राष्ट्रीय संवर्ग</p>
-</div>
-</div>
-<!-- Quick Subscription Pill & Stream Switcher Dropdown -->
-<div class="flex flex-wrap items-center gap-space-sm">
-<!-- Active Subscription Box -->
-<div class="flex items-center gap-space-xs bg-surface-container px-space-md py-space-xs rounded-lg">
-<div class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></div>
-<div class="flex flex-col">
-<span class="font-label-sm text-label-sm text-on-surface font-semibold flex items-center gap-1">
-              ₹199 / माह <span class="text-secondary font-bold">(30 दिन ऑल-एक्सेस पास)</span>
-</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">24 दिन शेष • असीमित PYQ एक्सेस</span>
-</div>
-</div>
-<!-- Stream Switcher Dropdown Interaction -->
-<div class="relative" id="streamDropdownContainer">
-<button class="flex items-center gap-space-xs bg-primary text-on-primary px-space-md py-space-xs rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all shadow-sm" id="streamSwitchBtn">
-<span class="material-symbols-outlined text-sm">swap_horiz</span>
-<span class="" id="currentStreamLabel">UPSC / State PSC</span>
-<span class="material-symbols-outlined text-sm transition-transform duration-200" id="dropdownArrow">expand_more</span>
-</button>
-<!-- Dropdown Palette -->
-<div class="hidden absolute right-0 mt-2 w-72 rounded-xl bg-surface-container-lowest p-space-xs shadow-xl z-50" id="streamMenu"><span class="block px-space-sm py-1 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">सक्रिय शैक्षणिक लक्ष्य / स्ट्रीम</span><button class="w-full text-left px-space-sm py-2 rounded-lg bg-surface-container text-secondary font-semibold font-body-sm text-body-sm flex items-center justify-between" onclick="setStream('UPSC / State PSC');"><span class="">🛡️ UPSC / State PSC (सिविल सेवा)</span><span class="material-symbols-outlined text-xs text-secondary">check_circle</span></button><button class="w-full text-left px-space-sm py-2 rounded-lg text-on-surface hover:bg-surface-container-low font-body-sm text-body-sm flex items-center justify-between" onclick="setStream('10th &amp; 12th Board (NCERT/RBSE/CBSE)');"><span class="">🎒 10th &amp; 12th Board (NCERT/RBSE/CBSE)</span><span class="material-symbols-outlined text-xs text-on-surface-variant">arrow_forward</span></button><button class="w-full text-left px-space-sm py-2 rounded-lg text-on-surface hover:bg-surface-container-low font-body-sm text-body-sm flex items-center justify-between" onclick="setStream('NEET (UG Medical)');"><span class="">🩺 NEET (UG Medical Entrance)</span><span class="material-symbols-outlined text-xs text-on-surface-variant">arrow_forward</span></button><button class="w-full text-left px-space-sm py-2 rounded-lg text-on-surface hover:bg-surface-container-low font-body-sm text-body-sm flex items-center justify-between" onclick="setStream('JEE Main &amp; Advanced (IIT)');"><span class="">⚡ JEE Main &amp; Advanced (IIT)</span><span class="material-symbols-outlined text-xs text-on-surface-variant">arrow_forward</span></button><button class="w-full text-left px-space-sm py-2 rounded-lg text-on-surface hover:bg-surface-container-low font-body-sm text-body-sm flex items-center justify-between" onclick="setStream('College Degrees (BA, B.Sc, B.Tech)');"><span class="">🎓 College Degrees (BA, B.Sc, B.Tech)</span><span class="material-symbols-outlined text-xs text-on-surface-variant">arrow_forward</span></button><button class="w-full text-left px-space-sm py-2 rounded-lg text-on-surface hover:bg-surface-container-low font-body-sm text-body-sm flex items-center justify-between" onclick="setStream('Computer (RS-CIT &amp; Tally Prime)');"><span class="">💻 Computer (RS-CIT &amp; Tally Prime)</span><span class="material-symbols-outlined text-xs text-on-surface-variant">arrow_forward</span></button></div>
-</div>
-</div>
-</div>
-</section>
-<!-- Metric Analytics Grid & Daily Streak Hub -->
-<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-lg">
-<!-- Streak Card -->
-<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col justify-between">
-<div class="flex items-center justify-between">
-<span class="font-label-sm text-label-sm uppercase text-on-surface-variant font-semibold">नियमित अभ्यास स्ट्रीक</span>
-<span class="px-space-xs py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface">Day 5/7</span>
-</div>
-<div class="my-space-sm flex items-baseline gap-space-xs">
-<span class="font-display-lg text-display-lg font-bold text-on-surface tracking-tight">5</span>
-<span class="font-title-md text-title-md text-on-surface-variant">दिन लगातार</span>
-</div>
-<!-- Mini Visual Streak Dots -->
-<div class="flex items-center gap-1.5 pt-1">
-<div class="flex-1 h-2 rounded bg-primary" title="Monday"></div>
-<div class="flex-1 h-2 rounded bg-primary" title="Tuesday"></div>
-<div class="flex-1 h-2 rounded bg-primary" title="Wednesday"></div>
-<div class="flex-1 h-2 rounded bg-primary" title="Thursday"></div>
-<div class="flex-1 h-2 rounded bg-primary" title="Friday"></div>
-<div class="flex-1 h-2 rounded bg-surface-container-high" title="Saturday"></div>
-<div class="flex-1 h-2 rounded bg-surface-container-high" title="Sunday"></div>
-</div>
-<span class="font-label-sm text-label-sm text-secondary mt-space-xs flex items-center gap-1">
-<span class="material-symbols-outlined text-sm">local_fire_department</span> +25 XP बोनस सक्रिय
-      </span>
-</div>
-<!-- Daily Study Goal Time Progress -->
-<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
-<div class="flex items-center justify-between">
-<span class="font-label-sm text-label-sm uppercase text-on-surface-variant font-semibold">दैनिक अध्ययन लक्ष्य</span>
-<span class="font-label-sm text-label-sm text-secondary font-bold">75% पूर्ण</span>
-</div>
-<div class="my-space-sm flex items-baseline gap-space-xs">
-<span class="font-headline-lg text-headline-lg font-bold text-on-surface">45</span>
-<span class="font-body-md text-body-md text-on-surface-variant">/ 60 मिनट</span>
-</div>
-<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
-<div class="bg-secondary h-2 rounded-full" style="width: 75%"></div>
-</div>
-<span class="font-label-sm text-label-sm text-on-surface-variant mt-space-xs">
-        शेष: 15 मिनट (आज का NCERT अभ्यास)
-      </span>
-</div>
-<!-- 20-Year PYQ Counter -->
-<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
-<div class="flex items-center justify-between">
-<span class="font-label-sm text-label-sm uppercase text-on-surface-variant font-semibold">20-Year PYQs हल किए</span>
-<span class="material-symbols-outlined text-on-surface-variant text-base">history_edu</span>
-</div>
-<div class="my-space-sm flex items-baseline gap-space-xs">
-<span class="font-headline-lg text-headline-lg font-bold text-on-surface">1,482</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">/ 8,500</span>
-</div>
-<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
-<div class="bg-primary-container h-2 rounded-full" style="width: 22%"></div>
-</div>
-<span class="font-label-sm text-label-sm text-on-surface-variant mt-space-xs">
-        UPSC GS Paper-I (2004-2024 समाहित)
-      </span>
-</div>
-<!-- Mock Accuracy with Sparkline Graphic -->
-<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
-<div class="flex items-center justify-between">
-<span class="font-label-sm text-label-sm uppercase text-on-surface-variant font-semibold">मॉक टेस्ट शुद्धता दर</span>
-<span class="px-space-xs py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">शीर्ष 5%</span>
-</div>
-<div class="my-space-xs flex items-center justify-between">
-<div>
-<span class="font-headline-lg text-headline-lg font-bold text-on-surface">84.6%</span>
-<span class="block font-label-sm text-label-sm text-secondary font-medium">गत 10 टेस्ट का औसत</span>
-</div>
-<!-- Inline Vector Chart Under 2KB -->
-<svg class="w-20 h-10 text-secondary" fill="none" viewbox="0 0 100 40">
-<path d="M0 35 L18 28 L36 30 L54 18 L72 22 L90 8 L100 12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
-<circle cx="90" cy="8" fill="currentColor" r="3"></circle>
-</svg>
-</div>
-<span class="font-label-sm text-label-sm text-on-surface-variant mt-space-xs">
-        नकारात्मक अंकन नियंत्रण: 92% सुरक्षित
-      </span>
-</div>
-</section>
-<!-- Bento Section: Referral Hub (+30 Days) & Instant A4 PDF Print Module -->
-<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-lg">
-<!-- 1. Strict 5-Paid Referral Hub (8 Columns) -->
-<div class="lg:col-span-8 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
-<div>
-<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs pb-space-sm mb-space-md">
-<div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-xl">workspace_premium</span><span class="font-title-lg text-title-lg font-bold text-on-surface">सख्त 5-सफल भुगतान रेफरल रिवॉर्ड</span></div><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">5 Paid Referrals = +30 Days All-Access Free Extension (रिवॉर्ड केवल तभी सक्रिय होता है जब रेफर्ड छात्र ₹199 पास खरीदते हैं)</p></div>
-<span class="self-start sm:self-auto px-space-sm py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold tracking-wide">
-            +30 DAYS FREE EXTENSION
-          </span>
-</div>
-<!-- Visual Step Tracker (0 of 5 Paid Active) -->
-<div class="bg-surface-container-low rounded-xl p-space-md mb-space-md">
-<div class="flex items-center justify-between mb-space-xs">
-<span class="font-label-md text-label-md font-semibold text-on-surface">रेफरल प्रगति स्थिति</span>
-<span class="font-numeric-table text-numeric-table font-bold text-secondary">0 / 5 सशुल्क सक्रिय (Paid Active)</span>
-</div>
-<!-- Segmented Progress Bar (0% active) -->
-<div class="grid grid-cols-5 gap-2 my-space-xs"><div class="h-3 rounded-full bg-surface-container-highest flex items-center justify-center" title="Student 1: Pending"></div><div class="h-3 rounded-full bg-surface-container-highest flex items-center justify-center" title="Student 2: Pending"></div><div class="h-3 rounded-full bg-surface-container-highest flex items-center justify-center" title="Student 3: Pending"></div><div class="h-3 rounded-full bg-surface-container-highest flex items-center justify-center" title="Student 4: Pending"></div><div class="h-3 rounded-full bg-surface-container-highest flex items-center justify-center" title="Student 5: Pending"></div></div>
-<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mt-1"><span class="">अभी कोई सशुल्क रेफरल नहीं • लक्ष्य: 5 छात्र अनिवार्य (प्रत्येक ₹199 भुगतान पर)</span><span class="font-semibold text-secondary">0% पूर्ण</span></div>
-</div>
-<!-- Clear 3-Step Verification Rule Breakdown -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm mb-space-md">
-<div class="bg-surface-container p-space-sm rounded-lg">
-<span class="font-label-sm text-label-sm text-secondary font-bold block mb-1">चरण 1</span>
-<span class="font-label-md text-label-md font-semibold text-on-surface block">आपका ₹199 पास एक्टिव</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">केवल सक्रिय खाताधारक ही रेफरल हेतु मान्य हैं।</span>
-</div>
-<div class="bg-surface-container p-space-sm rounded-lg">
-<span class="font-label-sm text-label-sm text-secondary font-bold block mb-1">चरण 2</span>
-<span class="font-label-md text-label-md font-semibold text-on-surface block">5 सहपाठियों को आमंत्रित करें</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">अपने निजी कोड से मित्रों का पंजीकरण कराएं।</span>
-</div>
-<div class="bg-surface-container p-space-sm rounded-lg">
-<span class="font-label-sm text-label-sm text-secondary font-bold block mb-1">चरण 3</span>
-<span class="font-label-md text-label-md font-semibold text-on-surface block">ऑटोमैटिक +30 दिन विस्तार</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">पाँचवें छात्र के ₹199 भुगतान पर सिस्टम स्वतः लागू करेगा।</span>
-</div>
-</div>
-</div>
-<!-- Share Mechanism & Copy Code Action -->
-<div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-space-sm pt-space-sm bg-surface-container rounded-lg p-space-sm">
-<div class="flex items-center gap-space-xs">
-<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">आपका रेफरल कोड:</span>
-<span class="font-numeric-table text-numeric-table font-bold text-primary bg-surface-container-lowest px-space-xs py-1 rounded select-all" id="referralCodeText">EDUPRO-HR91</span>
-<button class="p-1 rounded text-on-surface-variant hover:text-on-surface" onclick="navigator.clipboard.writeText('EDUPRO-HR91'); alert('रेफरल कोड कॉपी हो गया!');" title="कॉपी करें">
-<span class="material-symbols-outlined text-sm">content_copy</span>
-</button>
-</div>
-<div class="flex items-center gap-space-xs">
-<a class="flex-1 sm:flex-initial flex items-center justify-center gap-1 bg-surface-container-lowest hover:bg-surface-container-high text-on-surface px-space-sm py-space-xs rounded font-label-md text-label-md transition-colors shadow-sm" href="https://api.whatsapp.com/send?text=EduPro%20%E0%A4%AA%E0%A4%B0%20%E0%A4%AE%E0%A5%87%E0%A4%B0%E0%A5%87%20%E0%A4%B8%E0%A4%BE%E0%A4%A5%2020-Year%20PYQ%20%E0%A4%B5%20Mock%20Tests%20%E0%A4%85%E0%A4%AD%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%B8%20%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82%E0%A5%A4%20%E0%A4%95%E0%A5%8B%E0%A4%A1%20EDUPRO-HR91%20%E0%A4%B8%E0%A5%87%20%E0%A4%9C%E0%A5%81%E0%A4%A1%E0%A4%BC%E0%A5%87%E0%A4%82:" target="_blank">
-<span class="material-symbols-outlined text-base text-secondary">share</span>
-            WhatsApp पर शेयर
-          </a>
-<a class="flex-1 sm:flex-initial flex items-center justify-center gap-1 bg-surface-container-lowest hover:bg-surface-container-high text-on-surface px-space-sm py-space-xs rounded font-label-md text-label-md transition-colors shadow-sm" href="https://t.me/share/url?url=https://edupro.internal/register&amp;text=EduPro%20National%20Exam%20Prep%20%7C%20Code:%20EDUPRO-HR91" target="_blank">
-<span class="material-symbols-outlined text-base text-secondary">send</span>
-            Telegram
-          </a>
-</div>
-</div>
-</div>
-<!-- 2. Instant 1-Click A4 PDF Print & PYQ Center (4 Columns) -->
-<div class="lg:col-span-4 bg-primary text-on-primary rounded-xl p-space-lg shadow-sm flex flex-col justify-between relative overflow-hidden">
-<div class="absolute right-0 bottom-0 opacity-10 pointer-events-none">
-<span class="material-symbols-outlined text-[160px] -mb-10 -mr-10">print</span>
-</div>
-<div>
-<div class="flex items-center gap-space-xs mb-space-xs">
-<span class="px-space-xs py-0.5 rounded bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold">1-CLICK A4 REPOSITORY</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm font-bold text-on-primary">ऑफलाइन प्रिंट व PYQ केंद्र</h3>
-<p class="font-body-sm text-body-sm text-on-primary-container mt-space-xs leading-relaxed">
-          घर या साइबर कैफे से सीधे 2-पेज कॉम्पैक्ट प्रिंट हेतु ओएमआर शीट व विगत 20 वर्षों के हल प्रश्न पत्र।
-        </p>
-<!-- Dynamic Watermark Security Notice -->
-<div class="mt-space-md p-space-sm rounded-lg bg-primary-container/80 text-on-primary font-label-sm text-label-sm flex items-start gap-space-xs">
-<span class="material-symbols-outlined text-sm mt-0.5 text-secondary-fixed">security</span>
-<span class="">प्रत्येक A4 PDF पर विद्यार्थी आईडी (#EDU-8921) व समय की डिजिटल वॉटरमार्क सुरक्षा सक्रिय रहती है।</span>
-</div>
-</div>
-<div class="flex flex-col gap-space-xs mt-space-lg">
-<a class="flex items-center justify-center gap-space-xs w-full bg-on-primary text-primary hover:bg-surface-container-lowest font-label-md text-label-md py-space-xs rounded font-semibold transition-colors shadow-sm" href="print.html">
-<span class="material-symbols-outlined text-base">print</span>
-          A4 रेडी प्रश्न पत्र खोलें (Print.html)
-        </a>
-<a class="flex items-center justify-center gap-space-xs w-full bg-primary-container hover:bg-surface-tint text-on-primary font-label-md text-label-md py-space-xs rounded transition-colors" href="pyq-tricks.html">
-<span class="material-symbols-outlined text-base">psychology</span>
-          20-Year ट्रिक्स व समाधान (pyq-tricks.html)
-        </a>
-</div>
-</div>
-</section>
-<!-- Active Courses & Test Series Quick Launcher Cards Grid -->
-<section class="mb-space-lg">
-<div class="flex items-center justify-between mb-space-md">
-<div>
-<h2 class="font-title-lg text-title-lg font-bold text-on-surface">सक्रिय विषय एवं टेस्ट सीरीज क्विक लॉन्चर</h2>
-<p class="font-body-sm text-body-sm text-on-surface-variant">अपने नामांकित पाठ्यक्रमों के 2004-2025 हल प्रश्न एवं मॉक अभ्यास तुरंत प्रारंभ करें</p>
-</div>
-<a class="text-secondary font-label-md text-label-md font-semibold hover:underline flex items-center gap-1" href="test-series.html">
-        संपूर्ण टेस्ट कैटलॉग <span class="material-symbols-outlined text-sm">arrow_forward</span>
-</a>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
-<!-- Course 1: UPSC GS & SSC -->
-<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
-<div>
-<div class="flex items-start justify-between">
-<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-xl">🛡️</div>
-<span class="px-space-xs py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">2004-2025 Solved</span>
-</div>
-<h3 class="font-title-md text-title-md font-bold text-on-surface mt-space-sm group-hover:text-secondary transition-colors">
-            UPSC Civil Services &amp; SSC CGL
-          </h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
-            General Studies Paper I &amp; II (CSAT), समसामयिकी 2024-25, एवं विगत 20 वर्षों के आधिकारिक प्रश्न संग्रह।
-          </p>
-<div class="mt-space-sm flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
-<span class="material-symbols-outlined text-xs">analytics</span> 120+ टेस्ट उपलब्ध • द्विभाषी
-          </div>
-</div>
-<div class="mt-space-md pt-space-xs">
-<a class="block text-center w-full bg-primary hover:bg-secondary text-on-primary font-label-md text-label-md py-space-xs rounded transition-colors font-medium" href="test-series.html?stream=upsc">
-            मॉक टेस्ट आरंभ करें
-          </a>
-</div>
-</div>
-<!-- Course 2: NEET Medical -->
-<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
-<div>
-<div class="flex items-start justify-between">
-<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-xl">🩺</div>
-<span class="px-space-xs py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">NCERT Line-to-Line</span>
-</div>
-<h3 class="font-title-md text-title-md font-bold text-on-surface mt-space-sm group-hover:text-secondary transition-colors">
-            NEET (UG Medical Entrance)
-          </h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
-            Biology NCERT लाइन-दर-लाइन मॉक, Physics संख्यात्मक हल, एवं Chemistry Formula Bank (NTA पैटर्न)।
-          </p>
-<div class="mt-space-sm flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
-<span class="material-symbols-outlined text-xs">quiz</span> 85+ चैप्टर टेस्ट • OMR अनुकूलित
-          </div>
-</div>
-<div class="mt-space-md pt-space-xs">
-<a class="block text-center w-full bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md py-space-xs rounded transition-colors font-medium" href="test-series.html?stream=neet">
-            अभ्यास टेस्ट खोलें
-          </a>
-</div>
-</div>
-<!-- Course 3: 10th/12th Boards -->
-<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
-<div>
-<div class="flex items-start justify-between">
-<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-xl">🎒</div>
-<span class="px-space-xs py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">RBSE / CBSE 2025</span>
-</div>
-<h3 class="font-title-md text-title-md font-bold text-on-surface mt-space-sm group-hover:text-secondary transition-colors">
-            10th व 12th बोर्ड (RBSE / CBSE)
-          </h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
-            Physics, Chemistry, Maths, Hindi व English 20-Year बोर्ड मॉडल पेपर्स एवं टॉपर्स की कॉपी विश्लेषण।
-          </p>
-<div class="mt-space-sm flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
-<span class="material-symbols-outlined text-xs">description</span> 200+ ब्लूप्रिंट प्रश्न पत्र
-          </div>
-</div>
-<div class="mt-space-md pt-space-xs">
-<a class="block text-center w-full bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md py-space-xs rounded transition-colors font-medium" href="test-series.html?stream=board">
-            बोर्ड PYQs हल करें
-          </a>
-</div>
-</div>
-<!-- Course 4: RS-CIT & Tally Prime -->
-<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
-<div>
-<div class="flex items-start justify-between">
-<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-xl">💻</div>
-<span class="px-space-xs py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">प्रमाणन टेस्ट</span>
-</div>
-<h3 class="font-title-md text-title-md font-bold text-on-surface mt-space-sm group-hover:text-secondary transition-colors">
-            RS-CIT कंप्यूटर व Tally Prime
-          </h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
-            MS Office 365, Internet, Cyber Security, GST वाउचर एंट्री व अकाउंटिंग प्रैक्टिकल टेस्ट।
-          </p>
-<div class="mt-space-sm flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
-<span class="material-symbols-outlined text-xs">computer</span> 35 परीक्षा-आधारित मॉड्यूल
-          </div>
-</div>
-<div class="mt-space-md pt-space-xs">
-<a class="block text-center w-full bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md py-space-xs rounded transition-colors font-medium" href="test-series.html?stream=rscit">
-            कंप्यूटर टेस्ट शुरू करें
-          </a>
-</div>
-</div>
-<!-- Course 5: College Degree (BA, BSc, BCom) -->
-<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
-<div>
-<div class="flex items-start justify-between">
-<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-xl">🎓</div>
-<span class="px-space-xs py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">यूनिवर्सिटी बैंक</span>
-</div>
-<h3 class="font-title-md text-title-md font-bold text-on-surface mt-space-sm group-hover:text-secondary transition-colors">
-            कॉलेज डिग्री (BA, B.Sc, B.Com)
-          </h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
-            RU, MDSU, MLSU एवं समस्त राजस्थान/केंद्रीय विश्वविद्यालयों के 20 वर्षीय अनसॉल्वड व सॉल्वड प्रश्न पत्र।
-          </p>
-<div class="mt-space-sm flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
-<span class="material-symbols-outlined text-xs">library_books</span> सेमेस्टर व वार्षिक प्रश्नोत्तरी
-          </div>
-</div>
-<div class="mt-space-md pt-space-xs">
-<a class="block text-center w-full bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md py-space-xs rounded transition-colors font-medium" href="test-series.html?stream=college">
-            यूनिवर्सिटी पेपर्स देखें
-          </a>
-</div>
-</div>
-<!-- Quick Trial Conversion Promo Card -->
-<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm flex flex-col justify-between"><div><div class="flex items-center justify-between text-secondary font-label-sm text-label-sm font-semibold mb-space-xs"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">lock_open</span> 30-फ्री प्रश्न कोटा</span><span class="px-space-xs py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold text-xs">100% फ्री ट्रायल एक्टिव</span></div><h3 class="font-title-md text-title-md font-bold text-on-surface mt-space-xs">0 / 30 प्रश्न उपयोग किए गए</h3><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">असीमित 20-Year PYQ, OMR शीट व A4 प्रिंटेबल प्रश्नों हेतु ₹199 (1 Month Pass) तुरंत एक्टिव करें।</p><div class="w-full bg-surface-container-high rounded-full h-2 my-space-xs overflow-hidden"><div class="bg-secondary h-2 rounded-full" style="width: 0%"></div></div><span class="text-xs text-on-surface-variant block">30 प्रश्न शेष • बिना किसी क्रेडिट कार्ड के</span></div><div class="mt-space-md flex flex-col gap-2"><a class="flex items-center justify-center gap-2 w-full bg-secondary hover:bg-primary-container text-on-secondary font-label-md text-label-md py-space-xs rounded transition-colors font-semibold shadow-sm" href="pricing-plan.html">असीमित अनलॉक ₹199 (1 Month Pass)</a><a class="flex items-center justify-center gap-1 w-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm py-1 rounded transition-colors" href="test-series.html"><span class="material-symbols-outlined text-xs">play_circle</span>फ्री टेस्ट ड्राइव शुरू करें</a></div></div>
-</div>
-</section>
-<!-- Confidential Support & Institutional Helpdesk Module -->
-<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm mb-space-lg">
-<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
-<div class="flex items-start gap-space-md">
-<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-secondary shrink-0">
-<span class="material-symbols-outlined text-2xl">support_agent</span>
-</div>
-<div>
-<h3 class="font-title-md text-title-md font-bold text-on-surface">गोपनीय संस्थागत सहायता एवं टिकट प्रणाली</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
-            EduPro आधिकारिक प्रणाली पर कोई निजी मोबाइल नंबर प्रसारित नहीं किया जाता। तकनीकी या शैक्षणिक प्रश्नों के समाधान हेतु सीधे हेल्पडेस्क टिकट दर्ज करें।
-          </p>
-<div class="flex items-center gap-space-md mt-2 text-on-surface-variant font-label-sm text-label-sm">
-<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-secondary"></span> औसत समाधान समय: &lt; 2 घंटे</span>
-<span class="">• एनक्रिप्शन: AES-256 बिट</span>
-</div>
-</div>
-</div>
-<button class="shrink-0 px-space-md py-space-xs bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface rounded-lg font-label-md text-label-md font-semibold transition-colors flex items-center gap-2" onclick="document.getElementById('ticketModal').classList.remove('hidden')">
-<span class="material-symbols-outlined text-base">confirmation_number</span>
-        EduPro आधिकारिक हेल्पडेस्क टिकट
-      </button>
-</div>
-</section>
-<!-- Statutory Legal Notice & Anti-Piracy Warning -->
-<footer class="mt-space-md pt-space-lg pb-space-xl bg-surface-container-low rounded-xl px-space-lg text-center">
-<div class="max-w-4xl mx-auto flex flex-col items-center">
-<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider mb-2 font-semibold">
-<span class="material-symbols-outlined text-sm text-secondary">gavel</span>
-        वैधानिक सूचना एवं एंटी-पायरेसी चेतावनी (Statutory Legal Notice)
-      </div>
-<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-        EduPro मंच पर उपलब्ध समस्त 20-Year PYQ, टेस्ट सामग्री एवं विश्लेषणात्मक हल भारतीय कॉपीराइट अधिनियम (1957) के तहत सुरक्षित हैं। 
-        सामग्री का किसी भी टेलीग्राम चैनल, व्हाट्सऐप ग्रुप या अनधिकृत पोर्टल पर पुनर्विक्रय, स्क्रीन-स्क्रैपिंग अथवा अनधिकृत वितरण सख्त गैरकानूनी है। 
-        उल्लंघनकर्ता की विद्यार्थी आईडी (#EDU-8921) तत्काल प्रभाव से स्थायी रूप से निरस्त कर विधिक कार्रवाई प्रारंभ की जाएगी।
-      </p>
-<div class="mt-space-md flex flex-wrap justify-center gap-space-md text-on-surface-variant font-label-sm text-label-sm">
-<span class="">© 2025 EduPro Academic Nexus</span>
-<span class="">•</span>
-<span class="">सभी अधिकार सुरक्षित</span>
-<span class="">•</span>
-<span class="">सर्वर स्थान: जयपुर, राजस्थान (IN)</span>
-</div>
-</div>
-</footer>
-<!-- Confidential Helpdesk Ticket Modal -->
-<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-space-md bg-primary-container/40 backdrop-blur-sm" id="ticketModal">
-<div class="bg-surface-container-lowest w-full max-w-lg rounded-xl shadow-2xl overflow-hidden">
-<div class="p-space-md bg-surface-container flex items-center justify-between">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-secondary">confirmation_number</span>
-<span class="font-title-md text-title-md font-bold text-on-surface">नया आधिकारिक सहायता टिकट</span>
-</div>
-<button class="text-on-surface-variant hover:text-on-surface p-1" onclick="document.getElementById('ticketModal').classList.add('hidden')">
-<span class="material-symbols-outlined text-base">close</span>
-</button>
-</div>
-<form class="p-space-lg flex flex-col gap-space-md" onsubmit="handleTicketSubmit(event)">
-<div>
-<label class="block font-label-sm text-label-sm text-on-surface font-semibold mb-1">विद्यार्थी पहचान (स्वतः प्रमाणित)</label>
-<input class="w-full bg-surface-container-low px-space-sm py-space-xs rounded text-on-surface-variant font-body-sm text-body-sm outline-none cursor-not-allowed" disabled="" type="text" value="#EDU-8921 - राजेश कुमार (UPSC Cell)"/>
-</div>
-<div>
-<label class="block font-label-sm text-label-sm text-on-surface font-semibold mb-1">समस्या का संवर्ग</label>
-<select class="w-full border-0 bg-surface-container-low px-space-sm py-space-xs rounded text-on-surface font-body-sm text-body-sm outline-none">
-<option>PYQ उत्तर समाधान में शंका</option>
-<option>₹199 पास एक्टिवेशन / रसीद समस्या</option>
-<option>A4 PDF प्रिंट डाउनलोड त्रुटि</option>
-<option>रेफरल 5-छात्र रिवॉर्ड ट्रैकिंग</option>
-<option>अन्य शैक्षणिक प्रश्न</option>
-</select>
-</div>
-<div>
-<label class="block font-label-sm text-label-sm text-on-surface font-semibold mb-1">विस्तृत विवरण</label>
-<textarea class="w-full bg-surface-container-low p-space-sm rounded text-on-surface font-body-sm text-body-sm outline-none placeholder:text-on-surface-variant focus:bg-surface-container-lowest" placeholder="कृपया अपनी समस्या का संक्षिप्त व स्पष्ट विवरण दें..." required="" rows="4"></textarea>
-</div>
-<div class="flex items-center justify-end gap-space-xs pt-space-xs">
-<button class="px-space-md py-space-xs rounded text-on-surface-variant hover:text-on-surface font-label-md text-label-md" onclick="document.getElementById('ticketModal').classList.add('hidden')" type="button">
-            रद्द करें
-          </button>
-<button class="px-space-md py-space-xs rounded bg-primary hover:bg-secondary text-on-primary font-label-md text-label-md font-semibold transition-colors shadow-sm" type="submit">
-            टिकट दर्ज करें (Submit)
-          </button>
-</div>
-</form>
-</div>
-</div>
-<!-- Inline Micro-interactions Script -->
-<script>
-    // Stream Switcher Interactive Toggling
-    const streamBtn = document.getElementById('streamSwitchBtn');
-    const streamMenu = document.getElementById('streamMenu');
-    const dropdownArrow = document.getElementById('dropdownArrow');
-    const currentStreamLabel = document.getElementById('currentStreamLabel');
-
-    if (streamBtn && streamMenu) {
-      streamBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const isHidden = streamMenu.classList.contains('hidden');
-        if (isHidden) {
-          streamMenu.classList.remove('hidden');
-          dropdownArrow.classList.add('rotate-180');
-        } else {
-          streamMenu.classList.add('hidden');
-          dropdownArrow.classList.remove('rotate-180');
-        }
-      });
-
-      document.addEventListener('click', () => {
-        if (!streamMenu.classList.contains('hidden')) {
-          streamMenu.classList.add('hidden');
-          dropdownArrow.classList.remove('rotate-180');
-        }
-      });
-    }
-
-    function setStream(streamName) {
-      if (currentStreamLabel) {
-        currentStreamLabel.textContent = streamName;
       }
-      if (streamMenu) {
-        streamMenu.classList.add('hidden');
-      }
-      if (dropdownArrow) {
-        dropdownArrow.classList.remove('rotate-180');
-      }
-    }
-
-    function handleTicketSubmit(e) {
-      e.preventDefault();
-      alert('टिकट संख्या #TKT-9941 सफलतापूर्वक दर्ज हो गया है। 2 घंटे में समाधान प्राप्त होगा।');
-      document.getElementById('ticketModal').classList.add('hidden');
     }
   </script>
-</div></main></div></body></html>
+
+  <style>
+    /* Strict Content & Anti-Copy Protection */
+    body {
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-touch-callout: none;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 5px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+
+<body class="min-h-full flex flex-col font-sans bg-slate-100 text-slate-800 antialiased" oncontextmenu="return false;">
+
+  <!-- ================= TOP HEADER NAVIGATION ================= -->
+  <header class="bg-white border-b border-slate-200 h-16 shrink-0 flex items-center justify-between px-4 lg:px-8 sticky top-0 z-30 shadow-xs">
+    <div class="flex items-center gap-6">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-brand-800 text-white flex items-center justify-center font-black text-xl shadow-md group-hover:scale-105 transition-transform">EP</div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-extrabold text-xl tracking-tight text-brand-900">EduPro</span>
+            <span class="text-[10px] font-bold tracking-wider px-2 py-0.5 rounded bg-brand-50 text-brand-700 border border-brand-200">STUDENT PORTAL</span>
+          </div>
+          <p class="text-[11px] text-slate-500 font-medium">अखिल भारतीय डिजिटल अध्ययन प्रकोष्ठ</p>
+        </div>
+      </a>
+
+      <!-- Goal / Stream Indicator Badge -->
+      <div class="hidden md:flex items-center gap-2 bg-slate-50 border border-slate-200 px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-700">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span>सक्रिय संकाय:</span>
+        <span id="currentStreamLabel" class="font-bold text-brand-800">UPSC CSE & SSC CGL</span>
+        <button onclick="toggleStreamModal()" class="text-brand-600 hover:text-brand-800 text-[11px] font-bold underline ml-1">बदलें</button>
+      </div>
+    </div>
+
+    <!-- Right Header Actions -->
+    <div class="flex items-center gap-4 text-xs font-semibold">
+      <nav class="hidden lg:flex items-center gap-4 text-slate-600">
+        <a href="index.html" class="hover:text-brand-700">होमपेज</a>
+        <a href="test-series.html" class="hover:text-brand-700">टेस्ट सीरीज़</a>
+        <a href="pyq-tricks.html" class="hover:text-brand-700">20-Year PYQ</a>
+        <a href="gk.html" class="hover:text-brand-700">दैनिक GK</a>
+        <a href="print.html" class="hover:text-brand-700">1-क्लिक प्रिंट</a>
+        <a href="help.html" class="hover:text-brand-700">सहायता</a>
+      </nav>
+
+      <!-- Pass Upgrade Action Button -->
+      <a href="payment.html" class="px-3.5 py-2 bg-brand-800 hover:bg-brand-900 text-white rounded-xl shadow-xs transition flex items-center gap-1.5 text-xs font-bold">
+        <span class="material-symbols-outlined text-sm text-amber-300">workspace_premium</span>
+        <span>₹199 All-Access Pass (30 दिन)</span>
+      </a>
+
+      <a href="login.html" onclick="sessionStorage.clear()" class="text-slate-400 hover:text-rose-600 p-1.5 rounded-lg border border-slate-200 transition" title="लॉगआउट">
+        <span class="material-symbols-outlined text-base">logout</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ================= MAIN DASHBOARD BODY ================= -->
+  <main class="flex-1 max-w-7xl w-full mx-auto p-4 lg:p-8 space-y-6">
+
+    <!-- WELCOME GREETING & ACCOUNT STATUS BANNER -->
+    <div class="bg-gradient-to-r from-brand-900 via-brand-800 to-slate-900 text-white p-6 lg:p-8 rounded-3xl shadow-md flex flex-col md:flex-row items-start md:items-center justify-between gap-6 border border-slate-800">
+      <div class="space-y-2">
+        <div class="inline-flex items-center gap-2 bg-white/10 px-3 py-1 rounded-full text-xs font-semibold text-emerald-300 border border-white/15">
+          <span class="material-symbols-outlined text-sm">verified</span>
+          <span>विद्यार्थी आईडी: #EDU-8921 • सक्रिय अध्ययनरत</span>
+        </div>
+        <h1 class="text-2xl lg:text-3xl font-black">नमस्ते, प्रतियोगी छात्र!</h1>
+        <p class="text-xs lg:text-sm text-slate-300 max-w-2xl leading-relaxed">
+          आपका शैक्षणिक लक्ष्य: <strong>स्कूल बोर्ड, कॉलेज डिग्री एवं अखिल भारतीय प्रतियोगी परीक्षाएं</strong>। 20-वर्षीय प्रामाणिक प्रश्न पत्र हल करें और अपनी तैयारी को शीर्ष स्तर पर ले जाएं।
+        </p>
+      </div>
+
+      <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 text-center shrink-0 w-full sm:w-auto">
+        <div class="text-[11px] font-bold text-slate-300 uppercase tracking-wider">सब्सक्रिप्शन स्थिति</div>
+        <div class="text-lg font-black text-amber-300 mt-0.5">₹199 / माह (30 दिन)</div>
+        <div class="text-[11px] text-emerald-300 font-semibold mt-1">असीमित PYQ व टेस्ट एक्सेस सक्रिय</div>
+        <a href="payment.html" class="mt-2.5 inline-block text-[11px] font-bold bg-white text-brand-900 px-3 py-1.5 rounded-lg hover:bg-slate-100 transition shadow-2xs">
+          वैधता बढ़ाएं / नवीनीकरण
+        </a>
+      </div>
+    </div>
+
+    <!-- 4 CORE METRIC CARDS GRID -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      
+      <!-- Card 1: Daily Streak -->
+      <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-2xs space-y-2">
+        <div class="flex items-center justify-between text-xs font-bold text-slate-500">
+          <span>नियमित अध्ययन स्ट्रीक</span>
+          <span class="material-symbols-outlined text-amber-500">local_fire_department</span>
+        </div>
+        <div class="text-2xl font-black text-slate-900">5 दिन लगातार</div>
+        <p class="text-[11px] text-emerald-600 font-semibold">+25 XP बोनस अर्जित • निरंतरता बनाए रखें</p>
+      </div>
+
+      <!-- Card 2: Daily Study Goal -->
+      <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-2xs space-y-2">
+        <div class="flex items-center justify-between text-xs font-bold text-slate-500">
+          <span>दैनिक अभ्यास लक्ष्य</span>
+          <span class="material-symbols-outlined text-brand-600">timer</span>
+        </div>
+        <div class="text-2xl font-black text-slate-900">45 / 60 मिनट</div>
+        <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+          <div class="bg-brand-600 h-full rounded-full" style="width: 75%"></div>
+        </div>
+        <p class="text-[11px] text-slate-500">75% पूर्ण • आज का NCERT अभ्यास प्रगति पर</p>
+      </div>
+
+      <!-- Card 3: 20-Year Solved PYQs -->
+      <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-2xs space-y-2">
+        <div class="flex items-center justify-between text-xs font-bold text-slate-500">
+          <span>20-Year PYQs हल किए</span>
+          <span class="material-symbols-outlined text-indigo-600">history_edu</span>
+        </div>
+        <div class="text-2xl font-black text-slate-900">1,482 / 8,500</div>
+        <p class="text-[11px] text-slate-500">विगत 20 वर्षों के सत्यापित प्रश्नकोष से अभ्यास</p>
+      </div>
+
+      <!-- Card 4: Accuracy Rate -->
+      <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-2xs space-y-2">
+        <div class="flex items-center justify-between text-xs font-bold text-slate-500">
+          <span>मॉक टेस्ट शुद्धता दर</span>
+          <span class="material-symbols-outlined text-emerald-600">trending_up</span>
+        </div>
+        <div class="text-2xl font-black text-slate-900">84.6% Accuracy</div>
+        <p class="text-[11px] text-emerald-600 font-semibold">शीर्ष 5% छात्रों में स्थान • सुरक्षित स्कोर</p>
+      </div>
+    </div>
+
+    <!-- ================= STRICT 5-PAID REFERRAL REWARD HUB ================= -->
+    <div class="bg-white p-6 lg:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-4 border-b border-slate-100">
+        <div class="space-y-1">
+          <div class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-800 bg-brand-50 px-2.5 py-1 rounded-md border border-brand-200">
+            <span class="material-symbols-outlined text-sm text-brand-700">military_tech</span> सख्त 5-सफल भुगतान रेफरल रिवॉर्ड
+          </div>
+          <h2 class="text-lg lg:text-xl font-black text-slate-900">5 Paid Referrals = +30 Days All-Access Free Extension</h2>
+          <p class="text-xs text-slate-500">रिवॉर्ड केवल तभी सक्रिय होता है जब आपके रेफर्ड छात्र स्वयं ₹199 का पास ख़रीदते हैं।</p>
+        </div>
+
+        <!-- Progress Counter: 0 / 5 Paid Active -->
+        <div class="text-right shrink-0">
+          <div class="text-xs font-bold text-slate-500">सक्रिय सशुल्क रेफरल</div>
+          <div class="text-2xl font-black text-brand-800">0 / 5 <span class="text-xs font-bold text-slate-500">सशुल्क सक्रिय (Paid Active)</span></div>
+          <span class="inline-block text-[10px] font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded mt-1">लक्ष्य: 5 सशुल्क छात्र अनिवार्य</span>
+        </div>
+      </div>
+
+      <!-- 3 Clear Stages for Students -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-1.5">
+          <span class="text-xs font-bold text-brand-700 block">चरण 1: आपका ₹199 पास एक्टिव</span>
+          <h4 class="text-xs font-bold text-slate-900">वैध सदस्यता अनिवार्य</h4>
+          <p class="text-[11px] text-slate-500">केवल सक्रिय ₹199 पास धारक ही रेफरल रिवॉर्ड के पात्र हैं।</p>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-1.5">
+          <span class="text-xs font-bold text-brand-700 block">चरण 2: सहपाठियों को आमंत्रित करें</span>
+          <h4 class="text-xs font-bold text-slate-900">अपने विशिष्ट कोड से जोड़ें</h4>
+          <p class="text-[11px] text-slate-500">अपने निजी रेफरल कोड या लिंक से 5 गंभीर छात्रों का पंजीकरण कराएं।</p>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-1.5">
+          <span class="text-xs font-bold text-brand-700 block">चरण 3: ऑटोमैटिक +30 दिन विस्तार</span>
+          <h4 class="text-xs font-bold text-slate-900">पाँचवें छात्र के भुगतान पर</h4>
+          <p class="text-[11px] text-slate-500">पाँचों छात्रों द्वारा ₹199 पास लेने पर सिस्टम स्वतः आपकी वैधता में 30 दिन जोड़ देगा।</p>
+        </div>
+      </div>
+
+      <!-- Referral Link & Social Sharing -->
+      <div class="p-4 bg-brand-50/60 rounded-2xl border border-brand-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="space-y-0.5 text-center sm:text-left">
+          <span class="text-[11px] font-bold text-slate-500 uppercase">आपका विशिष्ट रेफरल कोड</span>
+          <div class="text-sm font-black text-brand-900 flex items-center gap-2">
+            <span class="bg-white px-3 py-1 rounded-lg border border-brand-200 font-mono">EDUPRO-HR91</span>
+            <button onclick="copyReferralCode()" class="text-brand-600 hover:text-brand-800 text-xs font-bold flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">content_copy</span> कॉपी करें
+            </button>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2.5 w-full sm:w-auto">
+          <a href="https://api.whatsapp.com/send?text=EduPro%20National%20Portal%2020-Year%20PYQ%20Mock%20Tests%20Join%20with%20Code:%20EDUPRO-HR91" target="_blank" class="flex-1 sm:flex-initial py-2.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold shadow-xs transition flex items-center justify-center gap-1.5">
+            💬 WhatsApp शेयर
+          </a>
+          <a href="https://t.me/share/url?url=https://edupro-website2-0.vercel.app&text=EduPro%20National%20Prep%20Code:%20EDUPRO-HR91" target="_blank" class="flex-1 sm:flex-initial py-2.5 px-4 bg-sky-600 hover:bg-sky-700 text-white rounded-xl text-xs font-bold shadow-xs transition flex items-center justify-center gap-1.5">
+            ✈️ Telegram शेयर
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= 30-FREE QUESTION TRIAL & 1-CLICK A4 PRINT SECTION ================= -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      
+      <!-- Free Trial Tracker (30-Questions) -->
+      <div class="lg:col-span-6 bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+        <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-brand-600 text-xl">lock_open</span>
+            <h3 class="text-sm font-bold text-slate-900">निःशुल्क 30-प्रश्न ट्रायल कोटा</h3>
+          </div>
+          <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">100% एक्टिव</span>
+        </div>
+
+        <div class="space-y-1.5">
+          <div class="flex justify-between text-xs font-bold">
+            <span class="text-slate-600">उपयोग किए गए प्रश्न:</span>
+            <span class="text-brand-900">0 / 30 प्रश्न प्रयुक्त (30 शेष)</span>
+          </div>
+          <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+            <div class="bg-emerald-500 h-full rounded-full" style="width: 0%"></div>
+          </div>
+          <p class="text-[11px] text-slate-500">प्रत्येक नए छात्र को 30 वास्तविक परीक्षा प्रश्नों का निष्पक्ष अभ्यास मुफ़्त मिलता है।</p>
+        </div>
+
+        <div class="pt-2 flex items-center gap-3">
+          <a href="test-series.html" class="flex-1 py-2.5 bg-brand-800 hover:bg-brand-900 text-white text-center font-bold text-xs rounded-xl shadow-xs transition">
+            फ्री टेस्ट ड्राइव शुरू करें →
+          </a>
+          <a href="payment.html" class="py-2.5 px-4 bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 font-bold text-xs rounded-xl transition">
+            ₹199 ऑल-अनलॉक
+          </a>
+        </div>
+      </div>
+
+      <!-- 1-Click A4 PDF Print & PYQ Center -->
+      <div class="lg:col-span-6 bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+        <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-rose-600 text-xl">print</span>
+            <h3 class="text-sm font-bold text-slate-900">1-क्लिक A4 PDF नोट्स व PYQ प्रिंट सेंटर</h3>
+          </div>
+          <span class="text-xs font-bold text-brand-800 bg-brand-50 px-2 py-0.5 rounded border border-brand-200">A4 रेडी शीट्स</span>
+        </div>
+
+        <p class="text-xs text-slate-600 leading-relaxed">
+          घर या साइबर कैफे से सीधे प्रिंट निकालने योग्य 2-पेज कॉम्पैक्ट फॉर्मूला शीट्स, 20-वर्षीय सॉल्व्ड प्रश्न पत्र और OMR शीट्स। प्रत्येक प्रिंट पर सुरक्षा वॉटरमार्क स्वतः संलग्न होता है।
+        </p>
+
+        <div class="pt-2 flex items-center gap-3">
+          <a href="print.html" class="flex-1 py-2.5 bg-slate-900 hover:bg-black text-white text-center font-bold text-xs rounded-xl shadow-xs transition flex items-center justify-center gap-1.5">
+            <span class="material-symbols-outlined text-sm">print</span> A4 प्रिंट स्टूडियो खोलें
+          </a>
+          <a href="pyq-tricks.html" class="py-2.5 px-4 bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 font-bold text-xs rounded-xl transition">
+            देसी ट्रिक्स वॉल्ट
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= ACTIVE STREAMS & TEST QUICK LAUNCHER ================= -->
+    <div class="bg-white p-6 lg:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+        <div class="space-y-0.5">
+          <h2 class="text-base font-bold text-slate-900">सक्रिय संकाय एवं टेस्ट सीरीज़ क्विक लॉन्चर</h2>
+          <p class="text-xs text-slate-500">अपने चयनित पाठ्यक्रम के 2004-2025 हल प्रश्न एवं परीक्षा-सिमुलेशन प्रारंभ करें:</p>
+        </div>
+        <a href="test-series.html" class="text-xs font-bold text-brand-700 hover:underline flex items-center gap-1">
+          सम्पूर्ण 15 संकाय देखें →
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        
+        <!-- Stream 1: UPSC & SSC -->
+        <a href="test-series.html?stream=upsc" class="p-4 rounded-2xl bg-slate-50 hover:bg-brand-50 border border-slate-200 hover:border-brand-300 transition group space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-xl">🛡️</span>
+            <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">20-Year PYQ Active</span>
+          </div>
+          <h4 class="text-xs font-bold text-slate-900 group-hover:text-brand-800">UPSC Civil Services & SSC CGL</h4>
+          <p class="text-[11px] text-slate-500">GS Paper I & II (CSAT), समसामयिकी और 2004-2025 के सॉल्व्ड पेपर्स।</p>
+        </a>
+
+        <!-- Stream 2: NEET Medical -->
+        <a href="test-series.html?stream=neet" class="p-4 rounded-2xl bg-slate-50 hover:bg-brand-50 border border-slate-200 hover:border-brand-300 transition group space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-xl">🩺</span>
+            <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">NTA Standard</span>
+          </div>
+          <h4 class="text-xs font-bold text-slate-900 group-hover:text-brand-800">NEET (UG Medical Entrance)</h4>
+          <p class="text-[11px] text-slate-500">Biology NCERT लाइन-टू-लाइन, Physics व Chemistry फॉर्मूला बैंक।</p>
+        </a>
+
+        <!-- Stream 3: 10th & 12th Board -->
+        <a href="test-series.html?stream=board" class="p-4 rounded-2xl bg-slate-50 hover:bg-brand-50 border border-slate-200 hover:border-brand-300 transition group space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-xl">🎒</span>
+            <span class="text-[10px] font-bold text-brand-800 bg-brand-50 px-2 py-0.5 rounded border border-brand-200">RBSE / CBSE 2026</span>
+          </div>
+          <h4 class="text-xs font-bold text-slate-900 group-hover:text-brand-800">10th व 12th बोर्ड (NCERT आधारित)</h4>
+          <p class="text-[11px] text-slate-500">PCM/PCB, कॉमर्स एवं आर्ट्स मॉडल पेपर्स व 20-वर्षीय हल प्रश्न।</p>
+        </a>
+
+        <!-- Stream 4: Computer & Tally -->
+        <a href="test-series.html?stream=computer" class="p-4 rounded-2xl bg-slate-50 hover:bg-brand-50 border border-slate-200 hover:border-brand-300 transition group space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-xl">💻</span>
+            <span class="text-[10px] font-bold text-purple-700 bg-purple-50 px-2 py-0.5 rounded border border-purple-200">प्रमाणन टेस्ट</span>
+          </div>
+          <h4 class="text-xs font-bold text-slate-900 group-hover:text-brand-800">RS-CIT कंप्यूटर व Tally Prime</h4>
+          <p class="text-[11px] text-slate-500">MS Office 365, GST वाउचर एंट्रीज़ और अकाउंटिंग प्रैक्टिकल टेस्ट।</p>
+        </a>
+
+        <!-- Stream 5: College Degrees -->
+        <a href="test-series.html?stream=college" class="p-4 rounded-2xl bg-slate-50 hover:bg-brand-50 border border-slate-200 hover:border-brand-300 transition group space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-xl">🎓</span>
+            <span class="text-[10px] font-bold text-slate-700 bg-slate-200 px-2 py-0.5 rounded">यूनिवर्सिटी बैंक</span>
+          </div>
+          <h4 class="text-xs font-bold text-slate-900 group-hover:text-brand-800">कॉलेज डिग्री (BA, B.Sc, B.Com, B.Tech)</h4>
+          <p class="text-[11px] text-slate-500">28+ विश्वविद्यालयों के वार्षिक व सेमेस्टर पेपर्स और यूनिट नोट्स।</p>
+        </a>
+
+        <!-- Stream 6: JEE Main & Advanced -->
+        <a href="test-series.html?stream=jee" class="p-4 rounded-2xl bg-slate-50 hover:bg-brand-50 border border-slate-200 hover:border-brand-300 transition group space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-xl">⚡</span>
+            <span class="text-[10px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">IIT Entrance</span>
+          </div>
+          <h4 class="text-xs font-bold text-slate-900 group-hover:text-brand-800">JEE (Main & Advanced)</h4>
+          <p class="text-[11px] text-slate-500">कैलकुलस, मैकेनिक्स, भौतिकी व रसायन स्टेप-वाइज़ व्याख्या।</p>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- ================= INSTITUTIONAL FOOTER ================= -->
+  <footer class="bg-white border-t border-slate-200 py-6 px-4 lg:px-8 mt-auto">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+      <div class="flex items-center gap-2">
+        <span class="font-bold text-slate-700">EduPro Academic Platform</span>
+        <span>•</span>
+        <span>भारतीय कॉपीराइट अधिनियम, 1957 (धारा 13 व 63) द्वारा संरक्षित</span>
+      </div>
+      <div class="flex items-center gap-4 text-xs font-semibold">
+        <a href="help.html" class="hover:text-brand-700 transition">सहायता टिकट केंद्र</a>
+        <a href="payment.html" class="hover:text-brand-700 transition">₹199 पास</a>
+        <a href="index.html" class="hover:text-brand-700 transition">होमपेज</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= STREAM SWITCHER MODAL ================= -->
+  <div id="streamModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs hidden items-center justify-center p-4 z-50">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 space-y-4">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+        <h3 class="text-base font-black text-slate-900">अपना सक्रिय शैक्षणिक संकाय चुनें</h3>
+        <button onclick="toggleStreamModal()" class="text-slate-400 hover:text-slate-700">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <div class="space-y-2">
+        <button onclick="selectStream('UPSC CSE & SSC CGL')" class="w-full text-left p-3 rounded-xl hover:bg-slate-50 border border-slate-200 flex items-center justify-between text-xs font-bold text-slate-800">
+          <span>🛡️ UPSC & State PSC (Civil Services)</span>
+          <span class="material-symbols-outlined text-sm text-brand-600">arrow_forward</span>
+        </button>
+        <button onclick="selectStream('10th & 12th Board (NCERT/RBSE/CBSE)')" class="w-full text-left p-3 rounded-xl hover:bg-slate-50 border border-slate-200 flex items-center justify-between text-xs font-bold text-slate-800">
+          <span>🎒 10th & 12th Board (NCERT/RBSE/CBSE)</span>
+          <span class="material-symbols-outlined text-sm text-brand-600">arrow_forward</span>
+        </button>
+        <button onclick="selectStream('NEET (UG Medical Entrance)')" class="w-full text-left p-3 rounded-xl hover:bg-slate-50 border border-slate-200 flex items-center justify-between text-xs font-bold text-slate-800">
+          <span>🩺 NEET (UG Medical Entrance)</span>
+          <span class="material-symbols-outlined text-sm text-brand-600">arrow_forward</span>
+        </button>
+        <button onclick="selectStream('JEE Main & Advanced')" class="w-full text-left p-3 rounded-xl hover:bg-slate-50 border border-slate-200 flex items-center justify-between text-xs font-bold text-slate-800">
+          <span>⚡ JEE Main & Advanced (IIT)</span>
+          <span class="material-symbols-outlined text-sm text-brand-600">arrow_forward</span>
+        </button>
+        <button onclick="selectStream('College Degrees (BA, B.Sc, B.Tech)')" class="w-full text-left p-3 rounded-xl hover:bg-slate-50 border border-slate-200 flex items-center justify-between text-xs font-bold text-slate-800">
+          <span>🎓 College Degrees (BA, B.Sc, B.Tech, Pharmacy)</span>
+          <span class="material-symbols-outlined text-sm text-brand-600">arrow_forward</span>
+        </button>
+        <button onclick="selectStream('Computer (RS-CIT & Tally Prime)')" class="w-full text-left p-3 rounded-xl hover:bg-slate-50 border border-slate-200 flex items-center justify-between text-xs font-bold text-slate-800">
+          <span>💻 Computer (RS-CIT & Tally Prime)</span>
+          <span class="material-symbols-outlined text-sm text-brand-600">arrow_forward</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SCRIPTS & SECURITY ================= -->
+  <script>
+    function toggleStreamModal() {
+      const modal = document.getElementById('streamModal');
+      modal.classList.toggle('hidden');
+      modal.classList.toggle('flex');
+    }
+
+    function selectStream(name) {
+      document.getElementById('currentStreamLabel').textContent = name;
+      toggleStreamModal();
+    }
+
+    function copyReferralCode() {
+      navigator.clipboard.writeText('EDUPRO-HR91').then(() => {
+        alert('✓ रेफरल कोड कॉपी किया गया: EDUPRO-HR91');
+      });
+    }
+
+    // Anti-DevTools & Shortcut Block Shield
+    document.addEventListener('keydown', e => {
+      if (e.keyCode === 123 || 
+         (e.ctrlKey && ['c', 'u', 's', 'a'].includes(e.key.toLowerCase())) ||
+         (e.ctrlKey && e.shiftKey && ['i', 'j', 'c'].includes(e.key.toLowerCase()))) {
+        e.preventDefault();
+        return false;
+      }
+    });
+  </script>
+</body>
+</html>
