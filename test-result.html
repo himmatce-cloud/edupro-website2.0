@@ -3,581 +3,318 @@
 <html class="h-full bg-slate-50" lang="hi" style=""><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>EduPro - Candidate Portal &amp; Secure Login</title>
+<title>EduPro - test-result.html (Scorecard &amp; AI Performance Analytics)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@600;700;800;900&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50: '#f0f5ff', 100: '#e0ebff', 500: '#2563eb', 600: '#1d4ed8', 700: '#1e40af', 800: '#0f2b5c', 900: '#00163d' }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+            mono: ['Inter', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body { user-select: none; -webkit-user-select: none; }
+    .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    @media print {
+      .no-print { display: none !important; }
+      body { background: white !important; }
+    }
+  </style>
 <meta content="web_standard" name="shell-type"/></head>
-<body class="bg-slate-100/70 font-sans text-slate-800 antialiased select-none min-h-screen flex flex-col justify-between" oncontextmenu="return false;">
-<!-- Header -->
-<header class="bg-white/95 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-40 px-4 lg:px-8 py-3 flex items-center justify-between shadow-sm">
+<body class="min-h-full flex flex-col font-sans bg-slate-100 text-slate-800 antialiased overflow-x-hidden" oncontextmenu="return false;">
+<!-- ================= TOP MAIN HEADER ================= -->
+<header class="bg-white border-b border-slate-200 h-16 shrink-0 flex items-center justify-between px-4 lg:px-8 sticky top-0 z-30 shadow-xs">
 <div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-xl bg-blue-700 text-white flex items-center justify-center font-black text-xl shadow-md">EP</div>
-<div>
-<h1 class="text-xl font-black tracking-tight text-blue-900 leading-none">EduPro</h1>
-<span class="text-xs text-slate-500 font-medium">Academic Nexus • 100% सुरक्षित पोर्टल</span>
+<a class="flex items-center gap-2 group" href="index.html">
+<div class="w-9 h-9 rounded-xl bg-brand-900 text-white flex items-center justify-center font-black text-lg shadow-sm">EP</div>
+<span class="font-black text-lg tracking-tight text-brand-900 hidden sm:inline">EduPro</span>
+</a>
+<div class="hidden md:flex items-center gap-2 bg-slate-50 border border-slate-200 px-3 py-1 rounded-xl text-xs font-bold text-slate-700">
+<span class="material-symbols-outlined text-sm text-brand-600">verified</span>
+<span class="">आधिकारिक NTA/SSC प्रॉकटर्ड परिणाम</span>
 </div>
 </div>
+<!-- Center Navigation Links -->
+<nav class="hidden lg:flex items-center gap-6 text-xs font-bold text-slate-600">
+<a class="hover:text-brand-700 transition" href="index.html">होमपेज</a>
+<a class="text-brand-700 font-extrabold" href="test-series.html">टेस्ट सीरीज़</a>
+<a class="hover:text-brand-700 transition" href="pyq-tricks.html">20-Year PYQ</a>
+<a class="hover:text-brand-700 transition" href="dashboard.html">डैशबोर्ड</a>
+<a class="hover:text-brand-700 transition" href="gk.html">दैनिक GK</a>
+<a class="hover:text-brand-700 transition" href="help.html">सहायता</a>
+</nav>
+<!-- Right Header Actions -->
 <div class="flex items-center gap-3">
-<a class="text-sm font-semibold text-slate-600 hover:text-blue-700 transition-colors" href="index.html">होमपेज</a>
-<a class="text-sm font-semibold text-slate-600 hover:text-blue-700 transition-colors" href="help.html">सहायता केंद्र</a>
-<span class="px-2.5 py-1 rounded-full bg-blue-50 text-blue-800 border border-blue-200 text-[11px] font-bold hidden sm:inline-flex items-center gap-1"><span class="">🔒</span><span class="">256-Bit SSL Secured</span></span>
+<div class="flex items-center gap-1.5 bg-emerald-50 text-emerald-800 border border-emerald-200 px-3 py-1.5 rounded-xl text-xs font-bold">
+<span class="material-symbols-outlined text-sm text-emerald-600">check_circle</span>
+<span class="">₹199 / माह All-Access सक्रिय</span>
+</div>
+<div class="flex items-center gap-2 pl-2 border-l border-slate-200 text-xs font-bold text-slate-700">
+<div class="w-8 h-8 rounded-full bg-brand-900 text-white flex items-center justify-center font-black text-xs">RK</div>
+<div class="hidden sm:block text-left">
+<div class="leading-tight">राजेश कुमार</div>
+<div class="text-[10px] text-slate-400 font-normal">#EDU-8921</div>
+</div>
+</div>
 </div>
 </header>
-<!-- Main Container -->
-<main class="max-w-6xl mx-auto px-4 py-8 flex-1 flex flex-col justify-center"><div class="flex flex-col w-full">
-<!-- Membership & Pro Activation Ribbon -->
-<div class="bg-primary text-on-primary rounded-xl px-5 py-3 shadow-sm mb-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded-lg bg-surface-variant/20 flex items-center justify-center text-tertiary-fixed-dim">
-<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
-</div>
-<div class="text-left">
-<p class="font-title-md text-title-md leading-snug">₹199 / माह All-Access Pass सक्रिय</p>
-<p class="font-body-sm text-body-sm text-surface-variant/80">20-Year विगत वर्षों (PYQ) के आधिकारिक व्याख्यात्मक हल एवं AI-परीक्षण पूर्णतः अनलॉक हैं</p>
-</div>
-</div>
-<div class="flex items-center gap-2">
-<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/10 text-on-primary font-label-sm text-label-sm uppercase tracking-wider backdrop-blur-sm">
-<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span>
-        सत्यापित प्रो पोर्टल
-      </span>
-</div>
-</div>
-<!-- Header Context & Assessment Identity -->
-<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm mb-6 relative overflow-hidden">
-<div class="absolute -right-8 -top-8 w-40 h-40 bg-surface-container/60 rounded-full blur-2xl pointer-events-none"></div>
-<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 relative z-10">
-<div class="space-y-2">
-<div class="flex flex-wrap items-center gap-2">
-<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm">राष्ट्रीय स्तरीय सिमुलेशन</span>
-<span class="px-2.5 py-0.5 rounded-full bg-surface-variant text-on-surface-variant font-label-sm text-label-sm">Series #07 Solved</span>
-<span class="px-2.5 py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm">आधिकारिक मेरिट इंडेक्स</span>
-</div>
-<h2 class="font-headline-lg text-headline-lg text-on-surface">10th व 12th बोर्ड (RBSE/CBSE) &amp; NEET 20-Year Solved Mock Series #07</h2>
-<p class="font-body-md text-body-md text-on-surface-variant">स्कोरकार्ड एवं गहन एआई-संवर्धित प्रदर्शन विश्लेषण (Official Performance Ledger)</p>
-</div>
-<!-- Candidate Ledger Mini-Card -->
-<div class="bg-surface-container-low rounded-lg p-4 flex items-center gap-4 min-w-[280px]">
-<div class="w-12 h-12 rounded-xl bg-primary text-on-primary flex items-center justify-center font-title-lg text-title-lg shadow-sm">
-          RK
-        </div>
-<div class="min-w-0 flex-1">
-<div class="flex items-center gap-1.5">
-<h4 class="font-title-md text-title-md text-on-surface truncate">राजेश कुमार</h4>
-<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant">विद्यार्थी आईडी: <span class="font-numeric-table font-semibold text-primary">#EDU-8921</span></p>
-<div class="flex items-center gap-3 mt-1 font-body-sm text-body-sm text-outline">
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs">timer</span> 54m 16s</span>
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs">calendar_today</span> 19 सित 2026</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Primary Score & Rank Metrics Grid -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-<!-- Card 1: Score -->
-<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm flex flex-col justify-between relative">
-<div class="flex items-center justify-between mb-3">
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">अर्जित कुल अंक</span>
-<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
-<span class="material-symbols-outlined text-lg">military_tech</span>
-</div>
-</div>
-<div>
-<div class="flex items-baseline gap-1.5">
-<span class="font-display-lg text-display-lg font-bold text-primary font-numeric-table">168</span>
-<span class="font-title-lg text-title-lg text-outline">/ 200</span>
-</div>
-<div class="flex items-center justify-between mt-2 pt-2 bg-surface-container-low/60 rounded px-2.5 py-1">
-<span class="font-body-sm text-body-sm text-on-surface-variant font-numeric-table">प्रतिशत: 84.0%</span>
-<span class="font-label-sm text-label-sm font-semibold text-primary-container">Merit Rank Zone</span>
-</div>
-</div>
-</div>
-<!-- Card 2: AIR -->
-<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm flex flex-col justify-between">
-<div class="flex items-center justify-between mb-3">
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">ऑल इंडिया रैंक (AIR)</span>
-<div class="w-8 h-8 rounded-lg bg-surface-variant flex items-center justify-center text-secondary">
-<span class="material-symbols-outlined text-lg">leaderboard</span>
-</div>
-</div>
-<div>
-<div class="flex items-baseline gap-2">
-<span class="font-display-lg text-display-lg font-bold text-secondary font-numeric-table">#42</span>
-<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">शीर्ष 0.3%</span>
-</div>
-<div class="mt-2 pt-2 bg-surface-container-low/60 rounded px-2.5 py-1">
-<p class="font-body-sm text-body-sm text-on-surface-variant truncate">कुल 14,280 परीक्षार्थियों के मध्य</p>
-</div>
-</div>
-</div>
-<!-- Card 3: Accuracy -->
-<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm flex flex-col justify-between">
-<div class="flex items-center justify-between mb-3">
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">सटीकता दर (Accuracy)</span>
-<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container">
-<span class="material-symbols-outlined text-lg">track_changes</span>
-</div>
-</div>
-<div>
-<div class="flex items-baseline gap-2">
-<span class="font-display-lg text-display-lg font-bold text-primary font-numeric-table">88.2%</span>
-<span class="font-body-sm text-body-sm text-outline font-numeric-table">(84/100 प्र. शुद्ध)</span>
-</div>
-<div class="mt-2 pt-2 bg-surface-container-low/60 rounded px-2.5 py-1 flex items-center justify-between">
-<span class="font-body-sm text-body-sm text-on-surface-variant">नेगेटिव मार्किंग:</span>
-<span class="font-numeric-table text-error font-semibold font-body-sm text-body-sm">-1.32 अंक</span>
-</div>
-</div>
-</div>
-<!-- Card 4: Percentile -->
-<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm flex flex-col justify-between">
-<div class="flex items-center justify-between mb-3">
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">राष्ट्रीय परसेंटाइल</span>
-<div class="w-8 h-8 rounded-lg bg-surface-variant flex items-center justify-center text-tertiary-container">
-<span class="material-symbols-outlined text-lg">stars</span>
-</div>
-</div>
-<div>
-<div class="flex items-baseline gap-1">
-<span class="font-display-lg text-display-lg font-bold text-primary-container font-numeric-table">99.4</span>
-<span class="font-title-lg text-title-lg text-on-surface-variant">th</span>
-</div>
-<div class="mt-2 pt-2 bg-surface-container-low/60 rounded px-2.5 py-1">
-<p class="font-body-sm text-body-sm text-on-surface-variant truncate">State &amp; National Benchmarked</p>
-</div>
-</div>
-</div>
-</div>
-<!-- Analytical Layout: Subject Matrix & Diagnostic Visualizer -->
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-6">
-<!-- Left Column: Detailed Subject Breakdown (8 Cols) -->
-<div class="lg:col-span-8 flex flex-col gap-6">
-<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm">
-<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-5 gap-2">
-<div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface">विषय-वार स्कोर एवं सटीकता विभाजन</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant">प्रत्येक खण्ड में प्राप्त अंक, ऋणात्मक कटौती एवं समय प्रबंधन</p>
-</div>
-<span class="font-label-sm text-label-sm px-2.5 py-1 rounded bg-surface-container-high text-primary font-numeric-table">4/4 खण्ड मूल्यांकित</span>
-</div>
-<!-- Subject Rows -->
-<div class="space-y-4">
-<!-- Botany -->
-<div class="bg-surface-container-low rounded-lg p-4">
-<div class="flex items-center justify-between mb-2">
-<div class="flex items-center gap-2">
-<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
-<span class="font-title-md text-title-md text-on-surface">वनस्पति विज्ञान (Botany)</span>
-</div>
-<div class="flex items-center gap-3">
-<span class="font-numeric-table font-title-md text-title-md text-primary">48 / 50</span>
-<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-label-sm text-label-sm">96% सटीकता</span>
-</div>
-</div>
-<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden mb-2">
-<div class="bg-primary h-full rounded-full" style="width: 96%"></div>
-</div>
-<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
-<span>24 प्रश्न हल किए • 1 रिव्यू हेतु छोड़ा</span>
-<span class="font-numeric-table">औसत समय: 12m 04s</span>
-</div>
-</div>
-<!-- Zoology -->
-<div class="bg-surface-container-low rounded-lg p-4">
-<div class="flex items-center justify-between mb-2">
-<div class="flex items-center gap-2">
-<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
-<span class="font-title-md text-title-md text-on-surface">प्राणी विज्ञान (Zoology)</span>
-</div>
-<div class="flex items-center gap-3">
-<span class="font-numeric-table font-title-md text-title-md text-primary">42 / 50</span>
-<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-label-sm text-label-sm">84% सटीकता</span>
-</div>
-</div>
-<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden mb-2">
-<div class="bg-secondary h-full rounded-full" style="width: 84%"></div>
-</div>
-<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
-<span>22 प्रश्न सही • 2 गलत उत्तर</span>
-<span class="font-numeric-table">औसत समय: 13m 40s</span>
-</div>
-</div>
-<!-- Chemistry -->
-<div class="bg-surface-container-low rounded-lg p-4">
-<div class="flex items-center justify-between mb-2">
-<div class="flex items-center gap-2">
-<span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span>
-<span class="font-title-md text-title-md text-on-surface">रसायन विज्ञान (Chemistry - Organic &amp; Physical)</span>
-</div>
-<div class="flex items-center gap-3">
-<span class="font-numeric-table font-title-md text-title-md text-primary">40 / 50</span>
-<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-label-sm text-label-sm">80% सटीकता</span>
-</div>
-</div>
-<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden mb-2">
-<div class="bg-primary-container h-full rounded-full" style="width: 80%"></div>
-</div>
-<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
-<span>20 प्रश्न सही • 2 गलत • 3 अनुत्तरित</span>
-<span class="font-numeric-table">औसत समय: 14m 12s</span>
-</div>
-</div>
-<!-- Physics Numericals -->
-<div class="bg-surface-container-low rounded-lg p-4">
-<div class="flex items-center justify-between mb-2">
-<div class="flex items-center gap-2">
-<span class="w-2.5 h-2.5 rounded-full bg-outline"></span>
-<span class="font-title-md text-title-md text-on-surface">भौतिक विज्ञान (Physics - Mechanics &amp; Electrodynamics)</span>
-</div>
-<div class="flex items-center gap-3">
-<span class="font-numeric-table font-title-md text-title-md text-primary">38 / 50</span>
-<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-label-sm text-label-sm">76% सटीकता</span>
-</div>
-</div>
-<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden mb-2">
-<div class="bg-outline h-full rounded-full" style="width: 76%"></div>
-</div>
-<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
-<span>19 प्रश्न सही • 4 गलत गणना • 2 अनुत्तरित</span>
-<span class="font-numeric-table">औसत समय: 14m 20s</span>
-</div>
-</div>
-</div>
-<!-- AI Diagnostic Recommendation Banner -->
-<div class="mt-5 bg-surface-container-high rounded-xl p-4 flex items-start gap-3">
-<div class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary-container flex-shrink-0 mt-0.5">
-<span class="material-symbols-outlined text-lg">troubleshoot</span>
-</div>
+<!-- ================= TOP VERIFICATION BANNER ================= -->
+<!-- ================= MAIN SCORECARD CONTAINER ================= -->
+<main class="flex-1 max-w-7xl w-full mx-auto p-4 lg:p-7 space-y-6"><div class="flex flex-col w-full space-y-8">
+<!-- Dynamic Student Verification & Referral Milestone Callout -->
+<!-- Header Scorecard Title Bar -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-slate-200 p-6 lg:p-8 space-y-6"><div class="flex flex-col xl:flex-row xl:items-center justify-between gap-6 pb-6 border-b border-slate-200"><div class="space-y-2"><div class="flex items-center gap-2 flex-wrap"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary text-on-primary font-label-sm shadow-xs"><span class="material-symbols-outlined text-sm">verified</span> आधिकारिक डायग्नोस्टिक स्कोरकार्ड #EDU-8921</span><span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm font-semibold"><span class="material-symbols-outlined text-sm text-secondary">calculate</span> NTA/SSC मानक अंकन: +2.00 सही | -0.50 निगेटिव | 0.00 रिक्त</span><span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 font-label-sm font-bold"><span class="material-symbols-outlined text-sm text-emerald-600">check_circle</span> सामान्य कटऑफ: क्लीयर (+48.40 अधिशेष अंक)</span></div><h1 class="font-headline-lg text-primary tracking-tight">10th व 12th बोर्ड (RBSE/CBSE) &amp; NEET 20-Year Solved Mock Series #07</h1><div class="flex items-center gap-4 text-on-surface-variant font-body-sm flex-wrap"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-base text-outline">schedule</span> कुल व्यतीत समय: <strong class="text-primary font-numeric-table font-semibold">54m 16s</strong> / 60m</span><span class="flex items-center gap-1"><span class="material-symbols-outlined text-base text-outline">gavel</span> परीक्षा मोड: प्रॉकटर्ड पूर्ण-लंबाई परीक्षा</span><span class="flex items-center gap-1"><span class="material-symbols-outlined text-base text-outline">verified_user</span> डिजिटल प्रामाणिकता: <span class="font-numeric-table text-secondary font-semibold">#EDU-8921-SECURE</span></span></div></div><div class="flex items-center flex-wrap gap-2.5 shrink-0"><button class="px-4 py-2.5 rounded-lg bg-surface-container-high hover:bg-surface-dim text-primary font-label-md flex items-center gap-1.5 transition shadow-xs cursor-pointer border border-slate-200" onclick="window.print()"><span class="material-symbols-outlined text-lg text-secondary">print</span><span>A4 PDF स्कोरकार्ड प्रिंट</span></button><button class="px-4 py-2.5 rounded-lg bg-surface-container-high hover:bg-surface-dim text-primary font-label-md flex items-center gap-1.5 transition shadow-xs cursor-pointer border border-slate-200"><span class="material-symbols-outlined text-lg text-primary">cached</span><span>पुनः टेस्ट दें (Retake)</span></button><a class="px-4 py-2.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md flex items-center gap-1.5 transition shadow-sm cursor-pointer" href="dashboard.html"><span class="material-symbols-outlined text-lg">dashboard</span><span>डैशबोर्ड पर लौटें</span></a></div></div><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"><div class="rounded-xl p-5 bg-surface-container-low border border-slate-200/80 shadow-xs"><div class="flex items-center justify-between"><span class="font-label-sm text-on-surface-variant font-medium">अर्जित कुल अंक (Total Score)</span><span class="material-symbols-outlined text-secondary text-xl">military_tech</span></div><div class="mt-2 flex items-baseline gap-2"><span class="font-display-lg text-primary font-numeric-table font-bold">168.00</span><span class="font-title-md text-outline font-semibold">/ 200</span></div><div class="mt-3 flex items-center justify-between text-on-surface-variant font-body-sm font-numeric-table"><span>अंक प्रतिशत: <strong class="text-primary font-bold">84.0%</strong></span><span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 font-label-sm font-bold">मेरिट जोन</span></div></div><div class="rounded-xl p-5 bg-surface-container-low border border-slate-200/80 shadow-xs"><div class="flex items-center justify-between"><span class="font-label-sm text-on-surface-variant font-medium">ऑल इंडिया रैंक (All India Rank)</span><span class="material-symbols-outlined text-secondary text-xl">leaderboard</span></div><div class="mt-2 flex items-baseline gap-2"><span class="font-display-lg text-secondary font-numeric-table font-bold">#42</span><span class="font-body-md text-on-surface-variant font-medium">/ 14,280</span></div><div class="mt-3 flex items-center justify-between text-on-surface-variant font-body-sm font-numeric-table"><span>शीर्ष <strong class="text-secondary font-bold">0.3%</strong> परीक्षार्थी</span><span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm font-semibold">Top 100 राज्य</span></div></div><div class="rounded-xl p-5 bg-surface-container-low border border-slate-200/80 shadow-xs"><div class="flex items-center justify-between"><span class="font-label-sm text-on-surface-variant font-medium">सटीकता व निगेटिव (Accuracy)</span><span class="material-symbols-outlined text-secondary text-xl">track_changes</span></div><div class="mt-2 flex items-baseline gap-2"><span class="font-display-lg text-primary font-numeric-table font-bold">88.2%</span><span class="font-label-md text-emerald-800 font-semibold">उच्च सटीकता</span></div><div class="mt-3 flex items-center justify-between text-on-surface-variant font-body-sm font-numeric-table"><span>84 सही • 8 गलत</span><span class="text-error font-bold">-4.00 कटौती</span></div></div><div class="rounded-xl p-5 bg-surface-container-low border border-slate-200/80 shadow-xs"><div class="flex items-center justify-between"><span class="font-label-sm text-on-surface-variant font-medium">राष्ट्रीय पर्सेंटाइल (Percentile)</span><span class="material-symbols-outlined text-secondary text-xl">trending_up</span></div><div class="mt-2 flex items-baseline gap-2"><span class="font-display-lg text-primary font-numeric-table font-bold">99.41</span><span class="font-title-lg text-outline font-semibold">th</span></div><div class="mt-3 flex items-center justify-between text-on-surface-variant font-body-sm font-numeric-table"><span>कटऑफ बेंचमार्क: 119.6</span><span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm font-bold">+48.4 से क्लीयर</span></div></div></div></div>
+<!-- Middle Analysis Matrix & Visual Diagnostics -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6"><div class="lg:col-span-7 space-y-6"><div class="bg-surface-container-lowest rounded-xl p-6 lg:p-7 shadow-sm border border-slate-200 space-y-5"><div class="flex items-center justify-between border-b border-slate-200 pb-3"><div class="space-y-0.5"><h2 class="font-title-lg text-primary flex items-center gap-2 font-bold"><span class="material-symbols-outlined text-secondary">bar_chart</span> विषयवार प्रदर्शन एवं दक्षता स्तर (Subject Mastery)</h2><p class="font-body-sm text-on-surface-variant">दक्षता वर्गीकरण: हरा (&gt;85% मजबूत), पीला (75-85% मध्यम), लाल (&lt;75% अभ्यास जरूरी)</p></div><span class="font-label-sm px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-numeric-table font-semibold">100 प्रश्न / 200 अंक</span></div><div class="space-y-4"><div class="space-y-1.5 p-3 rounded-lg bg-surface-container-low border border-slate-200/60"><div class="flex items-center justify-between font-label-md"><span class="font-bold text-primary flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span> Botany / कोर पेपर 1 (पादप कार्यिकी व अनुवांशिकी)</span><div class="flex items-center gap-2"><span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold">मजबूत पकड़ (&gt;85%)</span><span class="text-primary font-numeric-table font-bold">48 / 50 अंक</span></div></div><div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden"><div class="bg-emerald-600 h-full rounded-full" style="width: 96%"></div></div><div class="flex items-center justify-between text-on-surface-variant font-body-sm font-numeric-table"><span>24 सही, 0 गलत (96% सटीकता) • 24/25 प्रयास</span><span>समय: 11m 40s</span></div></div><div class="space-y-1.5 p-3 rounded-lg bg-surface-container-low border border-slate-200/60"><div class="flex items-center justify-between font-label-md"><span class="font-bold text-primary flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Zoology / पेपर 2 (मानव शरीर क्रिया विज्ञान व पारिस्थितिकी)</span><div class="flex items-center gap-2"><span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed text-xs font-bold">मध्यम (84%)</span><span class="text-primary font-numeric-table font-bold">42 / 50 अंक</span></div></div><div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden"><div class="bg-secondary h-full rounded-full" style="width: 84%"></div></div><div class="flex items-center justify-between text-on-surface-variant font-body-sm font-numeric-table"><span>21 सही, 2 गलत (84% सटीकता) • 23/25 प्रयास</span><span>समय: 13m 10s</span></div></div><div class="space-y-1.5 p-3 rounded-lg bg-surface-container-low border border-slate-200/60"><div class="flex items-center justify-between font-label-md"><span class="font-bold text-primary flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Chemistry (कार्बनिक एवं भौतिक रसायन)</span><div class="flex items-center gap-2"><span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed text-xs font-bold">मध्यम (80%)</span><span class="text-primary font-numeric-table font-bold">40 / 50 अंक</span></div></div><div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden"><div class="bg-secondary h-full rounded-full" style="width: 80%"></div></div><div class="flex items-center justify-between text-on-surface-variant font-body-sm font-numeric-table"><span>20 सही, 3 गलत (80% सटीकता) • 23/25 प्रयास</span><span>समय: 14m 26s</span></div></div><div class="space-y-1.5 p-3 rounded-lg bg-surface-container-low border border-slate-200/60"><div class="flex items-center justify-between font-label-md"><span class="font-bold text-primary flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-error"></span> Physics (यांत्रिकी, प्रकाशिकी व आधुनिक भौतिकी)</span><div class="flex items-center gap-2"><span class="px-2 py-0.5 rounded bg-error-container/40 text-on-error-container text-xs font-bold">रिवीजन जरूरी (76%)</span><span class="text-primary font-numeric-table font-bold">38 / 50 अंक</span></div></div><div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden"><div class="bg-error h-full rounded-full" style="width: 76%"></div></div><div class="flex items-center justify-between text-on-surface-variant font-body-sm font-numeric-table"><span>19 सही, 3 गलत (76% सटीकता) • 22/25 प्रयास</span><span>समय: 15m 00s</span></div></div></div></div><div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-slate-200 space-y-4"><div class="flex items-center justify-between border-b border-slate-200 pb-3"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-error text-2xl">troubleshoot</span><div><h3 class="font-title-md text-primary font-bold">कमजोर विषय व त्रुटि विश्लेषण (Deep Weak Topic Diagnostics)</h3><p class="font-body-sm text-on-surface-variant">परीक्षार्थी की 8 गलतियों का वैज्ञानिक वर्गीकरण एवं तत्काल निवारण</p></div></div><span class="px-2.5 py-1 rounded bg-error text-on-error font-label-sm font-bold">-4.00 अंक गंवाए</span></div><div class="space-y-3"><div class="p-3.5 rounded-lg bg-surface-container-low border-l-4 border-error flex flex-col sm:flex-row sm:items-center justify-between gap-3"><div><div class="flex items-center gap-2 flex-wrap"><span class="font-label-md text-primary font-bold">बायोलॉजी: प्रकाश संश्लेषण (C3 / C4 केल्विन चक्र)</span><span class="px-2 py-0.5 rounded bg-error-container/40 text-on-error-container font-label-sm font-semibold">2 गलतियाँ • संकल्पना स्पष्टता (Concept Gap)</span></div><p class="font-body-sm text-on-surface-variant mt-1">स्ट्रोमा मैट्रिक्स बनाम थाइलाकोइड ल्यूमेन में एंजाइम क्रियाशीलता पर भ्रम हुआ।</p></div><a class="px-3 py-1.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-sm font-bold flex items-center justify-center gap-1 shrink-0" href="pyq-tricks.html"><span class="material-symbols-outlined text-sm">menu_book</span> 20-Yr PYQ हल</a></div><div class="p-3.5 rounded-lg bg-surface-container-low border-l-4 border-error flex flex-col sm:flex-row sm:items-center justify-between gap-3"><div><div class="flex items-center gap-2 flex-wrap"><span class="font-label-md text-primary font-bold">भौतिकी: ऊष्मागतिकी सूत्र (एंट्रॉपी व कार्नो इंजन)</span><span class="px-2 py-0.5 rounded bg-amber-400/20 text-slate-900 font-label-sm font-semibold">2 गलतियाँ • सिल्ली मिस्टेक / जल्दबाजी</span></div><p class="font-body-sm text-on-surface-variant mt-1">इकाई रूपांतरण (Joules vs Calories) में गणना त्रुटि से -1.00 निगेटिव हुआ।</p></div><a class="px-3 py-1.5 rounded-lg bg-secondary hover:bg-primary text-on-secondary font-label-sm font-bold flex items-center justify-center gap-1 shrink-0" href="pyq-tricks.html"><span class="material-symbols-outlined text-sm">auto_fix_high</span> देसी ट्रिक पढ़ें</a></div><div class="p-3.5 rounded-lg bg-surface-container-low border-l-4 border-secondary flex flex-col sm:flex-row sm:items-center justify-between gap-3"><div><div class="flex items-center gap-2 flex-wrap"><span class="font-label-md text-primary font-bold">राजव्यवस्था / इतिहास: अध्यादेश व मारवाड़ सेवा संघ</span><span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm font-semibold">1 गलती • समय प्रबंधन (Time Hazard)</span></div><p class="font-body-sm text-on-surface-variant mt-1">अनुच्छेद 123 (राष्ट्रपति) व 213 (राज्यपाल) में जल्दबाजी में गलत विकल्प मार्क हुआ।</p></div><a class="px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-dim text-secondary font-label-sm font-bold flex items-center justify-center gap-1 shrink-0" href="#question-12"><span class="material-symbols-outlined text-sm">visibility</span> प्रश्न विश्लेषण</a></div></div></div></div><div class="lg:col-span-5 space-y-6"><div class="bg-surface-container-lowest rounded-xl p-6 lg:p-7 shadow-sm border border-slate-200 space-y-5"><div class="flex items-center justify-between border-b border-slate-200 pb-3"><h2 class="font-title-lg text-primary flex items-center gap-2 font-bold"><span class="material-symbols-outlined text-secondary">donut_large</span> प्रयास विश्लेषण (Attempt Ratio)</h2><span class="font-label-sm text-on-surface-variant font-numeric-table font-semibold">100 प्रश्न पूर्ण</span></div><div class="flex flex-col sm:flex-row items-center justify-center gap-6 py-2"><div class="relative w-36 h-36 shrink-0"><svg class="w-full h-full transform -rotate-90" viewbox="0 0 120 120"><circle class="stroke-surface-container-high" cx="60" cy="60" fill="none" r="50" stroke-width="12"></circle><circle class="stroke-secondary" cx="60" cy="60" fill="none" r="50" stroke-dasharray="314.159" stroke-dashoffset="50.26" stroke-linecap="round" stroke-width="12"></circle></svg><div class="absolute inset-0 flex flex-col items-center justify-center text-center"><span class="font-headline-lg text-primary font-numeric-table font-bold">88%</span><span class="font-label-sm text-on-surface-variant font-medium">सटीक स्कोर</span></div></div><div class="space-y-3 w-full sm:w-auto font-body-sm"><div class="flex items-center justify-between sm:justify-start gap-3"><span class="w-3 h-3 rounded-full bg-secondary shrink-0"></span><span class="text-on-surface">सही उत्तर:</span><strong class="font-numeric-table text-primary font-bold">84 प्रश्न (+168)</strong></div><div class="flex items-center justify-between sm:justify-start gap-3"><span class="w-3 h-3 rounded-full bg-error shrink-0"></span><span class="text-on-surface">गलत उत्तर:</span><strong class="font-numeric-table text-error font-bold">08 प्रश्न (-4.00)</strong></div><div class="flex items-center justify-between sm:justify-start gap-3"><span class="w-3 h-3 rounded-full bg-slate-400 shrink-0"></span><span class="text-on-surface">अनुत्तरित (छोड़े गए):</span><strong class="font-numeric-table text-outline font-bold">08 प्रश्न (0.00)</strong></div></div></div></div><div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-slate-200 space-y-4"><h3 class="font-title-md text-primary font-bold flex items-center gap-2"><span class="material-symbols-outlined text-secondary">school</span> शैक्षणिक संसाधन व अध्ययन सामग्री</h3><div class="space-y-2.5"><a class="flex items-center justify-between p-3.5 rounded-lg bg-surface-container-low hover:bg-surface-container transition border border-slate-200/60 group" href="#detailed-review"><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-lg bg-surface-container-high text-secondary flex items-center justify-center group-hover:bg-secondary group-hover:text-on-secondary transition"><span class="material-symbols-outlined text-lg">menu_book</span></div><div><div class="font-label-md text-primary font-bold">व्याख्यात्मक उत्तर कुंजी (Detailed Solutions)</div><div class="font-body-sm text-on-surface-variant">NCERT पुस्तक संदर्भ व शॉर्टकट देसी ट्रिक्स</div></div></div><span class="material-symbols-outlined text-outline group-hover:text-primary transition">chevron_right</span></a><a class="flex items-center justify-between p-3.5 rounded-lg bg-surface-container-low hover:bg-surface-container transition border border-slate-200/60 group" href="pyq-tricks.html"><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-lg bg-surface-container-high text-secondary flex items-center justify-center group-hover:bg-secondary group-hover:text-on-secondary transition"><span class="material-symbols-outlined text-lg">psychology_alt</span></div><div><div class="font-label-md text-primary font-bold">कमजोर टॉपिक्स के 20-Year PYQ बैंक</div><div class="font-body-sm text-on-surface-variant">स्मार्ट रिवीजन एवं विगत वर्ष प्रश्न संग्रह</div></div></div><span class="material-symbols-outlined text-outline group-hover:text-primary transition">chevron_right</span></a><button class="w-full flex items-center justify-between p-3.5 rounded-lg bg-surface-container-low hover:bg-surface-container transition border border-slate-200/60 text-left group cursor-pointer" onclick="window.print()"><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-lg bg-surface-container-high text-secondary flex items-center justify-center group-hover:bg-secondary group-hover:text-on-secondary transition"><span class="material-symbols-outlined text-lg">print</span></div><div><div class="font-label-md text-primary font-bold">A4 OMR व स्कोर रिपोर्ट प्रिंट</div><div class="font-body-sm text-on-surface-variant">अभिभावक समीक्षा एवं ऑफलाइन फ़ाइलिंग हेतु</div></div></div><span class="material-symbols-outlined text-outline group-hover:text-primary transition">chevron_right</span></button></div></div></div></div>
+<!-- Bottom Detailed Review & Explanation Section -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-6 lg:p-8 space-y-6" id="detailed-review">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4">
 <div class="space-y-1">
-<div class="flex items-center gap-2">
-<h5 class="font-title-md text-title-md text-on-surface">एआई परीक्षण चेतावनी (Weak Topic Diagnostics)</h5>
-<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-lowest text-primary">री-रिवीजन अनुशंसित</span>
+<h2 class="font-headline-sm text-headline-sm text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">fact_check</span>
+          विस्तृत शैक्षणिक समीक्षा व आधिकारिक व्याख्या (Pedagogical Review)
+        </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          NCERT 2026-27 नए पाठ्यक्रम, विगत 20-वर्षीय PYQs व देसी मेमोरी ट्रिक्स पर आधारित पूर्ण समाधान
+        </p>
 </div>
-<p class="font-body-md text-body-md text-on-surface-variant">
-              विश्लेषण के अनुसार: <span class="font-semibold text-primary">प्रकाश संश्लेषण (केल्विन चक्र/C3-C4 पाथवे)</span> एवं <span class="font-semibold text-primary">थर्मोडायनामिक्स (एन्ट्रापी व कार्नो इंजन सूत्र)</span> में 2 गलतियां दर्ज हुईं। आगामी टेस्ट से पूर्व विगत 20-वर्षीय PYQs पर 30 मिनट फोकस करें।
-            </p>
-</div>
-</div>
-</div>
-</div>
-<!-- Right Column: Visual Breakdown & Quick Hubs (4 Cols) -->
-<div class="lg:col-span-4 flex flex-col gap-6">
-<!-- Accuracy Radial Chart Card -->
-<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col items-center text-center">
-<h4 class="font-title-lg text-title-lg text-on-surface mb-1">प्रयास दक्षता अनुपात</h4>
-<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">समय बनाम यथार्थता स्कोर मैट्रिक्स</p>
-<!-- Inline SVG Metric Visualization -->
-<div class="relative w-44 h-44 flex items-center justify-center my-2">
-<svg class="w-full h-full transform -rotate-90" viewbox="0 0 140 140">
-<!-- Background circle -->
-<circle class="text-surface-container-high" cx="70" cy="70" fill="transparent" r="58" stroke="currentColor" stroke-width="12"></circle>
-<!-- Progress circle: 88.2% of 364.4 = 321.4 -->
-<circle class="text-primary" cx="70" cy="70" fill="transparent" r="58" stroke="currentColor" stroke-dasharray="364.4" stroke-dashoffset="43" stroke-linecap="round" stroke-width="12"></circle>
-</svg>
-<div class="absolute flex flex-col items-center justify-center">
-<span class="font-display-lg text-display-lg font-bold text-primary font-numeric-table">88%</span>
-<span class="font-label-sm text-label-sm text-outline uppercase tracking-wide">सटीक स्कोर</span>
-</div>
-</div>
-<div class="grid grid-cols-3 gap-2 w-full mt-4 pt-4 bg-surface-container-low/50 rounded-lg p-3">
-<div class="flex flex-col items-center">
-<span class="font-numeric-table font-title-md text-title-md text-primary">84</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">सही प्रश्न</span>
-</div>
-<div class="flex flex-col items-center">
-<span class="font-numeric-table font-title-md text-title-md text-error">08</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">गलत उत्तर</span>
-</div>
-<div class="flex flex-col items-center">
-<span class="font-numeric-table font-title-md text-title-md text-outline">08</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">अनुत्तरित</span>
-</div>
-</div>
-</div>
-<!-- Action Navigation Links / Quick Hubs -->
-<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm space-y-2.5">
-<h4 class="font-title-md text-title-md text-on-surface mb-3 flex items-center gap-2">
-<span class="material-symbols-outlined text-primary text-base">bolt</span>
-          त्वरित परिणाम टूल्स
-        </h4>
-<a class="w-full flex items-center justify-between px-4 py-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface transition-colors group" href="#detailedSolutions">
-<span class="flex items-center gap-2.5 font-title-md text-title-md">
-<span class="material-symbols-outlined text-primary text-lg">menu_book</span>
-            व्याख्यात्मक उत्तर कुंजी
-          </span>
-<span class="material-symbols-outlined text-outline group-hover:translate-x-0.5 transition-transform text-sm">arrow_forward_ios</span>
-</a>
-<a class="w-full flex items-center justify-between px-4 py-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface transition-colors group" href="print.html">
-<span class="flex items-center gap-2.5 font-title-md text-title-md">
-<span class="material-symbols-outlined text-secondary text-lg">print</span>
-            A4 PDF स्कोरकार्ड व OMR
-          </span>
-<span class="material-symbols-outlined text-outline group-hover:translate-x-0.5 transition-transform text-sm">arrow_forward_ios</span>
-</a>
-<a class="w-full flex items-center justify-between px-4 py-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface transition-colors group" href="pyq-tricks.html">
-<span class="flex items-center gap-2.5 font-title-md text-title-md">
-<span class="material-symbols-outlined text-primary-container text-lg">model_training</span>
-            कमजोर टॉपिक्स के 20-Yr PYQs
-          </span>
-<span class="material-symbols-outlined text-outline group-hover:translate-x-0.5 transition-transform text-sm">arrow_forward_ios</span>
-</a>
-<button class="w-full flex items-center justify-between px-4 py-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface transition-colors group text-left" onclick="reTakeAssessment()">
-<span class="flex items-center gap-2.5 font-title-md text-title-md">
-<span class="material-symbols-outlined text-outline text-lg">replay</span>
-            पुनः टेस्ट दें (Re-take Test)
-          </span>
-<span class="material-symbols-outlined text-outline group-hover:translate-x-0.5 transition-transform text-sm">arrow_forward_ios</span>
-</button>
-</div>
-</div>
-</div>
-<!-- Detailed Question Review & NCERT Analytical Gazette Snapshot -->
-<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm mb-6" id="detailedSolutions">
-<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 gap-3">
-<div>
-<div class="flex items-center gap-2">
-<span class="px-2 py-0.5 rounded bg-primary text-on-primary font-label-sm text-label-sm">हल संकलन #07</span>
-<h3 class="font-headline-sm text-headline-sm text-on-surface">आधिकारिक व्याख्यात्मक समाधान एवं गजट संदर्भ</h3>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">प्रत्येक प्रश्न का प्रामाणिक NCERT संस्करण व विगत 20 वर्षों का प्रवृत्ति विश्लेषण</p>
-</div>
-<!-- Filter Controls for Question Review -->
-<div class="flex items-center gap-2 bg-surface-container-low p-1 rounded-lg">
-<button class="px-3 py-1.5 rounded bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm">सभी प्रश्न (100)</button>
-<button class="px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface font-label-md text-label-md">गलत उत्तर (08)</button>
-<button class="px-3 py-1.5 rounded text-on-surface-variant hover:text-on-surface font-label-md text-label-md">समीक्षित (08)</button>
-</div>
-</div>
-<!-- Question Snapshot Container -->
-<div class="space-y-6">
-<!-- Question #07 Card -->
-<div class="bg-surface-container-low/70 rounded-xl p-6 relative">
-<div class="flex flex-wrap items-center justify-between gap-3 mb-4">
-<div class="flex items-center gap-2">
-<span class="w-8 h-8 rounded-lg bg-primary text-on-primary font-numeric-table font-title-md flex items-center justify-center">Q7</span>
-<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-surface-variant text-on-surface-variant">Botany • C3/C4 Photosynthesis</span>
-</div>
-<div class="flex items-center gap-3">
-<span class="inline-flex items-center gap-1 font-numeric-table font-title-md text-title-md text-primary">
-<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-              +2.00 अंक
-            </span>
-<span class="font-body-sm text-body-sm text-outline font-numeric-table">समय लगा: 38 सेकंड</span>
-</div>
-</div>
-<!-- Question Stem -->
-<h4 class="font-title-lg text-title-lg text-on-surface leading-relaxed mb-4">
-          प्रकाश संश्लेषण (Photosynthesis) की अप्रकाशीय अभिक्रिया (Dark Reaction / केल्विन चक्र) क्लोरोप्लास्ट (हरितलवक) के किस विशिष्ट भाग में संपन्न होती है?
-        </h4>
-<!-- Options Matrix -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
-<div class="bg-surface-container-lowest p-3.5 rounded-lg flex items-start gap-3 text-on-surface-variant">
-<span class="w-6 h-6 rounded bg-surface-container flex items-center justify-center font-numeric-table font-semibold text-xs mt-0.5">A</span>
-<span class="font-body-md text-body-md">ग्रेना की थायलाकोइड झिल्ली में (Thylakoid Membrane)</span>
-</div>
-<!-- Correct Option -->
-<div class="bg-surface-container-highest p-3.5 rounded-lg flex items-start gap-3 text-primary font-medium">
-<span class="w-6 h-6 rounded bg-primary text-on-primary flex items-center justify-center font-numeric-table font-semibold text-xs mt-0.5">B</span>
-<div class="flex-1 flex items-center justify-between">
-<span class="font-body-md text-body-md">स्ट्रोमा / पीठिका मैट्रिक्स में (Stroma Matrix)</span>
-<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-primary text-on-primary">आपका उत्तर • शुद्ध</span>
-</div>
-</div>
-<div class="bg-surface-container-lowest p-3.5 rounded-lg flex items-start gap-3 text-on-surface-variant">
-<span class="w-6 h-6 rounded bg-surface-container flex items-center justify-center font-numeric-table font-semibold text-xs mt-0.5">C</span>
-<span class="font-body-md text-body-md">क्लोरोप्लास्ट की बाहरी आवरण झिल्ली में (Outer Envelope)</span>
-</div>
-<div class="bg-surface-container-lowest p-3.5 rounded-lg flex items-start gap-3 text-on-surface-variant">
-<span class="w-6 h-6 rounded bg-surface-container flex items-center justify-center font-numeric-table font-semibold text-xs mt-0.5">D</span>
-<span class="font-body-md text-body-md">ल्यूमेन अथवा पेरिस्टोमियल अवकाश में (Thylakoid Lumen)</span>
-</div>
-</div>
-<!-- Official Gazette Solution Breakdown -->
-<div class="bg-surface-container-lowest rounded-xl p-5 space-y-3">
-<div class="flex items-center gap-2 text-primary font-title-md text-title-md">
-<span class="material-symbols-outlined text-lg">auto_stories</span>
-<span>आधिकारिक व्याख्या एवं NCERT संदर्भ साक्ष्य:</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface leading-relaxed">
-<span class="font-semibold text-primary">सही विकल्प (B):</span> प्रकाश संश्लेषण में अप्रकाशीय अभिक्रियाएं (एंजाइमी प्रक्रियाएं जैसे केल्विन चक्र) सीधे प्रकाश पर निर्भर नहीं होतीं, बल्कि वे प्रकाशीय अभिक्रिया के उत्पादों (ATP एवं NADPH) पर निर्भर करती हैं। ये सभी एंजाइमी प्रक्रियाएं क्लोरोप्लास्ट के <span class="font-semibold text-primary">स्ट्रोमा (Stroma)</span> में स्थित होती हैं क्योंकि RuBisCO एंजाइम प्रचुर मात्रा में स्ट्रोमा मैट्रिक्स में उपस्थित रहता है।
-          </p>
-<div class="flex flex-wrap items-center gap-4 pt-2 font-body-sm text-body-sm text-on-surface-variant">
-<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-high text-primary">
-<span class="material-symbols-outlined text-sm">bookmark</span>
-              NCERT Class 11th Biology - Chapter 13, Page 209 (Section 13.5)
-            </span>
-<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-high text-primary-container">
-<span class="material-symbols-outlined text-sm">history_edu</span>
-              NEET विगत प्रश्न आवृत्ति: 2016, 2019, 2023 में दोहराया गया
-            </span>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Dynamic Security & Legal Compliance Watermark Strip -->
-<div class="bg-surface-container-low rounded-xl p-4 flex flex-col md:flex-row items-center justify-between gap-3 text-center md:text-left">
-<div class="flex items-center gap-2 font-body-sm text-body-sm text-outline">
-<span class="material-symbols-outlined text-base">lock</span>
-<span>डायनामिक सत्यापन मुहर: विद्यार्थी आईडी <strong class="text-on-surface font-numeric-table">#EDU-8921</strong> | IP: 103.24.89.*** | 256-Bit SSL Encrypted Ledger</span>
-</div>
-<div class="font-label-sm text-label-sm text-outline">
-      भारतीय कॉपीराइट अधिनियम 1957 (धारा 13 व 63) द्वारा सामग्री सुरक्षित
-    </div>
-</div>
-</div>
-<script>
-  function reTakeAssessment() {
-    if (confirm('क्या आप इस टेस्ट श्रृंखला को पुनः प्रारंभ करना चाहते हैं? नया प्रयास आपकी विश्लेषणात्मक इतिहास सूची में अतिरिक्त रूप से दर्ज होगा।')) {
-      window.location.href = 'mock-test.html';
-    }
-  }
-</script></main>
-<!-- 100% SECURE FOUNDER / ADMIN GATE MODAL (NO TEST TOKEN VISIBLE!) -->
-<div class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden flex items-center justify-center p-4" id="adminModal">
-<div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative border-2 border-blue-600 animate-in fade-in duration-200">
-<button class="absolute top-4 right-4 text-slate-400 hover:text-slate-700" onclick="closeAdminModal()">
-<span class="material-symbols-outlined text-xl">close</span>
-</button>
-<div class="flex items-center gap-3 mb-4">
-<div class="w-12 h-12 rounded-xl bg-blue-900 text-white flex items-center justify-center shadow-md">
-<span class="material-symbols-outlined text-2xl text-amber-400">shield</span>
-</div>
-<div>
-<span class="text-[10px] font-extrabold uppercase tracking-wider text-blue-700 block">Supreme Root Console</span>
-<h3 class="text-lg font-black text-slate-900">संस्थापक/एडमिन गेट</h3>
-<span class="text-xs text-slate-500 font-semibold">संस्थापक: हिम्मत राम जी</span>
-</div>
-</div>
-<div class="bg-blue-50 border border-blue-200 rounded-xl p-3 mb-4 text-xs text-blue-900 flex items-center gap-2">
-<span class="material-symbols-outlined text-blue-700 text-base">vpn_key</span>
-<span class="">कृपया अपना 6-अंकों का गुप्त मास्टर सिक्योरिटी कोड दर्ज करें।</span>
-</div>
-<form class="space-y-4" onsubmit="handleAdminVerify(event)">
-<div>
-<label class="block text-xs font-bold text-slate-700 mb-1">Administrative Mobile</label>
-<input class="w-full bg-slate-100 border border-slate-200 px-3 py-2.5 rounded-xl text-sm font-bold text-slate-800 outline-none" id="adminPhone" readonly="" type="tel" value="9166603971"/>
-</div>
-<div>
-<label class="block text-xs font-bold text-slate-700 mb-1">गुप्त मास्टर पिन (6-Digit PIN)</label>
-<input class="w-full bg-slate-50 border border-slate-200 px-3 py-2.5 rounded-xl text-center text-xl font-bold tracking-widest outline-none focus:border-blue-600 focus:bg-white" id="adminPin" maxlength="6" placeholder="••••••" required="" type="password"/>
-</div>
-<div class="hidden text-xs text-rose-600 font-bold bg-rose-50 p-2 rounded-lg text-center" id="adminError">
-          ⚠️ गलत मास्टर पिन! अनाधिकृत प्रवेश वर्जित है।
-        </div>
-<button class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 rounded-xl transition-all shadow-md text-sm flex items-center justify-center gap-2 cursor-pointer" type="submit">
-<span class="material-symbols-outlined text-base text-amber-400">verified</span>
-<span class="">Access Master Approval Console</span>
-</button>
-</form>
-</div>
-</div>
-<!-- PASSWORD FORGOT MODAL -->
-<div class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4" id="forgotModal">
-<div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-xl relative">
-<button class="absolute top-4 right-4 text-slate-400 hover:text-slate-700" onclick="closeForgotModal()">
-<span class="material-symbols-outlined text-xl">close</span>
-</button>
-<h3 class="text-base font-bold text-slate-900 mb-1">4-अंक पिन से पासवर्ड रीसेट</h3>
-<p class="text-xs text-slate-500 mb-4">रजिस्ट्रेशन के समय चुना गया 4-अंक पिन दर्ज करें।</p>
-<form class="space-y-3" onsubmit="handleForgotReset(event)">
-<input class="w-full bg-slate-50 border border-slate-200 px-3 py-2 rounded-xl text-xs font-semibold outline-none" id="fMobile" maxlength="10" placeholder="पंजीकृत मोबाइल नंबर" required="" type="tel"/>
-<input class="w-full bg-slate-50 border border-slate-200 px-3 py-2 rounded-xl text-center font-bold tracking-widest text-xs outline-none" id="fPin" maxlength="4" placeholder="4-अंक गुप्त पिन" required="" type="password"/>
-<input class="w-full bg-slate-50 border border-slate-200 px-3 py-2 rounded-xl text-xs font-semibold outline-none" id="fNewPass" placeholder="नया पासवर्ड" required="" type="password"/>
-<button class="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold py-2.5 rounded-xl text-xs shadow-md" type="submit">
-          पासवर्ड तुरंत अपडेट करें
+<!-- Filter Tabs -->
+<div class="flex items-center gap-1.5 p-1 bg-surface-container-high rounded-xl text-on-surface font-label-md text-label-md self-start sm:self-auto">
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-primary shadow-xs font-bold cursor-pointer transition" id="filterAll" onclick="filterReviewQuestions('all', this)">
+          सभी प्रश्न (100)
         </button>
-</form>
+<button class="px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-primary cursor-pointer transition" id="filterIncorrect" onclick="filterReviewQuestions('incorrect', this)">
+          गलत उत्तर (08)
+        </button>
+<button class="px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-primary cursor-pointer transition" id="filterReview" onclick="filterReviewQuestions('review', this)">
+          अनलॉक ट्रिक्स (20)
+        </button>
 </div>
 </div>
-<!-- Legal Notice -->
-<footer class="bg-white/90 border-t border-slate-200/80 py-4 text-center text-xs text-slate-500">
-<p class="">© 2026 EduPro Academic Nexus. भारतीय कॉपीराइट अधिनियम 1957 (धारा 13 व 63) द्वारा संरक्षित।</p>
+<!-- Review Items Container -->
+<div class="space-y-6">
+<!-- Question 1: Biology / Photosynthesis (Correct) -->
+<div class="review-item rounded-xl p-5 lg:p-6 bg-surface-container-low space-y-4 shadow-xs" data-type="correct">
+<div class="flex items-start justify-between gap-4">
+<div class="flex items-center gap-2.5">
+<span class="w-8 h-8 rounded-lg bg-primary text-on-primary font-numeric-table font-bold flex items-center justify-center text-sm">
+              07
+            </span>
+<span class="px-2.5 py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+              जीवविज्ञान (वनस्पति विज्ञान)
+            </span>
+<span class="font-label-sm text-label-sm text-outline font-numeric-table">NEET 2018, 2021 PYQ Repeat</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm font-bold shadow-xs">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span>+2.00 (सही उत्तर)</span>
+</div>
+</div>
+<div class="font-body-lg text-body-lg text-primary font-medium">
+<strong>प्रश्न 07:</strong> प्रकाश संश्लेषण की अप्रकाशीय अभिक्रिया (Dark Reaction / केल्विन चक्र) क्लोरोप्लास्ट के किस विशिष्ट भाग में संपन्न होती है?
+        </div>
+<!-- Options Matrix -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-2.5 pt-1">
+<div class="p-3 rounded-lg bg-surface-container flex items-center justify-between text-on-surface font-body-md text-body-md opacity-75">
+<span>(A) ग्रेना थाइलाकोइड झिल्ली (Grana Thylakoid)</span>
+</div>
+<div class="p-3 rounded-lg bg-secondary text-on-secondary flex items-center justify-between font-body-md text-body-md shadow-xs font-semibold">
+<span>(B) स्ट्रोमा / पीठिका (Stroma Matrix) - आपका चयनित उत्तर</span>
+<span class="material-symbols-outlined text-lg">check</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container flex items-center justify-between text-on-surface font-body-md text-body-md opacity-75">
+<span>(C) बाह्य क्लोरोप्लास्ट झिल्ली</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container flex items-center justify-between text-on-surface font-body-md text-body-md opacity-75">
+<span>(D) ल्यूमेन (Thylakoid Lumen)</span>
+</div>
+</div>
+<!-- Official Academic Solution Box -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-xs space-y-2">
+<div class="flex items-center gap-2 text-primary font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-secondary text-base">verified</span>
+            आधिकारिक NCERT प्रामाणिक व्याख्या (Page Ref: Class 11th Biology, Ch 13, p. 209):
+          </div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            प्रकाश रासायनिक अभिक्रिया (Light reaction) थाइलाकोइड की झिल्लियों में होती है जहाँ ATP व NADPH₂ बनते हैं। जबकि अप्रकाशीय अभिक्रिया (केल्विन चक्र) क्लोरोप्लास्ट के <strong>स्ट्रोमा (Stroma)</strong> में होती है जहाँ रूबिस्को (RuBisCO) एंजाइम CO₂ का स्थिरीकरण कर शर्करा बनाता है।
+          </p>
+</div>
+</div>
+<!-- Question 2: History/GK - Marwar Seva Sangh (Incorrect - Shows AI Trick) -->
+<div class="review-item rounded-xl p-5 lg:p-6 bg-error-container/20 space-y-4 shadow-xs" data-type="incorrect">
+<div class="flex items-start justify-between gap-4">
+<div class="flex items-center gap-2.5">
+<span class="w-8 h-8 rounded-lg bg-error text-on-error font-numeric-table font-bold flex items-center justify-center text-sm">
+              12
+            </span>
+<span class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold">
+              सामान्य ज्ञान व राजस्थान अध्ययन
+            </span>
+<span class="font-label-sm text-label-sm text-error font-semibold">त्रुटि दर्ज</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-error text-on-error font-label-sm text-label-sm font-bold shadow-xs">
+<span class="material-symbols-outlined text-sm">cancel</span>
+<span>-0.50 (निगेटिव मार्किंग)</span>
+</div>
+</div>
+<div class="font-body-lg text-body-lg text-primary font-medium">
+<strong>प्रश्न 12:</strong> 'मारवाड़ सेवा संघ' की स्थापना जयनारायण व्यास एवं उनके सहयोगियों द्वारा किस वर्ष में की गई थी?
+        </div>
+<!-- Options Matrix -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-2.5 pt-1">
+<div class="p-3 rounded-lg bg-surface-container flex items-center justify-between text-on-surface font-body-md text-body-md opacity-75">
+<span>(A) 1918</span>
+</div>
+<div class="p-3 rounded-lg bg-error text-on-error flex items-center justify-between font-body-md text-body-md shadow-xs">
+<span>(B) 1924 (आपका चयनित गलत उत्तर)</span>
+<span class="material-symbols-outlined text-lg">close</span>
+</div>
+<div class="p-3 rounded-lg bg-secondary text-on-secondary flex items-center justify-between font-body-md text-body-md shadow-xs font-semibold">
+<span>(C) 1920 (आधिकारिक सही उत्तर)</span>
+<span class="material-symbols-outlined text-lg">check</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container flex items-center justify-between text-on-surface font-body-md text-body-md opacity-75">
+<span>(D) 1934</span>
+</div>
+</div>
+<!-- Desi Memory Trick Card -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-xs space-y-2.5">
+<div class="flex items-center gap-2 text-primary font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-secondary text-base">auto_fix_high</span>
+            देसी मेमोरी ट्रिक (EduPro Fast-Retention Method):
+          </div>
+<div class="p-3 rounded-lg bg-surface-container text-primary font-body-md text-body-md font-medium">
+            💡 ट्रिक: <span class="text-secondary font-bold font-numeric-table">"मारवाड़ में बीस (20) बार सेवा"</span> ➔ मारवाड़ सेवा संघ = 1920 (जोधपुर में जयनारायण व्यास)। 1924 में 'मारवाड़ हितकारिणी सभा' का पुनर्गठन हुआ था, जिसमें आप भ्रमित हुए।
+          </div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<strong>विगत परीक्षा आवृत्ति:</strong> RPSC RAS Prelims, REET Mains व SSC CGL में यह प्रश्न पिछले 10 वर्षों में 7 बार पूछा गया है।
+          </p>
+</div>
+</div>
+<!-- Question 3: Indian Polity / Ordinance (Correct with AI Trap Warning) -->
+<div class="review-item rounded-xl p-5 lg:p-6 bg-surface-container-low space-y-4 shadow-xs" data-type="correct">
+<div class="flex items-start justify-between gap-4">
+<div class="flex items-center gap-2.5">
+<span class="w-8 h-8 rounded-lg bg-primary text-on-primary font-numeric-table font-bold flex items-center justify-center text-sm">
+              19
+            </span>
+<span class="px-2.5 py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+              भारतीय राजव्यवस्था (Constitution)
+            </span>
+<span class="font-label-sm text-label-sm text-outline font-numeric-table">UPSC / SSC 20-Yr Benchmark</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm font-bold shadow-xs">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span>+2.00 (सही उत्तर)</span>
+</div>
+</div>
+<div class="font-body-lg text-body-lg text-primary font-medium">
+<strong>प्रश्न 19:</strong> राज्य विधानमंडल के विश्रांतिकाल में राज्यपाल को अध्यादेश (Ordinance) प्रख्यापित करने की शक्ति किस अनुच्छेद के तहत प्राप्त है?
+        </div>
+<!-- Options Matrix -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-2.5 pt-1">
+<div class="p-3 rounded-lg bg-surface-container flex items-center justify-between text-on-surface font-body-md text-body-md opacity-75">
+<span>(A) अनुच्छेद 123</span>
+</div>
+<div class="p-3 rounded-lg bg-secondary text-on-secondary flex items-center justify-between font-body-md text-body-md shadow-xs font-semibold">
+<span>(B) अनुच्छेद 213 (आपका चयनित सही उत्तर)</span>
+<span class="material-symbols-outlined text-lg">check</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container flex items-center justify-between text-on-surface font-body-md text-body-md opacity-75">
+<span>(C) अनुच्छेद 161</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container flex items-center justify-between text-on-surface font-body-md text-body-md opacity-75">
+<span>(D) अनुच्छेद 214</span>
+</div>
+</div>
+<!-- Official Trap Alert & Memory Formula -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-xs space-y-2">
+<div class="flex items-center gap-2 text-primary font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-secondary text-base">lightbulb</span>
+            एग्जामिनर कन्फ्यूजन ट्रैप &amp; सूत्र (Swap Rule):
+          </div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            • राष्ट्रपति का अध्यादेश = <strong class="text-primary font-numeric-table">अनुच्छेद 123</strong> (1, 2, 3 गो!)<br/>
+            • राज्यपाल का अध्यादेश = <strong class="text-primary font-numeric-table">अनुच्छेद 213</strong> (अंक 1 और 2 का स्थान आपस में बदल दें: 1-2-3 ➔ 2-1-3)।
+          </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Verification Stamp & Official Footer Dock -->
+<div class="bg-surface-container-lowest rounded-xl p-6 lg:p-8 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-full bg-surface-container flex items-center justify-center text-secondary shrink-0 shadow-inner">
+<span class="material-symbols-outlined text-3xl">verified</span>
+</div>
+<div class="space-y-0.5 text-center md:text-left">
+<div class="flex items-center gap-2 justify-center md:justify-start">
+<span class="font-title-md text-title-md text-primary font-bold">EduPro Academic Cryptographic Verification</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-numeric-table">#EDU-8921</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          यह स्कोरकार्ड इलेक्ट्रॉनिक रूप से जनरेटेड एवं NTA/SSC पैटर्न के अनुरूप सत्यापित है। भारतीय कॉपीराइट अधिनियम 1957 द्वारा रक्षित।
+        </p>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<button class="px-5 py-2.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md transition shadow-sm cursor-pointer">
+        पुनः टेस्ट शुरू करें
+      </button>
+<a class="px-5 py-2.5 rounded-lg bg-surface-container-high hover:bg-surface-dim text-primary font-label-md text-label-md transition shadow-xs cursor-pointer" href="test-series.html">
+        अगला टेस्ट चुनें
+      </a>
+</div>
+</div>
+</div></main>
+<!-- ================= FOOTER ================= -->
+<footer class="bg-white border-t border-slate-200 py-6 px-4 lg:px-8 text-center text-xs text-slate-500 space-y-2 mt-8">
+<p class="">© 2026-2027 EduPro Academic Nexus. भारतीय कॉपीराइट अधिनियम 1957 (धारा 13 व 63) द्वारा सामग्री सुरक्षित।</p>
+<p class="text-[11px] text-slate-400">डायग्नोस्टिक कोड: SEC-802 | आधिकारिक अंकन: +2.00 / -0.50 | 256-Bit SSL एन्क्रिप्टेड</p>
 </footer>
+<!-- ================= CLIENT JAVASCRIPT ================= -->
 <script>
-    const FOUNDER_SECRET = "916660";
+    function filterReviewQuestions(type, btn) {
+      document.querySelectorAll('#filterAll, #filterIncorrect, #filterReview').forEach(b => {
+        b.className = "px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900";
+      });
+      btn.className = "px-3 py-1.5 rounded-lg bg-white text-brand-900 shadow-2xs font-black";
 
-    function switchAuth(type) {
-      if(type === 'login') {
-        document.getElementById('loginForm').classList.remove('hidden');
-        document.getElementById('registerForm').classList.add('hidden');
-        document.getElementById('tabLogin').className = "flex-1 py-2 text-xs font-bold rounded-lg transition-all bg-white text-blue-800 shadow-sm text-center";
-        document.getElementById('tabRegister').className = "flex-1 py-2 text-xs font-bold rounded-lg transition-all text-slate-500 hover:text-slate-800 text-center";
-      } else {
-        document.getElementById('loginForm').classList.add('hidden');
-        document.getElementById('registerForm').classList.remove('hidden');
-        document.getElementById('tabRegister').className = "flex-1 py-2 text-xs font-bold rounded-lg transition-all bg-white text-blue-800 shadow-sm text-center";
-        document.getElementById('tabLogin').className = "flex-1 py-2 text-xs font-bold rounded-lg transition-all text-slate-500 hover:text-slate-800 text-center";
+      const items = document.querySelectorAll('.review-item');
+      items.forEach(el => {
+        if (type === 'all') {
+          el.style.display = 'block';
+        } else if (type === 'incorrect') {
+          el.style.display = el.getAttribute('data-type') === 'incorrect' ? 'block' : 'none';
+        } else if (type === 'review') {
+          el.style.display = 'block';
+        }
+      });
+    }
+
+    // Anti-Inspect & Anti-Tampering Shield
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('keydown', e => {
+      if (e.keyCode === 123 || 
+         (e.ctrlKey && ['c', 'u', 's', 'a'].includes(e.key.toLowerCase())) ||
+         (e.ctrlKey && e.shiftKey && ['i', 'j'].includes(e.key.toLowerCase()))) {
+        e.preventDefault();
+        return false;
       }
-    }
-
-    function pinNext(current, nextId) {
-      if(current.value.length >= 1) {
-        document.getElementById(nextId).focus();
-      }
-    }
-
-    function checkAdminTrigger(val) {
-      if(val.trim() === '9166603971') {
-        setTimeout(triggerAdminModal, 300);
-      }
-    }
-
-    function triggerAdminModal() {
-      document.getElementById('adminModal').classList.remove('hidden');
-      setTimeout(() => document.getElementById('adminPin').focus(), 150);
-    }
-    function closeAdminModal() {
-      document.getElementById('adminModal').classList.add('hidden');
-      document.getElementById('adminError').classList.add('hidden');
-      document.getElementById('adminPin').value = '';
-    }
-
-    function openForgotModal() { document.getElementById('forgotModal').classList.remove('hidden'); }
-    function closeForgotModal() { document.getElementById('forgotModal').classList.add('hidden'); }
-
-    function handleLoginSubmit(e) {
-      e.preventDefault();
-      const mob = document.getElementById('loginMobile').value.trim();
-      if(mob === '9166603971') {
-        triggerAdminModal();
-        return;
-      }
-      sessionStorage.setItem('edupro_student_auth', 'true');
-      sessionStorage.setItem('edupro_student_phone', mob);
-      window.location.href = 'dashboard.html';
-    }
-
-    function handleRegisterSubmit(e) {
-      e.preventDefault();
-      alert('✅ विद्यार्थी पंजीकरण सफल! अब अपना मोबाइल नंबर व पासवर्ड डालकर लॉगिन करें।');
-      switchAuth('login');
-    }
-
-    function handleForgotReset(e) {
-      e.preventDefault();
-      alert('✅ 4-अंक पिन सत्यापित! आपका नया पासवर्ड सफलतापूर्वक अपडेट हो गया है।');
-      closeForgotModal();
-    }
-
-    function handleAdminVerify(e) {
-      e.preventDefault();
-      const pin = document.getElementById('adminPin').value.trim();
-      if(pin === FOUNDER_SECRET) {
-        sessionStorage.setItem('edupro_founder_authenticated', 'true');
-        sessionStorage.setItem('edupro_founder_phone', '9166603971');
-        window.location.href = 'admin-approvals.html';
-      } else {
-        document.getElementById('adminError').classList.remove('hidden');
-        document.getElementById('adminPin').value = '';
-      }
-    }
+    });
   </script>
 </body></html>
