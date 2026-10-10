@@ -12,18 +12,10 @@ const STREAMS = [
 
 export async function GET(request) {
   try {
-    const { searchParams } = new URL(request.url);
-    const targetStream = searchParams.get('stream');
-
-    let streamsToProcess = STREAMS;
-    if (targetStream && targetStream !== 'all') {
-      streamsToProcess = [targetStream];
-    }
-
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
     const results = {};
 
-    for (const stream of streamsToProcess) {
+    for (const stream of STREAMS) {
       const prompt = `Generate 20 high-yield multiple-choice questions for the competitive exam stream "${stream}" in strict JSON array format. Each object must have fields: "id", "question", "options" (array of 4 strings), "correctAnswer" (index 0-3), and "trick" (short memory trick). Do not include any markdown formatting or extra text outside the JSON array.`;
 
       try {
@@ -31,16 +23,14 @@ export async function GET(request) {
         const response = await result.response;
         let text = response.text().trim();
         
-        // Clean markdown code blocks if any
         text = text.replace(/^```json\s*/, "").replace(/^```\s*/, "").replace(/\s*```$/, "");
-        
         results[stream] = JSON.parse(text);
       } catch (err) {
         results[stream] = { error: err.message };
       }
     }
 
-    return NextResponse.json({ success: true, data: results });
+    return NextResponse.json({ success: true, message: "Questions generated successfully!", data: results });
   } catch (error) {
     return NextResponse.json({ success: false, error: error.message }, { status: 500 });
   }
