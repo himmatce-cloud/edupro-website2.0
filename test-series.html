@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>EduPro - 15 Streams Structured Unified Test Engine (test-series.html)</title>
+  <title>EduPro - Official Live Dynamic Scorecard & Answer Sheet (test-result.html)</title>
   
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -30,1386 +30,554 @@
     body { user-select: none; -webkit-user-select: none; }
     .custom-scrollbar::-webkit-scrollbar { width: 6px; }
     .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-    .tab-active { background-color: #00163d !important; color: #ffffff !important; border-color: #00163d !important; box-shadow: 0 4px 12px rgba(0, 22, 61, 0.15); }
-    .card-selected { border-color: #1d4ed8 !important; background-color: #f0f5ff !important; box-shadow: 0 4px 14px -2px rgba(29, 78, 216, 0.2) !important; }
+    @media print {
+      .no-print { display: none !important; }
+      body { background: white !important; }
+    }
   </style>
 </head>
 <body class="min-h-full flex flex-col font-sans bg-slate-100 text-slate-800 antialiased overflow-x-hidden" oncontextmenu="return false;">
 
-<!-- ================= HIERARCHICAL DRILLDOWN GATEWAY MODAL ================= -->
-<div class="fixed inset-0 bg-slate-900/80 backdrop-blur-md z-50 flex items-center justify-center p-2 sm:p-4" id="unifiedPretestModal">
-  <div class="bg-white rounded-3xl max-w-5xl w-full max-h-[94vh] flex flex-col overflow-hidden shadow-2xl border border-slate-200">
-    <!-- Top Fixed Header -->
-    <div class="bg-brand-900 text-white p-4 lg:p-5 flex items-center justify-between shrink-0">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-amber-300 shrink-0">
-          <span class="material-symbols-outlined text-2xl">account_tree</span>
-        </div>
-        <div>
-          <div class="flex items-center gap-2 flex-wrap">
-            <h2 class="text-base lg:text-lg font-black leading-tight">Pre-Test Stream &amp; Syllabus Selection</h2>
-            <span class="text-[10px] font-bold bg-amber-400 text-slate-900 px-2 py-0.5 rounded-full">15 National Streams Active</span>
-          </div>
-          <p class="text-[11px] text-slate-300 mt-0.5">कैटिगरी टैब चुनें व सटीक ट्रेड/बोर्ड/सेमेस्टर ड्रिलडाउन करें। परीक्षा में केवल चयनित विषय के वास्तविक प्रश्न लोड होंगे।</p>
-        </div>
-      </div>
-      <div class="hidden sm:flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-xl text-xs font-mono font-bold text-amber-300 shrink-0 border border-white/10">
-        <span class="material-symbols-outlined text-sm">pause_circle</span>
-        <span>टाइमर: 60:00 (Paused)</span>
+  <!-- ================= TOP MAIN HEADER ================= -->
+  <header class="no-print bg-white border-b border-slate-200 h-16 shrink-0 flex items-center justify-between px-4 lg:px-8 sticky top-0 z-30 shadow-xs">
+    <div class="flex items-center gap-3">
+      <a class="flex items-center gap-2 group" href="index.html">
+        <div class="w-9 h-9 rounded-xl bg-brand-900 text-white flex items-center justify-center font-black text-lg shadow-sm">EP</div>
+        <span class="font-black text-lg tracking-tight text-brand-900 hidden sm:inline">EduPro</span>
+      </a>
+      <div class="hidden md:flex items-center gap-2 bg-slate-50 border border-slate-200 px-3 py-1 rounded-xl text-xs font-bold text-slate-700">
+        <span class="material-symbols-outlined text-sm text-brand-600">verified</span>
+        <span>आधिकारिक NTA/SSC प्रॉकटर्ड परिणाम</span>
       </div>
     </div>
 
-    <!-- Live Hierarchical Interactive Breadcrumb Trail -->
-    <div class="bg-brand-50 px-4 py-2.5 border-b border-brand-100 flex items-center gap-1.5 text-xs text-brand-900 font-semibold overflow-x-auto custom-scrollbar shrink-0">
-      <span class="material-symbols-outlined text-sm text-brand-700 shrink-0">route</span>
-      <span class="text-slate-500 shrink-0">वर्तमान चयन पथ:</span>
-      <div class="flex items-center gap-1 shrink-0 font-bold" id="liveBreadcrumbTrail">
-        <span class="px-2 py-0.5 bg-white rounded border border-brand-200">⚙️ इंजीनियरिंग ट्रेड्स</span>
-        <span class="text-slate-400">›</span>
-        <span class="px-2 py-0.5 bg-white rounded border border-brand-200">B.Tech Civil Engineering</span>
-        <span class="text-slate-400">›</span>
-        <span class="px-2 py-0.5 bg-white rounded border border-brand-200">Semester 2</span>
-        <span class="text-slate-400">›</span>
-        <span class="px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded border border-emerald-300">Building Materials &amp; Tech</span>
-      </div>
-    </div>
+    <!-- Center Navigation Links (All 100% Interconnected) -->
+    <nav class="hidden lg:flex items-center gap-6 text-xs font-bold text-slate-600">
+      <a class="hover:text-brand-700 transition" href="index.html">होमपेज</a>
+      <a class="text-brand-700 font-extrabold" href="test-series.html">टेस्ट सीरीज़</a>
+      <a class="hover:text-brand-700 transition" href="pyq-tricks.html">20-Year PYQ</a>
+      <a class="hover:text-brand-700 transition" href="dashboard.html">डैशबोर्ड</a>
+      <a class="hover:text-brand-700 transition" href="gk.html">दैनिक GK</a>
+      <a class="hover:text-brand-700 transition" href="help.html">सहायता</a>
+    </nav>
 
-    <!-- SSC / NTA Standard Marking Matrix Ribbon -->
-    <div class="bg-slate-50 px-4 py-2 border-b border-slate-200 flex flex-wrap items-center justify-between text-xs font-bold text-slate-700 shrink-0">
-      <div class="flex items-center gap-1.5">
-        <span class="material-symbols-outlined text-brand-700 text-sm">verified_user</span>
-        <span>SSC / NTA आधिकारिक अंकन प्रणाली:</span>
+    <!-- Right Header Actions -->
+    <div class="flex items-center gap-3">
+      <div class="flex items-center gap-1.5 bg-emerald-50 text-emerald-800 border border-emerald-200 px-3 py-1.5 rounded-xl text-xs font-bold">
+        <span class="material-symbols-outlined text-sm text-emerald-600">check_circle</span>
+        <span>₹199 / माह All-Access सक्रिय</span>
       </div>
-      <div class="flex items-center gap-2 text-[11px]">
-        <span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200 font-bold">+2.00 सही उत्तर</span>
-        <span class="px-2 py-0.5 rounded bg-rose-50 text-rose-700 border border-rose-200 font-bold">-0.50 निगेटिव मार्किंग</span>
-        <span class="px-2 py-0.5 rounded bg-slate-200 text-slate-700">0.00 अन-अटेम्प्टेड</span>
-      </div>
-    </div>
-
-    <!-- Categorical Top Navigation Tabs (6 Structured Pillars) -->
-    <div class="bg-white border-b border-slate-200 px-4 pt-3 pb-1 shrink-0">
-      <div class="flex items-center gap-1.5 overflow-x-auto custom-scrollbar pb-2" id="categoryTabContainer">
-        <button class="category-tab px-3.5 py-2 rounded-xl text-xs font-bold border border-slate-200 text-slate-700 hover:bg-slate-50 whitespace-nowrap transition flex items-center gap-1.5" onclick="switchCategoryTab('competitive', this)" type="button">
-          <span>🏆</span> <span>प्रतियोगी परीक्षाएं</span>
-        </button>
-        <button class="category-tab px-3.5 py-2 rounded-xl text-xs font-bold border border-slate-200 text-slate-700 hover:bg-slate-50 whitespace-nowrap transition flex items-center gap-1.5" onclick="switchCategoryTab('boards', this)" type="button">
-          <span>🎒</span> <span>10th व 12th बोर्ड</span>
-        </button>
-        <button class="category-tab tab-active px-3.5 py-2 rounded-xl text-xs font-bold border border-slate-200 text-slate-700 hover:bg-slate-50 whitespace-nowrap transition flex items-center gap-1.5" onclick="switchCategoryTab('engineering', this)" type="button">
-          <span>⚙️</span> <span>इंजीनियरिंग ट्रेड्स</span>
-        </button>
-        <button class="category-tab px-3.5 py-2 rounded-xl text-xs font-bold border border-slate-200 text-slate-700 hover:bg-slate-50 whitespace-nowrap transition flex items-center gap-1.5" onclick="switchCategoryTab('medical', this)" type="button">
-          <span>🩺</span> <span>मेडिकल व फार्मेसी</span>
-        </button>
-        <button class="category-tab px-3.5 py-2 rounded-xl text-xs font-bold border border-slate-200 text-slate-700 hover:bg-slate-50 whitespace-nowrap transition flex items-center gap-1.5" onclick="switchCategoryTab('college', this)" type="button">
-          <span>🎓</span> <span>कॉलेज डिग्री</span>
-        </button>
-        <button class="category-tab px-3.5 py-2 rounded-xl text-xs font-bold border border-slate-200 text-slate-700 hover:bg-slate-50 whitespace-nowrap transition flex items-center gap-1.5" onclick="switchCategoryTab('vocational', this)" type="button">
-          <span>💻</span> <span>कंप्यूटर व कौशल</span>
-        </button>
-      </div>
-    </div>
-
-    <!-- Scrollable Tab Content & Sub-drilldown Body -->
-    <div class="p-4 lg:p-5 overflow-y-auto custom-scrollbar space-y-4 bg-slate-50/50 flex-1" id="drilldownContentArea"></div>
-
-    <!-- Bottom Pinned Action Bar -->
-    <div class="bg-white p-3 lg:p-4 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3 shrink-0">
-      <div class="flex items-center gap-2 min-w-0">
-        <span class="material-symbols-outlined text-emerald-600 text-2xl shrink-0">verified</span>
-        <div class="min-w-0">
-          <span class="text-[10px] text-slate-500 uppercase tracking-wide block font-bold">आइसोलेटेड संकाय व पाठ्यक्रम (Isolated Target Exam):</span>
-          <span class="text-xs font-black text-brand-900 truncate block" id="modalFinalSelectionText">B.Tech Civil Engineering • Semester 2 (Building Materials &amp; Tech)</span>
+      <div class="flex items-center gap-2 pl-2 border-l border-slate-200 text-xs font-bold text-slate-700">
+        <div class="w-8 h-8 rounded-full bg-brand-900 text-white flex items-center justify-center font-black text-xs" id="navUserAvatar">RK</div>
+        <div class="hidden sm:block text-left">
+          <div class="leading-tight" id="navUserName">सत्यापित परीक्षार्थी</div>
+          <div class="text-[10px] text-slate-400 font-normal" id="navUserRoll">#EDU-8921</div>
         </div>
       </div>
-      <div class="flex items-center gap-2 shrink-0">
-        <a class="px-3.5 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-100 transition" href="dashboard.html">
-          डैशबोर्ड पर लौटें
-        </a>
-        <button class="px-5 py-2 rounded-xl bg-brand-900 hover:bg-black text-white font-extrabold text-xs shadow-md transition flex items-center gap-1.5 cursor-pointer" onclick="launchExamWithSelection()" type="button">
-          <span>Start Exam (परीक्षा शुरू करें)</span>
-          <span class="material-symbols-outlined text-sm">play_arrow</span>
-        </button>
-      </div>
     </div>
-  </div>
-</div>
+  </header>
 
-<!-- ================= TOP MAIN EXAM HEADER ================= -->
-<header class="bg-white border-b border-slate-200 h-16 shrink-0 flex items-center justify-between px-4 lg:px-8 sticky top-0 z-30 shadow-xs">
-  <div class="flex items-center gap-3">
-    <a class="flex items-center gap-2 group" href="index.html">
-      <div class="w-9 h-9 rounded-xl bg-brand-900 text-white flex items-center justify-center font-black text-lg shadow-sm">EP</div>
-      <span class="font-black text-lg tracking-tight text-brand-900 hidden sm:inline">EduPro</span>
-    </a>
-    <div class="hidden sm:flex items-center gap-2 bg-slate-50 border border-slate-200 px-3 py-1 rounded-xl text-xs font-bold text-slate-700">
-      <span class="material-symbols-outlined text-sm text-brand-600">gavel</span>
-      <span>SSC मानक:</span>
-      <span class="text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">+2.00 सही</span>
-      <span class="text-rose-700 bg-rose-50 px-1.5 py-0.5 rounded border border-rose-200">-0.50 निगेटिव</span>
-    </div>
-    <button class="flex items-center gap-1.5 bg-brand-50 hover:bg-brand-100 border border-brand-200 text-brand-800 px-3 py-1.5 rounded-xl text-xs font-bold transition" onclick="reopenStreamModal()" type="button">
-      <span class="material-symbols-outlined text-sm text-brand-700">account_tree</span>
-      <span class="max-w-[200px] md:max-w-xs truncate" id="headerActiveStreamLabel">B.Tech Civil Engg • Sem 2</span>
-      <span class="material-symbols-outlined text-xs">arrow_drop_down</span>
-    </button>
-  </div>
-  
-  <div class="flex items-center gap-3">
-    <div class="flex items-center gap-2 bg-slate-900 text-white px-3.5 py-1.5 rounded-xl shadow-xs">
-      <span class="material-symbols-outlined text-sm text-amber-400" id="timerIcon">timer</span>
-      <span class="text-xs font-mono font-bold tracking-wider" id="examClock">60:00</span>
-    </div>
-    <div class="flex items-center bg-slate-100 p-1 rounded-xl text-xs font-bold">
-      <button class="px-2.5 py-1 rounded-lg bg-white text-brand-900 shadow-2xs" id="btnLangHi" onclick="switchLanguage('hi')" type="button">हिन्दी</button>
-      <button class="px-2.5 py-1 rounded-lg text-slate-500 hover:text-slate-900" id="btnLangEn" onclick="switchLanguage('en')" type="button">Eng</button>
-    </div>
-    <a class="p-1.5 rounded-lg border border-slate-200 text-slate-500 hover:text-rose-600 transition" href="dashboard.html" title="परीक्षा छोड़ें">
-      <span class="material-symbols-outlined text-base">close</span>
-    </a>
-  </div>
-</header>
-
-<!-- ================= MAIN EXAM LAYOUT ================= -->
-<main class="flex-1 max-w-7xl w-full mx-auto p-3 lg:p-6 grid grid-cols-1 lg:grid-cols-12 gap-5">
-  
-  <!-- LEFT COLUMN: QUESTION & OPTIONS WORKSPACE -->
-  <div class="lg:col-span-8 flex flex-col justify-between space-y-4">
-    <!-- QUESTION CARD -->
-    <div class="bg-white rounded-3xl p-5 lg:p-7 border border-slate-200 shadow-sm space-y-5">
-      <!-- Meta & MCQ/Theory Toggle -->
-      <div class="flex items-center justify-between pb-3 border-b border-slate-100 flex-wrap gap-2">
-        <div class="flex items-center gap-2">
-          <span class="w-8 h-8 rounded-lg bg-brand-900 text-white flex items-center justify-center font-black text-xs">
-            <span id="currentQNumBadge">01</span>
+  <!-- ================= MAIN SCORECARD CONTAINER ================= -->
+  <main class="flex-1 max-w-7xl w-full mx-auto p-4 lg:p-7 space-y-6">
+    <div class="flex flex-col w-full space-y-6">
+      
+      <!-- Live Submission Reconciled Banner -->
+      <div class="bg-blue-50 border border-blue-200 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-xs">
+        <div class="flex items-center gap-3">
+          <span class="w-9 h-9 rounded-xl bg-brand-700 text-white flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-lg">sync_saved_locally</span>
           </span>
-          <div class="text-xs font-bold text-slate-500">
-            प्रश्न <span id="currentQNumText">1</span> / 100
+          <div>
+            <div class="text-xs font-black text-brand-900 flex items-center gap-1.5">
+              <span>लाइव परीक्षा सत्र सत्यापित (Live Submission Reconciled)</span>
+              <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            </div>
+            <p class="text-[11px] text-slate-600 mt-0.5" id="liveSyncStatusText">
+              test-series.html के वास्तविक सबमिशन सत्र से परिणाम स्वतः लोड व सिंक्रनाइज़्ड।
+            </p>
           </div>
-          <span class="text-[10px] font-bold text-brand-800 bg-brand-50 px-2.5 py-0.5 rounded border border-brand-200" id="subjectMetaBadge">Building Materials &amp; Concrete Tech</span>
         </div>
-        <div class="flex items-center bg-slate-100 p-1 rounded-xl text-[11px] font-bold">
-          <button class="px-3 py-1 rounded-lg bg-white text-brand-900 shadow-2xs flex items-center gap-1" id="btnModeMCQ" onclick="setQMode('mcq')" type="button">
-            <span class="material-symbols-outlined text-xs">radio_button_checked</span> बहुविकल्पीय (MCQ)
+        <div class="flex items-center gap-2 shrink-0 no-print">
+          <button class="px-3.5 py-1.5 rounded-xl bg-white border border-slate-300 text-xs font-bold text-slate-700 hover:bg-slate-50 transition shadow-2xs cursor-pointer flex items-center gap-1" onclick="window.print()">
+            <span class="material-symbols-outlined text-sm text-brand-700">print</span>
+            <span>A4 प्रिंट</span>
           </button>
-          <button class="px-3 py-1 rounded-lg text-slate-500 hover:text-slate-900 flex items-center gap-1" id="btnModeTheory" onclick="setQMode('theory')" type="button">
-            <span class="material-symbols-outlined text-xs">edit_note</span> थ्योरी (मॉडल उत्तर)
+          <a class="px-3.5 py-1.5 rounded-xl bg-brand-900 hover:bg-black text-white text-xs font-bold transition shadow-xs cursor-pointer flex items-center gap-1" href="test-series.html">
+            <span class="material-symbols-outlined text-sm text-amber-300">play_arrow</span>
+            <span>नया टेस्ट दें</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Header Scorecard Title Bar -->
+      <div class="bg-white rounded-3xl shadow-sm border border-slate-200 p-6 lg:p-8 space-y-6">
+        <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-6 pb-6 border-b border-slate-100">
+          <div class="space-y-2">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-900 text-white text-xs font-bold shadow-xs">
+                <span class="material-symbols-outlined text-sm text-amber-300">verified</span>
+                <span id="scorecardRegIdBadge">आधिकारिक डायग्नोस्टिक स्कोरकार्ड</span>
+              </span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold">
+                <span class="material-symbols-outlined text-sm text-brand-600">calculate</span>
+                <span id="scorecardMarkingSchemeText">मानक अंकन प्रणाली: NTA/SSC</span>
+              </span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold" id="headerCutoffBadge">
+                <span class="material-symbols-outlined text-sm text-emerald-600">check_circle</span>
+                <span>स्थिति: परिणाम विश्लेषित (Qualified)</span>
+              </span>
+            </div>
+            
+            <h1 class="text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 tracking-tight leading-tight" id="activeTestTitle">
+              NEET (UG Medical Entrance) - Botany & Plant Physiology (100-Question Exam)
+            </h1>
+            
+            <div class="flex items-center gap-4 text-slate-500 text-xs flex-wrap">
+              <span class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-base text-slate-400">schedule</span>
+                कुल व्यतीत समय: <strong class="text-slate-900 font-mono font-bold" id="activeTestTimeTaken">54m 16s</strong> / <span>60m</span>
+              </span>
+              <span class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-base text-slate-400">gavel</span>
+                परीक्षा मोड: <span class="font-medium text-slate-700">प्रॉकटर्ड पूर्ण-लंबाई परीक्षा</span>
+              </span>
+              <span class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-base text-slate-400">lock</span>
+                डिजिटल टोकन: <span class="font-mono text-brand-700 font-bold" id="activeTestIdBadge">#EDU-8921-SECURE</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="flex items-center flex-wrap gap-2.5 shrink-0 no-print">
+            <button class="px-4 py-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 text-brand-900 text-xs font-bold flex items-center gap-1.5 transition shadow-2xs border border-slate-200 cursor-pointer" onclick="window.print()">
+              <span class="material-symbols-outlined text-base text-brand-700">print</span>
+              <span>A4 PDF स्कोरकार्ड</span>
+            </button>
+            <a class="px-4 py-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-700 text-xs font-bold flex items-center gap-1.5 transition shadow-2xs border border-slate-200 cursor-pointer" href="test-series.html">
+              <span class="material-symbols-outlined text-base text-brand-700">cached</span>
+              <span>पुनः टेस्ट दें (Retake)</span>
+            </a>
+            <a class="px-4 py-2.5 rounded-xl bg-brand-900 hover:bg-black text-white text-xs font-extrabold flex items-center gap-1.5 transition shadow-xs cursor-pointer" href="dashboard.html">
+              <span class="material-symbols-outlined text-base">dashboard</span>
+              <span>डैशबोर्ड</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 4 Core Metric KPI Blocks (Real Live Data) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- KPI 1: Score -->
+          <div class="rounded-2xl p-5 bg-slate-50 border border-slate-200 shadow-2xs">
+            <div class="flex items-center justify-between text-xs text-slate-500 font-bold">
+              <span>अर्जित कुल अंक (Total Score)</span>
+              <span class="material-symbols-outlined text-brand-700 text-xl">military_tech</span>
+            </div>
+            <div class="mt-2 flex items-baseline gap-2">
+              <span class="text-3xl lg:text-4xl text-brand-900 font-mono font-black" id="metricTotalScore">--.--</span>
+              <span class="text-sm font-bold text-slate-400" id="metricMaxScore">/ 400</span>
+            </div>
+            <div class="mt-3 flex items-center justify-between text-xs font-mono">
+              <span>प्रतिशत: <strong class="text-brand-900 font-black" id="metricPercentage">--%</strong></span>
+              <span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-[11px] font-bold">मेरिट जोन</span>
+            </div>
+          </div>
+
+          <!-- KPI 2: AIR Rank -->
+          <div class="rounded-2xl p-5 bg-slate-50 border border-slate-200 shadow-2xs">
+            <div class="flex items-center justify-between text-xs text-slate-500 font-bold">
+              <span>ऑल इंडिया रैंक (All India Rank)</span>
+              <span class="material-symbols-outlined text-brand-700 text-xl">leaderboard</span>
+            </div>
+            <div class="mt-2 flex items-baseline gap-2">
+              <span class="text-3xl lg:text-4xl text-brand-700 font-mono font-black" id="metricRank">#42</span>
+              <span class="text-xs font-medium text-slate-500">/ 14,280</span>
+            </div>
+            <div class="mt-3 flex items-center justify-between text-xs font-mono">
+              <span>शीर्ष <strong class="text-brand-700 font-black">0.3%</strong> परीक्षार्थी</span>
+              <span class="px-2 py-0.5 rounded-full bg-blue-50 text-brand-800 border border-blue-200 text-[11px] font-bold">राज्य मेरिट</span>
+            </div>
+          </div>
+
+          <!-- KPI 3: Accuracy -->
+          <div class="rounded-2xl p-5 bg-slate-50 border border-slate-200 shadow-2xs">
+            <div class="flex items-center justify-between text-xs text-slate-500 font-bold">
+              <span>सटीकता व निगेटिव (Accuracy)</span>
+              <span class="material-symbols-outlined text-brand-700 text-xl">track_changes</span>
+            </div>
+            <div class="mt-2 flex items-baseline gap-2">
+              <span class="text-3xl lg:text-4xl text-brand-900 font-mono font-black" id="metricAccuracy">--%</span>
+              <span class="text-xs text-emerald-700 font-bold">उच्च सटीकता</span>
+            </div>
+            <div class="mt-3 flex items-center justify-between text-xs font-mono">
+              <span id="metricAttemptCounts">-- सही • -- गलत</span>
+              <span class="text-rose-600 font-black" id="metricNegativeMarks">-- कटौती</span>
+            </div>
+          </div>
+
+          <!-- KPI 4: Percentile -->
+          <div class="rounded-2xl p-5 bg-slate-50 border border-slate-200 shadow-2xs">
+            <div class="flex items-center justify-between text-xs text-slate-500 font-bold">
+              <span>राष्ट्रीय पर्सेंटाइल (Percentile)</span>
+              <span class="material-symbols-outlined text-brand-700 text-xl">trending_up</span>
+            </div>
+            <div class="mt-2 flex items-baseline gap-2">
+              <span class="text-3xl lg:text-4xl text-brand-900 font-mono font-black" id="metricPercentile">99.41</span>
+              <span class="text-lg text-slate-400 font-bold">th</span>
+            </div>
+            <div class="mt-3 flex items-center justify-between text-xs font-mono">
+              <span>कटऑफ बेंचमार्क: क्लीयर</span>
+              <span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-[11px] font-bold">सत्यापित</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- NEXT-DAY TEST UNLOCK HERO CARD -->
+      <div class="bg-gradient-to-r from-brand-900 via-brand-800 to-slate-900 text-white rounded-3xl p-6 lg:p-8 shadow-md border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div class="space-y-2 max-w-2xl">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-900 text-white text-xs font-bold shadow-xs">
+              <span class="material-symbols-outlined text-sm text-amber-300">alarm</span>
+              <span>दैनिक 100-प्रश्न चक्र सक्रिय</span>
+            </span>
+          </div>
+          <h2 class="text-xl lg:text-2xl font-black text-white tracking-tight">
+            अगला 100 प्रश्नों का लाइव टेस्ट कल प्रातः 04:00 AM पर स्वतः अनलॉक होगा
+          </h2>
+          <p class="text-xs lg:text-sm text-slate-300 leading-relaxed" id="nextDaySyllabusPreview">
+            <strong>Mock Series #08</strong> — नया 100-प्रश्न मॉडल सेट (तरीक़ा A व तरीक़ा B द्वारा ऑटो-रोटेटेड) कल सुबह ठीक 4:00 AM पर स्वतः लोड हो जाएगा।
+          </p>
+          <div class="flex items-center gap-4 pt-1 text-xs text-amber-300 font-mono font-bold flex-wrap">
+            <span class="flex items-center gap-1">
+              <span class="material-symbols-outlined text-base">timelapse</span>
+              उल्टी गिनती (Countdown): <strong class="text-white font-mono text-sm" id="liveCountdownDisplay">-- घंटे -- मिनट -- सेकंड</strong>
+            </span>
+          </div>
+        </div>
+        <div class="flex flex-col gap-2.5 shrink-0 w-full sm:w-auto text-xs font-extrabold no-print">
+          <a class="px-5 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 transition text-center shadow-sm flex items-center justify-center gap-1.5 cursor-pointer" href="test-series.html">
+            <span class="material-symbols-outlined text-base">book_online</span>
+            <span>अन्य 20 संकाय टेस्ट दें</span>
+          </a>
+          <a class="px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 transition text-center flex items-center justify-center gap-1.5 cursor-pointer" href="pyq-tricks.html">
+            <span class="material-symbols-outlined text-base">psychology</span>
+            <span>20-Year PYQ ट्रिक्स पढ़ें</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- ================= 100-QUESTION REAL LIVE ANSWER SHEET & OMR RESPONSE GRID ================= -->
+      <div class="bg-white rounded-3xl shadow-sm p-6 lg:p-8 space-y-6 border border-slate-200" id="immediate-answer-sheet">
+        
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-100">
+          <div class="space-y-1">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="px-2.5 py-0.5 rounded-md bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold">
+                तत्काल जारी आधिकारिक उत्तर कुंजी
+              </span>
+              <span class="text-xs text-slate-500 font-mono" id="answerSheetExamRefCode">Exam Key: REAL-SUBMISSION-SYNC</span>
+            </div>
+            <h3 class="text-lg lg:text-xl font-black text-slate-900 flex items-center gap-2">
+              <span class="material-symbols-outlined text-brand-700">fact_check</span>
+              <span>आधिकारिक उत्तर कुंजी व 100-प्रश्न प्रतिक्रिया ग्रिड (Immediate Answer Sheet)</span>
+            </h3>
+            <p class="text-xs text-slate-500">
+              परीक्षार्थी द्वारा चयनित विकल्प (Student's Response) बनाम परीक्षा नियंत्रक का आधिकारिक विकल्प (Official Key)
+            </p>
+          </div>
+          <button class="px-4 py-2.5 rounded-xl bg-brand-900 hover:bg-black text-white text-xs font-bold transition shadow-xs flex items-center gap-1.5 shrink-0 cursor-pointer no-print" onclick="window.print()">
+            <span class="material-symbols-outlined text-sm text-amber-300">download</span>
+            <span>1-क्लिक A4 PDF उत्तर कुंजी</span>
           </button>
         </div>
-      </div>
 
-      <!-- Question Bilingual Text -->
-      <div class="space-y-2">
-        <h2 class="text-sm lg:text-base font-bold text-slate-900 leading-relaxed" id="qTextHi"></h2>
-        <p class="text-xs text-slate-500 font-medium leading-relaxed italic" id="qTextEn"></p>
-      </div>
-
-      <!-- MCQ OPTIONS (Zero Pre-Selected) -->
-      <div class="space-y-2.5 pt-2" id="optionsContainer">
-        <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-slate-200 hover:border-brand-500 hover:bg-brand-50/40 cursor-pointer transition group">
-          <input class="mt-0.5 text-brand-700 focus:ring-brand-500" name="examOptionInput" onchange="recordUserOption('A')" type="radio" value="A"/>
-          <div class="text-xs font-semibold text-slate-800 leading-relaxed">
-            <span class="font-bold text-brand-900 mr-1.5">(A)</span>
-            <span id="optLabelA"></span>
-            <span class="block text-[11px] text-slate-400 font-normal mt-0.5 italic" id="optLabelA_En"></span>
+        <!-- Filter Buttons Strip -->
+        <div class="flex flex-wrap items-center justify-between gap-3 text-xs">
+          <div class="flex items-center gap-1.5 p-1 bg-slate-100 rounded-xl">
+            <button class="px-3 py-1 rounded-lg bg-white text-brand-900 font-bold shadow-2xs cursor-pointer" id="btnAnsFilterAll" onclick="filterOMRGrid('all', this)">
+              सभी (100)
+            </button>
+            <button class="px-3 py-1 rounded-lg text-slate-600 hover:text-slate-900 cursor-pointer" id="btnAnsFilterCorrect" onclick="filterOMRGrid('correct', this)">
+              सही (<span id="omrFilterCorrectCount">0</span>)
+            </button>
+            <button class="px-3 py-1 rounded-lg text-slate-600 hover:text-slate-900 cursor-pointer" id="btnAnsFilterIncorrect" onclick="filterOMRGrid('incorrect', this)">
+              गलत (<span id="omrFilterIncorrectCount">0</span>)
+            </button>
+            <button class="px-3 py-1 rounded-lg text-slate-600 hover:text-slate-900 cursor-pointer" id="btnAnsFilterUnattempted" onclick="filterOMRGrid('unattempted', this)">
+              छोड़े गए (<span id="omrFilterUnattemptedCount">100</span>)
+            </button>
           </div>
-        </label>
-        <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-slate-200 hover:border-brand-500 hover:bg-brand-50/40 cursor-pointer transition group">
-          <input class="mt-0.5 text-brand-700 focus:ring-brand-500" name="examOptionInput" onchange="recordUserOption('B')" type="radio" value="B"/>
-          <div class="text-xs font-semibold text-slate-800 leading-relaxed">
-            <span class="font-bold text-brand-900 mr-1.5">(B)</span>
-            <span id="optLabelB"></span>
-            <span class="block text-[11px] text-slate-400 font-normal mt-0.5 italic" id="optLabelB_En"></span>
-          </div>
-        </label>
-        <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-slate-200 hover:border-brand-500 hover:bg-brand-50/40 cursor-pointer transition group">
-          <input class="mt-0.5 text-brand-700 focus:ring-brand-500" name="examOptionInput" onchange="recordUserOption('C')" type="radio" value="C"/>
-          <div class="text-xs font-semibold text-slate-800 leading-relaxed">
-            <span class="font-bold text-brand-900 mr-1.5">(C)</span>
-            <span id="optLabelC"></span>
-            <span class="block text-[11px] text-slate-400 font-normal mt-0.5 italic" id="optLabelC_En"></span>
-          </div>
-        </label>
-        <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-slate-200 hover:border-brand-500 hover:bg-brand-50/40 cursor-pointer transition group">
-          <input class="mt-0.5 text-brand-700 focus:ring-brand-500" name="examOptionInput" onchange="recordUserOption('D')" type="radio" value="D"/>
-          <div class="text-xs font-semibold text-slate-800 leading-relaxed">
-            <span class="font-bold text-brand-900 mr-1.5">(D)</span>
-            <span id="optLabelD"></span>
-            <span class="block text-[11px] text-slate-400 font-normal mt-0.5 italic" id="optLabelD_En"></span>
-          </div>
-        </label>
-      </div>
-
-      <!-- THEORY MODEL ANSWER CONTAINER -->
-      <div class="space-y-2 pt-2 hidden" id="theoryAnswerContainer">
-        <div class="flex items-center justify-between text-xs font-bold text-slate-500">
-          <span>विश्वविद्यालय / बोर्ड थ्योरी उत्तर लेखन प्रारूप (5-10 अंक):</span>
-          <span>शब्द सीमा: 150-200 शब्द</span>
-        </div>
-        <textarea class="w-full text-xs font-medium p-4 rounded-2xl border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:outline-none bg-slate-50/50" placeholder="यहाँ अपना संरचित उत्तर, मुख्य सूत्र, परिभाषा एवं तकनीकी बिंदु लिखें..." rows="5"></textarea>
-      </div>
-    </div>
-
-    <!-- BOTTOM CONTROL BUTTONS -->
-    <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-2xs flex flex-wrap items-center justify-between gap-3">
-      <div class="flex items-center gap-2">
-        <button class="py-2.5 px-3.5 rounded-xl border border-slate-300 hover:bg-slate-50 text-slate-700 font-bold text-xs transition" onclick="clearOptionResponse()" type="button">
-          विकल्प हटाएं (Clear)
-        </button>
-        <button class="py-2.5 px-3.5 rounded-xl border border-purple-200 bg-purple-50 hover:bg-purple-100 text-purple-800 font-bold text-xs transition" onclick="markForReview()" type="button">
-          पुनरीक्षण हेतु चिह्नित करें (Review)
-        </button>
-      </div>
-      <div class="flex items-center gap-2">
-        <button class="py-2.5 px-4 rounded-xl border border-slate-300 hover:bg-slate-50 text-slate-700 font-bold text-xs transition flex items-center gap-1" onclick="prevQuestion()" type="button">
-          <span class="material-symbols-outlined text-sm">arrow_back</span> पिछला (Prev)
-        </button>
-        <button class="py-2.5 px-6 rounded-xl bg-brand-900 hover:bg-black text-white font-extrabold text-xs shadow-xs transition flex items-center gap-1 cursor-pointer" onclick="saveAndNext()" type="button">
-          सहेजें एवं आगे बढ़ें (Save &amp; Next) <span class="material-symbols-outlined text-sm">arrow_forward</span>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- RIGHT COLUMN: 100-QUESTION PALETTE -->
-  <div class="lg:col-span-4 space-y-4">
-    <div class="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-4">
-      <!-- Palette Status Guide -->
-      <div class="space-y-1.5 pb-3 border-b border-slate-100">
-        <span class="text-xs font-bold text-slate-700 uppercase tracking-wider block">प्रश्न स्थिति मार्गदर्शिका (Palette Guide)</span>
-        <div class="grid grid-cols-2 gap-2 text-[10px] font-bold">
-          <div class="flex items-center gap-1.5">
-            <span class="w-3.5 h-3.5 rounded bg-emerald-600 text-white flex items-center justify-center text-[9px]">✓</span>
-            <span class="text-slate-600">Answered (<span id="paletteAnsweredCount">0</span>)</span>
-          </div>
-          <div class="flex items-center gap-1.5">
-            <span class="w-3.5 h-3.5 rounded bg-rose-600 text-white flex items-center justify-center text-[9px]">●</span>
-            <span class="text-slate-600">Unanswered (<span id="paletteUnansweredCount">0</span>)</span>
-          </div>
-          <div class="flex items-center gap-1.5">
-            <span class="w-3.5 h-3.5 rounded bg-purple-600 text-white flex items-center justify-center text-[9px]">★</span>
-            <span class="text-slate-600">Review (<span id="paletteReviewCount">0</span>)</span>
-          </div>
-          <div class="flex items-center gap-1.5">
-            <span class="w-3.5 h-3.5 rounded bg-slate-200 text-slate-700 flex items-center justify-center text-[9px]">-</span>
-            <span class="text-slate-600">Not Visited (<span id="paletteNotVisitedCount">100</span>)</span>
+          <div class="flex items-center gap-3 text-[11px] font-bold text-slate-600">
+            <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span> सही उत्तर</span>
+            <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-rose-600"></span> गलत उत्तर</span>
+            <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-slate-300"></span> अनुत्तरित</span>
           </div>
         </div>
+
+        <!-- 100-Question Color-Coded OMR Matrix -->
+        <div class="space-y-2">
+          <div class="flex justify-between text-[11px] font-bold text-slate-500">
+            <span>प्रश्न 01 से 100 तक त्वरित प्रतिक्रिया मैप (Click any box to inspect):</span>
+            <span>ग्रीन = सही | रेड = गलत | ग्रे = अनुत्तरित</span>
+          </div>
+          <div class="grid grid-cols-10 gap-1.5 font-mono text-xs font-bold" id="omrResponseGrid"></div>
+        </div>
+
+        <!-- Detailed Itemized Comparison Table -->
+        <div class="overflow-x-auto border border-slate-200 rounded-2xl">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-slate-50 text-slate-600 font-bold uppercase tracking-wider border-b border-slate-200">
+              <tr>
+                <th class="px-4 py-3">प्र. क्र.</th>
+                <th class="px-4 py-3">प्रश्न विवरण</th>
+                <th class="px-4 py-3 text-center">आपका उत्तर (Student)</th>
+                <th class="px-4 py-3 text-center">आधिकारिक उत्तर (Official)</th>
+                <th class="px-4 py-3 text-center">परिणाम</th>
+                <th class="px-4 py-3 text-right">देसी ट्रिक</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100" id="itemizedTableBody"></tbody>
+          </table>
+        </div>
+
       </div>
-      <!-- Section Switch: 1-50 vs 51-100 -->
-      <div class="flex items-center bg-slate-100 p-1 rounded-xl text-xs font-bold">
-        <button class="flex-1 py-1.5 rounded-lg bg-white text-brand-900 shadow-2xs" id="btnSecA" onclick="switchSection('A')" type="button">Section A (Q 1 - 50)</button>
-        <button class="flex-1 py-1.5 rounded-lg text-slate-500 hover:text-slate-900" id="btnSecB" onclick="switchSection('B')" type="button">Section B (Q 51 - 100)</button>
-      </div>
-      <!-- Question Grid Matrix -->
-      <div class="grid grid-cols-5 gap-2 max-h-72 overflow-y-auto custom-scrollbar p-1" id="paletteMatrixGrid"></div>
-      <!-- Final Submit & Security Badge -->
-      <div class="pt-3 border-t border-slate-100 space-y-2">
-        <button class="w-full py-3.5 bg-brand-900 hover:bg-black text-white font-extrabold text-xs rounded-xl shadow-md transition flex items-center justify-center gap-2 cursor-pointer" onclick="finalSubmitExam()" type="button">
-          <span class="material-symbols-outlined text-base text-emerald-400">task_alt</span>
-          अंतिम परीक्षा सबमिट करें (Final Submit)
-        </button>
-        <div class="flex items-center justify-center gap-1.5 text-[10px] text-slate-400">
-          <span class="material-symbols-outlined text-xs text-emerald-600">lock</span>
-          <span>256-Bit SSL एन्क्रिप्टेड सुरक्षित परीक्षा इंजन</span>
+
+      <!-- Bottom Verification Stamp -->
+      <div class="bg-white rounded-3xl p-6 lg:p-8 shadow-sm border border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-4">
+          <div class="w-14 h-14 rounded-2xl bg-blue-50 text-brand-700 flex items-center justify-center shrink-0 border border-blue-200 shadow-2xs">
+            <span class="material-symbols-outlined text-3xl">verified</span>
+          </div>
+          <div class="space-y-0.5 text-center md:text-left">
+            <div class="flex items-center gap-2 justify-center md:justify-start">
+              <span class="text-base font-black text-slate-900">EduPro Academic Cryptographic Verification</span>
+              <span class="text-xs px-2 py-0.5 rounded-full bg-blue-100 text-brand-900 font-mono font-bold" id="bottomVerificationBadge">#EDU-8921</span>
+            </div>
+            <p class="text-xs text-slate-500">
+              यह स्कोरकार्ड इलेक्ट्रॉनिक रूप से जनरेटेड एवं NTA/SSC पैटर्न के अनुरूप सत्यापित है। भारतीय कॉपीराइट अधिनियम 1957 द्वारा रक्षित।
+            </p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 shrink-0 no-print">
+          <a class="px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs transition shadow-sm cursor-pointer" href="test-series.html">
+            अन्य 20 संकाय टेस्ट दें
+          </a>
+          <a class="px-5 py-2.5 rounded-xl bg-brand-900 hover:bg-black text-white font-extrabold text-xs transition shadow-xs cursor-pointer" href="dashboard.html">
+            डैशबोर्ड पर लौटें
+          </a>
         </div>
       </div>
+
     </div>
-  </div>
-</main>
+  </main>
 
-<!-- ================= STRUCTURED HIERARCHICAL ENGINE & DUAL AUTO-ENGINE SCRIPT ================= -->
-<script>
-  // Strict Isolated Stream Data Store for all 15 National Streams
-  const STREAM_DATA_REGISTRY = {
-    // Category 1: Competitive
-    'upsc': {
-      cat: 'competitive',
-      title: 'UPSC CSE & CSAT Prelims',
-      module: 'GS-1: Indian Polity & Governance',
-      breadcrumb: ['🏆 प्रतियोगी परीक्षाएं', 'UPSC CSE', 'GS Paper 1 (Polity)'],
-      topics: ['बंदी प्रत्यक्षीकरण रिट (Article 32)', 'प्रस्तावना के मूलभूत तत्व', 'संसद की वित्तीय समितियां', 'नीति निदेशक तत्व (DPSP)', 'पंचायती राज व्यवस्था 73वां संशोधन', 'संवैधानिक संशोधन प्रक्रिया', 'न्यायिक पुनरावलोकन', 'मौलिक कर्तव्य (Article 51A)'],
-      baseQHi: "भारतीय संविधान के अनुच्छेद 32 के तहत संवैधानिक उपचार के अधिकार के संदर्भ में, 'बंदी प्रत्यक्षीकरण' (Habeas Corpus) रिट का मुख्य वैधानिक उद्देश्य क्या है?",
-      baseQEn: "Under Article 32 of the Constitution of India, what is the core judicial purpose of the writ of 'Habeas Corpus'?",
-      optA: "अवैध रूप से हिरासत में लिए गए व्यक्ति को न्यायालय के समक्ष प्रस्तुत करने का आदेश।",
-      optA_En: "An order demanding the production of an unlawfully detained person before the court.",
-      optB: "सार्वजनिक कर्तव्य के निष्पादन के लिए अधीनस्थ निकाय को बाध्य करना।",
-      optB_En: "An order compelling a public statutory authority to perform statutory duties.",
-      optC: "अधीनस्थ न्यायालय के अधिकार क्षेत्र के अतिक्रमण को रोकना।",
-      optC_En: "A restraining order preventing subordinate courts from exceeding jurisdiction.",
-      optD: "सार्वजनिक पद पर अवैध दावे की वैधता की जांच करना।",
-      optD_En: "A judicial inquiry into the substantive title of a public office holder."
-    },
-    'stategk': {
-      cat: 'competitive',
-      title: 'State PSC (28 States: RAS/UPPSC/BPSC)',
-      module: 'General Knowledge & State Heritage',
-      breadcrumb: ['🏆 प्रतियोगी परीक्षाएं', 'State PSC', '28 States Heritage & GK'],
-      topics: ['गागरोन का जल दुर्ग', 'मेवाड़ चित्रशैली', 'कालीबंगा हड़प्पा सभ्यता', 'राजस्थान की जनजातियां व लोकनृत्य', 'खनिज संसाधन व ऊर्जा', 'अरावली पर्वतमाला अपवाह तंत्र', '1857 की क्रांति में रियासतों का योगदान', 'राजस्थान लोक सेवा गारंटी अधिनियम'],
-      baseQHi: "यूनेस्को (UNESCO) की विश्व धरोहर सूची में शामिल 'गागरोन का किला' (Gagron Fort) किस श्रेणी का दुर्ग है?",
-      baseQEn: "Included in the UNESCO World Heritage list, the historic Gagron Fort belongs to which traditional classification of Indian forts?",
-      optA: "जल दुर्ग (Water / Aquatic Fort)",
-      optA_En: "Jal Durg (Water Fort flanked by Ahu and Kalisindh rivers)",
-      optB: "धान्वन दुर्ग (Desert Fort)",
-      optB_En: "Dhanvan Durg (Desert Fortress surrounded by sand tracts)",
-      optC: "वन दुर्ग (Forest Fort)",
-      optC_En: "Van Durg (Dense forest surrounded fortress)",
-      optD: "ऐरण दुर्ग (Inaccessible Spiked Fort)",
-      optD_En: "Airan Durg (Surrounded by thorns and ravines)"
-    },
-    'bed': {
-      cat: 'competitive',
-      title: 'B.Ed & Teacher Eligibility (CTET/REET)',
-      module: 'Child Development & Pedagogy',
-      breadcrumb: ['🏆 प्रतियोगी परीक्षाएं', 'B.Ed / CTET / REET', 'बाल विकास एवं शिक्षाशास्त्र'],
-      topics: ['जीन पियाजे संज्ञानात्मक अवस्थाएं', 'वाइगोत्स्की समीपस्थ विकास क्षेत्र (ZPD)', 'कोहलबर्ग नैतिक विकास चरण', 'बुद्धि के बहु-कारक सिद्धांत', 'RTE अधिनियम 2009 के मानक', 'सतत एवं समग्र मूल्यांकन (CCE)', 'समावेशी शिक्षा प्रावधान', 'अधिगम अक्षमताएं (Dyslexia/Dyscalculia)'],
-      baseQHi: "जीन पियाजे के संज्ञानात्मक विकास सिद्धांत के अनुसार, किस अवस्था में बच्चा 'वस्तु स्थायित्व' (Object Permanence) प्राप्त करता है?",
-      baseQEn: "According to Jean Piaget's cognitive development theory, in which stage does an infant fully achieve 'Object Permanence'?",
-      optA: "संवेदी-गामक अवस्था (Sensorimotor Stage 0-2 Years)",
-      optA_En: "Sensorimotor Stage (0 to 2 years)",
-      optB: "पूर्व-संक्रियात्मक अवस्था (Preoperational Stage)",
-      optB_En: "Preoperational Stage (2 to 7 years)",
-      optC: "मूर्त संक्रियात्मक अवस्था (Concrete Operational Stage)",
-      optC_En: "Concrete Operational Stage (7 to 11 years)",
-      optD: "औपचारिक संक्रियात्मक अवस्था (Formal Operational Stage)",
-      optD_En: "Formal Operational Stage (12 years and above)"
-    },
-    'reasoning': {
-      cat: 'competitive',
-      title: 'Mental Ability & Logical Reasoning',
-      module: 'Logical Reasoning & Coding Ciphers',
-      breadcrumb: ['🏆 प्रतियोगी परीक्षाएं', 'मानसिक योग्यता', 'कोडिंग एवं लॉजिकल रीजनिंग'],
-      topics: ['कोडिंग एवं डिकोडिंग सिफर', 'रक्त संबंध (Blood Relations)', 'सिलोगिज्म (न्याय निगमन)', 'दिशा एवं दूरी परीक्षण', 'संख्या व अक्षर श्रृंखला', 'कथन एवं पूर्वधारणाएं', 'पासा एवं घन (Dice & Cube)', 'रैंकिंग एवं बैठक व्यवस्था'],
-      baseQHi: "यदि किसी कूट भाषा में 'DELHI' को '73541' लिखा जाता है और 'CALCUTTA' को '82589662' लिखा जाता है, तो 'CALICUT' को कैसे लिखा जाएगा?",
-      baseQEn: "If in a cryptographic cipher 'DELHI' is encoded as '73541' and 'CALCUTTA' is '82589662', how will 'CALICUT' be encoded?",
-      optA: "8251896",
-      optA_En: "Cipher pattern numeric: 8251896",
-      optB: "5279431",
-      optB_En: "Cipher pattern numeric: 5279431",
-      optC: "8251869",
-      optC_En: "Cipher pattern numeric: 8251869",
-      optD: "8543261",
-      optD_En: "Cipher pattern numeric: 8543261"
-    },
+  <!-- ================= INSTITUTIONAL FOOTER ================= -->
+  <footer class="bg-white border-t border-slate-200 py-6 px-4 lg:px-8 text-center text-xs text-slate-500 space-y-2 mt-8">
+    <p>© 2026-2027 EduPro Academic Nexus. भारतीय कॉपीराइट अधिनियम 1957 (धारा 13 व 63) द्वारा सामग्री सुरक्षित।</p>
+    <p class="text-[11px] text-slate-400">डायग्नोस्टिक कोड: SEC-802 | 256-Bit SSL एन्क्रिप्टेड सर्वर</p>
+  </footer>
 
-    // Category 2: School Boards (10th & 12th)
-    'board_10th': {
-      cat: 'boards',
-      title: '10th Board (All Subjects)',
-      module: 'Class 10th NCERT Foundation',
-      breadcrumb: ['🎒 स्कूल बोर्ड', '10th बोर्ड (RBSE/CBSE)', 'NCERT सम्पूर्ण विज्ञान'],
-      topics: ['लेंस की क्षमता (Dioptre)', 'रासायनिक अभिक्रियाएं एवं समीकरण', 'अम्ल, क्षारक एवं लवण', 'विद्युत धारा का तापीय प्रभाव', 'मानव पाचन तंत्र', 'आनुवंशिकता एवं जैव विकास', 'प्रकाश का परावर्तन व अपवर्तन', 'धातु एवं अधातु'],
-      baseQHi: "लेंस की क्षमता (Power of a Lens) का SI मात्रक क्या होता है?",
-      baseQEn: "What is the certified SI unit used to quantify the optical focal power of an ocular lens?",
-      optA: "डायोप्टर (Dioptre - D)",
-      optA_En: "Dioptre (D)",
-      optB: "जूल (Joule)",
-      optB_En: "Joule (J)",
-      optC: "कैंडेला (Candela)",
-      optC_En: "Candela (cd)",
-      optD: "वेबर (Weber)",
-      optD_En: "Weber (Wb)"
-    },
-    'board_12th_pcm': {
-      cat: 'boards',
-      title: '12th PCM Science Stream',
-      module: 'Class 12th Physics & Calculus',
-      breadcrumb: ['🎒 स्कूल बोर्ड', '12th बोर्ड (PCM विज्ञान)', 'भौतिक विज्ञान (Electrodynamics)'],
-      topics: ['समानांतर प्लेट संधारित्र व परावैद्युतांक', 'गाउस का नियम व विद्युत फ्लक्स', 'किरचॉफ के नियम व व्हीटस्टोन ब्रिज', 'फैराडे के विद्युत चुम्बकीय प्रेरण नियम', 'कैलकुलस निश्चित समाकलन', 'मैट्रिक्स एवं सारणिक', 'तरंग प्रकाशिकी व्यतिकरण', 'अर्धचालक डायोड एवं लॉजिक गेट'],
-      baseQHi: "एक समानांतर प्लेट संधारित्र (Parallel Plate Capacitor) की प्लेटों के बीच परावैद्युतांक (k) का स्लैब रखने पर उसकी धारिता (Capacitance) पर क्या प्रभाव पड़ता है?",
-      baseQEn: "When a dielectric slab with constant (k) is placed completely between parallel plates of a capacitor, what happens to capacitance?",
-      optA: "धारिता k गुना बढ़ जाती है (C' = k*C)।",
-      optA_En: "Capacitance increases linearly by the multiplication factor k.",
-      optB: "धारिता k के कारक से कम हो जाती है।",
-      optB_En: "Capacitance decreases inversely proportional to factor k.",
-      optC: "धारिता पूरी तरह अपरिवर्तित रहती है।",
-      optC_En: "Capacitance remains strictly unaffected due to charge invariance.",
-      optD: "धारिता शून्य हो जाती है।",
-      optD_En: "Capacitance collapses to zero due to dielectric saturation."
-    },
-    'board_12th_pcb': {
-      cat: 'boards',
-      title: '12th PCB Medical Stream',
-      module: 'Class 12th NCERT Biology',
-      breadcrumb: ['🎒 स्कूल बोर्ड', '12th बोर्ड (PCB मेडिकल)', 'NCERT बायोलॉजी लाइन-टू-लाइन'],
-      topics: ['मानव हृदय का पेसमेकर (SA Node)', 'केल्विन चक्र स्ट्रोमा मैट्रिक्स', 'डीएनए का द्विकुंडलित प्रारूप', 'पुष्पी पादपों में दोहरा निषेचन', 'पारिस्थितिकी अनुक्रमण', 'मेंडेलियन विकार (हीमोफीलिया)', 'हार्मोनल नियंत्रण व पिट्यूटरी ग्रंथि', 'जैव प्रौद्योगिकी एवं इसके अनुप्रयोग'],
-      baseQHi: "मानव हृदय में विद्युत आवेगों के संचरण की प्राकृतिक उत्पत्ति (Pacemaker) कहाँ से होती है?",
-      baseQEn: "In human cardiac electrophysiology, which anatomical structure serves as the natural primary pacemaker initiating action potentials?",
-      optA: "साइनो-एट्रियल नोड (SA Node)",
-      optA_En: "Sino-Atrial Node (SA Node)",
-      optB: "एट्रियोवेंट्रिकुलर नोड (AV Node)",
-      optB_En: "Atrioventricular Node (AV Node)",
-      optC: "बंडल ऑफ हिज (Bundle of His)",
-      optC_En: "Bundle of His at the interventricular septum",
-      optD: "पुर्किंजे फाइबर्स (Purkinje Fibers)",
-      optD_En: "Purkinje Network arborization"
-    },
-    'board_12th_arts': {
-      cat: 'boards',
-      title: '12th Arts & Humanities',
-      module: 'Indian History & Political Science',
-      breadcrumb: ['🎒 स्कूल बोर्ड', '12th बोर्ड (कला संकाय)', 'भारतीय इतिहास व राजनीति विज्ञान'],
-      topics: ['लाहौर अधिवेशन 1929 पूर्ण स्वराज', 'हड़प्पा सभ्यता नगर नियोजन', 'भक्ति एवं सूफी परंपराएं', 'शीत युद्ध का दौर व गुटनिरपेक्षता', 'भारतीय संविधान निर्माण सभा', 'विभाजन की त्रासदी व शरणार्थी समस्या', 'महाजनपद काल व मौर्य साम्राज्य', 'समकालीन विश्व में सुरक्षा'],
-      baseQHi: "1929 के भारतीय राष्ट्रीय कांग्रेस के ऐतिहासिक लाहौर अधिवेशन की अध्यक्षता किसने की थी?",
-      baseQEn: "Who presided over the historic 1929 Lahore Session of the Indian National Congress where 'Purna Swaraj' was declared?",
-      optA: "पंडित जवाहरलाल नेहरू",
-      optA_En: "Pandit Jawaharlal Nehru",
-      optB: "महात्मा गांधी",
-      optB_En: "Mahatma Gandhi",
-      optC: "सरदार वल्लभभाई पटेल",
-      optC_En: "Sardar Vallabhbhai Patel",
-      optD: "सुभाष चंद्र बोस",
-      optD_En: "Subhas Chandra Bose"
-    },
-    'board_12th_comm': {
-      cat: 'boards',
-      title: '12th Commerce Stream',
-      module: 'Accountancy & Business Studies',
-      breadcrumb: ['🎒 स्कूल बोर्ड', '12th बोर्ड (वाणिज्य)', 'वित्तीय लेखांकन एवं व्यापार अध्ययन'],
-      topics: ['साझेदारी विलेख के अभाव में लाभ विभाजन', 'कंपनी अंशों का निर्गमन एवं जब्ती', 'रोकड़ प्रवाह विवरण (Cash Flow)', 'वित्तीय विवरणों का अनुपात विश्लेषण', 'प्रबंध के सिद्धांत (हेनरी फेयोल)', 'विपणन प्रबंध के 4Ps', 'उपभोक्ता संरक्षण अधिनियम 2019', 'वित्तीय बाज़ार व सेबी (SEBI)'],
-      baseQHi: "साझेदारी विलेख (Partnership Deed) के अभाव में लाभ व हानि का विभाजन साझेदारों के मध्य किस अनुपात में किया जाता है?",
-      baseQEn: "In the absence of a Partnership Deed, how are the profits and losses distributed among partners under the Indian Partnership Act?",
-      optA: "समान अनुपात में (Equally 1:1)",
-      optA_En: "Equally among all partners (1:1 ratio)",
-      optB: "पूंजी के अनुपात में (In Capital Ratio)",
-      optB_En: "Strictly in the ratio of their capital contributions",
-      optC: "सक्रिय साझेदार को 75%",
-      optC_En: "75% to the active managing partner",
-      optD: "न्यायालय के निर्देशानुसार",
-      optD_En: "As per annual court arbitration"
-    },
-
-    // Category 3: Engineering Trades (B.Tech Drilldown)
-    'btech_civil': {
-      cat: 'engineering',
-      title: 'B.Tech Civil Engineering',
-      module: 'Building Materials & Concrete Tech',
-      breadcrumb: ['⚙️ इंजीनियरिंग', 'B.Tech Civil Engineering', 'Semester 2', 'Building Materials & Tech'],
-      topics: ['ली-चेटेलियर साउंडनेस टेस्ट', 'कंक्रीट स्लम्प टेस्ट IS 1199', 'सीमेंट का Vicat सुई जमाव काल', 'IS 456 कंक्रीट ग्रेड्स M25/M30', 'टिम्बर का संशोषण विधियां', 'ब्रिक चिनाई बॉन्ड प्रकार', 'एग्रीगेट्स का इम्पैक्ट टेस्ट', 'प्रबलित कंक्रीट में रीबार कवर'],
-      baseQHi: "साधारण पोर्टलैंड सीमेंट (OPC) में 'साउंडनेस टेस्ट' (Soundness Test) के दौरान ली-चेटेलियर उपकरण का उपयोग मुख्य रूप से किस तत्व के कारण होने वाले अनुचित विस्तार को मापने के लिए किया जाता है?",
-      baseQEn: "In cement concrete testing, the Le-Chatelier apparatus is specifically standardized to determine the unsoundness in Ordinary Portland Cement (OPC) caused by which of the following excess constituents?",
-      optA: "केवल मुक्त चूना (Free Lime Only)",
-      optA_En: "Excess Free Lime presence only (IS: 4031 Part 3 standard limit < 10 mm)",
-      optB: "केवल अतिरिक्त मैग्नीशिया (Excess Magnesia Only)",
-      optB_En: "Excess Magnesia content isolated from unburnt clay residues",
-      optC: "एल्युमिना एवं आयरन ऑक्साइड का असंतुलन",
-      optC_En: "Imbalance between tricalcium aluminate (C3A) and dicalcium silicate (C2S)",
-      optD: "जिप्सम की कमी के कारण होने वाला त्वरित जमाव (Flash Set)",
-      optD_En: "Premature flash setting initiated by insufficient gypsum retarding agents"
-    },
-    'btech_cse': {
-      cat: 'engineering',
-      title: 'B.Tech Computer Science (CSE)',
-      module: 'Data Structures & Algorithms',
-      breadcrumb: ['⚙️ इंजीनियरिंग', 'B.Tech CSE', 'Semester 3', 'Data Structures & Algorithms'],
-      topics: ['विकृत BST की सर्च जटिलता O(n)', 'QuickSort एवं MergeSort विश्लेषण', 'Dijkstra न्यूनतम पथ एल्गोरिथम', 'OS में बैंकर्स डेडलॉक प्रिवेंशन', 'BCNF एवं 3NF रिलेशनल डेटाबेस', 'TCP/IP स्लो स्टार्ट एवं फ्लो कंट्रोल', 'ग्राफ ट्रैवर्सल DFS एवं BFS', 'हैश तालिका कोलिजन रेजोल्यूशन'],
-      baseQHi: "एक आदर्श बाइनरी सर्च ट्री (BST) में किसी कुंजी (Key) को खोजने का सबसे खराब समय जटिलता (Worst-case Time Complexity) क्या होता है जब ट्री पूरी तरह विकृत (Skewed) हो?",
-      baseQEn: "In an unbalanced or skewed Binary Search Tree (BST), what is the worst-case time complexity for search operations?",
-      optA: "O(n)",
-      optA_En: "O(n) linear search complexity in degenerated trees",
-      optB: "O(log n)",
-      optB_En: "O(log n) balanced search complexity",
-      optC: "O(1)",
-      optC_En: "O(1) constant amortized complexity",
-      optD: "O(n log n)",
-      optD_En: "O(n log n) recursive split complexity"
-    },
-    'btech_me': {
-      cat: 'engineering',
-      title: 'B.Tech Mechanical Engineering',
-      module: 'Thermodynamics & Heat Engines',
-      breadcrumb: ['⚙️ इंजीनियरिंग', 'B.Tech Mechanical Engg', 'Semester 4', 'Applied Thermodynamics'],
-      topics: ['कार्नो चक्र दक्षता अधिकतमकरण', 'ओटो एवं डीजल चक्र तुलना', 'रेंकाइन चक्र व रीहीटिंग', 'फ्लूइड मैकेनिक्स बर्नौली प्रमेय', 'मोहर का वृत्त एवं मुख्य प्रतिबल', 'रेफ्रिजरेशन COP चक्र', 'हीट एक्सचेंजर LMTD विधि', 'गियर ट्रेन अनुपात व क्लच'],
-      baseQHi: "कार्नो चक्र (Carnot Cycle) की दक्षता बढ़ाने के लिए निम्नलिखित में से कौन सा उपाय सबसे प्रभावी होता है?",
-      baseQEn: "To significantly maximize the thermal efficiency of a reversible Carnot engine, which modification is most effective?",
-      optA: "सिंक के तापमान (Sink Temperature) को घटाना",
-      optA_En: "Decreasing the sink temperature while keeping source constant",
-      optB: "स्रोत के तापमान को घटाना",
-      optB_En: "Decreasing source temperature",
-      optC: "कार्यकारी तरल का दबाव कम करना",
-      optC_En: "Decreasing working fluid mass flow rate",
-      optD: "सिलेंडर की दीवार की मोटाई बढ़ाना",
-      optD_En: "Increasing the engine piston bore diameter"
-    },
-    'btech_ee': {
-      cat: 'engineering',
-      title: 'B.Tech Electrical Engineering',
-      module: 'Power Systems & Machines',
-      breadcrumb: ['⚙️ इंजीनियरिंग', 'B.Tech Electrical Engg', 'Semester 5', 'Power Systems & Circuit Analysis'],
-      topics: ['अल्टरनेटर आर्मेचर प्रतिक्रिया विचुंबकन', 'ट्रांसफॉर्मर ओपन सर्किट टेस्ट', 'थ्री-फेज इंडक्शन मोटर स्लिप टॉर्क', 'पावर सिस्टम फॉल्ट विश्लेषण', 'ट्रांसमिशन लाइन फेरांटी प्रभाव', 'सिंक्रोनस मोटर V-कर्व', 'सिलिकॉन कंट्रोल्ड रेक्टिफायर (SCR)', 'मैक्सवेल सेतु प्रेरकत्व मापन'],
-      baseQHi: "अल्टरनेटर (Synchronous Generator) में शून्य पश्चगामी शक्ति गुणक (Zero Lagging Power Factor) पर आर्मेचर प्रतिक्रिया का क्या प्रभाव होता है?",
-      baseQEn: "In a 3-phase alternator feeding an isolated load at zero lagging power factor, what is the net effect of armature reaction on main flux?",
-      optA: "पूर्णतः विचुंबकन (Purely Demagnetizing)",
-      optA_En: "Purely Demagnetizing effect on the rotor field flux",
-      optB: "पूर्णतः चुंबकन (Purely Magnetizing)",
-      optB_En: "Purely Magnetizing aiding the main poles",
-      optC: "केवल क्रॉस-चुंबकन (Cross-Magnetizing only)",
-      optC_En: "Cross-Magnetizing causing distortion",
-      optD: "कोई प्रभाव नहीं पड़ता",
-      optD_En: "Zero magnetic interaction"
-    },
-
-    // Category 4: Medical & Pharmacy
-    'neet': {
-      cat: 'medical',
-      title: 'NEET-UG Pre-Medical',
-      module: 'NCERT Human Physiology & Genetics',
-      breadcrumb: ['🩺 मेडिकल व फार्मेसी', 'NEET-UG Pre-Medical', 'मानव शरीर क्रिया विज्ञान'],
-      topics: ['JGA रेनिन एन्जाइम स्राव', 'ग्लोमेरुलर निस्पंदन दर (GFR)', 'क्रेब्स चक्र व एटीपी उत्पादन', 'सार्कोमियर पेशी संकुचन', 'प्रतिवर्ती क्रिया एवं न्यूरॉन संरचना', 'हार्डी-वीनबर्ग साम्यावस्था', 'प्रतिरक्षी अणु संरचना IgG/IgM', 'कॉर्डेटा व नॉन-कॉर्डेटा वर्गीकरण'],
-      baseQHi: "वृक्क (Kidney) में ग्लोमेरुलर निस्पंदन दर (GFR) के स्वतः नियमन के लिए उत्तरदायी जक्स्टाग्लोमेरुलर उपकरण (JGA) द्वारा स्रावित मुख्य एंजाइम कौन सा है?",
-      baseQEn: "Which vital enzyme is secreted by the Juxtaglomerular Apparatus (JGA) in response to a fall in glomerular blood pressure to restore GFR?",
-      optA: "रेनिन (Renin)",
-      optA_En: "Renin which converts angiotensinogen to angiotensin I",
-      optB: "पेप्सिन (Pepsin)",
-      optB_En: "Pepsin gastric proteolytic enzyme",
-      optC: "एमाइलेज (Amylase)",
-      optC_En: "Salivary and pancreatic amylase",
-      optD: "ट्रिप्सिन (Trypsin)",
-      optD_En: "Trypsin pancreatic protease"
-    },
-    'dpharma': {
-      cat: 'medical',
-      title: 'D.Pharma Diplomas (Year 1 & 2)',
-      module: 'Pharmaceutics & Toxicology',
-      breadcrumb: ['🩺 मेडिकल व फार्मेसी', 'D.Pharma Diploma', 'फार्मास्यूटिक्स एवं विष विज्ञान'],
-      topics: ['लिओफिलाइजेशन फ्रीज ड्राइंग तकनीक', 'कैप्सूल शैल जिलेटिन मानक', 'इमल्शन स्थिरता व क्रैकिंग', 'औषधि वितरण प्रणालियां', 'एंटीबायोटिक विसंक्रमण विधियां', 'टैबलेट कोटिंग व डिफेक्ट्स', 'फार्मास्युटिकल कानून व फार्मेसी एक्ट', 'विष विज्ञान व एंटीडोट्स'],
-      baseQHi: "फार्मास्यूटिक्स में 'लिओफिलाइजेशन' (Lyophilization - Freeze Drying) तकनीक का प्राथमिक उद्देश्य क्या है?",
-      baseQEn: "What is the primary operational objective of Lyophilization (freeze-drying) technique in pharmaceutical dosage processing?",
-      optA: "थर्मोलेबाइल एंटीबायोटिक दवाओं से नमी हटाकर उन्हें तापीय क्षरण से बचाना।",
-      optA_En: "To remove moisture and stabilize thermolabile pharmaceutical drugs without thermal degradation.",
-      optB: "दवा के घोल की चिपचिपाहट (Viscosity) अत्यधिक बढ़ाना।",
-      optB_En: "To significantly increase the viscosity of medicinal liquid emulsions.",
-      optC: "दवा की गोलियों में कृत्रिम मिठास का समावेश करना।",
-      optC_En: "To infuse artificial flavorings into compressed tablets.",
-      optD: "दवा की बाहरी पैकेजिंग का त्वरित जीवाणुरोधन करना।",
-      optD_En: "To sterilize external PVC packaging materials."
-    },
-    'bpharma': {
-      cat: 'medical',
-      title: 'B.Pharma Degree (Sem 1-8)',
-      module: 'Medicinal Chemistry & Biopharmaceutics',
-      breadcrumb: ['🩺 मेडिकल व फार्मेसी', 'B.Pharma Degree', 'Semester 4', 'Medicinal Chemistry & Pharmacokinetics'],
-      topics: ['बायोअवेलेबिलिटी व अवशोषण दर', 'फर्स्ट-पास हेपेटिक मेटाबॉलिज्म', 'एंजाइम निषेध क्रियाविधि', 'फार्माकोकाइनेटिक कम्पार्टमेंट मॉडल', 'स्टीरियोकेमिस्ट्री व ड्रग रिसेप्टर', 'हाइपरटेंसिव एजेंट्स SAR', 'क्रोमैटोग्राफी HPLC विश्लेषण', 'बायोफार्मास्युटिक्स वर्गीकरण BCS'],
-      baseQHi: "फार्माकोकाइनेटिक्स में 'बायोअवेलेबिलिटी' (Bioavailability) शब्द का सबसे सटीक वैज्ञानिक अर्थ क्या है?",
-      baseQEn: "In pharmacokinetics, which statement defines the fundamental concept of systemic bioavailability?",
-      optA: "दवा की वह दर और सीमा जिस पर अपरिवर्तित सक्रिय घटक प्रणालीगत संचलन तक पहुंचता है।",
-      optA_En: "The rate and extent to which the active drug ingredient enters systemic circulation unchanged.",
-      optB: "दवा का केवल यकृत में होने वाला कुल मेटाबोलिक ब्रेकडाउन।",
-      optB_En: "The singular total rate of primary hepatic first-pass metabolism.",
-      optC: "दवा का मूत्र के माध्यम से पूर्ण उत्सर्जन।",
-      optC_En: "The total irreversible elimination rate through renal pathways.",
-      optD: "टैबलेट का पेट के गैस्ट्रिक एसिड में घुलने में लगने वाला समय।",
-      optD_En: "The gross disintegration time of solid dosage forms in stomach fluid."
-    },
-
-    // Category 5: College Degrees
-    'bsc': {
-      cat: 'college',
-      title: 'B.Sc Pure Sciences (PCM / PCB)',
-      module: 'Chemical Kinetics & Quantum Chemistry',
-      breadcrumb: ['🎓 कॉलेज डिग्री', 'B.Sc Pure Science', 'Sem 3: रासायनिक गतिकी'],
-      topics: ['प्रथम कोटि अभिक्रिया अर्धायु काल', 'आरेनियस समीकरण संक्रियण ऊर्जा', 'ऊष्मागतिकी का द्वितीय नियम व एन्ट्रापी', 'डी-ब्रोग्ली परिकल्पना तरंगदैर्घ्य', 'समन्वय यौगिक क्रिस्टल फील्ड थ्योरी', 'कार्बनिक अभिक्रिया क्रियाविधि', 'अवकल समीकरण श्रेणी हल', 'विद्युत रसायन नेर्न्स्ट समीकरण'],
-      baseQHi: "रासायनिक गतिकी (Chemical Kinetics) में प्रथम कोटि की अभिक्रिया (First Order Reaction) का अर्धायु काल (t1/2) किस पर निर्भर करता है?",
-      baseQEn: "In chemical kinetics, the half-life period (t1/2) of an ideal first-order chemical reaction depends on which of the following?",
-      optA: "यह प्रारंभिक सांद्रता से पूर्णतः स्वतंत्र होता है (t1/2 = 0.693 / k)।",
-      optA_En: "It is completely independent of initial reactant concentration (t1/2 = 0.693 / k).",
-      optB: "प्रारंभिक सांद्रता के वर्ग पर।",
-      optB_En: "Directly proportional to the initial reactant concentration.",
-      optC: "अभिक्रिया पात्र के कुल बाह्य दबाव पर।",
-      optC_En: "Linearly dependent on total external ambient gas pressure.",
-      optD: "केवल उत्प्रेरक के आणविक भार पर।",
-      optD_En: "Exclusively on the molecular weight of the catalyst."
-    },
-    'bacom': {
-      cat: 'college',
-      title: 'B.A Arts & Humanities / B.Com Commerce',
-      module: 'Double Entry Accounting & Public Admin',
-      breadcrumb: ['🎓 कॉलेज डिग्री', 'B.A / B.Com', 'कॉर्पोरेट लेखांकन एवं प्रशासन'],
-      topics: ['व्यक्तिगत खाता नियम (Debit receiver)', 'दोहरा लेखा प्रणाली मूलभूत अवधारणाएं', 'कंपनी अधिनियम 2013 वित्तीय विवरण', 'लोक प्रशासन में मैक्स वेबर नौकरशाही', 'भारतीय संसद बजट पारित प्रक्रिया', 'अंतर्राष्ट्रीय संबंध यथार्थवादी उपागम', 'राजकोषीय नीति व मौद्रिक नीति', 'अंकेक्षण मानक व आंतरिक नियंत्रण'],
-      baseQHi: "दोहरा लेखा प्रणाली (Double Entry System) के नियम के अनुसार, 'व्यक्तिगत खाते' (Personal Account) का मूलभूत नियम क्या है?",
-      baseQEn: "Under traditional double entry bookkeeping accounting standards, what is the golden rule for Personal Accounts?",
-      optA: "पाने वाले को डेबिट करो और देने वाले को क्रेडिट करो (Debit the receiver, Credit the giver)।",
-      optA_En: "Debit the receiver, Credit the giver.",
-      optB: "जो वस्तु व्यापार में आए उसे क्रेडिट करो।",
-      optB_En: "Credit what comes in, Debit what goes out.",
-      optC: "समस्त खर्चों और हानियों को क्रेडिट करो।",
-      optC_En: "Credit all expenses and Debit all incomes.",
-      optD: "केवल संपत्तियों का वार्षिक पुनर्मूल्यांकन करो।",
-      optD_En: "Debit all balance sheet liabilities directly."
-    },
-    'msc': {
-      cat: 'college',
-      title: 'M.Sc Postgraduate Degree',
-      module: 'Advanced Quantum Mechanics & Spectroscopy',
-      breadcrumb: ['🎓 कॉलेज डिग्री', 'M.Sc Postgraduate', 'क्वांटम यांत्रिकी एवं स्पेक्ट्रोस्कोपी'],
-      topics: ['श्रोडिंगर तरंग समीकरण |ψ|² प्रायिकता घनत्व', 'हर्मिशियन ऑपरेटर व आइगेनवैल्यू', 'रमन स्पेक्ट्रोस्कोपी चयन नियम', 'NMR स्पेक्ट्रोस्कोपी केमिकल शिफ्ट', 'सांख्यिकीय यांत्रिकी बोल्ट्जमैन वितरण', 'ग्रुप थ्योरी कैरेक्टर टेबल', 'ठोस अवस्था भौतिकी ब्रिलुवां क्षेत्र', 'अतिचालकता BCS सिद्धांत'],
-      baseQHi: "क्वांटम यांत्रिकी में 'श्रोडिंगर तरंग समीकरण' में तरंग फलन (ψ) के वर्ग (|ψ|²) का भौतिक महत्व क्या है?",
-      baseQEn: "In quantum mechanics, what is the certified physical significance of the square of the wave function (|ψ|²)?",
-      optA: "दिए गए स्थान में इलेक्ट्रॉन पाए जाने की प्रायिकता घनत्व (Probability Density)।",
-      optA_En: "The probability density of locating an electron at a given position in space.",
-      optB: "इलेक्ट्रॉन का कुल कोणीय संवेग।",
-      optB_En: "Total angular momentum of the atomic orbital electron.",
-      optC: "नाभिकीय विखंडन की समग्र ऊर्जा।",
-      optC_En: "The net gross yield of nuclear binding energy.",
-      optD: "इलेक्ट्रॉन की स्थिर द्रव्यमान ऊर्जा।",
-      optD_En: "The invariant rest mass energy of the subatomic particle."
-    },
-
-    // Category 6: Vocational & IT Skills
-    'rscit': {
-      cat: 'vocational',
-      title: 'RS-CIT Computer & IT',
-      module: 'MS Office 365, OS & Cyber Security',
-      breadcrumb: ['💻 कंप्यूटर व कौशल', 'RS-CIT IT', 'MS Excel 365 एवं सूत्र'],
-      topics: ['MS Excel सूत्र =COUNT()', 'विंडोज़ 11 टास्क मैनेजर शॉर्टकट', 'साइबर सुरक्षा फ़ायरवॉल व फ़िशिंग', 'इंटरनेट प्रोटोकॉल IPv4 vs IPv6', 'MS Word मेल मर्ज तकनीक', 'क्लाउड स्टोरेज वनड्राइव एवं सुरक्षा', 'RAM एवं ROM मेमोरी वर्गीकरण', 'डिजिटल भुगतान BHIM/UPI सुरक्षा'],
-      baseQHi: "MS Excel में किसी सेल रेंज में केवल अंकों (Numbers) की गणना करने हेतु किस सूत्र का उपयोग किया जाता है?",
-      baseQEn: "In Microsoft Excel, which spreadsheet formula function is specifically standardized to calculate the count of numeric values only?",
-      optA: "=COUNT()",
-      optA_En: "=COUNT() (Counts only numeric values in range)",
-      optB: "=COUNTA()",
-      optB_En: "=COUNTA() (Counts all non-empty cells including text)",
-      optC: "=COUNTIF()",
-      optC_En: "=COUNTIF() (Counts cells based on a singular condition)",
-      optD: "=SUM()",
-      optD_En: "=SUM() (Adds total numeric values in range)"
-    },
-    'tally': {
-      cat: 'vocational',
-      title: 'Tally Prime & Corporate GST',
-      module: 'GST Invoicing, RCM & E-Way Bills',
-      breadcrumb: ['💻 कंप्यूटर व कौशल', 'Tally Prime & GST', 'रिवर्स चार्ज मैकेनिज्म (RCM)'],
-      topics: ['रिवर्स चार्ज मैकेनिज्म (RCM) देनदारी', 'ई-वे बिल ₹50,000 सीमा नियम', 'ITC इनपुट टैक्स क्रेडिट मैचिंग GSTR-2B', 'Tally Prime में F11 कंपनी फीचर्स', 'वाउचर प्रकार F8 सेल्स एवं F9 परचेज', 'बैंक समाधान विवरण (BRS)', 'TDS एवं TCS कटौती सीमाएं', 'वित्तीय लाभ-हानि व बैलेंस शीट'],
-      baseQHi: "माल और सेवा कर (GST) अधिनियम के तहत 'रिवर्स चार्ज मैकेनिज्म' (RCM) के संदर्भ में, निम्नलिखित में से कौन सा कथन पूरी तरह सत्य है?",
-      baseQEn: "Under the Goods and Services Tax (GST) framework regarding Reverse Charge Mechanism (RCM), which statement is legally and operationally accurate?",
-      optA: "प्राप्तकर्ता आपूर्ति पर सीधे कर चुकाने के लिए उत्तरदायी है, न कि आपूर्तिकर्ता।",
-      optA_En: "The recipient of goods or services is liable to pay tax instead of the supplier.",
-      optB: "आपूर्तिकर्ता सरकार को सीधे कर का भुगतान करने के लिए उत्तरदायी है।",
-      optB_En: "The supplier of goods or services is strictly liable to pay tax directly to the government.",
-      optC: "RCM केवल राज्य के भीतर होने वाले विलासिता लेन-देन पर लागू होता है।",
-      optC_En: "RCM is exclusively applied to intra-state luxury consumer transactions.",
-      optD: "RCM के तहत भुगतान किए गए कर पर ITC कभी प्राप्त नहीं किया जा सकता।",
-      optD_En: "Input Tax Credit (ITC) can never be claimed on tax discharged under RCM."
-    }
-  };
-
-  // Engine Current Operational State
-  let currentCategory = 'engineering';
-  let currentActiveStreamId = 'btech_civil';
-  let currentSelectedSem = 2;
-  let currentBoardFilter = 'RBSE';
-  let isExamActive = false;
-  let examTimerSeconds = 3600;
-  let examTimerInterval = null;
-
-  // Seamless 100-Question Dynamic State (Looping from 0 to 99)
-  let currentQIdx = 0;
-  const userAnswers = new Array(100).fill(null);
-  const questionStatus = new Array(100).fill('unvisited'); // 'unvisited', 'unanswered', 'answered', 'review'
-
-  // METHOD A: Seeded 100-Question Generation Engine (₹0 Server Cost)
-  function generate100DynamicStreamQuestions(streamKey) {
-    const reg = STREAM_DATA_REGISTRY[streamKey] || STREAM_DATA_REGISTRY['btech_civil'];
-    const today = new Date().toISOString().slice(0, 10);
-    let hash = 0;
-    for (let i = 0; i < today.length; i++) hash += today.charCodeAt(i);
-
-    const topics = reg.topics || [reg.module];
-    const generated = [];
-
-    // Question 1: Master Standard Question
-    generated.push({
-      num: 1,
-      qHi: `Q1. ${reg.baseQHi}`,
-      qEn: `Q1. ${reg.baseQEn}`,
-      optA: reg.optA,
-      optA_En: reg.optA_En,
-      optB: reg.optB,
-      optB_En: reg.optB_En,
-      optC: reg.optC,
-      optC_En: reg.optC_En,
-      optD: reg.optD,
-      optD_En: reg.optD_En
-    });
-
-    // Questions 2 to 100: Generated deterministically via daily seed rotation
-    for (let i = 2; i <= 100; i++) {
-      const topic = topics[(i + hash) % topics.length];
-      generated.push({
-        num: i,
-        qHi: `Q${i}. ${reg.title} के अंतर्गत '${topic}' के संबंध में निम्नलिखित में से कौन सा कथन नवीनतम राष्ट्रीय मानक (NCERT / SSC / University) अनुसार सर्वाधिक उपयुक्त एवं प्रामाणिक है?`,
-        qEn: `Q${i}. Under ${reg.title}, regarding '${topic}', which of the following statements satisfies official national syllabus benchmarks?`,
-        optA: `${topic} का मूलभूत नियम, परिभाषा एवं मानक वैधानिक सीमा।`,
-        optA_En: `Standard primary statutory definition and certified regulatory limit of ${topic}.`,
-        optB: `${topic} की द्वितीयक प्रयोगात्मक कार्यप्रणाली एवं प्रभाव।`,
-        optB_En: `Secondary experimental methodology and empirical validation of ${topic}.`,
-        optC: `${topic} का विश्लेषणात्मक सूत्र एवं त्रुटि निवारण अनुपात।`,
-        optC_En: `Analytical formulation, tolerance limits and error mitigation of ${topic}.`,
-        optD: `उपर्युक्त सभी कथन आधिकारिक पाठ्यक्रम अनुसार पूर्णतः सत्य एवं मान्य हैं।`,
-        optD_En: `All the above statements are strictly certified and accurate per curriculum.`
-      });
-    }
-    return generated;
-  }
-
-  let activeStreamQuestions = generate100DynamicStreamQuestions(currentActiveStreamId);
-
-  // METHOD B: Automatic Integration with 4 AM GitHub Actions / Gemini AI Cron if available
-  async function syncMethodBQuestions() {
-    try {
-      const resp = await fetch('data/daily-questions.json');
-      if (resp.ok) {
-        const json = await resp.json();
-        if (json && json[currentActiveStreamId] && json[currentActiveStreamId].length === 100) {
-          activeStreamQuestions = json[currentActiveStreamId];
-          console.log("✅ Method B (Gemini AI 4 AM Cron) questions successfully synchronized!");
+  <!-- ================= REAL LIVE DATA-HANDOFF & SCORECARD JAVASCRIPT ================= -->
+  <script>
+    (function initRealLiveScorecardEngine() {
+      // 1. Dynamic Countdown to tomorrow 04:00 AM IST
+      function updateCountdown() {
+        const now = new Date();
+        const target = new Date();
+        target.setHours(4, 0, 0, 0);
+        if (now >= target) {
+          target.setDate(target.getDate() + 1);
+        }
+        const diffMs = target - now;
+        const hours = Math.floor(diffMs / (1000 * 60 * 60));
+        const mins = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((diffMs % (1000 * 60)) / 1000);
+        const timerEl = document.getElementById('liveCountdownDisplay');
+        if (timerEl) {
+          timerEl.textContent = `${hours} घंटे ${mins} मिनट ${secs} सेकंड`;
         }
       }
-    } catch (e) {
-      console.log("ℹ️ Method A (Seeded Daily Rotation) active seamlessly at ₹0 cost.");
-    }
-  }
+      setInterval(updateCountdown, 1000);
+      updateCountdown();
 
-  document.addEventListener('DOMContentLoaded', () => {
-    renderCategoryContent('engineering');
-    renderPaletteGrid(1, 50);
-    updateSelectionSummaryAndBreadcrumb();
-  });
+      // 2. Read live student profile if logged in
+      const studentPhone = sessionStorage.getItem('edupro_student_phone') || '0000';
+      const studentName = sessionStorage.getItem('edupro_student_name') || 'प्रतियोगी छात्र';
+      const studentRoll = '#EDU-' + studentPhone.slice(-4);
+      
+      const navAvatar = document.getElementById('navUserAvatar');
+      const navName = document.getElementById('navUserName');
+      const navRoll = document.getElementById('navUserRoll');
+      const badge = document.getElementById('scorecardRegIdBadge');
+      const botBadge = document.getElementById('bottomVerificationBadge');
+      const activeTestId = document.getElementById('activeTestIdBadge');
 
-  function switchCategoryTab(catKey, btn) {
-    currentCategory = catKey;
-    document.querySelectorAll('.category-tab').forEach(b => {
-      b.className = "category-tab px-3.5 py-2 rounded-xl text-xs font-bold border border-slate-200 text-slate-700 hover:bg-slate-50 whitespace-nowrap transition flex items-center gap-1.5";
-    });
-    btn.className = "category-tab tab-active px-3.5 py-2 rounded-xl text-xs font-bold border border-slate-200 text-slate-700 hover:bg-slate-50 whitespace-nowrap transition flex items-center gap-1.5";
-    
-    // Auto-set default stream for each category
-    if (catKey === 'competitive') currentActiveStreamId = 'upsc';
-    else if (catKey === 'boards') currentActiveStreamId = 'board_12th_pcb';
-    else if (catKey === 'engineering') currentActiveStreamId = 'btech_civil';
-    else if (catKey === 'medical') currentActiveStreamId = 'neet';
-    else if (catKey === 'college') currentActiveStreamId = 'bsc';
-    else if (catKey === 'vocational') currentActiveStreamId = 'tally';
+      if (navName) navName.textContent = studentName;
+      if (navRoll) navRoll.textContent = studentRoll;
+      if (navAvatar) navAvatar.textContent = studentName.slice(0, 2);
+      if (badge) badge.textContent = `आधिकारिक डायग्नोस्टिक स्कोरकार्ड ${studentRoll}`;
+      if (botBadge) botBadge.textContent = studentRoll;
+      if (activeTestId) activeTestId.textContent = `${studentRoll}-SECURE`;
 
-    renderCategoryContent(catKey);
-    updateSelectionSummaryAndBreadcrumb();
-  }
+      // 3. Read 100% Real Live Submission payload from test-series.html
+      let savedResult = null; try { savedResult = JSON.parse(localStorage.getItem('edupro_last_result') || 'null'); } catch (e) {}
+      
+      let itemsList = [];
+      let correct = 0;
+      let incorrect = 0;
+      let unattempted = 100;
+      let score = 0;
+      let maxScore = 400;
+      let accuracy = 0;
 
-  function renderCategoryContent(cat) {
-    const container = document.getElementById('drilldownContentArea');
-    
-    // TAB 1: COMPETITIVE EXAMS
-    if (cat === 'competitive') {
-      container.innerHTML = `
-        <div class="space-y-3">
-          <span class="text-xs font-bold text-brand-900 uppercase tracking-wider flex items-center gap-1.5">
-            <span class="material-symbols-outlined text-sm text-brand-700">military_tech</span>
-            प्रतियोगी परीक्षा चुनें (National & State Competitive Streams):
-          </span>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div onclick="selectStreamCard('upsc', this)" class="stream-pick-card card-selected p-3.5 rounded-2xl bg-white border-2 border-brand-700 cursor-pointer transition">
-              <div class="flex justify-between items-center text-[10px] font-bold">
-                <span class="bg-brand-50 text-brand-800 px-2 py-0.5 rounded">Civil Services</span>
-                <span class="text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">UPSC GS-1</span>
-              </div>
-              <div class="text-xs font-black text-slate-900 mt-1 flex items-center justify-between">
-                <span>UPSC CSE & CSAT Prelims</span>
-                <span class="material-symbols-outlined text-sm text-brand-700 check-mark">check_circle</span>
-              </div>
-              <p class="text-[11px] text-slate-500 mt-1">Polity, Modern History, Geography, CSAT Aptitude</p>
-            </div>
+      if (savedResult) {
+        document.getElementById('activeTestTitle').textContent = savedResult.testTitle || 'अखिल भारतीय टेस्ट सीरीज़ 100-प्रश्न परीक्षा';
+        document.getElementById('activeTestTimeTaken').textContent = savedResult.timeTaken || '45m 12s';
+        
+        score = savedResult.score || 0;
+        maxScore = savedResult.maxScore || 400;
+        accuracy = savedResult.accuracy || 0;
+        correct = savedResult.correct || 0;
+        incorrect = savedResult.incorrect || 0;
+        unattempted = savedResult.unattempted || (100 - (correct + incorrect));
+        itemsList = savedResult.items || [];
 
-            <div onclick="selectStreamCard('stategk', this)" class="stream-pick-card p-3.5 rounded-2xl bg-white border border-slate-200 hover:border-brand-400 cursor-pointer transition">
-              <div class="flex justify-between items-center text-[10px] font-bold">
-                <span class="bg-brand-50 text-brand-800 px-2 py-0.5 rounded">28 States</span>
-                <span class="text-teal-700 bg-teal-50 px-2 py-0.5 rounded">State PSC</span>
-              </div>
-              <div class="text-xs font-black text-slate-900 mt-1 flex items-center justify-between">
-                <span>State Public Service GK (28 States)</span>
-                <span class="material-symbols-outlined text-sm text-brand-700 check-mark hidden">check_circle</span>
-              </div>
-              <p class="text-[11px] text-slate-500 mt-1">RAS, BPSC, UPPSC, MPPSC Heritage & Acts</p>
-            </div>
-
-            <div onclick="selectStreamCard('bed', this)" class="stream-pick-card p-3.5 rounded-2xl bg-white border border-slate-200 hover:border-brand-400 cursor-pointer transition">
-              <div class="flex justify-between items-center text-[10px] font-bold">
-                <span class="bg-brand-50 text-brand-800 px-2 py-0.5 rounded">Teaching</span>
-                <span class="text-amber-700 bg-amber-50 px-2 py-0.5 rounded">CTET / REET</span>
-              </div>
-              <div class="text-xs font-black text-slate-900 mt-1 flex items-center justify-between">
-                <span>B.Ed & Teacher Eligibility</span>
-                <span class="material-symbols-outlined text-sm text-brand-700 check-mark hidden">check_circle</span>
-              </div>
-              <p class="text-[11px] text-slate-500 mt-1">Child Development, Pedagogy, RTE, Psychology</p>
-            </div>
-
-            <div onclick="selectStreamCard('reasoning', this)" class="stream-pick-card p-3.5 rounded-2xl bg-white border border-slate-200 hover:border-brand-400 cursor-pointer transition">
-              <div class="flex justify-between items-center text-[10px] font-bold">
-                <span class="bg-brand-50 text-brand-800 px-2 py-0.5 rounded">General</span>
-                <span class="text-purple-700 bg-purple-50 px-2 py-0.5 rounded">All Exams</span>
-              </div>
-              <div class="text-xs font-black text-slate-900 mt-1 flex items-center justify-between">
-                <span>Mental Ability & Reasoning</span>
-                <span class="material-symbols-outlined text-sm text-brand-700 check-mark hidden">check_circle</span>
-              </div>
-              <p class="text-[11px] text-slate-500 mt-1">Syllogisms, Blood Relations, Coding Ciphers, Logic</p>
-            </div>
-          </div>
-        </div>
-      `;
-    }
-
-    // TAB 2: 10TH & 12TH BOARDS WITH SUB-FILTER
-    else if (cat === 'boards') {
-      container.innerHTML = `
-        <div class="space-y-4">
-          <div class="flex items-center justify-between bg-white p-3 rounded-2xl border border-slate-200">
-            <span class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
-              <span class="material-symbols-outlined text-sm text-brand-600">school</span>
-              परीक्षा बोर्ड चुनें:
-            </span>
-            <div class="flex items-center gap-2">
-              <button type="button" onclick="setBoardFilter('RBSE', this)" class="board-pill px-3 py-1.5 rounded-xl text-xs font-black bg-brand-900 text-white shadow-xs">RBSE (राजस्थान बोर्ड)</button>
-              <button type="button" onclick="setBoardFilter('CBSE', this)" class="board-pill px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200">CBSE (सेंट्रल बोर्ड)</button>
-            </div>
-          </div>
-
-          <span class="text-xs font-bold text-brand-900 uppercase tracking-wider block">
-            कक्षा एवं संकाय चुनें (Select Class & Specific Stream):
-          </span>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
-            <div onclick="selectStreamCard('board_10th', this)" class="stream-pick-card p-3 rounded-2xl bg-white border border-slate-200 hover:border-brand-400 cursor-pointer transition">
-              <span class="text-[10px] font-bold bg-brand-50 text-brand-800 px-2 py-0.5 rounded">Secondary</span>
-              <div class="text-xs font-black text-slate-900 mt-1.5 flex items-center justify-between">
-                <span>10th बोर्ड (ऑल सब्जेक्ट्स)</span>
-                <span class="material-symbols-outlined text-sm text-brand-700 check-mark hidden">check_circle</span>
-              </div>
-              <p class="text-[11px] text-slate-500 mt-0.5">NCERT संपूर्ण विज्ञान, गणित, सामाजिक</p>
-            </div>
-
-            <div onclick="selectStreamCard('board_12th_pcb', this)" class="stream-pick-card card-selected p-3 rounded-2xl bg-white border-2 border-brand-700 cursor-pointer transition">
-              <span class="text-[10px] font-bold bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded">Medical</span>
-              <div class="text-xs font-black text-slate-900 mt-1.5 flex items-center justify-between">
-                <span>12th PCB मेडिकल</span>
-                <span class="material-symbols-outlined text-sm text-brand-700 check-mark">check_circle</span>
-              </div>
-              <p class="text-[11px] text-slate-500 mt-0.5">NCERT बायोलॉजी लाइन-टू-लाइन, फिजियोलॉजी</p>
-            </div>
-
-            <div onclick="selectStreamCard('board_12th_pcm', this)" class="stream-pick-card p-3 rounded-2xl bg-white border border-slate-200 hover:border-brand-400 cursor-pointer transition">
-              <span class="text-[10px] font-bold bg-blue-50 text-blue-700 px-2 py-0.5 rounded">Engineering</span>
-              <div class="text-xs font-black text-slate-900 mt-1.5 flex items-center justify-between">
-                <span>12th PCM इंजीनियरिंग</span>
-                <span class="material-symbols-outlined text-sm text-brand-700 check-mark hidden">check_circle</span>
-              </div>
-              <p class="text-[11px] text-slate-500 mt-0.5">इलेक्ट्रोडायनामिक्स, कैलकुलस, भौतिक विज्ञान</p>
-            </div>
-
-            <div onclick="selectStreamCard('board_12th_arts', this)" class="stream-pick-card p-3 rounded-2xl bg-white border border-slate-200 hover:border-brand-400 cursor-pointer transition">
-              <span class="text-[10px] font-bold bg-amber-50 text-amber-700 px-2 py-0.5 rounded">Humanities</span>
-              <div class="text-xs font-black text-slate-900 mt-1.5 flex items-center justify-between">
-                <span>12th आर्ट्स (कला संकाय)</span>
-                <span class="material-symbols-outlined text-sm text-brand-700 check-mark hidden">check_circle</span>
-              </div>
-              <p class="text-[11px] text-slate-500 mt-0.5">इतिहास, राजनीति शास्त्र, भूगोल मॉडल पेपर</p>
-            </div>
-
-            <div onclick="selectStreamCard('board_12th_comm', this)" class="stream-pick-card p-3 rounded-2xl bg-white border border-slate-200 hover:border-brand-400 cursor-pointer transition">
-              <span class="text-[10px] font-bold bg-purple-50 text-purple-700 px-2 py-0.5 rounded">Commerce</span>
-              <div class="text-xs font-black text-slate-900 mt-1.5 flex items-center justify-between">
-                <span>12th कॉमर्स (वाणिज्य संकाय)</span>
-                <span class="material-symbols-outlined text-sm text-brand-700 check-mark hidden">check_circle</span>
-              </div>
-              <p class="text-[11px] text-slate-500 mt-0.5">लेखाशास्त्र (Accountancy), बिज़नेस स्टडीज</p>
-            </div>
-          </div>
-        </div>
-      `;
-    }
-
-    // TAB 3: ENGINEERING TRADES (B.TECH HIERARCHY DRILLDOWN)
-    else if (cat === 'engineering') {
-      container.innerHTML = `
-        <div class="space-y-4">
-          <div class="space-y-2">
-            <span class="text-xs font-bold text-brand-900 uppercase tracking-wider flex items-center gap-1.5">
-              <span class="material-symbols-outlined text-sm text-brand-700">architecture</span>
-              चरण 1: इंजीनियरिंग ट्रेड / ब्रांच चुनें:
-            </span>
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
-              <button type="button" onclick="setEngineeringTrade('btech_civil', 'Civil Engineering', this)" class="engg-trade-btn card-selected p-2.5 rounded-xl border-2 border-brand-700 bg-brand-50 text-left transition">
-                <div class="text-xs font-black text-slate-900">Civil Engineering</div>
-                <div class="text-[10px] text-slate-500">Building, Concrete, Survey</div>
-              </button>
-              <button type="button" onclick="setEngineeringTrade('btech_cse', 'Computer Science (CSE)', this)" class="engg-trade-btn p-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-left transition">
-                <div class="text-xs font-bold text-slate-900">Computer Science (CSE)</div>
-                <div class="text-[10px] text-slate-500">DSA, OS, DBMS, Algorithms</div>
-              </button>
-              <button type="button" onclick="setEngineeringTrade('btech_me', 'Mechanical Engg', this)" class="engg-trade-btn p-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-left transition">
-                <div class="text-xs font-bold text-slate-900">Mechanical Engg</div>
-                <div class="text-[10px] text-slate-500">Thermodynamics, Fluid, SOM</div>
-              </button>
-              <button type="button" onclick="setEngineeringTrade('btech_ee', 'Electrical Engg', this)" class="engg-trade-btn p-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-left transition">
-                <div class="text-xs font-bold text-slate-900">Electrical Engg</div>
-                <div class="text-[10px] text-slate-500">Power Systems, Machines</div>
-              </button>
-            </div>
-          </div>
-
-          <div class="space-y-1.5">
-            <span class="text-xs font-bold text-slate-700 block">चरण 2: सटीक सेमेस्टर चुनें (Sem 1 to Sem 8):</span>
-            <div class="grid grid-cols-4 sm:grid-cols-8 gap-1.5">
-              <button type="button" onclick="setSemester(1, this)" class="sem-btn py-1.5 rounded-lg text-center text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-100">Sem 1</button>
-              <button type="button" onclick="setSemester(2, this)" class="sem-btn py-1.5 rounded-lg text-center text-xs font-black bg-brand-900 text-white shadow-xs">Sem 2</button>
-              <button type="button" onclick="setSemester(3, this)" class="sem-btn py-1.5 rounded-lg text-center text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-100">Sem 3</button>
-              <button type="button" onclick="setSemester(4, this)" class="sem-btn py-1.5 rounded-lg text-center text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-100">Sem 4</button>
-              <button type="button" onclick="setSemester(5, this)" class="sem-btn py-1.5 rounded-lg text-center text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-100">Sem 5</button>
-              <button type="button" onclick="setSemester(6, this)" class="sem-btn py-1.5 rounded-lg text-center text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-100">Sem 6</button>
-              <button type="button" onclick="setSemester(7, this)" class="sem-btn py-1.5 rounded-lg text-center text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-100">Sem 7</button>
-              <button type="button" onclick="setSemester(8, this)" class="sem-btn py-1.5 rounded-lg text-center text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-100">Sem 8</button>
-            </div>
-          </div>
-
-          <div class="space-y-1.5">
-            <span class="text-xs font-bold text-slate-700 block">चरण 3: सटीक कोर पेपर चुनें (Strict Subject Isolation):</span>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2" id="enggSubjectCards">
-              <div class="p-3 rounded-xl border-2 border-brand-700 bg-brand-50 text-left">
-                <div class="flex items-center justify-between text-[10px] font-bold">
-                  <span class="bg-brand-100 text-brand-800 px-1.5 py-0.5 rounded">Core Paper</span>
-                  <span class="material-symbols-outlined text-xs text-brand-700">check_circle</span>
-                </div>
-                <div class="text-xs font-bold text-slate-900 mt-1">Building Materials & Tech</div>
-                <p class="text-[10px] text-slate-500">OPC, Le-Chatelier, Slump, IS 4031</p>
-              </div>
-              <div class="p-3 rounded-xl border border-slate-200 bg-white opacity-70 text-left">
-                <div class="text-[10px] font-bold text-slate-400">Paper 2</div>
-                <div class="text-xs font-bold text-slate-800 mt-1">Engineering Mechanics</div>
-                <p class="text-[10px] text-slate-400">Coplanar Forces, Lami's Theorem</p>
-              </div>
-              <div class="p-3 rounded-xl border border-slate-200 bg-white opacity-70 text-left">
-                <div class="text-[10px] font-bold text-slate-400">Paper 3</div>
-                <div class="text-xs font-bold text-slate-800 mt-1">Fluid Mechanics Basics</div>
-                <p class="text-[10px] text-slate-400">Bernoulli, Hydrostatic Pressure</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      `;
-    }
-
-    // TAB 4: MEDICAL & PHARMACY
-    else if (cat === 'medical') {
-      container.innerHTML = `
-        <div class="space-y-3">
-          <span class="text-xs font-bold text-brand-900 uppercase tracking-wider flex items-center gap-1.5">
-            <span class="material-symbols-outlined text-sm text-brand-700">medical_services</span>
-            मेडिकल एवं फार्मेसी संकाय चुनें:
-          </span>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <div onclick="selectStreamCard('neet', this)" class="stream-pick-card card-selected p-3.5 rounded-2xl bg-white border-2 border-brand-700 cursor-pointer transition">
-              <span class="text-[10px] font-bold bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded">Pre-Medical</span>
-              <div class="text-xs font-black text-slate-900 mt-2 flex items-center justify-between">
-                <span>NEET-UG Pre-Medical</span>
-                <span class="material-symbols-outlined text-sm text-brand-700 check-mark">check_circle</span>
-              </div>
-              <p class="text-[11px] text-slate-500 mt-1">NCERT 11th & 12th Biology, Human Physiology, Genetics</p>
-            </div>
-
-            <div onclick="selectStreamCard('dpharma', this)" class="stream-pick-card p-3.5 rounded-2xl bg-white border border-slate-200 hover:border-brand-400 cursor-pointer transition">
-              <span class="text-[10px] font-bold bg-purple-50 text-purple-700 px-2 py-0.5 rounded">Diploma</span>
-              <div class="text-xs font-black text-slate-900 mt-2 flex items-center justify-between">
-                <span>D.Pharma Diplomas (Year 1 & 2)</span>
-                <span class="material-symbols-outlined text-sm text-brand-700 check-mark hidden">check_circle</span>
-              </div>
-              <p class="text-[11px] text-slate-500 mt-1">Pharmaceutics, Pharmacology, Toxicology, Dispensing</p>
-            </div>
-
-            <div onclick="selectStreamCard('bpharma', this)" class="stream-pick-card p-3.5 rounded-2xl bg-white border border-slate-200 hover:border-brand-400 cursor-pointer transition">
-              <span class="text-[10px] font-bold bg-brand-50 text-brand-800 px-2 py-0.5 rounded">Degree Sem 1-8</span>
-              <div class="text-xs font-black text-slate-900 mt-2 flex items-center justify-between">
-                <span>B.Pharma Semester Program</span>
-                <span class="material-symbols-outlined text-sm text-brand-700 check-mark hidden">check_circle</span>
-              </div>
-              <p class="text-[11px] text-slate-500 mt-1">Medicinal Chemistry, Biopharmaceutics, Bioavailability</p>
-            </div>
-          </div>
-        </div>
-      `;
-    }
-
-    // TAB 5: COLLEGE DEGREES
-    else if (cat === 'college') {
-      container.innerHTML = `
-        <div class="space-y-3">
-          <span class="text-xs font-bold text-brand-900 uppercase tracking-wider flex items-center gap-1.5">
-            <span class="material-symbols-outlined text-sm text-brand-700">school</span>
-            विश्वविद्यालय स्नातक एवं स्नातकोत्तर डिग्री चुनें:
-          </span>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <div onclick="selectStreamCard('bsc', this)" class="stream-pick-card card-selected p-3.5 rounded-2xl bg-white border-2 border-brand-700 cursor-pointer transition">
-              <span class="text-[10px] font-bold bg-teal-50 text-teal-700 px-2 py-0.5 rounded">Science Degree</span>
-              <div class="text-xs font-black text-slate-900 mt-2 flex items-center justify-between">
-                <span>B.Sc Pure Sciences (PCM / PCB)</span>
-                <span class="material-symbols-outlined text-sm text-brand-700 check-mark">check_circle</span>
-              </div>
-              <p class="text-[11px] text-slate-500 mt-1">Chemical Kinetics, Thermodynamics, Quantum Basics</p>
-            </div>
-
-            <div onclick="selectStreamCard('bacom', this)" class="stream-pick-card p-3.5 rounded-2xl bg-white border border-slate-200 hover:border-brand-400 cursor-pointer transition">
-              <span class="text-[10px] font-bold bg-amber-50 text-amber-700 px-2 py-0.5 rounded">Arts & Commerce</span>
-              <div class="text-xs font-black text-slate-900 mt-2 flex items-center justify-between">
-                <span>B.A Arts & B.Com Degrees</span>
-                <span class="material-symbols-outlined text-sm text-brand-700 check-mark hidden">check_circle</span>
-              </div>
-              <p class="text-[11px] text-slate-500 mt-1">Double Entry Accounting, Corporate Auditing, Admin</p>
-            </div>
-
-            <div onclick="selectStreamCard('msc', this)" class="stream-pick-card p-3.5 rounded-2xl bg-white border border-slate-200 hover:border-brand-400 cursor-pointer transition">
-              <span class="text-[10px] font-bold bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded">Postgraduate</span>
-              <div class="text-xs font-black text-slate-900 mt-2 flex items-center justify-between">
-                <span>M.Sc Postgraduate Degree</span>
-                <span class="material-symbols-outlined text-sm text-brand-700 check-mark hidden">check_circle</span>
-              </div>
-              <p class="text-[11px] text-slate-500 mt-1">Wave Mechanics (|ψ|²), Spectroscopy, Higher Maths</p>
-            </div>
-          </div>
-        </div>
-      `;
-    }
-
-    // TAB 6: VOCATIONAL & IT SKILLS
-    else if (cat === 'vocational') {
-      container.innerHTML = `
-        <div class="space-y-3">
-          <span class="text-xs font-bold text-brand-900 uppercase tracking-wider flex items-center gap-1.5">
-            <span class="material-symbols-outlined text-sm text-brand-700">computer</span>
-            कंप्यूटर एवं व्यावसायिक कौशल चुनें:
-          </span>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div onclick="selectStreamCard('tally', this)" class="stream-pick-card card-selected p-3.5 rounded-2xl bg-white border-2 border-brand-700 cursor-pointer transition">
-              <span class="text-[10px] font-bold bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded">Commerce Trade</span>
-              <div class="text-xs font-black text-slate-900 mt-2 flex items-center justify-between">
-                <span>Tally Prime & Corporate GST</span>
-                <span class="material-symbols-outlined text-sm text-brand-700 check-mark">check_circle</span>
-              </div>
-              <p class="text-[11px] text-slate-500 mt-1">E-Way Bills, RCM Invoicing, ITC Reconciliation, P&L</p>
-            </div>
-
-            <div onclick="selectStreamCard('rscit', this)" class="stream-pick-card p-3.5 rounded-2xl bg-white border border-slate-200 hover:border-brand-400 cursor-pointer transition">
-              <span class="text-[10px] font-bold bg-blue-50 text-blue-700 px-2 py-0.5 rounded">IT Literacy</span>
-              <div class="text-xs font-black text-slate-900 mt-2 flex items-center justify-between">
-                <span>RS-CIT Computer & IT Literacy</span>
-                <span class="material-symbols-outlined text-sm text-brand-700 check-mark hidden">check_circle</span>
-              </div>
-              <p class="text-[11px] text-slate-500 mt-1">MS Office 365, Formulae (=COUNT), Cyber Security, OS</p>
-            </div>
-          </div>
-        </div>
-      `;
-    }
-  }
-
-  function selectStreamCard(streamId, cardElem) {
-    currentActiveStreamId = streamId;
-    document.querySelectorAll('.stream-pick-card').forEach(c => {
-      c.className = "stream-pick-card p-3.5 rounded-2xl bg-white border border-slate-200 hover:border-brand-400 cursor-pointer transition";
-      const icon = c.querySelector('.check-mark');
-      if (icon) icon.classList.add('hidden');
-    });
-    cardElem.className = "stream-pick-card card-selected p-3.5 rounded-2xl bg-white border-2 border-brand-700 cursor-pointer transition";
-    const curIcon = cardElem.querySelector('.check-mark');
-    if (curIcon) curIcon.classList.remove('hidden');
-
-    updateSelectionSummaryAndBreadcrumb();
-  }
-
-  function setEngineeringTrade(streamId, tradeName, btn) {
-    currentActiveStreamId = streamId;
-    document.querySelectorAll('.engg-trade-btn').forEach(b => {
-      b.className = "engg-trade-btn p-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-left transition";
-    });
-    btn.className = "engg-trade-btn card-selected p-2.5 rounded-xl border-2 border-brand-700 bg-brand-50 text-left transition";
-    updateSelectionSummaryAndBreadcrumb();
-  }
-
-  function setSemester(semNum, btn) {
-    currentSelectedSem = semNum;
-    document.querySelectorAll('.sem-btn').forEach(b => {
-      b.className = "sem-btn py-1.5 rounded-lg text-center text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-100";
-    });
-    btn.className = "sem-btn py-1.5 rounded-lg text-center text-xs font-black bg-brand-900 text-white shadow-xs";
-    updateSelectionSummaryAndBreadcrumb();
-  }
-
-  function setBoardFilter(boardName, btn) {
-    currentBoardFilter = boardName;
-    document.querySelectorAll('.board-pill').forEach(b => {
-      b.className = "board-pill px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200";
-    });
-    btn.className = "board-pill px-3 py-1.5 rounded-xl text-xs font-black bg-brand-900 text-white shadow-xs";
-    updateSelectionSummaryAndBreadcrumb();
-  }
-
-  function updateSelectionSummaryAndBreadcrumb() {
-    const data = STREAM_DATA_REGISTRY[currentActiveStreamId] || STREAM_DATA_REGISTRY['btech_civil'];
-    const breadcrumbEl = document.getElementById('liveBreadcrumbTrail');
-    const summaryEl = document.getElementById('modalFinalSelectionText');
-
-    breadcrumbEl.innerHTML = '';
-    data.breadcrumb.forEach((step, idx) => {
-      const span = document.createElement('span');
-      span.className = idx === data.breadcrumb.length - 1 
-        ? "px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded border border-emerald-300"
-        : "px-2 py-0.5 bg-white rounded border border-brand-200";
-      span.textContent = step;
-      breadcrumbEl.appendChild(span);
-      if (idx < data.breadcrumb.length - 1) {
-        const sep = document.createElement('span');
-        sep.className = "text-slate-400";
-        sep.textContent = "›";
-        breadcrumbEl.appendChild(sep);
-      }
-    });
-
-    summaryEl.innerText = `${data.title} (${data.module})`;
-  }
-
-  function reopenStreamModal() {
-    document.getElementById('unifiedPretestModal').classList.remove('hidden');
-  }
-
-  function launchExamWithSelection() {
-    document.getElementById('unifiedPretestModal').classList.add('hidden');
-    const data = STREAM_DATA_REGISTRY[currentActiveStreamId] || STREAM_DATA_REGISTRY['btech_civil'];
-
-    // Update Header & Subject Badges
-    document.getElementById('headerActiveStreamLabel').innerText = data.title;
-    document.getElementById('subjectMetaBadge').innerText = data.module;
-
-    // Generate 100 questions using Method A (Seeded Daily) and attempt sync with Method B
-    activeStreamQuestions = generate100DynamicStreamQuestions(currentActiveStreamId);
-    syncMethodBQuestions();
-
-    // Reset 100-Question state for new test
-    currentQIdx = 0;
-    for (let i = 0; i < 100; i++) {
-      userAnswers[i] = null;
-      questionStatus[i] = 'unvisited';
-    }
-    questionStatus[0] = 'unanswered';
-
-    loadQuestion(0);
-    renderPaletteGrid(1, 50);
-    updatePaletteCounts();
-
-    // Start Countdown Timer
-    if (!isExamActive) {
-      isExamActive = true;
-      startCountdownClock();
-    }
-  }
-
-  function startCountdownClock() {
-    clearInterval(examTimerInterval);
-    examTimerInterval = setInterval(() => {
-      if (examTimerSeconds > 0) {
-        examTimerSeconds--;
-        const m = Math.floor(examTimerSeconds / 60);
-        const s = examTimerSeconds % 60;
-        document.getElementById('examClock').innerText = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+        document.getElementById('metricTotalScore').textContent = Number(score).toFixed(2);
+        document.getElementById('metricMaxScore').textContent = `/ ${maxScore}`;
+        document.getElementById('metricPercentage').textContent = Number((score / maxScore) * 100).toFixed(1) + '%';
+        document.getElementById('metricAccuracy').textContent = Number(accuracy).toFixed(1) + '%';
+        document.getElementById('metricAttemptCounts').textContent = `${correct} सही • ${incorrect} गलत`;
+        document.getElementById('metricNegativeMarks').textContent = `-${Number(savedResult.negTotal != null ? savedResult.negTotal : incorrect).toFixed(2)} कटौती`;
+        document.getElementById('liveSyncStatusText').textContent = `सत्यापित लाइव सत्र: छात्र द्वारा ${savedResult.streamName || 'परीक्षा'} के ${correct + incorrect} प्रश्न हल किए गए (${savedResult.submittedAt || 'अभी'})।`;
       } else {
-        clearInterval(examTimerInterval);
-        alert('समय समाप्त! आपकी परीक्षा स्वतः सबमिट हो रही है...');
-        window.location.href = 'test-result.html';
+        // Fallback default state
+        document.getElementById('metricTotalScore').textContent = "0.00";
+        document.getElementById('metricMaxScore').textContent = "/ 0";
+        document.getElementById('metricPercentage').textContent = "0.0%";
+        document.getElementById('metricAccuracy').textContent = "0.0%";
+        document.getElementById('metricAttemptCounts').textContent = "0 सही • 0 गलत";
+        document.getElementById('metricNegativeMarks').textContent = "-0.00 कटौती";
       }
-    }, 1000);
-  }
 
-  // Load Any of the 100 Dynamic Questions (0 to 99)
-  function loadQuestion(index) {
-    currentQIdx = index;
-    const q = activeStreamQuestions[index];
+      document.getElementById('omrFilterCorrectCount').textContent = correct;
+      document.getElementById('omrFilterIncorrectCount').textContent = incorrect;
+      document.getElementById('omrFilterUnattemptedCount').textContent = unattempted;
 
-    document.getElementById('currentQNumBadge').innerText = String(index + 1).padStart(2, '0');
-    document.getElementById('currentQNumText').innerText = index + 1;
-    document.getElementById('qTextHi').innerText = q.qHi;
-    document.getElementById('qTextEn').innerText = q.qEn;
-    document.getElementById('optLabelA').innerText = q.optA;
-    document.getElementById('optLabelA_En').innerText = q.optA_En || '';
-    document.getElementById('optLabelB').innerText = q.optB;
-    document.getElementById('optLabelB_En').innerText = q.optB_En || '';
-    document.getElementById('optLabelC').innerText = q.optC;
-    document.getElementById('optLabelC_En').innerText = q.optC_En || '';
-    document.getElementById('optLabelD').innerText = q.optD;
-    document.getElementById('optLabelD_En').innerText = q.optD_En || '';
+      // 4. Render 100-Question Color-Coded OMR Response Grid
+      renderRealOMRResponseGrid(itemsList, correct, incorrect);
 
-    // Restore selected answer or leave blank (zero pre-selected)
-    const saved = userAnswers[index];
-    document.querySelectorAll('input[name="examOptionInput"]').forEach(i => {
-      i.checked = (i.value === saved);
+      // 5. Render Detailed Itemized Table
+      renderItemizedTable(itemsList);
+    })();
+
+    function renderRealOMRResponseGrid(itemsList, correctCount, incorrectCount) {
+      const grid = document.getElementById('omrResponseGrid');
+      if (!grid) return;
+      grid.innerHTML = '';
+
+      for (let i = 1; i <= 100; i++) {
+        const item = document.createElement('div');
+        item.id = `omr_box_${i}`;
+        
+        const qData = itemsList[i - 1];
+        let status = 'unattempted';
+
+        if (qData) {
+          status = qData.status;
+        } else {
+          // Default distribution if no live test submitted yet
+          status = 'unattempted';   // no submitted test -> nothing shown as correct/incorrect
+        }
+
+        if (status === 'correct') {
+          item.className = 'omr-cell p-2 rounded-lg bg-emerald-600 text-white text-center font-bold shadow-2xs hover:scale-105 transition cursor-pointer';
+          item.title = `प्र. ${i}: सही उत्तर`;
+        } else if (status === 'incorrect') {
+          item.className = 'omr-cell p-2 rounded-lg bg-rose-600 text-white text-center font-bold shadow-2xs hover:scale-105 transition cursor-pointer';
+          item.title = `प्र. ${i}: गलत उत्तर`;
+        } else {
+          item.className = 'omr-cell p-2 rounded-lg bg-slate-300 text-slate-700 text-center font-bold shadow-2xs hover:scale-105 transition cursor-pointer';
+          item.title = `प्र. ${i}: अनुत्तरित`;
+        }
+
+        item.setAttribute('data-status', status);
+        item.textContent = i;
+        item.onclick = function() {
+          alert(`प्रश्न संख्या ${i} का सत्यापन:\nस्थिति: ${status.toUpperCase()}\nचयनित उत्तर: ${qData ? (qData.studentAns || 'छोड़ा गया') : 'N/A'}\nआधिकारिक उत्तर: ${qData ? qData.correctAns : 'N/A'}`);
+        };
+        grid.appendChild(item);
+      }
+    }
+
+    function renderItemizedTable(itemsList) {
+      const tbody = document.getElementById('itemizedTableBody');
+      if (!tbody) return;
+      tbody.innerHTML = '';
+
+      const sampleRenderList = itemsList;   // all 100 real responses (no sample rows)
+
+      sampleRenderList.forEach(item => {
+        const tr = document.createElement('tr');
+        tr.className = item.status === 'incorrect' ? "bg-rose-50/40 hover:bg-rose-50/70 transition" : "hover:bg-slate-50 transition";
+        
+        tr.innerHTML = `
+          <td class="px-4 py-3 font-mono font-bold text-brand-900">Q.${String(item.num).padStart(2, '0')}</td>
+          <td class="px-4 py-3">
+            <div class="font-bold text-slate-900">${escH(item.question)}</div>
+          </td>
+          <td class="px-4 py-3 text-center font-bold font-mono">
+            ${item.studentAns ? `<span class="px-2 py-0.5 rounded ${item.status === 'correct' ? 'bg-emerald-50 text-emerald-800 border border-emerald-200' : 'bg-rose-100 text-rose-800 border border-rose-200'}">(${item.studentAns})</span>` : '<span class="text-slate-400">छोड़ा गया</span>'}
+          </td>
+          <td class="px-4 py-3 text-center font-bold font-mono">
+            <span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200">(${item.correctAns})</span>
+          </td>
+          <td class="px-4 py-3 text-center">
+            ${item.status === 'correct' ? '<span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-bold text-[10px]">सही ✓</span>' : (item.status === 'incorrect' ? '<span class="px-2 py-0.5 rounded-full bg-rose-100 text-rose-800 font-bold text-[10px]">गलत ✕</span>' : '<span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-700 font-bold text-[10px]">अनुत्तरित -</span>')}
+          </td>
+          <td class="px-4 py-3 text-right text-[11px] text-amber-800 font-medium italic">
+            ${escH(item.trick || 'प्रमाणित सूत्र')}${item.qid ? ` <button type="button" onclick="reportQ('${escH(item.qid)}', this)" class="ml-1 not-italic text-[10px] font-bold text-slate-500 underline cursor-pointer">⚑ गलत है? रिपोर्ट</button>` : ''}
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    const escH = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    async function reportQ(qid, btn) {
+      const why = prompt('सवाल में क्या गलती है? (संक्षेप में)'); if (why === null) return;
+      try {
+        const d = await (await fetch('/api/report', { method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ streamId: savedResult && savedResult.streamId, qid, reason: why }) })).json();
+        if (d.ok) { btn.textContent = '✓ रिपोर्ट हो गया'; btn.disabled = true; } else alert(d.error || 'रिपोर्ट नहीं हो पाया');
+      } catch (e) { alert('नेटवर्क त्रुटि'); }
+    }
+
+    function filterOMRGrid(type, btn) {
+      document.querySelectorAll('#btnAnsFilterAll, #btnAnsFilterCorrect, #btnAnsFilterIncorrect, #btnAnsFilterUnattempted').forEach(b => {
+        b.className = "px-3 py-1 rounded-lg text-slate-600 hover:text-slate-900 cursor-pointer";
+      });
+      btn.className = "px-3 py-1 rounded-lg bg-white text-brand-900 font-bold shadow-2xs cursor-pointer";
+
+      const cells = document.querySelectorAll('.omr-cell');
+      cells.forEach(c => {
+        const st = c.getAttribute('data-status');
+        if (type === 'all' || st === type) {
+          c.style.display = 'block';
+        } else {
+          c.style.display = 'none';
+        }
+      });
+    }
+
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('keydown', e => {
+      if (e.keyCode === 123 || 
+         (e.ctrlKey && ['c', 'u', 's', 'a'].includes(e.key.toLowerCase())) ||
+         (e.ctrlKey && e.shiftKey && ['i', 'j'].includes(e.key.toLowerCase()))) {
+        e.preventDefault();
+        return false;
+      }
     });
-
-    if (questionStatus[index] === 'unvisited') {
-      questionStatus[index] = 'unanswered';
-    }
-
-    updatePaletteCounts();
-    refreshPaletteButton(index + 1);
-  }
-
-  function recordUserOption(val) {
-    userAnswers[currentQIdx] = val;
-    questionStatus[currentQIdx] = 'answered';
-    updatePaletteCounts();
-    refreshPaletteButton(currentQIdx + 1);
-  }
-
-  function clearOptionResponse() {
-    userAnswers[currentQIdx] = null;
-    questionStatus[currentQIdx] = 'unanswered';
-    document.querySelectorAll('input[name="examOptionInput"]').forEach(i => i.checked = false);
-    updatePaletteCounts();
-    refreshPaletteButton(currentQIdx + 1);
-  }
-
-  function markForReview() {
-    questionStatus[currentQIdx] = 'review';
-    updatePaletteCounts();
-    refreshPaletteButton(currentQIdx + 1);
-    saveAndNext();
-  }
-
-  // SEAMLESS 100-QUESTION LOOPING (NO POPUPS / NO HARD STOP)
-  function saveAndNext() {
-    if (currentQIdx < 99) {
-      currentQIdx++;
-      loadQuestion(currentQIdx);
-
-      // Auto-switch to Section B (51-100) when crossing Question 50
-      if (currentQIdx >= 50 && document.getElementById('btnSecA').classList.contains('bg-white')) {
-        switchSection('B');
-      }
-    } else {
-      if (confirm('आपने सभी 100 प्रश्न हल कर लिए हैं। क्या आप परीक्षा समाप्त करके स्कोरकार्ड देखना चाहते हैं?')) {
-        window.location.href = 'test-result.html';
-      }
-    }
-  }
-
-  function prevQuestion() {
-    if (currentQIdx > 0) {
-      currentQIdx--;
-      loadQuestion(currentQIdx);
-      if (currentQIdx < 50 && document.getElementById('btnSecB').classList.contains('bg-white')) {
-        switchSection('A');
-      }
-    }
-  }
-
-  // OMR Palette Status Counting & Rendering
-  function updatePaletteCounts() {
-    let ans = 0, unans = 0, rev = 0, unvis = 0;
-    for (let i = 0; i < 100; i++) {
-      if (questionStatus[i] === 'answered') ans++;
-      else if (questionStatus[i] === 'unanswered') unans++;
-      else if (questionStatus[i] === 'review') rev++;
-      else unvis++;
-    }
-    document.getElementById('paletteAnsweredCount').innerText = ans;
-    document.getElementById('paletteUnansweredCount').innerText = unans;
-    document.getElementById('paletteReviewCount').innerText = rev;
-    document.getElementById('paletteNotVisitedCount').innerText = unvis;
-  }
-
-  function renderPaletteGrid(start, end) {
-    const grid = document.getElementById('paletteMatrixGrid');
-    grid.innerHTML = '';
-    for (let i = start; i <= end; i++) {
-      const btn = document.createElement('button');
-      btn.id = `pal_btn_${i}`;
-      btn.textContent = i;
-      btn.className = getPaletteClass(i);
-      btn.onclick = () => {
-        loadQuestion(i - 1);
-      };
-      grid.appendChild(btn);
-    }
-  }
-
-  function getPaletteClass(qNum) {
-    const st = questionStatus[qNum - 1];
-    const isCurrent = (currentQIdx === qNum - 1);
-    const ring = isCurrent ? 'ring-2 ring-brand-900 ring-offset-1 font-black ' : '';
-
-    if (st === 'answered') {
-      return `p-2.5 rounded-xl text-xs font-bold transition border bg-emerald-600 text-white border-emerald-700 ${ring}`;
-    } else if (st === 'unanswered') {
-      return `p-2.5 rounded-xl text-xs font-bold transition border bg-rose-600 text-white border-rose-700 ${ring}`;
-    } else if (st === 'review') {
-      return `p-2.5 rounded-xl text-xs font-bold transition border bg-purple-600 text-white border-purple-700 ${ring}`;
-    } else {
-      return `p-2.5 rounded-xl text-xs font-bold transition border bg-slate-100 hover:bg-slate-200 text-slate-700 border-slate-200 ${ring}`;
-    }
-  }
-
-  function refreshPaletteButton(qNum) {
-    const btn = document.getElementById(`pal_btn_${qNum}`);
-    if (btn) {
-      btn.className = getPaletteClass(qNum);
-    }
-  }
-
-  function switchSection(sec) {
-    const btnA = document.getElementById('btnSecA');
-    const btnB = document.getElementById('btnSecB');
-    if (sec === 'A') {
-      btnA.className = "flex-1 py-1.5 rounded-lg bg-white text-brand-900 shadow-2xs";
-      btnB.className = "flex-1 py-1.5 rounded-lg text-slate-500 hover:text-slate-900";
-      renderPaletteGrid(1, 50);
-    } else {
-      btnB.className = "flex-1 py-1.5 rounded-lg bg-white text-brand-900 shadow-2xs";
-      btnA.className = "flex-1 py-1.5 rounded-lg text-slate-500 hover:text-slate-900";
-      renderPaletteGrid(51, 100);
-    }
-  }
-
-  function setQMode(mode) {
-    const btnM = document.getElementById('btnModeMCQ');
-    const btnT = document.getElementById('btnModeTheory');
-    const mcqBox = document.getElementById('optionsContainer');
-    const thBox = document.getElementById('theoryAnswerContainer');
-
-    if (mode === 'mcq') {
-      btnM.className = "px-3 py-1 rounded-lg bg-white text-brand-900 shadow-2xs flex items-center gap-1";
-      btnT.className = "px-3 py-1 rounded-lg text-slate-500 hover:text-slate-900 flex items-center gap-1";
-      mcqBox.classList.remove('hidden');
-      thBox.classList.add('hidden');
-    } else {
-      btnT.className = "px-3 py-1 rounded-lg bg-white text-brand-900 shadow-2xs flex items-center gap-1";
-      btnM.className = "px-3 py-1 rounded-lg text-slate-500 hover:text-slate-900 flex items-center gap-1";
-      thBox.classList.remove('hidden');
-      mcqBox.classList.add('hidden');
-    }
-  }
-
-  function finalSubmitExam() {
-    if (confirm('क्या आप परीक्षा समाप्त करके अपना अंतिम आधिकारिक स्कोरकार्ड देखना चाहते हैं?')) {
-      window.location.href = 'test-result.html';
-    }
-  }
-
-  function switchLanguage(lang) {
-    const btnHi = document.getElementById('btnLangHi');
-    const btnEn = document.getElementById('btnLangEn');
-    if (lang === 'hi') {
-      btnHi.className = "px-2.5 py-1 rounded-lg bg-white text-brand-900 shadow-2xs";
-      btnEn.className = "px-2.5 py-1 rounded-lg text-slate-500 hover:text-slate-900";
-    } else {
-      btnEn.className = "px-2.5 py-1 rounded-lg bg-white text-brand-900 shadow-2xs";
-      btnHi.className = "px-2.5 py-1 rounded-lg text-slate-500 hover:text-slate-900";
-    }
-  }
-</script>
+  </script>
 </body>
 </html>
