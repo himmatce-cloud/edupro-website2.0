@@ -47,6 +47,7 @@
     font-variation-settings: 'FILL' 1;
   }
 </style>
+<script src="edu-auth.js"></script>
 </head>
 <body class="bg-surface text-on-surface font-sans h-full flex flex-col md:flex-row overflow-hidden antialiased">
 <!-- Desktop Sidebar -->
@@ -584,8 +585,8 @@ EduPro Bharat - Founder Master Console
 </div>
 <script>
   // REAL PRODUCTION STATE (Initializes Clean Zero-State)
-  let pendingPayments = JSON.parse(localStorage.getItem('edupro_pending_payments')) || [];
-  let verifiedStudents = JSON.parse(localStorage.getItem('edupro_verified_students')) || [];
+  let pendingPayments = [];
+  let verifiedStudents = [];
   let customCreatedCourses = JSON.parse(localStorage.getItem('edupro_custom_courses')) || [];
   let pendingRejectId = null;
 
@@ -765,26 +766,20 @@ EduPro Bharat - Founder Master Console
     }
   }
 
-  function approvePayment(id) {
-    const itemIndex = pendingPayments.findIndex(p => p.id === id);
-    if (itemIndex > -1) {
-      const item = pendingPayments[itemIndex];
-      const today = new Date();
-      const expiryDate = new Date();
-      expiryDate.setDate(today.getDate() + 30);
-      const formattedExpiry = expiryDate.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
-      verifiedStudents.unshift({
-        name: item.name,
-        mobile: item.mobile,
-        target: item.target,
-        utr: item.utr,
-        expiry: formattedExpiry
-      });
-      pendingPayments.splice(itemIndex, 1);
-      saveState();
-      renderLedger();
-      alert(`सत्यापन सफल! ${item.name} के लिए ₹199 की 30-दिवसीय सदस्यता सक्रिय कर दी गई है।`);
-    }
+  async function adminCall(payload) {
+    const r = await fetch('/api/admin', { method: payload ? 'POST' : 'GET', credentials: 'same-origin', headers: { 'Content-Type': 'application/json' }, body: payload ? JSON.stringify(payload) : undefined });
+    if (r.status === 403) { location.replace('login.html'); return null; }
+    return r.json();
+  }
+  async function loadLedger() {
+    const d = await adminCall(); if (!d || !d.ok) return;
+    pendingPayments = d.pending; verifiedStudents = d.verified; renderLedger(); renderStudentList();
+  }
+  async function approvePayment(id) {
+    const d = await adminCall({ action: 'approve', id });
+    if (!d || !d.ok) { alert('❌ ' + ((d && d.error) || 'विफल')); return; }
+    pendingPayments = d.pending; verifiedStudents = d.verified; renderLedger(); renderStudentList();
+    alert('✅ 30-दिवसीय पास सक्रिय कर दिया गया।');
   }
 
   function openRejectModal(id, name) {
@@ -802,19 +797,13 @@ EduPro Bharat - Founder Master Console
     modal.classList.remove('flex');
   }
 
-  function confirmRejectPayment() {
-    if (pendingRejectId) {
-      const idx = pendingPayments.findIndex(p => p.id === pendingRejectId);
-      if (idx > -1) {
-        const student = pendingPayments[idx];
-        const reason = document.querySelector('input[name="rejectReason"]:checked').value;
-        pendingPayments.splice(idx, 1);
-        saveState();
-        renderLedger();
-        closeRejectModal();
-        alert(`अस्वीकृत: ${student.name} का UTR अस्वीकार किया गया (${reason})।`);
-      }
-    }
+  async function confirmRejectPayment() {
+    if (!pendingRejectId) return;
+    const reason = document.querySelector('input[name="rejectReason"]:checked').value;
+    const d = await adminCall({ action: 'reject', id: pendingRejectId, reason });
+    closeRejectModal();
+    if (!d || !d.ok) { alert('❌ ' + ((d && d.error) || 'विफल')); return; }
+    pendingPayments = d.pending; verifiedStudents = d.verified; renderLedger(); renderStudentList();
   }
 
   function openReceiptModal(name, utr, imgSrc) {
@@ -834,29 +823,7 @@ EduPro Bharat - Founder Master Console
     modal.classList.remove('flex');
   }
 
-  function simulateStudentPayment() {
-    const demoNames = [
-      { name: "Arjun Patel", mobile: "+91 98234 11029", target: "SSC CGL 2025 Tier-1" },
-      { name: "Pooja Sharma", mobile: "+91 97182 33419", target: "RRB NTPC Graduate" },
-      { name: "Rahul Verma", mobile: "+91 94150 88219", target: "IBPS PO Prelims" }
-    ];
-    const picked = demoNames[Math.floor(Math.random() * demoNames.length)];
-    const randomUtr = "4" + Math.floor(10000000000 + Math.random() * 90000000000);
-    const newReq = {
-      id: "REQ-" + Date.now().toString().slice(-4),
-      name: picked.name,
-      mobile: picked.mobile,
-      target: picked.target,
-      utr: randomUtr,
-      amount: "₹199",
-      time: "अभी-अभी (Just now)",
-      proofImg: "https://lh3.googleusercontent.com/aida-public/AB6AXuCQOEy3P88pSxXVQEJVfdyAk4FXz0IYA0XoX4PIqxxvVGLPf53_QTU1prcIep7iOFZADMDz45FmXxHZXuSnO6d1IckYDuQs10eRzQY3NRh11ZfBwIQ5XEMdWWdFtebg8hpVrJiW8DtPVG918do7NYnM2qhiXUUle_R7HfPtL51dDAIRoTYNFOPrPQvE8ulCwOsDNQAcmTySVEwajB5z0dz3YFQF6550dCaO4gK_xMO0FhkbzyUZ5DG8lw"
-    };
-    pendingPayments.unshift(newReq);
-    saveState();
-    switchView('approvals');
-    renderLedger();
-  }
+  function simulateStudentPayment() { /* demo data removed */ }
 
   function filterTable() {
     const query = document.getElementById('searchInput').value.toLowerCase().trim();
@@ -867,21 +834,13 @@ EduPro Bharat - Founder Master Console
     });
   }
 
-  function clearDemoData() {
-    if (confirm("क्या आप पेंडिंग कतार को साफ़ करना चाहते हैं?")) {
-      pendingPayments = [];
-      saveState();
-      renderLedger();
-    }
-  }
+  function clearDemoData() { /* removed: queue is live data */ }
 
-  function saveState() {
-    localStorage.setItem('edupro_pending_payments', JSON.stringify(pendingPayments));
-    localStorage.setItem('edupro_verified_students', JSON.stringify(verifiedStudents));
-  }
+  function saveState() { /* server is the source of truth */ }
 
-  window.addEventListener('DOMContentLoaded', () => {
-    renderLedger();
+  window.addEventListener('DOMContentLoaded', async () => {
+    if (!(await EDU.require({ admin: true }))) return;
+    await loadLedger();
   });
 </script>
 </body></html>
