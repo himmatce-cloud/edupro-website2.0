@@ -1,729 +1,86 @@
 <!DOCTYPE html>
-<html class="h-full bg-slate-100" lang="hi">
-<head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>EduPro - 1-Click A4 PDF Notes & 20-Year PYQ Print Center (print.html)</title>
-  
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
-  
-  <script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            brand: { 50: '#f0f5ff', 100: '#e0ebff', 500: '#2563eb', 600: '#1d4ed8', 700: '#1e40af', 800: '#0f2b5c', 900: '#00163d' }
-          },
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
-            mono: ['Inter', 'monospace']
-          }
-        }
-      }
-    }
-  </script>
-  <style>
-    body { user-select: none; -webkit-user-select: none; }
-    .custom-scrollbar::-webkit-scrollbar { width: 6px; }
-    .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-    .sheet-active { border-color: #1d4ed8 !important; background-color: #f0f5ff !important; box-shadow: 0 4px 14px -2px rgba(29, 78, 216, 0.2) !important; }
-    
-    /* A4 Print Layout Rules */
-    @media print {
-      body { background-color: #ffffff !important; color: #000000 !important; font-size: 11pt; }
-      .no-print { display: none !important; }
-      .print-page { 
-        width: 100% !important; 
-        max-width: 100% !important; 
-        margin: 0 !important; 
-        padding: 1.5cm !important; 
-        box-shadow: none !important; 
-        border: none !important; 
-        page-break-after: always; 
-      }
-      .watermark-overlay {
-        display: block !important;
-        position: fixed;
-        top: 45%;
-        left: 20%;
-        transform: rotate(-35deg);
-        font-size: 38pt;
-        font-weight: 900;
-        color: rgba(15, 23, 42, 0.05);
-        pointer-events: none;
-        z-index: 1000;
-      }
-    }
-  </style>
-</head>
-<body class="min-h-full flex flex-col font-sans bg-slate-100 text-slate-800 antialiased overflow-x-hidden" oncontextmenu="return false;">
-
-  <!-- ================= TOP MAIN APP BAR (NO-PRINT) ================= -->
-  <header class="no-print bg-white border-b border-slate-200 sticky top-0 z-40 shadow-xs">
-    <div class="max-w-7xl mx-auto px-4 lg:px-8 h-16 flex items-center justify-between gap-4">
-      <div class="flex items-center gap-6">
-        <a class="flex items-center gap-2 group" href="index.html">
-          <div class="w-9 h-9 rounded-xl bg-brand-900 text-white flex items-center justify-center font-black text-lg shadow-sm">EP</div>
-          <div>
-            <span class="font-black text-lg tracking-tight text-brand-900 block leading-tight">EduPro</span>
-            <span class="text-[9px] uppercase tracking-wider text-slate-400 block font-bold">A4 Print &amp; PDF Studio</span>
-          </div>
-        </a>
-
-        <nav class="hidden lg:flex items-center gap-1 text-xs font-bold text-slate-600">
-          <a class="px-3 py-1.5 rounded-lg hover:bg-slate-100 hover:text-brand-900 transition" href="index.html">होमपेज</a>
-          <a class="px-3 py-1.5 rounded-lg hover:bg-slate-100 hover:text-brand-900 transition" href="test-series.html">टेस्ट सीरीज़</a>
-          <a class="px-3 py-1.5 rounded-lg hover:bg-slate-100 hover:text-brand-900 transition" href="pyq-tricks.html">20-Year PYQ</a>
-          <a class="px-3 py-1.5 rounded-lg hover:bg-slate-100 hover:text-brand-900 transition" href="dashboard.html">छात्र डैशबोर्ड</a>
-          <a class="px-3 py-1.5 rounded-lg hover:bg-slate-100 hover:text-brand-900 transition" href="gk.html">दैनिक GK</a>
-          <a class="px-3 py-1.5 rounded-lg hover:bg-slate-100 hover:text-brand-900 transition" href="help.html">सहायता</a>
-        </nav>
-      </div>
-
-      <!-- Right Header Actions -->
-      <div class="flex items-center gap-3">
-        <a class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-brand-50 border border-brand-200 text-brand-900 text-xs font-bold shadow-2xs hover:bg-brand-100 transition" href="payment.html">
-          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span>₹199 / माह All-Access सक्रिय</span>
-        </a>
-        <button class="px-4 py-2 rounded-xl bg-brand-900 hover:bg-black text-white text-xs font-extrabold shadow-sm transition flex items-center gap-1.5 cursor-pointer" onclick="window.print()" type="button">
-          <span class="material-symbols-outlined text-sm text-amber-300">print</span>
-          <span>1-Click A4 Print (प्रिंट करें)</span>
-        </button>
-        <a class="flex items-center gap-2 pl-2 border-l border-slate-200 group" href="dashboard.html">
-          <div class="w-8 h-8 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-xs">RK</div>
-          <div class="hidden xl:block text-left">
-            <span class="text-xs font-bold text-slate-800 block leading-tight">राजेश कुमार</span>
-            <span class="text-[10px] text-slate-400 block leading-tight">#EDU-8921</span>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <!-- Security & Watermark Notification Ribbon -->
-    <div class="bg-brand-50 border-t border-brand-100 px-4 lg:px-8 py-2 text-xs text-brand-900 font-semibold flex flex-wrap items-center justify-between gap-2">
-      <div class="flex items-center gap-2">
-        <span class="material-symbols-outlined text-sm text-brand-700">security</span>
-        <span>A4 शीट डायनामिक एंटी-लीक वॉटरमार्क सक्रिय (#EDU-8921) | दो तरफा कॉम्पैक्ट अध्ययन लेआउट</span>
-      </div>
-      <div class="flex items-center gap-2 text-[11px] text-slate-600 font-medium">
-        <span>ब्राउज़र प्रिंट शॉर्टकट: <strong>Ctrl + P</strong></span>
-        <span>•</span>
-        <span>पेपर साइज़: <strong>A4 Portrait</strong></span>
-      </div>
-    </div>
+<html lang="hi"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>EduPro - A4 प्रश्न-पत्र प्रिंट / PDF</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="edu-auth.js"></script>
+<style>
+  @page { size: A4 portrait; margin: 12mm; }
+  #paper { background: #fff; color: #000; max-width: 210mm; margin: 0 auto; padding: 12mm; font-size: 10.5pt; line-height: 1.35; box-shadow: 0 2px 14px rgba(0,0,0,.12); position: relative; }
+  .cols { column-count: 2; column-gap: 8mm; column-rule: 1px solid #ccc; }
+  .q { break-inside: avoid; margin-bottom: 3.2mm; }
+  .opts { display: grid; grid-template-columns: 1fr 1fr; gap: 0 6px; margin-left: 14px; font-size: 9.5pt; }
+  .en { color: #333; font-size: 9.5pt; }
+  .part-h { border: 1px solid #000; padding: 2mm 3mm; margin: 3mm 0; font-weight: 700; break-after: avoid; }
+  .wm { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+  .wm span { position: absolute; top: 45%; left: 8%; transform: rotate(-30deg); font-size: 30pt; font-weight: 900; color: rgba(0,0,0,.05); white-space: nowrap; }
+  .key { page-break-before: always; }
+  @media print {
+    body { background: #fff !important; }
+    .no-print { display: none !important; }
+    #paper { box-shadow: none; padding: 0; max-width: none; }
+  }
+</style></head>
+<body class="bg-slate-100 text-slate-800" oncontextmenu="return false">
+<div class="no-print">
+  <header class="bg-white border-b px-4 py-3 flex items-center justify-between">
+    <a href="index.html" class="font-black text-lg text-slate-900">EduPro <span class="text-xs text-slate-400 font-bold">A4 Print / PDF</span></a>
+    <nav class="text-xs font-semibold flex gap-4"><a href="dashboard.html">डैशबोर्ड</a><a href="test-series.html">टेस्ट सीरीज़</a><a href="help.html">सहायता</a></nav>
   </header>
-
-  <!-- ================= MAIN LAYOUT WITH SIDEBAR + A4 LIVE PREVIEW ================= -->
-  <main class="flex-1 max-w-7xl w-full mx-auto px-3 lg:px-6 py-5 grid grid-cols-1 lg:grid-cols-12 gap-5">
-
-    <!-- LEFT COLUMN: PRINT CONFIGURATION & SUBJECT CONTROLS (NO-PRINT) -->
-    <div class="no-print lg:col-span-4 space-y-4">
-      
-      <!-- Stream & Module Selector Card -->
-      <div class="bg-white rounded-3xl p-5 border border-slate-200 shadow-xs space-y-4">
-        <div class="flex items-center justify-between pb-3 border-b border-slate-100">
-          <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-brand-700 text-lg">tune</span>
-            <h2 class="text-xs font-black uppercase tracking-wider text-slate-900">प्रिंट संकाय व विषय चुनें</h2>
-          </div>
-          <span class="text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded-full">15 Streams</span>
-        </div>
-
-        <!-- Category Dropdown -->
-        <div class="space-y-1">
-          <label class="text-xs font-bold text-slate-700 block">परीक्षा वर्ग / संकाय:</label>
-          <select class="w-full py-2 px-3 rounded-xl border border-slate-200 text-xs font-bold text-slate-800 bg-slate-50 focus:bg-white focus:outline-none focus:border-brand-500" id="printStreamSelector" onchange="switchPrintStream(this.value)">
-            <option value="civil">B.Tech Civil Engineering (IS 4031 Concrete &amp; Materials)</option>
-            <option value="neet">NEET-UG Medical (NCERT Biology &amp; Calvin Cycle)</option>
-            <option value="upsc">UPSC CSE &amp; State PSC (Indian Polity &amp; Writs)</option>
-            <option value="tally">Tally Prime GST (RCM &amp; Corporate Accounting)</option>
-            <option value="rscit">RS-CIT &amp; B.Tech CSE (MS-Excel &amp; Cybersecurity)</option>
-            <option value="board">10th &amp; 12th Board Science (Physics &amp; Chemistry NCERT)</option>
-          </select>
-        </div>
-
-        <!-- Available Print Sets Radio Selection -->
-        <div class="space-y-2 pt-1">
-          <span class="text-xs font-bold text-slate-700 block">उपलब्ध A4 शीट प्रकार (Sheet Type):</span>
-          
-          <div class="sheet-opt-card sheet-active p-3 rounded-2xl border-2 border-brand-900 bg-brand-50 cursor-pointer transition" onclick="selectSheetType('pyq_tricks', this)">
-            <div class="flex items-center justify-between text-xs font-black text-slate-900">
-              <span class="flex items-center gap-1.5">
-                <span class="material-symbols-outlined text-sm text-brand-700">history_edu</span>
-                20-Year PYQ + देसी मेमोरी ट्रिक्स
-              </span>
-              <span class="material-symbols-outlined text-xs text-brand-700 check-icon">check_circle</span>
-            </div>
-            <p class="text-[11px] text-slate-500 mt-1 pl-5">विगत वर्षों के 15 सबसे महत्वपूर्ण दोहराए गए प्रश्न एवं याद रखने के सूत्र।</p>
-          </div>
-
-          <div class="sheet-opt-card p-3 rounded-2xl border border-slate-200 bg-white hover:bg-slate-50 cursor-pointer transition" onclick="selectSheetType('formula_summary', this)">
-            <div class="flex items-center justify-between text-xs font-bold text-slate-900">
-              <span class="flex items-center gap-1.5">
-                <span class="material-symbols-outlined text-sm text-amber-600">functions</span>
-                1-पेज हाई-यील्ड फॉर्मूला शीट (Formula Bank)
-              </span>
-              <span class="material-symbols-outlined text-xs text-brand-700 check-icon hidden">check_circle</span>
-            </div>
-            <p class="text-[11px] text-slate-500 mt-1 pl-5">IS कोड सीमाएं, वैज्ञानिक स्थिरांक एवं परीक्षा हॉल क्विक रीकैप।</p>
-          </div>
-
-          <div class="sheet-opt-card p-3 rounded-2xl border border-slate-200 bg-white hover:bg-slate-50 cursor-pointer transition" onclick="selectSheetType('omr_practice', this)">
-            <div class="flex items-center justify-between text-xs font-bold text-slate-900">
-              <span class="flex items-center gap-1.5">
-                <span class="material-symbols-outlined text-sm text-purple-600">grid_on</span>
-                100-प्रश्न आधिकारिक OMR प्रैक्टिस शीट
-              </span>
-              <span class="material-symbols-outlined text-xs text-brand-700 check-icon hidden">check_circle</span>
-            </div>
-            <p class="text-[11px] text-slate-500 mt-1 pl-5">ऑफलाइन पेन-पेपर अभ्यास हेतु SSC / NTA मानक OMR बबल शीट।</p>
-          </div>
-        </div>
-
-        <!-- Print Styling Toggles -->
-        <div class="space-y-2 pt-2 border-t border-slate-100">
-          <span class="text-xs font-bold text-slate-700 block">प्रिंट अनुकूलन विकल्प (Print Customizer):</span>
-          
-          <label class="flex items-center justify-between text-xs text-slate-700 font-semibold cursor-pointer">
-            <span>वाटरमार्क सुरक्षा (#EDU-8921)</span>
-            <input checked="" class="rounded text-brand-700 focus:ring-brand-500" id="chkWatermark" onchange="toggleWatermark(this.checked)" type="checkbox"/>
-          </label>
-
-          <label class="flex items-center justify-between text-xs text-slate-700 font-semibold cursor-pointer">
-            <span>देसी मेमोरी ट्रिक्स बॉक्स शामिल करें</span>
-            <input checked="" class="rounded text-brand-700 focus:ring-brand-500" id="chkTricks" onchange="toggleTrickBox(this.checked)" type="checkbox"/>
-          </label>
-
-          <label class="flex items-center justify-between text-xs text-slate-700 font-semibold cursor-pointer">
-            <span>द्विभाषी (हिंदी + English) टेक्स्ट</span>
-            <input checked="" class="rounded text-brand-700 focus:ring-brand-500" id="chkBilingual" onchange="toggleBilingual(this.checked)" type="checkbox"/>
-          </label>
-        </div>
-
-        <!-- Main Print Execution Trigger Button -->
-        <div class="pt-2">
-          <button class="w-full py-3 bg-brand-900 hover:bg-black text-white font-extrabold text-xs rounded-xl shadow-md transition flex items-center justify-center gap-2 cursor-pointer" onclick="window.print()" type="button">
-            <span class="material-symbols-outlined text-base text-amber-300">print</span>
-            <span>अभी A4 PDF प्रिंट करें / सेव करें</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Quick Tips Card -->
-      <div class="bg-amber-50/70 rounded-3xl p-4 border border-amber-200 text-xs text-amber-950 space-y-2">
-        <div class="flex items-center gap-1.5 font-black text-amber-900">
-          <span class="material-symbols-outlined text-sm">lightbulb</span>
-          <span>साइबर कैफे / प्रिंटिंग हेतु सर्वोत्तम सेटिंग्स:</span>
-        </div>
-        <ul class="list-disc pl-4 space-y-1 text-[11px] text-amber-900/90 font-medium">
-          <li>प्रिंट डायलॉग में <strong>Destination</strong> को <em>"Save as PDF"</em> चुनें।</li>
-          <li><strong>Layout:</strong> Portrait • <strong>Paper Size:</strong> A4।</li>
-          <li><strong>Margins:</strong> Default या Minimum रखें।</li>
-          <li><strong>Options:</strong> "Background graphics" को टिक (Checked) रखें ताकि बॉक्स और बॉर्डर्स स्पष्ट प्रिंट हों।</li>
-        </ul>
-      </div>
-
+  <div class="max-w-3xl mx-auto p-4 grid gap-3 sm:grid-cols-2">
+    <label class="text-xs font-bold">स्ट्रीम<select id="selStream" class="w-full mt-1 rounded-lg border-slate-300 text-sm"></select></label>
+    <label class="text-xs font-bold">टेस्ट सेट नंबर (हर सेट के सवाल अलग)<input id="selSet" type="number" min="1" value="1" class="w-full mt-1 rounded-lg border-slate-300 text-sm"/></label>
+    <label class="text-xs font-bold">भाग<select id="selPart" class="w-full mt-1 rounded-lg border-slate-300 text-sm"><option value="all">पूरा पेपर (100 प्रश्न)</option><option value="0">भाग 1</option><option value="1">भाग 2</option><option value="2">भाग 3</option><option value="3">भाग 4</option></select></label>
+    <div class="text-xs font-semibold space-y-1 pt-4">
+      <label class="flex gap-2"><input id="chkBi" type="checkbox" checked/> द्विभाषी (हिंदी + English)</label>
+      <label class="flex gap-2"><input id="chkKey" type="checkbox" checked/> अंतिम पेज पर उत्तर-कुंजी व मेमोरी ट्रिक</label>
+      <label class="flex gap-2"><input id="chkWm" type="checkbox" checked/> वॉटरमार्क (आपका मोबाइल)</label>
     </div>
+    <button id="btnLoad" class="sm:col-span-2 py-2.5 rounded-xl bg-indigo-600 text-white text-sm font-bold">प्रश्न-पत्र तैयार करें</button>
+    <button id="btnPrint" class="sm:col-span-2 py-2.5 rounded-xl bg-slate-900 text-white text-sm font-bold hidden" onclick="window.print()">🖨️ A4 PDF प्रिंट / सेव करें</button>
+    <p id="msg" class="sm:col-span-2 text-xs font-semibold text-amber-800"></p>
+    <p class="sm:col-span-2 text-[11px] text-slate-500">प्रिंट डायलॉग में Destination: "Save as PDF", Paper: A4, Margins: Default चुनें। केवल प्रश्न-पत्र प्रिंट होता है — बटन, मेन्यू और बाकी पेज प्रिंट नहीं होते।</p>
+  </div>
+</div>
+<div id="paper" class="hidden"></div>
+<script>
+  const L = ['A', 'B', 'C', 'D'];
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const $ = id => document.getElementById(id);
+  const STREAMS = [[1,'10th बोर्ड (NCERT)'],[2,'12th Board Science (PCB)'],[3,'12th Board Science (PCM)'],[4,'12th Board Arts'],[5,'12th Board Commerce'],[6,'NEET (UG)'],[7,'JEE Main & Advanced'],[8,'B.Tech Civil'],[9,'B.Tech CSE'],[10,'B.Tech Mechanical'],[11,'B.Tech Electrical'],[12,'D.Pharma'],[13,'B.Pharma'],[14,'B.Sc Nursing & GNM'],[15,'Fire & Industrial Safety'],[16,'UPSC Civil Services'],[17,'State PSC (सामान्य अध्ययन)'],[18,'SSC CGL / CHSL'],[19,'RS-CIT'],[20,'Tally Prime & GST']];
+  $('selStream').innerHTML = STREAMS.map(s => `<option value="${s[0]}">${s[0]}. ${esc(s[1])}</option>`).join('');
+  const qs = new URLSearchParams(location.search);
+  if (qs.get('stream')) $('selStream').value = qs.get('stream');
+  const setKey = () => 'edupro_set_' + $('selStream').value;
+  const syncSet = () => { try { $('selSet').value = qs.get('set') || localStorage.getItem(setKey()) || 1; } catch (e) {} };
+  $('selStream').onchange = syncSet; syncSet();
 
-    <!-- RIGHT COLUMN: REAL LIVE A4 SHEET PREVIEW CONTAINER -->
-    <div class="lg:col-span-8 flex justify-center">
-      
-      <!-- Physical A4 Styled Paper Box (Shadowed on Screen, Clean on Print) -->
-      <div class="print-page w-full max-w-[800px] bg-white rounded-2xl p-6 sm:p-10 border border-slate-200 shadow-xl relative min-h-[1050px] flex flex-col justify-between" id="a4PaperSheet">
-        
-        <!-- Live Watermark (Screen & Print Layer) -->
-        <div class="watermark-overlay absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden" id="liveWatermarkLayer">
-          <span class="text-slate-900/[0.04] text-5xl sm:text-6xl font-black rotate-[-30deg] tracking-widest uppercase">
-            EduPro • #EDU-8921 • VERIFIED
-          </span>
-        </div>
-
-        <!-- Sheet Body Top Header -->
-        <div class="space-y-4 border-b-2 border-slate-900 pb-4 relative z-10">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2.5">
-              <div class="w-10 h-10 rounded-xl bg-slate-950 text-white flex items-center justify-center font-black text-lg">EP</div>
-              <div>
-                <h1 class="font-black text-base tracking-tight text-slate-950 leading-tight">EduPro National Assessment Platform</h1>
-                <p class="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Archival Question Bank &amp; Pedagogical Memory Vault</p>
-              </div>
-            </div>
-            <div class="text-right">
-              <span class="text-[11px] font-black text-slate-900 block" id="previewExamCodeBadge">DOC REF: EP-PYQ-2025/CIVIL</span>
-              <span class="text-[9px] text-slate-500 block">Student: Rajesh Kumar (#EDU-8921)</span>
-              <span class="text-[9px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200 inline-block mt-0.5">1-Month Pass Verified</span>
-            </div>
-          </div>
-
-          <!-- Dynamic Subject / Module Banner Ribbon -->
-          <div class="bg-slate-100 p-2.5 rounded-xl flex items-center justify-between text-xs font-bold text-slate-800">
-            <div class="flex items-center gap-1.5">
-              <span class="material-symbols-outlined text-sm text-slate-700">bookmark</span>
-              <span id="previewStreamTitle">B.Tech Civil Engineering • Semester 2 (Building Materials &amp; Concrete Tech)</span>
-            </div>
-            <span class="text-[10px] font-mono bg-white px-2 py-0.5 rounded border border-slate-200">20-Year Solved PYQ Set</span>
-          </div>
-        </div>
-
-        <!-- Sheet Questions Content Container (Dynamically Switched) -->
-        <div class="py-5 space-y-6 flex-1 relative z-10" id="printQuestionContentArea">
-
-          <!-- QUESTION ITEM 1 -->
-          <div class="space-y-2 border-b border-slate-200 pb-4">
-            <div class="flex items-start gap-2">
-              <span class="text-xs font-black text-slate-950 shrink-0">Q.01</span>
-              <div>
-                <p class="text-xs font-bold text-slate-900 leading-snug">
-                  साधारण पोर्टलैंड सीमेंट (OPC) में 'अस्थिरता' (Unsoundness) का परीक्षण करने हेतु ली-चैटेलियर (Le-Chatelier) उपकरण केवल किसकी उपस्थिति के कारण होने वाले प्रसार को मापता है?
-                </p>
-                <p class="bilingual-text text-[11px] text-slate-500 italic mt-0.5">
-                  [In cement concrete testing, Le-Chatelier apparatus is exclusively standardized to detect unsoundness caused by which of the following excess constituents?]
-                </p>
-              </div>
-            </div>
-
-            <!-- Options 2x2 Grid -->
-            <div class="grid grid-cols-2 gap-2 text-xs font-semibold text-slate-800 pl-6">
-              <div class="p-1.5 rounded-lg border border-slate-200">(A) अतिरिक्त एल्युमिना (Excess Alumina)</div>
-              <div class="p-1.5 rounded-lg border-2 border-slate-900 bg-slate-50 font-bold flex items-center justify-between">
-                <span>(B) केवल मुक्त चूना (Free Lime Only)</span>
-                <span class="text-emerald-700 font-black">✓ Correct</span>
-              </div>
-              <div class="p-1.5 rounded-lg border border-slate-200">(C) मुक्त मैग्नीशिया व चूना दोनों</div>
-              <div class="p-1.5 rounded-lg border border-slate-200">(D) कैल्शियम सल्फेट / जिप्सम</div>
-            </div>
-
-            <!-- Printable Trick Vault Box -->
-            <div class="trick-box-container bg-amber-50/80 border border-amber-300 rounded-xl p-2.5 text-xs text-slate-900 ml-6 space-y-0.5">
-              <div class="flex items-center gap-1 text-[10px] font-black uppercase tracking-wider text-amber-900">
-                <span class="material-symbols-outlined text-xs text-amber-700">lightbulb</span>
-                <span>देसी संस्मरण सूत्र (Desi Shortcut Trick):</span>
-              </div>
-              <p class="font-bold text-slate-950">"चूना चाटे ली-चैटेलियर, ऑटो में घूमे मैग्नीशिया!"</p>
-              <p class="text-[10px] text-slate-600">IS 4031 Part 3: Lime = Le-Chatelier (&lt;10mm); Magnesia + Lime = Autoclave (&lt;0.8%).</p>
-            </div>
-          </div>
-
-          <!-- QUESTION ITEM 2 -->
-          <div class="space-y-2 border-b border-slate-200 pb-4">
-            <div class="flex items-start gap-2">
-              <span class="text-xs font-black text-slate-950 shrink-0">Q.02</span>
-              <div>
-                <p class="text-xs font-bold text-slate-900 leading-snug">
-                  कंक्रीट की कार्यशीलता (Workability) को मापने हेतु स्लम्प टेस्ट (Slump Test) में प्रयुक्त मानक सांचे (Slump Cone) की ऊंचाई कितनी होती है?
-                </p>
-                <p class="bilingual-text text-[11px] text-slate-500 italic mt-0.5">
-                  [What is the certified vertical height of the standardized metallic frustum cone utilized in concrete slump test as per IS 1199?]
-                </p>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-2 gap-2 text-xs font-semibold text-slate-800 pl-6">
-              <div class="p-1.5 rounded-lg border border-slate-200">(A) 20 सेमी (200 mm)</div>
-              <div class="p-1.5 rounded-lg border-2 border-slate-900 bg-slate-50 font-bold flex items-center justify-between">
-                <span>(B) 30 सेमी (300 mm)</span>
-                <span class="text-emerald-700 font-black">✓ Correct</span>
-              </div>
-              <div class="p-1.5 rounded-lg border border-slate-200">(C) 40 सेमी (400 mm)</div>
-              <div class="p-1.5 rounded-lg border border-slate-200">(D) 15 सेमी (150 mm)</div>
-            </div>
-
-            <div class="trick-box-container bg-amber-50/80 border border-amber-300 rounded-xl p-2.5 text-xs text-slate-900 ml-6 space-y-0.5">
-              <div class="flex items-center gap-1 text-[10px] font-black uppercase tracking-wider text-amber-900">
-                <span class="material-symbols-outlined text-xs text-amber-700">lightbulb</span>
-                <span>देसी संस्मरण सूत्र (Desi Shortcut Trick):</span>
-              </div>
-              <p class="font-bold text-slate-950">"ऊपर 10, नीचे 20, ऊंचाई पर 30 (10-20-30 Slump Rule)"</p>
-              <p class="text-[10px] text-slate-600">शीर्ष व्यास = 10 सेमी, तली व्यास = 20 सेमी, कुल लंबवत ऊंचाई = 30 सेमी। 25 बार टैंपिंग 4 परतों में।</p>
-            </div>
-          </div>
-
-          <!-- QUESTION ITEM 3 -->
-          <div class="space-y-2 border-b border-slate-200 pb-4">
-            <div class="flex items-start gap-2">
-              <span class="text-xs font-black text-slate-950 shrink-0">Q.03</span>
-              <div>
-                <p class="text-xs font-bold text-slate-900 leading-snug">
-                  कंक्रीट में सीमेंट का जलयोजन (Hydration of Cement) होने पर सर्वाधिक प्रारंभिक शक्ति (Early Strength) प्रदान करने वाला बोग कंपाउंड (Bogue's Compound) कौन-सा है?
-                </p>
-                <p class="bilingual-text text-[11px] text-slate-500 italic mt-0.5">
-                  [Which specific Bogue's compound is primarily responsible for the rapid early strength gain of cement within the first 7 to 14 days?]
-                </p>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-2 gap-2 text-xs font-semibold text-slate-800 pl-6">
-              <div class="p-1.5 rounded-lg border-2 border-slate-900 bg-slate-50 font-bold flex items-center justify-between">
-                <span>(A) ट्राईकैल्शियम सिलिकेट (C3S / Alite)</span>
-                <span class="text-emerald-700 font-black">✓ Correct</span>
-              </div>
-              <div class="p-1.5 rounded-lg border border-slate-200">(B) डाईकैल्शियम सिलिकेट (C2S / Belite)</div>
-              <div class="p-1.5 rounded-lg border border-slate-200">(C) ट्राईकैल्शियम एल्युमिनेट (C3A / Celite)</div>
-              <div class="p-1.5 rounded-lg border border-slate-200">(D) टेट्राकैल्शियम एल्युमिनोफेराइट (C4AF)</div>
-            </div>
-
-            <div class="trick-box-container bg-amber-50/80 border border-amber-300 rounded-xl p-2.5 text-xs text-slate-900 ml-6 space-y-0.5">
-              <div class="flex items-center gap-1 text-[10px] font-black uppercase tracking-wider text-amber-900">
-                <span class="material-symbols-outlined text-xs text-amber-700">lightbulb</span>
-                <span>देसी संस्मरण सूत्र (Desi Shortcut Trick):</span>
-              </div>
-              <p class="font-bold text-slate-950">"C3S = Early Star (प्रारंभिक शक्ति), C2S = Late Rider (दीर्घकालीन शक्ति)!"</p>
-              <p class="text-[10px] text-slate-600">C3S पहले 7 दिनों में 70% शक्ति देता है; C2S 28 दिन के बाद धीरे-धीरे अंतिम मजबूती बढ़ाता है।</p>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Sheet Footer (Print Safe Compliance Strip) -->
-        <div class="pt-4 border-t-2 border-slate-900 flex flex-wrap items-center justify-between gap-2 text-[10px] text-slate-600 font-bold relative z-10">
-          <div class="flex items-center gap-2">
-            <span>© 2004-2025 EduPro Academic Systems</span>
-            <span>•</span>
-            <span>भारतीय कॉपीराइट अधिनियम 1957 (धारा 13 व 63) द्वारा संरक्षित</span>
-          </div>
-          <div class="flex items-center gap-2 font-mono">
-            <span>Watermark ID: #EDU-8921</span>
-            <span>•</span>
-            <span>Page 1 of 1</span>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-  </main>
-
-  <!-- ================= PRINT SCRIPT LOGIC ================= -->
-  <script>
-    // Stream Content Templates Store
-    const PRINT_TEMPLATES = {
-      'civil': {
-        title: "B.Tech Civil Engineering • Semester 2 (Building Materials & Concrete Tech)",
-        code: "DOC REF: EP-PYQ-2025/CIVIL",
-        q1_hi: "साधारण पोर्टलैंड सीमेंट (OPC) में 'अस्थिरता' (Unsoundness) का परीक्षण करने हेतु ली-चैटेलियर (Le-Chatelier) उपकरण केवल किसकी उपस्थिति के कारण होने वाले प्रसार को मापता है?",
-        q1_en: "[In cement concrete testing, Le-Chatelier apparatus is exclusively standardized to detect unsoundness caused by which of the following excess constituents?]",
-        opt1_a: "(A) अतिरिक्त एल्युमिना (Excess Alumina)",
-        opt1_b: "(B) केवल मुक्त चूना (Free Lime Only)",
-        opt1_c: "(C) मुक्त मैग्नीशिया व चूना दोनों",
-        opt1_d: "(D) कैल्शियम सल्फेट / जिप्सम",
-        trick1: '"चूना चाटे ली-चैटेलियर, ऑटो में घूमे मैग्नीशिया!" (Lime = Le-Chatelier <10mm, Magnesia = Autoclave <0.8%)',
-
-        q2_hi: "कंक्रीट की कार्यशीलता (Workability) को मापने हेतु स्लम्प टेस्ट (Slump Test) में प्रयुक्त मानक सांचे (Slump Cone) की ऊंचाई कितनी होती है?",
-        q2_en: "[What is the certified vertical height of the standardized metallic frustum cone utilized in concrete slump test as per IS 1199?]",
-        opt2_a: "(A) 20 सेमी (200 mm)",
-        opt2_b: "(B) 30 सेमी (300 mm)",
-        opt2_c: "(C) 40 सेमी (400 mm)",
-        opt2_d: "(D) 15 सेमी (150 mm)",
-        trick2: '"ऊपर 10, नीचे 20, ऊंचाई पर 30 (10-20-30 Slump Rule)" (शीर्ष व्यास 10cm, तली व्यास 20cm, ऊंचाई 30cm)',
-
-        q3_hi: "कंक्रीट में सीमेंट का जलयोजन (Hydration of Cement) होने पर सर्वाधिक प्रारंभिक शक्ति (Early Strength) प्रदान करने वाला बोग कंपाउंड (Bogue's Compound) कौन-सा है?",
-        q3_en: "[Which specific Bogue's compound is primarily responsible for the rapid early strength gain of cement within the first 7 to 14 days?]",
-        opt3_a: "(A) ट्राईकैल्शियम सिलिकेट (C3S / Alite)",
-        opt3_b: "(B) डाईकैल्शियम सिलिकेट (C2S / Belite)",
-        opt3_c: "(C) ट्राईकैल्शियम एल्युमिनेट (C3A / Celite)",
-        opt3_d: "(D) टेट्राकैल्शियम एल्युमिनोफेराइट (C4AF)",
-        trick3: '"C3S = Early Star (प्रारंभिक शक्ति), C2S = Late Rider (दीर्घकालीन शक्ति)!" (C3S 7 दिन, C2S 28 दिन बाद)'
-      },
-
-      'neet': {
-        title: "NEET-UG Medical • 11th/12th Biology (Photosynthesis & Human Physiology)",
-        code: "DOC REF: EP-PYQ-2025/NEET-MED",
-        q1_hi: "क्लोरोप्लास्ट (हरितलवक) में अप्रकाशीय अभिक्रिया (Dark Reaction / Calvin Cycle) एवं प्राथमिक CO2 ग्राही एंजाइम RuBisCO का स्थान कहां होता है?",
-        q1_en: "[In chloroplasts of higher plants, what is the exact site for the dark reaction enzymatic synthesis of sugars and RuBisCO activity?]",
-        opt1_a: "(A) थायलाकोइड झिल्ली (Thylakoid Membrane Lumen)",
-        opt1_b: "(B) स्ट्रोमा / पीठिका मैट्रिक्स (Stroma Matrix)",
-        opt1_c: "(C) ग्रेना पटलिका (Grana Lamellae)",
-        opt1_d: "(D) आंतरिक झिल्ली पेरी-स्पेस",
-        trick1: '"प्रकाश चमके ग्रेना में, डार्क चाय पियो स्ट्रोमा में!" (Light = Grana/Thylakoid, Dark = Stroma RuBisCO)',
-
-        q2_hi: "मानव वृक्क (Kidney) में ग्लोमेरुलर निस्पंदन दर (GFR) के स्वतः नियमन हेतु जक्स्टाग्लोमेरुलर उपकरण (JGA) द्वारा कौन-सा एंजाइम स्रावित होता है?",
-        q2_en: "[Which enzyme is secreted by Juxtaglomerular Cells (JG cells) in response to a fall in glomerular blood flow/pressure to activate RAAS?]",
-        opt2_a: "(A) पेप्सिन (Pepsin)",
-        opt2_b: "(B) रेनिन (Renin with single 'n')",
-        opt2_c: "(C) रेनिन (Rennin with double 'n')",
-        opt2_d: "(D) ट्रिप्सिन (Trypsin)",
-        trick2: '"Kidney = Renin (1 n = नेफ्रॉन वाला), Stomach = Rennin (2 n = नन्हे बच्चे में दूध पचाने वाला)"',
-
-        q3_hi: "मानव हृदय में प्राकृतिक पेसमेकर (Primary Pacemaker) के रूप में कार्य करने वाला ऊतक कौन-सा है?",
-        q3_en: "[In human cardiac physiology, which nodal tissue acts as the primary pacemaker initiating spontaneous electrical action potentials?]",
-        opt3_a: "(A) साइनो-एट्रियल नोड (SA Node)",
-        opt3_b: "(B) एट्रियोवेंट्रिकुलर नोड (AV Node)",
-        opt3_c: "(C) बंडल ऑफ हिज (Bundle of His)",
-        opt3_d: "(D) पुर्किंजे फाइबर्स",
-        trick3: '"S-A-B-P: SA Node ➔ AV Node ➔ Bundle of His ➔ Purkinje (दिल की धड़कन का क्रम)"'
-      },
-
-      'upsc': {
-        title: "UPSC CSE / State PSC • General Studies Paper-1 (Indian Polity & Constitution)",
-        code: "DOC REF: EP-PYQ-2025/UPSC-POL",
-        q1_hi: "निम्नलिखित में से कौन-सी न्यायिक रिट (Writ) किसी अवैध रूप से सार्वजनिक पद पर आसीन व्यक्ति के विरुद्ध जारी की जाती है?",
-        q1_en: "[Which prerogative writ is issued by the High Court or Supreme Court to restrain a person from acting in a public office without entitlement?]",
-        opt1_a: "(A) बंदी प्रत्यक्षीकरण (Habeas Corpus)",
-        opt1_b: "(B) अधिकार-पृच्छा (Quo-Warranto)",
-        opt1_c: "(C) परमादेश (Mandamus)",
-        opt1_d: "(D) उत्प्रेषण (Certiorari)",
-        trick1: '"P - R - O - M - H (5 Writs Order) & Quo-Warranto = किस अधिकार से (By What Authority)!"',
-
-        q2_hi: "संसद के अवकाश काल में राष्ट्रपति द्वारा अध्यादेश (Ordinance) जारी करने की शक्ति संविधान के किस अनुच्छेद में निहित है?",
-        q2_en: "[Under which Article of the Constitution of India is the President empowered to promulgate ordinances during recess of Parliament?]",
-        opt2_a: "(A) अनुच्छेद 110 (धन विधेयक)",
-        opt2_b: "(B) अनुच्छेद 123 (अध्यादेश)",
-        opt2_c: "(C) अनुच्छेद 213 (राज्यपाल अध्यादेश)",
-        opt2_d: "(D) अनुच्छेद 143 (परामर्श)",
-        trick2: '"1-सेकंड अध्यादेश स्वैप रूल: राष्ट्रपति (123) ⟷ राज्यपाल (213) (1 और 2 का स्थान बदलें)"',
-
-        q3_hi: "संविधान के किस अनुच्छेद के तहत सर्वोच्च न्यायालय को अपने निर्णयों की समीक्षा (Review of Judgments) करने का अधिकार प्राप्त है?",
-        q3_en: "[Which Article of the Constitution grants the Supreme Court the power to review any judgment pronounced or order made by it?]",
-        opt3_a: "(A) अनुच्छेद 137 (पुनरावलोकन)",
-        opt3_b: "(B) अनुच्छेद 136 (SLP)",
-        opt3_c: "(C) अनुच्छेद 141 (कानून बाध्यकारी)",
-        opt3_d: "(D) अनुच्छेद 142 (पूर्ण न्याय)",
-        trick3: '"137 = रिव्यू का साथ (Supreme Court अपने ही फैसले को बदल सकती है)"'
-      },
-
-      'tally': {
-        title: "Tally Prime & Corporate Accounting • CGST Act & Reverse Charge (RCM)",
-        code: "DOC REF: EP-PYQ-2025/TALLY-GST",
-        q1_hi: "जीएसटी के अंतर्गत 'रिवर्स चार्ज मैकेनिज्म' (RCM) लागू होने पर कर भुगतान का वैधानिक दायित्व किस पर होता है?",
-        q1_en: "[Under Section 9(3) of CGST Act, who is legally obligated to deposit GST directly to the Government under Reverse Charge Mechanism?]",
-        opt1_a: "(A) आपूर्तिकर्ता (Supplier)",
-        opt1_b: "(B) माल या सेवा का प्राप्तकर्ता (Recipient)",
-        opt1_c: "(C) ई-कॉमर्स ऑपरेटर",
-        opt1_d: "(D) माल ढुलाई एजेंसी",
-        trick1: '"RCM = रिसीवर चुकाए टैक्स (Supplier मुक्त, Recipient सख्त)!" (Cash से चालान जमा, बाद में ITC)',
-
-        q2_hi: "दोहरा लेखा प्रणाली (Double Entry System) के अनुसार 'वास्तविक खाते' (Real Account) का मूलभूत लेखांकन नियम क्या है?",
-        q2_en: "[What is the certified golden rule of accounting for Real Accounts under traditional double entry bookkeeping?]",
-        opt2_a: "(A) पाने वाले को डेबिट, देने वाले को क्रेडिट",
-        opt2_b: "(B) जो वस्तु व्यापार में आए डेबिट (Debit what comes in, Credit what goes out)",
-        opt2_c: "(C) समस्त व्यय डेबिट, आय क्रेडिट",
-        opt2_d: "(D) केवल देनदारियों को क्रेडिट",
-        trick2: '"Real = माल/संपत्ति (जो आए उसे डेबिट, जो जाए उसे क्रेडिट - Debit In, Credit Out)"',
-
-        q3_hi: "Tally Prime में किसी वाउचर में परिवर्तन करने या उसे देखने हेतु किस विकल्प का उपयोग किया जाता है?",
-        q3_en: "[In Tally Prime, which command option from Gateway of Tally is utilized to view and alter already recorded vouchers?]",
-        opt3_a: "(A) Day Book ➔ Enter",
-        opt3_b: "(B) Create Voucher",
-        opt3_c: "(C) Chart of Accounts",
-        opt3_d: "(D) F11 Features",
-        trick3: '"Day Book = रोज़ का बहीखाता (Enter दबाओ और जो बदलना है बदल दो!)"'
-      },
-
-      'rscit': {
-        title: "RS-CIT Computer & IT Literacy • MS-Office 365, Excel & Cyber Defense",
-        code: "DOC REF: EP-PYQ-2025/RSCIT-IT",
-        q1_hi: "माइक्रोसॉफ्ट एक्सेल (MS-Excel) में यदि किसी सेल में नाम और संख्याएं दोनों दर्ज हैं, तो भरे हुए सेलों की गणना हेतु कौन-सा फॉर्मूला प्रयुक्त होगा?",
-        q1_en: "[In MS Excel, which statistical spreadsheet function counts cells containing both numeric and text values?]",
-        opt1_a: "(A) =COUNT(A1:A10)",
-        opt1_b: "(B) =COUNTA(A1:A10)",
-        opt1_c: "(C) =COUNTBLANK(A1:A10)",
-        opt1_d: "(D) =SUMIF(A1:A10)",
-        trick1: '"COUNT = केवल अंक (Digits Only), COUNTA = All (अंक + टेक्स्ट सब गिन डाले)!"',
-
-        q2_hi: "विंडोज 11 में खुली हुई सभी विन्डोज़ को एक साथ मिनिमाइज़ करके सीधे डेस्कटॉप पर जाने का शॉर्टकट क्या है?",
-        q2_en: "[In Microsoft Windows 11, which certified keyboard shortcut instantly minimizes all open application windows to show desktop?]",
-        opt2_a: "(A) Windows Key + D",
-        opt2_b: "(B) Alt + F4",
-        opt2_c: "(C) Ctrl + Shift + Esc",
-        opt2_d: "(D) Windows Key + L",
-        trick2: '"Win + D = Desktop Direct! (Win + L = Lock Lock)"',
-
-        q3_hi: "ईमेल में 'BCC' (Blind Carbon Copy) का मुख्य सुरक्षा उपयोग क्या होता है?",
-        q3_en: "[In digital electronic mail protocols, what is the primary privacy function of BCC field?]",
-        opt3_a: "(A) ईमेल को बिना पढ़े डिलीट करना",
-        opt3_b: "(B) प्राप्तकर्ताओं की पहचान एक-दूसरे से गुप्त रखना",
-        opt3_c: "(C) स्पैम ईमेल को ब्लॉक करना",
-        opt3_d: "(D) ईमेल को ऑटो-फॉरवर्ड करना",
-        trick3: '"BCC = Blind (अंधा) ➔ किसी को पता नहीं चलेगा कि यह ईमेल और किसको भेजा गया है!"'
-      },
-
-      'board': {
-        title: "10th & 12th Board Science • RBSE / CBSE NCERT Model Question Bank",
-        code: "DOC REF: EP-PYQ-2025/BOARD-SCI",
-        q1_hi: "लेंस की क्षमता (Power of a Lens) का SI मात्रक क्या होता है?",
-        q1_en: "[What is the certified standard SI unit utilized to quantify the optical power of a converging or diverging lens?]",
-        opt1_a: "(A) डायोप्टर (Dioptre - D)",
-        opt1_b: "(B) जूल (Joule)",
-        opt1_c: "(C) कैंडेला (Candela)",
-        opt1_d: "(D) वेबर (Weber)",
-        trick1: '"P = 1/f (मीटर में) ➔ डॉक्टर लिखता है Dioptre (D)!"',
-
-        q2_hi: "एक समानांतर प्लेट संधारित्र (Parallel Plate Capacitor) में परावैद्युतांक (k) का स्लैब रखने पर धारिता पर क्या प्रभाव पड़ता है?",
-        q2_en: "[What is the effect on the capacitance when a dielectric slab of constant (k) completely fills the space between parallel plates?]",
-        opt2_a: "(A) धारिता k गुना बढ़ जाती है (C' = k*C)",
-        opt2_b: "(B) धारिता कम हो जाती है",
-        opt2_c: "(C) धारिता अपरिवर्तित रहती है",
-        opt2_d: "(D) धारिता शून्य हो जाती है",
-        trick2: '"Dielectric = Boost (डाइइलेक्ट्रिक डालते ही धारिता k गुना बढ़ जाती है!)"',
-
-        q3_hi: "पादप हार्मोन में फलों को प्राकृतिक रूप से पकाने के लिए कौन-सा गैसीय हार्मोन उत्तरदायी है?",
-        q3_en: "[Which gaseous plant phytohormone is primarily responsible for inducing the ripening of fruits?]",
-        opt3_a: "(A) एथिलीन (Ethylene / Ethephon)",
-        opt3_b: "(B) ऑक्सिन (Auxin)",
-        opt3_c: "(C) जिबरेलिन (Gibberellin)",
-        opt3_d: "(D) साइटोकाइनिन",
-        trick3: '"Ethylene = गैस वाला फल पकाने वाला भाई!"'
-      }
-    };
-
-    function switchPrintStream(streamKey) {
-      const data = PRINT_TEMPLATES[streamKey] || PRINT_TEMPLATES['civil'];
-      
-      document.getElementById('previewStreamTitle').innerText = data.title;
-      document.getElementById('previewExamCodeBadge').innerText = data.code;
-
-      const area = document.getElementById('printQuestionContentArea');
-      area.innerHTML = `
-        <!-- QUESTION 1 -->
-        <div class="space-y-2 border-b border-slate-200 pb-4">
-          <div class="flex items-start gap-2">
-            <span class="text-xs font-black text-slate-950 shrink-0">Q.01</span>
-            <div>
-              <p class="text-xs font-bold text-slate-900 leading-snug">${data.q1_hi}</p>
-              <p class="bilingual-text text-[11px] text-slate-500 italic mt-0.5">${data.q1_en}</p>
-            </div>
-          </div>
-          <div class="grid grid-cols-2 gap-2 text-xs font-semibold text-slate-800 pl-6">
-            <div class="p-1.5 rounded-lg border border-slate-200">${data.opt1_a}</div>
-            <div class="p-1.5 rounded-lg border-2 border-slate-900 bg-slate-50 font-bold flex items-center justify-between">
-              <span>${data.opt1_b}</span>
-              <span class="text-emerald-700 font-black">✓ Correct</span>
-            </div>
-            <div class="p-1.5 rounded-lg border border-slate-200">${data.opt1_c}</div>
-            <div class="p-1.5 rounded-lg border border-slate-200">${data.opt1_d}</div>
-          </div>
-          <div class="trick-box-container bg-amber-50/80 border border-amber-300 rounded-xl p-2.5 text-xs text-slate-900 ml-6 space-y-0.5">
-            <div class="flex items-center gap-1 text-[10px] font-black uppercase tracking-wider text-amber-900">
-              <span class="material-symbols-outlined text-xs text-amber-700">lightbulb</span>
-              <span>देसी संस्मरण सूत्र (Desi Shortcut Trick):</span>
-            </div>
-            <p class="font-bold text-slate-950">${data.trick1}</p>
-          </div>
-        </div>
-
-        <!-- QUESTION 2 -->
-        <div class="space-y-2 border-b border-slate-200 pb-4">
-          <div class="flex items-start gap-2">
-            <span class="text-xs font-black text-slate-950 shrink-0">Q.02</span>
-            <div>
-              <p class="text-xs font-bold text-slate-900 leading-snug">${data.q2_hi}</p>
-              <p class="bilingual-text text-[11px] text-slate-500 italic mt-0.5">${data.q2_en}</p>
-            </div>
-          </div>
-          <div class="grid grid-cols-2 gap-2 text-xs font-semibold text-slate-800 pl-6">
-            <div class="p-1.5 rounded-lg border border-slate-200">${data.opt2_a}</div>
-            <div class="p-1.5 rounded-lg border-2 border-slate-900 bg-slate-50 font-bold flex items-center justify-between">
-              <span>${data.opt2_b}</span>
-              <span class="text-emerald-700 font-black">✓ Correct</span>
-            </div>
-            <div class="p-1.5 rounded-lg border border-slate-200">${data.opt2_c}</div>
-            <div class="p-1.5 rounded-lg border border-slate-200">${data.opt2_d}</div>
-          </div>
-          <div class="trick-box-container bg-amber-50/80 border border-amber-300 rounded-xl p-2.5 text-xs text-slate-900 ml-6 space-y-0.5">
-            <div class="flex items-center gap-1 text-[10px] font-black uppercase tracking-wider text-amber-900">
-              <span class="material-symbols-outlined text-xs text-amber-700">lightbulb</span>
-              <span>देसी संस्मरण सूत्र (Desi Shortcut Trick):</span>
-            </div>
-            <p class="font-bold text-slate-950">${data.trick2}</p>
-          </div>
-        </div>
-
-        <!-- QUESTION 3 -->
-        <div class="space-y-2 border-b border-slate-200 pb-4">
-          <div class="flex items-start gap-2">
-            <span class="text-xs font-black text-slate-950 shrink-0">Q.03</span>
-            <div>
-              <p class="text-xs font-bold text-slate-900 leading-snug">${data.q3_hi}</p>
-              <p class="bilingual-text text-[11px] text-slate-500 italic mt-0.5">${data.q3_en}</p>
-            </div>
-          </div>
-          <div class="grid grid-cols-2 gap-2 text-xs font-semibold text-slate-800 pl-6">
-            <div class="p-1.5 rounded-lg border-2 border-slate-900 bg-slate-50 font-bold flex items-center justify-between">
-              <span>${data.opt3_a}</span>
-              <span class="text-emerald-700 font-black">✓ Correct</span>
-            </div>
-            <div class="p-1.5 rounded-lg border border-slate-200">${data.opt3_b}</div>
-            <div class="p-1.5 rounded-lg border border-slate-200">${data.opt3_c}</div>
-            <div class="p-1.5 rounded-lg border border-slate-200">${data.opt3_d}</div>
-          </div>
-          <div class="trick-box-container bg-amber-50/80 border border-amber-300 rounded-xl p-2.5 text-xs text-slate-900 ml-6 space-y-0.5">
-            <div class="flex items-center gap-1 text-[10px] font-black uppercase tracking-wider text-amber-900">
-              <span class="material-symbols-outlined text-xs text-amber-700">lightbulb</span>
-              <span>देसी संस्मरण सूत्र (Desi Shortcut Trick):</span>
-            </div>
-            <p class="font-bold text-slate-950">${data.trick3}</p>
-          </div>
-        </div>
-      `;
-    }
-
-    function selectSheetType(type, cardElem) {
-      document.querySelectorAll('.sheet-opt-card').forEach(c => {
-        c.className = "sheet-opt-card p-3 rounded-2xl border border-slate-200 bg-white hover:bg-slate-50 cursor-pointer transition";
-        const icon = c.querySelector('.check-icon');
-        if (icon) icon.classList.add('hidden');
+  async function build() {
+    $('msg').textContent = '⏳ प्रश्न लोड हो रहे हैं…'; $('btnPrint').classList.add('hidden'); $('paper').classList.add('hidden');
+    const id = $('selStream').value, set = Math.max(1, parseInt($('selSet').value, 10) || 1);
+    let d; try { d = await (await fetch(`/api/questions?stream=${id}&set=${set}`, { credentials: 'same-origin', cache: 'no-store' })).json(); } catch (e) { d = null; }
+    if (!d || !d.ready) { $('msg').textContent = '⏳ इस स्ट्रीम के प्रश्न अभी तैयार हो रहे हैं। कुछ देर बाद फिर कोशिश करें।'; return; }
+    const user = await EDU.ready, name = STREAMS.find(s => String(s[0]) === id)[1], bi = $('chkBi').checked;
+    const only = $('selPart').value, parts = d.parts.map((p, i) => ({ p, i })).filter(x => only === 'all' || String(x.i) === only);
+    let locked = 0, body = '', key = '';
+    parts.forEach(({ p, i }) => {
+      body += `<div class="part-h">भाग ${i + 1}: ${esc(p.subject)} <span style="font-weight:400">— संदर्भ: ${esc(p.book)}</span></div><div class="cols">`;
+      key += `<div style="font-weight:700;margin-top:3mm">भाग ${i + 1}: ${esc(p.subject)}</div><div class="cols" style="column-count:4">`;
+      p.q.forEach((q, k) => {
+        const n = i * 25 + k + 1;
+        if (q.locked) { locked++; return; }
+        body += `<div class="q"><b>${n}.</b> ${esc(q.hi.q)}${bi ? `<div class="en">${esc(q.en.q)}</div>` : ''}<div class="opts">${q.hi.o.map((o, j) => `<div>(${L[j]}) ${esc(o)}${bi ? `<span class="en"> / ${esc(q.en.o[j])}</span>` : ''}</div>`).join('')}</div></div>`;
+        key += `<div class="q" style="font-size:9pt"><b>${n}.</b> ${L[q.a]}${q.tr ? ` <span class="en">— ${esc(q.tr)}</span>` : ''}</div>`;
       });
-      cardElem.className = "sheet-opt-card sheet-active p-3 rounded-2xl border-2 border-brand-900 bg-brand-50 cursor-pointer transition";
-      const curIcon = cardElem.querySelector('.check-icon');
-      if (curIcon) curIcon.classList.remove('hidden');
-
-      if (type === 'omr_practice') {
-        renderOMRSheetView();
-      } else {
-        const stream = document.getElementById('printStreamSelector').value;
-        switchPrintStream(stream);
-      }
-    }
-
-    function renderOMRSheetView() {
-      const area = document.getElementById('printQuestionContentArea');
-      area.innerHTML = `
-        <div class="space-y-4">
-          <div class="text-center pb-2 border-b border-slate-300">
-            <h3 class="text-sm font-black text-slate-900 uppercase">100-Question Standard Examination OMR Response Sheet</h3>
-            <p class="text-[10px] text-slate-500">Darken only one circle completely using blue/black ballpoint pen for each question.</p>
-          </div>
-          <div class="grid grid-cols-4 gap-3 text-xs font-mono font-bold">
-            ${Array.from({length: 20}, (_, i) => `
-              <div class="p-1.5 border border-slate-200 rounded flex items-center justify-between">
-                <span class="w-5 text-slate-600">${String(i + 1).padStart(2, '0')}.</span>
-                <span class="w-4 h-4 rounded-full border border-slate-400 flex items-center justify-center text-[9px]">A</span>
-                <span class="w-4 h-4 rounded-full border border-slate-400 flex items-center justify-center text-[9px]">B</span>
-                <span class="w-4 h-4 rounded-full border border-slate-400 flex items-center justify-center text-[9px]">C</span>
-                <span class="w-4 h-4 rounded-full border border-slate-400 flex items-center justify-center text-[9px]">D</span>
-              </div>
-            `).join('')}
-          </div>
-          <p class="text-[10px] text-slate-400 text-center italic pt-2">Full 100-Question OMR grid printed in high-density compact layout.</p>
-        </div>
-      `;
-    }
-
-    function toggleWatermark(show) {
-      const layer = document.getElementById('liveWatermarkLayer');
-      if (show) layer.classList.remove('hidden');
-      else layer.classList.add('hidden');
-    }
-
-    function toggleTrickBox(show) {
-      document.querySelectorAll('.trick-box-container').forEach(b => {
-        if (show) b.classList.remove('hidden');
-        else b.classList.add('hidden');
-      });
-    }
-
-    function toggleBilingual(show) {
-      document.querySelectorAll('.bilingual-text').forEach(t => {
-        if (show) t.classList.remove('hidden');
-        else t.classList.add('hidden');
-      });
-    }
-  </script>
-</body>
-</html>
+      body += '</div>'; key += '</div>';
+    });
+    if (locked && !(user && user.paid)) $('msg').textContent = `ℹ️ ${locked} प्रश्न ₹199 पास सक्रिय होने पर खुलेंगे। अभी केवल मुफ्त प्रश्न प्रिंट होंगे।`; else $('msg').textContent = '';
+    $('paper').innerHTML = `${$('chkWm').checked ? `<div class="wm"><span>EduPro • ${esc(user ? user.mobile : 'edupro')} • ${esc(user ? user.mobile : '')}</span></div>` : ''}
+      <div style="text-align:center;border-bottom:2px solid #000;padding-bottom:2mm"><div style="font-size:15pt;font-weight:900">EduPro टेस्ट सीरीज़ — ${esc(name)}</div>
+      <div style="font-size:9.5pt">सेट ${d.set} • समय: 60 मिनट • सही +4 / गलत −1 • नाम: ${esc(user ? user.name : '__________')}</div></div>
+      <div style="font-size:9pt;margin:2mm 0">निर्देश: प्रत्येक प्रश्न का केवल एक विकल्प सही है।</div>${body}
+      ${$('chkKey').checked ? `<div class="key"><div style="font-size:13pt;font-weight:800">उत्तर-कुंजी — ${esc(name)} (सेट ${d.set})</div>${key}</div>` : ''}`;
+    $('paper').classList.remove('hidden'); $('btnPrint').classList.remove('hidden');
+  }
+  $('btnLoad').onclick = build;
+</script></body></html>
