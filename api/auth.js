@@ -47,5 +47,5 @@ export default async function handler(req, res) {
       return res.status(200).json({ ok: true });
     }
     return res.status(400).json({ ok: false, error: 'bad action' });
-  } catch (e) { console.error(e); return res.status(500).json({ ok: false, error: 'सर्वर त्रुटि' }); }
+  } catch (e) { console.error(e); return res.status(500).json({ ok: false, error: 'सर्वर त्रुटि: ' + String((e && e.message) || e).slice(0, 160) }); }
 }
