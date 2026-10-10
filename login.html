@@ -179,19 +179,6 @@
 </button>
 </div>
 </div>
-<!-- 4-Digit Secret PIN -->
-<div class="flex flex-col gap-1">
-<div class="flex items-center justify-between">
-<label class="font-label-sm text-label-sm text-on-surface font-semibold">4-अंक गुप्त पिन (4-Digit PIN)</label>
-<span class="font-body-sm text-body-sm text-on-tertiary-container font-semibold">त्वरित पासवर्ड रीसेट हेतु</span>
-</div>
-<div class="flex items-center justify-between gap-space-xs">
-<input class="w-14 h-11 text-center font-headline-sm text-headline-sm font-bold bg-surface-container-low rounded-xl text-on-surface outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary" id="pin1" maxlength="1" oninput="pinNext(this, 'pin2')" required="" type="password"/>
-<input class="w-14 h-11 text-center font-headline-sm text-headline-sm font-bold bg-surface-container-low rounded-xl text-on-surface outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary" id="pin2" maxlength="1" oninput="pinNext(this, 'pin3')" required="" type="password"/>
-<input class="w-14 h-11 text-center font-headline-sm text-headline-sm font-bold bg-surface-container-low rounded-xl text-on-surface outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary" id="pin3" maxlength="1" oninput="pinNext(this, 'pin4')" required="" type="password"/>
-<input class="w-14 h-11 text-center font-headline-sm text-headline-sm font-bold bg-surface-container-low rounded-xl text-on-surface outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary" id="pin4" maxlength="1" required="" type="password"/>
-</div>
-</div>
 <!-- Secret PIN (for password reset) -->
 <div class="flex flex-col gap-1">
 <label class="font-label-sm text-label-sm text-on-surface font-semibold" for="regPin">4-अंक गुप्त पिन (पासवर्ड भूलने पर काम आएगा)</label>
