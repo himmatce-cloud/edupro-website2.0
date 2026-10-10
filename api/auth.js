@@ -10,7 +10,7 @@ export default async function handler(req, res) {
 
     if (b.action === 'logout') { res.setHeader('Set-Cookie', clearCookie()); return res.status(200).json({ ok: true }); }
     if (!validMobile(mobile)) return res.status(400).json({ ok: false, error: '10 अंकों का सही मोबाइल नंबर दर्ज करें' });
-    const adminOk = () => process.env.ADMIN_PIN && same(String(b.adminPin || ''), process.env.ADMIN_PIN);
+    const adminOk = () => process.env.ADMIN_PIN && same(String(b.adminPin || '').trim(), String(process.env.ADMIN_PIN).trim());
 
     if (b.action === 'register') {
       const name = String(b.name || '').trim().slice(0, 60), pw = String(b.password || ''), pin = String(b.pin || '');
@@ -47,5 +47,5 @@ export default async function handler(req, res) {
       return res.status(200).json({ ok: true });
     }
     return res.status(400).json({ ok: false, error: 'bad action' });
-  } catch (e) { console.error(e); return res.status(500).json({ ok: false, error: 'सर्वर त्रुटि: ' + String((e && e.message) || e).slice(0, 160) }); }
+  } catch (e) { console.error(e); return res.status(500).json({ ok: false, error: 'सर्वर त्रुटि' }); }
 }

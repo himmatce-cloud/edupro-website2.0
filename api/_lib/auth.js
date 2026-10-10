@@ -6,7 +6,7 @@ const hmac = s => crypto.createHmac('sha256', secret()).update(s).digest('hex');
 export const userPath = m => `u/${hmac('user:' + m).slice(0, 40)}.json`;      // unguessable storage path
 export const payPath = () => `u/p-${hmac('payments').slice(0, 40)}.json`;
 export const validMobile = m => /^[6-9]\d{9}$/.test(m);
-export const isAdminMobile = m => !!process.env.ADMIN_MOBILE && m === process.env.ADMIN_MOBILE;
+export const isAdminMobile = m => !!process.env.ADMIN_MOBILE && m === String(process.env.ADMIN_MOBILE).trim();
 export const same = (a, b) => { const x = Buffer.from(String(a)), y = Buffer.from(String(b)); return x.length === y.length && crypto.timingSafeEqual(x, y); };
 
 export const hashSecret = (pw, salt) => crypto.scryptSync(String(pw), salt, 64).toString('hex');
