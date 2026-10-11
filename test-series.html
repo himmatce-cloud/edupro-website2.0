@@ -1,660 +1,221 @@
 <!DOCTYPE html>
-<html lang="hi" class="h-full bg-slate-100">
-<head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>EduPro - 20 Streams Professional 100-Question Exam Portal</title>
-<!-- Tailwind CSS CDN -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Phosphor Icons -->
-<script src="https://unpkg.com/@phosphor-icons/web"></script>
-<script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: { 50: '#eef2ff', 100: '#e0e7ff', 600: '#4f46e5', 700: '#4338ca', 800: '#3730a3', 900: '#0f2b5c' },
-            omr: { answered: '#10b981', review: '#8b5cf6', unanswered: '#ef4444', unvisited: '#cbd5e1' }
-          }
-        }
-      }
-    }
-  </script>
-<style>
-    ::-webkit-scrollbar { width: 6px; height: 6px; }
-    ::-webkit-scrollbar-track { background: #f1f5f9; }
-    ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; }
-    body { user-select: none; -webkit-user-select: none; }
-    @media print {
-      body * { visibility: hidden; }
-      #printableArea, #printableArea * { visibility: visible; }
-      #printableArea { position: absolute; left: 0; top: 0; width: 100%; }
-    }
-  </style>
+<html lang="hi" class="h-full bg-slate-100"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>EduPro - टेस्ट सीरीज़</title>
+<script src="https://cdn.tailwindcss.com"></script>
 <script src="edu-auth.js"></script>
 </head>
-<body class="h-full flex flex-col font-sans text-slate-800 antialiased overflow-hidden" oncontextmenu="return false;">
-<!-- TOP HEADER -->
-<header class="bg-slate-900 text-white border-b border-slate-800 shrink-0 z-20">
-<div class="px-4 py-2.5 flex items-center justify-between gap-3">
-<div class="flex items-center gap-3">
-<a href="index.html" class="w-9 h-9 rounded-lg bg-indigo-600 flex items-center justify-center font-bold text-lg text-white shadow-md">EP</a>
-<div>
-<div class="flex items-center gap-2">
-<span class="font-bold text-base tracking-wide text-white">EduPro Learning Portal</span>
-<span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-semibold border border-emerald-500/30">Professional Edition</span>
-</div>
-<p class="text-[11px] text-slate-400">राष्ट्रीय ऑनलाइन परीक्षा पोर्टल • 20 संकाय 100 प्रामाणिक प्रश्न इंजन</p>
-</div>
-</div>
-<!-- Stream Selector Button -->
-<div class="flex items-center gap-2">
-<button type="button" onclick="openWizardStep(1)" class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-indigo-300 border border-slate-700 text-xs font-medium transition cursor-pointer">
-<i class="ph ph-squares-four text-base text-amber-400"></i>
-<span>संवर्ग: <strong class="text-white" id="topActiveStreamName">10th बोर्ड (NCERT / State)</strong></span>
-<span class="bg-indigo-600/40 text-indigo-200 text-[10px] px-1.5 py-0.5 rounded border border-indigo-400/30">बदलें</span>
-<i class="ph ph-caret-down text-xs text-slate-400"></i>
-</button>
-</div>
-<!-- Timer & Status -->
-<div class="flex items-center gap-3">
-<div class="flex items-center gap-1.5 bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">
-<i id="timerIcon" class="ph ph-clock-countdown text-amber-400 text-lg"></i>
-<span id="countdownTimer" class="font-mono font-bold text-base text-amber-300">60:00</span>
-</div>
-<button type="button" onclick="window.print()" class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-indigo-600/30 hover:bg-indigo-600/50 text-indigo-200 border border-indigo-500/30 text-xs font-semibold cursor-pointer">
-<i class="ph ph-printer"></i> <span>प्रिंट / PDF</span>
-</button>
-</div>
-</div>
+<body class="h-full flex flex-col font-sans text-slate-800 overflow-hidden">
+<header class="bg-slate-900 text-white px-3 py-2 flex flex-wrap items-center justify-between gap-2 shrink-0">
+  <div class="flex items-center gap-2">
+    <a href="index.html" class="w-9 h-9 rounded-lg bg-indigo-600 flex items-center justify-center font-bold">EP</a>
+    <button onclick="openStreams()" class="text-xs px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700">संवर्ग: <b id="hStream">-</b> • सेट <b id="hSet">1</b> ▾</button>
+  </div>
+  <div class="flex items-center gap-2 text-xs">
+    <select id="lang" class="rounded bg-slate-800 border-slate-700 text-white text-xs py-1">
+      <option value="both">हिंदी + English</option><option value="hi">हिंदी</option><option value="en">English</option></select>
+    <span id="timer" class="font-mono font-bold text-amber-300 bg-slate-800 px-3 py-1.5 rounded-lg">60:00</span>
+    <a id="printLink" href="print.html" class="hidden sm:inline px-2 py-1.5 rounded-lg bg-slate-800">🖨️ प्रिंट</a>
+    <a href="dashboard.html" class="hidden sm:inline px-2 py-1.5">डैशबोर्ड</a>
+  </div>
 </header>
 
-<!-- NAVIGATION BAR -->
-<nav class="bg-white border-b border-slate-200 px-4 py-2 shrink-0 shadow-xs flex items-center justify-between flex-wrap gap-2">
-<div class="flex items-center gap-2">
-<span class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900 text-white text-xs font-bold">
-<i class="ph ph-shield-check text-emerald-400"></i> सक्रिय सत्र:
-      </span>
-<span class="text-xs font-extrabold text-indigo-900 bg-indigo-50 border border-indigo-200 px-3 py-1 rounded-lg flex items-center gap-1.5">
-<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-<span id="sessionLockTitle">10th बोर्ड • 100 पाठ्यक्रम आधारित प्रश्न</span>
-</span>
-</div>
-<div class="flex items-center gap-2">
-<a href="dashboard.html" class="text-xs font-medium text-indigo-600 hover:text-indigo-800 flex items-center gap-1 px-2 py-1"><i class="ph ph-chart-pie"></i> डैशबोर्ड</a>
-<a href="help.html" class="text-xs font-medium text-slate-600 hover:text-slate-800 flex items-center gap-1 px-2 py-1"><i class="ph ph-question"></i> सहायता</a>
-</div>
-</nav>
+<div id="msg" class="hidden m-4 p-4 rounded-xl bg-amber-50 border border-amber-200 text-sm font-semibold text-amber-900"></div>
 
-<!-- MAIN WORKSPACE -->
-<main class="flex-1 flex overflow-hidden relative">
-<section id="printableArea" class="flex-1 flex flex-col bg-slate-50 overflow-y-auto">
-<!-- Meta Ribbon -->
-<div class="bg-white border-b border-slate-200 px-6 py-3 flex flex-wrap items-center justify-between gap-3 shrink-0">
-<div class="flex items-center gap-3">
-<span id="currentQNumBadge" class="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-700 font-bold flex items-center justify-center text-sm">01</span>
-<div>
-<div class="flex items-center gap-2">
-<span id="currentQNumText" class="font-bold text-slate-800 text-sm">प्रश्न 1 / 100</span>
-<span id="currentStreamTag" class="text-xs px-2 py-0.5 rounded bg-blue-50 text-blue-700 font-medium border border-blue-200">10th बोर्ड</span>
-<span id="currentPartBadge" class="text-xs px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 font-bold border border-indigo-200">भाग 1</span>
-<span id="currentUnitTag" class="text-xs px-2 py-0.5 rounded bg-slate-100 text-slate-600 font-medium">अध्याय: वास्तविक संख्याएँ</span>
-</div>
-</div>
-</div>
-<!-- Variants Switcher (V1 set as Basic by default) -->
-<div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg border border-slate-200 text-xs">
-<span class="px-1 text-slate-500 font-bold text-[11px]">वेरिएंट्स:</span>
-<button type="button" onclick="setVariant(1, this)" class="variant-btn px-2 py-1 rounded bg-indigo-600 text-white font-bold cursor-pointer">V1: बेसिक (मूल)</button>
-<button type="button" onclick="setVariant(2, this)" class="variant-btn px-2 py-1 rounded text-slate-600 hover:bg-slate-200 font-medium cursor-pointer">V2: प्रत्यक्ष</button>
-<button type="button" onclick="setVariant(3, this)" class="variant-btn px-2 py-1 rounded text-slate-600 hover:bg-slate-200 font-medium cursor-pointer">V3: आंकिक</button>
-<button type="button" onclick="setVariant(4, this)" class="variant-btn px-2 py-1 rounded text-slate-600 hover:bg-slate-200 font-medium cursor-pointer">V4: परिदृश्य</button>
-<button type="button" onclick="setVariant(5, this)" class="variant-btn px-2 py-1 rounded text-slate-600 hover:bg-slate-200 font-medium cursor-pointer">V5: मिलान</button>
-<button type="button" onclick="setVariant(6, this)" class="variant-btn px-2 py-1 rounded text-slate-600 hover:bg-slate-200 font-medium cursor-pointer">V6: कथन-कारण</button>
-</div>
-</div>
-
-<!-- Parts Tabs -->
-<div class="bg-white border-b border-slate-200 px-6 py-2 shrink-0 shadow-xs sticky top-0 z-10">
-<div class="grid grid-cols-2 md:grid-cols-4 gap-2" id="streamSubjectPartsContainer"></div>
-</div>
-
-<!-- Question Box -->
-<div class="flex-1 p-6 max-w-4xl w-full mx-auto space-y-5">
-<div class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm space-y-3">
-<div class="flex items-center justify-between">
-<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-indigo-50 text-indigo-700 border border-indigo-200">
-<i class="ph ph-check-circle"></i> बहुविकल्पीय प्रश्न (Single Correct MCQ)
-            </span>
-<span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">+4.0 / -1.0 अंकन</span>
-</div>
-<p id="questionText" class="text-base text-slate-900 leading-relaxed font-semibold whitespace-pre-line">
-            प्रश्न लोड हो रहा है...
-          </p>
-</div>
-
-<!-- Options Container -->
-<div id="optionsContainer" class="space-y-2.5">
-<div class="option-card flex items-center gap-4 p-4 rounded-xl border-2 border-slate-200 bg-white hover:border-indigo-400 hover:bg-indigo-50/30 cursor-pointer transition shadow-xs select-none" onclick="recordOption('A')">
-<span class="w-7 h-7 rounded-lg bg-slate-100 flex items-center justify-center font-bold text-xs text-slate-700 border border-slate-300">A</span>
-<span id="optText_A" class="text-sm font-semibold text-slate-800 flex-1 option-text">विकल्प A...</span>
-</div>
-<div class="option-card flex items-center gap-4 p-4 rounded-xl border-2 border-slate-200 bg-white hover:border-indigo-400 hover:bg-indigo-50/30 cursor-pointer transition shadow-xs select-none" onclick="recordOption('B')">
-<span class="w-7 h-7 rounded-lg bg-slate-100 flex items-center justify-center font-bold text-xs text-slate-700 border border-slate-300">B</span>
-<span id="optText_B" class="text-sm font-semibold text-slate-800 flex-1 option-text">विकल्प B...</span>
-</div>
-<div class="option-card flex items-center gap-4 p-4 rounded-xl border-2 border-slate-200 bg-white hover:border-indigo-400 hover:bg-indigo-50/30 cursor-pointer transition shadow-xs select-none" onclick="recordOption('C')">
-<span class="w-7 h-7 rounded-lg bg-slate-100 flex items-center justify-center font-bold text-xs text-slate-700 border border-slate-300">C</span>
-<span id="optText_C" class="text-sm font-semibold text-slate-800 flex-1 option-text">विकल्प C...</span>
-</div>
-<div class="option-card flex items-center gap-4 p-4 rounded-xl border-2 border-slate-200 bg-white hover:border-indigo-400 hover:bg-indigo-50/30 cursor-pointer transition shadow-xs select-none" onclick="recordOption('D')">
-<span class="w-7 h-7 rounded-lg bg-slate-100 flex items-center justify-center font-bold text-xs text-slate-700 border border-slate-300">D</span>
-<span id="optText_D" class="text-sm font-semibold text-slate-800 flex-1 option-text">विकल्प D...</span>
-</div>
-</div>
-
-<!-- Reference Book & Easy Desi Trick Box -->
-<div id="refBookBox" class="bg-sky-50 rounded-xl p-3 border border-sky-200 text-xs text-sky-900 flex items-center gap-2">
-<i class="ph ph-book-open text-sky-600 text-lg shrink-0"></i>
-<div class="flex-1"><strong>मानक संदर्भ पुस्तक:</strong> <span id="refBookName">NCERT / अधिकृत पाठ्यपुस्तक</span></div>
-</div>
-
-<div class="bg-amber-50 rounded-xl p-3.5 border border-amber-200 flex items-center justify-between text-xs text-amber-900">
-<div class="flex items-center gap-2 flex-1">
-<i class="ph ph-lightbulb text-amber-600 text-lg shrink-0"></i>
-<div class="flex items-center gap-2 flex-wrap">
-<span class="font-bold text-amber-950">आसान एवं यादगार देसी ट्रिक:</span>
-<span id="desiTrickText" class="text-amber-900 bg-amber-100/70 px-2 py-0.5 rounded border border-amber-300 font-mono text-[11px]">ट्रिक लोड हो रही है...</span>
-</div>
-</div>
-</div>
-</div>
-
-<!-- Footer Actions -->
-<div class="bg-white border-t border-slate-200 px-6 py-3 flex items-center justify-between gap-2 shrink-0">
-<div class="flex items-center gap-2">
-<button type="button" onclick="navigateQuestion(-1)" class="px-4 py-2 border border-slate-300 rounded-lg text-slate-700 font-semibold text-xs hover:bg-slate-50 transition cursor-pointer flex items-center gap-1">
-<i class="ph ph-arrow-left"></i> पिछला
-          </button>
-<button type="button" onclick="clearSelectedOption()" class="px-3 py-2 text-slate-600 hover:text-rose-600 rounded-lg text-xs font-semibold transition cursor-pointer">
-            विकल्प हटाएं
-          </button>
-<button type="button" onclick="toggleMarkReview()" class="px-3 py-2 border border-purple-300 bg-purple-50 text-purple-700 rounded-lg text-xs font-semibold hover:bg-purple-100 transition cursor-pointer flex items-center gap-1">
-<i class="ph ph-star"></i> समीक्षा चिह्नित
-          </button>
-</div>
-<div>
-<button type="button" onclick="saveAndNextQuestion()" class="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-bold text-xs transition shadow-sm cursor-pointer flex items-center gap-1.5">
-<span>सहेजें और आगे बढ़ें</span> <i class="ph ph-arrow-right"></i>
-</button>
-</div>
-</div>
-</section>
-
-<!-- RIGHT OMR PALETTE -->
-<aside class="w-80 bg-white border-l border-slate-200 flex flex-col shrink-0 z-10 shadow-lg">
-<div class="p-3 border-b border-slate-200 bg-slate-50">
-<div class="flex items-center justify-between mb-2">
-<span class="font-bold text-xs text-slate-800">प्रश्न ओएमआर पैलेट</span>
-<span class="text-[11px] font-bold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded border border-indigo-200">100 प्रश्न</span>
-</div>
-<div class="grid grid-cols-2 gap-1.5 text-[11px]">
-<div class="flex items-center gap-1.5"><span class="w-3.5 h-3.5 rounded bg-emerald-500 text-white flex items-center justify-center text-[9px]">✓</span><span>हल (<span id="countAnswered">0</span>)</span></div>
-<div class="flex items-center gap-1.5"><span class="w-3.5 h-3.5 rounded bg-rose-500 text-white flex items-center justify-center text-[9px]">✕</span><span>अनुत्तरित (<span id="countUnanswered">1</span>)</span></div>
-<div class="flex items-center gap-1.5"><span class="w-3.5 h-3.5 rounded bg-purple-500 text-white flex items-center justify-center text-[9px]">★</span><span>समीक्षा (<span id="countReview">0</span>)</span></div>
-<div class="flex items-center gap-1.5"><span class="w-3.5 h-3.5 rounded bg-slate-200 text-slate-600 flex items-center justify-center text-[9px]">•</span><span>अदृष्ट (<span id="countNotVisited">99</span>)</span></div>
-</div>
-</div>
-<div class="flex border-b border-slate-200 text-xs font-semibold">
-<button type="button" id="tabSecA" onclick="switchSection('A')" class="flex-1 py-2 text-center border-b-2 border-indigo-600 text-indigo-600 bg-indigo-50/40 font-bold cursor-pointer">खंड A (1-50)</button>
-<button type="button" id="tabSecB" onclick="switchSection('B')" class="flex-1 py-2 text-center text-slate-500 hover:text-slate-800 border-b-2 border-transparent font-medium cursor-pointer">खंड B (51-100)</button>
-</div>
-<div class="flex-1 overflow-y-auto p-3">
-<div id="omrGrid" class="grid grid-cols-5 gap-2"></div>
-</div>
-<div class="p-3 border-t border-slate-200 bg-slate-50">
-<button type="button" onclick="submitTestDialog()" class="w-full py-2.5 bg-slate-900 hover:bg-slate-800 text-white rounded-lg font-bold text-xs transition cursor-pointer shadow flex items-center justify-center gap-1.5">
-<i class="ph ph-check-square-offset text-base text-emerald-400"></i>
-<span>परीक्षा सबमिट करें (Final Submit)</span>
-</button>
-</div>
-</aside>
+<main id="app" class="hidden flex-1 min-h-0 flex flex-col lg:flex-row">
+  <section class="flex-1 min-h-0 flex flex-col bg-slate-50">
+    <div id="partTabs" class="grid grid-cols-2 md:grid-cols-4 gap-2 p-2 bg-white border-b shrink-0"></div>
+    <div class="flex-1 overflow-y-auto p-4 max-w-4xl w-full mx-auto space-y-3">
+      <div class="flex flex-wrap items-center gap-2 text-xs">
+        <b id="qNum" class="text-sm"></b><span id="qCh" class="px-2 py-0.5 rounded bg-slate-100"></span>
+        <span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200">+4 / −1</span>
+        <span id="qBook" class="text-sky-700"></span>
+      </div>
+      <div id="qText" class="bg-white rounded-xl p-4 border font-semibold leading-relaxed"></div>
+      <div id="opts" class="space-y-2"></div>
+    </div>
+    <div class="bg-white border-t px-3 py-2 flex flex-wrap items-center justify-between gap-2 shrink-0 text-xs font-semibold">
+      <div class="flex gap-2">
+        <button onclick="go(S.cur-1)" class="px-3 py-2 border rounded-lg">← पिछला</button>
+        <button onclick="clearAns()" class="px-3 py-2 rounded-lg text-slate-600">हटाएँ</button>
+        <button onclick="toggleRev()" class="px-3 py-2 border border-purple-300 bg-purple-50 text-purple-700 rounded-lg">★ समीक्षा</button>
+        <button onclick="$('side').classList.toggle('hidden')" class="lg:hidden px-3 py-2 border rounded-lg">☰ सूची</button>
+      </div>
+      <button onclick="go(S.cur+1)" class="px-5 py-2 bg-indigo-600 text-white rounded-lg">सहेजें और आगे →</button>
+    </div>
+  </section>
+  <aside id="side" class="hidden lg:flex flex-col lg:w-80 max-h-[45vh] lg:max-h-none bg-white border-l shrink-0">
+    <div class="p-3 border-b text-[11px] grid grid-cols-2 gap-1 bg-slate-50">
+      <span>🟩 हल (<b id="cA">0</b>)</span><span>🟥 अनुत्तरित (<b id="cU">0</b>)</span>
+      <span>🟪 समीक्षा (<b id="cR">0</b>)</span><span>⬜ अदृष्ट (<b id="cN">0</b>)</span>
+    </div>
+    <div id="omr" class="flex-1 overflow-y-auto p-3 space-y-3"></div>
+    <div class="p-3 border-t"><button onclick="submitTest(false)" class="w-full py-2.5 bg-slate-900 text-white rounded-lg font-bold text-xs">परीक्षा सबमिट करें</button></div>
+  </aside>
 </main>
 
-<!-- WIZARD MODAL FOR STREAM SELECTION -->
-<div id="setupWizardModal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 backdrop-blur-sm p-4 overflow-y-auto">
-<div class="bg-white rounded-2xl shadow-2xl max-w-4xl w-full border border-slate-200 overflow-hidden my-auto flex flex-col max-h-[92vh]">
-<div class="bg-slate-900 text-white px-6 py-4 flex items-center justify-between border-b border-slate-800 shrink-0">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-amber-300 text-xl shadow"><i class="ph ph-books"></i></div>
-<div>
-<h2 class="font-bold text-base text-white">परीक्षा संकाय चयन विज़ार्ड (Select Stream)</h2>
-<p class="text-xs text-slate-400">सभी 20 संकायों में से अपना लक्ष्य चुनें</p>
-</div>
-</div>
-</div>
-<div id="wizardStepContent1" class="wizard-page p-6 overflow-y-auto flex-1">
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2.5" id="all20StreamsGrid"></div>
-</div>
-<div class="bg-slate-50 px-6 py-3 border-t border-slate-200 flex items-center justify-between shrink-0">
-<span class="text-xs text-slate-600">चयनित: <strong id="modalSelectedStreamBadge" class="text-indigo-700">10th बोर्ड</strong></span>
-<button type="button" onclick="closeSetupModal()" class="px-6 py-2 bg-indigo-700 hover:bg-indigo-800 text-white rounded-lg font-bold text-xs transition cursor-pointer shadow">परीक्षा शुरू करें</button>
-</div>
-</div>
+<!-- stream picker -->
+<div id="streamModal" class="hidden fixed inset-0 z-40 bg-slate-950/70 flex items-center justify-center p-4">
+  <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-5">
+    <div class="flex items-end gap-3 mb-3">
+      <h2 class="font-bold flex-1">संवर्ग चुनें</h2>
+      <label class="text-xs font-bold">सेट नंबर <input id="setIn" type="number" min="1" value="1" class="ml-1 w-20 rounded border-slate-300 text-sm"/></label>
+      <button onclick="$('streamModal').classList.add('hidden')" class="text-sm px-2">✕</button>
+    </div>
+    <div id="streamGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2"></div>
+  </div>
 </div>
 
-<!-- STRICT PAYWALL MODAL AFTER 30 QUESTIONS -->
-<div id="trialPaywallModal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 backdrop-blur-sm p-4 overflow-y-auto hidden">
-<div class="bg-white rounded-2xl shadow-2xl max-w-md w-full border border-slate-200 overflow-hidden my-auto p-6 text-center space-y-4">
-<div class="w-12 h-12 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center mx-auto text-2xl font-bold">
-<i class="ph ph-lock-key"></i>
-</div>
-<h3 class="text-base font-bold text-slate-900">30 प्रश्न निःशुल्क ट्रायल समाप्त (Locked)</h3>
-<p class="text-xs text-slate-600 leading-relaxed">
-        आप 30 प्रश्न पूरे कर चुके हैं। प्रश्न 31 से 100 तक सभी प्रश्न और V1 से V6 वेरिएंट्स अनलॉक करने के लिए ₹199 का EduPro पास सक्रिय करें।
-      </p>
-<div class="p-4 bg-slate-50 rounded-xl border border-slate-200 flex flex-col items-center justify-center space-y-2">
-<div class="w-48 h-48 bg-white border-2 border-indigo-200 rounded-xl flex items-center justify-center p-2 shadow-sm">
-<img src="my_qr.png" alt="PhonePe QR Code ₹199" class="w-full h-full object-contain block"/>
-</div>
-<span class="text-xs font-bold text-slate-900 block">PhonePe QR स्कैन कर ₹199 भुगतान करें</span>
-<span class="text-[11px] font-mono text-indigo-700 font-semibold block">VPA: 9166603971@ibl</span>
-</div>
-<div class="space-y-2">
-<button type="button" onclick="alert('कृपया भुगतान करने के बाद सहायता पेज पर UTR नंबर दर्ज करें।')" class="w-full py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold transition shadow">
-          मैंने भुगतान कर दिया है (Pass Activate)
-        </button>
-<button type="button" onclick="loadQuestion(29)" class="w-full py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold transition border border-slate-200">
-          वापस प्रश्न 30 पर लौटें
-        </button>
-</div>
-</div>
+<!-- paywall -->
+<div id="payModal" class="hidden fixed inset-0 z-50 bg-slate-950/80 flex items-center justify-center p-4 overflow-y-auto">
+  <div class="bg-white rounded-2xl max-w-md w-full p-6 text-center space-y-3 my-auto">
+    <div class="text-3xl">🔒</div>
+    <h3 class="font-bold">बाकी प्रश्न लॉक हैं</h3>
+    <p class="text-xs text-slate-600">सभी प्रश्न खोलने के लिए ₹199 का EduPro पास लें। नीचे QR से भुगतान करके 12 अंकों का UTR डालें; जाँच के बाद पास चालू होगा।</p>
+    <img src="my_qr.png" alt="PhonePe QR" class="w-44 h-44 object-contain mx-auto border rounded-xl p-1"/>
+    <div class="text-[11px] font-mono text-indigo-700 font-semibold">VPA: 9166603971@ibl</div>
+    <input id="utr" inputmode="numeric" maxlength="12" placeholder="12 अंकों का UTR / Ref No." class="w-full rounded-lg border-slate-300 text-sm text-center"/>
+    <p id="payMsg" class="text-xs font-semibold"></p>
+    <button onclick="sendUtr()" class="w-full py-2.5 bg-emerald-600 text-white rounded-lg text-xs font-bold">UTR जमा करें</button>
+    <button onclick="$('payModal').classList.add('hidden')" class="w-full py-2 bg-slate-100 rounded-lg text-xs font-semibold">वापस जाएँ</button>
+  </div>
 </div>
 
-<!-- SCRIPT ENGINE -->
 <script>
-    const STREAMS_LIST = [
-      { id: '1', name: '10th बोर्ड (NCERT / State)', category: 'School', icon: 'ph-student', unit: 'विज्ञान, गणित एवं सामाजिक विज्ञान' },
-      { id: '2', name: '12th Board Science (PCB)', category: 'School', icon: 'ph-dna', unit: 'जीव विज्ञान, भौतिकी एवं रसायन' },
-      { id: '3', name: '12th Board Science (PCM)', category: 'School', icon: 'ph-function', unit: 'गणित, भौतिकी एवं रसायन' },
-      { id: '4', name: '12th Board Arts (Humanities)', category: 'School', icon: 'ph-globe-stand', unit: 'इतिहास, राजनीति विज्ञान एवं भूगोल' },
-      { id: '5', name: '12th Board Commerce', category: 'School', icon: 'ph-chart-line-up', unit: 'लेखाशास्त्र एवं व्यवसाय अध्ययन' },
-      { id: '6', name: 'NEET (UG Medical Entrance)', category: 'Medical', icon: 'ph-first-aid', unit: 'वनस्पति, प्राणि विज्ञान, भौतिकी एवं रसायन' },
-      { id: '7', name: 'JEE Main & Advanced', category: 'Engineering', icon: 'ph-atom', unit: 'यांत्रिकी, कलन एवं विद्युतगतिकी' },
-      { id: '8', name: 'B.Tech Civil Engineering', category: 'Engineering', icon: 'ph-buildings', unit: 'कंक्रीट तकनीक, मृदा यांत्रिकी एवं SOM' },
-      { id: '9', name: 'B.Tech Computer Science (CSE)', category: 'Engineering', icon: 'ph-laptop', unit: 'डेटा संरचनाएं, ऑपरेटिंग सिस्टम एवं DBMS' },
-      { id: '10', name: 'B.Tech Mechanical Engineering', category: 'Engineering', icon: 'ph-gear', unit: 'ऊष्मागतिकी, मशीन डिजाइन एवं उत्पादन' },
-      { id: '11', name: 'B.Tech Electrical Engineering', category: 'Engineering', icon: 'ph-lightning', unit: 'विद्युत मशीनें, पावर सिस्टम एवं नियंत्रण' },
-      { id: '12', name: 'D.Pharma (डिप्लोमा)', category: 'Pharma', icon: 'ph-pill', unit: 'फार्मास्यूटिक्स, विष विज्ञान एवं फार्मेसी' },
-      { id: '13', name: 'B.Pharma (डिग्री)', category: 'Pharma', icon: 'ph-flask', unit: 'औषधीय रसायन, फार्माकोलॉजी एवं विश्लेषण' },
-      { id: '14', name: 'B.Sc Nursing & GNM', category: 'Nursing', icon: 'ph-heartbeat', unit: 'शरीर रचना, फिजियोलॉजी एवं सामुदायिक स्वास्थ्य' },
-      { id: '15', name: 'Fire & Industrial Safety', category: 'Vocational', icon: 'ph-shield-warning', unit: 'अग्नि सुरक्षा प्रणाली एवं औद्योगिक मानक' },
-      { id: '16', name: 'UPSC Civil Services (IAS/IPS)', category: 'Civil', icon: 'ph-bank', unit: 'भारतीय संविधान, इतिहास, अर्थव्यवस्था एवं पर्यावरण' },
-      { id: '17', name: 'State PSC (RAS/UPPCS/BPSC)', category: 'Civil', icon: 'ph-compass', unit: 'राज्य का इतिहास, भूगोल, कला एवं प्रशासन' },
-      { id: '18', name: 'SSC CGL / CHSL', category: 'Govt Job', icon: 'ph-briefcase', unit: 'तर्कशक्ति, मात्रात्मक अभिरुचि एवं सामान्य ज्ञान' },
-      { id: '19', name: 'RS-CIT कंप्यूटर दक्षता व IT', category: 'IT/Skill', icon: 'ph-desktop', unit: 'MS Office, इंटरनेट, साइबर सुरक्षा एवं Excel' },
-      { id: '20', name: 'Tally Prime & Corporate GST', category: 'Finance', icon: 'ph-receipt', unit: 'GST इनवॉइसिंग, ITC, वाउचर प्रविष्टि एवं लेजर' }
-    ];
+const STREAMS=[[1,'10th बोर्ड (NCERT)'],[2,'12th Board Science (PCB)'],[3,'12th Board Science (PCM)'],[4,'12th Board Arts'],[5,'12th Board Commerce'],[6,'NEET (UG)'],[7,'JEE Main & Advanced'],[8,'B.Tech Civil'],[9,'B.Tech CSE'],[10,'B.Tech Mechanical'],[11,'B.Tech Electrical'],[12,'D.Pharma'],[13,'B.Pharma'],[14,'B.Sc Nursing & GNM'],[15,'Fire & Industrial Safety'],[16,'UPSC Civil Services'],[17,'State PSC (सामान्य अध्ययन)'],[18,'SSC CGL / CHSL'],[19,'RS-CIT'],[20,'Tally Prime & GST']];
+const L=['A','B','C','D'], DURATION=60*60e3, $=id=>document.getElementById(id);
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ls={get:k=>{try{return localStorage.getItem(k)}catch(e){return null}},set:(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}},del:k=>{try{localStorage.removeItem(k)}catch(e){}}};
+const qs0=new URLSearchParams(location.search);
+const S={stream:'1',set:1,parts:[],qs:[],cur:0,ans:{},rev:{},seen:{},paid:false,endAt:0,timer:null,done:false};
+const sname=()=>(STREAMS.find(s=>String(s[0])===S.stream)||[0,'-'])[1];
+const draftKey=()=>`edupro_draft_${S.stream}_${S.set}`;
 
-    const STREAM_TOPICS = {
-      '1': ['वास्तविक संख्याएँ', 'बहुपद', 'दो चर वाले रैखिक समीकरण', 'द्विघात समीकरण', 'समांतर श्रेढ़ियाँ', 'त्रिकोणमिति के अनुप्रयोग', 'वृत्त और रचनाएँ', 'निर्देशांक ज्यामिति', 'प्रकाश परावर्तन व अपवर्तन', 'मानव नेत्र', 'विद्युत धारा के प्रभाव', 'चुंबकीय प्रभाव', 'रासायनिक अभिक्रियाएँ', 'अम्ल, क्षार एवं लवण', 'धातु एवं अधातु', 'कार्बन यौगिक', 'जैव प्रक्रम', 'नियंत्रण एवं समन्वय', 'आनुवंशिकता एवं विकास', 'हमारा पर्यावरण'],
-      '6': ['पादप कार्यिकी और प्रकाश संश्लेषण', 'श्वसन और परिवहन तंत्र', 'कोशिका चक्र और विभाजन', 'मानव पाचन और श्वसन तंत्र', 'रक्त परिसंचरण और हृदय', 'उत्सर्जन तंत्र और नेफ्रॉन', 'तंत्रिका तंत्र और हॉर्मोन', 'आनुवंशिकी और DNA प्रतिकृतियों', 'जैव प्रौद्योगिकी और PCR', 'पारिस्थितिकी और जैव विविधता'],
-      '7': ['यांत्रिकी: जड़त्व आघूर्ण', 'गुरुत्वाकर्षण और पलायन वेग', 'ऊष्मागतिकी एवं कार्नो इंजन', 'स्थिर विद्युत और गॉस नियम', 'धारा विद्युत एवं LCR परिपथ', 'किरण प्रकाशिकी और प्रिज्म', 'तरंग प्रकाशिकी और फ्रिंज', 'आधुनिक भौतिकी और डी-ब्रोग्ली', 'कलन: समाकलन और अवकलज', 'मैट्रिक्स और प्रायिकता'],
-      '8': ['सीमेंट और कंक्रीट तकनीक (IS 456)', 'मृदा यांत्रिकी और कैसाग्रांडे', 'संरचनात्मक विश्लेषण (SOM)', 'राजमार्ग और बिटुमिन परीक्षण', 'द्रव यांत्रिकी और बर्नोली', 'पर्यावरण: BOD और जल शोधन', 'आरसीसी डिजाइन मानक', 'सर्वेक्षण और थियोडलाइट', 'जल विज्ञान और अपवाह', 'इस्पात संरचनाएं (IS 800)'],
-      '9': ['बैलेंस्ड बाइनरी सर्च ट्री (AVL)', 'ऑपरेटिंग सिस्टम और डेडलॉक', 'DBMS और ACID गुणधर्म', 'OSI नेटवर्क परतें और TCP/IP', 'कंपाइलर डिजाइन और पार्सर', 'डायनेमिक प्रोग्रामिंग', 'साइबर सुरक्षा और RSA', 'सॉफ्टवेयर इंजीनियरिंग (Agile)', 'डेटा संरचनाएं और हैशिंग', 'ऑटोमेटा और ट्यूरिंग मशीन'],
-      '16': ['भारतीय संविधान की प्रस्तावना', 'मौलिक अधिकार और रिट (अनु. 32)', 'संसदीय प्रक्रिया और धन विधेयक', 'न्यायिक समीक्षा और कॉलेजियम', 'संघीय ढांचा और 7वीं अनुसूची', 'आधुनिक भारत का स्वतंत्रता संग्राम', 'भौगोलिक मानसून और जेट स्ट्रीम', 'भारतीय अर्थव्यवस्था और राजकोषीय घाटा', 'पर्यावरण और रामसर आर्द्रभूमि', 'नैतिकता और लोक सेवा मूल्य']
-    };
+function showMsg(t){$('msg').textContent=t;$('msg').classList.remove('hidden');$('app').classList.add('hidden');}
 
-    const STREAM_BOOKS = {
-      '1': 'NCERT कक्षा 10 विज्ञान एवं गणित मानक पाठ्यपुस्तक',
-      '2': 'NCERT Biology Class 12th (Textbook & Exemplar)',
-      '3': 'NCERT Mathematics Class 12th (Part 1 & 2)',
-      '4': 'NCERT History & Political Science Class 12th',
-      '5': 'NCERT Accountancy & Business Studies Class 12th',
-      '6': 'NCERT Biology (Class 11 & 12) + Trueman Objective',
-      '7': 'H.C. Verma Concepts of Physics + Cengage Mathematics',
-      '8': 'B.C. Punmia Soil Mech / IS 456:2000 Code Book',
-      '9': 'Korth Database System Concepts + Tanenbaum Networks',
-      '16': 'M. Laxmikanth Indian Polity + NCERT Class 11-12 History'
-    };
+async function load(){
+  S.done=false;clearInterval(S.timer);
+  $('hStream').textContent=sname();$('hSet').textContent=S.set;
+  $('printLink').href=`print.html?stream=${S.stream}&set=${S.set}`;
+  showMsg('⏳ प्रश्न लोड हो रहे हैं…');
+  let d=null;
+  try{d=await (await fetch(`/api/questions?stream=${S.stream}&set=${S.set}`,{credentials:'same-origin',cache:'no-store'})).json();}catch(e){}
+  if(!d||!d.ready){showMsg('⏳ इस संवर्ग के प्रश्न अभी तैयार हो रहे हैं। कुछ देर बाद कोशिश करें, या दूसरा संवर्ग चुनें।');return;}
+  S.paid=!!d.paid;S.set=d.set;$('hSet').textContent=S.set;
+  S.parts=d.parts;S.qs=[];
+  d.parts.forEach((p,pi)=>p.q.forEach(q=>S.qs.push(Object.assign({},q,{pi,subject:p.subject,book:p.book}))));
+  S.ans={};S.rev={};S.seen={};S.endAt=Date.now()+DURATION;
+  try{const dr=JSON.parse(ls.get(draftKey())||'null');if(dr&&dr.endAt>Date.now()){S.ans=dr.ans||{};S.rev=dr.rev||{};S.endAt=dr.endAt;}}catch(e){}
+  S.cur=Math.max(0,S.qs.findIndex(q=>!q.locked));
+  $('msg').classList.add('hidden');$('app').classList.remove('hidden');
+  renderTabs();render();tick();S.timer=setInterval(tick,1000);
+}
+function saveDraft(){ls.set(draftKey(),JSON.stringify({ans:S.ans,rev:S.rev,endAt:S.endAt}));}
 
-    let currentStream = STREAMS_LIST[0];
-    let currentQuestionIndex = 0;
-    let currentSection = 'A';
-    let selectedVariant = 1; // V1 is Basic by default
-    let selectedAnswers = new Array(100).fill(null);
-    let reviewedQuestions = new Array(100).fill(false);
-    let visitedQuestions = new Array(100).fill(false);
-    visitedQuestions[0] = true;
-    let paidPassActive = false; // Set to true after ₹199 pass verification
+function tick(){
+  const r=Math.max(0,S.endAt-Date.now()),m=Math.floor(r/60000),s=Math.floor(r%60000/1000);
+  $('timer').textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+  $('timer').className='font-mono font-bold px-3 py-1.5 rounded-lg bg-slate-800 '+(r<5*60e3?'text-rose-400':'text-amber-300');
+  if(r<=0)submitTest(true);
+}
 
-    document.addEventListener('DOMContentLoaded', () => {
-      renderAll20StreamsInModal();
-      renderOMRPalette();
-      renderPartTabs();
-      loadQuestion(0);
-      openWizardStep(1);
-    });
+function go(i){
+  if(i<0||i>=S.qs.length)return;
+  if(S.qs[i].locked){$('payModal').classList.remove('hidden');return;}
+  S.cur=i;render();
+}
+function pick(j){const q=S.qs[S.cur];S.ans[q.id]=j;saveDraft();render();}
+function clearAns(){delete S.ans[S.qs[S.cur].id];saveDraft();render();}
+function toggleRev(){const id=S.qs[S.cur].id;S.rev[id]=!S.rev[id];saveDraft();render();}
 
-    function renderAll20StreamsInModal() {
-      const grid = document.getElementById('all20StreamsGrid');
-      if(!grid) return;
-      grid.innerHTML = '';
-      STREAMS_LIST.forEach((s) => {
-        const isSelected = (s.id === currentStream.id);
-        const card = document.createElement('button');
-        card.type = 'button';
-        card.className = `p-3 rounded-xl border text-left flex items-start gap-2.5 transition cursor-pointer select-none ${
-          isSelected ? 'bg-indigo-600 text-white border-indigo-700 shadow-md ring-2 ring-indigo-400' : 'bg-white hover:bg-slate-50 border-slate-200 text-slate-800'
-        }`;
-        card.onclick = () => selectStreamFromWizard(s);
-        card.innerHTML = `
-          <div class="w-8 h-8 rounded-lg flex items-center justify-center text-base shrink-0 ${isSelected ? 'bg-white/20 text-white' : 'bg-indigo-50 text-indigo-700'}">
-            <i class="ph ${s.icon}"></i>
-          </div>
-          <div class="flex-1 min-w-0">
-            <span class="text-[10px] uppercase font-bold tracking-wider block opacity-75 ${isSelected ? 'text-indigo-100' : 'text-indigo-600'}">${s.category}</span>
-            <div class="text-xs font-bold leading-tight line-clamp-2 mt-0.5">${s.name}</div>
-          </div>
-        `;
-        grid.appendChild(card);
-      });
-    }
+function txt(q,lang){return lang==='hi'?esc(q.hi.q):lang==='en'?esc(q.en.q):esc(q.hi.q)+`<div class="text-sm font-normal text-slate-600 mt-1">${esc(q.en.q)}</div>`;}
+function otxt(q,j,lang){return lang==='hi'?esc(q.hi.o[j]):lang==='en'?esc(q.en.o[j]):esc(q.hi.o[j])+`<span class="text-xs font-normal text-slate-500"> / ${esc(q.en.o[j])}</span>`;}
 
-    function selectStreamFromWizard(s) {
-      currentStream = s;
-      selectedAnswers = new Array(100).fill(null);
-      reviewedQuestions = new Array(100).fill(false);
-      visitedQuestions = new Array(100).fill(false);
-      visitedQuestions[0] = true;
-      currentQuestionIndex = 0;
+function render(){
+  const q=S.qs[S.cur],lang=$('lang').value;
+  S.seen[q.id]=true;
+  $('qNum').textContent=`प्रश्न ${S.cur+1} / ${S.qs.length}`;
+  $('qCh').textContent=`भाग ${q.pi+1}: ${q.subject}${q.ch?' • '+q.ch:''}`;
+  $('qBook').textContent=q.book?'📖 '+q.book:'';
+  $('qText').innerHTML=txt(q,lang);
+  $('opts').innerHTML=[0,1,2,3].map(j=>{const on=S.ans[q.id]===j;
+    return `<div onclick="pick(${j})" class="flex items-center gap-3 p-3.5 rounded-xl border-2 cursor-pointer ${on?'border-indigo-600 bg-indigo-50':'border-slate-200 bg-white hover:border-indigo-400'}"><span class="w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold border ${on?'bg-indigo-600 text-white':'bg-slate-100'}">${L[j]}</span><span class="text-sm font-semibold flex-1">${otxt(q,j,lang)}</span></div>`;}).join('');
+  renderOMR();renderTabs();
+}
 
-      document.getElementById('topActiveStreamName').innerText = s.name;
-      document.getElementById('currentStreamTag').innerText = s.name;
-      document.getElementById('sessionLockTitle').innerText = `${s.name} • 100 प्रामाणिक प्रश्न`;
-      document.getElementById('modalSelectedStreamBadge').innerText = s.name;
-      document.getElementById('currentUnitTag').innerText = `Topic: ${s.unit}`;
-      
-      renderAll20StreamsInModal();
-      renderOMRPalette();
-      renderPartTabs();
-      loadQuestion(0);
-      closeSetupModal();
-    }
+function renderTabs(){
+  $('partTabs').innerHTML=S.parts.map((p,i)=>{
+    const list=S.qs.filter(q=>q.pi===i&&!q.locked),done=list.filter(q=>S.ans[q.id]!==undefined).length,on=S.qs[S.cur]&&S.qs[S.cur].pi===i;
+    return `<button onclick="go(${S.qs.findIndex(q=>q.pi===i)})" class="text-left px-3 py-2 rounded-lg border text-xs font-bold ${on?'bg-indigo-600 text-white border-indigo-700':'bg-slate-50 border-slate-200'}">भाग ${i+1}: ${esc(p.subject)}<span class="block text-[10px] font-normal opacity-80">${done}/${list.length} हल</span></button>`;}).join('');
+}
 
-    function openWizardStep(isOpen) {
-      const modal = document.getElementById('setupWizardModal');
-      if (isOpen === 1) modal.classList.remove('hidden');
-      else modal.classList.add('hidden');
-    }
-    function closeSetupModal() { openWizardStep(0); }
+function renderOMR(){
+  let a=0,u=0,r=0,n=0,h='';
+  S.parts.forEach((p,pi)=>{
+    h+=`<div><div class="text-[11px] font-bold text-slate-500 mb-1">भाग ${pi+1}: ${esc(p.subject)}</div><div class="grid grid-cols-5 gap-1.5">`;
+    S.qs.forEach((q,i)=>{if(q.pi!==pi)return;
+      let c='bg-slate-100 text-slate-700 border-slate-300';
+      if(q.locked)c='bg-slate-200 text-slate-400 border-slate-300';
+      else if(S.ans[q.id]!==undefined){c='bg-emerald-500 text-white border-emerald-600';a++;}
+      else if(S.rev[q.id]){c='bg-purple-500 text-white border-purple-600';r++;}
+      else if(S.seen[q.id]){c='bg-rose-500 text-white border-rose-600';u++;}
+      else n++;
+      if(S.rev[q.id]&&S.ans[q.id]!==undefined){r++;}
+      h+=`<button onclick="go(${i})" class="h-8 rounded-md text-xs border font-bold ${c} ${i===S.cur?'ring-2 ring-indigo-600':''}">${i+1}${q.locked?'🔒':''}</button>`;});
+    h+='</div></div>';});
+  $('omr').innerHTML=h;$('cA').textContent=a;$('cU').textContent=u;$('cR').textContent=r;$('cN').textContent=n;
+}
 
-    function getParts(stream) {
-      return [
-        { hi: 'भाग 1: मूल अवधारणाएँ (Q.1-25)' },
-        { hi: 'भाग 2: अनुप्रयोग व विश्लेषण (Q.26-50)' },
-        { hi: 'भाग 3: आंकिक व तार्किक (Q.51-75)' },
-        { hi: 'भाग 4: उन्नत केस स्टडी (Q.76-100)' }
-      ];
-    }
-    function partOf(index) { return Math.min(4, Math.floor(index / 25) + 1); }
+async function submitTest(auto){
+  if(S.done)return;
+  const avail=S.qs.filter(q=>!q.locked),answered=avail.filter(q=>S.ans[q.id]!==undefined).length;
+  if(!auto&&!confirm(`क्या आप परीक्षा सबमिट करना चाहते हैं?\nहल किए गए प्रश्न: ${answered} / ${avail.length}`))return;
+  S.done=true;clearInterval(S.timer);
+  let c=0,w=0,s=0;const items=[];
+  S.qs.forEach((q,i)=>{if(q.locked)return;
+    const a=S.ans[q.id],st=a===undefined?'unattempted':a===q.a?'correct':'incorrect';
+    if(st==='correct')c++;else if(st==='incorrect')w++;else s++;
+    items.push({num:i+1,question:q.hi.q+'\n'+q.en.q,options:q.hi.o.map((o,j)=>o+' / '+q.en.o[j]),studentAns:a===undefined?null:L[a],correctAns:L[q.a],status:st,trick:q.tr||'',part:`भाग ${q.pi+1}: ${q.subject}`});});
+  const secs=Math.min(7200,Math.round((DURATION-Math.max(0,S.endAt-Date.now()))/1000)),score=c*4-w;
+  const result={stream:sname(),streamName:sname(),total:avail.length,correct:c,wrong:w,skipped:s,score,max:avail.length*4,accuracy:(c+w)?c/(c+w)*100:0,timeTaken:`${Math.floor(secs/60)}m ${String(secs%60).padStart(2,'0')}s`,items,at:new Date().toISOString(),lockedCount:S.qs.length-avail.length};
+  ls.set('edupro_last_result',JSON.stringify(result));
+  try{await fetch('/api/result',{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify({streamId:S.stream,set:S.set,correct:c,wrong:w,skipped:s,score,max:avail.length*4,secs})});}catch(e){}
+  ls.del(draftKey());
+  if(S.paid)ls.set('edupro_set_'+S.stream,String(S.set+1));
+  location.href='test-result.html';
+}
 
-    function renderPartTabs() {
-      const box = document.getElementById('streamSubjectPartsContainer');
-      if (!box) return;
-      box.innerHTML = getParts(currentStream).map((p, i) => {
-        const n = i + 1;
-        return `<button type="button" onclick="jumpToPart(${n})" class="part-tab-btn text-left px-3 py-2 rounded-lg border text-xs font-bold transition cursor-pointer bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200">
-          <span>${p.hi}</span>
-          <span class="block text-[10px] text-slate-500 font-normal" id="partMeta_${n}">0/25 हल</span>
-        </button>`;
-      }).join('');
-      updatePartUI(currentQuestionIndex);
-    }
+async function sendUtr(){
+  const utr=$('utr').value.trim(),m=$('payMsg');
+  if(!/^\d{12}$/.test(utr)){m.className='text-xs font-semibold text-rose-600';m.textContent='सही 12 अंकों का UTR डालें';return;}
+  try{const d=await (await fetch('/api/pay',{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify({utr})})).json();
+    m.className='text-xs font-semibold '+(d.ok?'text-emerald-700':'text-rose-600');
+    m.textContent=d.ok?'✅ जमा हो गया। जाँच के बाद पास चालू होगा, फिर यह पेज रिफ्रेश करें।':(d.error||'त्रुटि');
+  }catch(e){m.className='text-xs font-semibold text-rose-600';m.textContent='नेटवर्क त्रुटि, दोबारा कोशिश करें';}
+}
 
-    function updatePartUI(index) {
-      const n = partOf(index);
-      document.querySelectorAll('.part-tab-btn').forEach((b, i) => {
-        const on = (i + 1 === n);
-        const done = selectedAnswers.slice(i * 25, i * 25 + 25).filter(a => a !== null).length;
-        b.className = `part-tab-btn text-left px-3 py-2 rounded-lg border text-xs font-bold transition cursor-pointer ${on ? 'bg-indigo-600 text-white border-indigo-700 shadow-sm' : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200'}`;
-        const meta = b.querySelector(`#partMeta_${i+1}`);
-        if (meta) meta.innerText = `${done}/25 प्रश्न हल`;
-      });
-      document.getElementById('currentPartBadge').innerText = `भाग ${n}`;
-    }
+function openStreams(){
+  $('setIn').value=S.set;
+  $('streamGrid').innerHTML=STREAMS.map(s=>`<button onclick="chooseStream(${s[0]})" class="text-left p-3 rounded-xl border text-xs font-bold ${String(s[0])===S.stream?'bg-indigo-600 text-white border-indigo-700':'bg-white hover:bg-slate-50'}">${s[0]}. ${esc(s[1])}</button>`).join('');
+  $('streamModal').classList.remove('hidden');
+}
+function chooseStream(id){
+  const same=String(id)===S.stream;
+  S.stream=String(id);
+  S.set=Math.max(1,parseInt($('setIn').value,10)||1);
+  if(!same&&parseInt($('setIn').value,10)===S.set&&false)S.set=1;
+  ls.set('edupro_stream',S.stream);ls.set('edupro_set_'+S.stream,String(S.set));
+  $('streamModal').classList.add('hidden');load();
+}
 
-    function jumpToPart(n) { loadQuestion((n - 1) * 25); }
-
-    // Professional Topic-Based Real Question Engine across all 20 Streams
-    function getQuestionRecord(streamId, qIdx, variantId) {
-      const qNum = qIdx + 1;
-      const topicsList = STREAM_TOPICS[streamId] || STREAM_TOPICS['1'];
-      const topicName = topicsList[Math.floor(qIdx / 5) % topicsList.length] || currentStream.unit;
-      const correctIdx = (qNum * 2 + variantId) % 4;
-      const optLetters = ['A', 'B', 'C', 'D'];
-      const correctOpt = optLetters[correctIdx];
-
-      let questionText = '';
-      let opts = ['', '', '', ''];
-
-      const correctVal = `सटीक प्रमाणित उत्तर: ${topicName} का मानक सिद्धांत व तकनीकी मान (Q.${qNum})`;
-      const dist1 = `अपूर्ण या माध्यमिक विकल्प विश्लेषण A`;
-      const dist2 = `अमान्य प्राचल सीमा विकल्प B`;
-      const dist3 = `विपरीत दिशात्मक मान विकल्प C`;
-
-      const rawOpts = [correctVal, dist1, dist2, dist3];
-      let rIdx = 1;
-      for (let i = 0; i < 4; i++) {
-        if (i === correctIdx) opts[i] = rawOpts[0];
-        else { opts[i] = rawOpts[rIdx]; rIdx++; }
-      }
-
-      if (variantId === 1) { // V1: Basic (Fundamental)
-        questionText = `[प्रश्न #${qNum} • बेसिक / मूल अवधारणा]\n${currentStream.name} के अंतर्गत '${topicName}' की मूल परिभाषा एवं बुनियादी सिद्धांत क्या है?`;
-      } else if (variantId === 2) { // V2: Direct
-        questionText = `[प्रश्न #${qNum} • प्रत्यक्ष सैद्धांतिक प्रश्न]\n${currentStream.name} में '${topicName}' विषय से संबंधित निम्नलिखित में से कौन-सा कथन शत-प्रतिशत प्रामाणिक है?`;
-      } else if (variantId === 3) { // V3: Numerical
-        questionText = `[प्रश्न #${qNum} • आंकिक / गणना आधारित]\nयदि '${topicName}' की गणना हेतु मानक गुणांक ${qNum * 2.5} निर्धारित किया जाए, तो उपयुक्त परिणाम क्या होगा?`;
-      } else if (variantId === 4) { // V4: Scenario
-        questionText = `[प्रश्न #${qNum} • व्यावहारिक परिदृश्य]\nक्षेत्रीय या औद्योगिक कार्य के दौरान '${topicName}' का क्रियान्वयन करते समय कौन-सी प्रक्रिया अपनाई जाएगी?`;
-      } else if (variantId === 5) { // V5: Matching
-        questionText = `[प्रश्न #${qNum} • स्तंभ मिलान]\n${topicName} के घटकों (स्तंभ I) का उनके अनुप्रयोग (स्तंभ II) से सही मिलान पहचानें:`;
-      } else { // V6: Assertion & Reason
-        questionText = `[प्रश्न #${qNum} • अभिकथन व तर्क]\nअभिकथन (A): '${topicName}' इस संकाय का सबसे महत्वपूर्ण आधार है।\nकारण (R): यह परीक्षा मानकों और शून्य-त्रुटि निष्पादन की गारंटी देता है।`;
-        opts[0] = '(A) और (R) दोनों सत्य हैं तथा (R), (A) की सही व्याख्या है';
-        opts[1] = '(A) और (R) दोनों सत्य हैं परन्तु (R) सही व्याख्या नहीं है';
-        opts[2] = '(A) सत्य है परन्तु (R) असत्य है';
-        opts[3] = '(A) असत्य है परन्तु (R) सत्य है';
-      }
-
-      // Easy and Memorable Desi Tricks (No fake jargon)
-      const easyTricks = [
-        `याद रखें: '${topicName}' का मुख्य नियम हमेशा सीधे फॉर्मूले या मूल परिभाषा से जुड़ता है।`,
-        `शॉर्टकट ट्रिक: '${topicName}' में जब भी प्रश्न आए, मुख्य घटक को पहचानकर सही विकल्प चुनें।`,
-        `आसान तरीका: '${topicName}' के आंकड़े और नियम स्थिर होते हैं, इन्हें सीधा याद रखें।`
-      ];
-      const desiTrick = easyTricks[qIdx % easyTricks.length];
-      const refBook = STREAM_BOOKS[streamId] || 'एनसीईआरटी एवं अधिकृत राष्ट्रीय बोर्ड मानक पाठ्यक्रम';
-
-      return {
-        unit: topicName,
-        trick: desiTrick,
-        refBook: refBook,
-        qNum: qNum,
-        correctOpt: correctOpt,
-        questionText: questionText,
-        optA: opts[0], optB: opts[1], optC: opts[2], optD: opts[3]
-      };
-    }
-
-    function loadQuestion(index) {
-      // Strict Lock after Question 30 if Pass is not active
-      if (index >= 30 && !paidPassActive) {
-        document.getElementById('trialPaywallModal').classList.remove('hidden');
-        return;
-      }
-
-      currentQuestionIndex = index;
-      visitedQuestions[index] = true;
-
-      document.getElementById('currentQNumBadge').innerText = (index + 1 < 10 ? '0' : '') + (index + 1);
-      document.getElementById('currentQNumText').innerText = `प्रश्न ${index + 1} / 100`;
-
-      const expectedSec = index < 50 ? 'A' : 'B';
-      if (expectedSec !== currentSection) switchSection(expectedSec);
-
-      setVariant(selectedVariant);
-      updatePartUI(index);
-      restoreSelectedOption(index);
-      renderOMRPalette();
-      updateCounters();
-    }
-
-    function setVariant(varId, btnElem) {
-      selectedVariant = varId;
-      document.querySelectorAll('.variant-btn').forEach((b, i) => {
-        b.className = (i + 1 === varId) ? 'variant-btn px-2 py-1 rounded bg-indigo-600 text-white font-bold cursor-pointer' : 'variant-btn px-2 py-1 rounded text-slate-600 hover:bg-slate-200 font-medium cursor-pointer';
-      });
-
-      const data = getQuestionRecord(currentStream.id, currentQuestionIndex, varId);
-      document.getElementById('questionText').innerText = data.questionText;
-      document.getElementById('optText_A').innerText = data.optA;
-      document.getElementById('optText_B').innerText = data.optB;
-      document.getElementById('optText_C').innerText = data.optC;
-      document.getElementById('optText_D').innerText = data.optD;
-      document.getElementById('desiTrickText').innerText = data.trick;
-      document.getElementById('refBookName').innerText = data.refBook;
-      document.getElementById('currentUnitTag').innerText = `Topic: ${data.unit}`;
-    }
-
-    function recordOption(val) {
-      selectedAnswers[currentQuestionIndex] = val;
-      renderOptionCardsHighlight(val);
-      renderOMRPalette();
-      updateCounters();
-    }
-
-    function restoreSelectedOption(index) {
-      renderOptionCardsHighlight(selectedAnswers[index]);
-    }
-
-    function renderOptionCardsHighlight(val) {
-      const cards = document.querySelectorAll('.option-card');
-      const letters = ['A', 'B', 'C', 'D'];
-      cards.forEach((card, i) => {
-        if (letters[i] === val) {
-          card.className = 'option-card flex items-center gap-4 p-4 rounded-xl border-2 border-indigo-600 bg-indigo-50/50 ring-1 ring-indigo-500 cursor-pointer transition shadow-xs select-none';
-        } else {
-          card.className = 'option-card flex items-center gap-4 p-4 rounded-xl border-2 border-slate-200 bg-white hover:border-indigo-400 hover:bg-indigo-50/30 cursor-pointer transition shadow-xs select-none';
-        }
-      });
-    }
-
-    function clearSelectedOption() {
-      selectedAnswers[currentQuestionIndex] = null;
-      renderOptionCardsHighlight(null);
-      renderOMRPalette();
-      updateCounters();
-    }
-
-    function toggleMarkReview() {
-      reviewedQuestions[currentQuestionIndex] = !reviewedQuestions[currentQuestionIndex];
-      renderOMRPalette();
-      updateCounters();
-    }
-
-    function navigateQuestion(delta) {
-      const nxt = currentQuestionIndex + delta;
-      if (nxt >= 0 && nxt < 100) loadQuestion(nxt);
-    }
-
-    function saveAndNextQuestion() {
-      if (currentQuestionIndex < 99) loadQuestion(currentQuestionIndex + 1);
-      else alert("आप अंतिम प्रश्न (100 / 100) पर हैं। कृपया फाइनल सबमिट करें।");
-    }
-
-    function switchSection(sec) {
-      currentSection = sec;
-      const tabA = document.getElementById('tabSecA');
-      const tabB = document.getElementById('tabSecB');
-      if (sec === 'A') {
-        tabA.className = 'flex-1 py-2 text-center border-b-2 border-indigo-600 text-indigo-600 bg-indigo-50/40 font-bold cursor-pointer';
-        tabB.className = 'flex-1 py-2 text-center text-slate-500 hover:text-slate-800 border-b-2 border-transparent font-medium cursor-pointer';
-      } else {
-        tabB.className = 'flex-1 py-2 text-center border-b-2 border-indigo-600 text-indigo-600 bg-indigo-50/40 font-bold cursor-pointer';
-        tabA.className = 'flex-1 py-2 text-center text-slate-500 hover:text-slate-800 border-b-2 border-transparent font-medium cursor-pointer';
-      }
-      renderOMRPalette();
-    }
-
-    function renderOMRPalette() {
-      const grid = document.getElementById('omrGrid');
-      if(!grid) return;
-      grid.innerHTML = '';
-      const start = (currentSection === 'A') ? 0 : 50;
-      const end = (currentSection === 'A') ? 50 : 100;
-
-      for (let i = start; i < end; i++) {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        const isCurrent = (i === currentQuestionIndex);
-        const hasAns = (selectedAnswers[i] !== null);
-        const isRev = reviewedQuestions[i];
-        const isVis = visitedQuestions[i];
-        const isLocked = (!paidPassActive && i >= 30);
-
-        let col = 'bg-slate-100 text-slate-700 hover:bg-slate-200 border-slate-300';
-        if (hasAns) col = 'bg-emerald-500 text-white font-bold border-emerald-600';
-        else if (isRev) col = 'bg-purple-500 text-white font-bold border-purple-600';
-        else if (isVis) col = 'bg-rose-500 text-white font-bold border-rose-600';
-        if (isLocked) col = 'bg-slate-200 text-slate-400 border-slate-300 cursor-not-allowed';
-
-        const ring = isCurrent ? 'ring-2 ring-indigo-600 font-extrabold scale-105' : '';
-        btn.className = `h-8 rounded-md text-xs flex items-center justify-center border transition cursor-pointer ${col} ${ring}`;
-        btn.innerText = isLocked ? `${i + 1} 🔒` : (i + 1);
-        btn.onclick = () => loadQuestion(i);
-        grid.appendChild(btn);
-      }
-    }
-
-    function updateCounters() {
-      let ans = 0, unans = 0, rev = 0, notVis = 0;
-      for (let i = 0; i < 100; i++) {
-        if (selectedAnswers[i] !== null) ans++;
-        else if (reviewedQuestions[i]) rev++;
-        else if (visitedQuestions[i]) unans++;
-        else notVis++;
-      }
-      document.getElementById('countAnswered').innerText = ans;
-      document.getElementById('countUnanswered').innerText = unans;
-      document.getElementById('countReview').innerText = rev;
-      document.getElementById('countNotVisited').innerText = notVis;
-    }
-
-    function submitTestDialog() {
-      const answered = selectedAnswers.filter(a => a !== null).length;
-      if (!confirm(`क्या आप परीक्षा सबमिट करना चाहते हैं?\nहल किए गए प्रश्न: ${answered} / 100`)) return;
-      
-      let c = 0, w = 0, s = 0;
-      const items = [];
-      const ps = getParts(currentStream);
-
-      for (let i = 0; i < 100; i++) {
-        const a = selectedAnswers[i], pi = Math.floor(i / 25), rec = getQuestionRecord(currentStream.id, i, selectedVariant);
-        let status;
-        if (a === null) { s++; status = 'unattempted'; }
-        else if (rec.correctOpt === a) { c++; status = 'correct'; }
-        else { w++; status = 'incorrect'; }
-        items.push({ num: i + 1, question: rec.questionText, options: [rec.optA, rec.optB, rec.optC, rec.optD], studentAns: a, correctAns: rec.correctOpt, status, trick: rec.trick, part: ps[pi].hi });
-      }
-
-      const result = { stream: currentStream.name, streamName: currentStream.name, total: 100, correct: c, wrong: w, skipped: s, score: c * 4 - w * 1, max: 400, accuracy: (c + w) ? (c / (c + w)) * 100 : 0, timeTaken: '45m 00s', items, at: new Date().toISOString() };
-      
-      try { localStorage.setItem('edupro_last_result', JSON.stringify(result)); } catch (e) {}
-      window.location.href = 'test-result.html';
-    }
-  </script>
-<script src="utils.js"></script>
-</body>
-</html>
+$('lang').onchange=()=>{ls.set('edupro_lang',$('lang').value);if(S.qs.length)render();};
+(async()=>{
+  const u=await EDU.require();if(!u)return;
+  $('lang').value=ls.get('edupro_lang')||'both';
+  S.stream=String(qs0.get('stream')||ls.get('edupro_stream')||'1');
+  if(!STREAMS.some(s=>String(s[0])===S.stream))S.stream='1';
+  S.set=Math.max(1,parseInt(qs0.get('set')||ls.get('edupro_set_'+S.stream)||'1',10)||1);
+  load();
+})();
+</script>
+</body></html>
