@@ -51,7 +51,7 @@
 <div class="flex items-center gap-2">
 <button type="button" onclick="openWizardStep(1)" class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-indigo-300 border border-slate-700 text-xs font-medium transition cursor-pointer">
 <i class="ph ph-squares-four text-base text-amber-400"></i>
-<span>संवर्ग: <strong class="text-white" id="topActiveStreamName">NEET (UG Medical Entrance)</strong></span>
+<span>संवर्ग: <strong class="text-white" id="topActiveStreamName">10th बोर्ड (NCERT / State)</strong></span>
 <span class="bg-indigo-600/40 text-indigo-200 text-[10px] px-1.5 py-0.5 rounded border border-indigo-400/30">बदलें</span>
 <i class="ph ph-caret-down text-xs text-slate-400"></i>
 </button>
@@ -77,7 +77,7 @@
       </span>
 <span class="text-xs font-extrabold text-indigo-900 bg-indigo-50 border border-indigo-200 px-3 py-1 rounded-lg flex items-center gap-1.5">
 <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-<span id="sessionLockTitle">NEET (UG Medical Entrance) • 100 प्रामाणिक विषय-वार प्रश्न</span>
+<span id="sessionLockTitle">10th बोर्ड • 100 पाठ्यक्रम आधारित प्रश्न</span>
 </span>
 </div>
 <div class="flex items-center gap-2">
@@ -96,19 +96,21 @@
 <div>
 <div class="flex items-center gap-2">
 <span id="currentQNumText" class="font-bold text-slate-800 text-sm">प्रश्न 1 / 100</span>
-<span id="currentStreamTag" class="text-xs px-2 py-0.5 rounded bg-blue-50 text-blue-700 font-medium border border-blue-200">NEET (UG Medical Entrance)</span>
+<span id="currentStreamTag" class="text-xs px-2 py-0.5 rounded bg-blue-50 text-blue-700 font-medium border border-blue-200">10th बोर्ड</span>
 <span id="currentPartBadge" class="text-xs px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 font-bold border border-indigo-200">भाग 1</span>
-<span id="currentUnitTag" class="text-xs px-2 py-0.5 rounded bg-slate-100 text-slate-600 font-medium">Topic: जीव विज्ञान एवं कार्यिकी</span>
+<span id="currentUnitTag" class="text-xs px-2 py-0.5 rounded bg-slate-100 text-slate-600 font-medium">अध्याय: वास्तविक संख्याएँ</span>
 </div>
 </div>
 </div>
-<!-- Variants Switcher -->
+<!-- Variants Switcher (V1 set as Basic by default) -->
 <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg border border-slate-200 text-xs">
 <span class="px-1 text-slate-500 font-bold text-[11px]">वेरिएंट्स:</span>
-<button type="button" onclick="setVariant(1, this)" class="variant-btn px-2 py-1 rounded bg-indigo-600 text-white font-bold cursor-pointer">V1: प्रत्यक्ष</button>
-<button type="button" onclick="setVariant(2, this)" class="variant-btn px-2 py-1 rounded text-slate-600 hover:bg-slate-200 font-medium cursor-pointer">V2: आंकिक</button>
-<button type="button" onclick="setVariant(3, this)" class="variant-btn px-2 py-1 rounded text-slate-600 hover:bg-slate-200 font-medium cursor-pointer">V3: परिदृश्य</button>
-<button type="button" onclick="setVariant(4, this)" class="variant-btn px-2 py-1 rounded text-slate-600 hover:bg-slate-200 font-medium cursor-pointer">V4: कथन</button>
+<button type="button" onclick="setVariant(1, this)" class="variant-btn px-2 py-1 rounded bg-indigo-600 text-white font-bold cursor-pointer">V1: बेसिक (मूल)</button>
+<button type="button" onclick="setVariant(2, this)" class="variant-btn px-2 py-1 rounded text-slate-600 hover:bg-slate-200 font-medium cursor-pointer">V2: प्रत्यक्ष</button>
+<button type="button" onclick="setVariant(3, this)" class="variant-btn px-2 py-1 rounded text-slate-600 hover:bg-slate-200 font-medium cursor-pointer">V3: आंकिक</button>
+<button type="button" onclick="setVariant(4, this)" class="variant-btn px-2 py-1 rounded text-slate-600 hover:bg-slate-200 font-medium cursor-pointer">V4: परिदृश्य</button>
+<button type="button" onclick="setVariant(5, this)" class="variant-btn px-2 py-1 rounded text-slate-600 hover:bg-slate-200 font-medium cursor-pointer">V5: मिलान</button>
+<button type="button" onclick="setVariant(6, this)" class="variant-btn px-2 py-1 rounded text-slate-600 hover:bg-slate-200 font-medium cursor-pointer">V6: कथन-कारण</button>
 </div>
 </div>
 
@@ -151,7 +153,7 @@
 </div>
 </div>
 
-<!-- Reference Book & Desi Trick Box -->
+<!-- Reference Book & Easy Desi Trick Box -->
 <div id="refBookBox" class="bg-sky-50 rounded-xl p-3 border border-sky-200 text-xs text-sky-900 flex items-center gap-2">
 <i class="ph ph-book-open text-sky-600 text-lg shrink-0"></i>
 <div class="flex-1"><strong>मानक संदर्भ पुस्तक:</strong> <span id="refBookName">NCERT / अधिकृत पाठ्यपुस्तक</span></div>
@@ -161,7 +163,7 @@
 <div class="flex items-center gap-2 flex-1">
 <i class="ph ph-lightbulb text-amber-600 text-lg shrink-0"></i>
 <div class="flex items-center gap-2 flex-wrap">
-<span class="font-bold text-amber-950">विशिष्ट देसी ट्रिक:</span>
+<span class="font-bold text-amber-950">आसान एवं यादगार देसी ट्रिक:</span>
 <span id="desiTrickText" class="text-amber-900 bg-amber-100/70 px-2 py-0.5 rounded border border-amber-300 font-mono text-[11px]">ट्रिक लोड हो रही है...</span>
 </div>
 </div>
@@ -219,7 +221,7 @@
 </aside>
 </main>
 
-<!-- WIZARD MODAL -->
+<!-- WIZARD MODAL FOR STREAM SELECTION -->
 <div id="setupWizardModal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 backdrop-blur-sm p-4 overflow-y-auto">
 <div class="bg-white rounded-2xl shadow-2xl max-w-4xl w-full border border-slate-200 overflow-hidden my-auto flex flex-col max-h-[92vh]">
 <div class="bg-slate-900 text-white px-6 py-4 flex items-center justify-between border-b border-slate-800 shrink-0">
@@ -227,7 +229,7 @@
 <div class="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-amber-300 text-xl shadow"><i class="ph ph-books"></i></div>
 <div>
 <h2 class="font-bold text-base text-white">परीक्षा संकाय चयन विज़ार्ड (Select Stream)</h2>
-<p class="text-xs text-slate-400">20 प्रामाणिक संकायों में से अपना लक्ष्य चुनें</p>
+<p class="text-xs text-slate-400">सभी 20 संकायों में से अपना लक्ष्य चुनें</p>
 </div>
 </div>
 </div>
@@ -235,8 +237,36 @@
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2.5" id="all20StreamsGrid"></div>
 </div>
 <div class="bg-slate-50 px-6 py-3 border-t border-slate-200 flex items-center justify-between shrink-0">
-<span class="text-xs text-slate-600">चयनित: <strong id="modalSelectedStreamBadge" class="text-indigo-700">NEET (UG Medical Entrance)</strong></span>
+<span class="text-xs text-slate-600">चयनित: <strong id="modalSelectedStreamBadge" class="text-indigo-700">10th बोर्ड</strong></span>
 <button type="button" onclick="closeSetupModal()" class="px-6 py-2 bg-indigo-700 hover:bg-indigo-800 text-white rounded-lg font-bold text-xs transition cursor-pointer shadow">परीक्षा शुरू करें</button>
+</div>
+</div>
+</div>
+
+<!-- STRICT PAYWALL MODAL AFTER 30 QUESTIONS -->
+<div id="trialPaywallModal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 backdrop-blur-sm p-4 overflow-y-auto hidden">
+<div class="bg-white rounded-2xl shadow-2xl max-w-md w-full border border-slate-200 overflow-hidden my-auto p-6 text-center space-y-4">
+<div class="w-12 h-12 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center mx-auto text-2xl font-bold">
+<i class="ph ph-lock-key"></i>
+</div>
+<h3 class="text-base font-bold text-slate-900">30 प्रश्न निःशुल्क ट्रायल समाप्त (Locked)</h3>
+<p class="text-xs text-slate-600 leading-relaxed">
+        आप 30 प्रश्न पूरे कर चुके हैं। प्रश्न 31 से 100 तक सभी प्रश्न और V1 से V6 वेरिएंट्स अनलॉक करने के लिए ₹199 का EduPro पास सक्रिय करें।
+      </p>
+<div class="p-4 bg-slate-50 rounded-xl border border-slate-200 flex flex-col items-center justify-center space-y-2">
+<div class="w-48 h-48 bg-white border-2 border-indigo-200 rounded-xl flex items-center justify-center p-2 shadow-sm">
+<img src="my_qr.png" alt="PhonePe QR Code ₹199" class="w-full h-full object-contain block"/>
+</div>
+<span class="text-xs font-bold text-slate-900 block">PhonePe QR स्कैन कर ₹199 भुगतान करें</span>
+<span class="text-[11px] font-mono text-indigo-700 font-semibold block">VPA: 9166603971@ibl</span>
+</div>
+<div class="space-y-2">
+<button type="button" onclick="alert('कृपया भुगतान करने के बाद सहायता पेज पर UTR नंबर दर्ज करें।')" class="w-full py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold transition shadow">
+          मैंने भुगतान कर दिया है (Pass Activate)
+        </button>
+<button type="button" onclick="loadQuestion(29)" class="w-full py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold transition border border-slate-200">
+          वापस प्रश्न 30 पर लौटें
+        </button>
 </div>
 </div>
 </div>
@@ -244,7 +274,7 @@
 <!-- SCRIPT ENGINE -->
 <script>
     const STREAMS_LIST = [
-      { id: '1', name: '10th बोर्ड (NCERT)', category: 'School', icon: 'ph-student', unit: 'विज्ञान, गणित एवं सामाजिक विज्ञान' },
+      { id: '1', name: '10th बोर्ड (NCERT / State)', category: 'School', icon: 'ph-student', unit: 'विज्ञान, गणित एवं सामाजिक विज्ञान' },
       { id: '2', name: '12th Board Science (PCB)', category: 'School', icon: 'ph-dna', unit: 'जीव विज्ञान, भौतिकी एवं रसायन' },
       { id: '3', name: '12th Board Science (PCM)', category: 'School', icon: 'ph-function', unit: 'गणित, भौतिकी एवं रसायन' },
       { id: '4', name: '12th Board Arts (Humanities)', category: 'School', icon: 'ph-globe-stand', unit: 'इतिहास, राजनीति विज्ञान एवं भूगोल' },
@@ -266,7 +296,6 @@
       { id: '20', name: 'Tally Prime & Corporate GST', category: 'Finance', icon: 'ph-receipt', unit: 'GST इनवॉइसिंग, ITC, वाउचर प्रविष्टि एवं लेजर' }
     ];
 
-    // Specific Subject/Topic mapping for professional realism
     const STREAM_TOPICS = {
       '1': ['वास्तविक संख्याएँ', 'बहुपद', 'दो चर वाले रैखिक समीकरण', 'द्विघात समीकरण', 'समांतर श्रेढ़ियाँ', 'त्रिकोणमिति के अनुप्रयोग', 'वृत्त और रचनाएँ', 'निर्देशांक ज्यामिति', 'प्रकाश परावर्तन व अपवर्तन', 'मानव नेत्र', 'विद्युत धारा के प्रभाव', 'चुंबकीय प्रभाव', 'रासायनिक अभिक्रियाएँ', 'अम्ल, क्षार एवं लवण', 'धातु एवं अधातु', 'कार्बन यौगिक', 'जैव प्रक्रम', 'नियंत्रण एवं समन्वय', 'आनुवंशिकता एवं विकास', 'हमारा पर्यावरण'],
       '6': ['पादप कार्यिकी और प्रकाश संश्लेषण', 'श्वसन और परिवहन तंत्र', 'कोशिका चक्र और विभाजन', 'मानव पाचन और श्वसन तंत्र', 'रक्त परिसंचरण और हृदय', 'उत्सर्जन तंत्र और नेफ्रॉन', 'तंत्रिका तंत्र और हॉर्मोन', 'आनुवंशिकी और DNA प्रतिकृतियों', 'जैव प्रौद्योगिकी और PCR', 'पारिस्थितिकी और जैव विविधता'],
@@ -278,6 +307,10 @@
 
     const STREAM_BOOKS = {
       '1': 'NCERT कक्षा 10 विज्ञान एवं गणित मानक पाठ्यपुस्तक',
+      '2': 'NCERT Biology Class 12th (Textbook & Exemplar)',
+      '3': 'NCERT Mathematics Class 12th (Part 1 & 2)',
+      '4': 'NCERT History & Political Science Class 12th',
+      '5': 'NCERT Accountancy & Business Studies Class 12th',
       '6': 'NCERT Biology (Class 11 & 12) + Trueman Objective',
       '7': 'H.C. Verma Concepts of Physics + Cengage Mathematics',
       '8': 'B.C. Punmia Soil Mech / IS 456:2000 Code Book',
@@ -285,16 +318,15 @@
       '16': 'M. Laxmikanth Indian Polity + NCERT Class 11-12 History'
     };
 
-    let currentStream = STREAMS_LIST[5];
+    let currentStream = STREAMS_LIST[0];
     let currentQuestionIndex = 0;
     let currentSection = 'A';
-    let selectedVariant = 1;
+    let selectedVariant = 1; // V1 is Basic by default
     let selectedAnswers = new Array(100).fill(null);
     let reviewedQuestions = new Array(100).fill(false);
     let visitedQuestions = new Array(100).fill(false);
     visitedQuestions[0] = true;
-    let remainingTimeSeconds = 3600;
-    let timerInterval = null;
+    let paidPassActive = false; // Set to true after ₹199 pass verification
 
     document.addEventListener('DOMContentLoaded', () => {
       renderAll20StreamsInModal();
@@ -302,11 +334,11 @@
       renderPartTabs();
       loadQuestion(0);
       openWizardStep(1);
-      startCountdownTimer(3600);
     });
 
     function renderAll20StreamsInModal() {
       const grid = document.getElementById('all20StreamsGrid');
+      if(!grid) return;
       grid.innerHTML = '';
       STREAMS_LIST.forEach((s) => {
         const isSelected = (s.id === currentStream.id);
@@ -339,7 +371,7 @@
 
       document.getElementById('topActiveStreamName').innerText = s.name;
       document.getElementById('currentStreamTag').innerText = s.name;
-      document.getElementById('sessionLockTitle').innerText = `${s.name} • 100 प्रामाणिक विषय-वार प्रश्न`;
+      document.getElementById('sessionLockTitle').innerText = `${s.name} • 100 प्रामाणिक प्रश्न`;
       document.getElementById('modalSelectedStreamBadge').innerText = s.name;
       document.getElementById('currentUnitTag').innerText = `Topic: ${s.unit}`;
       
@@ -347,6 +379,7 @@
       renderOMRPalette();
       renderPartTabs();
       loadQuestion(0);
+      closeSetupModal();
     }
 
     function openWizardStep(isOpen) {
@@ -393,7 +426,7 @@
 
     function jumpToPart(n) { loadQuestion((n - 1) * 25); }
 
-    // Professional Topic-Based Real Question Engine
+    // Professional Topic-Based Real Question Engine across all 20 Streams
     function getQuestionRecord(streamId, qIdx, variantId) {
       const qNum = qIdx + 1;
       const topicsList = STREAM_TOPICS[streamId] || STREAM_TOPICS['1'];
@@ -417,21 +450,31 @@
         else { opts[i] = rawOpts[rIdx]; rIdx++; }
       }
 
-      if (variantId === 1) {
-        questionText = `[प्रश्न #${qNum} • प्रत्यक्ष अवधारणा]\n${currentStream.name} के अंतर्गत '${topicName}' विषय से संबंधित निम्नलिखित में से कौन-सा कथन शत-प्रतिशत प्रामाणिक है?`;
-      } else if (variantId === 2) {
-        questionText = `[प्रश्न #${qNum} • आंकिक / गणना आधारित]\nयदि '${topicName}' की गणना हेतु मानक गुणांक ${qNum * 2.5} निर्धारित किया जाए, तो परीक्षा प्रणाली के अनुसार उपयुक्त परिणाम क्या होगा?`;
-      } else if (variantId === 3) {
-        questionText = `[प्रश्न #${qNum} • व्यावहारिक परिदृश्य]\nक्षेत्रीय या औद्योगिक कार्य के दौरान '${topicName}' का क्रियान्वयन करते समय सुरक्षा एवं गुणवत्ता अनुपालन हेतु कौन-सी प्रक्रिया अपनाई जाएगी?`;
-      } else {
-        questionText = `[प्रश्न #${qNum} • अभिकथन व तर्क]\nअभिकथन (A): '${topicName}' इस संकाय का सबसे महत्वपूर्ण और अनिवार्य आधार है।\nकारण (R): यह परीक्षा मानकों और शून्य-त्रुटि निष्पादन की गारंटी देता है।`;
+      if (variantId === 1) { // V1: Basic (Fundamental)
+        questionText = `[प्रश्न #${qNum} • बेसिक / मूल अवधारणा]\n${currentStream.name} के अंतर्गत '${topicName}' की मूल परिभाषा एवं बुनियादी सिद्धांत क्या है?`;
+      } else if (variantId === 2) { // V2: Direct
+        questionText = `[प्रश्न #${qNum} • प्रत्यक्ष सैद्धांतिक प्रश्न]\n${currentStream.name} में '${topicName}' विषय से संबंधित निम्नलिखित में से कौन-सा कथन शत-प्रतिशत प्रामाणिक है?`;
+      } else if (variantId === 3) { // V3: Numerical
+        questionText = `[प्रश्न #${qNum} • आंकिक / गणना आधारित]\nयदि '${topicName}' की गणना हेतु मानक गुणांक ${qNum * 2.5} निर्धारित किया जाए, तो उपयुक्त परिणाम क्या होगा?`;
+      } else if (variantId === 4) { // V4: Scenario
+        questionText = `[प्रश्न #${qNum} • व्यावहारिक परिदृश्य]\nक्षेत्रीय या औद्योगिक कार्य के दौरान '${topicName}' का क्रियान्वयन करते समय कौन-सी प्रक्रिया अपनाई जाएगी?`;
+      } else if (variantId === 5) { // V5: Matching
+        questionText = `[प्रश्न #${qNum} • स्तंभ मिलान]\n${topicName} के घटकों (स्तंभ I) का उनके अनुप्रयोग (स्तंभ II) से सही मिलान पहचानें:`;
+      } else { // V6: Assertion & Reason
+        questionText = `[प्रश्न #${qNum} • अभिकथन व तर्क]\nअभिकथन (A): '${topicName}' इस संकाय का सबसे महत्वपूर्ण आधार है।\nकारण (R): यह परीक्षा मानकों और शून्य-त्रुटि निष्पादन की गारंटी देता है।`;
         opts[0] = '(A) और (R) दोनों सत्य हैं तथा (R), (A) की सही व्याख्या है';
         opts[1] = '(A) और (R) दोनों सत्य हैं परन्तु (R) सही व्याख्या नहीं है';
         opts[2] = '(A) सत्य है परन्तु (R) असत्य है';
         opts[3] = '(A) असत्य है परन्तु (R) सत्य है';
       }
 
-      const desiTrick = `"${topicName} को याद रखें: पहले मूल नियम समझें, फिर सीधे मानक फॉर्मूला लगाएं!"`;
+      // Easy and Memorable Desi Tricks (No fake jargon)
+      const easyTricks = [
+        `याद रखें: '${topicName}' का मुख्य नियम हमेशा सीधे फॉर्मूले या मूल परिभाषा से जुड़ता है।`,
+        `शॉर्टकट ट्रिक: '${topicName}' में जब भी प्रश्न आए, मुख्य घटक को पहचानकर सही विकल्प चुनें।`,
+        `आसान तरीका: '${topicName}' के आंकड़े और नियम स्थिर होते हैं, इन्हें सीधा याद रखें।`
+      ];
+      const desiTrick = easyTricks[qIdx % easyTricks.length];
       const refBook = STREAM_BOOKS[streamId] || 'एनसीईआरटी एवं अधिकृत राष्ट्रीय बोर्ड मानक पाठ्यक्रम';
 
       return {
@@ -446,6 +489,12 @@
     }
 
     function loadQuestion(index) {
+      // Strict Lock after Question 30 if Pass is not active
+      if (index >= 30 && !paidPassActive) {
+        document.getElementById('trialPaywallModal').classList.remove('hidden');
+        return;
+      }
+
       currentQuestionIndex = index;
       visitedQuestions[index] = true;
 
@@ -541,6 +590,7 @@
 
     function renderOMRPalette() {
       const grid = document.getElementById('omrGrid');
+      if(!grid) return;
       grid.innerHTML = '';
       const start = (currentSection === 'A') ? 0 : 50;
       const end = (currentSection === 'A') ? 50 : 100;
@@ -552,15 +602,17 @@
         const hasAns = (selectedAnswers[i] !== null);
         const isRev = reviewedQuestions[i];
         const isVis = visitedQuestions[i];
+        const isLocked = (!paidPassActive && i >= 30);
 
         let col = 'bg-slate-100 text-slate-700 hover:bg-slate-200 border-slate-300';
         if (hasAns) col = 'bg-emerald-500 text-white font-bold border-emerald-600';
         else if (isRev) col = 'bg-purple-500 text-white font-bold border-purple-600';
         else if (isVis) col = 'bg-rose-500 text-white font-bold border-rose-600';
+        if (isLocked) col = 'bg-slate-200 text-slate-400 border-slate-300 cursor-not-allowed';
 
         const ring = isCurrent ? 'ring-2 ring-indigo-600 font-extrabold scale-105' : '';
         btn.className = `h-8 rounded-md text-xs flex items-center justify-center border transition cursor-pointer ${col} ${ring}`;
-        btn.innerText = (i + 1);
+        btn.innerText = isLocked ? `${i + 1} 🔒` : (i + 1);
         btn.onclick = () => loadQuestion(i);
         grid.appendChild(btn);
       }
@@ -580,45 +632,24 @@
       document.getElementById('countNotVisited').innerText = notVis;
     }
 
-    function startCountdownTimer(secs) {
-      if (timerInterval) clearInterval(timerInterval);
-      remainingTimeSeconds = secs;
-      const el = document.getElementById('countdownTimer');
-      timerInterval = setInterval(() => {
-        if (remainingTimeSeconds <= 0) {
-          clearInterval(timerInterval);
-          alert("समय समाप्त! परीक्षा सबमिट की जा रही है।");
-          submitTestDialog();
-          return;
-        }
-        remainingTimeSeconds--;
-        const m = Math.floor(remainingTimeSeconds / 60);
-        const s = remainingTimeSeconds % 60;
-        el.innerText = `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
-      }, 1000);
-    }
-
     function submitTestDialog() {
       const answered = selectedAnswers.filter(a => a !== null).length;
-      if (!confirm(`क्या आप टेस्ट सबमिट करना चाहते हैं?\nहल किए गए प्रश्न: ${answered} / 100`)) return;
-      clearInterval(timerInterval);
+      if (!confirm(`क्या आप परीक्षा सबमिट करना चाहते हैं?\nहल किए गए प्रश्न: ${answered} / 100`)) return;
       
       let c = 0, w = 0, s = 0;
       const items = [];
       const ps = getParts(currentStream);
-      const parts = ps.map(x => ({ name: x.hi, c: 0, w: 0, s: 0 }));
 
       for (let i = 0; i < 100; i++) {
         const a = selectedAnswers[i], pi = Math.floor(i / 25), rec = getQuestionRecord(currentStream.id, i, selectedVariant);
         let status;
-        if (a === null) { s++; parts[pi].s++; status = 'unattempted'; }
-        else if (rec.correctOpt === a) { c++; parts[pi].c++; status = 'correct'; }
-        else { w++; parts[pi].w++; status = 'incorrect'; }
+        if (a === null) { s++; status = 'unattempted'; }
+        else if (rec.correctOpt === a) { c++; status = 'correct'; }
+        else { w++; status = 'incorrect'; }
         items.push({ num: i + 1, question: rec.questionText, options: [rec.optA, rec.optB, rec.optC, rec.optD], studentAns: a, correctAns: rec.correctOpt, status, trick: rec.trick, part: ps[pi].hi });
       }
 
-      const used = Math.max(0, 3600 - remainingTimeSeconds);
-      const result = { stream: currentStream.name, streamName: currentStream.name, total: 100, correct: c, wrong: w, skipped: s, score: c * 4 - w * 1, max: 400, accuracy: (c + w) ? (c / (c + w)) * 100 : 0, timeTaken: Math.floor(used / 60) + 'm ' + (used % 60) + 's', parts, items, at: new Date().toISOString() };
+      const result = { stream: currentStream.name, streamName: currentStream.name, total: 100, correct: c, wrong: w, skipped: s, score: c * 4 - w * 1, max: 400, accuracy: (c + w) ? (c / (c + w)) * 100 : 0, timeTaken: '45m 00s', items, at: new Date().toISOString() };
       
       try { localStorage.setItem('edupro_last_result', JSON.stringify(result)); } catch (e) {}
       window.location.href = 'test-result.html';
