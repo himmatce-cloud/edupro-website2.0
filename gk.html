@@ -1,975 +1,934 @@
 <!DOCTYPE html>
 
-<html lang="hi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"secondary-fixed":"#dce1ff","on-primary":"#ffffff","on-tertiary-container":"#cf8400","surface-container-highest":"#dae2fd","tertiary-fixed-dim":"#ffb95f","on-primary-fixed":"#001944","primary-fixed-dim":"#afc6ff","primary-container":"#0f2b5c","on-surface-variant":"#44464f","tertiary-container":"#422700","surface-container":"#eaedff","inverse-primary":"#afc6ff","inverse-on-surface":"#eef0ff","on-secondary-container":"#fffbff","background":"#faf8ff","surface-tint":"#465d91","error":"#ba1a1a","on-tertiary-fixed":"#2a1700","on-primary-fixed-variant":"#2d4678","surface-container-high":"#e2e7ff","inverse-surface":"#283044","tertiary":"#261400","on-secondary":"#ffffff","surface-dim":"#d2d9f4","on-secondary-fixed":"#001551","surface-variant":"#dae2fd","outline":"#747780","surface-container-lowest":"#ffffff","error-container":"#ffdad6","outline-variant":"#c4c6d0","secondary-fixed-dim":"#b7c4ff","primary-fixed":"#d9e2ff","on-tertiary":"#ffffff","surface-container-low":"#f2f3ff","on-error-container":"#93000a","on-background":"#131b2e","on-error":"#ffffff","secondary-container":"#4069f2","secondary":"#1d4ed8","on-tertiary-fixed-variant":"#653e00","primary":"#00163d","surface-bright":"#faf8ff","surface":"#faf8ff","tertiary-fixed":"#ffddb8","on-secondary-fixed-variant":"#0039b5","on-primary-container":"#7c94cb","on-surface":"#131b2e"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-sm":"0.5rem","space-xl":"2.5rem","space-xs":"0.25rem","margin":"2rem","margin-lg":"3rem","gutter-lg":"2rem","gutter":"1.5rem","space-lg":"1.5rem","gutter-sm":"1rem","space-md":"1rem","margin-sm":"1rem"},fontFamily:{"headline-lg":["Plus Jakarta Sans"],"body-md":["Inter"],"headline-lg-mobile":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"title-md":["Inter"],"label-sm":["Inter"],"body-sm":["Inter"],"display-lg":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"label-md":["Inter"],"title-lg":["Inter"],"body-lg":["Inter"],"numeric-table":["Inter"]},fontSize:{"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.015em","fontWeight":"700"}],"body-md":["14px",{"lineHeight":"22px","letterSpacing":"0em","fontWeight":"400"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"-0.005em","fontWeight":"600"}],"title-md":["16px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"600"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"18px","letterSpacing":"0.005em","fontWeight":"400"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"display-lg-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"700"}],"label-md":["13px",{"lineHeight":"18px","letterSpacing":"0.01em","fontWeight":"500"}],"title-lg":["18px",{"lineHeight":"26px","letterSpacing":"0em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"26px","letterSpacing":"0em","fontWeight":"400"}],"numeric-table":["14px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"500"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-[1440px] mx-auto px-margin-lg flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-md"><div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-on-primary font-headline-md font-bold"><span class="material-symbols-outlined text-[24px]">school</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight leading-none">EduPro Bharat</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mt-space-xs">National Academic Portal</span></div></div><div class="hidden xl:flex items-center flex-1 max-w-xs relative"><span class="material-symbols-outlined absolute left-space-md text-outline text-[18px]">search</span><input class="w-full pl-10 pr-space-md py-space-xs text-body-sm font-body-sm bg-surface-container-lowest rounded-lg border border-outline-variant text-on-surface placeholder:text-outline focus:outline-none focus:border-secondary" placeholder="सर्च करें: राज्य GK, समसामयिकी..." type="text"/></div><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-bold border-b-2 border-secondary pb-1"><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" data-path="daily-gk-current-affairs" href="#">दैनिक GK</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" data-path="home" href="#">होमपेज</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" data-path="test-series" href="#">टेस्ट सीरीज़</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" data-path="20-year-pyq" href="#">20-Year PYQ</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" data-path="student-dashboard" href="#">छात्र डैशबोर्ड</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" data-path="1-click-print" href="#">1-क्लिक प्रिंट</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" data-path="support" href="#">सहायता</a></nav><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-tertiary-fixed text-on-tertiary-fixed"><span class="material-symbols-outlined text-[16px] text-on-tertiary-container">verified</span><span class="font-label-sm text-label-sm font-bold">₹199 / माह All-Access Pass</span></div><div class="flex items-center gap-space-sm pl-space-sm border-l border-outline-variant"><div class="hidden sm:flex flex-col text-right"><span class="font-label-md text-label-md text-primary font-semibold leading-tight">Rajesh Kumar</span><span class="font-numeric-table text-body-sm text-on-surface-variant leading-none">#EDU-8921</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-20 bg-background"><div class="flex flex-col w-full">
-<!-- Top Academic Notification Banner -->
-<section class="w-full bg-primary text-on-primary">
-<div class="max-w-[1440px] mx-auto px-margin-lg py-space-sm flex flex-wrap items-center justify-between gap-gutter">
-<div class="flex items-center gap-space-sm">
-<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-secondary text-on-secondary">
-<span class="material-symbols-outlined text-[14px]">verified</span>
-</span>
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-fixed-dim">दैनिक आधिकारिक संस्करण #2025-EDUGK-084</span>
-<span class="hidden md:inline text-outline-variant">•</span>
-<span class="hidden md:inline font-body-sm text-body-sm text-surface-container-high">अद्यतन: आज प्रातः 06:00 बजे (UPSC, BPSC, RAS, UPPCS, MPPSC हेतु सत्यापित)</span>
+<html lang="hi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>EduPro National Academic Portal</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "error": "#ba1a1a", "outline-variant": "#c4c6d0", "on-secondary": "#ffffff", "on-primary": "#ffffff", "secondary-fixed": "#dce1ff", "background": "#faf8ff", "on-secondary-fixed-variant": "#0039b5", "surface-container-lowest": "#ffffff", "surface-container-highest": "#dae2fd", "on-tertiary-fixed-variant": "#653e00", "on-tertiary-container": "#cf8400", "outline": "#747780", "inverse-primary": "#afc6ff", "surface-bright": "#faf8ff", "tertiary": "#261400", "on-surface-variant": "#44464f", "secondary": "#1d4ed8", "surface-dim": "#d2d9f4", "surface-container": "#eaedff", "primary": "#00163d", "on-error-container": "#93000a", "surface-variant": "#dae2fd", "on-background": "#131b2e", "surface-container-high": "#e2e7ff", "tertiary-fixed-dim": "#ffb95f", "primary-fixed": "#d9e2ff", "on-error": "#ffffff", "on-tertiary": "#ffffff", "on-surface": "#131b2e", "error-container": "#ffdad6", "primary-fixed-dim": "#afc6ff", "tertiary-fixed": "#ffddb8", "on-secondary-fixed": "#001551", "on-primary-container": "#7c94cb", "secondary-fixed-dim": "#b7c4ff", "inverse-on-surface": "#eef0ff", "surface-container-low": "#f2f3ff", "inverse-surface": "#283044", "on-primary-fixed-variant": "#2d4678", "on-secondary-container": "#fffbff", "primary-container": "#0f2b5c", "on-tertiary-fixed": "#2a1700", "surface": "#faf8ff", "secondary-container": "#4069f2", "surface-tint": "#465d91", "on-primary-fixed": "#001944", "tertiary-container": "#422700" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-xl": "2.5rem", "gutter-lg": "2rem", "gutter": "1.5rem", "space-md": "1rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "margin-sm": "1rem", "space-xs": "0.25rem", "gutter-sm": "1rem", "margin": "2rem", "margin-lg": "3rem" }, "fontFamily": { "title-md": ["Inter"], "body-lg": ["Inter"], "title-lg": ["Inter"], "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "label-md": ["Inter"], "display-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-md": ["Inter"], "label-sm": ["Inter"], "numeric-table": ["Inter"], "body-sm": ["Inter"] }, "fontSize": { "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }], "title-lg": ["18px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }], "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "numeric-table": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "500" }], "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md border-b border-surface-container shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-[1440px] mx-auto px-margin-sm lg:px-margin-lg flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm group focus:outline-none" data-path="home" href="#"><div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center shadow-sm"><span class="font-headline-sm text-headline-sm text-on-primary font-bold tracking-tight">EP</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm leading-tight font-bold text-primary tracking-tight">EduPro</span><span class="font-label-sm text-label-sm uppercase text-outline tracking-wider">National Academic Portal</span></div></a></div><nav class="hidden xl:flex items-center gap-space-lg h-full" data-active-classes="text-secondary font-semibold border-b-2 border-secondary"><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-sm" data-path="home" href="#">होम</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-sm" data-path="test-series" href="#">टेस्ट सीरीज़</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-sm" data-path="pyq-and-tricks" href="#">20-Year PYQ व ट्रिक्स</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-sm" data-path="daily-gk-bulletin" href="#">दैनिक GK बुलेटिन</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-sm" data-path="dashboard" href="#">डैशबोर्ड</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-space-sm" data-path="help" href="#">सहायता</a></nav><div class="flex items-center gap-space-md"><a class="hidden sm:inline-flex items-center justify-center px-space-md py-space-xs rounded-lg border border-outline-variant bg-surface-container-lowest text-primary font-label-md text-label-md hover:bg-surface-container hover:text-on-surface transition-all shadow-[0_1px_3px_0_rgba(15,43,92,0.04)]" data-path="pdf-print-center" href="#">A4 PDF प्रिंट सेंटर</a><a class="inline-flex items-center justify-center px-space-md py-space-xs rounded-lg bg-secondary text-on-secondary font-label-md text-label-md shadow-sm hover:bg-primary transition-all" data-path="all-access-pass" href="#">₹199 All-Access (1 Month)</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background flex-1"><div class="flex flex-col w-full">
+<!-- Top Official Strip -->
+<div class="w-full bg-primary text-on-primary py-space-xs px-margin-sm lg:px-margin-lg shadow-sm">
+<div class="max-w-[1440px] mx-auto flex flex-wrap items-center justify-between gap-space-sm font-label-sm text-label-sm">
+<div class="flex items-center gap-space-md flex-wrap">
+<span class="inline-flex items-center gap-1.5 px-space-xs py-0.5 rounded bg-surface-container-high/20 font-semibold text-primary-fixed">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container animate-pulse"></span>
+          दैनिक आधिकारिक बुलेटिन संस्करण 2026-27 #2026-EDUGK-084
+        </span>
+<span class="text-outline-variant font-normal">|</span>
+<span class="text-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> अद्यतन प्रातः 06:00 बजे IST (UPSC, BPSC, RAS, UPPCS, MPPSC)
+        </span>
 </div>
 <div class="flex items-center gap-space-md">
-<span class="inline-flex items-center gap-space-xs font-label-sm text-label-sm text-tertiary-fixed font-semibold">
-<span class="material-symbols-outlined text-[15px] text-tertiary-fixed-dim">lock</span>
-          256-Bit SSL एन्क्रिप्टेड सुरक्षित रिपॉजिटरी
+<span class="inline-flex items-center gap-1 text-primary-fixed bg-surface-container-high/10 px-space-xs py-0.5 rounded">
+<span class="material-symbols-outlined text-[13px] text-tertiary-fixed">verified_user</span> 256-Bit SSL Encrypted
         </span>
-<span class="hidden sm:inline font-numeric-table text-body-sm text-surface-variant/80">आईडी: #EDU-8921</span>
+<span class="text-outline-variant font-normal">|</span>
+<span class="text-surface-container-highest font-mono font-medium">Candidate ID: <b data-edu-id>लॉगिन करें</b></span>
 </div>
 </div>
-</section>
-<!-- Editorial Master Header Section -->
-<section class="w-full bg-surface-container-lowest shadow-sm">
-<div class="max-w-[1440px] mx-auto px-margin-lg py-margin">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
-<div class="lg:col-span-8 flex flex-col space-y-space-sm">
-<div class="flex flex-wrap items-center gap-space-sm">
-<span class="px-space-sm py-space-xs rounded bg-surface-container-high text-primary font-label-sm text-label-sm font-bold uppercase tracking-wider">
-              अखिल भारतीय सामान्य ज्ञान ग्रिड
-            </span>
-<span class="px-space-sm py-space-xs rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">
-              सत्र: मार्च 2025
-            </span>
-<span class="inline-flex items-center gap-space-xs text-secondary font-label-sm text-label-sm">
-<span class="material-symbols-outlined text-[16px]">sync</span> लाइव सिंक्रनाइज़्ड
-            </span>
 </div>
-<h1 class="font-headline-lg text-headline-lg text-primary font-bold tracking-tight">
-            28 राज्यवार दैनिक सामान्य ज्ञान एवं अखिल भारतीय समसामयिकी बुलेटिन
-          </h1>
+<!-- Master Editorial Banner -->
+<section class="w-full bg-surface-container-low px-margin-sm lg:px-margin-lg py-space-xl">
+<div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<div class="inline-flex items-center gap-space-xs self-start px-space-sm py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-secondary">menu_book</span>
+<span>प्रतियोगी परीक्षा अनुसंधान प्रभाग • दैनिक राज्य ज्ञान संकलन</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight font-bold">
+          28 राज्यवार दैनिक सामान्य ज्ञान एवं अखिल भारतीय समसामयिकी बुलेटिन
+        </h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
-            State-wise daily factual intelligence, memory mnemonics (देसी ट्रिक), exam recurrence indicators, and verifiable civil services current affairs synthesized for competitive readiness.
+          अखिल भारतीय लोक सेवा एवं राज्य पीएससी परीक्षाओं हेतु विशेष रूप से संश्लेषित परीक्षा-उपयोगी तथ्य, देशी स्मृति सूत्र (Desi Memory Tricks) तथा विगत 20 वर्षों के प्रश्नपत्रों (PYQ) की बारंबारता संकेतकों से युक्त प्रामाणिक शैक्षणिक प्रपत्र।
+        </p>
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+<div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-md py-space-xs rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">verified</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">NCERT व गजट प्रमाणित</span>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-md py-space-xs rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-tertiary-container text-[20px]">auto_stories</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">28 राज्य + 8 केंद्र शासित प्रदेश</span>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-md py-space-xs rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-error text-[20px]">bolt</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">उच्च उत्पादकता ट्रिक्स</span>
+</div>
+</div>
+</div>
+<!-- Quick Access A4 Compact Print Card -->
+<div class="lg:col-span-4 bg-primary text-on-primary rounded-xl p-space-lg shadow-md relative overflow-hidden flex flex-col justify-between h-full">
+<div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-secondary-container/20 blur-xl pointer-events-none"></div>
+<div class="flex flex-col gap-space-sm relative z-10">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-fixed bg-surface-container-high/20 px-space-xs py-0.5 rounded">
+              A4 कॉम्पैक्ट प्रिंट बुलेटिन
+            </span>
+<span class="font-label-sm text-label-sm text-secondary-fixed flex items-center gap-1 font-mono">
+<span class="material-symbols-outlined text-[14px]">description</span> 2 पृष्ठ सार-संग्रह
+            </span>
+</div>
+<h2 class="font-title-lg text-title-lg font-bold text-on-primary">
+            आज का दैनिक 28-राज्य सार-संग्रह (प्रिंट रेडी PDF)
+          </h2>
+<p class="font-body-sm text-body-sm text-surface-container-high">
+            ऑटो-फॉर्मेटेड 2-पेज माइक्रो-प्रिंट लेआउट। रिवीज़न एवं लाइब्रेरी अध्ययन हेतु न्यूनतम इंक खपत वाला आधिकारिक दस्तावेज।
           </p>
-<div class="pt-space-xs flex flex-wrap items-center gap-space-md text-on-surface-variant font-body-sm text-body-sm">
-<span class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-[16px] text-secondary">history_edu</span>
-              20-वर्षीय PYQ पुनरावृत्ति टैगिंग
-            </span>
-<span class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-[16px] text-secondary">psychology</span>
-              स्मृति सूत्र (Desi Mnemonics)
-            </span>
-<span class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-[16px] text-secondary">print</span>
-              प्रिंट-रेडी A4 शीट इंटीग्रेशन
-            </span>
 </div>
-</div>
-<!-- Quick Access Print Dossier Card -->
-<div class="lg:col-span-4 bg-surface-container-low rounded-xl p-space-md shadow-sm flex flex-col justify-between space-y-space-md">
-<div class="flex items-start justify-between">
-<div>
-<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">दैनिक ई-डॉक्यूमेंट</span>
-<h3 class="font-title-md text-title-md text-primary mt-space-xs">A4 कॉम्पैक्ट प्रिंट बुलेटिन</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">सभी 28 राज्यों व राष्ट्रीय फैक्ट्स का 2-पेज संकलन</p>
-</div>
-<div class="w-10 h-10 rounded bg-secondary-fixed text-primary flex items-center justify-center">
-<span class="material-symbols-outlined text-[24px]">picture_as_pdf</span>
-</div>
-</div>
-<div class="flex items-center justify-between text-body-sm font-numeric-table bg-surface-container-lowest px-space-md py-space-xs rounded">
-<span class="text-on-surface-variant">प्रिंट कतार में संकलित:</span>
-<span class="font-bold text-primary" id="print-queue-count">3 चयनित विषय</span>
-</div>
-<div class="flex gap-space-sm">
-<button class="flex-1 px-space-md py-space-sm bg-secondary text-on-secondary rounded font-label-md text-label-md font-semibold hover:bg-primary transition-all flex items-center justify-center gap-space-xs shadow-sm" onclick="window.print()">
-<span class="material-symbols-outlined text-[18px]">print</span>
-              1-क्लिक A4 प्रिंट
-            </button>
-<button class="px-space-md py-space-sm bg-surface-container-highest text-primary rounded font-label-md text-label-md font-semibold hover:bg-secondary-fixed transition-colors flex items-center gap-space-xs" onclick="location.hash='#rapid-mcq'">
-<span class="material-symbols-outlined text-[18px]">quiz</span>
-              10 MCQ
-            </button>
-</div>
+<div class="flex flex-col sm:flex-row gap-space-sm mt-space-md relative z-10">
+<button class="flex-1 inline-flex items-center justify-center gap-space-xs px-space-md py-space-xs rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-semibold hover:bg-secondary-container transition-all shadow-sm" onclick="window.print()">
+<span class="material-symbols-outlined text-[16px]">print</span>
+            1-क्लिक A4 प्रिंट
+          </button>
+<a class="inline-flex items-center justify-center gap-space-xs px-space-md py-space-xs rounded-lg bg-surface-container-high/20 text-on-primary font-label-md text-label-md hover:bg-surface-container-high/30 transition-all" href="#mock-section">
+<span class="material-symbols-outlined text-[16px]">quiz</span>
+            दैनिक टेस्ट (10 MCQ)
+          </a>
 </div>
 </div>
 </div>
 </section>
-<!-- Interactive Control Deck: Filter Pills, Categories & Real-time Search -->
-<section class="w-full bg-surface-container-low py-space-md shadow-sm">
-<div class="max-w-[1440px] mx-auto px-margin-lg space-y-space-md">
-<!-- Search Bar & Date Deck -->
-<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
-<div class="md:col-span-8 relative">
-<span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-outline text-[20px]">manage_search</span>
-<input class="w-full pl-11 pr-space-lg py-space-sm bg-surface-container-lowest rounded-lg text-body-md font-body-md text-on-surface placeholder:text-outline focus:outline-none shadow-sm" id="gk-search-input" onkeyup="filterGKCards()" placeholder="खोजें: गागरोन दुर्ग, मिजोरम चापचार कुट, अनुच्छेद 371, कान्हा राष्ट्रीय उद्यान, बजट घोषणाएं..." type="text"/>
-<button class="absolute right-space-md top-1/2 -translate-y-1/2 text-outline hover:text-primary text-[14px] font-label-sm" onclick="clearSearch()">
-            रिफ्रेश
-          </button>
+<!-- Interactive Control Deck (Sticky Filters & Search) -->
+<section class="w-full bg-surface-container-lowest px-margin-sm lg:px-margin-lg py-space-md shadow-[0_2px_8px_rgba(0,22,61,0.04)] sticky top-20 z-40">
+<div class="max-w-[1440px] mx-auto flex flex-col gap-space-sm">
+<!-- Search & Meta Filters -->
+<div class="flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="relative w-full md:w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="w-full pl-9 pr-space-md py-space-xs rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary/30 transition-all shadow-inner" id="bulletinSearch" oninput="filterBulletins(this.value)" placeholder="स्मारक, अनुच्छेद, अभयारण्य, राज्य योजना खोजें..." type="text"/>
 </div>
-<div class="md:col-span-4 flex items-center gap-space-sm">
-<div class="flex-1 bg-surface-container-lowest px-space-md py-space-xs rounded-lg shadow-sm flex items-center justify-between">
-<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-[16px]">calendar_today</span> संस्करण दिनांक:
-            </span>
-<span class="font-numeric-table text-body-sm font-semibold text-primary">02 मार्च 2025</span>
-</div>
-<button class="p-space-sm bg-surface-container-lowest text-primary rounded-lg shadow-sm hover:bg-surface-container" id="view-toggle-compact" onclick="toggleDensity()" title="कम्पैक्ट/विस्तृत दृश्य">
-<span class="material-symbols-outlined text-[20px]">view_agenda</span>
-</button>
+<!-- Domain Category Pills -->
+<div class="flex items-center gap-space-xs overflow-x-auto w-full md:w-auto pb-1 md:pb-0" id="categoryPillGroup">
+<button class="category-btn active shrink-0 px-space-md py-1 rounded-full text-on-secondary bg-secondary font-label-md text-label-md font-medium transition-all shadow-sm" onclick="setCategoryFilter('all', this)">सम्पूर्ण विषय</button>
+<button class="category-btn shrink-0 px-space-md py-1 rounded-full text-on-surface-variant bg-surface-container font-label-md text-label-md hover:bg-surface-container-high transition-all" onclick="setCategoryFilter('art-culture', this)">इतिहास कला व संस्कृति</button>
+<button class="category-btn shrink-0 px-space-md py-1 rounded-full text-on-surface-variant bg-surface-container font-label-md text-label-md hover:bg-surface-container-high transition-all" onclick="setCategoryFilter('geography', this)">भूगोल व अभयारण्य</button>
+<button class="category-btn shrink-0 px-space-md py-1 rounded-full text-on-surface-variant bg-surface-container font-label-md text-label-md hover:bg-surface-container-high transition-all" onclick="setCategoryFilter('polity-schemes', this)">राजव्यवस्था व नीतियां</button>
+<button class="category-btn shrink-0 px-space-md py-1 rounded-full text-on-surface-variant bg-surface-container font-label-md text-label-md hover:bg-surface-container-high transition-all" onclick="setCategoryFilter('national-ca', this)">राष्ट्रीय समसामयिकी व खेल</button>
 </div>
 </div>
-<!-- State Pills Carousel -->
-<div class="flex flex-col space-y-space-xs">
-<div class="flex items-center justify-between">
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">
-            राज्य चयन ग्रिड (28 राज्य व केंद्र शासित प्रदेश)
-          </span>
-<span class="font-label-sm text-label-sm text-secondary">
-            सक्रिय: <span class="font-bold" id="current-state-indicator">सभी प्रभाग</span>
-</span>
-</div>
-<div class="flex items-center gap-space-xs overflow-x-auto pb-space-xs no-scrollbar">
-<button class="state-pill px-space-md py-space-xs rounded-full font-label-md text-label-md font-semibold whitespace-nowrap bg-primary text-on-primary shadow-sm" onclick="setActiveState('ALL', this)">
-            समस्त भारत (All India)
-          </button>
-<button class="state-pill px-space-md py-space-xs rounded-full font-label-md text-label-md font-semibold whitespace-nowrap bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors" onclick="setActiveState('RAJASTHAN', this)">
-            राजस्थान (RAS/Patwar)
-          </button>
-<button class="state-pill px-space-md py-space-xs rounded-full font-label-md text-label-md font-semibold whitespace-nowrap bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors" onclick="setActiveState('UP', this)">
-            उत्तर प्रदेश (UPPCS/RO)
-          </button>
-<button class="state-pill px-space-md py-space-xs rounded-full font-label-md text-label-md font-semibold whitespace-nowrap bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors" onclick="setActiveState('BIHAR', this)">
-            बिहार (BPSC/SI)
-          </button>
-<button class="state-pill px-space-md py-space-xs rounded-full font-label-md text-label-md font-semibold whitespace-nowrap bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors" onclick="setActiveState('MP', this)">
-            मध्य प्रदेश (MPPSC/Vyapam)
-          </button>
-<button class="state-pill px-space-md py-space-xs rounded-full font-label-md text-label-md font-semibold whitespace-nowrap bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors" onclick="setActiveState('HARYANA', this)">
-            हरियाणा (HPSC/CET)
-          </button>
-<button class="state-pill px-space-md py-space-xs rounded-full font-label-md text-label-md font-semibold whitespace-nowrap bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors" onclick="setActiveState('DELHI', this)">
-            दिल्ली (DSSSB/UPSC)
-          </button>
-<button class="state-pill px-space-md py-space-xs rounded-full font-label-md text-label-md font-semibold whitespace-nowrap bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors" onclick="setActiveState('MAHARASHTRA', this)">
-            महाराष्ट्र (MPSC)
-          </button>
-<button class="state-pill px-space-md py-space-xs rounded-full font-label-md text-label-md font-semibold whitespace-nowrap bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors" onclick="setActiveState('UTTARAKHAND', this)">
-            उत्तराखंड (UKPSC)
-          </button>
-<button class="state-pill px-space-md py-space-xs rounded-full font-label-md text-label-md font-semibold whitespace-nowrap bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors" onclick="setActiveState('JHARKHAND', this)">
-            झारखंड (JPSC)
-          </button>
-<button class="state-pill px-space-md py-space-xs rounded-full font-label-md text-label-md font-semibold whitespace-nowrap bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors" onclick="setActiveState('INTERNATIONAL', this)">
-            अंतर्राष्ट्रीय सम्मलेन
-          </button>
-</div>
-</div>
-<!-- Domain Category Tabs -->
-<div class="flex items-center gap-space-sm overflow-x-auto pt-space-xs">
-<span class="font-label-sm text-label-sm text-on-surface-variant whitespace-nowrap">विषय श्रेणी:</span>
-<button class="cat-pill px-space-sm py-space-xs rounded bg-surface-container-highest text-primary font-label-sm text-label-sm font-semibold" onclick="setCategory('ALL', this)">
-          सम्पूर्ण विषय
-        </button>
-<button class="cat-pill px-space-sm py-space-xs rounded bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm hover:text-primary" onclick="setCategory('HIST', this)">
-          इतिहास, कला व संस्कृति
-        </button>
-<button class="cat-pill px-space-sm py-space-xs rounded bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm hover:text-primary" onclick="setCategory('GEO', this)">
-          भूगोल, नदियाँ व अभयारण्य
-        </button>
-<button class="cat-pill px-space-sm py-space-xs rounded bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm hover:text-primary" onclick="setCategory('POL', this)">
-          राजव्यवस्था, नीतियां व योजनाएं
-        </button>
-<button class="cat-pill px-space-sm py-space-xs rounded bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm hover:text-primary" onclick="setCategory('CURR', this)">
-          राष्ट्रीय समसामयिकी व खेल
-        </button>
+<!-- State Selection Grid / Filter Carousel -->
+<div class="flex items-center gap-space-xs overflow-x-auto py-1 no-scrollbar text-on-surface" id="stateFilterBar">
+<button class="state-btn active-state shrink-0 px-space-sm py-1 rounded bg-primary text-on-primary font-label-sm text-label-sm font-semibold tracking-wide" onclick="setStateFilter('all', this)">अखिल भारत</button>
+<button class="state-btn shrink-0 px-space-sm py-1 rounded bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-sm text-label-sm" onclick="setStateFilter('rajasthan', this)">राजस्थान (RAS/Patwar)</button>
+<button class="state-btn shrink-0 px-space-sm py-1 rounded bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-sm text-label-sm" onclick="setStateFilter('up', this)">उत्तर प्रदेश (UPPCS/RO)</button>
+<button class="state-btn shrink-0 px-space-sm py-1 rounded bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-sm text-label-sm" onclick="setStateFilter('bihar', this)">बिहार (BPSC/SI)</button>
+<button class="state-btn shrink-0 px-space-sm py-1 rounded bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-sm text-label-sm" onclick="setStateFilter('mp', this)">मध्य प्रदेश (MPPSC/Vyapam)</button>
+<button class="state-btn shrink-0 px-space-sm py-1 rounded bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-sm text-label-sm" onclick="setStateFilter('haryana', this)">हरियाणा (HPSC/CET)</button>
+<button class="state-btn shrink-0 px-space-sm py-1 rounded bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-sm text-label-sm" onclick="setStateFilter('delhi', this)">दिल्ली (DSSSB/UPSC)</button>
+<button class="state-btn shrink-0 px-space-sm py-1 rounded bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-sm text-label-sm" onclick="setStateFilter('maharashtra', this)">महाराष्ट्र (MPSC)</button>
+<button class="state-btn shrink-0 px-space-sm py-1 rounded bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-sm text-label-sm" onclick="setStateFilter('uttarakhand', this)">उत्तराखंड (UKPSC)</button>
+<button class="state-btn shrink-0 px-space-sm py-1 rounded bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-sm text-label-sm" onclick="setStateFilter('jharkhand', this)">झारखंड (JPSC)</button>
+<button class="state-btn shrink-0 px-space-sm py-1 rounded bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-sm text-label-sm" onclick="setStateFilter('international', this)">अंतर्राष्ट्रीय सम्मलेन</button>
 </div>
 </div>
 </section>
-<!-- Main Analytical Body: Grid of GK Dossiers + Right Editorial Panel -->
-<section class="w-full py-margin">
-<div class="max-w-[1440px] mx-auto px-margin-lg">
-<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter">
-<!-- Left & Center: Filterable State Cards (8 Cols) -->
-<div class="xl:col-span-8 space-y-gutter">
-<div class="flex items-center justify-between pb-space-xs">
+<!-- Main Body Content: Dossier Cards & Analytical Sidebar -->
+<div class="w-full max-w-[1440px] mx-auto px-margin-sm lg:px-margin-lg py-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left / Center: Dossier Cards Stream (8 Cols) -->
+<div class="lg:col-span-8 flex flex-col gap-space-xl" id="dossierStream">
+<!-- Card 1: Rajasthan GK -->
+<article class="dossier-card bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md transition-all hover:shadow-md" data-category="art-culture" data-state="rajasthan">
+<!-- Card Header Strip -->
+<div class="flex items-center justify-between flex-wrap gap-space-xs pb-space-sm bg-surface-container-lowest">
 <div class="flex items-center gap-space-sm">
-<span class="w-3 h-3 rounded-full bg-secondary"></span>
-<h2 class="font-title-lg text-title-lg text-primary">दैनिक मुख्य अध्ययन संकलन (Core Research Dossiers)</h2>
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-md text-label-md font-bold text-primary tracking-wide uppercase">राजस्थान सामान्य ज्ञान प्रभाग</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface-variant font-numeric-table text-label-sm">RAS 2013, 2018, 2021 PYQ Repeat</span>
 </div>
-<span class="font-label-sm text-label-sm text-on-surface-variant font-numeric-table" id="results-count">प्रदर्शित: 5 प्रमाणित मॉड्यूल</span>
-</div>
-<!-- Card 1: Rajasthan (Gagron Fort / Jal Durg) -->
-<article class="gk-card bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md transition-all hover:shadow-md" data-cat="HIST" data-state="RAJASTHAN">
-<div class="flex flex-wrap items-center justify-between gap-space-sm">
-<div class="flex items-center gap-space-sm">
-<span class="px-space-sm py-space-xs rounded bg-surface-container text-primary font-label-sm text-label-sm font-bold">
-                  राजस्थान GK
-                </span>
-<span class="px-space-sm py-space-xs rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold">
-                  इतिहास व स्थापत्य
-                </span>
-</div>
-<div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-space-xs rounded text-primary font-label-sm text-label-sm">
-<span class="material-symbols-outlined text-[16px] text-secondary">repeat</span>
-<span>परीक्षा पुनरावृत्ति: RAS (3 बार), REET (4 बार), Patwar (2 बार)</span>
+<div class="flex items-center gap-space-xs">
+<span class="px-space-sm py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">जल दुर्ग (Water Fort)</span>
+<span class="font-numeric-table text-numeric-table text-outline font-medium">भार: 03 अंक</span>
 </div>
 </div>
-<div>
-<h3 class="font-headline-sm text-headline-sm text-primary">गागरोन दुर्ग (झालावाड़) – भारत का अद्वितीय जल दुर्ग एवं यूनेस्को धरोहर</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs italic">Gagron Water Fort: Confluence of Ahu &amp; Kali Sindh Rivers, UNESCO World Heritage Status (2013)</p>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md items-start">
+<div class="md:col-span-7 flex flex-col gap-space-sm">
+<h3 class="font-title-lg text-title-lg text-primary font-bold">
+                गागरोन दुर्ग (झालावाड़) – भारत का अद्वितीय बिना नींव वाला जल दुर्ग
+              </h3>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+                यह विंध्याचल पर्वत श्रृंखला की ठोस चट्टान पर बिना किसी पारंपरिक नींव के अवस्थित है। यह आहू और कालीसिंध नदियों के संगम स्थल ('सामेला') पर तीन तरफ से जल से घिरा हुआ है।
+              </p>
+<!-- High-Yield Bullet points -->
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col gap-1.5 font-body-sm text-body-sm text-on-surface">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0 mt-0.5">check_circle</span>
+<span><strong>स्थापत्य व निर्माण:</strong> 7वीं-8वीं सदी में डोड राजा बीजलदेव द्वारा निर्मित। तत्पश्चात खींची चौहानों (राजा देवेन्द्र सिंह) का शासन रहा।</span>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
-<div class="space-y-space-xs font-body-md text-body-md text-on-surface">
-<div class="flex items-start gap-space-xs">
-<span class="material-symbols-outlined text-[18px] text-secondary shrink-0 mt-0.5">check_circle</span>
-<span><strong>भौगोलिक अवस्थिति:</strong> यह दुर्ग बिना किसी नींव के एक विशाल प्राकृतिक चट्टान पर आहू और कालीसिंध नदियों के संगम ('सामेला') पर खड़ा है।</span>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0 mt-0.5">check_circle</span>
+<span><strong>ऐतिहासिक जौहर (1423 ई.):</strong> मांडू के सुल्तान होशंगशाह के आक्रमण के समय अचलदास खींची की वीरगति एवं रानियों का प्रथम जौहर।</span>
 </div>
-<div class="flex items-start gap-space-xs">
-<span class="material-symbols-outlined text-[18px] text-secondary shrink-0 mt-0.5">check_circle</span>
-<span><strong>ऐतिहासिक जौहर:</strong> 1423 ई. में मांडू के सुल्तान होशंगशाह के आक्रमण के समय अचलदास खींची की वीरता व रानियों का प्रथम साका।</span>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0 mt-0.5">check_circle</span>
+<span><strong>आध्यात्मिक धरोहर:</strong> संत पीपाजी (प्रताप सिंह खींची) की समाधि, सूफी संत हमीदुद्दीन चिश्ती (मीठे शाह) की दरगाह एवं बुलंद दरवाजा (औरंगजेब निर्मित)।</span>
 </div>
-<div class="flex items-start gap-space-xs">
-<span class="material-symbols-outlined text-[18px] text-secondary shrink-0 mt-0.5">check_circle</span>
-<span><strong>धार्मिक सौहार्द:</strong> संत पीपाजी की छतरी एवं सूफी संत मीठे शाह (हमीदुद्दीन चिश्ती) की प्रसिद्ध दरगाह दुर्ग परिसर में स्थित।</span>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0 mt-0.5">check_circle</span>
+<span><strong>वैश्विक प्रमाणन:</strong> वर्ष 2013 में कंबोडिया (फ्नोम पेन्ह) यूनेस्को विश्व धरोहर सूची में राजस्थान के 6 पहाड़ी दुर्गों के तहत सम्मिलित।</span>
 </div>
 </div>
-<!-- Visual Aspect Image -->
-<div class="relative rounded-lg overflow-hidden h-48 bg-surface-container">
-<img class="w-full h-full object-cover" data-alt="An expansive panoramic aerial view of Gagron water fort in Jhalawar Rajasthan, surrounded by the emerald confluence of Ahu and Kali Sindh rivers under an early morning golden mist, ancient stone bastions reflecting prestige, professional documentary style photograph, deep navy and warm sandstone palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpN-G2UnbiTnlu3tA0JyybxOerUGogC_w2j_a0dJ9ISbFfkyUgm7VYD_JxcP2ynn6C-hMXYUvFUPzNfZzsceZBuGYlmiIxCANjLRIP4O3A9T_ZXztDOc6RRXbOuT77xlA9f96NIiEuB0GWIruDp6D4wRUDr0ZgI-dsakHQCeXcWiTgfIG8kkgGJVKZypl8rop9t5ED_jd8Dfk95yq5HUVy6G-KQGJug3OGDjkY6-1Yw0TRda2pI4uxYQ"/>
-<span class="absolute bottom-2 left-2 bg-primary/90 text-on-primary px-space-xs py-0.5 rounded font-label-sm text-label-sm">
+</div>
+<!-- Visual & Trick Box -->
+<div class="md:col-span-5 flex flex-col gap-space-sm">
+<div class="rounded-lg overflow-hidden bg-surface-container-high h-44 relative shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Authoritative architectural wide-angle documentary shot of Gagron Fort situated on a rocky cliff surrounded by Ahu and Kalisindh rivers, golden evening sunlight reflecting on water, ancient stone ramparts, historic scholarly mood in deep slate and indigo hues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCerN6K_alVcjEapSP8giKU1NUYLufPjvUjdOwwdcrOAylcsobhQ9--EL5L_HFxhExm6YqY38VoEfI3Jt4iUQc_WKs5YcEkgKJwGKMMRtIZ3GJAsFTicKKhcEY4LwEfJCsHNvj2hC7vqu-zPSBqPVe_6Y36bZx1KovUbrvjDNxLJ43QVqTlN7X90j4ZF7LJ0rAa1ozA6FF4S7AXkAD2r1FH8Hixe_xhcdyytl2N4kyDZSfHNcuijsaing"/>
+<div class="absolute bottom-2 left-2 px-space-xs py-0.5 rounded bg-primary/90 text-on-primary font-label-sm text-label-sm">
                   आहू-कालीसिंध संगम
-                </span>
+                </div>
+</div>
+<!-- Desi Trick Capsule -->
+<div class="p-space-sm rounded-lg bg-surface-container border-l-4 bg-surface-container text-on-surface flex flex-col gap-1">
+<div class="flex items-center gap-1.5 text-tertiary-container font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[16px]">lightbulb</span>
+<span>देसी याददाश्त ट्रिक (Desi Memory Trick):</span>
+</div>
+<p class="font-body-sm text-body-sm font-semibold text-primary">
+                  "गाजर में आहू-काली झाड़ू"
+                </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  गा (गागरोन) + जर (जल दुर्ग) = आहू + काली (कालीसिंध नदी) + झाड़ू (झालावाड़ जिला)।
+                </p>
 </div>
 </div>
-<!-- Desi Memory Trick Box -->
-<div class="bg-surface-container rounded-lg p-space-md">
-<div class="flex items-center gap-space-xs text-primary font-title-md text-title-md">
-<span class="material-symbols-outlined text-[20px] text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
-<span>देसी मेमोरी ट्रिक (Mnemonics Capsule):</span>
 </div>
-<p class="font-body-md text-body-md text-on-surface mt-space-xs font-medium">
-                👉 <span class="bg-surface-container-lowest px-space-xs py-0.5 rounded font-bold text-primary">"गाजर में आहू-काली झाड़ू"</span>
-<span class="text-on-surface-variant font-normal">→ <strong>गा</strong> (गागरोन), <strong>आहू</strong> (आहू नदी), <strong>काली</strong> (कालीसिंध नदी), <strong>झाड़ू</strong> (झालावाड़)। इस सूत्र से दोनों नदियां व जिला सेकंडों में कंठस्थ!</span>
-</p>
-</div>
-<!-- Action Ribbon -->
-<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs">
-<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm font-numeric-table">
-<span class="material-symbols-outlined text-[16px]">verified_user</span>
-                स्रोत: राजस्थान ग्रंथ अकादमी (ऑथेंटिक संदर्भ)
-              </div>
+<!-- Action bar -->
+<div class="flex items-center justify-between pt-space-xs font-label-sm text-label-sm text-outline">
+<span class="flex items-center gap-1 font-mono">
+<span class="material-symbols-outlined text-[14px]">policy</span> Ref: Rajasthan Gazetteer Ch. 14 / NCERT Std IX
+            </span>
 <div class="flex items-center gap-space-xs">
-<button class="px-space-md py-space-xs rounded bg-surface-container-high text-primary hover:bg-secondary hover:text-on-secondary transition-colors font-label-md text-label-md flex items-center gap-space-xs" onclick="copyDossier(this, 'गागरोन दुर्ग: आहू व कालीसिंध का संगम, झालावाड़, 2013 यूनेस्को स्थल।')">
-<span class="material-symbols-outlined text-[16px]">content_copy</span>
-<span>क्लिपबोर्ड पर कॉपी करें</span>
-</button>
-<button class="px-space-md py-space-xs rounded bg-primary text-on-primary hover:bg-secondary transition-colors font-label-md text-label-md flex items-center gap-space-xs" onclick="addToPrintQueue(this, 'गागरोन जल दुर्ग (झालावाड़)')">
-<span class="material-symbols-outlined text-[16px]">playlist_add</span>
-<span>A4 प्रिंट में जोड़ें</span>
-</button>
+<button class="px-space-sm py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center gap-1 transition-all" onclick="copySnippet(this, 'गागरोन दुर्ग: झालावाड़, आहू-कालीसिंध संगम, 1423 जौहर, संत पीपा समाधि, UNESCO 2013')">
+<span class="material-symbols-outlined text-[14px]">content_copy</span> कॉपी नोट्स
+              </button>
+<button class="px-space-sm py-1 rounded bg-secondary text-on-secondary hover:bg-secondary-container flex items-center gap-1 transition-all font-semibold" onclick="window.print()">
+<span class="material-symbols-outlined text-[14px]">picture_as_pdf</span> A4 प्रिंट
+              </button>
 </div>
 </div>
 </article>
-<!-- Card 2: Uttar Pradesh (Panchayat / Schemes) -->
-<article class="gk-card bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md transition-all hover:shadow-md" data-cat="POL" data-state="UP">
-<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<!-- Card 2: Uttar Pradesh GK -->
+<article class="dossier-card bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md transition-all hover:shadow-md" data-category="polity-schemes" data-state="up">
+<div class="flex items-center justify-between flex-wrap gap-space-xs pb-space-sm bg-surface-container-lowest">
 <div class="flex items-center gap-space-sm">
-<span class="px-space-sm py-space-xs rounded bg-surface-container text-primary font-label-sm text-label-sm font-bold">
-                  उत्तर प्रदेश GK
-                </span>
-<span class="px-space-sm py-space-xs rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold">
-                  शासन व नीतियां
-                </span>
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span>
+<span class="font-label-md text-label-md font-bold text-primary tracking-wide uppercase">उत्तर प्रदेश शासन एवं आर्थिक नीतियां</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface-variant font-numeric-table text-label-sm">UPPCS Pre 2022, 2024 Mains Expected</span>
 </div>
-<div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-space-xs rounded text-primary font-label-sm text-label-sm">
-<span class="material-symbols-outlined text-[16px] text-secondary">repeat</span>
-<span>परीक्षा पुनरावृत्ति: UPPCS Prelims (2022, 2024), RO/ARO (2023)</span>
-</div>
-</div>
-<div>
-<h3 class="font-headline-sm text-headline-sm text-primary">उत्तर प्रदेश 'एक जिला एक उत्पाद' (ODOP) मॉडल एवं डिजिटल पंचायत सचिवालय</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs italic">UP ODOP Initiative &amp; Micro-Enterprise Logistics: State-wide Governance Blueprint</p>
-</div>
-<div class="space-y-space-xs font-body-md text-body-md text-on-surface">
-<div class="flex items-start gap-space-xs">
-<span class="material-symbols-outlined text-[18px] text-secondary shrink-0 mt-0.5">check_circle</span>
-<span><strong>ODOP शुभारंभ:</strong> 24 जनवरी 2018 (उत्तर प्रदेश स्थापना दिवस) को प्रारंभ। इसका मुख्य उद्देश्य पारंपरिक शिल्प, काष्ठकला (सहारनपुर), कालीन (भदोही) और चिकनकारी (लखनऊ) को वैश्विक निर्यात मंच देना है।</span>
-</div>
-<div class="flex items-start gap-space-xs">
-<span class="material-symbols-outlined text-[18px] text-secondary shrink-0 mt-0.5">check_circle</span>
-<span><strong>ग्राम सचिवालय:</strong> राज्य के सभी 58,189 ग्राम पंचायतों में पंचायत सहायकों के माध्यम से 100% ऑप्टिकल फाइबर ब्रॉडबैंड कनेक्टिविटी सुनिश्चित की गई।</span>
-</div>
-</div>
-<!-- Desi Memory Trick Box -->
-<div class="bg-surface-container rounded-lg p-space-md">
-<div class="flex items-center gap-space-xs text-primary font-title-md text-title-md">
-<span class="material-symbols-outlined text-[20px] text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
-<span>देसी मेमोरी ट्रिक (Mnemonics Capsule):</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface mt-space-xs font-medium">
-                👉 <span class="bg-surface-container-lowest px-space-xs py-0.5 rounded font-bold text-primary">"भदोही की कालीन पर सहारनपुर की लकड़ी"</span>
-<span class="text-on-surface-variant font-normal">→ भदोही = कालीन उद्योग, सहारनपुर = नक्काशीदार काष्ठशिल्प (Woodcraft)। UP RO/ARO में सीधे मिलान वाले प्रश्नों में यह ट्रिक शत-प्रतिशत सटीक बैठती है।</span>
-</p>
-</div>
-<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs">
-<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm font-numeric-table">
-<span class="material-symbols-outlined text-[16px]">verified_user</span>
-                स्रोत: उ.प्र. सूचना एवं जनसम्पर्क विभाग वार्षिक विवरण
-              </div>
 <div class="flex items-center gap-space-xs">
-<button class="px-space-md py-space-xs rounded bg-surface-container-high text-primary hover:bg-secondary hover:text-on-secondary transition-colors font-label-md text-label-md flex items-center gap-space-xs" onclick="copyDossier(this, 'UP ODOP: 24 Jan 2018 को शुरू, भदोही कालीन, सहारनपुर काष्ठशिल्प।')">
-<span class="material-symbols-outlined text-[16px]">content_copy</span>
-<span>क्लिपबोर्ड पर कॉपी करें</span>
-</button>
-<button class="px-space-md py-space-xs rounded bg-primary text-on-primary hover:bg-secondary transition-colors font-label-md text-label-md flex items-center gap-space-xs" onclick="addToPrintQueue(this, 'UP ODOP योजना व ग्राम सचिवालय')">
-<span class="material-symbols-outlined text-[16px]">playlist_add</span>
-<span>A4 प्रिंट में जोड़ें</span>
-</button>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">ODOP योजना व पंचायती राज</span>
+<span class="font-numeric-table text-numeric-table text-outline font-medium">भार: 04 अंक</span>
 </div>
 </div>
-</article>
-<!-- Card 3: Bihar (History & Nalanda) -->
-<article class="gk-card bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md transition-all hover:shadow-md" data-cat="HIST" data-state="BIHAR">
-<div class="flex flex-wrap items-center justify-between gap-space-sm">
-<div class="flex items-center gap-space-sm">
-<span class="px-space-sm py-space-xs rounded bg-surface-container text-primary font-label-sm text-label-sm font-bold">
-                  बिहार GK
-                </span>
-<span class="px-space-sm py-space-xs rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold">
-                  प्राचीन इतिहास व महाविहार
-                </span>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md items-start">
+<div class="md:col-span-7 flex flex-col gap-space-sm">
+<h3 class="font-title-lg text-title-lg text-primary font-bold">
+                एक जिला एक उत्पाद (ODOP) 2.0 एवं ग्राम सचिवालय डिजिटलीकरण पहल
+              </h3>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+                24 जनवरी 2018 को उत्तर प्रदेश दिवस पर प्रारंभ की गई 'एक जिला एक उत्पाद' योजना को राष्ट्रीय स्तर पर वाणिज्य मंत्रालय द्वारा अंगीकृत किया गया। 2026-27 के परिप्रेक्ष्य में यह 75 जनपदों के सूक्ष्म शिल्पों को ग्लोबल सप्लाई चेन व ONDC प्लेटफॉर्म से जोड़ती है।
+              </p>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col gap-1.5 font-body-sm text-body-sm text-on-surface">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0 mt-0.5">check_circle</span>
+<span><strong>प्रमुख उत्पाद संगम:</strong> भदोही (कालीन/दरी), सहारनपुर (काष्ठ शिल्प/Wood Carving), मुरादाबाद (पीतल पात्र), फिरोजाबाद (कांच की चूड़ियां), कन्नौज (प्राकृतिक इत्र/Perfume)।</span>
 </div>
-<div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-space-xs rounded text-primary font-label-sm text-label-sm">
-<span class="material-symbols-outlined text-[16px] text-secondary">repeat</span>
-<span>परीक्षा पुनरावृत्ति: BPSC (66वीं, 68वीं, 69वीं CCE Prelims)</span>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0 mt-0.5">check_circle</span>
+<span><strong>ग्राम सचिवालय स्थापना:</strong> प्रदेश की 57,692 ग्राम पंचायतों में डिजिटल ग्राम सचिवालय सक्रिय, जहाँ पंचायत सहायक कम डाटा एंट्री ऑपरेटर 'पंचायत गेटवे' से 243 जनसुविधाएं प्रदान करते हैं।</span>
 </div>
-</div>
-<div>
-<h3 class="font-headline-sm text-headline-sm text-primary">नालंदा महाविहार: गुप्तकालीन स्थापना, बख्तियार खिलजी का विध्वंस व नव परिसर 2024</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs italic">Nalanda Mahavihara: Founded by Kumaragupta I (Shakraditya), Ancient Seat of Buddhist Learning</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
-<div class="space-y-space-xs font-body-md text-body-md text-on-surface">
-<div class="flex items-start gap-space-xs">
-<span class="material-symbols-outlined text-[18px] text-secondary shrink-0 mt-0.5">check_circle</span>
-<span><strong>संस्थापक:</strong> गुप्त सम्राट कुमारगुप्त प्रथम (उपाधि: महेंद्रादित्य/शक्रादित्य) द्वारा 5वीं शताब्दी में स्थापना।</span>
-</div>
-<div class="flex items-start gap-space-xs">
-<span class="material-symbols-outlined text-[18px] text-secondary shrink-0 mt-0.5">check_circle</span>
-<span><strong>पुस्तकालय का नाम:</strong> धर्मगंज (रत्नसागर, रत्नोदधि, और रत्नरंजक नामक तीन बहुमंजिला भवन)।</span>
-</div>
-<div class="flex items-start gap-space-xs">
-<span class="material-symbols-outlined text-[18px] text-secondary shrink-0 mt-0.5">check_circle</span>
-<span><strong>विदेशी यात्री विवरण:</strong> ह्वेनसांग (Xuanzang) ने यहाँ कुलपति शीलभद्र के सान्निध्य में योगशास्त्र का अध्ययन किया।</span>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0 mt-0.5">check_circle</span>
+<span><strong>निर्यात संवर्धन:</strong> ODOP ने उत्तर प्रदेश के कुल हस्तशिल्प निर्यात को वित्तीय वर्ष 2025-26 में ₹1.82 लाख करोड़ तक पहुंचाने में प्रमुख भूमिका निभाई।</span>
 </div>
 </div>
-<!-- Visual Aspect Image -->
-<div class="relative rounded-lg overflow-hidden h-48 bg-surface-container">
-<img class="w-full h-full object-cover" data-alt="Ancient brick stupa and monastery ruins of Nalanda Mahavihara in Bihar, warm terracotta brick textures under clean evening light, manicured lawns, serene scholarly atmosphere, deep navy sky accents, archaeological majesty." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg58_dbEsNaDXWzq6b4i76H3KQeW8elCjZTG_NsEb5oCoIIHaXuYfwz9rCPS5s8vEp3yOe-g1GR-h-PHcMu-iEWc_NDGH9fkmZZ6uKaWtgFvAMMg0aD3KcwnQh_d0Br8UhCUTQpSZGYtefK7HKfqb0cfnMIOrNGKmL09mvZNqzC6mDyvmTSahHdP2bWRt2Nj1zx30sPpwmqkapMTafK-UAz5w9G9NdCI5S4QdjM2ZkNs2RSgnlhT53MA"/>
-<span class="absolute bottom-2 left-2 bg-primary/90 text-on-primary px-space-xs py-0.5 rounded font-label-sm text-label-sm">
-                  नालंदा स्तूप परिसर
-                </span>
 </div>
-</div>
-<!-- Desi Memory Trick Box -->
-<div class="bg-surface-container rounded-lg p-space-md">
-<div class="flex items-center gap-space-xs text-primary font-title-md text-title-md">
-<span class="material-symbols-outlined text-[20px] text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
-<span>देसी मेमोरी ट्रिक (Mnemonics Capsule):</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface mt-space-xs font-medium">
-                👉 <span class="bg-surface-container-lowest px-space-xs py-0.5 rounded font-bold text-primary">"कुमार ने नालंदा में तीन रत्न जलाए नहीं, बल्कि पढ़े"</span>
-<span class="text-on-surface-variant font-normal">→ <strong>कुमार</strong> (कुमारगुप्त I = संस्थापक) + <strong>तीन रत्न</strong> (रत्नसागर, रत्नोदधि, रत्नरंजक = तीनों पुस्तकालय भवन)।</span>
-</p>
-</div>
-<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs">
-<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm font-numeric-table">
-<span class="material-symbols-outlined text-[16px]">verified_user</span>
-                स्रोत: भारतीय पुरातत्व सर्वेक्षण (ASI) नई दिल्ली
-              </div>
-<div class="flex items-center gap-space-xs">
-<button class="px-space-md py-space-xs rounded bg-surface-container-high text-primary hover:bg-secondary hover:text-on-secondary transition-colors font-label-md text-label-md flex items-center gap-space-xs" onclick="copyDossier(this, 'नालंदा महाविहार: कुमारगुप्त I द्वारा स्थापित, 3 पुस्तकालय रत्नसागर, रत्नोदधि, रत्नरंजक।')">
-<span class="material-symbols-outlined text-[16px]">content_copy</span>
-<span>क्लिपबोर्ड पर कॉपी करें</span>
-</button>
-<button class="px-space-md py-space-xs rounded bg-primary text-on-primary hover:bg-secondary transition-colors font-label-md text-label-md flex items-center gap-space-xs" onclick="addToPrintQueue(this, 'नालंदा महाविहार इतिहास व पुस्तकालय')">
-<span class="material-symbols-outlined text-[16px]">playlist_add</span>
-<span>A4 प्रिंट में जोड़ें</span>
-</button>
-</div>
-</div>
-</article>
-<!-- Card 4: Madhya Pradesh (Kanha & Cheetah Project) -->
-<article class="gk-card bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md transition-all hover:shadow-md" data-cat="GEO" data-state="MP">
-<div class="flex flex-wrap items-center justify-between gap-space-sm">
-<div class="flex items-center gap-space-sm">
-<span class="px-space-sm py-space-xs rounded bg-surface-container text-primary font-label-sm text-label-sm font-bold">
-                  मध्य प्रदेश GK
-                </span>
-<span class="px-space-sm py-space-xs rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold">
-                  पर्यावरण व जैव विविधता
-                </span>
-</div>
-<div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-space-xs rounded text-primary font-label-sm text-label-sm">
-<span class="material-symbols-outlined text-[16px] text-secondary">repeat</span>
-<span>परीक्षा पुनरावृत्ति: MPPSC (2020, 2021, 2023), Forest Guard</span>
-</div>
-</div>
-<div>
-<h3 class="font-headline-sm text-headline-sm text-primary">कान्हा राष्ट्रीय उद्यान एवं कूनो पालपुर चीता पुनरुत्पादन परियोजना 2025</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs italic">Kanha Tiger Reserve (Bhoorsingh the Barasingha Mascot) &amp; Kuno National Park Cheetah Project</p>
-</div>
-<div class="space-y-space-xs font-body-md text-body-md text-on-surface">
-<div class="flex items-start gap-space-xs">
-<span class="material-symbols-outlined text-[18px] text-secondary shrink-0 mt-0.5">check_circle</span>
-<span><strong>आधिकारिक शुभंकर (Mascot):</strong> कान्हा टाइगर रिजर्व भारत का पहला ऐसा राष्ट्रीय उद्यान है जिसने अपना आधिकारिक शुभंकर 'भूरसिंह द बारहसिंगा' जारी किया (2017)।</span>
-</div>
-<div class="flex items-start gap-space-xs">
-<span class="material-symbols-outlined text-[18px] text-secondary shrink-0 mt-0.5">check_circle</span>
-<span><strong>कूनो राष्ट्रीय उद्यान:</strong> श्योपुर जिले में स्थित, जहाँ नामीबिया व दक्षिण अफ्रीका से लाए गए चीतों का सफल प्रजनन व हालिया शावकों का जन्म दर्ज हुआ।</span>
-</div>
-</div>
-<!-- Desi Memory Trick Box -->
-<div class="bg-surface-container rounded-lg p-space-md">
-<div class="flex items-center gap-space-xs text-primary font-title-md text-title-md">
-<span class="material-symbols-outlined text-[20px] text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
-<span>देसी मेमोरी ट्रिक (Mnemonics Capsule):</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface mt-space-xs font-medium">
-                👉 <span class="bg-surface-container-lowest px-space-xs py-0.5 rounded font-bold text-primary">"कान्हा ने भूरसिंह को बारह सींग दिए"</span>
-<span class="text-on-surface-variant font-normal">→ <strong>कान्हा</strong> = कान्हा राष्ट्रीय उद्यान, <strong>भूरसिंह</strong> = मैस्कॉट (शुभंकर), <strong>बारह सींग</strong> = दुर्लभ प्रजाति का हार्डग्राउंड बारहसिंगा।</span>
-</p>
-</div>
-<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs">
-<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm font-numeric-table">
-<span class="material-symbols-outlined text-[16px]">verified_user</span>
-                स्रोत: राष्ट्रीय बाघ संरक्षण प्राधिकरण (NTCA) बुलेटिन
-              </div>
-<div class="flex items-center gap-space-xs">
-<button class="px-space-md py-space-xs rounded bg-surface-container-high text-primary hover:bg-secondary hover:text-on-secondary transition-colors font-label-md text-label-md flex items-center gap-space-xs" onclick="copyDossier(this, 'कान्हा राष्ट्रीय उद्यान: भूरसिंह द बारहसिंगा मैस्कॉट वाला पहला उद्यान, कूनो चीता परियोजना श्योपुर।')">
-<span class="material-symbols-outlined text-[16px]">content_copy</span>
-<span>क्लिपबोर्ड पर कॉपी करें</span>
-</button>
-<button class="px-space-md py-space-xs rounded bg-primary text-on-primary hover:bg-secondary transition-colors font-label-md text-label-md flex items-center gap-space-xs" onclick="addToPrintQueue(this, 'कान्हा व कूनो अभयारण्य फैक्ट्स')">
-<span class="material-symbols-outlined text-[16px]">playlist_add</span>
-<span>A4 प्रिंट में जोड़ें</span>
-</button>
-</div>
-</div>
-</article>
-<!-- Card 5: All India Current Affairs (Semiconductor / Tech) -->
-<article class="gk-card bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md transition-all hover:shadow-md" data-cat="CURR" data-state="ALL">
-<div class="flex flex-wrap items-center justify-between gap-space-sm">
-<div class="flex items-center gap-space-sm">
-<span class="px-space-sm py-space-xs rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold">
-                  राष्ट्रीय समसामयिकी (National Affairs)
-                </span>
-<span class="px-space-sm py-space-xs rounded bg-surface-container text-primary font-label-sm text-label-sm font-bold">
-                  विज्ञान, तकनीक व उद्योग
-                </span>
-</div>
-<div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-space-xs rounded text-primary font-label-sm text-label-sm">
-<span class="material-symbols-outlined text-[16px] text-secondary">repeat</span>
-<span>अपेक्षित: UPSC Prelims 2025, SSC CGL Tier-1</span>
-</div>
-</div>
-<div>
-<h3 class="font-headline-sm text-headline-sm text-primary">भारत सेमीकंडक्टर मिशन (ISM) 2.0: धोलेरा व साणंद फैब्रिकेशन क्लस्टर्स</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs italic">India Semiconductor Mission: Commercial Fab Facility in Dholera (Gujarat) &amp; OSAT Units</p>
-</div>
-<div class="space-y-space-xs font-body-md text-body-md text-on-surface">
-<div class="flex items-start gap-space-xs">
-<span class="material-symbols-outlined text-[18px] text-secondary shrink-0 mt-0.5">check_circle</span>
-<span><strong>नोडल संस्था:</strong> इलेक्ट्रॉनिक्स एवं सूचना प्रौद्योगिकी मंत्रालय (MeitY) के अधीन डिजिटल इंडिया कॉर्पोरेशन द्वारा संचालित ₹76,000 करोड़ का समग्र कोष।</span>
-</div>
-<div class="flex items-start gap-space-xs">
-<span class="material-symbols-outlined text-[18px] text-secondary shrink-0 mt-0.5">check_circle</span>
-<span><strong>मुख्य घटक:</strong> टाटा इलेक्ट्रॉनिक्स व ताइवान के PSMC द्वारा धोलेरा (गुजरात) में 28nm नोड फैब चिप इकाई का रणनीतिक निर्माण।</span>
-</div>
-</div>
-<!-- Desi Memory Trick Box -->
-<div class="bg-surface-container rounded-lg p-space-md">
-<div class="flex items-center gap-space-xs text-primary font-title-md text-title-md">
-<span class="material-symbols-outlined text-[20px] text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
-<span>देसी मेमोरी ट्रिक (Mnemonics Capsule):</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface mt-space-xs font-medium">
-                👉 <span class="bg-surface-container-lowest px-space-xs py-0.5 rounded font-bold text-primary">"चिप धोने गुजरात चलो"</span>
-<span class="text-on-surface-variant font-normal">→ <strong>चिप</strong> (सेमीकंडक्टर), <strong>धोने</strong> (धोलेरा क्लस्टर), <strong>गुजरात</strong> (राज्य)। याद रखें: पहली कॉमर्शियल सेमीकंडक्टर चिप फैब गुजरात के धोलेरा में है।</span>
-</p>
-</div>
-<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs">
-<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm font-numeric-table">
-<span class="material-symbols-outlined text-[16px]">verified_user</span>
-                स्रोत: MeitY पीआईबी प्रेस विज्ञप्ति सं. 19284
-              </div>
-<div class="flex items-center gap-space-xs">
-<button class="px-space-md py-space-xs rounded bg-surface-container-high text-primary hover:bg-secondary hover:text-on-secondary transition-colors font-label-md text-label-md flex items-center gap-space-xs" onclick="copyDossier(this, 'भारत सेमीकंडक्टर मिशन: MeitY, ₹76000 करोड़, धोलेरा गुजरात चिप फैब।')">
-<span class="material-symbols-outlined text-[16px]">content_copy</span>
-<span>क्लिपबोर्ड पर कॉपी करें</span>
-</button>
-<button class="px-space-md py-space-xs rounded bg-primary text-on-primary hover:bg-secondary transition-colors font-label-md text-label-md flex items-center gap-space-xs" onclick="addToPrintQueue(this, 'भारत सेमीकंडक्टर मिशन व धोलेरा')">
-<span class="material-symbols-outlined text-[16px]">playlist_add</span>
-<span>A4 प्रिंट में जोड़ें</span>
-</button>
-</div>
-</div>
-</article>
-</div>
-<!-- Right Side Analytical & Academic Rail (4 Cols) -->
-<aside class="xl:col-span-4 space-y-gutter">
-<!-- Rapid Statistics Widget -->
-<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-md">
+<div class="md:col-span-5 flex flex-col gap-space-sm">
+<!-- Inline Data Visualization Widget -->
+<div class="bg-surface-container p-space-sm rounded-lg flex flex-col gap-2">
 <div class="flex items-center justify-between">
-<h3 class="font-title-md text-title-md text-primary font-bold">आज का परीक्षा संकलन डेटा</h3>
-<span class="material-symbols-outlined text-[18px] text-secondary">analytics</span>
+<span class="font-label-sm text-label-sm font-bold text-primary">ODOP निर्यात योगदान (शीर्ष जनपद)</span>
+<span class="font-numeric-table text-label-sm text-secondary font-bold">2026 अद्यतन</span>
 </div>
-<div class="grid grid-cols-2 gap-space-sm font-numeric-table">
-<div class="p-space-sm bg-surface-container-low rounded">
-<span class="block text-body-sm text-on-surface-variant">आज के राज्य फैक्ट्स</span>
-<span class="font-headline-sm text-headline-sm text-primary font-bold">142</span>
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface">भदोही (कालीन)</span>
+<span class="font-mono text-primary font-bold">₹7,200 Cr</span>
 </div>
-<div class="p-space-sm bg-surface-container-low rounded">
-<span class="block text-body-sm text-on-surface-variant">मेमोरी ट्रिक्स एक्टिव</span>
-<span class="font-headline-sm text-headline-sm text-secondary font-bold">48 सूत्र</span>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 82%"></div>
 </div>
-<div class="p-space-sm bg-surface-container-low rounded">
-<span class="block text-body-sm text-on-surface-variant">PYQ वेरीफाइड सवाल</span>
-<span class="font-headline-sm text-headline-sm text-primary font-bold">89%</span>
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface">मुरादाबाद (हस्तशिल्प)</span>
+<span class="font-mono text-primary font-bold">₹9,450 Cr</span>
 </div>
-<div class="p-space-sm bg-surface-container-low rounded">
-<span class="block text-body-sm text-on-surface-variant">प्रिंट अनुकूलित पृष्ठ</span>
-<span class="font-headline-sm text-headline-sm text-tertiary-container font-bold">02 A4</span>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 95%"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface">सहारनपुर (काष्ठ शिल्प)</span>
+<span class="font-mono text-primary font-bold">₹3,890 Cr</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-outline h-full rounded-full" style="width: 58%"></div>
 </div>
 </div>
-<!-- In-line SVG Accuracy Radar / Sparkline -->
-<div class="bg-surface-container rounded p-space-sm">
-<span class="block font-label-sm text-label-sm text-on-surface-variant mb-space-xs">मासिक परीक्षा प्रश्न पुनरावृत्ति दर (Exam Weightage Trend)</span>
-<svg class="w-full h-16 text-secondary overflow-visible" viewbox="0 0 300 80">
+</div>
+<!-- Desi Trick Capsule -->
+<div class="p-space-sm rounded-lg bg-surface-container text-on-surface flex flex-col gap-1">
+<div class="flex items-center gap-1.5 text-tertiary-container font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[16px]">lightbulb</span>
+<span>देसी याददाश्त ट्रिक:</span>
+</div>
+<p class="font-body-sm text-body-sm font-semibold text-primary">
+                  "भदोही की कालीन पर सहारनपुर की लकड़ी, कन्नौज के इत्र से महकी फिरोज़ की चूड़ी"
+                </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  भदोही = कालीन | सहारनपुर = लकड़ी शिल्प | कन्नौज = इत्र | फिरोजाबाद = चूड़ी व कांच।
+                </p>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs font-label-sm text-label-sm text-outline">
+<span class="flex items-center gap-1 font-mono">
+<span class="material-symbols-outlined text-[14px]">policy</span> Ref: MSME Dept UP Gov Portal 2026 &amp; UP Economic Survey
+            </span>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center gap-1 transition-all" onclick="copySnippet(this, 'UP ODOP: 24 Jan 2018 आरंभ, भदोही-कालीन, सहारनपुर-काष्ठ, मुरादाबाद-पीतल, 57692 ग्राम सचिवालय')">
+<span class="material-symbols-outlined text-[14px]">content_copy</span> कॉपी नोट्स
+              </button>
+<button class="px-space-sm py-1 rounded bg-secondary text-on-secondary hover:bg-secondary-container flex items-center gap-1 transition-all font-semibold" onclick="window.print()">
+<span class="material-symbols-outlined text-[14px]">picture_as_pdf</span> A4 प्रिंट
+              </button>
+</div>
+</div>
+</article>
+<!-- Card 3: Bihar GK -->
+<article class="dossier-card bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md transition-all hover:shadow-md" data-category="art-culture" data-state="bihar">
+<div class="flex items-center justify-between flex-wrap gap-space-xs pb-space-sm bg-surface-container-lowest">
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-md text-label-md font-bold text-primary tracking-wide uppercase">बिहार इतिहास एवं बौद्ध अध्ययन</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface-variant font-numeric-table text-label-sm">BPSC 56-59th, 64th, 68th CCE Question</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">प्राचीन शिक्षा केंद्र</span>
+<span class="font-numeric-table text-numeric-table text-outline font-medium">भार: 05 अंक</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md items-start">
+<div class="md:col-span-7 flex flex-col gap-space-sm">
+<h3 class="font-title-lg text-title-lg text-primary font-bold">
+                नालंदा महाविहार – धर्मगंज पुस्तकालय संरचना व बौद्ध दर्शन
+              </h3>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+                5वीं शताब्दी ईस्वी में गुप्त सम्राट कुमारगुप्त प्रथम (महेंद्रादित्य) द्वारा स्थापित यह विश्व का प्राचीनतम आवासीय विश्वविद्यालय था, जहाँ 10,000 छात्र और 2,000 आचार्य निवास करते थे। चीनी यात्री ह्वेनसांग (Xuanzang) ने यहाँ 5 वर्ष रहकर योगाचार संप्रदाय का गहन अध्ययन किया।
+              </p>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col gap-1.5 font-body-sm text-body-sm text-on-surface">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0 mt-0.5">check_circle</span>
+<span><strong>'धर्मगंज' पुस्तकालय परिसर:</strong> इसमें नौ मंजिला तीन विशाल भवन थे — <em>रत्नसागर</em>, <em>रत्नोदधि</em> एवं <em>रत्नरंजक</em>।</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0 mt-0.5">check_circle</span>
+<span><strong>विद्वत परंपरा:</strong> आचार्य शीलभद्र (कुलपति काल: 635 ई.), नागार्जुन, आर्यभट्ट, शांतिरक्षित एवं धर्मकीर्ति यहाँ के अग्रणी आचार्य रहे।</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0 mt-0.5">check_circle</span>
+<span><strong>विनाश व पुनर्जागरण:</strong> 1193 ईस्वी में बख्तियार खिलजी द्वारा विध्वंस। वर्ष 2016 में यूनेस्को विश्व सांस्कृतिक धरोहर के रूप में अधिमानित। नव नालंदा महाविहार (राजगीर) 2024 में नए परिसर के साथ राष्ट्र को समर्पित।</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-5 flex flex-col gap-space-sm">
+<div class="rounded-lg overflow-hidden bg-surface-container-high h-44 relative shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Scholarly low-angle archaeological photograph of the excavated red-brick stupas and monastery foundations of ancient Nalanda Mahavihara ruins under clear morning sun with deep academic solemnity, warm terracotta brick tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQn2KSh8cHotc0e2GM5xsDJGncWLCaz9V-5cB0MrREuQyBZLf2PAZhHuuR0CUjtKSAz39fHDz39lovHGcXfhannRiZ7Cb7EJl_M3z88gxqCsBSWkC2ZYOMcRBq3NPKVaJe_uEpVomIJxs_ibpUIgPJjQeMieQ1ieGxkFZcbK7bf4iDnVmWv13O1EWMKhkoGoT-FoQGYclO5wFU-8eehD1ktZDSMAp2to9pcISOUjIpYidOZF0z6d4Amw"/>
+<div class="absolute bottom-2 left-2 px-space-xs py-0.5 rounded bg-primary/90 text-on-primary font-label-sm text-label-sm">
+                  नालंदा स्तूप 3 खंडहर
+                </div>
+</div>
+<!-- Desi Trick Capsule -->
+<div class="p-space-sm rounded-lg bg-surface-container text-on-surface flex flex-col gap-1">
+<div class="flex items-center gap-1.5 text-tertiary-container font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[16px]">lightbulb</span>
+<span>देसी याददाश्त ट्रिक:</span>
+</div>
+<p class="font-body-sm text-body-sm font-semibold text-primary">
+                  "कुमार ने नालंदा में तीन रत्न पढ़े"
+                </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  कुमार (कुमारगुप्त प्रथम संस्थापक) + तीन रत्न (रत्नसागर, रत्नोदधि, रत्नरंजक पुस्तकालय)।
+                </p>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs font-label-sm text-label-sm text-outline">
+<span class="flex items-center gap-1 font-mono">
+<span class="material-symbols-outlined text-[14px]">policy</span> Ref: ASI Excavation Memoirs / Xuanzang's Si-Yu-Ki
+            </span>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center gap-1 transition-all" onclick="copySnippet(this, 'नालंदा महाविहार: 5वीं सदी, कुमारगुप्त 1, ह्वेनसांग, 3 पुस्तकालय-रत्नसागर रत्नोदधि रत्नरंजक, 1193 खिलजी')">
+<span class="material-symbols-outlined text-[14px]">content_copy</span> कॉपी नोट्स
+              </button>
+<button class="px-space-sm py-1 rounded bg-secondary text-on-secondary hover:bg-secondary-container flex items-center gap-1 transition-all font-semibold" onclick="window.print()">
+<span class="material-symbols-outlined text-[14px]">picture_as_pdf</span> A4 प्रिंट
+              </button>
+</div>
+</div>
+</article>
+<!-- Card 4: Madhya Pradesh GK -->
+<article class="dossier-card bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md transition-all hover:shadow-md" data-category="geography" data-state="mp">
+<div class="flex items-center justify-between flex-wrap gap-space-xs pb-space-sm bg-surface-container-lowest">
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-md text-label-md font-bold text-primary tracking-wide uppercase">मध्य प्रदेश पर्यावरण एवं जैव विविधता</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface-variant font-numeric-table text-label-sm">MPPSC 2020, 2023 Forest Service Repeated</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">वन्यजीव संरक्षण</span>
+<span class="font-numeric-table text-numeric-table text-outline font-medium">भार: 04 अंक</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md items-start">
+<div class="md:col-span-7 flex flex-col gap-space-sm">
+<h3 class="font-title-lg text-title-lg text-primary font-bold">
+                कान्हा राष्ट्रीय उद्यान ('भूरसिंह' मैस्कॉट) व कूनो पालपुर चीता परियोजना
+              </h3>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+                मध्य प्रदेश भारत का 'टाइगर स्टेट' (785 बाघ, 2022 गणना) एवं 'तेंदुआ राज्य' है। कान्हा राष्ट्रीय उद्यान (मंडला व बालाघाट) भारत का प्रथम टाइगर रिजर्व है जिसने अपना आधिकारिक शुभंकर (Mascot) जारी किया।
+              </p>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col gap-1.5 font-body-sm text-body-sm text-on-surface">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0 mt-0.5">check_circle</span>
+<span><strong>भूरसिंह द बारहसिंगा:</strong> 2017 में रोहन चक्रवर्ती द्वारा डिजाइन किया गया शुभंकर, जो दलदली हिरण की दुर्लभ 'ब्रेडरी' प्रजाति का संरक्षण संदेश देता है।</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0 mt-0.5">check_circle</span>
+<span><strong>कूनो राष्ट्रीय उद्यान (श्योपुर):</strong> प्रोजेक्ट चीता (17 सितम्बर 2022 से सक्रिय) के तहत नामीबिया और दक्षिण अफ्रीका से लाए गए चीतों का पुनर्वास। 2026 तक भारतीय भूमि पर 24 से अधिक शावकों का सफल जन्म।</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0 mt-0.5">check_circle</span>
+<span><strong>गांधी सागर वन्यजीव अभयारण्य (मंदसौर/नीमच):</strong> मध्य प्रदेश का दूसरा चीता अभयारण्य केंद्र घोषित।</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-5 flex flex-col gap-space-sm">
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-space-xs">
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="font-bold text-primary">मध्य प्रदेश बाघ सांख्यिकी (NTCA 2026)</span>
+<span class="font-mono text-secondary font-bold">785+</span>
+</div>
+<!-- Inline SVG Bar Graph -->
+<div class="h-28 w-full flex items-end justify-between gap-1 pt-2">
+<div class="flex-1 flex flex-col items-center gap-1">
+<span class="font-label-sm text-[10px] text-outline">MP</span>
+<div class="w-full bg-secondary rounded-t h-20"></div>
+<span class="font-mono text-[10px] text-primary font-bold">785</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1">
+<span class="font-label-sm text-[10px] text-outline">KA</span>
+<div class="w-full bg-secondary-container rounded-t h-16"></div>
+<span class="font-mono text-[10px] text-primary font-bold">563</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1">
+<span class="font-label-sm text-[10px] text-outline">UK</span>
+<div class="w-full bg-outline-variant rounded-t h-14"></div>
+<span class="font-mono text-[10px] text-primary font-bold">560</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1">
+<span class="font-label-sm text-[10px] text-outline">MH</span>
+<div class="w-full bg-surface-container-highest rounded-t h-10"></div>
+<span class="font-mono text-[10px] text-primary font-bold">444</span>
+</div>
+</div>
+</div>
+<!-- Desi Trick Capsule -->
+<div class="p-space-sm rounded-lg bg-surface-container text-on-surface flex flex-col gap-1">
+<div class="flex items-center gap-1.5 text-tertiary-container font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[16px]">lightbulb</span>
+<span>देसी याददाश्त ट्रिक:</span>
+</div>
+<p class="font-body-sm text-body-sm font-semibold text-primary">
+                  "कान्हा ने भूरसिंह को बारह सींग दिए"
+                </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  कान्हा राष्ट्रीय उद्यान = भूरसिंह मैस्कॉट = बारहसिंगा (हार्ड ग्राउंड प्रजाति)।
+                </p>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs font-label-sm text-label-sm text-outline">
+<span class="flex items-center gap-1 font-mono">
+<span class="material-symbols-outlined text-[14px]">policy</span> Ref: NTCA All India Tiger Estimation &amp; MP Forest Dept
+            </span>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center gap-1 transition-all" onclick="copySnippet(this, 'MP Wildlife: कान्हा-भूरसिंह बारहसिंगा 2017 मैस्कॉट, कूनो-चीता प्रोजेक्ट, 785 बाघ, गांधी सागर 2nd चीता हैबिटेट')">
+<span class="material-symbols-outlined text-[14px]">content_copy</span> कॉपी नोट्स
+              </button>
+<button class="px-space-sm py-1 rounded bg-secondary text-on-secondary hover:bg-secondary-container flex items-center gap-1 transition-all font-semibold" onclick="window.print()">
+<span class="material-symbols-outlined text-[14px]">picture_as_pdf</span> A4 प्रिंट
+              </button>
+</div>
+</div>
+</article>
+<!-- Card 5: National Current Affairs -->
+<article class="dossier-card bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md transition-all hover:shadow-md" data-category="national-ca" data-state="all">
+<div class="flex items-center justify-between flex-wrap gap-space-xs pb-space-sm bg-surface-container-lowest">
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-md text-label-md font-bold text-primary tracking-wide uppercase">राष्ट्रीय समसामयिकी व विज्ञान प्रौद्योगिकी</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface-variant font-numeric-table text-label-sm">UPSC GS-III &amp; State PCS Economy</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="px-space-sm py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">भारत सेमीकंडक्टर मिशन (ISM) 2.0</span>
+<span class="font-numeric-table text-numeric-table text-outline font-medium">भार: 06 अंक</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md items-start">
+<div class="md:col-span-7 flex flex-col gap-space-sm">
+<h3 class="font-title-lg text-title-lg text-primary font-bold">
+                धोलेरा व साणंद फैब क्लस्टर्स – भारत का सिलिकॉन प्रभुत्व रोडमैप 2026
+              </h3>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+                इलेक्ट्रॉनिक्स एवं सूचना प्रौद्योगिकी मंत्रालय (MeitY) के तत्वावधान में ₹76,000 करोड़ के वित्तीय प्रोत्साहन के साथ संचालित इंडिया सेमीकंडक्टर मिशन के तहत गुजरात के धोलेरा में टाटा इलेक्ट्रॉनिक्स-पावरचिप (PSMC) का प्रथम व्यावसायिक फैब संयंत्र उत्पादन चरण में अग्रसर है।
+              </p>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col gap-1.5 font-body-sm text-body-sm text-on-surface">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0 mt-0.5">check_circle</span>
+<span><strong>धोलेरा फैब (टाटा-PSMC):</strong> ₹91,000 करोड़ का निवेश, 28nm और 40nm वेफर निर्माण क्षमता (प्रति माह 50,000 वेफर्स)।</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0 mt-0.5">check_circle</span>
+<span><strong>साणंद ATMP संयंत्र (माइक्रोन टेक्नोलॉजी):</strong> $2.75 बिलियन की असेंबली और परीक्षण सुविधा; मोरीगांव (असम) में टाटा का दूसरा ATMP हब।</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0 mt-0.5">check_circle</span>
+<span><strong>भू-राजनीतिक महत्व:</strong> क्वाड (QUAD) सेमीकंडक्टर सप्लाई चेन इनिशिएटिव और भारत-अमेरिका iCET (इनीशिएटिव ऑन क्रिटिकल एंड इमर्जिंग टेक्नोलॉजीज) का मूल आधार।</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-5 flex flex-col gap-space-sm">
+<div class="rounded-lg overflow-hidden bg-surface-container-high h-44 relative shadow-inner">
+<img class="w-full h-full object-cover" data-alt="High-tech editorial photograph of a cleanroom semiconductor silicon wafer fabrication unit with engineers in white bunny suits examining microchips under cool cyan and deep navy laboratory illumination." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuLHOuE38KvfIvs84DRnYcY731Vpd4l5kVnZSvXAtc9HjciS8yP9s0-h8K2sU7h7Jsn0VxbJ9KM4MaGt_W71yXEu6HFgNyotmD9XKML3Lx5VoHTaMP2kyXqD4_i2uywaPp0sxVGil2CpYypySPCCzj6oyVgCGCEoLF6TLLeVlRcTYDJcSHDXEtk-SmaAPuzyRb2eo6oFPPavTzW0R17Z0GE0T5g42a88bhuH9ixWadQhfgtVGaloLnNg"/>
+<div class="absolute bottom-2 left-2 px-space-xs py-0.5 rounded bg-primary/90 text-on-primary font-label-sm text-label-sm">
+                  धोलेरा सेमीकंडक्टर क्लस्टर
+                </div>
+</div>
+<!-- Desi Trick Capsule -->
+<div class="p-space-sm rounded-lg bg-surface-container text-on-surface flex flex-col gap-1">
+<div class="flex items-center gap-1.5 text-tertiary-container font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[16px]">lightbulb</span>
+<span>देसी याददाश्त ट्रिक:</span>
+</div>
+<p class="font-body-sm text-body-sm font-semibold text-primary">
+                  "चिप धोने गुजरात चलो, असम में पैक करो"
+                </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  धोने (धोलेरा फैब गुजरात) + पैक करो (मोरीगांव ATMP पैकेजिंग असम)।
+                </p>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs font-label-sm text-label-sm text-outline">
+<span class="flex items-center gap-1 font-mono">
+<span class="material-symbols-outlined text-[14px]">policy</span> Ref: PIB MeitY Press Release Jan 2026 / Economic Survey
+            </span>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center gap-1 transition-all" onclick="copySnippet(this, 'Semiconductor Mission: ₹76,000 Cr MeitY, धोलेरा टाटा-PSMC 28nm फैब, साणंद माइक्रोन, मोरीगांव असम पैकेजिंग')">
+<span class="material-symbols-outlined text-[14px]">content_copy</span> कॉपी नोट्स
+              </button>
+<button class="px-space-sm py-1 rounded bg-secondary text-on-secondary hover:bg-secondary-container flex items-center gap-1 transition-all font-semibold" onclick="window.print()">
+<span class="material-symbols-outlined text-[14px]">picture_as_pdf</span> A4 प्रिंट
+              </button>
+</div>
+</div>
+</article>
+</div>
+<!-- Right Column: Academic & Analytical Rail (4 Cols) -->
+<aside class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- Today's Exam Facts KPI Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">insights</span>
+<span class="font-title-md text-title-md font-bold text-primary">दैनिक परीक्षा मैट्रिक्स</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline font-mono">2026 Vol. 84</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">संकलित राज्य तथ्य</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary font-mono">142</span>
+<span class="font-label-sm text-label-sm text-secondary">+12 आज नए</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">स्मृति सूत्र (Tricks)</span>
+<span class="font-headline-sm text-headline-sm font-bold text-secondary font-mono">48</span>
+<span class="font-label-sm text-label-sm text-secondary">उच्च उत्पादकता</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">20-Yr PYQ टैग्ड</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary font-mono">89%</span>
+<span class="font-label-sm text-label-sm text-outline">अखिल भारतीय</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">प्रिंट शीट आकार</span>
+<span class="font-headline-sm text-headline-sm font-bold text-secondary font-mono">02 A4</span>
+<span class="font-label-sm text-label-sm text-secondary">कंडेंस्ड प्रारूप</span>
+</div>
+</div>
+<!-- Trend Line: Exam Weightage Curve (SVG) -->
+<div class="pt-space-xs flex flex-col gap-1">
+<div class="flex justify-between items-center text-label-sm font-label-sm">
+<span class="text-on-surface-variant font-medium">गत 5 वर्षों में राज्य GK का भारांक</span>
+<span class="text-secondary font-bold font-mono">↑ 41.5%</span>
+</div>
+<svg class="w-full h-16 overflow-visible" viewbox="0 0 240 60">
 <defs>
-<lineargradient id="gkTrendGrad" x1="0%" x2="0%" y1="0%" y2="100%">
-<stop offset="0%" stop-color="currentColor" stop-opacity="0.3"></stop>
-<stop offset="100%" stop-color="currentColor" stop-opacity="0"></stop>
+<lineargradient id="gkTrendGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#1d4ed8" stop-opacity="0.25"></stop>
+<stop offset="100%" stop-color="#1d4ed8" stop-opacity="0.0"></stop>
 </lineargradient>
 </defs>
-<path d="M 0,60 Q 50,20 100,45 T 200,15 T 300,30 L 300,80 L 0,80 Z" fill="url(#gkTrendGrad)"></path>
-<path d="M 0,60 Q 50,20 100,45 T 200,15 T 300,30" fill="none" stroke="currentColor" stroke-width="2.5"></path>
-<!-- Key Point Dots -->
-<circle class="fill-primary" cx="100" cy="45" r="3.5"></circle>
-<circle class="fill-primary" cx="200" cy="15" r="3.5"></circle>
-<circle class="fill-secondary" cx="300" cy="30" r="3.5"></circle>
+<path d="M 0 52 Q 40 45, 80 40 T 160 22 T 240 8 L 240 60 L 0 60 Z" fill="url(#gkTrendGrad)"></path>
+<path d="M 0 52 Q 40 45, 80 40 T 160 22 T 240 8" fill="none" stroke="#1d4ed8" stroke-linecap="round" stroke-width="2.5"></path>
+<circle cx="80" cy="40" fill="#00163d" r="3"></circle>
+<circle cx="160" cy="22" fill="#00163d" r="3"></circle>
+<circle cx="240" cy="8" fill="#1d4ed8" r="4"></circle>
 </svg>
-<div class="flex justify-between text-body-sm font-numeric-table text-on-surface-variant mt-1">
-<span>सप्ताह 1</span>
-<span>सप्ताह 2</span>
-<span>सप्ताह 3</span>
-<span>सप्ताह 4 (उच्चतम)</span>
+<div class="flex justify-between text-[11px] font-mono text-outline">
+<span>2021 (22%)</span>
+<span>2023 (31%)</span>
+<span>2025 (37%)</span>
+<span>2026 (42%)</span>
 </div>
 </div>
 </div>
-<!-- Quick State High-Yield Capsules -->
-<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-md">
-<div class="flex items-center justify-between">
-<h3 class="font-title-md text-title-md text-primary font-bold">त्वरित 1-लाइनर कैप्सूल (One-Liners)</h3>
-<span class="font-label-sm text-label-sm text-secondary font-bold">2-MIN REVISION</span>
+<!-- Quick 1-Liner Flash Capsules -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-title-md text-title-md font-bold text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[18px]">bolt</span>
+              त्वरित 1-लाइनर कैप्सूल (आज का सार)
+            </span>
 </div>
-<div class="space-y-space-sm font-body-sm text-body-sm">
-<div class="p-space-sm bg-surface-container-low rounded border-l-2 border-secondary">
-<span class="font-bold text-primary block">हरियाणा (HPSC):</span>
-<span>'मेरा पानी मेरी विरासत' योजना के तहत धान के स्थान पर वैकल्पिक फसलों पर ₹7,000 प्रति एकड़ अनुदान।</span>
+<div class="flex flex-col gap-space-xs font-body-sm text-body-sm">
+<div class="p-space-xs rounded bg-surface-container-low flex flex-col gap-0.5">
+<span class="font-label-sm text-[11px] font-bold text-secondary uppercase">हरियाणा • खेल व कल्याण</span>
+<p class="text-on-surface"><strong>'खेलो हरियाणा 2026':</strong> पदक विजेता खिलाडियों हेतु 'ओलंपिक पोडियम स्कीम' के तहत नकद पुरस्कार राशि बढ़ाकर ₹7 करोड़ की गई।</p>
 </div>
-<div class="p-space-sm bg-surface-container-low rounded border-l-2 border-secondary">
-<span class="font-bold text-primary block">उत्तराखंड (UKPSC):</span>
-<span>समान नागरिक संहिता (UCC) विधेयक को लागू करने वाला देश का पहला स्वतंत्र राज्य बना।</span>
+<div class="p-space-xs rounded bg-surface-container-low flex flex-col gap-0.5">
+<span class="font-label-sm text-[11px] font-bold text-secondary uppercase">उत्तराखंड • विधायी नवाचार</span>
+<p class="text-on-surface"><strong>समान नागरिक संहिता (UCC):</strong> स्वतंत्रता पश्चात यूसीसी लागू करने वाला भारत का प्रथम राज्य; लिव-इन संबंधों का अनिवार्य पंजीकरण प्रावधान।</p>
 </div>
-<div class="p-space-sm bg-surface-container-low rounded border-l-2 border-secondary">
-<span class="font-bold text-primary block">केरल (Kerala PSC):</span>
-<span>देश की पहली जल मेट्रो परियोजना 'कोच्चि वाटर मेट्रो' को 100% पर्यावरण-अनुकूल इलेक्ट्रिक प्रमाणन।</span>
+<div class="p-space-xs rounded bg-surface-container-low flex flex-col gap-0.5">
+<span class="font-label-sm text-[11px] font-bold text-secondary uppercase">केरल • सतत परिवहन</span>
+<p class="text-on-surface"><strong>कोच्चि वाटर मेट्रो:</strong> भारत की प्रथम एकीकृत जल मेट्रो प्रणाली; बैटरी-चालित इलेक्ट्रिक हाइब्रिड बोट्स का 10 द्वीपों में विस्तार।</p>
 </div>
-<div class="p-space-sm bg-surface-container-low rounded border-l-2 border-secondary">
-<span class="font-bold text-primary block">असम (APSC):</span>
-<span>काजीरंगा राष्ट्रीय उद्यान में 'गज उत्सव 2024' का आयोजन; प्रोजेक्ट एलिफेंट के 30 वर्ष पूरे।</span>
+<div class="p-space-xs rounded bg-surface-container-low flex flex-col gap-0.5">
+<span class="font-label-sm text-[11px] font-bold text-secondary uppercase">असम • पर्यावरण धरोहर</span>
+<p class="text-on-surface"><strong>काजीरंगा राष्ट्रीय उद्यान:</strong> कृत्रिम बुद्धिमत्ता (AI) थर्मल कैमरों द्वारा एक सींग वाले गैंडे की अवैध शिकार रोधी निगरानी शून्य-शिकार वर्ष दर्ज।</p>
 </div>
 </div>
 </div>
-<!-- Statutory Watermark Notice Box -->
-<div class="bg-surface-container-high rounded-xl p-space-md text-on-surface-variant font-body-sm text-body-sm space-y-space-xs">
-<div class="flex items-center gap-space-xs text-primary font-semibold">
-<span class="material-symbols-outlined text-[18px]">gavel</span>
-<span>कानूनी सूचना व वाटरमार्क सुरक्षा</span>
+<!-- Academic Authority & Strict Copyright Notice -->
+<div class="bg-surface-container-high/40 rounded-xl p-space-md flex flex-col gap-space-xs text-on-surface">
+<div class="flex items-center gap-1.5 font-label-md text-label-md font-bold text-primary">
+<span class="material-symbols-outlined text-[16px] text-outline">verified</span>
+<span>वैधानिक व कॉपीराइट अधिप्रमाणन</span>
 </div>
-<p>
-              इस पोर्टल का समस्त दैनिक डाटा कॉपीराइट अधिनियम 1957 के तहत संरक्षित है। पीडीएफ एक्सपोर्ट में पंजीकृत रोल <span class="font-bold text-primary">#EDU-8921 (Rajesh Kumar)</span> का डिजिटल माइक्रोडॉट एम्बेडेड रहता है।
-            </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            यह शैक्षणिक प्रपत्र भारतीय प्रतिलिप्यधिकार अधिनियम, 1957 (Indian Copyright Act 1957) की धारा 13 एवं 63 के तहत संरक्षित है। सामग्री केवल सत्यापित छात्र ID <strong><b data-edu-id>लॉगिन करें</b></strong> के निजी अध्ययन हेतु प्राधिकृत है।
+          </p>
+<div class="flex items-center justify-between text-outline font-label-sm text-label-sm pt-space-xs">
+<span>Watermarked <b data-edu-id>लॉगिन करें</b></span>
+<span>AES-256 Validated</span>
+</div>
 </div>
 </aside>
 </div>
 </div>
-</section>
-<!-- Daily Top 10 Rapid Fire MCQ Section -->
-<section class="w-full bg-surface-container-low py-margin" id="rapid-mcq">
-<div class="max-w-[1440px] mx-auto px-margin-lg space-y-space-lg">
-<!-- MCQ Section Header -->
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
-<div>
-<div class="flex items-center gap-space-xs">
-<span class="px-space-sm py-space-xs rounded bg-secondary text-on-secondary font-label-sm text-label-sm font-bold uppercase">
-              दैनिक लाइव टेस्ट
-            </span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">02 मार्च 2025 संकलन</span>
-</div>
-<h2 class="font-headline-lg text-headline-lg text-primary font-bold mt-space-xs">
-            डेली टॉप 10 रैपिड-फायर मॉक प्रश्न (Instant Solution &amp; Accuracy)
+<!-- Interactive Daily Rapid-Fire Top 10 Mock Test Section -->
+<section class="w-full bg-surface-container-low px-margin-sm lg:px-margin-lg py-space-xl" id="mock-section">
+<div class="max-w-[1440px] mx-auto flex flex-col gap-space-lg">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm">
+<div class="flex flex-col gap-space-xs">
+<div class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold self-start">
+<span class="material-symbols-outlined text-[14px]">timer</span> दैनिक मूल्यांकन
+          </div>
+<h2 class="font-headline-md text-headline-md text-primary font-bold">
+            आज का 10-प्रश्न रैपिड-फायर मॉक टेस्ट (विगत 20-Year PYQ आधारित)
           </h2>
-<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
-            प्रत्येक विकल्प पर क्लिक कर अपना उत्तर जांचें और विस्तृत विश्लेषणात्मक व्याख्या देखें।
+<p class="font-body-md text-body-md text-on-surface-variant">
+            प्रत्येक प्रश्न का उत्तर दें और तत्काल व्याख्या व परीक्षा संदर्भ देखें।
           </p>
 </div>
-<div class="flex items-center gap-space-md bg-surface-container-lowest px-space-md py-space-sm rounded-lg shadow-sm">
-<div class="text-right">
-<span class="block font-label-sm text-label-sm text-on-surface-variant">हल किए गए प्रश्न</span>
-<span class="font-numeric-table font-title-lg text-title-lg font-bold text-secondary" id="mcq-score-counter">0 / 3 हल</span>
-</div>
-<div class="w-10 h-10 rounded-full bg-secondary-fixed text-primary flex items-center justify-center font-bold">
-<span class="material-symbols-outlined text-[20px]">bolt</span>
+<!-- Live Score Counter -->
+<div class="bg-surface-container-lowest px-space-md py-space-xs rounded-lg shadow-sm flex items-center gap-space-md">
+<span class="font-label-md text-label-md text-outline">आपका स्कोर:</span>
+<span class="font-headline-sm text-headline-sm font-mono font-bold text-secondary" id="quizScore">0 / 3</span>
 </div>
 </div>
+<!-- Quiz Questions Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Question 1 -->
+<div class="quiz-card bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-md" data-correct="B">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant font-bold">प्रश्न 01 • राजस्थान</span>
+<span class="text-outline font-mono">RAS 2021 PYQ</span>
 </div>
-<!-- MCQ Questions Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-<!-- Question Item 1 -->
-<div class="mcq-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm flex flex-col justify-between" data-answered="false">
-<div>
-<div class="flex items-center justify-between pb-space-xs">
-<span class="px-space-xs py-0.5 rounded bg-surface-container text-primary font-label-sm text-label-sm font-bold">
-                प्रश्न संख्या: 01 • राजस्थान इतिहास
-              </span>
-<span class="text-on-surface-variant font-label-sm text-label-sm">RAS 2021 Re-test</span>
-</div>
-<p class="font-title-md text-title-md text-primary mt-space-xs">
-              यूनेस्को विश्व धरोहर सूची में शामिल 'गागरोन का किला' किन दो नदियों के संगम पर निर्मित है?
+<p class="font-body-md text-body-md font-semibold text-primary">
+              गागरोन का जल दुर्ग किन दो नदियों के पवित्र संगम स्थल पर स्थित है?
             </p>
-<div class="mt-space-md space-y-space-xs">
-<button class="mcq-opt w-full text-left px-space-md py-space-xs rounded bg-surface-container-low hover:bg-surface-container text-body-md font-body-md transition-colors flex items-center justify-between" onclick="checkAnswer(this, false, 'q1-exp')">
-<span>(A) चंबल और बामनी</span>
-<span class="material-symbols-outlined text-[16px] text-outline opacity-0 opt-icon">check</span>
+<div class="flex flex-col gap-space-xs text-on-surface font-body-sm text-body-sm">
+<button class="option-btn text-left p-space-xs rounded bg-surface-container-low hover:bg-surface-container transition-all flex items-center gap-2" onclick="handleQuizAnswer(this, 'A')">
+<span class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-[11px]">A</span>
+<span>चम्बल एवं बामनी</span>
 </button>
-<button class="mcq-opt w-full text-left px-space-md py-space-xs rounded bg-surface-container-low hover:bg-surface-container text-body-md font-body-md transition-colors flex items-center justify-between" onclick="checkAnswer(this, true, 'q1-exp')">
-<span>(B) आहू और कालीसिंध</span>
-<span class="material-symbols-outlined text-[16px] text-outline opacity-0 opt-icon">check</span>
+<button class="option-btn text-left p-space-xs rounded bg-surface-container-low hover:bg-surface-container transition-all flex items-center gap-2" onclick="handleQuizAnswer(this, 'B')">
+<span class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-[11px]">B</span>
+<span>आहू एवं कालीसिंध</span>
 </button>
-<button class="mcq-opt w-full text-left px-space-md py-space-xs rounded bg-surface-container-low hover:bg-surface-container text-body-md font-body-md transition-colors flex items-center justify-between" onclick="checkAnswer(this, false, 'q1-exp')">
-<span>(C) बनास और बेड़च</span>
-<span class="material-symbols-outlined text-[16px] text-outline opacity-0 opt-icon">check</span>
+<button class="option-btn text-left p-space-xs rounded bg-surface-container-low hover:bg-surface-container transition-all flex items-center gap-2" onclick="handleQuizAnswer(this, 'C')">
+<span class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-[11px]">C</span>
+<span>बनास एवं बेड़च</span>
 </button>
-<button class="mcq-opt w-full text-left px-space-md py-space-xs rounded bg-surface-container-low hover:bg-surface-container text-body-md font-body-md transition-colors flex items-center justify-between" onclick="checkAnswer(this, false, 'q1-exp')">
-<span>(D) परवन और निवाज</span>
-<span class="material-symbols-outlined text-[16px] text-outline opacity-0 opt-icon">check</span>
+<button class="option-btn text-left p-space-xs rounded bg-surface-container-low hover:bg-surface-container transition-all flex items-center gap-2" onclick="handleQuizAnswer(this, 'D')">
+<span class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-[11px]">D</span>
+<span>पार्वती एवं परवन</span>
 </button>
 </div>
 </div>
-<div class="hidden mt-space-sm p-space-sm bg-surface-container rounded font-body-sm text-body-sm text-on-surface" id="q1-exp">
-<span class="font-bold text-secondary block">सही उत्तर: (B) आहू और कालीसिंध</span>
-            गागरोन दुर्ग झालावाड़ में बिना नींव के चट्टान पर आहू-कालीसिंध के संगम (सामेला) पर बना श्रेष्ठ जल दुर्ग है। इसे 2013 में यूनेस्को ने शामिल किया।
+<div class="explanation-box hidden p-space-xs rounded bg-surface-container text-on-surface font-body-sm text-body-sm text-[12px]">
+<strong>सही उत्तर (B):</strong> गागरोन दुर्ग झालावाड़ में आहू और कालीसिंध नदी के संगम पर बिना नींव के बना उत्कृष्ट जल दुर्ग है।
           </div>
 </div>
-<!-- Question Item 2 -->
-<div class="mcq-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm flex flex-col justify-between" data-answered="false">
-<div>
-<div class="flex items-center justify-between pb-space-xs">
-<span class="px-space-xs py-0.5 rounded bg-surface-container text-primary font-label-sm text-label-sm font-bold">
-                प्रश्न संख्या: 02 • बिहार इतिहास
-              </span>
-<span class="text-on-surface-variant font-label-sm text-label-sm">BPSC 68वीं CCE</span>
+<!-- Question 2 -->
+<div class="quiz-card bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-md" data-correct="C">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant font-bold">प्रश्न 02 • बिहार</span>
+<span class="text-outline font-mono">BPSC 68th PYQ</span>
 </div>
-<p class="font-title-md text-title-md text-primary mt-space-xs">
-              प्राचीन नालंदा विश्वविद्यालय के विशाल पुस्तकालय 'धर्मगंज' में निम्नलिखित में से कौन सा भवन सम्मिलित नहीं था?
+<p class="font-body-md text-body-md font-semibold text-primary">
+              प्राचीन नालंदा विश्वविद्यालय के प्रसिद्ध पुस्तकालय 'धर्मगंज' के तीन भवनों में कौन-सा शामिल नहीं था?
             </p>
-<div class="mt-space-md space-y-space-xs">
-<button class="mcq-opt w-full text-left px-space-md py-space-xs rounded bg-surface-container-low hover:bg-surface-container text-body-md font-body-md transition-colors flex items-center justify-between" onclick="checkAnswer(this, false, 'q2-exp')">
-<span>(A) रत्नसागर</span>
-<span class="material-symbols-outlined text-[16px] text-outline opacity-0 opt-icon">check</span>
+<div class="flex flex-col gap-space-xs text-on-surface font-body-sm text-body-sm">
+<button class="option-btn text-left p-space-xs rounded bg-surface-container-low hover:bg-surface-container transition-all flex items-center gap-2" onclick="handleQuizAnswer(this, 'A')">
+<span class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-[11px]">A</span>
+<span>रत्नसागर</span>
 </button>
-<button class="mcq-opt w-full text-left px-space-md py-space-xs rounded bg-surface-container-low hover:bg-surface-container text-body-md font-body-md transition-colors flex items-center justify-between" onclick="checkAnswer(this, false, 'q2-exp')">
-<span>(B) रत्नोदधि</span>
-<span class="material-symbols-outlined text-[16px] text-outline opacity-0 opt-icon">check</span>
+<button class="option-btn text-left p-space-xs rounded bg-surface-container-low hover:bg-surface-container transition-all flex items-center gap-2" onclick="handleQuizAnswer(this, 'B')">
+<span class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-[11px]">B</span>
+<span>रत्नोदधि</span>
 </button>
-<button class="mcq-opt w-full text-left px-space-md py-space-xs rounded bg-surface-container-low hover:bg-surface-container text-body-md font-body-md transition-colors flex items-center justify-between" onclick="checkAnswer(this, true, 'q2-exp')">
-<span>(C) रत्नप्रभा</span>
-<span class="material-symbols-outlined text-[16px] text-outline opacity-0 opt-icon">check</span>
+<button class="option-btn text-left p-space-xs rounded bg-surface-container-low hover:bg-surface-container transition-all flex items-center gap-2" onclick="handleQuizAnswer(this, 'C')">
+<span class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-[11px]">C</span>
+<span>रत्नप्रभा</span>
 </button>
-<button class="mcq-opt w-full text-left px-space-md py-space-xs rounded bg-surface-container-low hover:bg-surface-container text-body-md font-body-md transition-colors flex items-center justify-between" onclick="checkAnswer(this, false, 'q2-exp')">
-<span>(D) रत्नरंजक</span>
-<span class="material-symbols-outlined text-[16px] text-outline opacity-0 opt-icon">check</span>
+<button class="option-btn text-left p-space-xs rounded bg-surface-container-low hover:bg-surface-container transition-all flex items-center gap-2" onclick="handleQuizAnswer(this, 'D')">
+<span class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-[11px]">D</span>
+<span>रत्नरंजक</span>
 </button>
 </div>
 </div>
-<div class="hidden mt-space-sm p-space-sm bg-surface-container rounded font-body-sm text-body-sm text-on-surface" id="q2-exp">
-<span class="font-bold text-secondary block">सही उत्तर: (C) रत्नप्रभा</span>
-            धर्मगंज पुस्तकालय में केवल 3 भवन थे: रत्नसागर, रत्नोदधि और रत्नरंजक। रत्नप्रभा कोई भवन नहीं था।
+<div class="explanation-box hidden p-space-xs rounded bg-surface-container text-on-surface font-body-sm text-body-sm text-[12px]">
+<strong>सही उत्तर (C):</strong> 'धर्मगंज' के तीन भवन रत्नसागर, रत्नोदधि और रत्नरंजक थे। रत्नप्रभा इसमें शामिल नहीं था।
           </div>
 </div>
-<!-- Question Item 3 -->
-<div class="mcq-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm flex flex-col justify-between" data-answered="false">
-<div>
-<div class="flex items-center justify-between pb-space-xs">
-<span class="px-space-xs py-0.5 rounded bg-surface-container text-primary font-label-sm text-label-sm font-bold">
-                प्रश्न संख्या: 03 • म.प्र. पर्यावरण
-              </span>
-<span class="text-on-surface-variant font-label-sm text-label-sm">MPPSC Prelims</span>
+<!-- Question 3 -->
+<div class="quiz-card bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-md" data-correct="A">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant font-bold">प्रश्न 03 • समसामयिकी</span>
+<span class="text-outline font-mono">UPSC Pre 2026 Target</span>
 </div>
-<p class="font-title-md text-title-md text-primary mt-space-xs">
-              भारत का पहला राष्ट्रीय उद्यान जिसने अपना आधिकारिक शुभंकर 'भूरसिंह द बारहसिंगा' अपनाया है:
+<p class="font-body-md text-body-md font-semibold text-primary">
+              भारत सेमीकंडक्टर मिशन (ISM) के तहत प्रथम व्यावसायिक 28nm फैब संयंत्र किस स्थान पर स्थापित किया जा रहा है?
             </p>
-<div class="mt-space-md space-y-space-xs">
-<button class="mcq-opt w-full text-left px-space-md py-space-xs rounded bg-surface-container-low hover:bg-surface-container text-body-md font-body-md transition-colors flex items-center justify-between" onclick="checkAnswer(this, false, 'q3-exp')">
-<span>(A) बांधवगढ़ राष्ट्रीय उद्यान</span>
-<span class="material-symbols-outlined text-[16px] text-outline opacity-0 opt-icon">check</span>
+<div class="flex flex-col gap-space-xs text-on-surface font-body-sm text-body-sm">
+<button class="option-btn text-left p-space-xs rounded bg-surface-container-low hover:bg-surface-container transition-all flex items-center gap-2" onclick="handleQuizAnswer(this, 'A')">
+<span class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-[11px]">A</span>
+<span>धोलेरा (गुजरात)</span>
 </button>
-<button class="mcq-opt w-full text-left px-space-md py-space-xs rounded bg-surface-container-low hover:bg-surface-container text-body-md font-body-md transition-colors flex items-center justify-between" onclick="checkAnswer(this, true, 'q3-exp')">
-<span>(B) कान्हा टाइगर रिजर्व</span>
-<span class="material-symbols-outlined text-[16px] text-outline opacity-0 opt-icon">check</span>
+<button class="option-btn text-left p-space-xs rounded bg-surface-container-low hover:bg-surface-container transition-all flex items-center gap-2" onclick="handleQuizAnswer(this, 'B')">
+<span class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-[11px]">B</span>
+<span>श्रीपेरंबुदूर (तमिलनाडु)</span>
 </button>
-<button class="mcq-opt w-full text-left px-space-md py-space-xs rounded bg-surface-container-low hover:bg-surface-container text-body-md font-body-md transition-colors flex items-center justify-between" onclick="checkAnswer(this, false, 'q3-exp')">
-<span>(C) पेंच राष्ट्रीय उद्यान</span>
-<span class="material-symbols-outlined text-[16px] text-outline opacity-0 opt-icon">check</span>
+<button class="option-btn text-left p-space-xs rounded bg-surface-container-low hover:bg-surface-container transition-all flex items-center gap-2" onclick="handleQuizAnswer(this, 'C')">
+<span class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-[11px]">C</span>
+<span>मोरीगांव (असम)</span>
 </button>
-<button class="mcq-opt w-full text-left px-space-md py-space-xs rounded bg-surface-container-low hover:bg-surface-container text-body-md font-body-md transition-colors flex items-center justify-between" onclick="checkAnswer(this, false, 'q3-exp')">
-<span>(D) पन्ना टाइगर रिजर्व</span>
-<span class="material-symbols-outlined text-[16px] text-outline opacity-0 opt-icon">check</span>
+<button class="option-btn text-left p-space-xs rounded bg-surface-container-low hover:bg-surface-container transition-all flex items-center gap-2" onclick="handleQuizAnswer(this, 'D')">
+<span class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-[11px]">D</span>
+<span>हैदराबाद (तेलंगाना)</span>
 </button>
 </div>
 </div>
-<div class="hidden mt-space-sm p-space-sm bg-surface-container rounded font-body-sm text-body-sm text-on-surface" id="q3-exp">
-<span class="font-bold text-secondary block">सही उत्तर: (B) कान्हा टाइगर रिजर्व</span>
-            कान्हा राष्ट्रीय उद्यान ने 2017 में रोहन चक्रवर्ती द्वारा डिजाइन किया गया 'भूरसिंह द बारहसिंगा' शुभंकर आधिकारिक तौर पर स्वीकार किया।
+<div class="explanation-box hidden p-space-xs rounded bg-surface-container text-on-surface font-body-sm text-body-sm text-[12px]">
+<strong>सही उत्तर (A):</strong> टाटा और ताइवान की PSMC के संयुक्त उद्यम से धोलेरा (गुजरात) में भारत का प्रथम व्यावसायिक चिप फैब निर्मित हो रहा है।
           </div>
 </div>
-</div>
-<!-- Section CTA to full test series -->
-<div class="flex items-center justify-between bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
-<div class="flex items-center gap-space-sm">
-<div class="w-10 h-10 rounded bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center">
-<span class="material-symbols-outlined text-[24px]">grade</span>
-</div>
-<div>
-<h4 class="font-title-md text-title-md text-primary font-bold">शेष 7 प्रश्न और सम्पूर्ण 50-क्वेश्चन टेस्ट सीरीज अनलॉक करें</h4>
-<p class="font-body-sm text-body-sm text-on-surface-variant">अखिल भारतीय रैंक, नेगेटिव मार्किंग एवं विषयवार कट-ऑफ विश्लेषण के साथ</p>
-</div>
-</div>
-<a class="px-space-lg py-space-sm bg-primary text-on-primary rounded font-label-md text-label-md font-bold hover:bg-secondary transition-colors whitespace-nowrap" data-path="test-series" href="#">
-          फुल टेस्ट सीरीज़ देखें →
-        </a>
 </div>
 </div>
 </section>
 <!-- 1-Click A4 PDF Printable E-Bulletin Banner -->
-<section class="w-full bg-surface-container-lowest py-margin">
-<div class="max-w-[1440px] mx-auto px-margin-lg">
-<div class="bg-primary rounded-xl p-space-xl text-on-primary shadow-xl relative overflow-hidden">
-<!-- Subtle Academic Decorative Motif -->
-<div class="absolute -right-10 -bottom-10 opacity-10 pointer-events-none">
-<span class="material-symbols-outlined text-[240px]">menu_book</span>
+<section class="w-full bg-primary text-on-primary px-margin-sm lg:px-margin-lg py-space-xl">
+<div class="max-w-[1440px] mx-auto bg-surface-container-high/10 rounded-2xl p-space-xl flex flex-col md:flex-row items-center justify-between gap-space-lg shadow-xl">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed font-bold">दैनिक ई-बुलेटिन आर्काइव</span>
+<h2 class="font-headline-md text-headline-md font-bold text-on-primary">
+          आज का सम्पूर्ण 28-राज्य सार-संग्रह A4 फॉर्मेट में प्रिंट करें
+        </h2>
+<p class="font-body-md text-body-md text-surface-container-high">
+          स्वच्छ, बिना विज्ञापनों का, ब्लैक-एंड-व्हाइट प्रिंट-फ्रेंडली प्रारूप। सभी 28 राज्यों की आज की 142 प्रमुख घटनाएं और उनके 20 वर्षों के परीक्षा लिंक्स।
+        </p>
 </div>
-<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
-<div class="lg:col-span-8 space-y-space-sm">
-<div class="flex items-center gap-space-xs">
-<span class="px-space-sm py-space-xs rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold uppercase">
-                प्रिंट रेडी ई-बुलेटिन 2025
-              </span>
-<span class="font-label-sm text-label-sm text-surface-container-highest">
-                अंतिम पृष्ठ अनुकूलन: 2 पृष्ठ A4 (अतिरिक्त व्हाइटस्पेस रहित)
-              </span>
-</div>
-<h2 class="font-headline-lg text-headline-lg font-bold tracking-tight">
-              1-क्लिक A4 पीडीएफ समसामयिकी एक्सपोर्ट एवं प्रिंट हब
-            </h2>
-<p class="font-body-md text-body-md text-surface-container-high max-w-2xl">
-              स्मार्टफोन की स्क्रीन थकान से मुक्ति पाएं। हमारे 2-पेज कॉम्पैक्ट फॉर्मूले के साथ आज के सभी 28 राज्यों के महत्त्वपूर्ण फैक्ट्स व 10 MCQ को सीधे अपने घरेलू प्रिंटर पर प्रिंट करें।
-            </p>
-<div class="flex flex-wrap items-center gap-space-md pt-space-xs font-label-sm text-label-sm text-secondary-fixed">
-<span class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-[16px]">verified</span> अधिकृत वॉटरमार्क: #EDU-8921
-              </span>
-<span class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-[16px]">save_alt</span> हाई-रेज़ोल्यूशन 300 DPI
-              </span>
-<span class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-[16px]">font_download</span> द्विभाषी हिंदी-इंग्लिश फ़ॉन्ट
-              </span>
-</div>
-</div>
-<div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-space-sm justify-end">
-<a class="px-space-lg py-space-md bg-secondary text-on-secondary rounded font-headline-sm text-headline-sm font-bold hover:bg-secondary-container transition-all text-center shadow-md flex items-center justify-center gap-space-sm" data-path="1-click-print" href="#">
-<span class="material-symbols-outlined text-[24px]">local_printshop</span>
-<span>A4 बुलेटिन प्रिंट करें</span>
-</a>
-<a class="px-space-lg py-space-sm bg-surface-container-low text-primary rounded font-label-md text-label-md font-semibold hover:bg-surface-container-highest transition-colors text-center flex items-center justify-center gap-space-xs" data-path="20-year-pyq" href="#">
-<span class="material-symbols-outlined text-[18px]">history</span>
-<span>20-वर्षीय PYQ आर्काइव</span>
-</a>
-</div>
-</div>
+<div class="flex flex-wrap items-center gap-space-md shrink-0">
+<a class="inline-flex items-center gap-space-xs px-space-lg py-space-sm rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md font-bold hover:bg-surface-container transition-all shadow-md" data-path="pdf-print-center" href="#">
+<span class="material-symbols-outlined text-[18px]">print</span>
+          A4 प्रिंट सेंटर खोलें
+        </a>
+<a class="inline-flex items-center gap-space-xs px-space-lg py-space-sm rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-semibold hover:bg-secondary-container transition-all" data-path="pyq-and-tricks" href="#">
+<span class="material-symbols-outlined text-[18px]">auto_stories</span>
+          20-Year PYQ व ट्रिक्स
+        </a>
 </div>
 </div>
 </section>
-<!-- Real-time Filter & Interaction Scripts -->
+<!-- Security, Filtering, & Micro-Interaction Scripts -->
 <script>
-    let activeStateFilter = 'ALL';
-    let activeCatFilter = 'ALL';
-    let answeredQuestionsCount = 0;
-    let selectedPrintItems = 3;
-
-    function setActiveState(stateCode, elem) {
-      activeStateFilter = stateCode;
-      
-      // Update UI active states
-      document.querySelectorAll('.state-pill').forEach(btn => {
-        btn.classList.remove('bg-primary', 'text-on-primary');
-        btn.classList.add('bg-surface-container-lowest', 'text-on-surface');
-      });
-      elem.classList.remove('bg-surface-container-lowest', 'text-on-surface');
-      elem.classList.add('bg-primary', 'text-on-primary');
-
-      const indicator = document.getElementById('current-state-indicator');
-      if (indicator) {
-        indicator.textContent = elem.innerText.trim();
+    // Copy Snippet functionality
+    function copySnippet(buttonElement, textToCopy) {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(textToCopy).then(() => {
+          const originalHTML = buttonElement.innerHTML;
+          buttonElement.innerHTML = '<span class="material-symbols-outlined text-[14px]">done</span> कॉपी हो गया!';
+          buttonElement.classList.add('bg-secondary', 'text-on-secondary');
+          setTimeout(() => {
+            buttonElement.innerHTML = originalHTML;
+            buttonElement.classList.remove('bg-secondary', 'text-on-secondary');
+          }, 2000);
+        });
       }
-
-      applyFilters();
     }
 
-    function setCategory(catCode, elem) {
-      activeCatFilter = catCode;
-
-      document.querySelectorAll('.cat-pill').forEach(btn => {
-        btn.classList.remove('bg-surface-container-highest', 'text-primary');
-        btn.classList.add('bg-surface-container-lowest', 'text-on-surface-variant');
+    // Filter by State
+    function setStateFilter(stateKey, clickedBtn) {
+      const stateButtons = document.querySelectorAll('.state-btn');
+      stateButtons.forEach(btn => {
+        btn.classList.remove('bg-primary', 'text-on-primary', 'font-semibold');
+        btn.classList.add('bg-surface-container-low', 'text-on-surface-variant');
       });
-      elem.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant');
-      elem.classList.add('bg-surface-container-highest', 'text-primary');
+      clickedBtn.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+      clickedBtn.classList.add('bg-primary', 'text-on-primary', 'font-semibold');
 
-      applyFilters();
-    }
-
-    function filterGKCards() {
-      applyFilters();
-    }
-
-    function clearSearch() {
-      const searchInput = document.getElementById('gk-search-input');
-      if (searchInput) {
-        searchInput.value = '';
-      }
-      setActiveState('ALL', document.querySelector('.state-pill'));
-      setCategory('ALL', document.querySelector('.cat-pill'));
-      applyFilters();
-    }
-
-    function applyFilters() {
-      const searchInput = document.getElementById('gk-search-input');
-      const query = (searchInput ? searchInput.value.toLowerCase() : '').trim();
-      const cards = document.querySelectorAll('.gk-card');
-      let visibleCount = 0;
-
+      const cards = document.querySelectorAll('.dossier-card');
       cards.forEach(card => {
-        const cardState = card.getAttribute('data-state');
-        const cardCat = card.getAttribute('data-cat');
-        const textContent = card.innerText.toLowerCase();
-
-        const stateMatch = (activeStateFilter === 'ALL' || cardState === activeStateFilter);
-        const catMatch = (activeCatFilter === 'ALL' || cardCat === activeCatFilter);
-        const searchMatch = !query || textContent.includes(query);
-
-        if (stateMatch && catMatch && searchMatch) {
+        if (stateKey === 'all' || card.getAttribute('data-state') === stateKey) {
           card.classList.remove('hidden');
-          visibleCount++;
         } else {
           card.classList.add('hidden');
         }
       });
-
-      const countDisplay = document.getElementById('results-count');
-      if (countDisplay) {
-        countDisplay.textContent = `प्रदर्शित: ${visibleCount} प्रमाणित मॉड्यूल`;
-      }
     }
 
-    function checkAnswer(btn, isCorrect, explanationId) {
-      const card = btn.closest('.mcq-card');
-      if (card.getAttribute('data-answered') === 'true') {
-        return; // Prevent multiple clicks on same question
-      }
-      card.setAttribute('data-answered', 'true');
+    // Filter by Subject Category
+    function setCategoryFilter(categoryKey, clickedBtn) {
+      const categoryButtons = document.querySelectorAll('.category-btn');
+      categoryButtons.forEach(btn => {
+        btn.classList.remove('bg-secondary', 'text-on-secondary', 'font-medium', 'shadow-sm');
+        btn.classList.add('bg-surface-container', 'text-on-surface-variant');
+      });
+      clickedBtn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+      clickedBtn.classList.add('bg-secondary', 'text-on-secondary', 'font-medium', 'shadow-sm');
 
-      const allButtons = card.querySelectorAll('.mcq-opt');
-      allButtons.forEach(b => {
-        b.classList.remove('hover:bg-surface-container');
-        b.classList.add('cursor-not-allowed', 'opacity-70');
+      const cards = document.querySelectorAll('.dossier-card');
+      cards.forEach(card => {
+        if (categoryKey === 'all' || card.getAttribute('data-category') === categoryKey) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    // Live Search in Bulletin
+    function filterBulletins(query) {
+      const searchTerm = query.toLowerCase().trim();
+      const cards = document.querySelectorAll('.dossier-card');
+      cards.forEach(card => {
+        const textContent = card.innerText.toLowerCase();
+        if (textContent.includes(searchTerm)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    // Quiz Option Click & Validation
+    let userScore = 0;
+    const answeredQuestions = new Set();
+
+    function handleQuizAnswer(button, selectedOption) {
+      const card = button.closest('.quiz-card');
+      const correctOption = card.getAttribute('data-correct');
+      const qIndex = card.querySelector('.font-bold').innerText;
+      const explanation = card.querySelector('.explanation-box');
+
+      if (answeredQuestions.has(qIndex)) return;
+      answeredQuestions.add(qIndex);
+
+      const allOptions = card.querySelectorAll('.option-btn');
+      allOptions.forEach(btn => {
+        btn.disabled = true;
+        btn.classList.add('opacity-75', 'cursor-not-allowed');
       });
 
-      const icon = btn.querySelector('.opt-icon');
-      if (icon) {
-        icon.classList.remove('opacity-0');
-      }
-
-      if (isCorrect) {
-        btn.classList.remove('bg-surface-container-low', 'opacity-70');
-        btn.classList.add('bg-surface-container', 'text-primary', 'font-bold');
-        if (icon) {
-          icon.textContent = 'check_circle';
-          icon.classList.add('text-secondary');
-        }
+      if (selectedOption === correctOption) {
+        button.classList.remove('bg-surface-container-low');
+        button.classList.add('bg-secondary', 'text-on-secondary');
+        userScore++;
       } else {
-        btn.classList.remove('bg-surface-container-low', 'opacity-70');
-        btn.classList.add('bg-error-container', 'text-on-error-container');
-        if (icon) {
-          icon.textContent = 'cancel';
-          icon.classList.add('text-error');
-        }
+        button.classList.remove('bg-surface-container-low');
+        button.classList.add('bg-error', 'text-on-error');
+
+        // highlight the right one
+        allOptions.forEach(btn => {
+          if (btn.innerText.includes(correctOption)) {
+            btn.classList.remove('bg-surface-container-low');
+            btn.classList.add('bg-secondary/20', 'text-secondary', 'font-bold');
+          }
+        });
       }
 
-      const explanation = document.getElementById(explanationId);
+      document.getElementById('quizScore').innerText = `${userScore} / 3`;
       if (explanation) {
         explanation.classList.remove('hidden');
       }
+    }
 
-      answeredQuestionsCount++;
-      const scoreBadge = document.getElementById('mcq-score-counter');
-      if (scoreBadge) {
-        scoreBadge.textContent = `${answeredQuestionsCount} / 3 हल`;
+    // Security: Anti-inspect & Protected Academic Dossier Handler
+    document.addEventListener('contextmenu', function (e) {
+      // Allow seamless normal clicks, but warn on content rip
+      if (e.target.closest('.dossier-card')) {
+        // softly handled
       }
-    }
+    });
 
-    function copyDossier(btn, text) {
-      navigator.clipboard.writeText(text).then(() => {
-        const originalText = btn.innerHTML;
-        btn.innerHTML = '<span class="material-symbols-outlined text-[16px]">check</span><span>कॉपी हुआ!</span>';
-        btn.classList.add('bg-secondary', 'text-on-secondary');
-        setTimeout(() => {
-          btn.innerHTML = originalText;
-          btn.classList.remove('bg-secondary', 'text-on-secondary');
-        }, 2000);
-      });
-    }
-
-    function addToPrintQueue(btn, title) {
-      selectedPrintItems++;
-      const printCounter = document.getElementById('print-queue-count');
-      if (printCounter) {
-        printCounter.textContent = `${selectedPrintItems} चयनित विषय`;
+    document.addEventListener('keydown', function(e) {
+      // Disable F12, Ctrl+U (view source)
+      if (e.key === 'F12' || (e.ctrlKey && (e.key === 'u' || e.key === 'U'))) {
+        e.preventDefault();
       }
-
-      const originalHtml = btn.innerHTML;
-      btn.innerHTML = '<span class="material-symbols-outlined text-[16px]">done_all</span><span>सूची में शामिल</span>';
-      btn.classList.add('bg-secondary');
-      setTimeout(() => {
-        btn.innerHTML = originalHtml;
-        btn.classList.remove('bg-secondary');
-      }, 2000);
-    }
-
-    function toggleDensity() {
-      const cards = document.querySelectorAll('.gk-card');
-      cards.forEach(c => {
-        c.classList.toggle('p-space-lg');
-        c.classList.toggle('p-space-md');
-      });
-    }
+    });
   </script>
-</div></main><footer class="w-full bg-surface-container-lowest border-t border-outline-variant py-margin"><div class="max-w-[1440px] mx-auto px-margin-lg"><div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-margin"><div class="space-y-space-sm"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-on-primary font-bold"><span class="material-symbols-outlined text-[20px]">verified_user</span></div><span class="font-headline-sm text-headline-sm text-primary font-bold">EduPro Nexus</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">The leading academic testing standard for civil services, state examinations, and national competitive benchmarks across Bharat.</p><div class="flex items-center gap-space-xs mt-space-sm"><span class="material-symbols-outlined text-secondary text-[18px]">workspace_premium</span><span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Certified ISO 9001:2015 Educational Standard</span></div></div><div><h4 class="font-title-md text-title-md text-primary mb-space-md">त्वरित लिंक (Quick Links)</h4><ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-primary transition-colors" data-path="daily-gk-current-affairs" href="#">राज्यवार दैनिक GK (State GK)</a></li><li><a class="hover:text-primary transition-colors" data-path="daily-gk-current-affairs" href="#">राष्ट्रीय करंट अफेयर्स (National Affairs)</a></li><li><a class="hover:text-primary transition-colors" data-path="test-series" href="#">ऑल इंडिया मॉक टेस्ट (Mock Series)</a></li><li><a class="hover:text-primary transition-colors" data-path="20-year-pyq" href="#">20-वर्षीय पिछले प्रश्न पत्र</a></li></ul></div><div><h4 class="font-title-md text-title-md text-primary mb-space-md">सत्यापन एवं सुरक्षा (Verification)</h4><ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant"><li><span class="text-on-surface font-semibold">पंजीकृत पहचान:</span> Rajesh Kumar (#EDU-8921)</li><li><span class="text-on-surface font-semibold">सक्रिय सदस्यता:</span> All-Access Pass Active</li><li><a class="hover:text-primary transition-colors" data-path="1-click-print" href="#">1-क्लिक समसामयिकी पीडीएफ एक्सपोर्ट</a></li><li><a class="hover:text-primary transition-colors" data-path="support" href="#">समस्या निवारण एवं सहायता डेस्क</a></li></ul></div><div><h4 class="font-title-md text-title-md text-primary mb-space-md">विधिक सूचना (Statutory Notice)</h4><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Protected under Indian Copyright Act, 1957 (Sections 13 &amp; 63). Any unauthorized commercial reproduction, scraping, or redistribution of EduPro Nexus academic test repositories and GK data is punishable under law.</p></div></div><div class="border-t border-surface-container-high pt-space-lg flex flex-col md:flex-row items-center justify-between text-on-surface-variant font-body-sm text-body-sm gap-space-sm"><p>© 2025 EduPro Bharat &amp; Nexus Academic Systems. सर्वाधिकार सुरक्षित (All Rights Reserved).</p><div class="flex items-center gap-space-lg font-label-sm text-label-sm"><span>ISO 9001:2015 Compliant</span><span>Sec. 13 &amp; 63 Registered</span><span>National Assessment Grid</span></div></div></div></footer></body></html>
+</div></main><footer class="w-full bg-surface-container-lowest border-t border-surface-container-high py-space-xl mt-auto"><div class="max-w-[1440px] mx-auto px-margin-sm lg:px-margin-lg"><div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-space-xl"><div class="md:col-span-2 flex flex-col gap-space-sm"><div class="flex items-center gap-space-xs"><div class="w-7 h-7 rounded bg-primary flex items-center justify-center"><span class="font-headline-sm text-sm text-on-primary font-bold">EP</span></div><span class="font-title-md text-title-md text-primary font-bold">EduPro Academic Directorate</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-xl">India's authoritative examination intelligence and standardized preparation repository. Certified curriculum standards complying with national public service test specifications.</p></div><div class="flex flex-col gap-space-xs"><span class="font-label-md text-label-md uppercase text-outline tracking-wider font-semibold">वैधानिक एवं संस्थागत प्रभाग</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="editorial-board" href="#">संपादकीय बोर्ड व विशेषज्ञ</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="examination-protocols" href="#">परीक्षा मानक प्रोटोकॉल</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="verification" href="#">प्रामाणिकता सत्यापन</a></div><div class="flex flex-col gap-space-xs"><span class="font-label-md text-label-md uppercase text-outline tracking-wider font-semibold">सहायता व अनुपालन</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="legal-compliance" href="#">कानूनी अनुपालन प्रपत्र</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="terms-of-service" href="#">नियम एवं गोपनीयता</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="institutional-access" href="#">संस्थान प्रवेश पोर्टल</a></div></div><div class="pt-space-lg border-t border-surface-container flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex flex-col gap-space-xs text-left"><p class="font-body-sm text-body-sm text-on-surface-variant font-medium">© 2025 EduPro National Academic Council. All Rights Reserved. Protected under the Indian Copyright Act, 1957 (Act No. 14 of 1957).</p><p class="font-label-sm text-label-sm text-outline">Strict Legal Notice: Unauthorized duplication, computerized scraping, automated replication, or uncertified commercial distribution of State-wise GK briefs, mock tests, and analytical solutions constitutes a punishable offense under Sections 51, 63, and 64 of the Indian Copyright Act, 1957, actionable in competent jurisdictions.</p></div><div class="flex items-center gap-space-md shrink-0"><span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded border border-surface-container-highest bg-surface-container-low font-label-sm text-label-sm text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-secondary"></span>Verified Portal</span><span class="font-numeric-table text-numeric-table text-outline font-semibold">ISO 9001:2015</span></div></div></div></footer><script>
+(function () {
+  fetch('/api/auth', { credentials: 'same-origin', cache: 'no-store' }).then(r => r.json()).then(d => {
+    const u = d && d.user, id = u ? '#EDU-' + u.mobile.slice(-4) : 'लॉगिन करें';
+    document.querySelectorAll('[data-edu-id]').forEach(e => e.textContent = id);
+    document.querySelectorAll('[data-edu-pass]').forEach(e => e.textContent = u ? (u.paid ? '₹199 पास सक्रिय' : 'निःशुल्क खाता') : 'लॉगिन करें');
+  }).catch(() => {});
+})();
+</script>
+</body></html>
