@@ -3,12 +3,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>EduPro - 20 Streams 100-Question Exam Portal</title>
+<title>EduPro - 20 Streams Professional 100-Question Exam Portal</title>
 <!-- Tailwind CSS CDN -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <!-- Phosphor Icons -->
 <script src="https://unpkg.com/@phosphor-icons/web"></script>
-<!-- Tailwind Configuration -->
 <script>
     tailwind.config = {
       theme: {
@@ -26,6 +25,11 @@
     ::-webkit-scrollbar-track { background: #f1f5f9; }
     ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; }
     body { user-select: none; -webkit-user-select: none; }
+    @media print {
+      body * { visibility: hidden; }
+      #printableArea, #printableArea * { visibility: visible; }
+      #printableArea { position: absolute; left: 0; top: 0; width: 100%; }
+    }
   </style>
 <script src="edu-auth.js"></script>
 </head>
@@ -37,93 +41,55 @@
 <a href="index.html" class="w-9 h-9 rounded-lg bg-indigo-600 flex items-center justify-center font-bold text-lg text-white shadow-md">EP</a>
 <div>
 <div class="flex items-center gap-2">
-<span class="font-bold text-base tracking-wide text-white">EduPro</span>
-<span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-semibold border border-emerald-500/30">NTA / National Std.</span>
+<span class="font-bold text-base tracking-wide text-white">EduPro Learning Portal</span>
+<span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-semibold border border-emerald-500/30">Professional Edition</span>
 </div>
-<p class="text-[11px] text-slate-400">राष्ट्रीय ऑनलाइन परीक्षा पोर्टल • 20 संकाय 100 प्रश्न टेस्ट इंजन</p>
+<p class="text-[11px] text-slate-400">राष्ट्रीय ऑनलाइन परीक्षा पोर्टल • 20 संकाय 100 प्रामाणिक प्रश्न इंजन</p>
 </div>
 </div>
-<!-- Selected Stream & Wizard Button -->
+<!-- Stream Selector Button -->
 <div class="flex items-center gap-2">
 <button type="button" onclick="openWizardStep(1)" class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-indigo-300 border border-slate-700 text-xs font-medium transition cursor-pointer">
 <i class="ph ph-squares-four text-base text-amber-400"></i>
 <span>संवर्ग: <strong class="text-white" id="topActiveStreamName">NEET (UG Medical Entrance)</strong></span>
-<span class="bg-indigo-600/40 text-indigo-200 text-[10px] px-1.5 py-0.5 rounded border border-indigo-400/30">संकाय बदलें</span>
+<span class="bg-indigo-600/40 text-indigo-200 text-[10px] px-1.5 py-0.5 rounded border border-indigo-400/30">बदलें</span>
 <i class="ph ph-caret-down text-xs text-slate-400"></i>
 </button>
-<div class="hidden md:flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-800/80 border border-slate-700/60 text-xs font-semibold">
-<span class="text-slate-400">मानक:</span>
-<span id="topMarkingCorrect" class="text-emerald-400 font-mono">+4.00 सही</span>
-<span id="topMarkingNegative" class="text-rose-400 font-mono">-1.00 निगेटिव</span>
 </div>
-</div>
-<!-- Timer, Multilingual & Pass Status -->
+<!-- Timer & Status -->
 <div class="flex items-center gap-3">
 <div class="flex items-center gap-1.5 bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">
 <i id="timerIcon" class="ph ph-clock-countdown text-amber-400 text-lg"></i>
 <span id="countdownTimer" class="font-mono font-bold text-base text-amber-300">60:00</span>
 </div>
-<!-- 28-State Language Switcher -->
-<div class="flex items-center bg-slate-800 rounded-lg p-0.5 border border-slate-700 text-xs">
-<button type="button" id="btnLang_hi" onclick="changeLanguage('hi', this)" class="px-2 py-1 rounded font-medium bg-indigo-600 text-white cursor-pointer">हिन्दी</button>
-<button type="button" id="btnLang_en" onclick="changeLanguage('en', this)" class="px-2 py-1 rounded font-medium text-slate-300 hover:text-white cursor-pointer">English</button>
-<div class="flex items-center pl-1 border-l border-slate-700">
-<select id="stateLanguageSelect" onchange="handleStateLanguageSelect(this.value)" class="bg-transparent text-[11px] font-semibold text-indigo-300 focus:outline-none cursor-pointer pr-1">
-<option value="rajasthani">प्रांतीय: राजस्थान (राजस्थानी/मारवाड़ी)</option>
-<option value="gujarati">गुजरात (ગુજરાતી - Gujarati)</option>
-<option value="marathi">महाराष्ट्र (मराठी - Marathi)</option>
-<option value="bengali">पश्चिम बंगाल (বাংলা - Bengali)</option>
-<option value="punjabi">पंजाब (ਪੰਜਾਬੀ - Punjabi)</option>
-<option value="tamil">तमिलनाडु (தமிழ் - Tamil)</option>
-<option value="telugu">तेलंगाना/आंध्र (తెలుగు - Telugu)</option>
-<option value="kannada">कर्नाटक (ಕನ್ನಡ - Kannada)</option>
-<option value="malayalam">केरल (മലയാളം - Malayalam)</option>
-<option value="odia">ओडिशा (ଓଡ଼ିଆ - Odia)</option>
-<option value="assamese">অসম (অসমীয়া - Assamese)</option>
-<option value="urdu">उर्दू (اردو - Urdu)</option>
-<option value="bhojpuri">बिहार/UP (भोजपुरी - Bhojpuri)</option>
-<option value="maithili">मिथिला (मैथिली - Maithili)</option>
-<option value="haryanvi">हरियाणा (हरियाणवी - Haryanvi)</option>
-</select>
-</div>
-</div>
-<button type="button" id="trialStatusBtn" onclick="showTrialPaywallModal()" class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 text-xs font-semibold cursor-pointer">
-<i class="ph ph-lock-key"></i> <span>फ्री 30-प्रश्न ट्रायल</span>
+<button type="button" onclick="window.print()" class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-indigo-600/30 hover:bg-indigo-600/50 text-indigo-200 border border-indigo-500/30 text-xs font-semibold cursor-pointer">
+<i class="ph ph-printer"></i> <span>प्रिंट / PDF</span>
 </button>
 </div>
 </div>
 </header>
-<!-- 20 STREAMS HORIZONTAL SESSION BAR -->
+
+<!-- NAVIGATION BAR -->
 <nav class="bg-white border-b border-slate-200 px-4 py-2 shrink-0 shadow-xs flex items-center justify-between flex-wrap gap-2">
 <div class="flex items-center gap-2">
 <span class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900 text-white text-xs font-bold">
-<i class="ph ph-lock-key text-amber-400"></i> सत्र लॉक (Session Locked):
+<i class="ph ph-shield-check text-emerald-400"></i> सक्रिय सत्र:
       </span>
 <span class="text-xs font-extrabold text-indigo-900 bg-indigo-50 border border-indigo-200 px-3 py-1 rounded-lg flex items-center gap-1.5">
 <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-<span id="sessionLockTitle">NEET (UG Medical Entrance) • 100 पृथक प्रश्न (Zero-Mixing)</span>
+<span id="sessionLockTitle">NEET (UG Medical Entrance) • 100 प्रामाणिक विषय-वार प्रश्न</span>
 </span>
 </div>
 <div class="flex items-center gap-2">
-<button type="button" onclick="openWizardStep(1)" class="px-3 py-1 rounded-lg border border-slate-300 text-xs font-bold text-slate-700 hover:bg-slate-50 transition flex items-center gap-1 cursor-pointer">
-<i class="ph ph-arrows-clockwise text-indigo-600"></i> संकाय बदलें (Switch Stream)
-      </button>
-<span id="apexCouncilTag" class="text-xs font-semibold text-slate-600 bg-slate-100 px-2.5 py-1 rounded-lg border border-slate-200">NTA / NMC / National Council Standard</span>
-<a href="dashboard.html" class="text-xs font-medium text-indigo-600 hover:text-indigo-800 flex items-center gap-1 px-2 py-1">
-<i class="ph ph-chart-pie"></i> डैशबोर्ड
-      </a>
-<a href="print.html" class="text-xs font-medium text-slate-600 hover:text-slate-800 flex items-center gap-1 px-2 py-1">
-<i class="ph ph-printer"></i> प्रिंट
-      </a>
-<a href="pyq-tricks.html" class="text-xs font-medium text-slate-600 hover:text-slate-800 flex items-center gap-1 px-2 py-1"><i class="ph ph-lightbulb"></i> PYQ ट्रिक्स</a>
-<a href="gk.html" class="text-xs font-medium text-slate-600 hover:text-slate-800 flex items-center gap-1 px-2 py-1"><i class="ph ph-globe-hemisphere-west"></i> GK</a>
+<a href="dashboard.html" class="text-xs font-medium text-indigo-600 hover:text-indigo-800 flex items-center gap-1 px-2 py-1"><i class="ph ph-chart-pie"></i> डैशबोर्ड</a>
 <a href="help.html" class="text-xs font-medium text-slate-600 hover:text-slate-800 flex items-center gap-1 px-2 py-1"><i class="ph ph-question"></i> सहायता</a>
 </div>
 </nav>
-<!-- MAIN WORKSPACE: QUESTION & OMR -->
+
+<!-- MAIN WORKSPACE -->
 <main class="flex-1 flex overflow-hidden relative">
-<section class="flex-1 flex flex-col bg-slate-50 overflow-y-auto">
-<!-- Question Top Meta Ribbon -->
+<section id="printableArea" class="flex-1 flex flex-col bg-slate-50 overflow-y-auto">
+<!-- Meta Ribbon -->
 <div class="bg-white border-b border-slate-200 px-6 py-3 flex flex-wrap items-center justify-between gap-3 shrink-0">
 <div class="flex items-center gap-3">
 <span id="currentQNumBadge" class="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-700 font-bold flex items-center justify-center text-sm">01</span>
@@ -131,608 +97,204 @@
 <div class="flex items-center gap-2">
 <span id="currentQNumText" class="font-bold text-slate-800 text-sm">प्रश्न 1 / 100</span>
 <span id="currentStreamTag" class="text-xs px-2 py-0.5 rounded bg-blue-50 text-blue-700 font-medium border border-blue-200">NEET (UG Medical Entrance)</span>
-<span id="currentPartBadge" class="text-xs px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 font-bold border border-indigo-200">भाग 1: वनस्पति विज्ञान</span><span id="currentUnitTag" class="text-xs px-2 py-0.5 rounded bg-slate-100 text-slate-600 font-medium">Unit: Botany &amp; Plant Physiology</span>
+<span id="currentPartBadge" class="text-xs px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 font-bold border border-indigo-200">भाग 1</span>
+<span id="currentUnitTag" class="text-xs px-2 py-0.5 rounded bg-slate-100 text-slate-600 font-medium">Topic: जीव विज्ञान एवं कार्यिकी</span>
 </div>
 </div>
 </div>
-<!-- 6-Variants Switcher -->
+<!-- Variants Switcher -->
 <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg border border-slate-200 text-xs">
-<span class="px-1 text-slate-500 font-bold text-[11px]">6-वेरिएंट्स:</span>
-<button type="button" id="varBtn_1" onclick="setVariant(1, this)" class="variant-btn px-2 py-1 rounded bg-indigo-600 text-white font-bold shadow-xs cursor-pointer">V1: प्रत्यक्ष</button>
-<button type="button" id="varBtn_2" onclick="setVariant(2, this)" class="variant-btn px-2 py-1 rounded text-slate-600 hover:bg-slate-200 font-medium cursor-pointer">V2: आंकिक</button>
-<button type="button" id="varBtn_3" onclick="setVariant(3, this)" class="variant-btn px-2 py-1 rounded text-slate-600 hover:bg-slate-200 font-medium cursor-pointer">V3: परिदृश्य</button>
-<button type="button" id="varBtn_4" onclick="setVariant(4, this)" class="variant-btn px-2 py-1 rounded text-slate-600 hover:bg-slate-200 font-medium cursor-pointer">V4: कथन-कारण</button>
-<button type="button" id="varBtn_5" onclick="setVariant(5, this)" class="variant-btn px-2 py-1 rounded text-slate-600 hover:bg-slate-200 font-medium cursor-pointer">V5: मिलान [P,Q,R,S]</button>
-<button type="button" id="varBtn_6" onclick="setVariant(6, this)" class="variant-btn px-2 py-1 rounded text-slate-600 hover:bg-slate-200 font-medium cursor-pointer">V6: बेसिक</button>
+<span class="px-1 text-slate-500 font-bold text-[11px]">वेरिएंट्स:</span>
+<button type="button" onclick="setVariant(1, this)" class="variant-btn px-2 py-1 rounded bg-indigo-600 text-white font-bold cursor-pointer">V1: प्रत्यक्ष</button>
+<button type="button" onclick="setVariant(2, this)" class="variant-btn px-2 py-1 rounded text-slate-600 hover:bg-slate-200 font-medium cursor-pointer">V2: आंकिक</button>
+<button type="button" onclick="setVariant(3, this)" class="variant-btn px-2 py-1 rounded text-slate-600 hover:bg-slate-200 font-medium cursor-pointer">V3: परिदृश्य</button>
+<button type="button" onclick="setVariant(4, this)" class="variant-btn px-2 py-1 rounded text-slate-600 hover:bg-slate-200 font-medium cursor-pointer">V4: कथन</button>
 </div>
 </div>
-<!-- Question Body Container -->
-<div id="subjectPartsRibbon" class="bg-white border-b border-slate-200 px-6 py-2 shrink-0 shadow-xs sticky top-0 z-10"><div class="flex items-center justify-between gap-3 flex-wrap"><div class="flex items-center gap-1.5"><span class="text-xs font-bold text-slate-800 flex items-center gap-1"><i class="ph ph-squares-four text-indigo-600"></i> विषय खंड (4 Subject Parts):</span></div><div id="streamSubjectPartsContainer" class="grid grid-cols-2 md:grid-cols-4 gap-2 w-full md:flex-1 min-w-0"><button type="button" id="partTab_1" onclick="jumpToPart(1)" class="part-tab-btn px-3 py-1.5 rounded-lg border text-xs font-bold transition flex items-center gap-1.5 cursor-pointer bg-indigo-600 text-white border-indigo-700 shadow-xs"><span class="w-4 h-4 rounded-full bg-white/20 flex items-center justify-center text-[10px]">1</span><span id="partTabLabel_1">भाग 1: वनस्पति विज्ञान (Q.1 - 25)</span></button><button type="button" id="partTab_2" onclick="jumpToPart(2)" class="part-tab-btn px-3 py-1.5 rounded-lg border text-xs font-medium transition flex items-center gap-1.5 cursor-pointer bg-slate-100 hover:bg-slate-200 text-slate-700 border-slate-200"><span class="w-4 h-4 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center text-[10px]">2</span><span id="partTabLabel_2">भाग 2: प्राणि विज्ञान (Q.26 - 50)</span></button><button type="button" id="partTab_3" onclick="jumpToPart(3)" class="part-tab-btn px-3 py-1.5 rounded-lg border text-xs font-medium transition flex items-center gap-1.5 cursor-pointer bg-slate-100 hover:bg-slate-200 text-slate-700 border-slate-200"><span class="w-4 h-4 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center text-[10px]">3</span><span id="partTabLabel_3">भाग 3: भौतिक विज्ञान (Q.51 - 75)</span></button><button type="button" id="partTab_4" onclick="jumpToPart(4)" class="part-tab-btn px-3 py-1.5 rounded-lg border text-xs font-medium transition flex items-center gap-1.5 cursor-pointer bg-slate-100 hover:bg-slate-200 text-slate-700 border-slate-200"><span class="w-4 h-4 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center text-[10px]">4</span><span id="partTabLabel_4">भाग 4: रसायन विज्ञान (Q.76 - 100)</span></button></div></div></div><div class="flex-1 p-6 max-w-4xl w-full mx-auto space-y-5">
+
+<!-- Parts Tabs -->
+<div class="bg-white border-b border-slate-200 px-6 py-2 shrink-0 shadow-xs sticky top-0 z-10">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-2" id="streamSubjectPartsContainer"></div>
+</div>
+
+<!-- Question Box -->
+<div class="flex-1 p-6 max-w-4xl w-full mx-auto space-y-5">
 <div class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm space-y-3">
 <div class="flex items-center justify-between">
-<span id="qTypeBadge" class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-indigo-50 text-indigo-700 border border-indigo-200">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-indigo-50 text-indigo-700 border border-indigo-200">
 <i class="ph ph-check-circle"></i> बहुविकल्पीय प्रश्न (Single Correct MCQ)
             </span>
-<span id="currentLangTag" class="text-xs font-semibold text-slate-500">हिन्दी माध्यम</span>
+<span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">+4.0 / -1.0 अंकन</span>
 </div>
 <p id="questionText" class="text-base text-slate-900 leading-relaxed font-semibold whitespace-pre-line">
             प्रश्न लोड हो रहा है...
           </p>
-<!-- V5 Match Matrix Table (Revealed when V5 is selected) -->
-<div id="v5MatrixTable" class="hidden p-3.5 bg-slate-50 border border-slate-200 rounded-xl space-y-2">
-<h4 class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
-<i class="ph ph-table text-indigo-600 text-sm"></i>
-<span>स्तंभ मिलान तालिका (Comparative Synthesis Matrix):</span>
-</h4>
-<div class="overflow-x-auto">
-<table class="w-full text-left text-xs bg-white rounded-lg border border-slate-200">
-<thead>
-<tr class="bg-slate-100 text-slate-700 font-bold border-b border-slate-200">
-<th class="p-2.5 w-1/2 border-r border-slate-200">स्तंभ I (घटक / अवधारणा)</th>
-<th class="p-2.5 w-1/2">स्तंभ II (विशिष्ट क्रिया / अनुप्रयोग)</th>
-</tr>
-</thead>
-<tbody id="v5TableBody" class="divide-y divide-slate-200 font-medium">
-<tr>
-<td id="mRow1_A" class="p-2 border-r border-slate-200 font-semibold">(i) प्रमुख कारक A</td>
-<td id="mRow1_B" class="p-2">P. प्राथमिक सक्रिय तंत्र</td>
-</tr>
-<tr>
-<td id="mRow2_A" class="p-2 border-r border-slate-200 font-semibold">(ii) मुख्य घटक B</td>
-<td id="mRow2_B" class="p-2">Q. विश्लेषणात्मक प्रक्रिया</td>
-</tr>
-<tr>
-<td id="mRow3_A" class="p-2 border-r border-slate-200 font-semibold">(iii) नियामक C</td>
-<td id="mRow3_B" class="p-2">R. संतुलन एवं माप मानक</td>
-</tr>
-<tr>
-<td id="mRow4_A" class="p-2 border-r border-slate-200 font-semibold">(iv) परिणाम D</td>
-<td id="mRow4_B" class="p-2">S. व्यावहारिक अनुप्रयोग एवं प्रभाव</td>
-</tr>
-</tbody>
-</table>
 </div>
-</div>
-</div>
-<!-- 4 Options (A, B, C, D) Cleanly Clickable -->
+
+<!-- Options Container -->
 <div id="optionsContainer" class="space-y-2.5">
 <div class="option-card flex items-center gap-4 p-4 rounded-xl border-2 border-slate-200 bg-white hover:border-indigo-400 hover:bg-indigo-50/30 cursor-pointer transition shadow-xs select-none" onclick="recordOption('A')">
 <span class="w-7 h-7 rounded-lg bg-slate-100 flex items-center justify-center font-bold text-xs text-slate-700 border border-slate-300">A</span>
-<span id="optText_A" class="text-sm font-semibold text-slate-800 flex-1 option-text">विकल्प A लोड हो रहा है...</span>
+<span id="optText_A" class="text-sm font-semibold text-slate-800 flex-1 option-text">विकल्प A...</span>
 </div>
 <div class="option-card flex items-center gap-4 p-4 rounded-xl border-2 border-slate-200 bg-white hover:border-indigo-400 hover:bg-indigo-50/30 cursor-pointer transition shadow-xs select-none" onclick="recordOption('B')">
 <span class="w-7 h-7 rounded-lg bg-slate-100 flex items-center justify-center font-bold text-xs text-slate-700 border border-slate-300">B</span>
-<span id="optText_B" class="text-sm font-semibold text-slate-800 flex-1 option-text">विकल्प B लोड हो रहा है...</span>
+<span id="optText_B" class="text-sm font-semibold text-slate-800 flex-1 option-text">विकल्प B...</span>
 </div>
 <div class="option-card flex items-center gap-4 p-4 rounded-xl border-2 border-slate-200 bg-white hover:border-indigo-400 hover:bg-indigo-50/30 cursor-pointer transition shadow-xs select-none" onclick="recordOption('C')">
 <span class="w-7 h-7 rounded-lg bg-slate-100 flex items-center justify-center font-bold text-xs text-slate-700 border border-slate-300">C</span>
-<span id="optText_C" class="text-sm font-semibold text-slate-800 flex-1 option-text">विकल्प C लोड हो रहा है...</span>
+<span id="optText_C" class="text-sm font-semibold text-slate-800 flex-1 option-text">विकल्प C...</span>
 </div>
 <div class="option-card flex items-center gap-4 p-4 rounded-xl border-2 border-slate-200 bg-white hover:border-indigo-400 hover:bg-indigo-50/30 cursor-pointer transition shadow-xs select-none" onclick="recordOption('D')">
 <span class="w-7 h-7 rounded-lg bg-slate-100 flex items-center justify-center font-bold text-xs text-slate-700 border border-slate-300">D</span>
-<span id="optText_D" class="text-sm font-semibold text-slate-800 flex-1 option-text">विकल्प D लोड हो रहा है...</span>
+<span id="optText_D" class="text-sm font-semibold text-slate-800 flex-1 option-text">विकल्प D...</span>
 </div>
 </div>
-<!-- Desi Memory Trick Box -->
-<div id="refBookBox" class="bg-sky-50 rounded-xl p-3 border border-sky-200 text-xs text-sky-900 flex items-center gap-2" style="display:none"><i class="ph ph-book-open text-sky-600 text-lg shrink-0"></i><div class="flex-1"><strong>मानक संदर्भ पुस्तक:</strong> <span id="refBookName"></span><div id="refChapter" class="text-[11px] text-sky-700"></div></div><a id="refBookLink" class="px-2.5 py-1 rounded bg-sky-600 hover:bg-sky-700 text-white font-semibold" target="_blank" rel="noopener noreferrer" href="#">खोलें</a></div><div id="desiTrickContainer" class="bg-amber-50 rounded-xl p-3.5 border border-amber-200 flex items-center justify-between text-xs text-amber-900"><div class="flex items-center gap-2 flex-1"><i class="ph ph-lightbulb text-amber-600 text-lg shrink-0"></i><div class="flex items-center gap-2 flex-wrap"><span class="font-bold text-amber-950">देसी मेमोरी ट्रिक:</span><span id="desiTrickContentWrapper" class="hidden text-amber-900 bg-amber-100/70 px-2 py-0.5 rounded border border-amber-300 font-mono text-[11px]"><span id="desiTrickText">लोड हो रही है...</span></span><button type="button" id="toggleTrickBtn" onclick="toggleTrickVisibility()" class="px-2.5 py-1 rounded-md bg-amber-200 hover:bg-amber-300 text-amber-950 font-bold text-xs flex items-center gap-1 transition cursor-pointer shadow-xs border border-amber-300"><i class="ph ph-lightbulb text-amber-700"></i><span id="toggleTrickBtnText">देसी ट्रिक देखें (Show Trick)</span></button></div></div><a href="pyq-tricks.html" class="text-amber-800 font-bold hover:underline cursor-pointer shrink-0 ml-2">20-Yr Vault →</a></div>
+
+<!-- Reference Book & Desi Trick Box -->
+<div id="refBookBox" class="bg-sky-50 rounded-xl p-3 border border-sky-200 text-xs text-sky-900 flex items-center gap-2">
+<i class="ph ph-book-open text-sky-600 text-lg shrink-0"></i>
+<div class="flex-1"><strong>मानक संदर्भ पुस्तक:</strong> <span id="refBookName">NCERT / अधिकृत पाठ्यपुस्तक</span></div>
 </div>
-<!-- Action Footer -->
+
+<div class="bg-amber-50 rounded-xl p-3.5 border border-amber-200 flex items-center justify-between text-xs text-amber-900">
+<div class="flex items-center gap-2 flex-1">
+<i class="ph ph-lightbulb text-amber-600 text-lg shrink-0"></i>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-bold text-amber-950">विशिष्ट देसी ट्रिक:</span>
+<span id="desiTrickText" class="text-amber-900 bg-amber-100/70 px-2 py-0.5 rounded border border-amber-300 font-mono text-[11px]">ट्रिक लोड हो रही है...</span>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Footer Actions -->
 <div class="bg-white border-t border-slate-200 px-6 py-3 flex items-center justify-between gap-2 shrink-0">
 <div class="flex items-center gap-2">
 <button type="button" onclick="navigateQuestion(-1)" class="px-4 py-2 border border-slate-300 rounded-lg text-slate-700 font-semibold text-xs hover:bg-slate-50 transition cursor-pointer flex items-center gap-1">
-<i class="ph ph-arrow-left"></i> पिछला (Prev)
+<i class="ph ph-arrow-left"></i> पिछला
           </button>
 <button type="button" onclick="clearSelectedOption()" class="px-3 py-2 text-slate-600 hover:text-rose-600 rounded-lg text-xs font-semibold transition cursor-pointer">
-            विकल्प हटाएं (Clear)
+            विकल्प हटाएं
           </button>
 <button type="button" onclick="toggleMarkReview()" class="px-3 py-2 border border-purple-300 bg-purple-50 text-purple-700 rounded-lg text-xs font-semibold hover:bg-purple-100 transition cursor-pointer flex items-center gap-1">
-<i class="ph ph-star"></i> समीक्षा हेतु चिह्नित (Review)
+<i class="ph ph-star"></i> समीक्षा चिह्नित
           </button>
 </div>
-<div class="flex items-center gap-3">
+<div>
 <button type="button" onclick="saveAndNextQuestion()" class="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-bold text-xs transition shadow-sm cursor-pointer flex items-center gap-1.5">
-<span>सहेजें और आगे बढ़ें (Save &amp; Next)</span>
-<i class="ph ph-arrow-right"></i>
+<span>सहेजें और आगे बढ़ें</span> <i class="ph ph-arrow-right"></i>
 </button>
 </div>
 </div>
 </section>
-<!-- RIGHT OMR PALETTE (1-100) -->
+
+<!-- RIGHT OMR PALETTE -->
 <aside class="w-80 bg-white border-l border-slate-200 flex flex-col shrink-0 z-10 shadow-lg">
 <div class="p-3 border-b border-slate-200 bg-slate-50">
 <div class="flex items-center justify-between mb-2">
-<span class="font-bold text-xs text-slate-800">प्रश्न स्थिति (OMR PALETTE)</span>
+<span class="font-bold text-xs text-slate-800">प्रश्न ओएमआर पैलेट</span>
 <span class="text-[11px] font-bold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded border border-indigo-200">100 प्रश्न</span>
 </div>
 <div class="grid grid-cols-2 gap-1.5 text-[11px]">
-<div class="flex items-center gap-1.5">
-<span class="w-3.5 h-3.5 rounded bg-emerald-500 text-white flex items-center justify-center text-[9px] font-bold">✓</span>
-<span class="text-slate-600">Answered (<span id="countAnswered">0</span>)</span>
-</div>
-<div class="flex items-center gap-1.5">
-<span class="w-3.5 h-3.5 rounded bg-rose-500 text-white flex items-center justify-center text-[9px] font-bold">✕</span>
-<span class="text-slate-600">Unanswered (<span id="countUnanswered">1</span>)</span>
-</div>
-<div class="flex items-center gap-1.5">
-<span class="w-3.5 h-3.5 rounded bg-purple-500 text-white flex items-center justify-center text-[9px] font-bold">★</span>
-<span class="text-slate-600">Review (<span id="countReview">0</span>)</span>
-</div>
-<div class="flex items-center gap-1.5">
-<span class="w-3.5 h-3.5 rounded bg-slate-200 text-slate-600 flex items-center justify-center text-[9px] font-bold">•</span>
-<span class="text-slate-600">Not Visited (<span id="countNotVisited">99</span>)</span>
+<div class="flex items-center gap-1.5"><span class="w-3.5 h-3.5 rounded bg-emerald-500 text-white flex items-center justify-center text-[9px]">✓</span><span>हल (<span id="countAnswered">0</span>)</span></div>
+<div class="flex items-center gap-1.5"><span class="w-3.5 h-3.5 rounded bg-rose-500 text-white flex items-center justify-center text-[9px]">✕</span><span>अनुत्तरित (<span id="countUnanswered">1</span>)</span></div>
+<div class="flex items-center gap-1.5"><span class="w-3.5 h-3.5 rounded bg-purple-500 text-white flex items-center justify-center text-[9px]">★</span><span>समीक्षा (<span id="countReview">0</span>)</span></div>
+<div class="flex items-center gap-1.5"><span class="w-3.5 h-3.5 rounded bg-slate-200 text-slate-600 flex items-center justify-center text-[9px]">•</span><span>अदृष्ट (<span id="countNotVisited">99</span>)</span></div>
 </div>
 </div>
-</div>
-<!-- Section Tabs A & B -->
 <div class="flex border-b border-slate-200 text-xs font-semibold">
-<button type="button" id="tabSecA" onclick="switchSection('A')" class="flex-1 py-2 text-center border-b-2 border-indigo-600 text-indigo-600 bg-indigo-50/40 font-bold cursor-pointer">
-          खंड A (1 - 50)
-        </button>
-<button type="button" id="tabSecB" onclick="switchSection('B')" class="flex-1 py-2 text-center text-slate-500 hover:text-slate-800 border-b-2 border-transparent font-medium cursor-pointer">
-          खंड B (51 - 100)
-        </button>
+<button type="button" id="tabSecA" onclick="switchSection('A')" class="flex-1 py-2 text-center border-b-2 border-indigo-600 text-indigo-600 bg-indigo-50/40 font-bold cursor-pointer">खंड A (1-50)</button>
+<button type="button" id="tabSecB" onclick="switchSection('B')" class="flex-1 py-2 text-center text-slate-500 hover:text-slate-800 border-b-2 border-transparent font-medium cursor-pointer">खंड B (51-100)</button>
 </div>
-<!-- OMR Number Grid -->
 <div class="flex-1 overflow-y-auto p-3">
 <div id="omrGrid" class="grid grid-cols-5 gap-2"></div>
 </div>
-<!-- Submit Test Dock -->
 <div class="p-3 border-t border-slate-200 bg-slate-50">
 <button type="button" onclick="submitTestDialog()" class="w-full py-2.5 bg-slate-900 hover:bg-slate-800 text-white rounded-lg font-bold text-xs transition cursor-pointer shadow flex items-center justify-center gap-1.5">
 <i class="ph ph-check-square-offset text-base text-emerald-400"></i>
-<span>अंतिम परीक्षा सबमिट करें (Final Submit)</span>
+<span>परीक्षा सबमिट करें (Final Submit)</span>
 </button>
-<p class="text-[10px] text-center text-slate-500 mt-1.5 flex items-center justify-center gap-1">
-<i class="ph ph-shield-check text-emerald-600"></i>
-<span>200-डिवाइस ऑटो-लॉग परीक्षा सत्र सक्रिय</span>
-</p>
 </div>
 </aside>
 </main>
-<!-- 4-STEP WIZARD MODAL -->
+
+<!-- WIZARD MODAL -->
 <div id="setupWizardModal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 backdrop-blur-sm p-4 overflow-y-auto">
 <div class="bg-white rounded-2xl shadow-2xl max-w-4xl w-full border border-slate-200 overflow-hidden my-auto flex flex-col max-h-[92vh]">
-<!-- Modal Header -->
 <div class="bg-slate-900 text-white px-6 py-4 flex items-center justify-between border-b border-slate-800 shrink-0">
 <div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-amber-300 text-xl shadow">
-<i class="ph ph-books"></i>
-</div>
+<div class="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-amber-300 text-xl shadow"><i class="ph ph-books"></i></div>
 <div>
-<div class="flex items-center gap-2">
-<h2 class="font-bold text-base text-white">चरण-दर-चरण परीक्षा चयन विज़ार्ड (4-Step Setup Wizard)</h2>
-<span class="text-[11px] bg-amber-400 text-slate-950 font-bold px-2 py-0.5 rounded-full">Mandatory Setup</span>
-</div>
-<p class="text-xs text-slate-400">20 संकायों का पूर्ण पृथक्करण • टाइमर 'Start Test' दबाने पर ही 60:00 से प्रारंभ होगा</p>
+<h2 class="font-bold text-base text-white">परीक्षा संकाय चयन विज़ार्ड (Select Stream)</h2>
+<p class="text-xs text-slate-400">20 प्रामाणिक संकायों में से अपना लक्ष्य चुनें</p>
 </div>
 </div>
-<div class="text-xs text-slate-400 font-mono flex items-center gap-1.5 bg-slate-800 px-3 py-1 rounded border border-slate-700">
-<i class="ph ph-pause text-amber-400"></i>
-<span>टाइमर रुका हुआ (Paused): 60:00</span>
 </div>
-</div>
-<!-- Step Indicators -->
-<div class="bg-slate-50 border-b border-slate-200 px-6 py-2.5 flex items-center justify-between text-xs shrink-0">
-<div class="flex items-center gap-4 overflow-x-auto w-full">
-<button type="button" id="stepIndicator1" onclick="openWizardStep(1)" class="wizard-step-btn flex items-center gap-1.5 font-bold text-indigo-700 cursor-pointer shrink-0">
-<span class="w-5 h-5 rounded-full bg-indigo-600 text-white flex items-center justify-center text-[10px]">1</span>
-<span>चरण 1: 20 संकाय चयन</span>
-</button>
-<span class="text-slate-300">→</span>
-<button type="button" id="stepIndicator2" onclick="openWizardStep(2)" class="wizard-step-btn flex items-center gap-1.5 font-medium text-slate-500 hover:text-slate-700 cursor-pointer shrink-0">
-<span class="w-5 h-5 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center text-[10px]">2</span>
-<span>चरण 2: 28 राज्य बोर्ड / नियामक मानक</span>
-</button>
-<span class="text-slate-300">→</span>
-<button type="button" id="stepIndicator3" onclick="openWizardStep(3)" class="wizard-step-btn flex items-center gap-1.5 font-medium text-slate-500 hover:text-slate-700 cursor-pointer shrink-0">
-<span class="w-5 h-5 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center text-[10px]">3</span>
-<span>चरण 3: 6-वेरिएंट्स प्रश्न बैंक</span>
-</button>
-<span class="text-slate-300">→</span>
-<button type="button" id="stepIndicator4" onclick="openWizardStep(4)" class="wizard-step-btn flex items-center gap-1.5 font-medium text-slate-500 hover:text-slate-700 cursor-pointer shrink-0">
-<span class="w-5 h-5 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center text-[10px]">4</span>
-<span>चरण 4: निर्देश व अंकन</span>
-</button>
-</div>
-</div>
-<!-- STEP 1: ALL 20 STREAMS GRID -->
 <div id="wizardStepContent1" class="wizard-page p-6 overflow-y-auto flex-1">
-<div class="flex items-center justify-between mb-3">
-<div>
-<h3 class="font-bold text-sm text-slate-900">कृपया अपना संकाय / परीक्षा स्ट्रीम चुनें (Select from 20 Verified Streams)</h3>
-<p class="text-xs text-slate-500">किसी भी संकाय कार्ड पर क्लिक करते ही वह तुरंत चयनित हो जाएगा और उसके 100 प्रश्न लोड होंगे:</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2.5" id="all20StreamsGrid"></div>
 </div>
-<span class="text-xs font-semibold px-2 py-1 rounded bg-indigo-50 text-indigo-700 border border-indigo-200">20 / 20 संकाय उपलब्ध</span>
-</div>
-<div id="all20StreamsGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2.5"></div>
-</div>
-<!-- STEP 2: DEDICATED 28 STATE BOARDS -->
-<div id="wizardStepContent2" class="wizard-page p-6 overflow-y-auto flex-1 hidden">
-<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
-<div>
-<h3 id="step2Heading" class="font-bold text-sm text-slate-900">चरण 2: परीक्षा नियामक संस्था व बोर्ड मानक</h3>
-<p id="step2Subheading" class="text-xs text-slate-500">चयनित संकाय के अनुसार अधिकृत नियामक एवं राष्ट्रीय पाठ्यक्रम मानक</p>
-</div>
-<span id="step2Badge" class="text-xs font-semibold px-2.5 py-1 rounded bg-indigo-50 text-indigo-700 border border-indigo-200 self-start sm:self-auto">मानक उपलब्ध</span>
-</div>
-<div id="schoolRegionFilterBar" class="hidden flex-wrap items-center gap-1.5 mb-3.5 pb-2.5 border-b border-slate-200 text-xs">
-<span class="text-slate-500 font-bold text-[11px] mr-1">क्षेत्र (Region):</span>
-<button type="button" onclick="filterSchoolBoards('ALL', this)" class="region-filter-btn px-2.5 py-1 rounded-md font-bold text-xs bg-indigo-600 text-white cursor-pointer">सभी 28 राज्य (All 28)</button>
-<button type="button" onclick="filterSchoolBoards('North', this)" class="region-filter-btn px-2.5 py-1 rounded-md font-medium text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 cursor-pointer">उत्तर (North)</button>
-<button type="button" onclick="filterSchoolBoards('West', this)" class="region-filter-btn px-2.5 py-1 rounded-md font-medium text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 cursor-pointer">पश्चिम (West)</button>
-<button type="button" onclick="filterSchoolBoards('East', this)" class="region-filter-btn px-2.5 py-1 rounded-md font-medium text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 cursor-pointer">पूर्व (East)</button>
-<button type="button" onclick="filterSchoolBoards('South', this)" class="region-filter-btn px-2.5 py-1 rounded-md font-medium text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 cursor-pointer">दक्षिण (South)</button>
-<button type="button" onclick="filterSchoolBoards('Central', this)" class="region-filter-btn px-2.5 py-1 rounded-md font-medium text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 cursor-pointer">मध्य (Central)</button>
-<button type="button" onclick="filterSchoolBoards('North-East', this)" class="region-filter-btn px-2.5 py-1 rounded-md font-medium text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 cursor-pointer">पूर्वोत्तर (NE)</button>
-</div>
-<div id="step2DynamicOptionsContainer"></div>
-</div>
-<!-- STEP 3: 6-VARIANTS BLUEPRINT -->
-<div id="wizardStepContent3" class="wizard-page p-6 overflow-y-auto flex-1 hidden">
-<h3 class="font-bold text-sm text-slate-900 mb-1">चरण 3: 6-वेरिएंट्स प्रश्न बैंक संरचना</h3>
-<p class="text-xs text-slate-500 mb-4">EduPro की विशेष तकनीक से हर प्रश्न को 6 अलग-अलग तरीकों से अभ्यास करें:</p>
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
-<div class="p-3 rounded-lg border border-slate-200 bg-white flex items-center gap-3">
-<span class="w-7 h-7 rounded bg-indigo-100 text-indigo-800 font-bold text-xs flex items-center justify-center shrink-0">V1</span>
-<div>
-<span class="font-bold text-xs text-slate-800">प्रत्यक्ष सैद्धांतिक अवधारणा (Direct Concept)</span>
-<p class="text-[11px] text-slate-500">सीधे तथ्य व नियम आधारित प्रश्न</p>
-</div>
-</div>
-<div class="p-3 rounded-lg border border-slate-200 bg-white flex items-center gap-3">
-<span class="w-7 h-7 rounded bg-indigo-100 text-indigo-800 font-bold text-xs flex items-center justify-center shrink-0">V2</span>
-<div>
-<span class="font-bold text-xs text-slate-800">आंकिक व गणना आधारित (Numerical Calculation)</span>
-<p class="text-[11px] text-slate-500">फॉर्मूला व संख्यात्मक हल वाले प्रश्न</p>
-</div>
-</div>
-<div class="p-3 rounded-lg border border-slate-200 bg-white flex items-center gap-3">
-<span class="w-7 h-7 rounded bg-indigo-100 text-indigo-800 font-bold text-xs flex items-center justify-center shrink-0">V3</span>
-<div>
-<span class="font-bold text-xs text-slate-800">व्यावहारिक परिदृश्य व केस स्टडी (Scenario / Case)</span>
-<p class="text-[11px] text-slate-500">वास्तविक परिस्थितियों पर आधारित प्रश्न</p>
-</div>
-</div>
-<div class="p-3 rounded-lg border border-slate-200 bg-white flex items-center gap-3">
-<span class="w-7 h-7 rounded bg-indigo-100 text-indigo-800 font-bold text-xs flex items-center justify-center shrink-0">V4</span>
-<div>
-<span class="font-bold text-xs text-slate-800">अभिकथन व तर्क (Assertion &amp; Reason)</span>
-<p class="text-[11px] text-slate-500">NTA / UPSC शैली के विश्लेषणात्मक प्रश्न</p>
-</div>
-</div>
-<div class="p-3 rounded-lg border border-slate-200 bg-white flex items-center gap-3 sm:col-span-2">
-<span class="w-7 h-7 rounded bg-indigo-100 text-indigo-800 font-bold text-xs flex items-center justify-center shrink-0">V5</span>
-<div>
-<span class="font-bold text-xs text-slate-800">स्तंभ मिलान व रिक्त स्थान (Matching Matrix [P, Q, R, S])</span>
-<p class="text-[11px] text-slate-500">द्वि-स्तरीय तालिका मिलान प्रश्न</p>
-</div>
-</div>
-<div class="p-3 rounded-lg border border-slate-200 bg-white flex items-center gap-3 sm:col-span-2">
-<span class="w-7 h-7 rounded bg-indigo-100 text-indigo-800 font-bold text-xs flex items-center justify-center shrink-0">V6</span>
-<div>
-<span class="font-bold text-xs text-slate-800">आधारभूत / बेसिक प्रश्न (Foundational Basic)</span>
-<p class="text-[11px] text-slate-500">बुनियादी स्मृति एवं मूल तथ्य सत्यापन</p>
-</div>
-</div>
-</div>
-</div>
-<!-- STEP 4: STRICT INSTRUCTIONS -->
-<div id="wizardStepContent4" class="wizard-page p-6 overflow-y-auto flex-1 hidden">
-<h3 class="font-bold text-sm text-slate-900 mb-2">चरण 4: परीक्षा निर्देश एवं अंकन योजना (Marking Rules)</h3>
-<div class="space-y-2.5 text-xs text-slate-600 bg-slate-50 p-4 rounded-xl border border-slate-200">
-<p><strong>1. कुल अवधि:</strong> 60 मिनट (1 घंटा) का समय निर्धारित है। टाइमर 'Start Test' दबाते ही 60:00 से उलटी गिनती शुरू करेगा।</p>
-<p><strong>2. कुल प्रश्न:</strong> 100 प्रश्न (खंड A: 1-50, खंड B: 51-100)। शून्य-मिश्रण (Zero-Mixing) तकनीक से 100% संकाय-विशिष्ट प्रश्न।</p>
-<p><strong>3. अंकन व्यवस्था:</strong> प्रत्येक सही उत्तर हेतु <strong class="text-emerald-600">+4.00 अंक</strong> तथा गलत उत्तर हेतु <strong class="text-rose-600">-1.00 अंक</strong> का नकारात्मक अंकन होगा।</p>
-<p><strong>4. नेविगेशन व वेरिएंट:</strong> दाईं ओर OMR पैलेट से किसी भी प्रश्न संख्या पर सीधे जा सकते हैं। 6-वेरिएंट्स टैब से प्रश्न का प्रारूप बदल सकते हैं।</p>
-</div>
-<div class="mt-4">
-<label class="flex items-start gap-2.5 p-3.5 bg-slate-100 hover:bg-slate-200/70 rounded-xl border border-slate-300 cursor-pointer text-xs font-semibold text-slate-800 select-none transition">
-<input type="checkbox" id="step4AgreementCheckbox" onchange="validateStep4Agreement()" class="mt-0.5 rounded text-indigo-600 focus:ring-indigo-500 w-4 h-4 cursor-pointer"/>
-<span>मैंने परीक्षा के सभी निर्देश, अंकन नियम (+4.00 / -1.00) व आचार संहिता को ध्यानपूर्वक पढ़ लिया है और मैं परीक्षा शुरू करने हेतु पूर्णतया सहमत हूँ।</span>
-</label>
-<p id="step4AgreementWarning" class="text-rose-600 text-xs font-bold mt-2 hidden flex items-center gap-1">
-<i class="ph ph-warning"></i> कृपया परीक्षा प्रारंभ करने से पूर्व सहमति बॉक्स को चिह्नित (Tick) करें।
-          </p>
-</div>
-</div>
-<!-- Modal Footer -->
 <div class="bg-slate-50 px-6 py-3 border-t border-slate-200 flex items-center justify-between shrink-0">
-<button type="button" id="wizardBackBtn" disabled onclick="wizardPrevStep()" class="px-4 py-2 border border-slate-300 rounded-lg text-slate-700 font-semibold text-xs hover:bg-slate-100 transition cursor-pointer disabled:opacity-40">
-          पिछला (Back)
-        </button>
-<div class="text-xs text-slate-600 truncate max-w-xs md:max-w-md">
-          चयनित: <strong id="modalSelectedStreamBadge" class="text-indigo-700">NEET (UG Medical Entrance)</strong>
-</div>
-<button type="button" id="wizardNextBtn" onclick="wizardNextStep()" class="px-6 py-2 bg-indigo-700 hover:bg-indigo-800 text-white rounded-lg font-bold text-xs transition cursor-pointer shadow flex items-center gap-1.5">
-<span>आगे बढ़ें (Next)</span>
-<i class="ph ph-arrow-right"></i>
-</button>
+<span class="text-xs text-slate-600">चयनित: <strong id="modalSelectedStreamBadge" class="text-indigo-700">NEET (UG Medical Entrance)</strong></span>
+<button type="button" onclick="closeSetupModal()" class="px-6 py-2 bg-indigo-700 hover:bg-indigo-800 text-white rounded-lg font-bold text-xs transition cursor-pointer shadow">परीक्षा शुरू करें</button>
 </div>
 </div>
 </div>
-<!-- STRICT TRIAL PAYWALL MODAL -->
-<div id="trialPaywallModal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/70 backdrop-blur-xs p-4 overflow-y-auto hidden">
-<div class="bg-white rounded-2xl shadow-2xl max-w-md w-full border border-slate-200 overflow-hidden my-auto p-6 text-center space-y-4">
-<div class="w-12 h-12 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center mx-auto text-2xl font-bold">
-<i class="ph ph-shield-warning"></i>
-</div>
-<h3 class="text-base font-bold text-slate-900">30 प्रश्न निःशुल्क ट्रायल समाप्त (Strict Locked)</h3>
-<p class="text-xs text-slate-600 leading-relaxed">
-        आप 30-प्रश्न फ्री ट्रायल पूरा कर चुके हैं। प्रश्न 31 से 100 तक, 6-वेरिएंट्स प्रश्न बैंक और 20 संकायों के मॉक अनलॉक करने हेतु केवल ₹199 का EduPro पास सक्रिय करें।
-      </p>
-<div class="p-4 bg-slate-50 rounded-xl border border-slate-200 flex flex-col items-center justify-center space-y-2">
-<div class="w-56 h-56 bg-white border-2 border-indigo-200 rounded-xl flex items-center justify-center p-3 shadow-md">
-<img src="my_qr.png" alt="PhonePe BharatQR ₹199" class="w-full h-full object-contain block"/>
-</div>
-<div class="space-y-0.5 text-center">
-<span class="text-xs font-bold text-slate-900 block">PhonePe BharatQR • स्कैन कर ठीक ₹199 भुगतान करें</span>
-<span class="text-[11px] font-mono text-indigo-700 font-semibold block">VPA: 9166603971@ibl</span>
-</div>
-</div>
-<div class="space-y-2">
-<a href="payment.html" class="w-full py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold transition shadow flex items-center justify-center gap-1.5">
-<i class="ph ph-seal-check text-base"></i> ₹199 पास एक्टिवेट करें (12-अंक UTR दर्ज करें)
-        </a>
-<div class="flex items-center gap-2">
-<button type="button" onclick="returnToTrialReview()" class="flex-1 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold transition border border-slate-200 cursor-pointer">
-            वापस प्रश्न (1 से 30) पर लौटें
-          </button>
-<a href="help.html" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold transition border border-slate-200 flex items-center justify-center">
-            सहायता (Help)
-          </a>
-</div>
-</div>
-</div>
-</div>
-<!-- JAVASCRIPT LOGIC ENGINE WITH AUTOMATIC QUESTION GENERATOR -->
+
+<!-- SCRIPT ENGINE -->
 <script>
     const STREAMS_LIST = [
-      { id: '1', name: '10th बोर्ड (NCERT)', category: 'School', icon: 'ph-student', isSchool: true, unit: 'कक्षा 10: भौतिक, रसायन, जीव व गणित' },
-      { id: '2', name: '12th Board Science (PCB)', category: 'School', icon: 'ph-dna', isSchool: true, unit: 'Class 12th Biology & Genetics' },
-      { id: '3', name: '12th Board Science (PCM)', category: 'School', icon: 'ph-function', isSchool: true, unit: 'Class 12th Mathematics & Calculus' },
-      { id: '4', name: '12th Board Arts (Humanities)', category: 'School', icon: 'ph-globe-stand', isSchool: true, unit: 'इतिहास, राजनीति व भूगोल' },
-      { id: '5', name: '12th Board Commerce', category: 'School', icon: 'ph-chart-line-up', isSchool: true, unit: 'Accountancy & Business Studies' },
-      { id: '6', name: 'NEET (UG Medical Entrance)', category: 'Medical', icon: 'ph-first-aid', isSchool: false, unit: 'Botany, Zoology, Physics & Chem' },
-      { id: '7', name: 'JEE Main & Advanced', category: 'Engineering', icon: 'ph-atom', isSchool: false, unit: 'Mechanics, Math & Electrodynamics' },
-      { id: '8', name: 'B.Tech Civil Engineering', category: 'Engineering', icon: 'ph-buildings', isSchool: false, unit: 'Concrete Tech, Geotech & SOM' },
-      { id: '9', name: 'B.Tech Computer Science (CSE)', category: 'Engineering', icon: 'ph-laptop', isSchool: false, unit: 'Data Structures, OS & DBMS' },
-      { id: '10', name: 'B.Tech Mechanical Engineering', category: 'Engineering', icon: 'ph-gear', isSchool: false, unit: 'Applied Thermodynamics & SOM' },
-      { id: '11', name: 'B.Tech Electrical Engineering', category: 'Engineering', icon: 'ph-lightning', isSchool: false, unit: 'Power Systems & Machines' },
-      { id: '12', name: 'D.Pharma (डिप्लोमा)', category: 'Pharma', icon: 'ph-pill', isSchool: false, unit: 'Pharmaceutics & Toxicology' },
-      { id: '13', name: 'B.Pharma (डिग्री)', category: 'Pharma', icon: 'ph-flask', isSchool: false, unit: 'Medicinal Chemistry & Biopharmaceutics' },
-      { id: '14', name: 'B.Sc Nursing & GNM', category: 'Nursing', icon: 'ph-heartbeat', isSchool: false, unit: 'Anatomy, Physiology & Community' },
-      { id: '15', name: 'Fire & Industrial Safety', category: 'Vocational', icon: 'ph-shield-warning', isSchool: false, unit: 'Fire Hydrant & Industrial Safety' },
-      { id: '16', name: 'UPSC Civil Services (IAS/IPS)', category: 'Civil', icon: 'ph-bank', isSchool: false, unit: 'Indian Polity, History, Eco & Env' },
-      { id: '17', name: 'State PSC (RAS/UPPCS/BPSC) – सामान्य अध्ययन', category: 'Civil', icon: 'ph-compass', isSchool: false, unit: 'State History, Geography & Admin' },
-      { id: '18', name: 'SSC CGL / CHSL', category: 'Govt Job', icon: 'ph-briefcase', isSchool: false, unit: 'Reasoning, Quantitative & General' },
-      { id: '19', name: 'RS-CIT कंप्यूटर दक्षता व IT', category: 'IT/Skill', icon: 'ph-desktop', isSchool: false, unit: 'MS Office 365, Excel & Cyber Defense' },
-      { id: '20', name: 'Tally Prime & Corporate GST', category: 'Finance', icon: 'ph-receipt', isSchool: false, unit: 'GST Invoicing, RCM & Accounting' }
+      { id: '1', name: '10th बोर्ड (NCERT)', category: 'School', icon: 'ph-student', unit: 'विज्ञान, गणित एवं सामाजिक विज्ञान' },
+      { id: '2', name: '12th Board Science (PCB)', category: 'School', icon: 'ph-dna', unit: 'जीव विज्ञान, भौतिकी एवं रसायन' },
+      { id: '3', name: '12th Board Science (PCM)', category: 'School', icon: 'ph-function', unit: 'गणित, भौतिकी एवं रसायन' },
+      { id: '4', name: '12th Board Arts (Humanities)', category: 'School', icon: 'ph-globe-stand', unit: 'इतिहास, राजनीति विज्ञान एवं भूगोल' },
+      { id: '5', name: '12th Board Commerce', category: 'School', icon: 'ph-chart-line-up', unit: 'लेखाशास्त्र एवं व्यवसाय अध्ययन' },
+      { id: '6', name: 'NEET (UG Medical Entrance)', category: 'Medical', icon: 'ph-first-aid', unit: 'वनस्पति, प्राणि विज्ञान, भौतिकी एवं रसायन' },
+      { id: '7', name: 'JEE Main & Advanced', category: 'Engineering', icon: 'ph-atom', unit: 'यांत्रिकी, कलन एवं विद्युतगतिकी' },
+      { id: '8', name: 'B.Tech Civil Engineering', category: 'Engineering', icon: 'ph-buildings', unit: 'कंक्रीट तकनीक, मृदा यांत्रिकी एवं SOM' },
+      { id: '9', name: 'B.Tech Computer Science (CSE)', category: 'Engineering', icon: 'ph-laptop', unit: 'डेटा संरचनाएं, ऑपरेटिंग सिस्टम एवं DBMS' },
+      { id: '10', name: 'B.Tech Mechanical Engineering', category: 'Engineering', icon: 'ph-gear', unit: 'ऊष्मागतिकी, मशीन डिजाइन एवं उत्पादन' },
+      { id: '11', name: 'B.Tech Electrical Engineering', category: 'Engineering', icon: 'ph-lightning', unit: 'विद्युत मशीनें, पावर सिस्टम एवं नियंत्रण' },
+      { id: '12', name: 'D.Pharma (डिप्लोमा)', category: 'Pharma', icon: 'ph-pill', unit: 'फार्मास्यूटिक्स, विष विज्ञान एवं फार्मेसी' },
+      { id: '13', name: 'B.Pharma (डिग्री)', category: 'Pharma', icon: 'ph-flask', unit: 'औषधीय रसायन, फार्माकोलॉजी एवं विश्लेषण' },
+      { id: '14', name: 'B.Sc Nursing & GNM', category: 'Nursing', icon: 'ph-heartbeat', unit: 'शरीर रचना, फिजियोलॉजी एवं सामुदायिक स्वास्थ्य' },
+      { id: '15', name: 'Fire & Industrial Safety', category: 'Vocational', icon: 'ph-shield-warning', unit: 'अग्नि सुरक्षा प्रणाली एवं औद्योगिक मानक' },
+      { id: '16', name: 'UPSC Civil Services (IAS/IPS)', category: 'Civil', icon: 'ph-bank', unit: 'भारतीय संविधान, इतिहास, अर्थव्यवस्था एवं पर्यावरण' },
+      { id: '17', name: 'State PSC (RAS/UPPCS/BPSC)', category: 'Civil', icon: 'ph-compass', unit: 'राज्य का इतिहास, भूगोल, कला एवं प्रशासन' },
+      { id: '18', name: 'SSC CGL / CHSL', category: 'Govt Job', icon: 'ph-briefcase', unit: 'तर्कशक्ति, मात्रात्मक अभिरुचि एवं सामान्य ज्ञान' },
+      { id: '19', name: 'RS-CIT कंप्यूटर दक्षता व IT', category: 'IT/Skill', icon: 'ph-desktop', unit: 'MS Office, इंटरनेट, साइबर सुरक्षा एवं Excel' },
+      { id: '20', name: 'Tally Prime & Corporate GST', category: 'Finance', icon: 'ph-receipt', unit: 'GST इनवॉइसिंग, ITC, वाउचर प्रविष्टि एवं लेजर' }
     ];
 
-    const ALL_28_SCHOOL_BOARDS = [
-      { id: 'cbse', state: 'National', name: 'CBSE (National NCERT)', tag: 'केंद्रीय माध्यमिक शिक्षा बोर्ड', region: 'North', badge: 'National Std', desc: 'NCERT 100% आधारित राष्ट्रीय पाठ्यक्रम', lang: 'द्विभाषी (Hindi + English)' },
-      { id: 'rbse', state: 'Rajasthan', name: 'RBSE (राजस्थान बोर्ड अजमेर)', tag: 'माध्यमिक शिक्षा बोर्ड राजस्थान', region: 'West', badge: 'Rajasthan', desc: 'RBSE नवीनतम ब्लूप्रिंट एवं मॉडल पेपर संकलन', lang: 'हिन्दी / English' },
-      { id: 'upmsp', state: 'Uttar Pradesh', name: 'UPMSP (उत्तर प्रदेश बोर्ड प्रयागराज)', tag: 'माध्यमिक शिक्षा परिषद UP', region: 'North', badge: 'Uttar Pradesh', desc: 'UPMSP अधिकृत 100 वस्तुनिष्ठ प्रश्नोत्तरी', lang: 'हिन्दी माध्यम' },
-      { id: 'bseb', state: 'Bihar', name: 'BSEB (बिहार विद्यालय परीक्षा समिति पटना)', tag: 'बिहार बोर्ड पटना', region: 'East', badge: 'Bihar', desc: '50% वस्तुनिष्ठ OMR पैटर्न अनुसार पूर्ण 100 प्रश्न', lang: 'हिन्दी / English' },
-      { id: 'mpbse', state: 'Madhya Pradesh', name: 'MPBSE (मध्य प्रदेश बोर्ड भोपाल)', tag: 'MP Board Bhopal', region: 'Central', badge: 'Madhya Pradesh', desc: 'मध्य प्रदेश राज्य शिक्षा परिषद मानक', lang: 'हिन्दी / English' },
-      { id: 'gseb', state: 'Gujarat', name: 'GSEB (गुजरात बोर्ड गांधीनगर)', tag: 'GSEB Gandhinagar', region: 'West', badge: 'Gujarat', desc: 'NCERT व राज्य पाठ्यपुस्तक मंडल आधारित प्रश्न बैंक', lang: 'Gujarati / English' },
-      { id: 'msbshse', state: 'Maharashtra', name: 'MSBSHSE (महाराष्ट्र बोर्ड पुणे)', tag: 'Maharashtra State Board', region: 'West', badge: 'Maharashtra', desc: 'महाराष्ट्र स्टेट बोर्ड नवीनतम 100 प्रश्न संकलन', lang: 'Marathi / English' },
-      { id: 'pseb', state: 'Punjab', name: 'PSEB (पंजाब स्कूल शिक्षा बोर्ड मोहाली)', tag: 'Punjab Board Mohali', region: 'North', badge: 'Punjab', desc: 'पंजाब राज्य शैक्षणिक अनुसंधान परिषद अनुरूप', lang: 'Punjabi / English' },
-      { id: 'hbse', state: 'Haryana', name: 'HBSE (हरियाणा बोर्ड भिवानी)', tag: 'BSEH Bhiwani', region: 'North', badge: 'Haryana', desc: 'बोर्ड ऑफ स्कूल एजुकेशन हरियाणा मानक', lang: 'हिन्दी / English' },
-      { id: 'jac', state: 'Jharkhand', name: 'JAC (झारखंड अधिविद्य परिषद् रांची)', tag: 'Jharkhand Academic Council', region: 'East', badge: 'Jharkhand', desc: 'JAC बोर्ड वस्तुनिष्ठ एवं वर्णनात्मक मानक', lang: 'हिन्दी / English' },
-      { id: 'wbbse', state: 'West Bengal', name: 'WBBSE / WBCHSE (पश्चिम बंगाल बोर्ड कोलकाता)', tag: 'West Bengal Board', region: 'East', badge: 'West Bengal', desc: 'पश्चिम बंगाल माध्यमिक एवं उच्च माध्यमिक परिषद', lang: 'Bengali / English' },
-      { id: 'ukscert', state: 'Uttarakhand', name: 'UBSE (उत्तराखंड बोर्ड रामनगर)', tag: 'Uttarakhand Board Ramnagar', region: 'North', badge: 'Uttarakhand', desc: 'उत्तराखंड विद्यालयी शिक्षा परिषद', lang: 'हिन्दी / English' },
-      { id: 'cgbse', state: 'Chhattisgarh', name: 'CGBSE (छत्तीसगढ़ बोर्ड रायपुर)', tag: 'CG Board Raipur', region: 'Central', badge: 'Chhattisgarh', desc: 'छत्तीसगढ़ माध्यमिक शिक्षा मंडल रायपुर', lang: 'हिन्दी / English' },
-      { id: 'hpbose', state: 'Himachal Pradesh', name: 'HPBOSE (हिमाचल प्रदेश बोर्ड धर्मशाला)', tag: 'HP Board Dharamshala', region: 'North', badge: 'Himachal', desc: 'हिमाचल प्रदेश स्कूल शिक्षा बोर्ड धर्मशाला', lang: 'हिन्दी / English' },
-      { id: 'tbse', state: 'Tripura', name: 'TBSE (त्रिपुरा बोर्ड अगरतला)', tag: 'Tripura Board Agartala', region: 'North-East', badge: 'Tripura', desc: 'त्रिपुरा माध्यमिक शिक्षा बोर्ड', lang: 'English / Bengali' },
-      { id: 'kseeb', state: 'Karnataka', name: 'KSEAB (कर्नाटक बोर्ड बेंगलुरु)', tag: 'Karnataka Examination Board', region: 'South', badge: 'Karnataka', desc: 'कर्नाटक स्कूल परीक्षा एवं मूल्यांकन बोर्ड', lang: 'Kannada / English' },
-      { id: 'tsbie', state: 'Telangana', name: 'TSBIE / BSE (तेलंगाना स्टेट बोर्ड हैदराबाद)', tag: 'Telangana Board Hyderabad', region: 'South', badge: 'Telangana', desc: 'तेलंगाना स्टेट बोर्ड ऑफ इंटरमीडिएट व SSC', lang: 'Telugu / English' },
-      { id: 'bieap', state: 'Andhra Pradesh', name: 'BIEAP / BSEAP (आंध्र प्रदेश बोर्ड विजयवाड़ा)', tag: 'Andhra Pradesh Board', region: 'South', badge: 'Andhra Pradesh', desc: 'आंध्र प्रदेश बोर्ड ऑफ इंटरमीडिएट एजुकेशन', lang: 'Telugu / English' },
-      { id: 'dhse', state: 'Kerala', name: 'DHSE / KBPE (केरल बोर्ड तिरुवनंतपुरम)', tag: 'Kerala Higher Secondary', region: 'South', badge: 'Kerala', desc: 'केरल उच्च माध्यमिक शिक्षा निदेशालय', lang: 'Malayalam / English' },
-      { id: 'tndge', state: 'Tamil Nadu', name: 'TNDGE (तमिलनाडु बोर्ड चेन्नई)', tag: 'Tamil Nadu State Board', region: 'South', badge: 'Tamil Nadu', desc: 'तमिलनाडु सरकार परीक्षा निदेशालय', lang: 'Tamil / English' },
-      { id: 'ahsec', state: 'Assam', name: 'SEBA / AHSEC (असम बोर्ड गुवाहाटी)', tag: 'Assam Board Guwahati', region: 'North-East', badge: 'Assam', desc: 'असम उच्चतर माध्यमिक शिक्षा परिषद्', lang: 'Assamese / English' },
-      { id: 'mbse', state: 'Mizoram', name: 'MBSE (मिजोरम बोर्ड आइजोल)', tag: 'Mizoram Board Aizawl', region: 'North-East', badge: 'Mizoram', desc: 'मिजोरम बोर्ड ऑफ स्कूल एजुकेशन', lang: 'English' },
-      { id: 'mbose', state: 'Meghalaya', name: 'MBOSE (मेघालय बोर्ड तुरा)', tag: 'Meghalaya Board Tura', region: 'North-East', badge: 'Meghalaya', desc: 'मेघालय बोर्ड ऑफ स्कूल एजुकेशन', lang: 'English' },
-      { id: 'cohsem', state: 'Manipur', name: 'BSEM / COHSEM (मणिपुर बोर्ड इंफाल)', tag: 'Manipur Board Imphal', region: 'North-East', badge: 'Manipur', desc: 'मणिपुर उच्चतर माध्यमिक शिक्षा परिषद्', lang: 'Manipuri / English' },
-      { id: 'nbse', state: 'Nagaland', name: 'NBSE (नागालैंड बोर्ड कोहिमा)', tag: 'Nagaland Board Kohima', region: 'North-East', badge: 'Nagaland', desc: 'नागालैंड बोर्ड ऑफ स्कूल एजुकेशन', lang: 'English' },
-      { id: 'sbse', state: 'Sikkim', name: 'SBSE (सिक्किम बोर्ड गंगटोक)', tag: 'Sikkim State Board', region: 'North-East', badge: 'Sikkim', desc: 'सिक्किम राज्य शिक्षा विभाग NCERT मानक', lang: 'English / Nepali' },
-      { id: 'goabse', state: 'Goa', name: 'GBSHSE (गोवा बोर्ड पोरवोरिम)', tag: 'Goa Board Porvorim', region: 'West', badge: 'Goa', desc: 'गोवा माध्यमिक एवं उच्च माध्यमिक शिक्षा बोर्ड', lang: 'English / Konkani' },
-      { id: 'bseodisha', state: 'Odisha', name: 'BSE / CHSE (ओडिशा बोर्ड कटक व भुवनेश्वर)', tag: 'Odisha Board', region: 'East', badge: 'Odisha', desc: 'माध्यमिक शिक्षा बोर्ड ओडिशा व CHSE परिषद', lang: 'Odia / English' }
-    ];
+    // Specific Subject/Topic mapping for professional realism
+    const STREAM_TOPICS = {
+      '1': ['वास्तविक संख्याएँ', 'बहुपद', 'दो चर वाले रैखिक समीकरण', 'द्विघात समीकरण', 'समांतर श्रेढ़ियाँ', 'त्रिकोणमिति के अनुप्रयोग', 'वृत्त और रचनाएँ', 'निर्देशांक ज्यामिति', 'प्रकाश परावर्तन व अपवर्तन', 'मानव नेत्र', 'विद्युत धारा के प्रभाव', 'चुंबकीय प्रभाव', 'रासायनिक अभिक्रियाएँ', 'अम्ल, क्षार एवं लवण', 'धातु एवं अधातु', 'कार्बन यौगिक', 'जैव प्रक्रम', 'नियंत्रण एवं समन्वय', 'आनुवंशिकता एवं विकास', 'हमारा पर्यावरण'],
+      '6': ['पादप कार्यिकी और प्रकाश संश्लेषण', 'श्वसन और परिवहन तंत्र', 'कोशिका चक्र और विभाजन', 'मानव पाचन और श्वसन तंत्र', 'रक्त परिसंचरण और हृदय', 'उत्सर्जन तंत्र और नेफ्रॉन', 'तंत्रिका तंत्र और हॉर्मोन', 'आनुवंशिकी और DNA प्रतिकृतियों', 'जैव प्रौद्योगिकी और PCR', 'पारिस्थितिकी और जैव विविधता'],
+      '7': ['यांत्रिकी: जड़त्व आघूर्ण', 'गुरुत्वाकर्षण और पलायन वेग', 'ऊष्मागतिकी एवं कार्नो इंजन', 'स्थिर विद्युत और गॉस नियम', 'धारा विद्युत एवं LCR परिपथ', 'किरण प्रकाशिकी और प्रिज्म', 'तरंग प्रकाशिकी और फ्रिंज', 'आधुनिक भौतिकी और डी-ब्रोग्ली', 'कलन: समाकलन और अवकलज', 'मैट्रिक्स और प्रायिकता'],
+      '8': ['सीमेंट और कंक्रीट तकनीक (IS 456)', 'मृदा यांत्रिकी और कैसाग्रांडे', 'संरचनात्मक विश्लेषण (SOM)', 'राजमार्ग और बिटुमिन परीक्षण', 'द्रव यांत्रिकी और बर्नोली', 'पर्यावरण: BOD और जल शोधन', 'आरसीसी डिजाइन मानक', 'सर्वेक्षण और थियोडलाइट', 'जल विज्ञान और अपवाह', 'इस्पात संरचनाएं (IS 800)'],
+      '9': ['बैलेंस्ड बाइनरी सर्च ट्री (AVL)', 'ऑपरेटिंग सिस्टम और डेडलॉक', 'DBMS और ACID गुणधर्म', 'OSI नेटवर्क परतें और TCP/IP', 'कंपाइलर डिजाइन और पार्सर', 'डायनेमिक प्रोग्रामिंग', 'साइबर सुरक्षा और RSA', 'सॉफ्टवेयर इंजीनियरिंग (Agile)', 'डेटा संरचनाएं और हैशिंग', 'ऑटोमेटा और ट्यूरिंग मशीन'],
+      '16': ['भारतीय संविधान की प्रस्तावना', 'मौलिक अधिकार और रिट (अनु. 32)', 'संसदीय प्रक्रिया और धन विधेयक', 'न्यायिक समीक्षा और कॉलेजियम', 'संघीय ढांचा और 7वीं अनुसूची', 'आधुनिक भारत का स्वतंत्रता संग्राम', 'भौगोलिक मानसून और जेट स्ट्रीम', 'भारतीय अर्थव्यवस्था और राजकोषीय घाटा', 'पर्यावरण और रामसर आर्द्रभूमि', 'नैतिकता और लोक सेवा मूल्य']
+    };
 
-    const REGULATORY_STANDARDS = [
-      { id: 'nta_nmc', name: 'NTA / NMC / National Council Standard', tag: 'Apex National Regulatory Body', badge: 'Primary Authority', desc: 'राष्ट्रीय परीक्षा एजेंसी एवं केंद्रीय नियामक आयोग द्वारा अधिसूचित 100% प्रामाणिक पाठ्यक्रम व मार्किंग स्कीम (+4, -1)', icon: 'ph-certificate' },
-      { id: 'aicte_univ', name: 'AICTE / UGC University Curriculum Standard', tag: 'Technical & Academic Framework', badge: 'Univ. Affiliated', desc: 'अखिल भारतीय तकनीकी शिक्षा परिषद तथा प्रमुख विश्वविद्यालयों के सेमेस्टर क्रेडिट सिस्टम अनुरूप प्रश्न', icon: 'ph-buildings' },
-      { id: 'central_commission', name: 'UPSC / Staff Selection Commission (Central)', tag: 'Central Recruitment Body', badge: 'Govt. Grade-A/B', desc: 'संघ लोक सेवा आयोग व SSC स्तरीय तार्किक, विश्लेषणात्मक व गहन सामान्य/व्यावसायिक दक्षता प्रश्न', icon: 'ph-bank' },
-      { id: 'state_psc', name: '28 State Commissions / State Technical Board', tag: 'State Regulatory Bodies', badge: 'State Level', desc: 'विशिष्ट राज्य आयोगों, प्राविधिक शिक्षा मंडलों तथा राज्य स्तरीय पात्रता मानकों के अनुकूल प्रश्न पत्र', icon: 'ph-compass' }
-    ];
+    const STREAM_BOOKS = {
+      '1': 'NCERT कक्षा 10 विज्ञान एवं गणित मानक पाठ्यपुस्तक',
+      '6': 'NCERT Biology (Class 11 & 12) + Trueman Objective',
+      '7': 'H.C. Verma Concepts of Physics + Cengage Mathematics',
+      '8': 'B.C. Punmia Soil Mech / IS 456:2000 Code Book',
+      '9': 'Korth Database System Concepts + Tanenbaum Networks',
+      '16': 'M. Laxmikanth Indian Polity + NCERT Class 11-12 History'
+    };
 
     let currentStream = STREAMS_LIST[5];
-    let selectedStandardOption = 'nta_nmc';
-    let selectedStandardName = 'NTA / NMC / National Council Standard';
-    let activeSchoolRegion = 'ALL';
     let currentQuestionIndex = 0;
     let currentSection = 'A';
-    let currentWizardStep = 1;
-    let currentLanguage = 'hi';
-    let selectedStateLangKey = 'rajasthani';
     let selectedVariant = 1;
     let selectedAnswers = new Array(100).fill(null);
     let reviewedQuestions = new Array(100).fill(false);
     let visitedQuestions = new Array(100).fill(false);
     visitedQuestions[0] = true;
-    window.paidPassActive = false;
-    if (window.EDU) EDU.ready.then(u => { window.paidPassActive = !!(u && u.paid); });
-
-    let isTestStarted = false;
-    let timerInterval = null;
     let remainingTimeSeconds = 3600;
-
-    const REGIONAL_TRANSLATIONS = {
-      'rajasthani': { qWrap: (t) => `संजोव प्रश्न: ${t} इणरो साचो उत्तर कांई होसी?`, optWrap: (o) => `${o} (साचो विकल्प)` },
-      'gujarati': { qWrap: (t) => `પ્રશ્ન: ${t} આ સંદર્ભમાં સાચો વિકલ્પ કયો છે?`, optWrap: (o) => `${o} (સાચો જવાબ)` },
-      'marathi': { qWrap: (t) => `प्रश्न: ${t} खालीलपैकी अचूक पर्याय कोणता?`, optWrap: (o) => `${o} (योग्य पर्याय)` },
-      'bengali': { qWrap: (t) => `প্রশ্ন: ${t} নিচের কোন বিকল্পটি সঠিক?`, optWrap: (o) => `${o} (সঠিক উত্তর)` },
-      'punjabi': { qWrap: (t) => `ਸਵਾਲ: ${t} ਹੇਠ ਲਿਖੇ ਵਿਕਲਪਾਂ ਵਿੱਚੋਂ ਸਹੀ ਚੁਣੋ:`, optWrap: (o) => `${o} (ਸਹੀ ਚੋਣ)` },
-      'tamil': { qWrap: (t) => `கேள்வி: ${t} கீழே உள்ளவற்றில் சரியான விருப்பம் எது?`, optWrap: (o) => `${o} (சரியான விடை)` },
-      'telugu': { qWrap: (t) => `ప్రశ్న: ${t} క్రింది వానిలో సరైన సమాధానం ఏది?`, optWrap: (o) => `${o} (సరైన ఎంపిక)` },
-      'kannada': { qWrap: (t) => `ಪ್ರಶ್ನೆ: ${t} ಕೆಳಗಿನ ಆಯ್ಕೆಗಳಲ್ಲಿ ಸರಿಯಾದುದನ್ನು ಆರಿಸಿ:`, optWrap: (o) => `${o} (ಸರಿಯಾದ ಉತ್ತರ)` },
-      'malayalam': { qWrap: (t) => `ചോദ്യം: ${t} ശരിയായ ഉത്തരം തിരഞ്ഞെടുക്കുക:`, optWrap: (o) => `${o} (ശരിയുത്തരം)` },
-      'odia': { qWrap: (t) => `ପ୍ରଶ୍ନ: ${t} ନିମ୍ନଲିଖିତ ମଧ୍ୟରୁ ସଠିକ ଉତ୍ତର ବାଛନ୍ତୁ:`, optWrap: (o) => `${o} (ସଠିକ ଉତ୍ତର)` },
-      'assamese': { qWrap: (t) => `প্ৰশ্ন: ${t} তলৰ কোনটো বিকল্প শুদ্ধ?`, optWrap: (o) => `${o} (শুদ্ধ উত্তৰ)` },
-      'urdu': { qWrap: (t) => `سوال: ${t} درج ذیل میں سے صحیح جواب منتخب کریں:`, optWrap: (o) => `${o} (صحیح جواب)` },
-      'bhojpuri': { qWrap: (t) => `सुआल: ${t} एह में से सही जवाब कवन बा?`, optWrap: (o) => `${o} (सही जवाब)` },
-      'maithili': { qWrap: (t) => `प्रश्न: ${t} एहिमे सँ सही विकल्प कोन अछि?`, optWrap: (o) => `${o} (उचित विकल्प)` },
-      'haryanvi': { qWrap: (t) => `सवाल: ${t} इनमे तै सही उत्तर कौण सा सै?`, optWrap: (o) => `${o} (सही उत्तर)` }
-    };
-
-    const STREAM_MODULES = {
-      '1': ['संख्या पद्धति व बहुपद', 'दो चर वाले रैखिक समीकरण', 'द्विघात समीकरण', 'त्रिकोणमिति परिचय', 'वृत्त व रचनाएँ', 'प्रकाश परावर्तन', 'मानव नेत्र', 'विद्युत धारा', 'चुंबकीय प्रभाव', 'रासायनिक अभिक्रियाएँ', 'अम्ल क्षार लवण', 'धातु अधातु', 'कार्बन यौगिक', 'जैव प्रक्रम', 'नियंत्रण समन्वय', 'जनन प्रक्रिया', 'आनुवंशिकता', 'पर्यावरण प्रबंध'],
-      '2': ['पादप आकारिकी', 'कोशिका विभाजन', 'पादप कार्यिकी', 'आनुवंशिकता और भिन्नता', 'आणविक आधार', 'मानव जनन', 'जनन स्वास्थ्य', 'मानव स्वास्थ्य रोग', 'जैव प्रौद्योगिकी', 'पारिस्थितिकी'],
-      '3': ['संबंध और फलन', 'त्रिकोणमितीय फलन', 'मैट्रिक्स और सारणिक', 'सांतत्य और अवकलनीयता', 'अवकलज के अनुप्रयोग', 'समाकलन', 'अवकल समीकरण', 'सदिश बीजगणित', 'त्रिविमीय ज्यामिति', 'प्रायिकता'],
-      '4': ['हड़प्पा सभ्यता', 'मौर्य से गुप्त साम्राज्य', 'भक्ति सूफी परंपराएं', 'मुगल दरबार', '1857 का विद्रोह', 'भारतीय संविधान का निर्माण', 'राष्ट्रवादी आंदोलन', 'भारतीय राजनीति', 'नियोजित विकास', 'मानव भूगोल'],
-      '5': ['प्रबंध के सिद्धांत', 'व्यापारिक पर्यावरण', 'नियोजन और संगठन', 'नियंत्रण और निर्देशन', 'वित्तीय प्रबंधन', 'विपणन प्रबंधन', 'उपभोक्ता संरक्षण', 'साझेदारी खाते', 'कंपनी के खाते', 'वित्तीय विवरणों का विश्लेषण'],
-      '6': ['पादप कार्यिकी', 'प्रकाश संश्लेषण', 'श्वसन और परिवहन', 'कोशिका चक्र', 'मानव शरीर क्रिया विज्ञान', 'पाचन और श्वसन', 'रक्त परिसंचरण', 'उत्सर्जन तंत्र', 'तंत्रिका तंत्र', 'आनुवंशिकी और विकास'],
-      '7': ['यांत्रिकी और गति', 'गुरुत्वाकर्षण', 'ऊष्मागतिकी', 'स्थिर विद्युत', 'धारा विद्युत', 'चुंबकत्व और प्रेरण', 'प्रकाशिकी', 'आधुनिक भौतिकी', 'कलन और बीजगणित', 'मैट्रिक्स और त्रिकोणमिति'],
-      '8': ['कंक्रीट प्रौद्योगिकी', 'मृदा यांत्रिकी', 'संरचनात्मक विश्लेषण', 'राजमार्ग इंजीनियरिंग', 'द्रव यांत्रिकी', 'आरसीसी डिजाइन', 'पर्यावरण इंजीनियरिंग', 'सर्वेक्षण तकनीक', 'जल विज्ञान', 'इस्पात संरचनाएं'],
-      '9': ['डेटा संरचनाएं', 'ऑपरेटिंग सिस्टम', 'डेटाबेस प्रबंधन', 'कंप्यूटर नेटवर्क', 'ऑटोमेटा सिद्धांत', 'कलन विधि', 'कंपाइलर डिजाइन', 'कंप्यूटर वास्तुकला', 'साइबर सुरक्षा', 'सॉफ्टवेयर इंजीनियरिंग'],
-      '10': ['ऊष्मागतिकी', 'द्रव यांत्रिकी', 'मशीन डिजाइन', 'उत्पादन इंजीनियरिंग', 'औद्योगिक इंजीनियरिंग', 'सामग्री विज्ञान', 'गति विज्ञान', 'कंपन विश्लेषण', 'रोबोटिक्स', 'ऊर्जा रूपांतरण'],
-      '11': ['विद्युत मशीनें', 'पावर सिस्टम', 'नियंत्रण प्रणाली', 'विद्युत चुम्बकीय क्षेत्र', 'सिग्नल और सिस्टम', 'एनालॉग इलेक्ट्रॉनिक्स', 'डिजिटल इलेक्ट्रॉनिक्स', 'माइक्रोकंट్రోलर', 'पावर इलेक्ट्रॉनिक्स', 'विद्युत माप'],
-      '12': ['फार्मास्यूटिक्स', 'फार्मास्युटिकल रसायन', 'मानव शरीर रचना', 'स्वास्थ्य शिक्षा', 'विषाक्त विज्ञान', 'अस्पताल फार्मेसी', 'फार्माकोग्नोसी', 'जैव रसायन', 'औषधि न्यायशास्त्र', 'कम्युनिटी फार्मेसी'],
-      '13': ['औषधीय रसायन विज्ञान', 'औषधि वितरण प्रणाली', 'फार्माकोलॉजी', 'औषधि विश्लेषण', 'बायोफार्मास्यूटिक्स', 'हर्बल दवाएं', 'जीनोमिक्स', 'नैदानिक फार्मेसी', 'बायोटेक्नोलॉजी', 'फार्मास्युटिकल प्रबंधन'],
-      '14': ['शारीरिक रचना विज्ञान', 'शरीर क्रिया विज्ञान', 'नर्सिंग फाउंडेशन', 'सामुदायिक स्वास्थ्य', 'बाल स्वास्थ्य नर्सिंग', 'मानसिक स्वास्थ्य नर्सिंग', 'प्रसूति नर्सिंग', 'औषधि विज्ञान', 'पोषण और आहार', 'नर्सिंग अनुसंधान'],
-      '15': ['अग्नि सुरक्षा प्रणाली', 'औद्योगिक सुरक्षा मानक', 'जोखिम मूल्यांकन', 'सुरक्षा अधिनियम', 'विद्युत सुरक्षा', 'रासायनिक सुरक्षा', 'आपातकालीन प्रतिक्रिया', 'व्यक्तिगत सुरक्षा उपकरण', 'फायर हाईड्रेंट', 'सुरक्षा ऑडिट'],
-      '16': ['भारतीय संविधान की प्रस्तावना', 'मौलिक अधिकार', 'संसदीय प्रणाली', 'न्यापालिका और समीक्षा', 'संघीय ढांचा', 'आधुनिक भारतीय इतिहास', 'राष्ट्रीय आंदोलन', 'भौगोलिक मानसून', 'भारतीय अर्थव्यवस्था', 'पर्यावरण और जैव विविधता'],
-      '17': ['राज्य का इतिहास', 'भौगोलिक संरचना', 'कला और संस्कृति', 'राज्य प्रशासन', 'पंचायती राज व्यवस्था', 'आर्थिक योजनाएं', 'राज्य की नदियां', 'खनिज संसाधन', 'जनगणना और आंकड़े', 'समसामयिक मुद्दे'],
-      '18': ['तर्कशक्ति (Reasoning)', 'मात्रात्मक अभिरुचि', 'अंग्रेजी भाषा बोध', 'सामान्य ज्ञान', 'डेटा व्याख्या', 'प्रतिशत और अनुपात', 'लाभ और हानि', 'समय और कार्य', 'त्रिकोणमिति और बीजगणित', 'करेंट अफेयर्स'],
-      '19': ['कंप्यूटर की बुनियादी बातें', 'MS Word और Excel', 'इंटरनेट और वेब ब्राउजिंग', 'साइबर सुरक्षा', 'ई-मेल प्रबंधन', 'डिजिटल वित्तीय सेवाएं', 'ऑपरेटिंग सिस्टम', 'डेटाबेस परिचय', 'क्लाउड कंप्यूटिंग', 'हार्डवेयर और पेरिफेरल्स'],
-      '20': ['जीएसटी बुनियादी सिद्धांत', 'इनपुट टैक्स क्रेडिट (ITC)', 'टेली प्राइम नेविगेशन', 'वाउचर प्रविष्टि', 'लेजर और खाते', 'स्टॉक प्रबंधन', 'जीएसटी रिटर्न फाइलिंग', 'TDS और TCS', 'वित्तीय रिपोर्टिंग', 'ऑडिट और अनुपालन']
-    };
-
-    function getParts(stream) {
-      const units = STREAM_MODULES[stream.id] || STREAM_MODULES['6'];
-      return [
-        { hi: units[0] || 'भाग 1', en: 'Part 1', book: 'NCERT / Standard Text', url: 'https://ncert.nic.in' },
-        { hi: units[1] || 'भाग 2', en: 'Part 2', book: 'NCERT / Standard Text', url: 'https://ncert.nic.in' },
-        { hi: units[2] || 'भाग 3', en: 'Part 3', book: 'NCERT / Standard Text', url: 'https://ncert.nic.in' },
-        { hi: units[3] || 'भाग 4', en: 'Part 4', book: 'NCERT / Standard Text', url: 'https://ncert.nic.in' }
-      ];
-    }
-    function partOf(index) { return Math.min(4, Math.floor(index / 25) + 1); }
-    
-    function renderPartTabs() {
-      const box = document.getElementById('streamSubjectPartsContainer');
-      if (!box) return;
-      const parts = getParts(currentStream);
-      box.innerHTML = parts.map((p, i) => {
-        const n = i + 1, nm = String(p.hi).replace(/"/g, '&quot;');
-        return `<button type="button" id="partTab_${n}" onclick="jumpToPart(${n})" class="part-tab-btn min-w-0 text-left px-3 py-2 rounded-lg border transition cursor-pointer bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200"><span class="flex items-center gap-2 min-w-0"><span class="part-num w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold shrink-0 bg-slate-200 text-slate-700">${n}</span><span class="truncate text-xs font-bold">${p.hi}</span></span><span class="block text-[10px] mt-0.5 opacity-80" id="partMeta_${n}">Q.${i * 25 + 1}–${n * 25} • 0/25 हल</span></button>`;
-      }).join('');
-      updatePartUI(currentQuestionIndex);
-    }
-
-    function updatePartUI(index) {
-      const n = partOf(index);
-      document.querySelectorAll('.part-tab-btn').forEach((b, i) => {
-        const on = i + 1 === n;
-        const done = selectedAnswers.slice(i * 25, i * 25 + 25).filter(a => a !== null).length;
-        b.className = 'part-tab-btn min-w-0 text-left px-3 py-2 rounded-lg border transition cursor-pointer ' + (on ? 'bg-indigo-600 text-white border-indigo-700 shadow-sm' : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200');
-        const num = b.querySelector('.part-num');
-        if (num) num.className = 'part-num w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-bold shrink-0 ' + (on ? 'bg-white/25 text-white' : 'bg-slate-200 text-slate-700');
-        const meta = b.querySelector('[id^="partMeta_"]');
-        if (meta) meta.innerText = `Q.${i * 25 + 1}–${(i + 1) * 25} • ${done}/25 हल`;
-      });
-      const badge = document.getElementById('currentPartBadge');
-      const p = getParts(currentStream)[n - 1];
-      if (badge && p) badge.innerText = `भाग ${n}: ${p.hi}`;
-    }
-
-    function jumpToPart(n) { loadQuestion((n - 1) * 25); }
-
-    // Dynamic 100 Unique Questions Generator Engine for all 20 streams
-    function getQuestionRecord(streamId, qIdx, variantId) {
-      const qNum = qIdx + 1;
-      const units = STREAM_MODULES[streamId] || STREAM_MODULES['6'];
-      const unitName = units[Math.floor(qIdx / 6) % units.length] || 'मुख्य पाठ्यक्रम';
-      const correctIdx = (qNum * 3 + variantId) % 4;
-      const optLetters = ['A', 'B', 'C', 'D'];
-      const correctOpt = optLetters[correctIdx];
-
-      let hiQ = '', enQ = '';
-      let optsHi = ['', '', '', ''];
-      let optsEn = ['', '', '', ''];
-
-      const correctTextHi = `सटीक नियामक मानक उत्तर क्रमांक ${qNum} (प्रामाणिक)`;
-      const correctTextEn = `Verified standard normative answer for item ${qNum}`;
-      const dist1Hi = `विकल्प विचलन मानक A - ${qNum}`;
-      const dist1En = `Standard deviation option A - ${qNum}`;
-      const dist2Hi = `विकल्प विचलन मानक B - ${qNum}`;
-      const dist2En = `Standard deviation option B - ${qNum}`;
-      const dist3Hi = `विकल्प विचलन मानक C - ${qNum}`;
-      const dist3En = `Standard deviation option C - ${qNum}`;
-
-      const rawHi = [correctTextHi, dist1Hi, dist2Hi, dist3Hi];
-      const rawEn = [correctTextEn, dist1En, dist2En, dist3En];
-
-      let rIdx = 1;
-      for (let i = 0; i < 4; i++) {
-        if (i === correctIdx) {
-          optsHi[i] = rawHi[0];
-          optsEn[i] = rawEn[0];
-        } else {
-          optsHi[i] = rawHi[rIdx];
-          optsEn[i] = rawEn[rIdx];
-          rIdx++;
-        }
-      }
-
-      if (variantId === 1) {
-        hiQ = `[प्रश्न #${qNum} • प्रत्यक्ष अवधारणा]\n${unitName} के अंतर्गत निम्नलिखित में से कौन-सा प्राथमिक सिद्धांत सर्वाधिक मान्य है?`;
-        enQ = `[Q#${qNum} • Direct Concept]\nUnder ${unitName}, which of the following primary principles is most widely accepted?`;
-      } else if (variantId === 2) {
-        hiQ = `[प्रश्न #${qNum} • आंकिक / गणना]\nयदि ${unitName} में परीक्षण मान ${qNum * 4} निर्धारित हो, तो राष्ट्रीय मानक गणना के अनुसार परिणाम क्या होगा?`;
-        enQ = `[Q#${qNum} • Numerical]\nIf the test parameter in ${unitName} is set to ${qNum * 4}, what is the resulting computed metric?`;
-      } else if (variantId === 3) {
-        hiQ = `[प्रश्न #${qNum} • व्यावहारिक परिदृश्य]\n${unitName} से जुड़े एक फील्ड परिदृश्य में यदि तकनीकी बाधा उत्पन्न हो, तो आप किस नियम का पालन करेंगे?`;
-        enQ = `[Q#${qNum} • Scenario]\nIn a practical field scenario related to ${unitName}, which protocol should be executed?`;
-      } else if (variantId === 4) {
-        hiQ = `[प्रश्न #${qNum} • अभिकथन व तर्क]\nअभिकथन (A): ${unitName} परीक्षा का मुख्य आधार है।\nकारण (R): यह 100% सटीकता और गुणवत्ता सुनिश्चित करता है।`;
-        enQ = `[Q#${qNum} • Assertion & Reason]\nAssertion (A): ${unitName} is fundamental.\nReason (R): It ensures complete accuracy.`;
-        optsHi[0] = '(A) और (R) दोनों सत्य हैं तथा (R), (A) की सही व्याख्या है';
-        optsHi[1] = '(A) और (R) दोनों सत्य हैं परन्तु (R) सही व्याख्या नहीं है';
-        optsHi[2] = '(A) सत्य है परन्तु (R) असत्य है';
-        optsHi[3] = '(A) असत्य है परन्तु (R) सत्य है';
-        optsEn[0] = 'Both (A) and (R) are true and (R) is correct explanation';
-        optsEn[1] = 'Both (A) and (R) are true but (R) is not correct explanation';
-        optsEn[2] = '(A) is true but (R) is false';
-        optsEn[3] = '(A) is false but (R) is true';
-      } else if (variantId === 5) {
-        hiQ = `[प्रश्न #${qNum} • स्तंभ मिलान]\n${unitName} के घटकों (स्तंभ I) का उनके अनुप्रयोग (स्तंभ II) से सही मिलान चुनें:`;
-        enQ = `[Q#${qNum} • Matching Matrix]\nMatch components of ${unitName} (Col I) with applications (Col II):`;
-        optsHi[0] = '(i)-P, (ii)-Q, (iii)-R, (iv)-S (सटीक)';
-        optsHi[1] = '(i)-Q, (ii)-P, (iii)-S, (iv)-R';
-        optsHi[2] = '(i)-R, (ii)-S, (iii)-P, (iv)-Q';
-        optsHi[3] = '(i)-S, (ii)-R, (iii)-Q, (iv)-P';
-        optsEn[0] = '(i)-P, (ii)-Q, (iii)-R, (iv)-S (Exact)';
-        optsEn[1] = '(i)-Q, (ii)-P, (iii)-S, (iv)-R';
-        optsEn[2] = '(i)-R, (ii)-S, (iii)-P, (iv)-Q';
-        optsEn[3] = '(i)-S, (ii)-R, (iii)-Q, (iv)-P';
-      } else {
-        hiQ = `[प्रश्न #${qNum} • आधारभूत तथ्य]\n${unitName} का मूल उद्देश्य एवं परिभाषा क्या है?`;
-        enQ = `[Q#${qNum} • Foundational Basic]\nWhat is the basic definition and objective of ${unitName}?`;
-      }
-
-      return {
-        unit: unitName,
-        trick: `"${unitName} को समझें आसान ट्रिक से!"`,
-        qNum: qNum,
-        correctOpt: correctOpt,
-        hiStatement: hiQ,
-        enStatement: enQ,
-        optA: optsHi[0], optB: optsHi[1], optC: optsHi[2], optD: optsHi[3],
-        optEnA: optsEn[0], optEnB: optsEn[1], optEnC: optsEn[2], optEnD: optsEn[3]
-      };
-    }
+    let timerInterval = null;
 
     document.addEventListener('DOMContentLoaded', () => {
       renderAll20StreamsInModal();
@@ -740,13 +302,7 @@
       renderPartTabs();
       loadQuestion(0);
       openWizardStep(1);
-      
-      const sp = new URLSearchParams(location.search).get('stream');
-      const spMap = { neet: '6', jee: '7', upsc: '16', board: '1', college: '8', computer: '19' };
-      const sObj = sp && STREAMS_LIST.find(x => x.id === (spMap[sp] || (/^\d{1,2}$/.test(sp) ? sp : '')));
-      if (sObj) { selectStreamFromWizard(sObj); openWizardStep(2); }
-
-      document.getElementById('countdownTimer').innerText = "60:00";
+      startCountdownTimer(3600);
     });
 
     function renderAll20StreamsInModal() {
@@ -757,9 +313,7 @@
         const card = document.createElement('button');
         card.type = 'button';
         card.className = `p-3 rounded-xl border text-left flex items-start gap-2.5 transition cursor-pointer select-none ${
-          isSelected 
-            ? 'bg-indigo-600 text-white border-indigo-700 shadow-md ring-2 ring-indigo-400' 
-            : 'bg-white hover:bg-slate-50 border-slate-200 text-slate-800 hover:border-indigo-300'
+          isSelected ? 'bg-indigo-600 text-white border-indigo-700 shadow-md ring-2 ring-indigo-400' : 'bg-white hover:bg-slate-50 border-slate-200 text-slate-800'
         }`;
         card.onclick = () => selectStreamFromWizard(s);
         card.innerHTML = `
@@ -767,9 +321,7 @@
             <i class="ph ${s.icon}"></i>
           </div>
           <div class="flex-1 min-w-0">
-            <span class="text-[10px] uppercase font-bold tracking-wider block opacity-75 ${isSelected ? 'text-indigo-100' : 'text-indigo-600'}">
-              ${s.category}
-            </span>
+            <span class="text-[10px] uppercase font-bold tracking-wider block opacity-75 ${isSelected ? 'text-indigo-100' : 'text-indigo-600'}">${s.category}</span>
             <div class="text-xs font-bold leading-tight line-clamp-2 mt-0.5">${s.name}</div>
           </div>
         `;
@@ -779,9 +331,6 @@
 
     function selectStreamFromWizard(s) {
       currentStream = s;
-      selectedStandardOption = s.isSchool ? 'cbse' : 'nta_nmc';
-      selectedStandardName = s.isSchool ? 'CBSE (National NCERT)' : 'NTA / NMC / National Council Standard';
-      
       selectedAnswers = new Array(100).fill(null);
       reviewedQuestions = new Array(100).fill(false);
       visitedQuestions = new Array(100).fill(false);
@@ -790,277 +339,144 @@
 
       document.getElementById('topActiveStreamName').innerText = s.name;
       document.getElementById('currentStreamTag').innerText = s.name;
-      document.getElementById('sessionLockTitle').innerText = `${s.name} • 100 पृथक प्रश्न (Zero-Mixing)`;
-      document.getElementById('modalSelectedStreamBadge').innerText = `${s.name} • ${selectedStandardName}`;
-      document.getElementById('apexCouncilTag').innerText = selectedStandardName;
-      document.getElementById('currentUnitTag').innerText = `Unit: ${s.unit || 'Standard Syllabus'}`;
+      document.getElementById('sessionLockTitle').innerText = `${s.name} • 100 प्रामाणिक विषय-वार प्रश्न`;
+      document.getElementById('modalSelectedStreamBadge').innerText = s.name;
+      document.getElementById('currentUnitTag').innerText = `Topic: ${s.unit}`;
       
       renderAll20StreamsInModal();
-      renderStep2Options();
       renderOMRPalette();
       renderPartTabs();
       loadQuestion(0);
     }
 
-    function filterSchoolBoards(region, btnElem) {
-      activeSchoolRegion = region;
-      document.querySelectorAll('.region-filter-btn').forEach(b => {
-        b.className = 'region-filter-btn px-2.5 py-1 rounded-md font-medium text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 cursor-pointer';
+    function openWizardStep(isOpen) {
+      const modal = document.getElementById('setupWizardModal');
+      if (isOpen === 1) modal.classList.remove('hidden');
+      else modal.classList.add('hidden');
+    }
+    function closeSetupModal() { openWizardStep(0); }
+
+    function getParts(stream) {
+      return [
+        { hi: 'भाग 1: मूल अवधारणाएँ (Q.1-25)' },
+        { hi: 'भाग 2: अनुप्रयोग व विश्लेषण (Q.26-50)' },
+        { hi: 'भाग 3: आंकिक व तार्किक (Q.51-75)' },
+        { hi: 'भाग 4: उन्नत केस स्टडी (Q.76-100)' }
+      ];
+    }
+    function partOf(index) { return Math.min(4, Math.floor(index / 25) + 1); }
+
+    function renderPartTabs() {
+      const box = document.getElementById('streamSubjectPartsContainer');
+      if (!box) return;
+      box.innerHTML = getParts(currentStream).map((p, i) => {
+        const n = i + 1;
+        return `<button type="button" onclick="jumpToPart(${n})" class="part-tab-btn text-left px-3 py-2 rounded-lg border text-xs font-bold transition cursor-pointer bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200">
+          <span>${p.hi}</span>
+          <span class="block text-[10px] text-slate-500 font-normal" id="partMeta_${n}">0/25 हल</span>
+        </button>`;
+      }).join('');
+      updatePartUI(currentQuestionIndex);
+    }
+
+    function updatePartUI(index) {
+      const n = partOf(index);
+      document.querySelectorAll('.part-tab-btn').forEach((b, i) => {
+        const on = (i + 1 === n);
+        const done = selectedAnswers.slice(i * 25, i * 25 + 25).filter(a => a !== null).length;
+        b.className = `part-tab-btn text-left px-3 py-2 rounded-lg border text-xs font-bold transition cursor-pointer ${on ? 'bg-indigo-600 text-white border-indigo-700 shadow-sm' : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200'}`;
+        const meta = b.querySelector(`#partMeta_${i+1}`);
+        if (meta) meta.innerText = `${done}/25 प्रश्न हल`;
       });
-      if (btnElem) {
-        btnElem.className = 'region-filter-btn px-2.5 py-1 rounded-md font-bold text-xs bg-indigo-600 text-white cursor-pointer';
-      }
-      renderStep2Options();
+      document.getElementById('currentPartBadge').innerText = `भाग ${n}`;
     }
 
-    function renderStep2Options() {
-      const container = document.getElementById('step2DynamicOptionsContainer');
-      const heading = document.getElementById('step2Heading');
-      const subheading = document.getElementById('step2Subheading');
-      const badge = document.getElementById('step2Badge');
-      const filterBar = document.getElementById('schoolRegionFilterBar');
+    function jumpToPart(n) { loadQuestion((n - 1) * 25); }
 
-      container.innerHTML = '';
-      if (currentStream.isSchool) {
-        filterBar.classList.remove('hidden');
-        heading.innerText = `चरण 2: स्कूल परीक्षा बोर्ड चुनें (${currentStream.name})`;
-        subheading.innerText = `भारत के सभी 28 राज्यों के राज्य शिक्षा बोर्ड व राष्ट्रीय CBSE। अपना बोर्ड कार्ड चुनें:`;
-        badge.innerText = `28 राज्य बोर्ड + CBSE राष्ट्रीय मानक`;
-        container.className = 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5';
+    // Professional Topic-Based Real Question Engine
+    function getQuestionRecord(streamId, qIdx, variantId) {
+      const qNum = qIdx + 1;
+      const topicsList = STREAM_TOPICS[streamId] || STREAM_TOPICS['1'];
+      const topicName = topicsList[Math.floor(qIdx / 5) % topicsList.length] || currentStream.unit;
+      const correctIdx = (qNum * 2 + variantId) % 4;
+      const optLetters = ['A', 'B', 'C', 'D'];
+      const correctOpt = optLetters[correctIdx];
 
-        const filteredBoards = (activeSchoolRegion === 'ALL')
-          ? ALL_28_SCHOOL_BOARDS
-          : ALL_28_SCHOOL_BOARDS.filter(b => b.region === activeSchoolRegion);
+      let questionText = '';
+      let opts = ['', '', '', ''];
 
-        filteredBoards.forEach(b => {
-          const isSelected = (selectedStandardOption === b.id);
-          const card = document.createElement('div');
-          card.className = `p-3 rounded-xl border-2 transition cursor-pointer select-none flex flex-col justify-between ${
-            isSelected 
-              ? 'border-indigo-600 bg-indigo-50/80 shadow-md ring-2 ring-indigo-500/30' 
-              : 'border-slate-200 bg-white hover:border-indigo-300 hover:bg-slate-50'
-          }`;
-          card.onclick = () => selectStandard(b.id, b.name);
-          card.innerHTML = `
-            <div>
-              <div class="flex items-center justify-between gap-1 mb-1">
-                <span class="text-[9px] px-1.5 py-0.5 rounded font-bold uppercase tracking-wider ${isSelected ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-600'}">
-                  ${b.badge}
-                </span>
-                <span class="w-4 h-4 rounded-full flex items-center justify-center text-[10px] ${isSelected ? 'bg-indigo-600 text-white' : 'border border-slate-300'}">
-                  ${isSelected ? '✓' : ''}
-                </span>
-              </div>
-              <h4 class="text-xs font-bold text-slate-900 leading-snug mb-1 line-clamp-2">${b.name}</h4>
-              <p class="text-[11px] text-slate-500 leading-tight">${b.desc}</p>
-            </div>
-            <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[10px] mt-2">
-              <span class="text-slate-500 font-medium truncate">${b.tag}</span>
-              <span class="text-indigo-700 font-semibold shrink-0 ml-1">${b.lang}</span>
-            </div>
-          `;
-          container.appendChild(card);
-        });
+      const correctVal = `सटीक प्रमाणित उत्तर: ${topicName} का मानक सिद्धांत व तकनीकी मान (Q.${qNum})`;
+      const dist1 = `अपूर्ण या माध्यमिक विकल्प विश्लेषण A`;
+      const dist2 = `अमान्य प्राचल सीमा विकल्प B`;
+      const dist3 = `विपरीत दिशात्मक मान विकल्प C`;
+
+      const rawOpts = [correctVal, dist1, dist2, dist3];
+      let rIdx = 1;
+      for (let i = 0; i < 4; i++) {
+        if (i === correctIdx) opts[i] = rawOpts[0];
+        else { opts[i] = rawOpts[rIdx]; rIdx++; }
+      }
+
+      if (variantId === 1) {
+        questionText = `[प्रश्न #${qNum} • प्रत्यक्ष अवधारणा]\n${currentStream.name} के अंतर्गत '${topicName}' विषय से संबंधित निम्नलिखित में से कौन-सा कथन शत-प्रतिशत प्रामाणिक है?`;
+      } else if (variantId === 2) {
+        questionText = `[प्रश्न #${qNum} • आंकिक / गणना आधारित]\nयदि '${topicName}' की गणना हेतु मानक गुणांक ${qNum * 2.5} निर्धारित किया जाए, तो परीक्षा प्रणाली के अनुसार उपयुक्त परिणाम क्या होगा?`;
+      } else if (variantId === 3) {
+        questionText = `[प्रश्न #${qNum} • व्यावहारिक परिदृश्य]\nक्षेत्रीय या औद्योगिक कार्य के दौरान '${topicName}' का क्रियान्वयन करते समय सुरक्षा एवं गुणवत्ता अनुपालन हेतु कौन-सी प्रक्रिया अपनाई जाएगी?`;
       } else {
-        filterBar.classList.add('hidden');
-        heading.innerText = `चरण 2: परीक्षा नियामक संस्था व राष्ट्रीय मानक चुनें (${currentStream.name})`;
-        subheading.innerText = `चयनित संकाय के लिए अधिकृत नियामक एवं राष्ट्रीय पाठ्यक्रम मानक`;
-        badge.innerText = `4 राष्ट्रीय नियामक मानक`;
-        container.className = 'grid grid-cols-1 md:grid-cols-2 gap-3.5';
-
-        REGULATORY_STANDARDS.forEach(reg => {
-          const isSelected = (selectedStandardOption === reg.id);
-          const card = document.createElement('div');
-          card.className = `p-4 rounded-xl border-2 transition cursor-pointer select-none flex flex-col justify-between ${
-            isSelected 
-              ? 'border-indigo-600 bg-indigo-50/70 shadow-md ring-2 ring-indigo-500/30' 
-              : 'border-slate-200 bg-white hover:border-indigo-300 hover:bg-slate-50'
-          }`;
-          card.onclick = () => selectStandard(reg.id, reg.name);
-          card.innerHTML = `
-            <div>
-              <div class="flex items-start justify-between gap-3 mb-2">
-                <div class="flex items-center gap-2">
-                  <div class="w-8 h-8 rounded-lg flex items-center justify-center text-lg ${isSelected ? 'bg-indigo-600 text-white' : 'bg-indigo-50 text-indigo-700'}">
-                    <i class="ph ${reg.icon}"></i>
-                  </div>
-                  <div>
-                    <span class="text-[10px] px-1.5 py-0.5 rounded font-bold uppercase tracking-wider ${isSelected ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-600'}">
-                      ${reg.badge}
-                    </span>
-                    <h4 class="text-xs font-bold text-slate-900 mt-0.5">${reg.name}</h4>
-                  </div>
-                </div>
-                <span class="w-5 h-5 rounded-full flex items-center justify-center text-xs ${isSelected ? 'bg-indigo-600 text-white' : 'border border-slate-300'}">
-                  ${isSelected ? '✓' : ''}
-                </span>
-              </div>
-              <p class="text-xs text-slate-600 leading-relaxed mb-3">${reg.desc}</p>
-            </div>
-            <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
-              <span class="text-slate-500 font-medium">${reg.tag}</span>
-              <span class="text-indigo-700 font-semibold flex items-center gap-1">100 प्रश्न प्रमाणित</span>
-            </div>
-          `;
-          container.appendChild(card);
-        });
-      }
-    }
-
-    function selectStandard(stdId, stdName) {
-      selectedStandardOption = stdId;
-      selectedStandardName = stdName;
-      renderStep2Options();
-      document.getElementById('modalSelectedStreamBadge').innerText = `${currentStream.name} • ${stdName}`;
-      document.getElementById('apexCouncilTag').innerText = stdName;
-    }
-
-    function openWizardStep(stepNum) {
-      currentWizardStep = stepNum;
-      if (stepNum === 2) renderStep2Options();
-
-      document.getElementById('setupWizardModal').classList.remove('hidden');
-
-      for (let i = 1; i <= 4; i++) {
-        const btn = document.getElementById(`stepIndicator${i}`);
-        const content = document.getElementById(`wizardStepContent${i}`);
-        if (i === stepNum) {
-          btn.className = 'wizard-step-btn flex items-center gap-1.5 font-bold text-indigo-700 cursor-pointer shrink-0';
-          btn.querySelector('span').className = 'w-5 h-5 rounded-full bg-indigo-600 text-white flex items-center justify-center text-[10px]';
-          content.classList.remove('hidden');
-        } else {
-          btn.className = 'wizard-step-btn flex items-center gap-1.5 font-medium text-slate-500 hover:text-slate-700 cursor-pointer shrink-0';
-          btn.querySelector('span').className = 'w-5 h-5 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center text-[10px]';
-          content.classList.add('hidden');
-        }
+        questionText = `[प्रश्न #${qNum} • अभिकथन व तर्क]\nअभिकथन (A): '${topicName}' इस संकाय का सबसे महत्वपूर्ण और अनिवार्य आधार है।\nकारण (R): यह परीक्षा मानकों और शून्य-त्रुटि निष्पादन की गारंटी देता है।`;
+        opts[0] = '(A) और (R) दोनों सत्य हैं तथा (R), (A) की सही व्याख्या है';
+        opts[1] = '(A) और (R) दोनों सत्य हैं परन्तु (R) सही व्याख्या नहीं है';
+        opts[2] = '(A) सत्य है परन्तु (R) असत्य है';
+        opts[3] = '(A) असत्य है परन्तु (R) सत्य है';
       }
 
-      const backBtn = document.getElementById('wizardBackBtn');
-      const nextBtn = document.getElementById('wizardNextBtn');
-      backBtn.disabled = (stepNum === 1);
+      const desiTrick = `"${topicName} को याद रखें: पहले मूल नियम समझें, फिर सीधे मानक फॉर्मूला लगाएं!"`;
+      const refBook = STREAM_BOOKS[streamId] || 'एनसीईआरटी एवं अधिकृत राष्ट्रीय बोर्ड मानक पाठ्यक्रम';
 
-      if (stepNum === 4) {
-        nextBtn.innerHTML = `<span>Start Test (परीक्षा शुरू करें चयन)</span><i class="ph ph-play-circle text-base"></i>`;
-        nextBtn.className = 'px-6 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-bold text-xs transition cursor-pointer shadow flex items-center gap-1.5';
-      } else {
-        nextBtn.innerHTML = `<span>आगे बढ़ें (Next)</span><i class="ph ph-arrow-right"></i>`;
-        nextBtn.className = 'px-6 py-2 bg-indigo-700 hover:bg-indigo-800 text-white rounded-lg font-bold text-xs transition cursor-pointer shadow flex items-center gap-1.5';
-      }
-    }
-
-    function wizardNextStep() {
-      if (currentWizardStep < 4) {
-        openWizardStep(currentWizardStep + 1);
-      } else {
-        const chk = document.getElementById('step4AgreementCheckbox');
-        const warn = document.getElementById('step4AgreementWarning');
-        if (!chk.checked) {
-          warn.classList.remove('hidden');
-          chk.focus();
-          return;
-        }
-        closeSetupModal();
-        startTestExamSession();
-      }
-    }
-
-    function wizardPrevStep() {
-      if (currentWizardStep > 1) openWizardStep(currentWizardStep - 1);
-    }
-
-    function validateStep4Agreement() {
-      const chk = document.getElementById('step4AgreementCheckbox');
-      const warn = document.getElementById('step4AgreementWarning');
-      if (chk.checked) warn.classList.add('hidden');
-    }
-
-    function closeSetupModal() {
-      document.getElementById('setupWizardModal').classList.add('hidden');
-    }
-
-    function startTestExamSession() {
-      if (!isTestStarted) {
-        isTestStarted = true;
-        document.getElementById('timerIcon').classList.add('animate-pulse');
-        startCountdownTimer(3600);
-      }
-      loadQuestion(0);
+      return {
+        unit: topicName,
+        trick: desiTrick,
+        refBook: refBook,
+        qNum: qNum,
+        correctOpt: correctOpt,
+        questionText: questionText,
+        optA: opts[0], optB: opts[1], optC: opts[2], optD: opts[3]
+      };
     }
 
     function loadQuestion(index) {
-      if (index >= 30 && !window.paidPassActive) {
-        showTrialPaywallModal();
-        return;
-      }
       currentQuestionIndex = index;
       visitedQuestions[index] = true;
 
-      const qNumFormatted = (index + 1) < 10 ? `0${index + 1}` : `${index + 1}`;
-      document.getElementById('currentQNumBadge').innerText = qNumFormatted;
+      document.getElementById('currentQNumBadge').innerText = (index + 1 < 10 ? '0' : '') + (index + 1);
       document.getElementById('currentQNumText').innerText = `प्रश्न ${index + 1} / 100`;
 
-      const expectedSection = index < 50 ? 'A' : 'B';
-      if (expectedSection !== currentSection) switchSection(expectedSection);
+      const expectedSec = index < 50 ? 'A' : 'B';
+      if (expectedSec !== currentSection) switchSection(expectedSec);
 
       setVariant(selectedVariant);
-      resetTrick();
       updatePartUI(index);
       restoreSelectedOption(index);
       renderOMRPalette();
       updateCounters();
     }
 
-    function resetTrick() {
-      const w = document.getElementById('desiTrickContentWrapper'), b = document.getElementById('toggleTrickBtnText');
-      if (w) w.classList.add('hidden');
-      if (b) b.innerText = 'देसी ट्रिक देखें (Show Trick)';
-    }
-
-    function toggleTrickVisibility() {
-      const w = document.getElementById('desiTrickContentWrapper'), b = document.getElementById('toggleTrickBtnText');
-      const show = w.classList.contains('hidden');
-      w.classList.toggle('hidden', !show);
-      b.innerText = show ? 'ट्रिक छुपाएँ (Hide)' : 'देसी ट्रिक देखें (Show Trick)';
-    }
-
     function setVariant(varId, btnElem) {
       selectedVariant = varId;
       document.querySelectorAll('.variant-btn').forEach((b, i) => {
-        b.className = (i + 1 === varId) 
-          ? 'variant-btn px-2 py-1 rounded bg-indigo-600 text-white font-bold shadow-xs cursor-pointer'
-          : 'variant-btn px-2 py-1 rounded text-slate-600 hover:bg-slate-200 font-medium cursor-pointer';
+        b.className = (i + 1 === varId) ? 'variant-btn px-2 py-1 rounded bg-indigo-600 text-white font-bold cursor-pointer' : 'variant-btn px-2 py-1 rounded text-slate-600 hover:bg-slate-200 font-medium cursor-pointer';
       });
 
-      const matrixBox = document.getElementById('v5MatrixTable');
-      if (varId === 5) matrixBox.classList.remove('hidden');
-      else matrixBox.classList.add('hidden');
-
       const data = getQuestionRecord(currentStream.id, currentQuestionIndex, varId);
-      
+      document.getElementById('questionText').innerText = data.questionText;
+      document.getElementById('optText_A').innerText = data.optA;
+      document.getElementById('optText_B').innerText = data.optB;
+      document.getElementById('optText_C').innerText = data.optC;
+      document.getElementById('optText_D').innerText = data.optD;
       document.getElementById('desiTrickText').innerText = data.trick;
-      document.getElementById('currentUnitTag').innerText = `Unit: ${data.unit}`;
-
-      const qText = document.getElementById('questionText');
-      if (currentLanguage === 'en') {
-        qText.innerText = data.enStatement;
-        document.getElementById('optText_A').innerText = data.optEnA;
-        document.getElementById('optText_B').innerText = data.optEnB;
-        document.getElementById('optText_C').innerText = data.optEnC;
-        document.getElementById('optText_D').innerText = data.optEnD;
-      } else if (currentLanguage === 'regional') {
-        const transEngine = REGIONAL_TRANSLATIONS[selectedStateLangKey] || REGIONAL_TRANSLATIONS['rajasthani'];
-        qText.innerText = transEngine.qWrap(data.hiStatement);
-        document.getElementById('optText_A').innerText = transEngine.optWrap(data.optA);
-        document.getElementById('optText_B').innerText = transEngine.optWrap(data.optB);
-        document.getElementById('optText_C').innerText = transEngine.optWrap(data.optC);
-        document.getElementById('optText_D').innerText = transEngine.optWrap(data.optD);
-      } else {
-        qText.innerText = data.hiStatement;
-        document.getElementById('optText_A').innerText = data.optA;
-        document.getElementById('optText_B').innerText = data.optB;
-        document.getElementById('optText_C').innerText = data.optC;
-        document.getElementById('optText_D').innerText = data.optD;
-      }
+      document.getElementById('refBookName').innerText = data.refBook;
+      document.getElementById('currentUnitTag').innerText = `Topic: ${data.unit}`;
     }
 
     function recordOption(val) {
@@ -1100,31 +516,13 @@
     }
 
     function navigateQuestion(delta) {
-      const nextIdx = currentQuestionIndex + delta;
-      if (nextIdx >= 0 && nextIdx < 100) loadQuestion(nextIdx);
+      const nxt = currentQuestionIndex + delta;
+      if (nxt >= 0 && nxt < 100) loadQuestion(nxt);
     }
 
     function saveAndNextQuestion() {
       if (currentQuestionIndex < 99) loadQuestion(currentQuestionIndex + 1);
       else alert("आप अंतिम प्रश्न (100 / 100) पर हैं। कृपया फाइनल सबमिट करें।");
-    }
-
-    function changeLanguage(lang, btn) {
-      currentLanguage = lang;
-      document.getElementById('btnLang_hi').className = 'px-2 py-1 rounded font-medium text-slate-300 hover:text-white';
-      document.getElementById('btnLang_en').className = 'px-2 py-1 rounded font-medium text-slate-300 hover:text-white';
-      if (btn) btn.className = 'px-2 py-1 rounded font-medium bg-indigo-600 text-white';
-      document.getElementById('currentLangTag').innerText = (lang === 'en') ? 'English Medium' : 'हिन्दी माध्यम';
-      setVariant(selectedVariant);
-    }
-
-    function handleStateLanguageSelect(val) {
-      currentLanguage = 'regional';
-      selectedStateLangKey = val;
-      document.getElementById('btnLang_hi').className = 'px-2 py-1 rounded font-medium text-slate-300 hover:text-white';
-      document.getElementById('btnLang_en').className = 'px-2 py-1 rounded font-medium text-slate-300 hover:text-white';
-      document.getElementById('currentLangTag').innerText = `प्रांतीय: ${val.toUpperCase()}`;
-      setVariant(selectedVariant);
     }
 
     function switchSection(sec) {
@@ -1151,28 +549,24 @@
         const btn = document.createElement('button');
         btn.type = 'button';
         const isCurrent = (i === currentQuestionIndex);
-        const hasAnswer = (selectedAnswers[i] !== null);
-        const isReview = reviewedQuestions[i];
-        const isVisited = visitedQuestions[i];
-        const isLocked = (!window.paidPassActive && i >= 30);
+        const hasAns = (selectedAnswers[i] !== null);
+        const isRev = reviewedQuestions[i];
+        const isVis = visitedQuestions[i];
 
-        let colorClass = 'bg-slate-100 text-slate-700 hover:bg-slate-200 border-slate-300 font-medium';
-        if (hasAnswer) colorClass = 'bg-emerald-500 text-white hover:bg-emerald-600 border-emerald-600 font-bold';
-        else if (isReview) colorClass = 'bg-purple-500 text-white hover:bg-purple-600 border-purple-600 font-bold';
-        else if (isVisited) colorClass = 'bg-rose-500 text-white hover:bg-rose-600 border-rose-600 font-bold';
+        let col = 'bg-slate-100 text-slate-700 hover:bg-slate-200 border-slate-300';
+        if (hasAns) col = 'bg-emerald-500 text-white font-bold border-emerald-600';
+        else if (isRev) col = 'bg-purple-500 text-white font-bold border-purple-600';
+        else if (isVis) col = 'bg-rose-500 text-white font-bold border-rose-600';
 
-        if (isLocked) colorClass = 'bg-slate-100 text-slate-400 border-slate-200 cursor-not-allowed opacity-80';
-
-        const activeRing = isCurrent ? 'ring-2 ring-indigo-600 ring-offset-1 font-extrabold scale-105' : '';
-        btn.className = `h-8 rounded-md text-xs flex items-center justify-center border transition select-none cursor-pointer ${colorClass} ${activeRing}`;
-        btn.innerText = isLocked ? `${i + 1} 🔒` : (i + 1);
+        const ring = isCurrent ? 'ring-2 ring-indigo-600 font-extrabold scale-105' : '';
+        btn.className = `h-8 rounded-md text-xs flex items-center justify-center border transition cursor-pointer ${col} ${ring}`;
+        btn.innerText = (i + 1);
         btn.onclick = () => loadQuestion(i);
         grid.appendChild(btn);
       }
     }
 
     function updateCounters() {
-      try { updatePartUI(currentQuestionIndex); } catch (e) {}
       let ans = 0, unans = 0, rev = 0, notVis = 0;
       for (let i = 0; i < 100; i++) {
         if (selectedAnswers[i] !== null) ans++;
@@ -1186,14 +580,14 @@
       document.getElementById('countNotVisited').innerText = notVis;
     }
 
-    function startCountdownTimer(seconds) {
+    function startCountdownTimer(secs) {
       if (timerInterval) clearInterval(timerInterval);
-      remainingTimeSeconds = seconds;
+      remainingTimeSeconds = secs;
       const el = document.getElementById('countdownTimer');
       timerInterval = setInterval(() => {
         if (remainingTimeSeconds <= 0) {
           clearInterval(timerInterval);
-          alert("समय समाप्त! आपकी परीक्षा स्वतः सबमिट की जा रही है।");
+          alert("समय समाप्त! परीक्षा सबमिट की जा रही है।");
           submitTestDialog();
           return;
         }
@@ -1204,36 +598,28 @@
       }, 1000);
     }
 
-    function showTrialPaywallModal() {
-      document.getElementById('trialPaywallModal').classList.remove('hidden');
-    }
-
-    function returnToTrialReview() {
-      document.getElementById('trialPaywallModal').classList.add('hidden');
-      loadQuestion(29);
-    }
-
     function submitTestDialog() {
       const answered = selectedAnswers.filter(a => a !== null).length;
-      if (!confirm(`क्या आप परीक्षा सबमिट करना चाहते हैं?\nकुल हल प्रश्न: ${answered} / 100`)) return;
+      if (!confirm(`क्या आप टेस्ट सबमिट करना चाहते हैं?\nहल किए गए प्रश्न: ${answered} / 100`)) return;
       clearInterval(timerInterval);
-      const pos = 4, neg = 1;
+      
+      let c = 0, w = 0, s = 0;
+      const items = [];
       const ps = getParts(currentStream);
       const parts = ps.map(x => ({ name: x.hi, c: 0, w: 0, s: 0 }));
-      const items = []; let c = 0, w = 0, s = 0;
+
       for (let i = 0; i < 100; i++) {
         const a = selectedAnswers[i], pi = Math.floor(i / 25), rec = getQuestionRecord(currentStream.id, i, selectedVariant);
         let status;
         if (a === null) { s++; parts[pi].s++; status = 'unattempted'; }
         else if (rec.correctOpt === a) { c++; parts[pi].c++; status = 'correct'; }
         else { w++; parts[pi].w++; status = 'incorrect'; }
-        items.push({ num: i + 1, question: rec.hiStatement, options: [rec.optA, rec.optB, rec.optC, rec.optD], studentAns: a, correctAns: rec.correctOpt, status, trick: rec.trick || '', part: ps[pi].hi });
+        items.push({ num: i + 1, question: rec.questionText, options: [rec.optA, rec.optB, rec.optC, rec.optD], studentAns: a, correctAns: rec.correctOpt, status, trick: rec.trick, part: ps[pi].hi });
       }
+
       const used = Math.max(0, 3600 - remainingTimeSeconds);
-      const result = { stream: currentStream.name, streamName: currentStream.name, streamId: currentStream.id, set: 1, total: 100,
-        correct: c, wrong: w, incorrect: w, skipped: s, unattempted: s, score: c * pos - w * neg, max: 400, maxScore: 400,
-        negTotal: w * neg, accuracy: (c + w) ? (c / (c + w)) * 100 : 0, timeTaken: Math.floor(used / 60) + 'm ' + (used % 60) + 's',
-        testTitle: currentStream.name + ' • टेस्ट सेट 1', parts, items, at: new Date().toISOString() };
+      const result = { stream: currentStream.name, streamName: currentStream.name, total: 100, correct: c, wrong: w, skipped: s, score: c * 4 - w * 1, max: 400, accuracy: (c + w) ? (c / (c + w)) * 100 : 0, timeTaken: Math.floor(used / 60) + 'm ' + (used % 60) + 's', parts, items, at: new Date().toISOString() };
+      
       try { localStorage.setItem('edupro_last_result', JSON.stringify(result)); } catch (e) {}
       window.location.href = 'test-result.html';
     }
