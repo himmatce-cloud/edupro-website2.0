@@ -108,13 +108,85 @@
   <!-- ================= MAIN DASHBOARD BODY ================= -->
   <main class="flex-1 max-w-7xl w-full mx-auto p-4 lg:p-8 space-y-6">
 
-    <!-- WELCOME GREETING & ACCOUNT STATUS BANNER -->
     <div class="bg-gradient-to-r from-brand-900 via-brand-800 to-slate-900 text-white p-6 lg:p-8 rounded-3xl shadow-md flex flex-col md:flex-row items-start md:items-center justify-between gap-6 border border-slate-800">
+      <div class="space-y-1">
+        <h1 id="dGreet" class="text-2xl lg:text-3xl font-extrabold">नमस्ते!</h1>
+        <p id="dStudentId" class="text-xs text-slate-300 font-semibold">लोड हो रहा है...</p>
+      </div>
+      <div class="bg-white/10 border border-white/20 rounded-2xl px-5 py-3 text-sm">
+        <div id="dSubTitle" class="font-extrabold">—</div>
+        <div id="dSubNote" class="text-xs text-slate-300 mt-0.5">—</div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl border border-slate-200 p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xs">
+      <div>
+        <span id="dTrialTag" class="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200">फ्री ट्रायल</span>
+        <p id="dTrial" class="text-sm font-bold text-slate-800 mt-2">—</p>
+      </div>
+      <a id="dTrialLink" href="test-series.html" class="px-4 py-2.5 bg-brand-900 hover:bg-black text-white rounded-xl text-xs font-bold">टेस्ट शुरू करें →</a>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs">
+        <div class="text-[11px] font-bold text-slate-500 uppercase">स्ट्रीक</div>
+        <div id="dStreak" class="text-xl font-extrabold text-brand-900 mt-1">0 दिन</div>
+      </div>
+      <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs">
+        <div class="text-[11px] font-bold text-slate-500 uppercase">आज का अभ्यास</div>
+        <div id="dMin" class="text-xl font-extrabold text-brand-900 mt-1">0 / 60 मिनट</div>
+        <div class="h-1.5 bg-slate-100 rounded-full mt-2 overflow-hidden"><div id="dMinBar" class="h-full bg-emerald-500 rounded-full" style="width:0%"></div></div>
+        <div id="dMinNote" class="text-[11px] text-slate-500 mt-1">आज का लक्ष्य: 60 मिनट अभ्यास</div>
+      </div>
+      <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs">
+        <div class="text-[11px] font-bold text-slate-500 uppercase">हल किए प्रश्न</div>
+        <div id="dQs" class="text-xl font-extrabold text-brand-900 mt-1">0</div>
+        <div id="dQsNote" class="text-[11px] text-slate-500 mt-1">0 टेस्ट सबमिट किए</div>
+      </div>
+      <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs">
+        <div class="text-[11px] font-bold text-slate-500 uppercase">सटीकता</div>
+        <div id="dAcc" class="text-xl font-extrabold text-brand-900 mt-1">—</div>
+        <div id="dAccNote" class="text-[11px] text-slate-500 mt-1">पहला टेस्ट दें</div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs">
+      <h2 class="text-sm font-extrabold text-slate-900 mb-3">अपना संकाय चुनकर टेस्ट शुरू करें</h2>
+      <div id="dLaunch" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3"></div>
+    </div>
+
+    <div class="bg-brand-50 border border-brand-100 rounded-2xl p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div>
+        <div class="text-[11px] font-bold text-slate-500 uppercase">आपका रेफरल कोड</div>
+        <div class="flex items-center gap-2 mt-1">
+          <span id="dRefCode" class="font-mono font-black text-brand-900 bg-white border border-brand-100 rounded-lg px-3 py-1">—</span>
+          <button onclick="copyReferralCode()" class="text-brand-700 text-xs font-bold underline cursor-pointer">कॉपी करें</button>
+        </div>
+        <p class="text-[11px] text-slate-600 mt-1"><span id="dRefCount">0</span> / 5 सशुल्क रेफरल • हर 5वें पर +30 दिन</p>
+      </div>
+      <div class="flex gap-2">
+        <a id="dWa" href="#" class="px-4 py-2 bg-emerald-600 text-white rounded-xl text-xs font-bold">💬 WhatsApp</a>
+        <a id="dTg" href="#" class="px-4 py-2 bg-sky-600 text-white rounded-xl text-xs font-bold">✈️ Telegram</a>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs">
+      <h2 class="text-sm font-extrabold text-slate-900 mb-3">हाल के टेस्ट</h2>
+      <div id="dRecent" class="text-xs text-slate-600">अभी तक कोई टेस्ट सबमिट नहीं हुआ।</div>
+    </div>
+  </main>
+
+  <div id="streamModal" class="hidden fixed inset-0 z-50 bg-slate-950/70 items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full p-5 shadow-2xl">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="font-extrabold text-slate-900 text-sm">संकाय चुनें</h3>
+        <button onclick="toggleStreamModal()" class="text-slate-400 hover:text-slate-700 text-lg leading-none">✕</button>
+      </div>
       <div id="dStreamList" class="space-y-2 max-h-[60vh] overflow-y-auto"></div>
     </div>
   </div>
 
-  <!-- ================= SCRIPTS & SECURITY ================= -->
+<!-- ================= SCRIPTS & SECURITY ================= -->
   <script>
     function toggleStreamModal() {
       const modal = document.getElementById('streamModal');
