@@ -61,10 +61,10 @@
 <span>₹199 All-Access Pass (30 दिन)</span>
 </div>
 <a class="flex items-center gap-2 pl-2 border-l border-slate-200 group" href="dashboard.html">
-<div class="w-8 h-8 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-xs">RK</div>
+<div id="payAv" class="w-8 h-8 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-xs">?</div>
 <div class="hidden xl:block text-left">
-<span class="text-xs font-bold text-slate-800 block leading-tight">राजेश कुमार</span>
-<span class="text-[10px] text-slate-400 block leading-tight">#EDU-8921</span>
+<span id="payUserName" class="text-xs font-bold text-slate-800 block leading-tight">लॉगिन करें</span>
+<span id="payUserId" class="text-[10px] text-slate-400 block leading-tight"></span>
 </div>
 </a>
 </div>
@@ -73,7 +73,7 @@
 <div class="bg-brand-50 border-t border-brand-100 px-4 lg:px-8 py-2 text-xs text-brand-900 font-semibold flex flex-wrap items-center justify-between gap-2">
 <div class="flex items-center gap-2">
 <span class="material-symbols-outlined text-sm text-brand-700">security</span>
-<span>NPCI BharatQR 2.0 Live Gateway • शून्य अतिरिक्त गेटवे शुल्क • कोई ऑटो-डेबिट नहीं</span>
+<span>UPI / BharatQR भुगतान • शून्य अतिरिक्त गेटवे शुल्क • कोई ऑटो-डेबिट नहीं</span>
 </div>
 <div class="flex items-center gap-2 text-[11px] text-slate-600 font-medium">
 <span>वैधता: <strong>30 दिवस (1 माह)</strong></span>
@@ -213,10 +213,10 @@
 <div class="hidden p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-950 space-y-1" id="utrSuccessAlert">
 <div class="flex items-center gap-1.5 font-bold text-emerald-900">
 <span class="material-symbols-outlined text-sm text-emerald-600">task_alt</span>
-<span>पावती टोकन लॉक: #TXN-EDP-8921</span>
+<span>आपका अनुरोध दर्ज हो गया</span>
 </div>
 <p class="text-[11px] leading-relaxed">
-                  आपका UTR दर्ज हो चुका है। 5-15 मिनट में बैंक नोडल मिलान उपरांत आपका पास स्वतः सक्रिय हो जाएगा।
+                  आपका UTR दर्ज हो चुका है। भुगतान मिलान के बाद एडमिन आपका पास सक्रिय करेंगे (आमतौर पर कुछ घंटों में)।
                 </p>
 </div>
 <button class="w-full py-3.5 bg-brand-900 hover:bg-black text-white font-extrabold text-xs rounded-xl shadow-md transition flex items-center justify-center gap-2 cursor-pointer" id="btnSubmitUtr" type="submit">
@@ -229,7 +229,7 @@
 <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
 <span class="flex items-center gap-1">
 <span class="material-symbols-outlined text-xs text-brand-700">speed</span>
-<span>औसत मिलान समय: 5-15 मिनट</span>
+<span>औसत मिलान समय: कुछ घंटे</span>
 </span>
 <a class="text-brand-700 font-bold hover:underline" href="help.html">हेल्पडेस्क टिकट →</a>
 </div>
@@ -240,7 +240,7 @@
 <div class="space-y-1">
 <span class="text-xs font-bold text-brand-700 uppercase tracking-wider block">पारदर्शी बैंकिंग प्रणाली</span>
 <h2 class="text-lg font-black text-slate-900">3-चरणीय ज़ीरो-पैनिक ऑटो-सेटलमेंट प्रक्रिया</h2>
-<p class="text-xs text-slate-500">प्रत्येक लेनदेन सुरक्षित एस्क्रो खाते में मैप होता है। यदि बैंक विलंब होता है, तो भी आपका टोकन 100% सुरक्षित रहता है।</p>
+<p class="text-xs text-slate-500">हर UTR का एडमिन द्वारा UPI/बैंक ऐप में मिलान किया जाता है। बैंक में देरी हो तो भी आपका अनुरोध सुरक्षित रहता है।</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
 <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
@@ -254,10 +254,10 @@
 <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
 <div class="flex items-center justify-between">
 <span class="px-2 py-0.5 rounded bg-blue-50 text-brand-800 font-bold">चरण 02</span>
-<span class="font-mono text-slate-500">5 - 15 मिनट</span>
+<span class="font-mono text-slate-500">कुछ घंटे</span>
 </div>
-<h4 class="text-xs font-black text-slate-900">बैंक लेजर मिलान व स्वतः सत्यापन</h4>
-<p class="text-[11px] text-slate-600 leading-relaxed">स्वचालित पेमेंट्स प्रणाली बैंक नोडल खाता विवरणियों से UTR संख्या का मिलान कर ऑडिट पूरा करती है।</p>
+<h4 class="text-xs font-black text-slate-900">एडमिन द्वारा मिलान व सत्यापन</h4>
+<p class="text-[11px] text-slate-600 leading-relaxed">एडमिन आपके UTR का मिलान अपने UPI खाते की प्राप्ति से करके पास सक्रिय करता है।</p>
 </div>
 <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
 <div class="flex items-center justify-between">
@@ -290,17 +290,17 @@
 <div class="space-y-0.5 text-center sm:text-left">
 <span class="text-[11px] font-bold text-slate-500 uppercase">आपका विशिष्ट रेफरल कोड:</span>
 <div class="text-sm font-black text-brand-900 flex items-center gap-2">
-<span class="bg-white px-3 py-1 rounded-lg border border-brand-200 font-mono" id="paymentRefCodeText">EDUPRO-HR91</span>
+<span class="bg-white px-3 py-1 rounded-lg border border-brand-200 font-mono" id="paymentRefCodeText">लॉगिन करें</span>
 <button class="text-brand-700 hover:text-brand-900 text-xs font-bold flex items-center gap-1 cursor-pointer" onclick="copyPaymentRefCode()">
 <span class="material-symbols-outlined text-sm">content_copy</span> कॉपी करें
               </button>
 </div>
 </div>
 <div class="flex items-center gap-2.5 w-full sm:w-auto">
-<a class="flex-1 sm:flex-initial py-2.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold shadow-xs transition flex items-center justify-center gap-1.5 cursor-pointer" href="https://api.whatsapp.com/send?text=EduPro%20National%20Portal%2020-Year%20PYQ%20Mock%20Tests%20Join%20with%20Code:%20EDUPRO-HR91" target="_blank">
+<a class="flex-1 sm:flex-initial py-2.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold shadow-xs transition flex items-center justify-center gap-1.5 cursor-pointer" href="https://api.whatsapp.com/send?text=EduPro%20National%20Portal%2020-Year%20PYQ%20Mock%20Tests" target="_blank">
               💬 WhatsApp शेयर
             </a>
-<a class="flex-1 sm:flex-initial py-2.5 px-4 bg-sky-600 hover:bg-sky-700 text-white rounded-xl text-xs font-bold shadow-xs transition flex items-center justify-center gap-1.5 cursor-pointer" href="https://t.me/share/url?url=https://edupro-website2-0.vercel.app&amp;text=EduPro%20National%20Prep%20Code:%20EDUPRO-HR91" target="_blank">
+<a class="flex-1 sm:flex-initial py-2.5 px-4 bg-sky-600 hover:bg-sky-700 text-white rounded-xl text-xs font-bold shadow-xs transition flex items-center justify-center gap-1.5 cursor-pointer" href="https://t.me/share/url?url=https://edupro-website2-0.vercel.app&amp;text=EduPro%20National%20Prep" target="_blank">
               ✈️ Telegram शेयर
             </a>
 </div>
@@ -369,9 +369,9 @@
     }
 
     function copyPaymentRefCode() {
-      navigator.clipboard.writeText('EDUPRO-HR91').then(() => {
-        alert('✓ रेफरल कोड कॉपी हुआ: EDUPRO-HR91');
-      });
+      const c = (document.getElementById('paymentRefCodeText').textContent || '').trim();
+      if (!/^EDU-/.test(c)) { alert('रेफरल कोड देखने के लिए पहले लॉगिन करें'); return; }
+      navigator.clipboard.writeText(c).then(() => { alert('✓ रेफरल कोड कॉपी हुआ: ' + c); });
     }
 
     document.addEventListener('contextmenu', e => e.preventDefault());
@@ -384,5 +384,21 @@
       }
     });
   </script>
+<script>
+(async function () {
+  const u = await EDU.ready; if (!u) return;
+  const nm = document.getElementById('payUserName'); if (nm) nm.textContent = u.name;
+  const id = document.getElementById('payUserId'); if (id) id.textContent = '#EDU-' + u.mobile.slice(-4);
+  const av = document.getElementById('payAv'); if (av) av.textContent = (u.name || '?').trim().slice(0, 2).toUpperCase();
+  try {
+    const r = await (await fetch('/api/result', { credentials: 'same-origin', cache: 'no-store' })).json();
+    if (!r.ok) return;
+    document.getElementById('paymentRefCodeText').textContent = r.refCode;
+    const txt = encodeURIComponent('EduPro पर टेस्ट सीरीज़ दें। रजिस्टर करते समय कोड डालें: ' + r.refCode + ' ' + location.origin);
+    document.querySelectorAll('a[href*="whatsapp"]').forEach(a => { a.href = 'https://api.whatsapp.com/send?text=' + txt; a.target = '_blank'; });
+    document.querySelectorAll('a[href*="t.me/share"]').forEach(a => { a.href = 'https://t.me/share/url?url=' + encodeURIComponent(location.origin) + '&text=' + encodeURIComponent('EduPro Code: ' + r.refCode); a.target = '_blank'; });
+  } catch (e) {}
+})();
+</script>
 </body>
 </html>
